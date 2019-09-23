@@ -2167,7 +2167,7 @@ section.lazy-placeholder:after {
   color: #c1c1c1 !important;
 }
 .cid-rCPhMlvNlN {
-  padding-top: 90px;
+  padding-top: 135px;
   padding-bottom: 90px;
   background-color: #ffffff;
 }
@@ -2652,6 +2652,10 @@ section.lazy-placeholder:after {
 }
 .cid-rCTXjqOCJS .mbr-section-subtitle {
   font-style: italic;
+}
+.cid-rCTXjqOCJS .mbr-text,
+.cid-rCTXjqOCJS .mbr-section-btn {
+  color: #767676;
 }
 .cid-rCOzBX1jLz .navbar {
   padding: .5rem 0;
