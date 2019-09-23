@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
   <meta name="description" content="Website Generator Description">
   
-  <title>About</title>
+  <title>Usage</title>
   <link rel="preload" as="style" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
 <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap.min.css">
@@ -28,7 +28,7 @@
 
 </head>
 <body>
-  <section class="menu cid-rCOzBX1jLz" once="menu" id="menu1-y">
+  <section class="menu cid-rCFaEeaKON" once="menu" id="menu1-g">
 
     
 
@@ -67,27 +67,65 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/y">free html website templates</a></section><section class="testimonials3 cid-rCP4e4c2Hu" id="testimonials3-10">
+<section class="engine"><a href="https://mobirise.info/v">html templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h">
 
     
 
     
 
     <div class="container">
-        <div class="media-container-row">
-            <div class="media-content px-3 align-self-center mbr-white py-2">
-                <p class="mbr-text testimonial-text mbr-fonts-style display-7"><span style="font-style: normal;">I'm a Professor in the Department of Computer Science at the University of Arizona. Prior to arriving in Tucson I worked at the University of Auckland, New Zealand, and before that I got my Ph.D. from Lund University, Sweden. I have also held a visiting position at the Chinese Academy of Sciences in Beijing, China, and taught at various universities in Russia and Belarus.</span><br><span style="font-style: normal;"><br>My main research interest is computer security, in particular the so-called Man-At-The-End Attack which occurs in settings where an adversary has physical access to a device and compromises it by tampering with its hardware or software.</span><br><br><span style="font-style: normal;">I am the primary developer of the Tigress obfuscation tool.<br><br>With Jasvir Nagra, I am the author of the first comprehensive textbook on software protection, <a href="https://www.amazon.com/Surreptitious-Software-Obfuscation-Watermarking-Tamperproofing/dp/0321549252">Surreptitious Software: Obfuscation, Watermarking, and Tamperproofing for Software Protection</a>, published in Addison-Wesley's computer security series. It has also been translated into Portuguese and Chinese.</span><br><br><span style="font-style: normal;">With my colleague <a href="http://proebsting.cs.arizona.edu" target="_blank">Todd Proebsting</a> I am also working on the </span>reproducibility, repeatability, and sharing <span style="font-style: normal;">in Computer Science research. You can read more about it in our&nbsp;<a href="https://dl.acm.org/citation.cfm?id=2812803" target="_blank">CACM paper</a>, on our <a href="http://repeatability.cs.arizona.edu" target="_blank">repeatability website</a>, or visit our <a href="http://findresearch.org" target="_blank">findresearch.org</a> site.</span><span style="font-style: normal;"><br></span></p>
-                <p class="mbr-author-name pt-4 mb-2 mbr-fonts-style display-7">
-                   Christian Collberg</p>
-                <p class="mbr-author-desc mbr-fonts-style display-7">
-                   Professor<br>Department of Computer Science<br><a href="http://collberg.cs.arizona.edu" target="_blank">http://collberg.,cs.arizona.edu</a><br>collberg@gmail.com<br>University of Arizona</p>
-            </div>
-
-            <div class="mbr-figure pl-lg-5" style="width: 45%;">
-              <a href="http://collberg.cs.arizona.edu"><img src="assets/images/me-turtle-1-426x568.jpeg" alt="" title=""></a>
-            </div>
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-5"><br><br><br><br><br>A trival invocation of Tigress looks like this:<br></p>
+            
         </div>
     </div>
+
+    
+</section>
+
+<div id="custom-html-i"><pre><code>    tigress \
+        --Environment=x86_64:Linux:Gcc:4.6 \
+        --Transform=Flatten \
+           --Functions=bar \
+        --out=foo_out.c foo.c
+</code></pre></div>
+
+<section class="header9 cid-rCVzXt235L" id="header9-k">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-5">At the very least, you need to specify the system you're generating code for, the transformation you want to apply, and the function you want to apply it to.</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="header9 cid-rCVAjB6XUk" id="header9-m">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-5"><strong>Note to academics</strong>. We see Tigress used in many research projects, and this is very satisfying!. We encourage anyone working in reverse engineering to try to attack Tigress-generated code, and anyone working in software protection to compare their techniques against the standard set of techniques provided by Tigress. We are always keen to collaborate, so please get in touch if you have some interesting ideas to work on!<br><br>That said, we often see papers where researchers have used Tigress and where the analyses they perform are not as accurate as one would like. Here are some common problems we've seen:<br>*) <em>"We run Tigress with default options"</em>. There is no such thing. There are lots of different transformations, lots of different options, ans you need to specify which ones you used. Different options to the same transformation can have radically different performance characteristics.<br>*) "<em>Tigress does not support transformation X</em>". There are lots of transformations. Lots of options. To be sure, contact us.&nbsp;<br>*) "<em>Tigress-crashed</em>." I'm not saying there are no bugs, but Tigress has been used in commercial projects, and mostly "works". If you find a bug, contact me. Often, the problem is system specific and can be taken care of with a particular compiler flag or #define.<br>*) "<em>Tigress-generated code is slow</em>". Yeah, true, but again, it depends on the particular set of options you're using. Virtualization, for example, has specfic options to generate faster code. Again, if you're unsure you're running the best possible Tigress script, contact us.</p>
+            
+        </div>
+    </div>
+
+    
 </section>
 
 
