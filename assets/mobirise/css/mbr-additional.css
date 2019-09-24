@@ -2693,6 +2693,42 @@ section.lazy-placeholder:after {
 .cid-rCTXjqOCJS .mbr-section-btn {
   color: #767676;
 }
+.cid-rD1uNZVreT {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-rD1uNZVreT h1 {
+  color: #616161;
+}
+.cid-rD1uNZVreT h2,
+.cid-rD1uNZVreT h3,
+.cid-rD1uNZVreT p {
+  color: #767676;
+}
+.cid-rD1uNZVreT .mbr-section-subtitle {
+  font-style: italic;
+}
+#custom-html-f {
+  /* Type valid CSS here */
+}
+#custom-html-f pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0;
+  background: #ffffff;
+  border: 2px solid #777;
+}
+#custom-html-f div {
+  padding: 0px 0;
+  color: #ffffff;
+  text-align: left;
+}
+#custom-html-f p {
+  font-size: 80px;
+  color: #777;
+}
 .cid-rCOzBX1jLz .navbar {
   padding: .5rem 0;
   background: #2d7387;
