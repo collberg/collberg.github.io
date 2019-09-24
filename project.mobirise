@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Tigress",
-    "currentPage": "index.html",
+    "currentPage": "introduction.html",
     "theme": {
       "name": "mobirise4",
       "title": "Mobirise 4",
@@ -2239,7 +2239,7 @@
         {
           "_customTemplate": true,
           "_afterNavbarItem": false,
-          "_customHTML": "<center>\n<div style=\"width:600px;overflow:auto\">\n<pre width=\"50\"><code>tigress \\\n   --Environment=x86_64:Linux:Gcc:4.6 \\\n   --Transform=Flatten \\\n      --Functions=bar \\\n   --out=foo_obf.c foo_in.c \\\n   \nemcc \\\n   -I path-to-emsdk \\\n   -O2 \\\n   foo_obf.c \\\n   -o foo_wasm.html \\\n   -s WASM=1 \\\n   -s ALLOW_MEMORY_GROWTH=1 \\\n   -s AGGRESSIVE_VARIABLE_ELIMINATION=1 \\\n   -s ERROR_ON_UNDEFINED_SYMBOLS=0 \\\n   -s USE_WEBGL2=1 \\\n   -s USE_GLFW=3 \\\n   -s FULL_ES3=1 \\\n   -fmacro-backtrace-limit=0\n</code></pre>\n</div>\n</center>\n",
+          "_customHTML": "<center>\n<div style=\"width:600px;overflow:auto\">\n<pre><code>tigress \\\n   --Environment=x86_64:Linux:Gcc:4.6 \\\n   --Transform=Flatten \\\n      --Functions=bar \\\n   --out=foo_obf.c foo_in.c \\\n   \nemcc \\\n   -I path-to-emsdk \\\n   -O2 \\\n   foo_obf.c \\\n   -o foo_wasm.html \\\n   -s WASM=1 \\\n   -s ALLOW_MEMORY_GROWTH=1 \\\n   -s AGGRESSIVE_VARIABLE_ELIMINATION=1 \\\n   -s ERROR_ON_UNDEFINED_SYMBOLS=0 \\\n   -s USE_WEBGL2=1 \\\n   -s USE_GLFW=3 \\\n   -s FULL_ES3=1 \\\n   -fmacro-backtrace-limit=0\n</code></pre>\n</div>\n</center>\n",
           "_customCSS": "/* Type valid CSS here */\npre {\n  display: block;\n  font-family: monospace;\n  white-space: pre;\n  margin: 1em 0;\n   background: #ffffff;\n   border: 2px solid #777;\n\n} \n\ndiv {\n  padding: 0px 0;\n  color: #ffffff;\n  text-align: left;\n}\np {\n  font-size: 80px;\n  color: #777;\n}",
           "alias": "code-editor",
           "_tags": [
