@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Tigress",
-    "currentPage": "usage.html",
+    "currentPage": "introduction.html",
     "theme": {
       "name": "mobirise4",
       "title": "Mobirise 4",
@@ -1576,7 +1576,7 @@
         {
           "_customTemplate": true,
           "_afterNavbarItem": false,
-          "_customHTML": "<!-- Type valid HTML here -->\n\n<pre><code>    tigress --Verbosity=1 --Environment=x86_64:Linux:Gcc:4.6 --Seed=42 \\\n        --Transform=Flatten \\\n           --Functions=bar \\\n           --FlattenDispatch=switch \\\n           --FlattenObfuscateNext=false \\\n           --FlattenRandomizeBlocks=true \\\n           --FlattenConditionalKinds=branch,compute,flag \\\n           --FlattenImplicitFlowNext=true \\\n        --Transform=Virtualize \\\n           --Functions=bar \\\n           --VirtualizeDispatch=direct \\\n        --Transform=CleanUp \\\n        --CleanUpKinds=annotations,constants,names \\\n        --out=foo_out.c foo.c\n</code></pre>\n",
+          "_customHTML": "<!-- Type valid HTML here -->\n<center>\n    <div style=\"width:800px;overflow:auto\">\n<pre><code>    tigress --Verbosity=1 --Environment=x86_64:Linux:Gcc:4.6 --Seed=42 \\\n        --Transform=Flatten \\\n           --Functions=bar \\\n           --FlattenDispatch=switch \\\n           --FlattenObfuscateNext=false \\\n           --FlattenRandomizeBlocks=true \\\n           --FlattenConditionalKinds=branch,compute,flag \\\n           --FlattenImplicitFlowNext=true \\\n        --Transform=Virtualize \\\n           --Functions=bar \\\n           --VirtualizeDispatch=direct \\\n        --Transform=CleanUp \\\n        --CleanUpKinds=annotations,constants,names \\\n        --out=foo_out.c foo.c\n</code></pre>\n    </div>\n</center>",
           "_customCSS": "/* Type valid CSS here */\npre {\n  display: block;\n  font-family: monospace;\n  white-space: pre;\n  margin: 1em 0;\n   background: #ffffff;\n   border: 2px solid #777;\n\n} \n\ndiv {\n  padding: 0px 0;\n  color: #ffffff;\n  text-align: left;\n}\np {\n  font-size: 80px;\n  color: #777;\n}",
           "alias": "code-editor",
           "_tags": [
