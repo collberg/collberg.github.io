@@ -67,11 +67,930 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/s">free bootstrap themes</a></section><div id="custom-html-i"><!-- Type valid HTML here -->
+<section class="engine"><a href="https://mobirise.info/c">site builder</a></section><div id="custom-html-i"><!-- Type valid HTML here -->
 
 <div>
     
 </div></div>
+
+<div id="custom-html-f"><br><br><br><br>
+
+<a class="anchor" id="virtualize">&nbsp;</a>
+<p>
+   This transformation turns a function into an interpreter, whose
+   bytecode language is specialized for this function. The
+   transformation has been designed to induce as much diversity as
+   possible, i.e. every decision made is dependent on the
+   randomization seed. The diversity is both static and dynamic, i.e. each
+   interpreter variant differs in the structure of its code as well as
+   in its execution pattern.
+</p>
+
+<center><img width="500px" src="tigress-virtualize.png"></center>
+
+<p>
+A generated interpreter consists of a virtual instruction set, 
+specialized for the input function, a bytecode array, a virtual
+program counter (VPC), a virtual stack pointer (VSP), a dispatch
+unit, and a list of instruction handlers, one for each virtual
+instruction:
+<center><img width="500px" src="interpret-3.png"></center>
+</p>
+
+<p>
+For this transformation, Tigress first constructs type-annotated
+abstract syntax tree (AST) from the C source, from which it generates
+control-flow graphs of instruction trees. Tigress then selects a random
+instruction set architecture (ISA) and, using this ISA, generates a
+bytecode program specialized for the input function. Finally, Tigress
+selects a random dispatch method and produces an output program.
+</p>
+
+<a class="anchor" id="diversity">&nbsp;</a>
+<h3>Diversity and Stealth</h3>
+<p><b>Static diversity.</b> Tigress supports two mechanisms for generating 
+ISAs with a high degree of static diversity:</p> 
+<ul>
+   <li> instruction opcodes can be randomized,
+   <li> the ISA can have duplicate instructions with the same semantics, 
+   <li> instructions can pass arguments in arbitrary combinations of stack locations and registers, 
+   <li> instructions can be made arbitrarily long (with highly complex semantics) through the use of superoperators. 
+</ul>
+
+<p><b>Dynamic diversity.</b> We ensure that dynamic execution patterns are 
+diversified by merging randomized bogus functions with the ``real'' 
+function. We can furthermore impede dynamic analysis by making instruction
+traces artificially long.
+</p>
+
+<p>
+<b>Static stealth.</b>
+Not only diversity but also <em>stealth</em> is important for
+interpreters. For static stealth, the <tt>split</tt> transformation can break up the
+interpreter loop into smaller pieces, and the <tt>AddOpaque</tt>
+transformation can make instruction handlers less conspicuous.
+</p>
+
+<p>
+<b>Dynamic stealth.</b>  For dynamic stealth, Tigress interpreters can
+be made <em>reentrant</em>, meaning only a few iterations of the
+dispatch loop are executed at a time, effectively mixing instructions
+executed from the interpreter with instructions executed by the rest
+of the program. This is of particular interest when wanting to hide
+the execution pattern from analysts, and when the exact time that the
+function executes is not important, as long as it completes <em>eventually</em>.
+</p>
+
+<a class="anchor" id="dispatch">&nbsp;</a>
+<h3>Dispatch Method Selection</h3>
+<p>For both static and dynamic diversity, Tigress supports eight different
+dispatch methods. The following code is generated for the different methods,
+   where &Xi;<sup><tt>op1</tt></sup>; is the instruction handler for
+   operator <tt>op1</tt>:</p>
+
+<table class="smalltab">
+   <tr><th>Dispatch</th><th>Generated code</th></tr>
+
+   <tr>
+   <td>switch</td>
+   <td>
+<pre>
+switch(prog[pc]) {
+   op1: &Xi;<sup><tt>op1</tt></sup>; break;
+   op2: &Xi;<sup><tt>op2</tt></sup>; break;
+}
+</pre>
+   </td>
+   </tr>
+
+   <tr>
+   <td>direct</td>
+   <td>
+<pre>
+goto *prog[pc];
+op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto *prog[pc];
+op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *prog[pc];
+</pre>
+   </td>
+   </tr>
+
+   <tr>
+   <td>indirect</td>
+   <td>
+<pre>
+goto *jtab[prog[pc]];
+op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto *jtab[prog[pc]];
+op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *jtab[prog[pc]];
+</pre>
+   </td>
+   </tr>
+
+   <tr>
+   <td>call</td>
+   <td>
+<pre>
+void op1fun(){&Xi;<sup><tt>op1</tt></sup>}
+void op2fun(){&Xi;<sup><tt>op2</tt></sup>}
+&hellip;
+call *prog[pc]();
+</pre>
+   </td>
+
+   <tr>
+   <td>ifnest</td>
+   <td>
+<pre>
+if (prog[pc]==op1) &Xi;<sup><tt>op1</tt></sup>
+else if (prog[pc]==op2) &Xi;<sup><tt>op2</tt></sup>
+else if &hellip;
+</pre>
+   </td>
+
+   <tr>
+   <td>linear, binary, interpolation</td>
+   <td>
+<pre>
+alg = linear|binary|interpolation|&hellip;
+top: 
+   goto *(<bf>search</bf><sup>alg</sup>(map,prog[pc]));
+op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto top;
+op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto top;
+</pre>
+   </td>
+   </tr>
+</table>
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<a class="anchor" id="ISA">&nbsp;</a>
+<h3>Instruction Set Architecture Generation</h3>
+<p>Instruction sets can use stacks, registers, or both to pass values
+between instructions. By default, the following, very simple, instruction
+set is used:</p>
+<pre>
+  labels:         l &isin; <it>Labels</tt> 
+  functions:      f &isin; <it>Funs</it> 
+  variables:      x &isin; <it>Vars</it> 
+  strings:        s &isin; <it>Strings</it> 
+  temporaries:     t ::= <tt>reg</tt><sup><it>int</it></sup> | <tt>stack</tt><sup><it>int</it></supt>  
+  binary operators: <it>binop</it> ::= <tt>add</tt> | <tt>sub</tt> | &hellip;
+  unary operators:  <it>unop</it> ::= <tt>uminus</tt> | <tt>neg</tt> | &hellip;
+  types:           &tau; ::= <tt>int</tt> | <tt>float</tt> | &hellip; | <tt>void *</tt>
+  literals:        &lambda; ::= <tt>intlit</tt> | <tt>floatlit</tt> | &hellip;
+  instructions: e ::=  
+       t &larr; <tt>constant</tt> &tau; &lambda;
+     | t &larr; <tt>local</tt>  x
+     | t &larr; <tt>global</tt>  x
+     | t &larr; <tt>formal</tt>  x
+     | t &larr; <tt>string</tt>  s
+     | t &larr; <tt>binary</tt>  &tau;  <it>binop</it> t t
+     | t &larr; <tt>unary</tt>  &tau;  <it>unop</it> t
+     | t &larr; <tt>convert</tt>  &tau; &tau; t
+     | t &larr; <tt>ternary</tt>  &tau; t t t
+     | t &larr; <tt>load</tt>  &tau; t
+     | <tt>store</tt> &tau; t t
+     | t &larr; <tt>memcpy</tt>  t t <it>int</it>
+     | <tt>call</tt>  f
+     | x, x, &larr; <tt>asm</tt>  s  t, t, &hellip;
+     | <tt>indirectCall</tt>  t
+     | <tt>return</tt>  &tau; t
+     | <tt>goto</tt>  l
+     | t &larr; <tt>addrOfLabel</tt>  l
+     | <tt>indirectGoto</tt>  t
+     | <tt>branchIfTrue</tt>  t  l 
+     | <tt>switch</tt>  &tau; t  &lambda;  &lambda;  l &lang;l, l, &hellip;&rang; 
+     | <tt>merged</tt>  &lang; e, e, \ldots&rang; 
+</pre>
+
+<p>However, a high degree of diversity can be achieved from the way
+instructions communicate with each other, through values stored on the
+stack or passed in virtual registers.  Tigress can generate
+instructions that use any combination of registers and stack storage
+for the inputs they read or the output they produce.
+</p>
+
+<a class="anchor" id="ISADiversity">&nbsp;</a>
+<h3>ISA Diversity through Duplicate Operators and Superoperators</h3>
+<p>
+Tigress can induce further diversity by merging
+instructions into <em>superoperators</em>. New, merged, instructions
+can have an almost abritrary complex semantics, involving multiple arithmetic 
+operations and operations both on the stack and virtual registers.
+For more information on superoperators, see
+<a href="http://dl.acm.org/citation.cfm?id=199526">Optimizing an ANSI
+C interpreter with superoperators</a>
+by <a href="http://proebsting.cs.arizona.edu">Todd Proebsting</a>.
+The complex semantics of instructions generated by superoperators make
+manual analysis of generated interpreters, such as discussed by Rolles
+in <a href="http://dl.acm.org/citation.cfm?id=1855877">Unpacking
+virtualization obfuscators</a>, difficult.
+</p>
+
+<p>Consider setting <tt>--VirtualizeMaxDuplicateOps=2</tt> 
+and <tt>--VirtualizeOperands=mixed</tt> resulting in two <em>store-int</em>
+instructions, one that takes both arguments in registers, and one that takes
+one argument on the stack and the other in a register. Tigress will chose 
+between them randomly. Here are the corresponding instruction handlers:</p>
+<pre>
+case _0__store_int$left_REG_0$right_REG_1: 
+   (_0__pc[0]) ++;
+   *((int *)_0__regs[0][*((int *)_0__pc[0])]._void_star) = _0__regs[0][*((int *)(_0__pc[0] + 4))]._int;
+   _0__pc[0] += 8;
+   break;
+
+case _0__store_int$right_STA_0$left_REG_0: 
+   (_0__pc[0]) ++;
+   *((int *)_0__regs[0][*((int *)_0__pc[0])]._void_star) = _0__stack[0][_0__sp[0] + 0]._int;
+   (_0__sp[0]) --;
+   _0__pc[0] += 4;
+   break;
+</pre>
+
+<p>Consider next setting <tt>--VirtualizeSuperOpsRatio=2.0</tt> and <tt>--VirtualizeMaxMergeLength=10</tt>,
+resulting in virtual instructions with highly complex semantics:
+
+<center><img width="500px" src="super-operators-3.png"></center>
+
+Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:</p>
+<pre>
+case _0__local$result_STA_0$value_LIT_0__\
+   convert_void_star2void_star$left_STA_0$result_REG_0__\
+   load_int$result_REG_0$left_REG_1__\
+   local$result_STA_0$value_LIT_0__\
+   convert_void_star2void_star$left_STA_0$result_REG_0__\
+   store_int$left_REG_0$right_REG_1__\
+   local$result_REG_0$value_LIT_1__\
+   local$result_STA_0$value_LIT_0__\
+   convert_void_star2void_star$left_STA_0$result_REG_0__\
+   load_int$result_STA_0$left_REG_0: 
+    (_0__pc[0]) ++;
+    _0__regs[0][*((int *)(_0__pc[0] + 4))]._void_star = (void *)(_0__locals + *((int *)_0__pc[0]));
+    _0__regs[0][*((int *)(_0__pc[0] + 8))]._int = *((int *)_0__regs[0][*((int *)(_0__pc[0] + 12))]._void_star);
+    _0__regs[0][*((int *)(_0__pc[0] + 20))]._void_star = (void *)(_0__locals + *((int *)(_0__pc[0] + 16)));
+    *((int *)_0__regs[0][*((int *)(_0__pc[0] + 24))]._void_star) = _0__regs[0][*((int *)(_0__pc[0] + 28))]._int;
+    _0__regs[0][*((int *)(_0__pc[0] + 32))]._void_star = (void *)(_0__locals + *((int *)(_0__pc[0] + 36)));
+    _0__regs[0][*((int *)(_0__pc[0] + 44))]._void_star = (void *)(_0__locals + *((int *)(_0__pc[0] + 40)));
+    _0__stack[0][_0__sp[0] + 1]._int = *((int *)_0__regs[0][*((int *)(_0__pc[0] + 48))]._void_star);
+    (_0__sp[0]) ++;
+    _0__pc[0] += 52;
+    break;
+</pre>
+<p>Note that the instruction name really is almost 400 characters long; the
+backslashes are here only for display purposes! Also note that the instruction
+itself is 53 bytes long, almost as long as the 
+<a href="https://groups.google.com/forum/#!topic/comp.arch/OJYBg8o7vcQ">longest VAX instruction</a>
+(<tt>EMODH</tt>, 54 bytes) and much longer than the longest x86 instruction 
+(15 bytes) </p>
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<a class="anchor" id="HandlerObfuscation">&nbsp;</a>
+<h3>Instruction Handler Obfuscation</h3>
+<p>You can split up the generated interpreter by inserting opaque predicates. This is useful to 
+make the instruction handlers and the dispatch logic less conspicuous.</p>
+
+<center><img width="500px" src="split-instruction-handlers-2.png"></center>
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<a class="anchor" id="VPCObfuscation">&nbsp;</a>
+<h3>VPC Obfuscation</h3>
+<p>You can add opaque expressions to the virtual PC to make it 
+more difficult to find.</p>
+
+<p>One possible attack on interpreters is to perform a taint analysis
+on input-dependent variables, and discard any instructions which are
+not tainted (input dependent instructions are colored green, 
+and instructions introduced by the virtualizer are colored blue):
+<center><img width="500px" src="implicit-flow-4.png"></center>
+To frustrate such analyses we can add implicit flow to the VPC:
+<center><img width="500px" src="implicit-flow-6.png"></center>
+
+</p>
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<a class="anchor" id="BogusFunctions">&nbsp;</a>
+<h3>Bogus Functions</h3>
+<p>
+Generate bogus functions that are virtualized along with the "real"
+function. Instructions from the bogus and real function are executed
+cyclically and in sequence, i.e. first an instruction from the real function, then
+one from bogus function number 1, then one from bogus function number 2, etc., 
+and then the process repeats with an instruction from the real 
+function. The purpose is to frustrate dynamic analyses that try to
+locate the virtual program counter, by providing multiple VPCs,
+one "real", and one or more that behave as if they were real, 
+but which interpret unused functions:
+<center><img width="500px" src="bogus-functions-2.png"></center>
+</p>
+
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<a class="anchor" id="BogusLoops">&nbsp;</a>
+<h3>Bogus Loops</h3>
+<p>
+Add random computations to every iteration of the dispatch loop.  
+Use this to frustrate dynamic analysis by 
+<ol>
+   <li>inserting bogus instructions between consecutive iterations of the dispatch loop, 
+       thereby making the dispatch harder to recognize;
+   <li>making traces longer and thereby harder to store and analyze.
+</ol>
+</p>
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<a class="anchor" id="Reentrant">&nbsp;</a>
+<h3>Reentrant Interpreters</h3>
+<p>
+Make interpreters that can execute a few instructions,
+return, and later resume to execute a few more instructions,
+until, eventually, they terminate. This is particularly
+useful when it is not important exactly when
+the a piece of code executes, as long as it executes <em>eventually</em>,
+and where the stealthiness of the computations is paramount.
+</p>
+
+<p>
+The result is an instruction trace that intermixes instructions
+from the original program and the interpreted function:
+<center><img width="500px" src="reentrant-2.png"></center>
+</p>
+
+<p>You must prepare your code in the following ways:</p>
+<ol>
+   <li> <p>The function you want to virtualize must have an argument
+        <tt>int* operation</tt>. It can occur anywhere among the formal parameters:</p>
+<pre>
+void foo(int* operation, int n, int* result) {&hellip;}
+</pre>
+
+<!-- --------------------------- -->
+   <li> <p>The first time foo gets called, operation must be
+        <0, and you must pass actual arguments to foo that
+        it will use throughout the computation:</p>
+<pre>
+int operation = -10; 
+foo(&operation,n,&result);
+</pre>
+       <p>"-10" here means to initialize foo and execute 10
+        instructions.</p>
+<!-- --------------------------- -->
+    <li> <p>Sprinkle calls to foo throughout your program,
+         making sure that operation>0:</p>
+<pre>
+operation = 10;
+foo(&operation,bogus1,&bogus2);  
+</pre>
+         <p>Here you can pass whatever arguments you want to foo, 
+         they won't be used. Rather, the ones that were passed 
+         in the first call will be used throughout. "10" here 
+         means to resume foo and execute 10 instructions.</p>
+<!-- --------------------------- -->
+   <li> <p>You can check if foo has terminated by testing the
+        value of operation after the call:</p>
+<pre>
+operation = 10;
+foo(&operation,bogus1,&bogus2);  
+if (operation > 0)
+   /* we're done! */
+else if (operation < 0)
+   /* more work to do! */
+</pre>
+<!-- --------------------------- -->
+   <li> <p>If you want to make sure that foo has terminated
+        --- because you really want its result at a particular
+          point --- set operation to a large enough value:</p>
+<pre>
+operation = 1000;
+foo(&operation,bogus1,&bogus2);  
+</pre>
+<!-- --------------------------- -->
+   <li> <p>Additional calls to foo once termination has been
+        reached is safe; no additional instructions will
+        be executed.</p>
+<!-- --------------------------- -->
+   <li> <p>If you want to call foo to compute a new value, 
+        call it again with operation<0:</p>
+<pre>
+   int operation = -10; 
+   foo(&operation,n,&result);
+</pre>
+</ol>
+
+<p>To ensure termination you can</p>
+<ol>
+   <li> experiment yourself with how many iterations
+        are necessary to finish the computation;
+   <li> make sure that the last call to foo is passed a
+        huge value to 'operation';
+   <li> put the last call to foo in a loop
+<pre>
+   foo(&operation);   
+   while (operation < 0) {
+      /* some other computation here */
+      operation = 10;
+      foo(&operation);   
+   } 
+   /* result is available here */
+</pre>
+</ol>
+
+<p>It is a good idea to combine reentrant interpreters with
+superoperators. Superoperators produce long instructions
+that perform more work during each iteration, and as a
+result the number of dispatches (i.e. loop iterations)
+is reduced. In other words, if you want to frustrate
+dynamic analysis that looks for evidence of the dispatch
+loop in the instruction trace, superoperators combined
+with reentrant interpreters will reduce the presence of 
+such artifacts.</p>
+
+<a class="anchor" id="EncodingProgram">&nbsp;</a>
+<h3>Encoding the Program Array</h3>
+<p>
+Setting
+<tt>--VirtualizeEncodeByteArray=true</tt>
+results in each program instruction being xor:ed with
+a constant value, thus ensuring that it is
+not in cleartext until it is run:</p>
+<pre>
+unsigned char _5_obf3_$array[1][141]  = 
+     {{
+        (unsigned char)formal$result_STA_0$value_LIT_0 ^ (unsigned char)16,
+        (unsigned char)1 ^ (unsigned char)16,
+        (unsigned char)0 ^ (unsigned char)16,
+        (unsigned char)0 ^ (unsigned char)16,
+        (unsigned char)0 ^ (unsigned char)16,
+        (unsigned char)load_int$left_STA_0$result_STA_0 ^ (unsigned char)16,
+        (unsigned char)formal$result_STA_0$value_LIT_0 ^ (unsigned char)16,
+        (unsigned char)0 ^ (unsigned char)16,
+        (unsigned char)0 ^ (unsigned char)16,
+        (unsigned char)0 ^ (unsigned char)16,
+        (unsigned char)0 ^ (unsigned char)16,
+        ...
+     }}
+</pre>
+<p>This does not work for <tt>--VirtualizeDispatch=direct</tt>.</p>
+
+<p>Additionally, setting <tt>--VirtualizeObfuscateDecodeByteArray=true</tt> and
+<tt>--VirtualizeOpaqueStructs=input,env</tt> ensures that the decoded 
+bytecode array depends on input. The decoding procedure looks like this:
+<pre>
+  strcmp_result17 = (int)strlen(*(argv + (argc - 1)));
+  decodeVar16 = (strcmp_result17 - 1 < 0) + (strcmp_result17 - 10 > 0) ? currentOp : (unsigned char)16;
+  copyIndex15 = 0;
+  while (copyIndex15 < 141) {
+    localArrayCopy11[0][copyIndex15] = array[0][copyIndex15] ^ decodeVar16;
+    copyIndex15 ++;
+  }
+  $pc[0] = localArrayCopy11[0];
+</pre>
+</p>
+
+<p>Here's an example script:</p>
+<pre>
+tigress --Seed=0 \
+   --Transform=InitImplicitFlow \
+   --Transform=InitEntropy \
+   --Transform=InitOpaque --Functions=main --InitOpaqueStructs=input \
+   --Transform=UpdateEntropy --Functions=main --UpdateEntropyVar=argv,argc \
+   --Inputs="+1:int:42,-1:length:1?10" \
+   --Transform=Virtualize --InitOpaqueStructs=input,env \
+   --VirtualizeDispatch=interpolation --Functions=obf3 \
+   --VirtualizeEncodeByteArray=true \
+   --VirtualizeObfuscateDecodeByteArray=true \
+   --VirtualizeOpaqueStructs=input,env \
+      arith.c --out=arith_out.c
+</pre>
+<p><tt>--Inputs="+1:int:42,-1:length:1?10"</tt> is a specfication of invariants over
+the command line. It specifies:</p>
+<ul>
+   <li> the first argument on the command line should be the integer 42</li>
+   <li> the last argument should have a length between 1 and 10 </li>
+</ul>
+<p><tt>--VirtualizeOpaqueStructs=input,env</tt> ensures that the 
+program array will be encoded based on these command line invariants.
+If the program is invoked with a set of command line arguments that
+violate the invariants it is likely to crash.
+</p>
+
+<a class="anchor" id="DynamicProgram">&nbsp;</a>
+<h3>Dynamic Program Arrays</h3>
+<p>
+Setting <tt>--VirtualizeDynamicBytecode=true</tt>
+results in the program array being constantly modified at runtime,
+much in the same way that happens to jitted code in the 
+<a href="../jitDynamic/index.html">JitDynamic</a> 
+transformation. In fact, exactly the same mechanisms are used
+for both transformations, and they share all the same options.</p>
+
+<p>Here's an example script:</p>
+<pre>
+tigress --Seed=0 \
+   --Transform=Virtualize \
+      --Functions=foo \
+      --VirtualizeDispatch=switch \
+      --VirtualizeDynamicBytecode=true \
+      --VirtualizeDynamicCodecs=xtea \
+      --VirtualizeDynamicKeyTypes=data \
+      --VirtualizeDynamicBlockFraction=%100 \
+      --VirtualizeDynamicReEncode=true \
+      --VirtualizeDynamicRandomizeBlocks=false \
+      --VirtualizeDynamicDumpCFG=false \
+      --VirtualizeDynamicAnnotateTree=false \
+      --VirtualizeDynamicDumpTree=false \
+      --VirtualizeDynamicDumpIntermediate=false \
+      --VirtualizeDynamicTrace=0 \
+      --VirtualizeDynamicTraceExec=false \
+      --VirtualizeDynamicTraceBlock=false \
+      --VirtualizeDynamicCompileCommand="gcc -o %o %i -lm" \
+      arith.c --out=arith_out.c
+</pre>
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<a class="anchor" id="options">&nbsp;</a>
+<h3>Options</h3>
+INPUT options.html
+
+<a class="anchor" id="examples">&nbsp;</a>
+<H3>Examples</H3>
+<p>As you are reading the code, there are a couple of interesting things to note:</p>
+<ul>
+   <li> Much of the symbolic information present in the transformed
+        source files (such as types, enumerations, and structured
+        control flow) that help make the code easy to read and
+        understand, disappears once the source has been compiled,
+        linked, and stripped.  A successful attack will (at least partially) 
+        have to recover this information.
+   <li> The code after <em>two</em> levels of virtualization looks very similar to
+        the code after <em>one</em> level of virtualization. This is because the
+        dispatch loop of the first virtualization gets coded into the bytecode
+        program of the second. It's an interesting question to ask to what
+        extent this hinders de-virtualization.
+   <li> The <tt>direct</tt> and <tt>call</tt> dispatch methods result
+        in much larger bytecode programs than the other methods. This
+        is particularly evident on 64-bit machines where every opcode
+        gets encoded in 8 bytes, in contrast with a single byte for
+        the other methods. For this reason, if you are contemplating
+        using two levels of interpretation, it's a good idea to make
+        the second level <em>not</em> use <tt>direct</tt> or <tt>call</tt>
+        dispatch, to keep the size of the program down. Future versions
+        of Tigress will use more compact encodings for these types of
+        dispatch.
+</ul>
+
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt> in <a href="test1.c">test1.c</a> using each of the
+         dispatch methods.
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize_generic.sh
+</pre>
+      </td>
+   </tr>
+</table>
+
+<table class="virttable">
+INPUT one-level-virtualize.html
+</table>
+
+<p />
+<!-- -------------------------------------------------------------------------------- -->
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize &rArr; Virtualize
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt> in <a href="test1.c">test1.c</a> using two
+         levels of interepretation.
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize-virtualize_generic.sh
+</pre>
+      </td>
+   </tr>
+</table>
+
+<table class="virttable">
+INPUT two-levels-virtualize.html
+</table>
+
+<p />
+<!-- -------------------------------------------------------------------------------- -->
+
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt> using a switch dispatch, mixed register
+         and stack arguments, and at most two instruction variants of each
+         kind (i.e., no more than 2 ADD instructions, etc.).
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize_mixed.sh
+</pre>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="test1.c">test1.c</a> 
+         &rArr;
+         <a href="virtualize_mixed.sh">virtualize_mixed.sh</a>
+         &rArr;
+         <a href="gen/virtualize_mixed.c">virtualize_mixed.c</a>
+      </td>
+   </tr>
+</table>
+<p />
+<!-- -------------------------------------------------------------------------------- -->
+
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt> using a switch dispatch, register
+         and stack arguments, at most two instruction variants of each
+         kind, and superoperators of length no more than 10.
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize_super.sh
+</pre>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="test1.c">test1.c</a> 
+         &rArr;
+         <a href="virtualize_super.sh">virtualize_super.sh</a>
+         &rArr;
+         <a href="gen/virtualize_super.c">virtualize_super.c</a>
+      </td>
+   </tr>
+</table>
+
+<p />
+<!-- -------------------------------------------------------------------------------- -->
+
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt> using a switch dispatch, register
+         and stack arguments, at most two instruction variants of each
+         kind, obfuscate operators of length no more than 10, add 
+         opaque expressions to the dispatch, and split up instruction
+         handlers using opaque predicates.
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize_obfuscate.sh
+</pre>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="test1.c">test1.c</a> 
+         &rArr;
+         <a href="virtualize_obfuscate.sh">virtualize_obfuscate.sh</a>
+         &rArr;
+         <a href="gen/virtualize_obfuscate.c">virtualize_obfuscate.c</a>
+      </td>
+   </tr>
+</table>
+
+<p />
+<!-- -------------------------------------------------------------------------------- -->
+
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt> using an interpolation dispatch,
+         running a bogus function in parallel (to thwart virtual PC
+         pattern matching attempts), and inserting bogus computation
+         between instruction executions (to increase the length of
+         instruction traces).
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize_bogus.sh
+</pre>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="test1.c">test1.c</a> 
+         &rArr;
+         <a href="virtualize_bogus.sh">virtualize_bogus.sh</a>
+         &rArr;
+         <a href="gen/virtualize_bogus.c">virtualize_bogus.c</a>
+      </td>
+   </tr>
+</table>
+
+<p />
+<!-- -------------------------------------------------------------------------------- -->
+
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt> using an ifnest dispatch,
+         and make it reentrant, i.e. call <tt>fib</tt> from multiple
+         places in the program, executing a few instructions at a time,
+         to make the trace less conspicuous. Make as long superoperators
+         as possible, to further reduce the number of times the dispatch
+         loop executes.
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize_reentrant.sh
+</pre>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="test2.c">test2.c</a> 
+         &rArr;
+         <a href="virtualize_reentrant.sh">virtualize_reentrant.sh</a>
+         &rArr;
+         <a href="gen/virtualize_reentrant.c">virtualize_reentrant.c</a>
+      </td>
+   </tr>
+</table>
+
+<p />
+<!-- -------------------------------------------------------------------------------- -->
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize &rArr; Virtualize
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt> twice, calling Tigress twice from the command line.
+         Use the <tt>--FilePrefix</tt> option to avoid name clashes.
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize-virtualize-prefix.sh
+</pre>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="test1.c">test1.c</a> 
+         &rArr;
+         <a href="virtualize-virtualize-prefix.sh">virtualize-virtualize-prefix.sh</a>
+         &rArr;
+         <a href="gen/virtualize-virtualize-prefix.c">virtualize-virtualize-prefix.c</a>
+      </td>
+   </tr>
+</table>
+<p />
+
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize &rArr; Split
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt>, and split up the resulting function
+         in order to make the dispatch loop more statically stealthy.
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize-split.sh
+</pre>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="examples/test1.c">test1.c</a> 
+         &rArr;
+         <a href="virtualize-split.sh">.virtualize-split.sh</a>
+         &rArr;
+         <a href="gen/virtualize-split.c">virtualize-split.c</a>
+      </td>
+   </tr>
+</table>
+
+<p />
+<!-- -------------------------------------------------------------------------------- -->
+
+<table class="exampletable">
+   <tr>
+      <th>
+         Virtualize &rArr; Flatten
+      </th>
+   </tr>
+   <tr>
+      <td>
+         Virtualize <tt>fib</tt> using an ifnest dispatch and flatten
+         the resulting function using a goto dispatch.
+      </td>
+   </tr>
+   <tr>
+      <td>
+<pre>
+INPUT virtualize-flatten.sh
+</pre>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="test1.c">test1.c</a> 
+         &rArr;
+         <a href="irtualize-flatten.sh">.virtualize-flatten.sh</a>
+         &rArr;
+         <a href="gen/virtualize-flatten.c">virtualize-flatten.c</a>
+      </td>
+   </tr>
+</table>
+
+<a class="anchor" id="issues">&nbsp;</a>
+<h3>Issues</h3>
+<ul>
+   <li> <p>Several dispatch methods make use of <tt>gcc's</tt> and <tt>clang</tt>
+        <em>labels-as-values</em>. For other compilers only
+        the <tt>switch</tt> and <tt>ifnest</tt> dispatch methods should be
+        used.</p>
+   <li> <tt>--VirtualizeEncodeByteArray=true</tt> does not work for the <em>direct</em>
+        dispatch method.
+   <li> <p>Our current implementation of reentrant interpreters doesn't handle function
+        results, so make sure your function is void, and returns the result in a global 
+        or in a formal parameter.</p>
+   <li> The <tt>--VirtualizeConditionalKinds=flag</tt> option seems to have
+        multiple issues on MacOS/llvm. Presumably this is due to some compiler 
+        problem related to inline assembly.
+   <li> Consider this example taken from gcc's <tt>comp-goto-1.c</tt> torture test:
+<pre>
+goto *(base_addr + insn.f1.offset);
+</pre>
+      This kind of arithmetic on the program counter is going to fail for 
+      transformations that completely restructure the code, such as
+      virtualization.
+</ul>
+</div>
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
