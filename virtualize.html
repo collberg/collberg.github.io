@@ -80,15 +80,6 @@
    in its execution pattern.
 </p></div></div></section>
 
-<center>
-<video  width="1280" height="720" controls>
-  <source src="tigress3-videos/interpreter.m4v" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</center>
-
-<center><img width="500px" src="tigress3-images/tigress-virtualize.png"></center>
-
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 A generated interpreter consists of a virtual instruction set, 
 specialized for the input function, a bytecode array, a virtual
@@ -97,8 +88,39 @@ unit, and a list of instruction handlers, one for each virtual
 instruction. This video shows an example of the inner workings of
 an interpreter:
 
+<center>
+<video  width="640" height="360" controls style="border:5px solid red;">
+  <source src="tigress3-videos/interpreter.m4v" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</center>
 
-<center><img width="500px" src="tigress3-images/interpret-3.png"></center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"> Here's an example of an interpreter constructed by Tigress for the program
+<code>main(){int x; x++;}</code>>:</p></div></div></section>
+<center>
+<div style="width:800px;overflow:auto">
+<pre><code>enum ops {Locals = 116, Plus  = 135, Load   = 60, Goto = 231,
+          Const  = 3,   Store = 122, Return = 72};
+
+unsigned char bytecode[41]  = {
+ Locals,24,0,0,0,Const,1,0,0,0,Locals,24,0,0,0,Load,Plus,Store,Locals,
+ 28,0,0,0,Const,0,0,0,0,Store,Goto,4,0,0,0,Locals,28,0,0,0,Load,Return};
+
+int main() { 
+  while (1) {
+    switch (*pc) {
+    case Const: pc++; (sp+1)->_int = *((int *)pc); sp++; pc+=4; break;
+    case Load: pc++; sp->_int = *((int *)sp->_vs); break;
+    case Goto: pc++; pc+= *((int *)pc); break;
+    case Plus: pc++; (sp+-1)->_int=sp->_int+(sp+-1)->_int; sp--; break;
+    case Return: pc++; return (sp->_int); break;
+    case Store: pc++; *((int *)(sp+-1)->_vs)=sp->_int; sp+=-2; break;
+    case Locals: pc++; (sp+1)->_vs=(void *)(vars+*((int *)pc)); 
+                 sp++; pc+=4; break;
+}}
+</code></pre>
+</div>
+</center>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 For this transformation, Tigress first constructs type-annotated
@@ -236,6 +258,7 @@ op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto top;
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Instruction sets can use stacks, registers, or both to pass values
 between instructions. By default, the following, very simple, instruction
 set is used:</p></div></div></section>
+<center>
 <div style="width:800px;overflow:auto">
 <pre><code>  labels:         l &isin; <it>Labels</tt> 
   functions:      f &isin; <it>Funs</it> 
@@ -271,6 +294,7 @@ set is used:</p></div></div></section>
      | <tt>merged</tt>  &lang; e, e, \ldots&rang; 
 </code></pre>
 </div>
+</center>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">However, a high degree of diversity can be achieved from the way
 instructions communicate with each other, through values stored on the
@@ -301,6 +325,7 @@ and <tt>--VirtualizeOperands=mixed</tt> resulting in two <em>store-int</em>
 instructions, one that takes both arguments in registers, and one that takes
 one argument on the stack and the other in a register. Tigress will chose 
 between them randomly. Here are the corresponding instruction handlers:</p></div></div></section>
+<center>
 <div style="width:800px;overflow:auto">
 <pre><code>case _0__store_int$left_REG_0$right_REG_1: 
    (_0__pc[0]) ++;
@@ -316,6 +341,7 @@ case _0__store_int$right_STA_0$left_REG_0:
    break;
 </code></pre>
 </div>
+</center>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider next setting <tt>--VirtualizeSuperOpsRatio=2.0</tt> and <tt>--VirtualizeMaxMergeLength=10</tt>,
 resulting in virtual instructions with highly complex semantics:
@@ -323,6 +349,7 @@ resulting in virtual instructions with highly complex semantics:
 <center><img width="500px" src="tigress3-images/super-operators-3.png"></center>
 
 Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:</p></div></div></section>
+<center>
 <div style="width:800px;overflow:auto">
 <pre><code>case _0__local$result_STA_0$value_LIT_0__\
    convert_void_star2void_star$left_STA_0$result_REG_0__\
@@ -347,6 +374,7 @@ Here is the instruction handler for one such instruction, made up by merging 10 
     break;
 </code></pre>
 </div>
+</center>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Note that the instruction name really is almost 400 characters long; the
 backslashes are here only for display purposes! Also note that the instruction
 itself is 53 bytes long, almost as long as the 
@@ -424,6 +452,15 @@ useful when it is not important exactly when
 the a piece of code executes, as long as it executes <em>eventually</em>,
 and where the stealthiness of the computations is paramount.
 </p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This video shows how making an interpreter reentrant will mix instructions from
+the interpreter with instructions from the surrounding code:</p></div></div></section>
+<center>
+<video  width="640" height="360" controls style="border:5px solid red;">
+  <source src="tigress3-videos/interpreter.m4v" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</center>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The result is an instruction trace that intermixes instructions
@@ -572,6 +609,7 @@ bytecode array depends on input. The decoding procedure looks like this:
 </p></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here's an example script:</p></div></div></section>
+<center>
 <div style="width:800px;overflow:auto">
 <pre><code>tigress --Seed=0 \
    --Transform=InitImplicitFlow \
@@ -587,6 +625,7 @@ bytecode array depends on input. The decoding procedure looks like this:
       arith.c --out=arith_out.c
 </code></pre>
 </div>
+</center>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><tt>--Inputs="+1:int:42,-1:length:1?10"</tt> is a specfication of invariants over
 the command line. It specifies:</p></div></div></section>
 <br>
@@ -610,6 +649,7 @@ transformation. In fact, exactly the same mechanisms are used
 for both transformations, and they share all the same options.</p></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here's an example script:</p></div></div></section>
+<center>
 <div style="width:800px;overflow:auto">
 <pre><code>tigress --Seed=0 \
    --Transform=Virtualize \
@@ -632,6 +672,7 @@ for both transformations, and they share all the same options.</p></div></div></
       arith.c --out=arith_out.c
 </code></pre>
 </div>
+</center>
 
 <!-- -------------------------------------------------------------------------------- -->
 
