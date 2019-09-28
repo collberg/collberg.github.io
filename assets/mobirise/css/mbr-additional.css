@@ -5380,19 +5380,6 @@ section.lazy-placeholder:after {
 .cid-rCVAjB6XUk .mbr-section-subtitle {
   font-style: italic;
 }
-.cid-rDkEr7xC5A {
-  background: #ffffff;
-  padding-top: 0px;
-  padding-bottom: 120px;
-}
-.cid-rDkEr7xC5A .video-block {
-  margin: auto;
-}
-@media (max-width: 768px) {
-  .cid-rDkEr7xC5A .video-block {
-    width: 100% !important;
-  }
-}
 .cid-rCFaEeaKON .navbar {
   padding: .5rem 0;
   background: #2d7387;
