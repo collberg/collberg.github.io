@@ -89,16 +89,15 @@ instruction. This video shows an example of the inner workings of
 an interpreter:
 
 <center>
-<video  width="640" height="360" controls style="border:5px solid red;">
+<video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/interpreter.m4v" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </center>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"> Here's an example of an interpreter constructed by Tigress for the program
-<code>main(){int x; x++;}</code>>:</p></div></div></section>
-<center>
-<div style="width:800px;overflow:auto">
+<code>main(){int x; x++;}</code>:</p></div></div></section>
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>enum ops {Locals = 116, Plus  = 135, Load   = 60, Goto = 231,
           Const  = 3,   Store = 122, Return = 72};
 
@@ -120,7 +119,6 @@ int main() {
 }}
 </code></pre>
 </div>
-</center>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 For this transformation, Tigress first constructs type-annotated
@@ -179,7 +177,7 @@ dispatch methods. The following code is generated for the different methods,
    <tr>
    <td>switch</td>
    <td>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>switch(prog[pc]) {
    op1: &Xi;<sup><tt>op1</tt></sup>; break;
    op2: &Xi;<sup><tt>op2</tt></sup>; break;
@@ -192,7 +190,7 @@ dispatch methods. The following code is generated for the different methods,
    <tr>
    <td>direct</td>
    <td>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>goto *prog[pc];
 op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto *prog[pc];
 op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *prog[pc];
@@ -204,7 +202,7 @@ op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *prog[pc];
    <tr>
    <td>indirect</td>
    <td>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>goto *jtab[prog[pc]];
 op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto *jtab[prog[pc]];
 op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *jtab[prog[pc]];
@@ -216,7 +214,7 @@ op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *jtab[prog[pc]];
    <tr>
    <td>call</td>
    <td>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>void op1fun(){&Xi;<sup><tt>op1</tt></sup>}
 void op2fun(){&Xi;<sup><tt>op2</tt></sup>}
 &hellip;
@@ -228,7 +226,7 @@ call *prog[pc]();
    <tr>
    <td>ifnest</td>
    <td>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>if (prog[pc]==op1) &Xi;<sup><tt>op1</tt></sup>
 else if (prog[pc]==op2) &Xi;<sup><tt>op2</tt></sup>
 else if &hellip;
@@ -239,7 +237,7 @@ else if &hellip;
    <tr>
    <td>linear, binary, interpolation</td>
    <td>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>alg = linear|binary|interpolation|&hellip;
 top: 
    goto *(<bf>search</bf><sup>alg</sup>(map,prog[pc]));
@@ -259,7 +257,7 @@ op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto top;
 between instructions. By default, the following, very simple, instruction
 set is used:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>  labels:         l &isin; <it>Labels</tt> 
   functions:      f &isin; <it>Funs</it> 
   variables:      x &isin; <it>Vars</it> 
@@ -326,7 +324,7 @@ instructions, one that takes both arguments in registers, and one that takes
 one argument on the stack and the other in a register. Tigress will chose 
 between them randomly. Here are the corresponding instruction handlers:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>case _0__store_int$left_REG_0$right_REG_1: 
    (_0__pc[0]) ++;
    *((int *)_0__regs[0][*((int *)_0__pc[0])]._void_star) = _0__regs[0][*((int *)(_0__pc[0] + 4))]._int;
@@ -350,7 +348,7 @@ resulting in virtual instructions with highly complex semantics:
 
 Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>case _0__local$result_STA_0$value_LIT_0__\
    convert_void_star2void_star$left_STA_0$result_REG_0__\
    load_int$result_REG_0$left_REG_1__\
@@ -456,8 +454,8 @@ and where the stealthiness of the computations is paramount.
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This video shows how making an interpreter reentrant will mix instructions from
 the interpreter with instructions from the surrounding code:</p></div></div></section>
 <center>
-<video  width="640" height="360" controls style="border:5px solid red;">
-  <source src="tigress3-videos/interpreter.m4v" type="video/mp4">
+<video  width="630" height="360" controls style="border:5px solid black;">
+  <source src="tigress3-videos/reentrant.m4v" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </center>
@@ -472,7 +470,7 @@ from the original program and the interpreted function:
 <ol>
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The function you want to virtualize must have an argument
         <tt>int* operation</tt>. It can occur anywhere among the formal parameters:</p></div></div></section>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>void foo(int* operation, int n, int* result) {&hellip;}
 </code></pre>
 </div>
@@ -481,7 +479,7 @@ from the original program and the interpreted function:
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The first time foo gets called, operation must be
         <0, and you must pass actual arguments to foo that
         it will use throughout the computation:</p></div></div></section>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>int operation = -10; 
 foo(&operation,n,&result);
 </code></pre>
@@ -491,7 +489,7 @@ foo(&operation,n,&result);
 <!-- --------------------------- -->
     <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Sprinkle calls to foo throughout your program,
          making sure that operation>0:</p></div></div></section>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>operation = 10;
 foo(&operation,bogus1,&bogus2);  
 </code></pre>
@@ -503,7 +501,7 @@ foo(&operation,bogus1,&bogus2);
 <!-- --------------------------- -->
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can check if foo has terminated by testing the
         value of operation after the call:</p></div></div></section>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>operation = 10;
 foo(&operation,bogus1,&bogus2);  
 if (operation > 0)
@@ -516,7 +514,7 @@ else if (operation < 0)
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you want to make sure that foo has terminated
         --- because you really want its result at a particular
           point --- set operation to a large enough value:</p></div></div></section>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>operation = 1000;
 foo(&operation,bogus1,&bogus2);  
 </code></pre>
@@ -528,7 +526,7 @@ foo(&operation,bogus1,&bogus2);
 <!-- --------------------------- -->
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you want to call foo to compute a new value, 
         call it again with operation<0:</p></div></div></section>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>   int operation = -10; 
    foo(&operation,n,&result);
 </code></pre>
@@ -542,7 +540,7 @@ foo(&operation,bogus1,&bogus2);
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; make sure that the last call to foo is passed a
         huge value to 'operation';
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; put the last call to foo in a loop
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>   foo(&operation);   
    while (operation < 0) {
       /* some other computation here */
@@ -572,7 +570,7 @@ Setting
 results in each program instruction being xor:ed with
 a constant value, thus ensuring that it is
 not in cleartext until it is run:</p></div></div></section>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>unsigned char _5_obf3_$array[1][141]  = 
      {{
         (unsigned char)formal$result_STA_0$value_LIT_0 ^ (unsigned char)16,
@@ -595,7 +593,7 @@ not in cleartext until it is run:</p></div></div></section>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Additionally, setting <tt>--VirtualizeObfuscateDecodeByteArray=true</tt> and
 <tt>--VirtualizeOpaqueStructs=input,env</tt> ensures that the decoded 
 bytecode array depends on input. The decoding procedure looks like this:
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>  strcmp_result17 = (int)strlen(*(argv + (argc - 1)));
   decodeVar16 = (strcmp_result17 - 1 < 0) + (strcmp_result17 - 10 > 0) ? currentOp : (unsigned char)16;
   copyIndex15 = 0;
@@ -610,7 +608,7 @@ bytecode array depends on input. The decoding procedure looks like this:
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here's an example script:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>tigress --Seed=0 \
    --Transform=InitImplicitFlow \
    --Transform=InitEntropy \
@@ -650,7 +648,7 @@ for both transformations, and they share all the same options.</p></div></div></
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here's an example script:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>tigress --Seed=0 \
    --Transform=Virtualize \
       --Functions=foo \
@@ -723,7 +721,7 @@ INPUT options.html
         multiple issues on MacOS/llvm. Presumably this is due to some compiler 
         problem related to inline assembly.
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Consider this example taken from gcc's <tt>comp-goto-1.c</tt> torture test:
-<div style="width:800px;overflow:auto">
+<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
 <pre><code>goto *(base_addr + insn.f1.offset);
 </code></pre>
 </div>
