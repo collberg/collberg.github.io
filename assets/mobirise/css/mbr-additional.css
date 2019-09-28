@@ -5381,10 +5381,9 @@ section.lazy-placeholder:after {
   font-style: italic;
 }
 .cid-rDkEr7xC5A {
-  background: #149dcc;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background: linear-gradient(0deg, #149dcc, #ffffff);
+  background: #ffffff;
+  padding-top: 0px;
+  padding-bottom: 120px;
 }
 .cid-rDkEr7xC5A .video-block {
   margin: auto;
