@@ -97,8 +97,8 @@ an interpreter:
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"> Here's an example of an interpreter constructed by Tigress for the program
 <code>main(){int x; x++;}</code>:</p></div></div></section>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>enum ops {Locals = 116, Plus  = 135, Load   = 60, Goto = 231,
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">enum ops {Locals = 116, Plus  = 135, Load   = 60, Goto = 231,
           Const  = 3,   Store = 122, Return = 72};
 
 unsigned char bytecode[41]  = {
@@ -118,8 +118,7 @@ int main() {
                  sp++; pc+=4; break;
 }}
 </code></pre>
-</div>
-
+</center>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 For this transformation, Tigress first constructs type-annotated
 abstract syntax tree (AST) from the C source, from which it generates
@@ -164,6 +163,111 @@ the execution pattern from analysts, and when the exact time that the
 function executes is not important, as long as it completes <em>eventually</em>.
 </p></div></div></section>
 
+<h3 align=center>Usage</h3>
+A typical call to Tigress to virtualize a function <code>foo</code> looks like this:
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+   --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=Virtualize \
+      --Functions=foo \
+      --VirtualizeDispatch=direct \
+   --out=out.c in.c
+</code></pre>
+
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>Virtualize</tt></td>
+<td> Turn a function into an interpreter. </td>
+</tr>
+<tr>
+<td><tt>--VirtualizeShortIdents</tt></td>
+<td><tt>bool</tt></td>
+<td> Generate shorter identifiers to produce interpreters suitable for publication. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizePerformance</tt></td>
+<td><tt>IndexedStack, PointerStack, AddressSizeShort, AddressSizeInt, AddressSizeLong, CacheTop</tt></td>
+<td> Tweak performance. A comma-separated list of the options below. DEFAULT PointerStack 
+<ul>
+   <li> <tt>IndexedStack</tt> = Use array indexing to access stack elements.
+   <li> <tt>PointerStack</tt> = Use pointer operations to access stack elements.
+   <li> <tt>AddressSizeShort</tt> = Assume addresses for accessing instruction handlers fit in a short.
+   <li> <tt>AddressSizeInt</tt> = Assume addresses for accessing instruction handlers fit in an int.
+   <li> <tt>AddressSizeLong</tt> = Assume addresses for accessing instruction handlers fit in a long.
+   <li> <tt>CacheTop</tt> = Store the top of stack in a register.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeOptimizeBody</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Clean up after superoperator generation by optimizing the body of the generated function. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeOptimizeTreeCode</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Do constant folding etc. prior to interpreter generation. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeTrace</tt></td>
+<td><tt>instr, args, stack, regs, *</tt></td>
+<td> Insert tracing code to show the stack and the virtual instructions executing. Default=print nothing.
+<ul>
+   <li> <tt>instr</tt> = print instruction names
+   <li> <tt>args</tt> = print instruction names and arguments
+   <li> <tt>stack</tt> = print stack contents (currently only works if you set <tt>--VirtualizePerformance=IndexedStack</tt>)
+   <li> <tt>regs</tt> = print register contents (not implemented)
+   <li> <tt>*</tt> = select all options
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeStackSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Number of elements in the evaluation stack. Default=32.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeComment</tt></td>
+<td><tt>bool</tt></td>
+<td> Insert comments in the generated interpreter. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDump</tt></td>
+<td><tt>tree, ISA, instrs, types, vars, strings, SuperOps, calls, bytes, array, stack, *</tt></td>
+<td> Dump internal data structures used by the virtualizer. Comma-separated list. Default=dump nothing.
+<ul>
+   <li> <tt>tree</tt> = dump the expression trees generated from the CIL representation
+   <li> <tt>ISA</tt> = dump the Instruction Set Architecture
+   <li> <tt>instrs</tt> = dump the generated virtual instructions
+   <li> <tt>types</tt> = dump the types found
+   <li> <tt>vars</tt> = dump the local variables found
+   <li> <tt>strings</tt> = dump the strings found
+   <li> <tt>SuperOps</tt> = dump the super operator instructions
+   <li> <tt>calls</tt> = dump the function calls found
+   <li> <tt>bytes</tt> = dump the bytecode array
+   <li> <tt>array</tt> = dump the instruction array
+   <li> <tt>stack</tt> = dump the evaluation stack
+   <li> <tt>*</tt> = select all options
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeConditionalKinds</tt></td>
+<td><tt>branch, compute, flag</tt></td>
+<td> Ways to transform the one conditional branch that occurs in instruction handlers. Default=branch.
+<ul>
+   <li> <tt>branch</tt> = Use normal branches, such as <tt>if (a>b) VPC=L1 else VPC=L2</tt>
+   <li> <tt>compute</tt> = Compute the branch, such as <tt>x=(a>b); VPC=*(<em>expression over <tt>x</tt></em>)</tt>. Not yet implemented.
+   <li> <tt>flag</tt> = Compute the branch from the values of the flag register, such as <tt>asm("cmp a b;pushf;pop"); VPC=*(<em>expression over <tt>flag register</tt></em>)</tt>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+
 <a class="anchor" id="dispatch">&nbsp;</a>
 <h3 align=center>Dispatch Method Selection</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">For both static and dynamic diversity, Tigress supports eight different
@@ -177,77 +281,89 @@ dispatch methods. The following code is generated for the different methods,
    <tr>
    <td>switch</td>
    <td>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>switch(prog[pc]) {
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">switch(prog[pc]) {
    op1: &Xi;<sup><tt>op1</tt></sup>; break;
    op2: &Xi;<sup><tt>op2</tt></sup>; break;
 }
 </code></pre>
-</div>
    </td>
    </tr>
 
    <tr>
    <td>direct</td>
    <td>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>goto *prog[pc];
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *prog[pc];
 op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto *prog[pc];
 op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *prog[pc];
 </code></pre>
-</div>
    </td>
    </tr>
 
    <tr>
    <td>indirect</td>
    <td>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>goto *jtab[prog[pc]];
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *jtab[prog[pc]];
 op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto *jtab[prog[pc]];
 op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *jtab[prog[pc]];
 </code></pre>
-</div>
    </td>
    </tr>
 
    <tr>
    <td>call</td>
    <td>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>void op1fun(){&Xi;<sup><tt>op1</tt></sup>}
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void op1fun(){&Xi;<sup><tt>op1</tt></sup>}
 void op2fun(){&Xi;<sup><tt>op2</tt></sup>}
 &hellip;
 call *prog[pc]();
 </code></pre>
-</div>
    </td>
 
    <tr>
    <td>ifnest</td>
    <td>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>if (prog[pc]==op1) &Xi;<sup><tt>op1</tt></sup>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if (prog[pc]==op1) &Xi;<sup><tt>op1</tt></sup>
 else if (prog[pc]==op2) &Xi;<sup><tt>op2</tt></sup>
 else if &hellip;
 </code></pre>
-</div>
    </td>
 
    <tr>
    <td>linear, binary, interpolation</td>
    <td>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>alg = linear|binary|interpolation|&hellip;
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">alg = linear|binary|interpolation|&hellip;
 top: 
    goto *(<bf>search</bf><sup>alg</sup>(map,prog[pc]));
 op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto top;
 op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto top;
 </code></pre>
-</div>
    </td>
    </tr>
 </table>
+
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--VirtualizeDispatch</tt></td>
+<td><tt>switch, direct, indirect, call, ifnest, linear, binary, interpolation, ?</tt></td>
+<td> Select the interpreter's dispatch method. The argument should be a comma-separated list of disparch kinds. One of these will be picked at random. Default=switch.
+<ul>
+   <li> <tt>switch</tt> = dispatch by while(){switch(next){...}}
+   <li> <tt>direct</tt> = dispatch by direct threading
+   <li> <tt>indirect</tt> = dispatch by indirect threading
+   <li> <tt>call</tt> = dispatch by call threading
+   <li> <tt>ifnest</tt> = dispatch by nested if-statements
+   <li> <tt>linear</tt> = dispatch by searching a table using linear search
+   <li> <tt>binary</tt> = dispatch by searching a table using binary search
+   <li> <tt>interpolation</tt> = dispatch by searching a table using interpolation search
+   <li> <tt>?</tt> = Pick a random dispatch method
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -257,8 +373,7 @@ op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto top;
 between instructions. By default, the following, very simple, instruction
 set is used:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>  labels:         l &isin; <it>Labels</tt> 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  labels:         l &isin; <it>Labels</tt> 
   functions:      f &isin; <it>Funs</it> 
   variables:      x &isin; <it>Vars</it> 
   strings:        s &isin; <it>Strings</it> 
@@ -291,7 +406,6 @@ set is used:</p></div></div></section>
      | <tt>switch</tt>  &tau; t  &lambda;  &lambda;  l &lang;l, l, &hellip;&rang; 
      | <tt>merged</tt>  &lang; e, e, \ldots&rang; 
 </code></pre>
-</div>
 </center>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">However, a high degree of diversity can be achieved from the way
@@ -308,8 +422,6 @@ to illustrate this:
 </video>
 </center>
 
-<a class="anchor" id="ISADiversity">&nbsp;</a>
-<h3 align=center>ISA Diversity through Duplicate Operators and Superoperators</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Tigress can induce further diversity by merging
 instructions into <em>superoperators</em>. New, merged, instructions
@@ -331,8 +443,7 @@ instructions, one that takes both arguments in registers, and one that takes
 one argument on the stack and the other in a register. Tigress will chose 
 between them randomly. Here are the corresponding instruction handlers:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>case _0__store_int$left_REG_0$right_REG_1: 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">case _0__store_int$left_REG_0$right_REG_1: 
    (_0__pc[0]) ++;
    *((int *)_0__regs[0][*((int *)_0__pc[0])]._void_star) = _0__regs[0][*((int *)(_0__pc[0] + 4))]._int;
    _0__pc[0] += 8;
@@ -345,7 +456,6 @@ case _0__store_int$right_STA_0$left_REG_0:
    _0__pc[0] += 4;
    break;
 </code></pre>
-</div>
 </center>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider next setting <tt>--VirtualizeSuperOpsRatio=2.0</tt> and <tt>--VirtualizeMaxMergeLength=10</tt>,
@@ -355,8 +465,7 @@ resulting in virtual instructions with highly complex semantics:
 
 Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>case _0__local$result_STA_0$value_LIT_0__\
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">case _0__local$result_STA_0$value_LIT_0__\
    convert_void_star2void_star$left_STA_0$result_REG_0__\
    load_int$result_REG_0$left_REG_1__\
    local$result_STA_0$value_LIT_0__\
@@ -378,7 +487,6 @@ Here is the instruction handler for one such instruction, made up by merging 10 
     _0__pc[0] += 52;
     break;
 </code></pre>
-</div>
 </center>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Note that the instruction name really is almost 400 characters long; the
 backslashes are here only for display purposes! Also note that the instruction
@@ -386,6 +494,44 @@ itself is 53 bytes long, almost as long as the
 <a href="https://groups.google.com/forum/#!topic/comp.arch/OJYBg8o7vcQ">longest VAX instruction</a>
 (<tt>EMODH</tt>, 54 bytes) and much longer than the longest x86 instruction 
 (15 bytes) </p></div></div></section>
+
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--VirtualizeOperands</tt></td>
+<td><tt>stack, registers, mixed, ?</tt></td>
+<td> Comma-separated list of the types of operands allowed in the ISA. Default=stack.
+<ul>
+   <li> <tt>stack</tt> = use stack arguments to instructions
+   <li> <tt>registers</tt> = use register arguments to instructions
+   <li> <tt>mixed</tt> = same as stack,registers
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeMaxDuplicateOps</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Number of ADD instructions, for example, with different signatures. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeRandomOps</tt></td>
+<td><tt>bool</tt></td>
+<td> Should opcodes be randomized, or go from 0..n? Default=true.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeSuperOpsRatio</tt></td>
+<td><tt>Float>0.0</tt></td>
+<td> Desired number of super operators. Default=0.0.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeMaxMergeLength</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Longest sequence of instructions to be merged into one. Default=0.</td>
+</tr>
+</table>
+</div>
+
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -395,6 +541,18 @@ itself is 53 bytes long, almost as long as the
 make the instruction handlers and the dispatch logic less conspicuous.</p></div></div></section>
 
 <center><img width="500px" src="tigress3-images/split-instruction-handlers-2.png"></center>
+
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--VirtualizeInstructionHandlerSplitCount</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Number of opaques to add to each instruction handler. Default=0.</td>
+</tr>
+</table>
+</div>
+
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -410,8 +568,35 @@ and instructions introduced by the virtualizer are colored blue):
 <center><img width="500px" src="tigress3-images/implicit-flow-4.png"></center>
 To frustrate such analyses we can add implicit flow to the VPC:
 <center><img width="500px" src="tigress3-images/implicit-flow-6.png"></center>
-
 </p></div></div></section>
+
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--VirtualizeAddOpaqueToVPC</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Whether to add opaques to the virtual program counter. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeImplicitFlowPC</tt></td>
+<td><tt>PCInit, PCUpdate, *</tt></td>
+<td> Insert implicit flow between the virtual program counter and instruction dispatcher. Default=none.
+<ul>
+   <li> <tt>PCInit</tt> = insert implcit flow between the computation of the VPC address and the first load
+   <li> <tt>PCUpdate</tt> = insert implcit flow for each VPC load (potentially very slow)
+   <li> <tt>*</tt> = select all options
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeImplicitFlow</tt></td>
+<td><tt>S-Expression</tt></td>
+<td> The type of implicit flow to insert. See <tt>--AntiTaintAnalysisImplicitFlow</tt> for a description. Default=none.</td>
+</tr>
+</table>
+</div>
+
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -430,6 +615,39 @@ but which interpret unused functions:
 <center><img width="500px" src="tigress3-images/bogus-functions-2.png"></center>
 </p></div></div></section>
 
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--VirtualizeAddOpaqueToBogusFuns</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Whether to add opaque expressions to the generated bogus function. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeNumberOfBogusFuns</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Weave the execution of random functions into the execution of the original program. This makes certain kinds of pattern-based dynamic analysis more difficult. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeBogusFunsGenerateOutput</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Make the bogus function produce output (typically be writing to /dev/null), to prevent it from appearing to have no effect. Default=true.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeBogusFunKinds</tt></td>
+<td><tt>trivial, arithSeq, collatz, *</tt></td>
+<td> The kind of bogus function to generate. Comma-separated list. Default=arithSeq,collatz.
+<ul>
+   <li> <tt>trivial</tt> = insert a trivial computation
+   <li> <tt>arithSeq</tt> = insert a simple arithmetic loop
+   <li> <tt>collatz</tt> = insert a computation of the Collatz sequence
+   <li> <tt>*</tt> = select all options
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -439,11 +657,36 @@ but which interpret unused functions:
 Add random computations to every iteration of the dispatch loop.  
 Use this to frustrate dynamic analysis by 
 </p></div></div></section>
-<ol>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp;<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">inserting bogus instructions between consecutive iterations of the dispatch loop, 
-       thereby making the dispatch harder to recognize;</p></div></div></section>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp;<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">making traces longer and thereby harder to store and analyze.</p></div></div></section>
-</ol>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><br>
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp;inserting bogus instructions between consecutive iterations of the dispatch loop, 
+       thereby making the dispatch harder to recognize;
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp;making traces longer and thereby harder to store and analyze.
+<br>
+</p></div></div></section>
+
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--VirtualizeBogusLoopKinds</tt></td>
+<td><tt>trivial, arithSeq, collatz, *</tt></td>
+<td> Insert a bogus loop for each instruction list. This will extend the length of the trace, making dynamic analysis more difficult. 
+<ul>
+   <li> <tt>trivial</tt> = insert a trivial computation
+   <li> <tt>arithSeq</tt> = insert a simple arithmetic loop
+   <li> <tt>collatz</tt> = insert a computation of the Collatz sequence
+   <li> <tt>*</tt> = select all options
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeBogusLoopIterations</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Adjust this value to balance performance and trace length. Default=0.</td>
+</tr>
+</table>
+</div>
+
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -474,33 +717,27 @@ from the original program and the interpreted function:
 </p></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You must prepare your code in the following ways:</p></div></div></section>
-<ol>
+<br>
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The function you want to virtualize must have an argument
         <tt>int* operation</tt>. It can occur anywhere among the formal parameters:</p></div></div></section>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>void foo(int* operation, int n, int* result) {&hellip;}
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(int* operation, int n, int* result) {&hellip;}
 </code></pre>
-</div>
 
 <!-- --------------------------- -->
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The first time foo gets called, operation must be
         <0, and you must pass actual arguments to foo that
         it will use throughout the computation:</p></div></div></section>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>int operation = -10; 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int operation = -10; 
 foo(&operation,n,&result);
 </code></pre>
-</div>
        <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">"-10" here means to initialize foo and execute 10
         instructions.</p></div></div></section>
 <!-- --------------------------- -->
     <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Sprinkle calls to foo throughout your program,
          making sure that operation>0:</p></div></div></section>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>operation = 10;
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 10;
 foo(&operation,bogus1,&bogus2);  
 </code></pre>
-</div>
          <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here you can pass whatever arguments you want to foo, 
          they won't be used. Rather, the ones that were passed 
          in the first call will be used throughout. "10" here 
@@ -508,24 +745,20 @@ foo(&operation,bogus1,&bogus2);
 <!-- --------------------------- -->
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can check if foo has terminated by testing the
         value of operation after the call:</p></div></div></section>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>operation = 10;
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 10;
 foo(&operation,bogus1,&bogus2);  
 if (operation > 0)
    /* we're done! */
 else if (operation < 0)
    /* more work to do! */
 </code></pre>
-</div>
 <!-- --------------------------- -->
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you want to make sure that foo has terminated
         --- because you really want its result at a particular
           point --- set operation to a large enough value:</p></div></div></section>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>operation = 1000;
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 1000;
 foo(&operation,bogus1,&bogus2);  
 </code></pre>
-</div>
 <!-- --------------------------- -->
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Additional calls to foo once termination has been
         reached is safe; no additional instructions will
@@ -533,22 +766,19 @@ foo(&operation,bogus1,&bogus2);
 <!-- --------------------------- -->
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you want to call foo to compute a new value, 
         call it again with operation<0:</p></div></div></section>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>   int operation = -10; 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   int operation = -10; 
    foo(&operation,n,&result);
 </code></pre>
-</div>
-</ol>
+<br>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">To ensure termination you can</p></div></div></section>
-<ol>
+<br>
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; experiment yourself with how many iterations
         are necessary to finish the computation;
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; make sure that the last call to foo is passed a
         huge value to 'operation';
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; put the last call to foo in a loop
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>   foo(&operation);   
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   foo(&operation);   
    while (operation < 0) {
       /* some other computation here */
       operation = 10;
@@ -556,8 +786,7 @@ foo(&operation,bogus1,&bogus2);
    } 
    /* result is available here */
 </code></pre>
-</div>
-</ol>
+<br>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">It is a good idea to combine reentrant interpreters with
 superoperators. Superoperators produce long instructions
@@ -569,6 +798,18 @@ loop in the instruction trace, superoperators combined
 with reentrant interpreters will reduce the presence of 
 such artifacts.</p></div></div></section>
 
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--VirtualizeReentrant</tt></td>
+<td><tt></tt></td>
+<td> Make the function reentrant. Default=false.</td>
+</tr>
+</table>
+</div>
+
+
 <a class="anchor" id="EncodingProgram">&nbsp;</a>
 <h3 align=center>Encoding the Program Array</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -577,8 +818,7 @@ Setting
 results in each program instruction being xor:ed with
 a constant value, thus ensuring that it is
 not in cleartext until it is run:</p></div></div></section>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>unsigned char _5_obf3_$array[1][141]  = 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char _5_obf3_$array[1][141]  = 
      {{
         (unsigned char)formal$result_STA_0$value_LIT_0 ^ (unsigned char)16,
         (unsigned char)1 ^ (unsigned char)16,
@@ -594,14 +834,12 @@ not in cleartext until it is run:</p></div></div></section>
         ...
      }}
 </code></pre>
-</div>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This does not work for <tt>--VirtualizeDispatch=direct</tt>.</p></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Additionally, setting <tt>--VirtualizeObfuscateDecodeByteArray=true</tt> and
 <tt>--VirtualizeOpaqueStructs=input,env</tt> ensures that the decoded 
 bytecode array depends on input. The decoding procedure looks like this:
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>  strcmp_result17 = (int)strlen(*(argv + (argc - 1)));
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  strcmp_result17 = (int)strlen(*(argv + (argc - 1)));
   decodeVar16 = (strcmp_result17 - 1 < 0) + (strcmp_result17 - 10 > 0) ? currentOp : (unsigned char)16;
   copyIndex15 = 0;
   while (copyIndex15 < 141) {
@@ -610,13 +848,11 @@ bytecode array depends on input. The decoding procedure looks like this:
   }
   $pc[0] = localArrayCopy11[0];
 </code></pre>
-</div>
 </p></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here's an example script:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>tigress --Seed=0 \
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Environment=... --Seed=0 \
    --Transform=InitImplicitFlow \
    --Transform=InitEntropy \
    --Transform=InitOpaque --Functions=main --InitOpaqueStructs=input \
@@ -629,7 +865,6 @@ bytecode array depends on input. The decoding procedure looks like this:
    --VirtualizeOpaqueStructs=input,env \
       arith.c --out=arith_out.c
 </code></pre>
-</div>
 </center>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><tt>--Inputs="+1:int:42,-1:length:1?10"</tt> is a specfication of invariants over
 the command line. It specifies:</p></div></div></section>
@@ -643,6 +878,36 @@ If the program is invoked with a set of command line arguments that
 violate the invariants it is likely to crash.
 </p></div></div></section>
 
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--VirtualizeOpaqueStructs</tt></td>
+<td><tt>list, array, input, env, *</tt></td>
+<td> Default=list,array.
+<ul>
+   <li> <tt>list</tt> = Generate opaque expressions using linked lists
+   <li> <tt>array</tt> = Generate opaque expressions using arrays
+   <li> <tt>input</tt> = Generate opaque expressions that depend on input. Requires <tt>--Inputs</tt> to set invariants over input.
+   <li> <tt>env</tt> = Generate opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
+   <li> <tt>*</tt> = Same as list,array,input,env
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeEncodeByteArray</tt></td>
+<td><tt>bool</tt></td>
+<td> Encode the bytecode array. It is decoded before the interpreter is entered. Doesn't work for <tt>direct</tt> dispatch. Requires opaque expressions. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeObfuscateDecodeByteArray</tt></td>
+<td><tt>bool</tt></td>
+<td> Obfuscates the program array decoded with opaque expressions. <tt>--VirtualizeOpaqueStructs=input,env</tt> are the preferable opaque kinds, since it means that the bytecode array depends on input. Default=false.</td>
+</tr>
+</table>
+</div>
+
+
 <a class="anchor" id="DynamicProgram">&nbsp;</a>
 <h3 align=center>Dynamic Program Arrays</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -655,8 +920,7 @@ for both transformations, and they share all the same options.</p></div></div></
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here's an example script:</p></div></div></section>
 <center>
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>tigress --Seed=0 \
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
    --Transform=Virtualize \
       --Functions=foo \
       --VirtualizeDispatch=switch \
@@ -676,8 +940,121 @@ for both transformations, and they share all the same options.</p></div></div></
       --VirtualizeDynamicCompileCommand="gcc -o %o %i -lm" \
       arith.c --out=arith_out.c
 </code></pre>
-</div>
 </center>
+
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--VirtualizeDynamicBytecode</tt></td>
+<td><tt>BOOL</tt></td>
+<td> Similar to the JitDynamic transform, make the virtualized bytecode self-modifying. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicEncoding</tt></td>
+<td><tt>hard, soft</tt></td>
+<td> How the jitted instructions are encoded. Default=hard.
+<ul>
+   <li> <tt>hard</tt> = The jitted instructions are encoded as code.
+   <li> <tt>soft</tt> = The jitted instructions are encoded as data (not implemented).
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicOptimize</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Clean up the generated code by removing jumps-to-jumps. Default=true.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicTrace</tt></td>
+<td><tt>INTSPEC</tt></td>
+<td> Insert runtime tracing of instructions. Set to 1 to turn it on. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicTraceExec</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Annotate each instruction, showing from where it was generated, and the results of execution. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicDumpTree</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Print the tree representation of the function, prior to generating the jitting code. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicAnnotateTree</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Annotate the generated code with the corresponding intermediate tree code instructions. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicCodecs</tt></td>
+<td><tt>none, ident, ident_loop, xor_transfer, xor_byte_loop, xor_word_loop, xor_qword_loop, xor_call, xor_call_trace, xtea, xtea_trace, stolen_byte, stolen_short, stolen_word</tt></td>
+<td> How blocks should be encoded/decoded. Default=*.
+<ul>
+   <li> <tt>none</tt> = No encoding
+   <li> <tt>ident</tt> = The identity encoding using a single copy JIT instruction
+   <li> <tt>ident_loop</tt> = The identity encoding using a copy loop of primitive JIT instructions
+   <li> <tt>xor_transfer</tt> = An xor encoding using a single xor JIT instruction
+   <li> <tt>xor_byte_loop</tt> = An xor encoding using a copy loop of byte-size primitive JIT instructions
+   <li> <tt>xor_word_loop</tt> = An xor encoding using a copy loop of word-size primitive JIT instructions
+   <li> <tt>xor_qword_loop</tt> = An xor encoding using a copy loop of qword-size primitive JIT instructions
+   <li> <tt>xor_call</tt> = An xor encoding calling a xor function
+   <li> <tt>xor_call_trace</tt> = An xor encoding calling a xor function with tracing turned on (for debugging)
+   <li> <tt>xtea</tt> = An xtea encryption
+   <li> <tt>xtea_trace</tt> = An xtea encryption with tracing turned on (for debugging)
+   <li> <tt>stolen_byte</tt> = A byte-sized stolen bytes encoding
+   <li> <tt>stolen_short</tt> = A short-sized stolen bytes encoding
+   <li> <tt>stolen_word</tt> = A word-sized stolen bytes encoding
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicKeyTypes</tt></td>
+<td><tt>data, code</tt></td>
+<td> Where the encoding/decoding key is stored (for xor and xtea encodings) Default=data.
+<ul>
+   <li> <tt>data</tt> = In the data segment
+   <li> <tt>code</tt> = In the code segment (not implemented)
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicBlockFraction</tt></td>
+<td><tt><em>FRACSPEC</em></tt></td>
+<td> Fraction of the basic blocks in a function to encode Default=all.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicRandomizeBlocks</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Randomize the order of basic blocks Default=true.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicReEncode</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> If true, blocks will be re-encoded after being executed. If false, blocks will be decoded once, and stay in cleartext. ('False' is not implemented; this option is always set to 'true'.) Default=true.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicDumpCFG</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Print the jitter's Control Flow Graph. This requires graphviz to be installed (the <tt>dot</tt> command is used). A number of pdf files get generated that shows the CFG at various stages of processing: <tt>CFGAfterInsertingAnnotations.pdf</tt>, <tt>CFGAfterSimplifyingJumps.pdf</tt>, <tt>CFGAfterTranslatingAnnotations.pdf</tt>, <tt>CFGBeforeInsertingAnnotations.pdf</tt>, <tt>CFGDumpingFunctionFinal.pdf</tt>, <tt>CFGDumpingFunctionInitial.pdf</tt>, <tt>CFGFixupIndirecJumps.pdf</tt>, <tt>CFGReplaceWithCompiledBlock.pdf</tt>, <tt>CFGSplitOutBranches.pdf</tt>, <tt>CFGSplitOutDataReferences.pdf</tt>, <tt>OriginalCFG.pdf</tt> Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicTraceBlock</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Print out a message before each block is executed. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicTraceBlock</tt></td>
+<td><tt>STRING</tt></td>
+<td> Print out a message before each block is executed. (Not currently implemented.) Default="".</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeDynamicCompileCommand</tt></td>
+<td><tt>STRING</tt></td>
+<td> A string of the form "gcc -std=c99 -o %o %i", where "%i" will be replaced with the name of the input file and "%o" with the name of the output file. For example, if your program uses the math library, you should set <tt>--VirtualizeDynamicCompileCommand="gcc -std=c99 -o %o %i -lm". Default="gcc -std=c99 -o %o %i".</td>
+</tr>
+</table>
+</div>
+
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -728,10 +1105,8 @@ INPUT options.html
         multiple issues on MacOS/llvm. Presumably this is due to some compiler 
         problem related to inline assembly.
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Consider this example taken from gcc's <tt>comp-goto-1.c</tt> torture test:
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>goto *(base_addr + insn.f1.offset);
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *(base_addr + insn.f1.offset);
 </code></pre>
-</div>
       This kind of arithmetic on the program counter is going to fail for 
       transformations that completely restructure the code, such as
       virtualization.

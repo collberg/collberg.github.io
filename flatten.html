@@ -106,8 +106,7 @@ what a reursive factorial function looks like after transformation:</p></div></d
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; In a <em>switch dispatch</em>, each block becomes a case in a switch statement,
         and the switch is wrapped inside an infinite loop. This is the traditional
         implementation. 
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>int fac(int x) { 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
   int tmp ;
   unsigned long next ;
   next = 4;
@@ -127,10 +126,8 @@ what a reursive factorial function looks like after transformation:</p></div></d
   }
 }
 </code></pre>
-</div>
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; In a <em>goto dispatch</em>, direct gotos are used to jump between blocks. 
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>int fac(int x) { 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
   int tmp ;
   goto lab4;
   lab4: 
@@ -146,10 +143,8 @@ what a reursive factorial function looks like after transformation:</p></div></d
   return (x * tmp);
 }
 </code></pre>
-</div>
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; In an <em>indirect dispatch</em>, indirect gotos through a jump table are used to switch between blocks. 
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>int fac(int x) { 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
   int tmp ;
   unsigned long next ;
   static void *jumpTab[4]  = {&& lab1, && lab2, && lab3, && lab4};
@@ -174,11 +169,9 @@ what a reursive factorial function looks like after transformation:</p></div></d
   goto *(jumpTab[next - 1]);
 }
 </code></pre>
-</div>
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; In a <em>call dispatch</em>, each block becomes its own function, and indirect calls through a 
         table of function pointers are used to switch between blocks. 
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>struct argStruct {
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">struct argStruct {
    int tmp ;
    int *x ;
    int returnv ;
@@ -226,7 +219,6 @@ int fac(int x ){
   }
 }
 </code></pre>
-</div>
 <br>
 
 <a class="anchor" id="conditionals">&nbsp;</a>
@@ -250,10 +242,8 @@ INPUT options.html
 <h3 align=center>Issues</h3>
 <br>
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Consider this example taken from gcc's <tt>comp-goto-1.c</tt> torture test:
-<div style="width:800px;overflow:auto;margin:5px;border:1px solid black;bottommargin:0px">
-<pre><code>goto *(base_addr + insn.f1.offset);
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *(base_addr + insn.f1.offset);
 </code></pre>
-</div>
       This kind of arithmetic on the program counter is going to fail for 
       transformations that completely restructure the code, such as
       flattening.
