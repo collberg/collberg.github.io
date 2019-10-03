@@ -2739,6 +2739,42 @@ section.lazy-placeholder:after {
 .cid-rCSf0sTyOq .mbr-section-subtitle {
   font-style: italic;
 }
+.cid-rDP6hYcg69 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-rDP6hYcg69 .counter-container {
+  color: #767676;
+}
+.cid-rDP6hYcg69 .counter-container ol {
+  margin-bottom: 0;
+  counter-reset: myCounter;
+}
+.cid-rDP6hYcg69 .counter-container ol li {
+  margin-bottom: 1rem;
+}
+.cid-rDP6hYcg69 .counter-container ol li {
+  list-style: none;
+  padding-left: .5rem;
+}
+.cid-rDP6hYcg69 .counter-container ol li:before {
+  position: absolute;
+  left: 0px;
+  margin-top: -10px;
+  counter-increment: myCounter;
+  content: counter(myCounter);
+  display: inline-block;
+  text-align: center;
+  margin: 5px 10px;
+  line-height: 40px;
+  transition: all .2s;
+  color: #ffffff;
+  background: #149dcc;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 .cid-rCTXjqOCJS {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -4970,6 +5006,15 @@ section.lazy-placeholder:after {
   font-size: 60px;
   color: #777;
 }
+.cid-rDQOMX8P31 {
+  padding-top: 45px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-rDQOMX8P31 .mbr-text,
+.cid-rDQOMX8P31 blockquote {
+  color: #767676;
+}
 .cid-rCFaEeaKON .navbar {
   padding: .5rem 0;
   background: #2d7387;
@@ -5377,22 +5422,6 @@ section.lazy-placeholder:after {
 .cid-rCFaEeaKON .dropdown-item:hover {
   color: #c1c1c1 !important;
 }
-.cid-rCVze1lAFM {
-  padding-top: 30px;
-  padding-bottom: 0px;
-  background-color: #ffffff;
-}
-.cid-rCVze1lAFM h1 {
-  color: #616161;
-}
-.cid-rCVze1lAFM h2,
-.cid-rCVze1lAFM h3,
-.cid-rCVze1lAFM p {
-  color: #767676;
-}
-.cid-rCVze1lAFM .mbr-section-subtitle {
-  font-style: italic;
-}
 #custom-html-i {
   /* Type valid CSS here */
 }
@@ -5413,6 +5442,15 @@ section.lazy-placeholder:after {
   font-size: 80px;
   color: #777;
 }
+.cid-rDQOofipfg {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-rDQOofipfg .mbr-text,
+.cid-rDQOofipfg blockquote {
+  color: #767676;
+}
 .cid-rCVzXt235L {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -5427,22 +5465,6 @@ section.lazy-placeholder:after {
   color: #767676;
 }
 .cid-rCVzXt235L .mbr-section-subtitle {
-  font-style: italic;
-}
-.cid-rDORUbhXg6 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  background-color: #ffffff;
-}
-.cid-rDORUbhXg6 h1 {
-  color: #616161;
-}
-.cid-rDORUbhXg6 h2,
-.cid-rDORUbhXg6 h3,
-.cid-rDORUbhXg6 p {
-  color: #767676;
-}
-.cid-rDORUbhXg6 .mbr-section-subtitle {
   font-style: italic;
 }
 .cid-rDNq15ll1q {
