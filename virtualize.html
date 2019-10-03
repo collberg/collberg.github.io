@@ -466,8 +466,6 @@ case _0__store_int$right_STA_0$left_REG_0:
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider next setting <tt>--VirtualizeSuperOpsRatio=2.0</tt> and <tt>--VirtualizeMaxMergeLength=10</tt>,
 resulting in virtual instructions with highly complex semantics:
 
-<center><img width="500px" src="tigress3-images/super-operators-3.png"></center>
-
 Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">case _0__local$result_STA_0$value_LIT_0__\
@@ -543,9 +541,10 @@ itself is 53 bytes long, almost as long as the
 <a class="anchor" id="HandlerObfuscation">&nbsp;</a>
 <h3 align=center>Instruction Handler Obfuscation</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can split up the generated interpreter by inserting opaque predicates. This is useful to 
-make the instruction handlers and the dispatch logic less conspicuous.</p></div></div></section>
+make the instruction handlers and the dispatch logic less conspicuous. Here's one example; the 
+handler can obviously be split in multiple ways: </p></div></div></section>
 
-<center><img width="500px" src="tigress3-images/split-instruction-handlers-2.png"></center>
+<center><img width="500px" src="tigress3-images/split-handlers.png"></center>
 
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
@@ -567,12 +566,8 @@ make the instruction handlers and the dispatch logic less conspicuous.</p></div>
 more difficult to find.</p></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">One possible attack on interpreters is to perform a taint analysis
-on input-dependent variables, and discard any instructions which are
-not tainted (input dependent instructions are colored green, 
-and instructions introduced by the virtualizer are colored blue):
-<center><img width="500px" src="tigress3-images/implicit-flow-4.png"></center>
-To frustrate such analyses we can add implicit flow to the VPC:
-<center><img width="500px" src="tigress3-images/implicit-flow-6.png"></center>
+on input-dependent variables and discard any instructions which are
+not tainted. To frustrate such analyses we can add implicit flow to the VPC.
 </p></div></div></section>
 
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -714,12 +709,6 @@ the interpreter with instructions from the surrounding code:</p></div></div></se
   Your browser does not support the video tag.
 </video>
 </center>
-
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The result is an instruction trace that intermixes instructions
-from the original program and the interpreted function:
-<center><img width="500px" src="tigress3-images/reentrant-2.png"></center>
-</p></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You must prepare your code in the following ways:</p></div></div></section>
 <br>
