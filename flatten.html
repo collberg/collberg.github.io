@@ -70,7 +70,7 @@
 <br><br><br>
 
 <a class="anchor" id="flatten">&nbsp;</a>
-<section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><div style="background-color:#ffffff;padding-top:0px;padding-bottom:0px"><p>This is a classic control-flow transformation that removes structured flow.</a>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This is a classic control-flow transformation that removes structured flow.</a>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/flatten.m4v" type="video/mp4">
@@ -78,25 +78,59 @@
 </video>
 </center>
 
-<section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><div style="background-color:#ffffff;padding-top:0px;padding-bottom:0px"><p>Flattening is useful as a precursor to other transformations. For example, our
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Flattening is useful as a precursor to other transformations. For example, our
 <a href="http://tigress.cs.arizona.edu/transformPage/docs/encodeBranches/index.html">AntiBranchAnalysis</a>
 transformation flattens a function prior to replacing direct branches
 by calls to a branch function since this creates more opportunities
 for encoding.  Also,
 the <a href="http://tigress.cs.arizona.edu/transformPage/docs/merge/index.html">Merge</a>
 transformation can optionally flatten functions before merging them,
-thus more thoroughly mixing their code.</p></div></div></div></section>
+thus more thoroughly mixing their code.</p></div></div></section>
+
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>Flatten</tt></td>
+<td> Flatten a function using Chenxi Wang's algorithm </td>
+</tr>
+<tr>
+<td><tt>--FlattenDumpBlocks</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Print the linearized blocks. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--FlattenSplitBasicBlocks</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> If true, then basic blocks (sequences of assignment and call statements without intervening branches) will be split up into indiviual blocks. If false, they will be kept intact. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--FlattenRandomizeBlocks</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> If true, then basic block sequences will be randomized. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--FlattenTrace</tt></td>
+<td><tt>bool</tt></td>
+<td> Print a message before each block gets executed. Useful for debugging. Default=false.</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><div style="background-color:#ffffff;padding-top:0px;padding-bottom:0px"><p>There are several sources of diversity:</p></div></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are several sources of diversity:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> We support four kinds of "dispatch," i.e. how the next block is selected.</li>
    <li> Basic blocks can be kept intact, or can be split up into individual statements.</li>
    <li> The order of blocks can be randomized.</li>
-   <li> The <tt>next</tt> variable can be obfuscated using different kinds of opaque predicates.</li>
+   <li> The <code>next</code> variable can be obfuscated using different kinds of opaque predicates.</li>
    <li> Conditional branches can be encoded in several different ways. </li>
 </ul>
 </div></div></div></section>
@@ -104,8 +138,8 @@ thus more thoroughly mixing their code.</p></div></div></div></section>
 <a class="anchor" id="dispatch">&nbsp;</a>
 <br>
 <h3 align=center>Dispatch</h3>
-<section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><div style="background-color:#ffffff;padding-top:0px;padding-bottom:0px"><p>These are the four kinds of block dispatch we currently support, and 
-what a reursive factorial function looks like after transformation:</p></div></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These are the four kinds of block dispatch we currently support, and 
+what a reursive factorial function looks like after transformation:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> In a <em>switch dispatch</em>, each block becomes a case in a switch statement,
@@ -227,41 +261,116 @@ int fac(int x ){
 </ul>
 </div></div></div></section>
 
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--FlattenDispatch</tt></td>
+<td><tt>switch, goto, indirect, call, *</tt></td>
+<td> Dispatch method. Comma-separated list. Default=switch.
+<ul>
+   <li> <tt>switch</tt> = dispatch by <tt>while(1) {switch (next) {blocks}}</tt>
+   <li> <tt>goto</tt> = dispatch by <tt>{labl1: block1; goto block2;}</tt>
+   <li> <tt>indirect</tt> = dispatch by <tt>goto* (jtab[next])</tt>
+   <li> <tt>call</tt> = each block is outlined into its own function
+   <li> <tt>*</tt> = select a dispatch method at random.
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+</center>
+
 <a class="anchor" id="conditionals">&nbsp;</a>
 <br>
 <h3 align=center>Conditional Branches</h3>
-<section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><div style="background-color:#ffffff;padding-top:0px;padding-bottom:0px"><p>If the <tt>--FlattenConditionalKinds=flag</tt> is set, there will be no
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If the <code>--FlattenConditionalKinds=flag</code> is set, there will be no
 explicit conditional tests in the code. Rather, they will be transformed
-into an assembly code snippet (<tt>x86</tt> only, at this point) that 
+into an assembly code snippet (<code>x86</code> only, at this point) that 
 does the comparison, extracts the flag register, and then the address to
 jump to will be computed based on the individual flags set. Similar
-encodings are availablef for the 
-the <a href="http://tigress.cs.arizona.edu/transformPage/docs/merge/index.html">Merge</a>
-and
-the <a href="http://tigress.cs.arizona.edu/transformPage/docs/virtualize/index.html">Virtualize</a>
-transformations.</p></div></div></div></section>
+encodings are available for Merge and Virtualize transformations.</p></div></div></section>
 
-<a class="anchor" id="options">&nbsp;</a>
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--FlattenConditionalKinds</tt></td>
+<td><tt>branch, compute, flag</tt></td>
+<td> Ways to transform conditional branches. Default=branch.
+<ul>
+   <li> <tt>branch</tt> = Use normal branches, such as <tt>if (a>b) goto L1 else goto L2</tt>
+   <li> <tt>compute</tt> = Compute the branch, such as <tt>x=(a>b); goto *(<em>expression over <tt>x</tt></em>)</tt>
+   <li> <tt>flag</tt> = Compute the branch from the values of the flag register, such as <tt>asm("cmp a b;pushf;pop"); goto *(<em>expression over <tt>flag register</tt></em>)</tt>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+</center>
+
+<a class="anchor" id="nextobf">&nbsp;</a>
 <br>
-<h3 align=center>Options</h3>
-INPUT options.html
+<h3 align=center>Obfuscating the Next Variable</h3>
+You can use opaque predicates and anti-implicit flow transformations to further obfuscate the <code>next</code>
+variable.
+
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--FlattenObfuscateNext</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Whether the dispatch variable should be obfuscated with opaque expressions or not. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--FlattenOpaqueStructs</tt></td>
+<td><tt>list, array, *</tt></td>
+<td> Type of opaque predicate to use. Traditionally, for this transformation, <tt>array</tt> is used. Default=array.
+<ul>
+   <li> <tt>list</tt> = Generate opaque expressions using linked lists
+   <li> <tt>array</tt> = Generate opaque expressions using arrays
+   <li> <tt>*</tt> = Same as list,array
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--FlattenImplicitFlowNext</tt></td>
+<td><tt>bool</tt></td>
+<td> Insert implicit flow between the computation of a an address and the subsequent indirect jump or call. This applies to <tt>call</tt> and <tt>indirect</tt> transformations only. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--FlattenImplicitFlow</tt></td>
+<td><tt>S-Expression</tt></td>
+<td> The type of implicit flow to insert. See <tt>--AntiTaintAnalysisImplicitFlow</tt> for a description. Default=none.</td>
+</tr>
+</table>
+</div>
+
+</center>
+
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
-   <li> Consider this example taken from gcc's <tt>comp-goto-1.c</tt> torture test:
+   <li> Consider this example taken from gcc's <code>comp-goto-1.c</code> torture test:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *(base_addr + insn.f1.offset);
 </code></pre>
       This kind of arithmetic on the program counter is going to fail for 
       transformations that completely restructure the code, such as
       flattening.
-   <li> The <tt>--FlattenConditionalKinds=flag</tt> transformation doesn't
+   <li> The <code>--FlattenConditionalKinds=flag</code> transformation doesn't
       work for floats, for reasons that escape me. I think maybe floats are
       left on the stack and then there's a SEGV when the function returns,
-      but who knows? <tt>:(</tt>
-   <li> On MacOS/llvm the <tt>--FlattenDispatch=call --FlattenConditionalKinds=flag</tt> transformation 
+      but who knows? <code>:(</code>
+   <li> On MacOS/llvm the <code>--FlattenDispatch=call --FlattenConditionalKinds=flag</code> transformation 
       generates a segmentation fault, on Linux/gcc it does not. There are other similar issues that 
       pop up occasionally on this platform. Presumably this is due to some compiler problem related 
       to inline assembly. Update: I think this has been fixed now. Inline assembly with instructions
@@ -272,7 +381,7 @@ INPUT options.html
 <a class="anchor" id="acknowledgments">&nbsp;</a>
 <br>
 <h3 align=center>Acknowledgments</h3>
-<section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><div style="background-color:#ffffff;padding-top:0px;padding-bottom:0px"><p>Saumya Debray and Babak Yadegari suggested the <tt>--FlattenConditionalKinds=flag</tt> transformation.</p></div></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Saumya Debray and Babak Yadegari suggested the <code>--FlattenConditionalKinds=flag</code> transformation.</p></div></div></section>
 
 <a class="anchor" id="references">&nbsp;</a>
 <br>
