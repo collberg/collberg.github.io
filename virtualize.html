@@ -712,23 +712,23 @@ the interpreter with instructions from the surrounding code:</p></div></div></se
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You must prepare your code in the following ways:</p></div></div></section>
 <br>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The function you want to virtualize must have an argument
-        <tt>int* operation</tt>. It can occur anywhere among the formal parameters:</p></div></div></section>
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The function you want to virtualize must have an argument
+        <tt>int* operation</tt>. It can occur anywhere among the formal parameters:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(int* operation, int n, int* result) {&hellip;}
 </code></pre>
 
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The first time foo gets called, operation must be
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The first time foo gets called, operation must be
         <0, and you must pass actual arguments to foo that
-        it will use throughout the computation:</p></div></div></section>
+        it will use throughout the computation:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int operation = -10; 
 foo(&operation,n,&result);
 </code></pre>
        <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">"-10" here means to initialize foo and execute 10
         instructions.</p></div></div></section>
 <!-- --------------------------- -->
-    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Sprinkle calls to foo throughout your program,
-         making sure that operation>0:</p></div></div></section>
+    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Sprinkle calls to foo throughout your program,
+         making sure that operation>0:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 10;
 foo(&operation,bogus1,&bogus2);  
 </code></pre>
@@ -737,8 +737,8 @@ foo(&operation,bogus1,&bogus2);
          in the first call will be used throughout. "10" here 
          means to resume foo and execute 10 instructions.</p></div></div></section>
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can check if foo has terminated by testing the
-        value of operation after the call:</p></div></div></section>
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; You can check if foo has terminated by testing the
+        value of operation after the call:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 10;
 foo(&operation,bogus1,&bogus2);  
 if (operation > 0)
@@ -747,19 +747,19 @@ else if (operation < 0)
    /* more work to do! */
 </code></pre>
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you want to make sure that foo has terminated
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; If you want to make sure that foo has terminated
         --- because you really want its result at a particular
-          point --- set operation to a large enough value:</p></div></div></section>
+          point --- set operation to a large enough value:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 1000;
 foo(&operation,bogus1,&bogus2);  
 </code></pre>
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Additional calls to foo once termination has been
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Additional calls to foo once termination has been
         reached is safe; no additional instructions will
-        be executed.</p></div></div></section>
+        be executed.
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you want to call foo to compute a new value, 
-        call it again with operation<0:</p></div></div></section>
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; If you want to call foo to compute a new value, 
+        call it again with operation<0:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   int operation = -10; 
    foo(&operation,n,&result);
 </code></pre>
@@ -768,10 +768,10 @@ foo(&operation,bogus1,&bogus2);
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">To ensure termination you can</p></div></div></section>
 <br>
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; experiment yourself with how many iterations
-        are necessary to finish the computation;
+        are necessary to finish the computation;</li
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; make sure that the last call to foo is passed a
         huge value to 'operation';
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; put the last call to foo in a loop
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; put the last call to foo in a loop 
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   foo(&operation);   
    while (operation < 0) {
       /* some other computation here */
@@ -1052,9 +1052,6 @@ for both transformations, and they share all the same options.</p></div></div></
 
 <!-- -------------------------------------------------------------------------------- -->
 
-<a class="anchor" id="options">&nbsp;</a>
-<h3 align=center>Options</h3>
-INPUT options.html
 
 <a class="anchor" id="examples">&nbsp;</a>
 <H3>Examples</H3>
@@ -1065,12 +1062,12 @@ INPUT options.html
         control flow) that help make the code easy to read and
         understand, disappears once the source has been compiled,
         linked, and stripped.  A successful attack will (at least partially) 
-        have to recover this information.
+        have to recover this information. 
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The code after <em>two</em> levels of virtualization looks very similar to
         the code after <em>one</em> level of virtualization. This is because the
         dispatch loop of the first virtualization gets coded into the bytecode
         program of the second. It's an interesting question to ask to what
-        extent this hinders de-virtualization.
+        extent this hinders de-virtualization. 
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The <tt>direct</tt> and <tt>call</tt> dispatch methods result
         in much larger bytecode programs than the other methods. This
         is particularly evident on 64-bit machines where every opcode
@@ -1080,25 +1077,25 @@ INPUT options.html
         the second level <em>not</em> use <tt>direct</tt> or <tt>call</tt>
         dispatch, to keep the size of the program down. Future versions
         of Tigress will use more compact encodings for these types of
-        dispatch.
+        dispatch. 
 <br>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <h3 align=center>Issues</h3>
 <br>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Several dispatch methods make use of <tt>gcc's</tt> and <tt>clang</tt>
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Several dispatch methods make use of <tt>gcc's</tt> and <tt>clang</tt>
         <em>labels-as-values</em>. For other compilers only
         the <tt>switch</tt> and <tt>ifnest</tt> dispatch methods should be
-        used.</p></div></div></section>
+        used.
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <tt>--VirtualizeEncodeByteArray=true</tt> does not work for the <em>direct</em>
-        dispatch method.
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Our current implementation of reentrant interpreters doesn't handle function
+        dispatch method. 
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Our current implementation of reentrant interpreters doesn't handle function
         results, so make sure your function is void, and returns the result in a global 
-        or in a formal parameter.</p></div></div></section>
+        or in a formal parameter.
    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The <tt>--VirtualizeConditionalKinds=flag</tt> option seems to have
         multiple issues on MacOS/llvm. Presumably this is due to some compiler 
         problem related to inline assembly.
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Consider this example taken from gcc's <tt>comp-goto-1.c</tt> torture test:
+   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Consider this example taken from gcc's <tt>comp-goto-1.c</tt> torture test: 
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *(base_addr + insn.f1.offset);
 </code></pre>
       This kind of arithmetic on the program counter is going to fail for 
