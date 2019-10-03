@@ -129,32 +129,35 @@ selects a random dispatch method and produces an output program.
 </p></div></div></section>
 
 <a class="anchor" id="diversity">&nbsp;</a>
-<h3 align=center>Diversity and Stealth</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><b>Static diversity.</b> Tigress supports two mechanisms for generating 
-ISAs with a high degree of static diversity: 
 <br>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; instruction opcodes can be randomized,
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; the ISA can have duplicate instructions with the same semantics, 
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; instructions can pass arguments in arbitrary combinations of stack locations and registers, 
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; instructions can be made arbitrarily long (with highly complex semantics) through the use of superoperators. 
-<br></p></div></div></section>
+<h3 align=center>Diversity and Stealth</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Static diversity.</strong> Tigress supports two mechanisms for generating 
+ISAs with a high degree of static diversity:</p></div></div></section>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> instruction opcodes can be randomized,</li>
+   <li> the ISA can have duplicate instructions with the same semantics, </li>
+   <li> instructions can pass arguments in arbitrary combinations of stack locations and registers, </li>
+   <li> instructions can be made arbitrarily long (with highly complex semantics) through the use of superoperators. </li>
+</ul>
+</div></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><b>Dynamic diversity.</b> We ensure that dynamic execution patterns are 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Dynamic diversity.</strong> We ensure that dynamic execution patterns are 
 diversified by merging randomized bogus functions with the ``real'' 
 function. We can furthermore impede dynamic analysis by making instruction
 traces artificially long.
 </p></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<b>Static stealth.</b>
+<strong>Static stealth.</strong>
 Not only diversity but also <em>stealth</em> is important for
-interpreters. For static stealth, the <tt>split</tt> transformation can break up the
-interpreter loop into smaller pieces, and the <tt>AddOpaque</tt>
+interpreters. For static stealth, the <code>split</code> transformation can break up the
+interpreter loop into smaller pieces, and the <code>AddOpaque</code>
 transformation can make instruction handlers less conspicuous.
 </p></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<b>Dynamic stealth.</b>  For dynamic stealth, Tigress interpreters can
+<strong>Dynamic stealth.</strong>  For dynamic stealth, Tigress interpreters can
 be made <em>reentrant</em>, meaning only a few iterations of the
 dispatch loop are executed at a time, effectively mixing instructions
 executed from the interpreter with instructions executed by the rest
@@ -163,6 +166,7 @@ the execution pattern from analysts, and when the exact time that the
 function executes is not important, as long as it completes <em>eventually</em>.
 </p></div></div></section>
 
+<br>
 <h3 align=center>Usage</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 A typical call to Tigress to virtualize a function <code>foo</code> looks like this:
@@ -178,6 +182,7 @@ A typical call to Tigress to virtualize a function <code>foo</code> looks like t
 And here are the options for debugging and optimization:
 </p></div></div></section>
 
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -272,80 +277,84 @@ And here are the options for debugging and optimization:
 </table>
 </div>
 
+</center>
 
 <a class="anchor" id="dispatch">&nbsp;</a>
+<br>
 <h3 align=center>Dispatch Method Selection</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">For both static and dynamic diversity, Tigress supports eight different
 dispatch methods. The following code is generated for the different methods,
-   where &Xi;<sup><tt>op1</tt></sup>; is the instruction handler for
-   operator <tt>op1</tt>:</p></div></div></section>
+   where &Xi;<sup><code>op1</code></sup>; is the instruction handler for
+   operator <code>op1</code>:</p></div></div></section>
 
+<center>
 <table align=center  class="smalltab">
    <tr><th>Dispatch</th><th>Generated code</th></tr>
 
    <tr>
-   <td>switch</td>
+   <td><code>switch</code></td>
    <td>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">switch(prog[pc]) {
-   op1: &Xi;<sup><tt>op1</tt></sup>; break;
-   op2: &Xi;<sup><tt>op2</tt></sup>; break;
+   op1: &Xi;<sup><code>op1</code></sup>; break;
+   op2: &Xi;<sup><code>op2</code></sup>; break;
 }
 </code></pre>
    </td>
    </tr>
 
    <tr>
-   <td>direct</td>
+   <td><code>direct</code></td>
    <td>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *prog[pc];
-op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto *prog[pc];
-op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *prog[pc];
+op1hdl: &Xi;<sup><code>op1</code></sup>; goto *prog[pc];
+op2hdl: &Xi;<sup><code>op2</code></sup>; goto *prog[pc];
 </code></pre>
    </td>
    </tr>
 
    <tr>
-   <td>indirect</td>
+   <td><code>indirect</code></td>
    <td>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *jtab[prog[pc]];
-op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto *jtab[prog[pc]];
-op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto *jtab[prog[pc]];
+op1hdl: &Xi;<sup><code>op1</code></sup>; goto *jtab[prog[pc]];
+op2hdl: &Xi;<sup><code>op2</code></sup>; goto *jtab[prog[pc]];
 </code></pre>
    </td>
    </tr>
 
    <tr>
-   <td>call</td>
+   <td><code>call</code></td>
    <td>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void op1fun(){&Xi;<sup><tt>op1</tt></sup>}
-void op2fun(){&Xi;<sup><tt>op2</tt></sup>}
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void op1fun(){&Xi;<sup><code>op1</code></sup>}
+void op2fun(){&Xi;<sup><code>op2</code></sup>}
 &hellip;
 call *prog[pc]();
 </code></pre>
    </td>
 
    <tr>
-   <td>ifnest</td>
+   <td><code>ifnest</code></td>
    <td>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if (prog[pc]==op1) &Xi;<sup><tt>op1</tt></sup>
-else if (prog[pc]==op2) &Xi;<sup><tt>op2</tt></sup>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if (prog[pc]==op1) &Xi;<sup><code>op1</code></sup>
+else if (prog[pc]==op2) &Xi;<sup><code>op2</code></sup>
 else if &hellip;
 </code></pre>
    </td>
 
    <tr>
-   <td>linear, binary, interpolation</td>
+   <td><code>linear, binary, interpolation</code></td>
    <td>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">alg = linear|binary|interpolation|&hellip;
 top: 
    goto *(<bf>search</bf><sup>alg</sup>(map,prog[pc]));
-op1hdl: &Xi;<sup><tt>op1</tt></sup>; goto top;
-op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto top;
+op1hdl: &Xi;<sup><code>op1</code></sup>; goto top;
+op2hdl: &Xi;<sup><code>op2</code></sup>; goto top;
 </code></pre>
    </td>
    </tr>
-</table>
+</center>
 
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -369,47 +378,49 @@ op2hdl: &Xi;<sup><tt>op2</tt></sup>; goto top;
 </table>
 </div>
 
+</center>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="ISA">&nbsp;</a>
+<br>
 <h3 align=center>Instruction Set Architecture Generation</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Instruction sets can use stacks, registers, or both to pass values
 between instructions. By default, the following, very simple, instruction
 set is used:</p></div></div></section>
 <center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  labels:         l &isin; <it>Labels</tt> 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  labels:         l &isin; <it>Labels</code> 
   functions:      f &isin; <it>Funs</it> 
   variables:      x &isin; <it>Vars</it> 
   strings:        s &isin; <it>Strings</it> 
-  temporaries:     t ::= <tt>reg</tt><sup><it>int</it></sup> | <tt>stack</tt><sup><it>int</it></supt>  
-  binary operators: <it>binop</it> ::= <tt>add</tt> | <tt>sub</tt> | &hellip;
-  unary operators:  <it>unop</it> ::= <tt>uminus</tt> | <tt>neg</tt> | &hellip;
-  types:           &tau; ::= <tt>int</tt> | <tt>float</tt> | &hellip; | <tt>void *</tt>
-  literals:        &lambda; ::= <tt>intlit</tt> | <tt>floatlit</tt> | &hellip;
+  temporaries:     t ::= <code>reg</code><sup><it>int</it></sup> | <code>stack</code><sup><it>int</it></supt>  
+  binary operators: <it>binop</it> ::= <code>add</code> | <code>sub</code> | &hellip;
+  unary operators:  <it>unop</it> ::= <code>uminus</code> | <code>neg</code> | &hellip;
+  types:           &tau; ::= <code>int</code> | <code>float</code> | &hellip; | <code>void *</code>
+  literals:        &lambda; ::= <code>intlit</code> | <code>floatlit</code> | &hellip;
   instructions: e ::=  
-       t &larr; <tt>constant</tt> &tau; &lambda;
-     | t &larr; <tt>local</tt>  x
-     | t &larr; <tt>global</tt>  x
-     | t &larr; <tt>formal</tt>  x
-     | t &larr; <tt>string</tt>  s
-     | t &larr; <tt>binary</tt>  &tau;  <it>binop</it> t t
-     | t &larr; <tt>unary</tt>  &tau;  <it>unop</it> t
-     | t &larr; <tt>convert</tt>  &tau; &tau; t
-     | t &larr; <tt>ternary</tt>  &tau; t t t
-     | t &larr; <tt>load</tt>  &tau; t
-     | <tt>store</tt> &tau; t t
-     | t &larr; <tt>memcpy</tt>  t t <it>int</it>
-     | <tt>call</tt>  f
-     | x, x, &larr; <tt>asm</tt>  s  t, t, &hellip;
-     | <tt>indirectCall</tt>  t
-     | <tt>return</tt>  &tau; t
-     | <tt>goto</tt>  l
-     | t &larr; <tt>addrOfLabel</tt>  l
-     | <tt>indirectGoto</tt>  t
-     | <tt>branchIfTrue</tt>  t  l 
-     | <tt>switch</tt>  &tau; t  &lambda;  &lambda;  l &lang;l, l, &hellip;&rang; 
-     | <tt>merged</tt>  &lang; e, e, \ldots&rang; 
+       t &larr; <code>constant</code> &tau; &lambda;
+     | t &larr; <code>local</code>  x
+     | t &larr; <code>global</code>  x
+     | t &larr; <code>formal</code>  x
+     | t &larr; <code>string</code>  s
+     | t &larr; <code>binary</code>  &tau;  <it>binop</it> t t
+     | t &larr; <code>unary</code>  &tau;  <it>unop</it> t
+     | t &larr; <code>convert</code>  &tau; &tau; t
+     | t &larr; <code>ternary</code>  &tau; t t t
+     | t &larr; <code>load</code>  &tau; t
+     | <code>store</code> &tau; t t
+     | t &larr; <code>memcpy</code>  t t <it>int</it>
+     | <code>call</code>  f
+     | x, x, &larr; <code>asm</code>  s  t, t, &hellip;
+     | <code>indirectCall</code>  t
+     | <code>return</code>  &tau; t
+     | <code>goto</code>  l
+     | t &larr; <code>addrOfLabel</code>  l
+     | <code>indirectGoto</code>  t
+     | <code>branchIfTrue</code>  t  l 
+     | <code>switch</code>  &tau; t  &lambda;  &lambda;  l &lang;l, l, &hellip;&rang; 
+     | <code>merged</code>  &lang; e, e, \ldots&rang; 
 </code></pre>
 </center>
 
@@ -442,8 +453,8 @@ in <a href="http://dl.acm.org/citation.cfm?id=1855877">Unpacking
 virtualization obfuscators</a>, difficult.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider setting <tt>--VirtualizeMaxDuplicateOps=2</tt> 
-and <tt>--VirtualizeOperands=mixed</tt> resulting in two <em>store-int</em>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider setting <code>--VirtualizeMaxDuplicateOps=2</code> 
+and <code>--VirtualizeOperands=mixed</code> resulting in two <em>store-int</em>
 instructions, one that takes both arguments in registers, and one that takes
 one argument on the stack and the other in a register. Tigress will chose 
 between them randomly. Here are the corresponding instruction handlers:</p></div></div></section>
@@ -463,7 +474,7 @@ case _0__store_int$right_STA_0$left_REG_0:
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider next setting <tt>--VirtualizeSuperOpsRatio=2.0</tt> and <tt>--VirtualizeMaxMergeLength=10</tt>,
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider next setting <code>--VirtualizeSuperOpsRatio=2.0</code> and <code>--VirtualizeMaxMergeLength=10</code>,
 resulting in virtual instructions with highly complex semantics:
 
 Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:</p></div></div></section>
@@ -495,9 +506,10 @@ Here is the instruction handler for one such instruction, made up by merging 10 
 backslashes are here only for display purposes! Also note that the instruction
 itself is 53 bytes long, almost as long as the 
 <a href="https://groups.google.com/forum/#!topic/comp.arch/OJYBg8o7vcQ">longest VAX instruction</a>
-(<tt>EMODH</tt>, 54 bytes) and much longer than the longest x86 instruction 
+(<code>EMODH</code>, 54 bytes) and much longer than the longest x86 instruction 
 (15 bytes) </p></div></div></section>
 
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -535,10 +547,12 @@ itself is 53 bytes long, almost as long as the
 </table>
 </div>
 
+</center>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="HandlerObfuscation">&nbsp;</a>
+<br>
 <h3 align=center>Instruction Handler Obfuscation</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can split up the generated interpreter by inserting opaque predicates. This is useful to 
 make the instruction handlers and the dispatch logic less conspicuous. Here's one example; the 
@@ -546,6 +560,7 @@ handler can obviously be split in multiple ways: </p></div></div></section>
 
 <center><img width="500px" src="tigress3-images/split-handlers.png"></center>
 
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -557,10 +572,12 @@ handler can obviously be split in multiple ways: </p></div></div></section>
 </table>
 </div>
 
+</center>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="VPCObfuscation">&nbsp;</a>
+<br>
 <h3 align=center>VPC Obfuscation</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can add opaque expressions to the virtual PC to make it 
 more difficult to find.</p></div></div></section>
@@ -570,6 +587,7 @@ on input-dependent variables and discard any instructions which are
 not tainted. To frustrate such analyses we can add implicit flow to the VPC.
 </p></div></div></section>
 
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -597,10 +615,12 @@ not tainted. To frustrate such analyses we can add implicit flow to the VPC.
 </table>
 </div>
 
+</center>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="BogusFunctions">&nbsp;</a>
+<br>
 <h3 align=center>Bogus Functions</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Generate bogus functions that are virtualized along with the "real"
@@ -615,6 +635,7 @@ but which interpret unused functions:
 <center><img width="500px" src="tigress3-images/bogus-functions-2.png"></center>
 </p></div></div></section>
 
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -648,22 +669,26 @@ but which interpret unused functions:
 </table>
 </div>
 
+</center>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="BogusLoops">&nbsp;</a>
-<h3 align=center>Bogus Loops</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Add random computations to every iteration of the dispatch loop.  
-Use this to frustrate dynamic analysis by 
-</p></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><br>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp;inserting bogus instructions between consecutive iterations of the dispatch loop, 
-       thereby making the dispatch harder to recognize;
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp;making traces longer and thereby harder to store and analyze.
 <br>
-</p></div></div></section>
+<h3 align=center>Bogus Loops</h3>
 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Add random computations to every iteration of the dispatch loop.  
+Use this to frustrate dynamic analysis by</p></div></div></section>
+<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ol>
+   <li>inserting bogus instructions between consecutive iterations of the dispatch loop, 
+       thereby making the dispatch harder to recognize;</li>
+   <li>making traces longer and thereby harder to store and analyze.</li>
+</ol>
+</div></div></div></section>
+<br>
+
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -687,10 +712,12 @@ Use this to frustrate dynamic analysis by
 </table>
 </div>
 
+</center>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="Reentrant">&nbsp;</a>
+<br>
 <h3 align=center>Reentrant Interpreters</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Make interpreters that can execute a few instructions,
@@ -710,35 +737,41 @@ the interpreter with instructions from the surrounding code:</p></div></div></se
 </video>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You must prepare your code in the following ways:</p></div></div></section>
-<br>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The function you want to virtualize must have an argument
-        <tt>int* operation</tt>. It can occur anywhere among the formal parameters:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You must prepare your code in the following ways:<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ol>
+   <li> The function you want to virtualize must have an argument
+        <code>int* operation</code>. It can occur anywhere among the formal parameters:</li>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(int* operation, int n, int* result) {&hellip;}
 </code></pre>
 
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The first time foo gets called, operation must be
+   <li> The first time foo gets called, operation must be
         <0, and you must pass actual arguments to foo that
         it will use throughout the computation:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int operation = -10; 
 foo(&operation,n,&result);
 </code></pre>
-       <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">"-10" here means to initialize foo and execute 10
-        instructions.</p></div></div></section>
+       <br> 
+       "-10" here means to initialize foo and execute 10
+        instructions.
+   </li>
 <!-- --------------------------- -->
-    <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Sprinkle calls to foo throughout your program,
+    <li> Sprinkle calls to foo throughout your program,
          making sure that operation>0:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 10;
 foo(&operation,bogus1,&bogus2);  
 </code></pre>
-         <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here you can pass whatever arguments you want to foo, 
+         <br>
+         Here you can pass whatever arguments you want to foo, 
          they won't be used. Rather, the ones that were passed 
          in the first call will be used throughout. "10" here 
-         means to resume foo and execute 10 instructions.</p></div></div></section>
+         means to resume foo and execute 10 instructions.
+   </li>
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; You can check if foo has terminated by testing the
+   <li> You can check if foo has terminated by testing the
         value of operation after the call:
+        <br>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 10;
 foo(&operation,bogus1,&bogus2);  
 if (operation > 0)
@@ -746,32 +779,37 @@ if (operation > 0)
 else if (operation < 0)
    /* more work to do! */
 </code></pre>
+   </li>
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; If you want to make sure that foo has terminated
+   <li> If you want to make sure that foo has terminated
         --- because you really want its result at a particular
           point --- set operation to a large enough value:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 1000;
 foo(&operation,bogus1,&bogus2);  
 </code></pre>
+   </li>
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Additional calls to foo once termination has been
+   <li> Additional calls to foo once termination has been
         reached is safe; no additional instructions will
-        be executed.
+        be executed.</li>
 <!-- --------------------------- -->
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; If you want to call foo to compute a new value, 
+   <li> If you want to call foo to compute a new value, 
         call it again with operation<0:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   int operation = -10; 
    foo(&operation,n,&result);
 </code></pre>
-<br>
+   </li>
+</ol>
+</div></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">To ensure termination you can</p></div></div></section>
-<br>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; experiment yourself with how many iterations
+<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ol>
+   <li> experiment yourself with how many iterations
         are necessary to finish the computation;</li
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; make sure that the last call to foo is passed a
-        huge value to 'operation';
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; put the last call to foo in a loop 
+   <li> make sure that the last call to foo is passed a
+        huge value to 'operation';</li>
+   <li> put the last call to foo in a loop 
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   foo(&operation);   
    while (operation < 0) {
       /* some other computation here */
@@ -780,7 +818,9 @@ foo(&operation,bogus1,&bogus2);
    } 
    /* result is available here */
 </code></pre>
-<br>
+   </li>
+</ol>
+</div></div></div></section>
 
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">It is a good idea to combine reentrant interpreters with
 superoperators. Superoperators produce long instructions
@@ -792,6 +832,7 @@ loop in the instruction trace, superoperators combined
 with reentrant interpreters will reduce the presence of 
 such artifacts.</p></div></div></section>
 
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -803,15 +844,18 @@ such artifacts.</p></div></div></section>
 </table>
 </div>
 
+</center>
 
 <a class="anchor" id="EncodingProgram">&nbsp;</a>
+<br>
 <h3 align=center>Encoding the Program Array</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Setting
-<tt>--VirtualizeEncodeByteArray=true</tt>
+<code>--VirtualizeEncodeByteArray=true</code>
 results in each program instruction being xor:ed with
 a constant value, thus ensuring that it is
-not in cleartext until it is run:</p></div></div></section>
+not in cleartext until it is run. The generated code 
+looks something like this:</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char _5_obf3_$array[1][141]  = 
      {{
         (unsigned char)formal$result_STA_0$value_LIT_0 ^ (unsigned char)16,
@@ -828,10 +872,10 @@ not in cleartext until it is run:</p></div></div></section>
         ...
      }}
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This does not work for <tt>--VirtualizeDispatch=direct</tt>.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This does not work for <code>--VirtualizeDispatch=direct</code>.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Additionally, setting <tt>--VirtualizeObfuscateDecodeByteArray=true</tt> and
-<tt>--VirtualizeOpaqueStructs=input,env</tt> ensures that the decoded 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Additionally, setting <code>--VirtualizeObfuscateDecodeByteArray=true</code> and
+<code>--VirtualizeOpaqueStructs=input,env</code> ensures that the decoded 
 bytecode array depends on input. The decoding procedure looks like this:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  strcmp_result17 = (int)strlen(*(argv + (argc - 1)));
   decodeVar16 = (strcmp_result17 - 1 < 0) + (strcmp_result17 - 10 > 0) ? currentOp : (unsigned char)16;
@@ -860,18 +904,21 @@ bytecode array depends on input. The decoding procedure looks like this:
       arith.c --out=arith_out.c
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><tt>--Inputs="+1:int:42,-1:length:1?10"</tt> is a specfication of invariants over
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><code>--Inputs="+1:int:42,-1:length:1?10"</code> is a specfication of invariants over
 the command line. It specifies:</p></div></div></section>
-<br>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; the first argument on the command line should be the integer 42
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; the last argument should have a length between 1 and 10 
-<br>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><tt>--VirtualizeOpaqueStructs=input,env</tt> ensures that the 
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> the first argument on the command line should be the integer 42</li>
+   <li> the last argument should have a length between 1 and 10 </li>
+</ul>
+</div></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><code>--VirtualizeOpaqueStructs=input,env</code> ensures that the 
 program array will be encoded based on these command line invariants.
 If the program is invoked with a set of command line arguments that
 violate the invariants it is likely to crash.
 </p></div></div></section>
 
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -901,18 +948,19 @@ violate the invariants it is likely to crash.
 </table>
 </div>
 
+</center>
 
 <a class="anchor" id="DynamicProgram">&nbsp;</a>
+<br>
 <h3 align=center>Dynamic Program Arrays</h3>
 <section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Setting <tt>--VirtualizeDynamicBytecode=true</tt>
+Setting <code>--VirtualizeDynamicBytecode=true</code>
 results in the program array being constantly modified at runtime,
 much in the same way that happens to jitted code in the 
 <a href="../jitDynamic/index.html">JitDynamic</a> 
 transformation. In fact, exactly the same mechanisms are used
-for both transformations, and they share all the same options.</p></div></div></section>
-
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here's an example script:</p></div></div></section>
+for both transformations, and they share all the same options.
+Here's an example script:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
    --Transform=Virtualize \
@@ -936,6 +984,7 @@ for both transformations, and they share all the same options.</p></div></div></
 </code></pre>
 </center>
 
+<center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
@@ -1049,59 +1098,67 @@ for both transformations, and they share all the same options.</p></div></div></
 </table>
 </div>
 
+</center>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 
-<a class="anchor" id="examples">&nbsp;</a>
-<H3>Examples</H3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">As you are reading the code, there are a couple of interesting things to note:</p></div></div></section>
+<a class="anchor" id="notes">&nbsp;</a>
 <br>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Much of the symbolic information present in the transformed
+<h3 align=center>Notes</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">As you are reading the code, there are a couple of interesting things to note:</p></div></div></section>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> Much of the symbolic information present in the transformed
         source files (such as types, enumerations, and structured
         control flow) that help make the code easy to read and
         understand, disappears once the source has been compiled,
         linked, and stripped.  A successful attack will (at least partially) 
-        have to recover this information. 
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The code after <em>two</em> levels of virtualization looks very similar to
+        have to recover this information. </li>
+   <li> The code after <em>two</em> levels of virtualization looks very similar to
         the code after <em>one</em> level of virtualization. This is because the
         dispatch loop of the first virtualization gets coded into the bytecode
         program of the second. It's an interesting question to ask to what
-        extent this hinders de-virtualization. 
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The <tt>direct</tt> and <tt>call</tt> dispatch methods result
+        extent this hinders de-virtualization. </li>
+   <li> The <code>direct</code> and <code>call</code> dispatch methods result
         in much larger bytecode programs than the other methods. This
         is particularly evident on 64-bit machines where every opcode
         gets encoded in 8 bytes, in contrast with a single byte for
         the other methods. For this reason, if you are contemplating
         using two levels of interpretation, it's a good idea to make
-        the second level <em>not</em> use <tt>direct</tt> or <tt>call</tt>
+        the second level <em>not</em> use <code>direct</code> or <code>call</code>
         dispatch, to keep the size of the program down. Future versions
         of Tigress will use more compact encodings for these types of
-        dispatch. 
-<br>
+        dispatch. </li>
+</ul>
+</div></div></div></section>
 
 <a class="anchor" id="issues">&nbsp;</a>
-<h3 align=center>Issues</h3>
 <br>
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Several dispatch methods make use of <tt>gcc's</tt> and <tt>clang</tt>
+<h3 align=center>Issues</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-rCVze1lAFM" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here are some of the known issues with the Virtualize transformation:</p></div></div></section>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> Several dispatch methods make use of <code>gcc's</code> and <code>clang</code>
         <em>labels-as-values</em>. For other compilers only
-        the <tt>switch</tt> and <tt>ifnest</tt> dispatch methods should be
-        used.
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; <tt>--VirtualizeEncodeByteArray=true</tt> does not work for the <em>direct</em>
-        dispatch method. 
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Our current implementation of reentrant interpreters doesn't handle function
+        the <code>switch</code> and <code>ifnest</code> dispatch methods should be
+        used.</li>
+   <li> <code>--VirtualizeEncodeByteArray=true</code> does not work for the <em>direct</em>
+        dispatch method. </li>
+   <li> Our current implementation of reentrant interpreters doesn't handle function
         results, so make sure your function is void, and returns the result in a global 
-        or in a formal parameter.
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; The <tt>--VirtualizeConditionalKinds=flag</tt> option seems to have
+        or in a formal parameter.</li>
+   <li> The <code>--VirtualizeConditionalKinds=flag</code> option seems to have
         multiple issues on MacOS/llvm. Presumably this is due to some compiler 
-        problem related to inline assembly.
-   <br>&nbsp;&nbsp;&nbsp;&bull;&nbsp; Consider this example taken from gcc's <tt>comp-goto-1.c</tt> torture test: 
+        problem related to inline assembly.</li>
+   <li> Consider this example taken from gcc's <code>comp-goto-1.c</code> torture test: </li>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *(base_addr + insn.f1.offset);
 </code></pre>
       This kind of arithmetic on the program counter is going to fail for 
       transformations that completely restructure the code, such as
       virtualization.
-<br>
+</ul>
+</div></div></div></section>
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
