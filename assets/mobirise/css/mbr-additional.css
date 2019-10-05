@@ -2831,9 +2831,18 @@ section.lazy-placeholder:after {
   font-size: 80px;
   color: #777;
 }
+.cid-rE4xqbn6Pb {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
+}
+.cid-rE4xqbn6Pb .mbr-text,
+.cid-rE4xqbn6Pb blockquote {
+  color: #767676;
+}
 .cid-rE3XH22viE {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 60px;
+  padding-bottom: 0px;
   background-color: #ffffff;
 }
 .cid-rE3XH22viE .counter-container {
