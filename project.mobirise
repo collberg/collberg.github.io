@@ -2468,7 +2468,8 @@
       "settings": {
         "meta_descr": "Site Builder Description",
         "title": "Transformations",
-        "order": 10
+        "order": 10,
+        "header_custom": "<style>\nbody {\n  background-color: #ffffff;\n  color: #000000\n}\nsection {\n  background-color: #ffffff;\n  color: #000000\n}\np {\n   color: #767676\n}\nh3 {\n   color: #767676\n}\n</style>\n"
       },
       "components": [
         {
