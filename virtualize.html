@@ -25,7 +25,11 @@
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
   
-  
+<style>
+body {
+  background-color: #ffffff;
+}
+</style>
 
 </head>
 <body>
@@ -70,7 +74,7 @@
 
 
 <a class="anchor" id="virtualize">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2017" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4289" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
    This transformation turns a function into an interpreter, whose
    bytecode language is specialized for this function. The
    transformation has been designed to induce as much diversity as
@@ -80,7 +84,7 @@
    in its execution pattern.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2018" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4290" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 A generated interpreter consists of a virtual instruction set, 
 specialized for the input function, a bytecode array, a virtual
 program counter (VPC), a virtual stack pointer (VSP), a dispatch
@@ -95,7 +99,7 @@ an interpreter:
 </video>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2019" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here's an example of an interpreter constructed by Tigress for the program
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4291" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here's an example of an interpreter constructed by Tigress for the program
 <code>main(){int x; x++;}</code>:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">enum ops {Locals = 116, Plus  = 135, Load   = 60, Goto = 231,
@@ -119,7 +123,7 @@ int main() {
 }}
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2020" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4292" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 For this transformation, Tigress first constructs type-annotated
 abstract syntax tree (AST) from the C source, from which it generates
 control-flow graphs of instruction trees. Tigress then selects a random
@@ -131,7 +135,7 @@ selects a random dispatch method and produces an output program.
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity and Stealth</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2021" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><strong>Static diversity.</strong> Tigress supports two mechanisms for generating 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4293" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><strong>Static diversity.</strong> Tigress supports two mechanisms for generating 
 ISAs with a high degree of static diversity:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
@@ -142,13 +146,13 @@ ISAs with a high degree of static diversity:</p></div></div></section>
 </ul>
 </div></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2022" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><strong>Dynamic diversity.</strong> We ensure that dynamic execution patterns are 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4294" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><strong>Dynamic diversity.</strong> We ensure that dynamic execution patterns are 
 diversified by merging randomized bogus functions with the ``real'' 
 function. We can furthermore impede dynamic analysis by making instruction
 traces artificially long.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2023" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4295" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 <strong>Static stealth.</strong>
 Not only diversity but also <em>stealth</em> is important for
 interpreters. For static stealth, the <code>split</code> transformation can break up the
@@ -156,7 +160,7 @@ interpreter loop into smaller pieces, and the <code>AddOpaque</code>
 transformation can make instruction handlers less conspicuous.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2024" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4296" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 <strong>Dynamic stealth.</strong>  For dynamic stealth, Tigress interpreters can
 be made <em>reentrant</em>, meaning only a few iterations of the
 dispatch loop are executed at a time, effectively mixing instructions
@@ -168,7 +172,7 @@ function executes is not important, as long as it completes <em>eventually</em>.
 
 <br>
 <h3 align=center>Usage</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2025" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4297" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 A typical call to Tigress to virtualize a function <code>foo</code> looks like this:
 </p></div></div></section>
 <center>
@@ -180,7 +184,7 @@ A typical call to Tigress to virtualize a function <code>foo</code> looks like t
    --out=out.c in.c
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2026" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4298" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 And here are the options for debugging and optimization:
 </p></div></div></section>
 
@@ -284,7 +288,7 @@ And here are the options for debugging and optimization:
 <a class="anchor" id="dispatch">&nbsp;</a>
 <br>
 <h3 align=center>Dispatch Method Selection</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2027" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For both static and dynamic diversity, Tigress supports eight different
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4299" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For both static and dynamic diversity, Tigress supports eight different
 dispatch methods. The following code is generated for the different methods,
    where &Xi;<sup><code>op1</code></sup>; is the instruction handler for
    operator <code>op1</code>:</p></div></div></section>
@@ -387,7 +391,7 @@ op2hdl: &Xi;<sup><code>op2</code></sup>; goto top;
 <a class="anchor" id="ISA">&nbsp;</a>
 <br>
 <h3 align=center>Instruction Set Architecture Generation</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2028" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Instruction sets can use stacks, registers, or both to pass values
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4300" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Instruction sets can use stacks, registers, or both to pass values
 between instructions. By default, the following, very simple, instruction
 set is used:</p></div></div></section>
 <center>
@@ -426,7 +430,7 @@ set is used:</p></div></div></section>
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2029" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">However, a high degree of diversity can be achieved from the way
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4301" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">However, a high degree of diversity can be achieved from the way
 instructions communicate with each other, through values stored on the
 stack or passed in virtual registers.  Tigress can generate
 instructions that use any combination of registers and stack storage
@@ -440,7 +444,7 @@ to illustrate this:
 </video>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2030" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4302" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Tigress can induce further diversity by merging
 instructions into <em>superoperators</em>. New, merged, instructions
 can have an almost abritrary complex semantics, involving multiple arithmetic 
@@ -455,7 +459,7 @@ in <a href="http://dl.acm.org/citation.cfm?id=1855877">Unpacking
 virtualization obfuscators</a>, difficult.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2031" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Consider setting <code>--VirtualizeMaxDuplicateOps=2</code> 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4303" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Consider setting <code>--VirtualizeMaxDuplicateOps=2</code> 
 and <code>--VirtualizeOperands=mixed</code> resulting in two <em>store-int</em>
 instructions, one that takes both arguments in registers, and one that takes
 one argument on the stack and the other in a register. Tigress will chose 
@@ -476,7 +480,7 @@ case _0__store_int$right_STA_0$left_REG_0:
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2032" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Consider next setting <code>--VirtualizeSuperOpsRatio=2.0</code> and <code>--VirtualizeMaxMergeLength=10</code>,
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4304" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Consider next setting <code>--VirtualizeSuperOpsRatio=2.0</code> and <code>--VirtualizeMaxMergeLength=10</code>,
 resulting in virtual instructions with highly complex semantics:
 
 Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:</p></div></div></section>
@@ -504,7 +508,7 @@ Here is the instruction handler for one such instruction, made up by merging 10 
     break;
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2033" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that the instruction name really is almost 400 characters long; the
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4305" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that the instruction name really is almost 400 characters long; the
 backslashes are here only for display purposes! Also note that the instruction
 itself is 53 bytes long, almost as long as the 
 <a href="https://groups.google.com/forum/#!topic/comp.arch/OJYBg8o7vcQ">longest VAX instruction</a>
@@ -556,7 +560,7 @@ itself is 53 bytes long, almost as long as the
 <a class="anchor" id="HandlerObfuscation">&nbsp;</a>
 <br>
 <h3 align=center>Instruction Handler Obfuscation</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2034" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can split up the generated interpreter by inserting opaque predicates. This is useful to 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4306" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can split up the generated interpreter by inserting opaque predicates. This is useful to 
 make the instruction handlers and the dispatch logic less conspicuous. Here's one example; the 
 handler can obviously be split in multiple ways: </p></div></div></section>
 
@@ -581,10 +585,10 @@ handler can obviously be split in multiple ways: </p></div></div></section>
 <a class="anchor" id="VPCObfuscation">&nbsp;</a>
 <br>
 <h3 align=center>VPC Obfuscation</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2035" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can add opaque expressions to the virtual PC to make it 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4307" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can add opaque expressions to the virtual PC to make it 
 more difficult to find.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2036" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">One possible attack on interpreters is to perform a taint analysis
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4308" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">One possible attack on interpreters is to perform a taint analysis
 on input-dependent variables and discard any instructions which are
 not tainted. To frustrate such analyses we can add implicit flow to the VPC.
 </p></div></div></section>
@@ -624,7 +628,7 @@ not tainted. To frustrate such analyses we can add implicit flow to the VPC.
 <a class="anchor" id="BogusFunctions">&nbsp;</a>
 <br>
 <h3 align=center>Bogus Functions</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2037" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4309" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Generate bogus functions that are virtualized along with the "real"
 function. Instructions from the bogus and real function are executed
 cyclically and in sequence, i.e. first an instruction from the real function, then
@@ -679,7 +683,7 @@ but which interpret unused functions:
 <br>
 <h3 align=center>Bogus Loops</h3>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2038" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Add random computations to every iteration of the dispatch loop.  
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4310" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Add random computations to every iteration of the dispatch loop.  
 Use this to frustrate dynamic analysis by</p></div></div></section>
 <section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ol>
@@ -721,7 +725,7 @@ Use this to frustrate dynamic analysis by</p></div></div></section>
 <a class="anchor" id="Reentrant">&nbsp;</a>
 <br>
 <h3 align=center>Reentrant Interpreters</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2039" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4311" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Make interpreters that can execute a few instructions,
 return, and later resume to execute a few more instructions,
 until, eventually, they terminate. This is particularly
@@ -730,7 +734,7 @@ the a piece of code executes, as long as it executes <em>eventually</em>,
 and where the stealthiness of the computations is paramount.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2040" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This video shows how making an interpreter reentrant will mix instructions from
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4312" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This video shows how making an interpreter reentrant will mix instructions from
 the interpreter with instructions from the surrounding code:</p></div></div></section>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
@@ -739,7 +743,7 @@ the interpreter with instructions from the surrounding code:</p></div></div></se
 </video>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2041" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You must prepare your code in the following ways:<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2041" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4313" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You must prepare your code in the following ways:<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4313" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 <section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ol>
    <li> The function you want to virtualize must have an argument
@@ -804,7 +808,7 @@ foo(&operation,bogus1,&bogus2);
 </ol>
 </div></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2042" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To ensure termination you can</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4314" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To ensure termination you can</p></div></div></section>
 <section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ol>
    <li> experiment yourself with how many iterations
@@ -824,7 +828,7 @@ foo(&operation,bogus1,&bogus2);
 </ol>
 </div></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2043" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">It is a good idea to combine reentrant interpreters with
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4315" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">It is a good idea to combine reentrant interpreters with
 superoperators. Superoperators produce long instructions
 that perform more work during each iteration, and as a
 result the number of dispatches (i.e. loop iterations)
@@ -851,7 +855,7 @@ such artifacts.</p></div></div></section>
 <a class="anchor" id="EncodingProgram">&nbsp;</a>
 <br>
 <h3 align=center>Encoding the Program Array</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2044" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4316" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Setting
 <code>--VirtualizeEncodeByteArray=true</code>
 results in each program instruction being xor:ed with
@@ -874,9 +878,9 @@ looks something like this:</p></div></div></section>
         ...
      }}
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2045" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This does not work for <code>--VirtualizeDispatch=direct</code>.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4317" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This does not work for <code>--VirtualizeDispatch=direct</code>.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2046" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Additionally, setting <code>--VirtualizeObfuscateDecodeByteArray=true</code> and
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4318" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Additionally, setting <code>--VirtualizeObfuscateDecodeByteArray=true</code> and
 <code>--VirtualizeOpaqueStructs=input,env</code> ensures that the decoded 
 bytecode array depends on input. The decoding procedure looks like this:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  strcmp_result17 = (int)strlen(*(argv + (argc - 1)));
@@ -890,7 +894,7 @@ bytecode array depends on input. The decoding procedure looks like this:
 </code></pre>
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2047" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here's an example script:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4319" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here's an example script:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Environment=... --Seed=0 \
    --Transform=InitImplicitFlow \
@@ -906,7 +910,7 @@ bytecode array depends on input. The decoding procedure looks like this:
       arith.c --out=arith_out.c
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2048" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--Inputs="+1:int:42,-1:length:1?10"</code> is a specfication of invariants over
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4320" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--Inputs="+1:int:42,-1:length:1?10"</code> is a specfication of invariants over
 the command line. It specifies:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
@@ -914,7 +918,7 @@ the command line. It specifies:</p></div></div></section>
    <li> the last argument should have a length between 1 and 10 </li>
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2049" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--VirtualizeOpaqueStructs=input,env</code> ensures that the 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4321" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--VirtualizeOpaqueStructs=input,env</code> ensures that the 
 program array will be encoded based on these command line invariants.
 If the program is invoked with a set of command line arguments that
 violate the invariants it is likely to crash.
@@ -955,7 +959,7 @@ violate the invariants it is likely to crash.
 <a class="anchor" id="DynamicProgram">&nbsp;</a>
 <br>
 <h3 align=center>Dynamic Program Arrays</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2050" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4322" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Setting <code>--VirtualizeDynamicBytecode=true</code>
 results in the program array being constantly modified at runtime,
 much in the same way that happens to jitted code in the 
@@ -1108,7 +1112,7 @@ Here's an example script:</p></div></div></section>
 <a class="anchor" id="notes">&nbsp;</a>
 <br>
 <h3 align=center>Notes</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2051" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">As you are reading the code, there are a couple of interesting things to note:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4323" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">As you are reading the code, there are a couple of interesting things to note:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Much of the symbolic information present in the transformed
@@ -1138,7 +1142,7 @@ Here's an example script:</p></div></div></section>
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2052" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some of the known issues with the Virtualize transformation:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4324" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some of the known issues with the Virtualize transformation:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Several dispatch methods make use of <code>gcc's</code> and <code>clang</code>
