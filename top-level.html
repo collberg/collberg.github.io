@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
   <meta name="description" content="Web Site Builder Description">
   
-  <title>empty</title>
+  <title>Top-Level</title>
   <link rel="preload" as="style" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
 <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap.min.css">
@@ -83,20 +83,26 @@ h3 {
     </nav>
 </section>
 
+<br><br><br><br>
 
 <a class="anchor" id="options">&nbsp;</a>
 <br>
 <h3 align=center>Top-Level Options</h3>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c938" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5562" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
 that selects the type of transformation and the <code>--Functions</code> option that
 selects the function(s) to which it should be applied. The Tigress options described here
  apply to <strong>all</strong> transformations. Each transformation additionally has their
-own set of options, all prefixed by the name of the trandsformation.</p></div></div></section>
+own set of options, all prefixed by the name of the transformation.</p></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
 <tr>
 <td><tt>--Environment</tt></td>
@@ -154,7 +160,7 @@ own set of options, all prefixed by the name of the trandsformation.</p></div></
 <a class="anchor" id="targets">&nbsp;</a>
 <br>
 <h3 align=center>Selecting Targets</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c939" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5563" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 To avoid name clashes and to allow you to specify the results of a 
 transformation, prefixes can be added to all new identifiers. For
 example, after a <code>Split</code> transformation, you may want to
@@ -168,7 +174,12 @@ to make sure that new names don't clash with old ones. Use
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
 <tr>
 <td><tt>--FilePrefix</tt></td>
@@ -226,15 +237,23 @@ to make sure that new names don't clash with old ones. Use
 
 </center>
 
+<br>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Thus, to generate symbols of the form <code>AAA_BBB_opaque_list1</code>, give the options
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   --FilePrefix=AAA_ --Transform=initOpaque --Prefix=BBB
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--FilePrefix=AAA_ \
+--Transform=initOpaque \
+--Prefix=BBB
 </code></pre>
+</center>
    </li>
    <li> Or, to generate symbols of the form <code>AAA__0__opaque_Node</code>, give the options
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   --FilePrefix=AAA_ --Transform=InitOpaque
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--FilePrefix=AAA_ \
+--Transform=InitOpaque
 </code></pre>
+</center>
    </li>
 </ul>
 </div></div></div></section>
@@ -244,12 +263,12 @@ to make sure that new names don't clash with old ones. Use
 <a class="anchor" id="arguments">&nbsp;</a>
 <br>
 <h3 align=center>Argument Specifications</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c940" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5564" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 For options that take an integer an argument we provide an <em>INTSPEC</em> 
 notation that allows randomized selection of the value. There's a similar
 <em>BOOLSPEC</em> notation for booleans.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c941" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5565" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 All transformations require you to specify the set of functions to
 which they should be applied. <em>IDENTSPEC</em> (identifier
 specifications) allow you to flexibly select all or some of the
@@ -261,7 +280,12 @@ a function.
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
 <tr>
 <td><tt><em>INTSPEC</em></tt></td>
@@ -337,24 +361,34 @@ a function.
 
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c942" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here are some examples:</p></div></div></section>
+<br>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5566" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here are some examples:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li>Randomly select 3 functions and "foo":
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    --Functions=?3,foo   
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Functions=?3,foo   
 </code></pre>
+</center>
    </li>
    <li> Add entropy from all variables in function foo:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    --Transform=UpdateEntropy --Functions=foo --UpdateEntropyVar=*
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=UpdateEntropy \
+--Functions=foo \
+--UpdateEntropyVar=*
 </code></pre>
+</center>
    </li>
    <li>Split 20% of all functions:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    --Transform=split --Functions=%20 
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=split \
+--Functions=%20 
 </code></pre>
+</center>
    <li>
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c943" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that some care needs to be exercised when specifiying
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5567" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that some care needs to be exercised when specifiying
 identifiers, since some renaming can happen during obfuscation.</p></div></div></section>
 
   <script src="assets/popper/popper.min.js"></script>
