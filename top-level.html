@@ -84,16 +84,61 @@ h3 {
 </section>
 
 
-<!-- =============================================================================================== -->
-
 <a class="anchor" id="options">&nbsp;</a>
 <br>
 <h3 align=center>Top-Level Options</h3>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c938" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
+that selects the type of transformation and the <code>--Functions</code> option that
+selects the function(s) to which it should be applied. The Tigress options described here
+ apply to <strong>all</strong> transformations. Each transformation additionally has their
+own set of options, all prefixed by the name of the trandsformation.</p></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Environment</tt></td>
+<td><tt>string</tt></td>
+<td> A string that describes the architecture, operating system, and compiler being used. We currently recognize the following strings: <tt>x86_64:Linux:Gcc:4.6</tt>, <tt>x86_64:Darwin:Clang:5.1</tt>, <tt>armv7:Linux:Gcc:4.6</tt>, <tt>armv8:Linux:Gcc:4.6</tt>. This is mostly necessary because <tt>Clang</tt> does not support some features (most notably <tt>asm goto</tt>) that <tt>Gcc</tt> does. In the future we will use this to provide better support for 32-bit binaries. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--out</tt></td>
+<td><tt>file.c</tt></td>
+<td> The file to write to. </td>
+</tr>
+<tr>
+<td><tt>--Seed</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> The randomization seed. <tt>--Seed=0</tt> makes Tigress generate its own seed. </td>
+</tr>
+<tr>
+<td><tt>--FilePrefix</tt></td>
+<td><tt>AUTO, NONE, string</tt></td>
+<td> Use this if you intend to run tigress multiple times on each file to avoid name clashes. Only set this option once. Default=NONE.
+<ul>
+   <li> <tt>AUTO</tt> = generate a prefix to add to all symbols
+   <li> <tt>NONE</tt> = don't add any prefix
+   <li> <tt>string</tt> = add this prefix
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--Verbosity</tt></td>
+<td><tt>int</tt></td>
+<td> Tigress' chattiness level. <tt>--Verbosity=0</tt> makes Tigress quiet. <tt>--Verbosity=1</tt> prints each transformation as it is being applied. Higher levels also print out all the versions of functions and variables being constructed. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--Skip</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Skip a particular transformation. Typically, use like this to skip transformation <tt>T1</tt>: <tt>tigress --Transform=T1 --Skip=true ... --Transform=T2 --Skip=false ...</tt>. This can be useful when you have a long sequence  of transformations and want to experiment with turning certain ones on or off. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--Input</tt></td>
+<td><tt>INPUTSPEC</tt></td>
+<td> Specify invariants over the command line arguments, such the range of integer values a particular argument may take, the range of lengths of an argument, or the string value of an argument. These are used by the <em>input</em> opaque predicate, which is created by <tt>--InitOpaque=input</tt>. Default=0.</td>
+</tr>
 <tr>
 <td><tt>--Prefix</tt></td>
 <td><tt>string</tt></td>
@@ -106,21 +151,10 @@ h3 {
 
 <!-- =============================================================================================== -->
 
-<a class="anchor" id="transforms">&nbsp;</a>
-<br>
-<h3 align=center>Selecting Transformations</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8178" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
-Each transformation is specified, at a minimum, by the <code>--Transform</code> option
-that selects the type of transformation and the <code>--Functions</code> option that
-selects the function(s) to which it should be applied.
-</p></div></div></section>
-
-<!-- =============================================================================================== -->
-
 <a class="anchor" id="targets">&nbsp;</a>
 <br>
 <h3 align=center>Selecting Targets</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8179" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c939" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 To avoid name clashes and to allow you to specify the results of a 
 transformation, prefixes can be added to all new identifiers. For
 example, after a <code>Split</code> transformation, you may want to
@@ -136,6 +170,32 @@ to make sure that new names don't clash with old ones. Use
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--FilePrefix</tt></td>
+<td><tt>AUTO, NONE, string</tt></td>
+<td> Use this if you intend to run tigress multiple times on each file to avoid name clashes. Only set this option once. Default=NONE.
+<ul>
+   <li> <tt>AUTO</tt> = generate a prefix to add to all symbols
+   <li> <tt>NONE</tt> = don't add any prefix
+   <li> <tt>string</tt> = add this prefix
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--Verbosity</tt></td>
+<td><tt>int</tt></td>
+<td> Tigress' chattiness level. <tt>--Verbosity=0</tt> makes Tigress quiet. <tt>--Verbosity=1</tt> prints each transformation as it is being applied. Higher levels also print out all the versions of functions and variables being constructed. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--Skip</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Skip a particular transformation. Typically, use like this to skip transformation <tt>T1</tt>: <tt>tigress --Transform=T1 --Skip=true ... --Transform=T2 --Skip=false ...</tt>. This can be useful when you have a long sequence  of transformations and want to experiment with turning certain ones on or off. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--Input</tt></td>
+<td><tt>INPUTSPEC</tt></td>
+<td> Specify invariants over the command line arguments, such the range of integer values a particular argument may take, the range of lengths of an argument, or the string value of an argument. These are used by the <em>input</em> opaque predicate, which is created by <tt>--InitOpaque=input</tt>. Default=0.</td>
+</tr>
 <tr>
 <td><tt>--Prefix</tt></td>
 <td><tt>string</tt></td>
@@ -184,12 +244,12 @@ to make sure that new names don't clash with old ones. Use
 <a class="anchor" id="arguments">&nbsp;</a>
 <br>
 <h3 align=center>Argument Specifications</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8180" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c940" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 For options that take an integer an argument we provide an <em>INTSPEC</em> 
 notation that allows randomized selection of the value. There's a similar
 <em>BOOLSPEC</em> notation for booleans.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8181" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c941" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 All transformations require you to specify the set of functions to
 which they should be applied. <em>IDENTSPEC</em> (identifier
 specifications) allow you to flexibly select all or some of the
@@ -203,12 +263,81 @@ a function.
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black">
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt><em>INTSPEC</em></tt></td>
+<td><tt>?, int?int, int</tt></td>
+<td> The <em>INTSPEC</em> notation allows randomized selection of integer valued options. 
+<ul>
+   <li> <tt>?</tt> = select a 32-bit random number
+   <li> <tt>int?int</tt> = select a random integer value in the range <em>[int,int]</em>
+   <li> <tt>int</tt> = select this value
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt><em>FRACSPEC</em></tt></td>
+<td><tt>*, int, int?int, %int</tt></td>
+<td> The <em>FRACSPEC</em> notation allows the selection of a fraction of a set of elements. 
+<ul>
+   <li> <tt>*</tt> = 100%
+   <li> <tt>int</tt> = select exactly this number of elements (if they exist)
+   <li> <tt>int?int</tt> = <tt>a?b</tt> selects a random number of elements in the rage <em>[a,b]</em> (if they exist)
+   <li> <tt>%int</tt> = select this fraction of available elements
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td><tt>?, true, false</tt></td>
+<td> The <em>BOOLSPEC</em> notation allows randomized selection of boolean valued options. 
+<ul>
+   <li> <tt>?</tt> = select a random boolean value
+   <li> <tt>true</tt> = select <em>true</em>
+   <li> <tt>false</tt> = select <em>false</em>
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt><em>IDENTSPEC</em></tt></td>
+<td><tt>*, ?int, %int, /regexp/, string</tt></td>
+<td> Many transformations require you to specify the set of functions to which they should be applied. Trivally, you can say <tt>--Functions=foo</tt> to apply the obfuscation only to <tt>foo</tt>, but frequently you need more flexibility than that. The <em>IDENTSPEC</em> notation provides this functionality. Some transformations also use identifier specifications to specify variables, as in <tt>--UpdateEntropyVar=\*</tt> which would select all variables of a function. 
+<ul>
+   <li> <tt>*</tt> = select all available identifiers
+   <li> <tt>?int</tt> = randomly select <tt>int</tt> number of identifiers
+   <li> <tt>%int</tt> = randomly select <tt>int</tt> percent of available identifiers
+   <li> <tt>/regexp/</tt> = select the identifiers that match the regular expression
+   <li> <tt>string</tt> = select this identifier
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt><em>LOCALSPEC</em></tt></td>
+<td><tt></tt></td>
+<td> The <em>LOCALSPEC</em> notation is used to specify a set of local variables and formal parameters. For example, <tt>--LocalVariables='main:i,j;foo:\*'=\*</tt> would select all variables of <tt>foo</tt> and <tt>i</tt> and <tt>j</tt> of <tt>main</tt>. The notation is a semicolon-separated list of <em>IDENTSPEC:IDENTSPEC</em>. </td>
+</tr>
+<tr>
+<td><tt><em>INPUTSPEC</em></tt></td>
+<td><tt>int, ?int, int?, int?int, +int, -int, "int", "string", "length"</tt></td>
+<td> The <tt>--Input=...</tt> switch allows you to specify invariants over the command line arguments. These are used when you set <tt>--AddOpaqueStructs=input</tt> and <tt>--VirtualizeOpaqueStructs=input</tt> to create opaque constructs that appear to depend on input. An input specification is a coomma-separated list of 3-tuples: <em>position:kind:value</em>. I.e., <tt>--Input=<em>position:kind:value</em>,<em>position:kind:value</em>,.../tt> For example, consider the input specification <tt>--InputSpec=+1:int:34?56,-1:length:1?</tt> The first tuple specifies that the first command line argument must evaluate to an integer in the range 34-56, and the last argument has a length of exactly 1 character. Specifically, <em>position=/+n|-n/</em>, i.e. the <tt>n</tt>:th command line argument from the beginning or end of the line. The second part of the 3-tuple, <em>kind</tt> is <em>/int|string|length/</tt>, specifying that an invariant over a command line argument is a range of integer values, a particular string value, or the length (in characters) of an argument. The last part of the 3-tuple, <em>value</em>, allows you to specify four types of ranges: <tt>/[0-9]+/</tt>, <tt>/?[0-9]+/</tt>, <tt>/[0-9]+?/</tt>, and <tt>/[0-9]+?[0-9]+/</tt>,<tt>/[0-9]*?/</tt>, for a specfic value n, a range [n,..], a range [..,n], and a range [n..m]. <tt>n</tt> (a single integer) specifies a specific value, <tt>n?</tt> specifies a range starting at <tt>n</tt> 
+<ul>
+   <li> <tt>int</tt> = <em>range specification:</em> matches a particular integer
+   <li> <tt>?int</tt> = <em>range specification:</em> matches any value from <tt>int</tt> and up
+   <li> <tt>int?</tt> = <em>range specification:</em> matches any value up to <tt>int</tt>
+   <li> <tt>int?int</tt> = <em>range specification:</em> matches values in the range.
+   <li> <tt>+int</tt> = <em>position specification:</em> argument number <tt>int</tt> from the left on the command line
+   <li> <tt>-int</tt> = <em>position specification:</em> argument number <tt>int</tt> from the right on the command line
+   <li> <tt>"int"</tt> = <em>invariant specification:</em> match the integer value of a command line argument
+   <li> <tt>"string"</tt> = <em>invariant specification:</em> match the string value of a command line argument
+   <li> <tt>"length"</tt> = <em>invariant specification:</em> match the length of a string argument
+</ul>
+</td>
+</tr>
 </table>
 </div>
 
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8182" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here are some examples:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c942" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here are some examples:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li>Randomly select 3 functions and "foo":
@@ -225,7 +354,7 @@ a function.
    <li>
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8183" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that some care needs to be exercised when specifiying
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c943" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that some care needs to be exercised when specifiying
 identifiers, since some renaming can happen during obfuscation.</p></div></div></section>
 
   <script src="assets/popper/popper.min.js"></script>
