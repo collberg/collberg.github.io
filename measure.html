@@ -84,13 +84,44 @@ h3 {
 </section>
 
 <br><br><br><br>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Measuring the resources consumed by a function.
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Measuring the resources consumed by a function.
 Simply wraps a function in routines that measure the time it
 takes. Optionally, you can specify how many times the function
 should be run. Useful when evaluating the impact a transformation
 has on runtime. </p></div></div></section>
 
-INSERT-OPTION options.in Transform:MeasureKind:MeasureTimes:
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>Measure</tt></td>
+<td> Measure the resources (time) consumed by a function. </td>
+</tr>
+<tr>
+<td><tt>--MeasureKind</tt></td>
+<td><tt>time</tt></td>
+<td> Resource to measure. Default=time.
+<ul>
+   <li> <tt>time</tt> = Measure time.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--MeasureTimes</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Number of times to run the function. Default=1.</td>
+</tr>
+</table>
+</div>
+
+</center>
 
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>

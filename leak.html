@@ -84,26 +84,77 @@ h3 {
 </section>
 
 <br><br><br><br>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Transform a function such that it leaks a secret, in particular (part of) the
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Transform a function such that it leaks a secret, in particular (part of) the
 code of a secret function. This can be useful to simulate a misbehaving 
 obfuscator. Leaking can be static (simply insert a variable that holds the
 encrypted source code of the secret function) or dynamic (only leak if
 a certain formal parameter has a certain value).</p></div></div></section>
 
-INSERT-OPTION options.in Transform:LeakSecretFunction:LeakVariable:LeakValue:LeakKind:LeakDebug
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>Leak</tt></td>
+<td> Simulate a misbehaving obfuscator by inserting code that leak (part of) the secret function. Note that openssl needs to be installed. </td>
+</tr>
+<tr>
+<td><tt>--LeakSecretFunction</tt></td>
+<td><tt><em>string</em></tt></td>
+<td> The name of the secret function whose code will be leaked Default=0.</td>
+</tr>
+<tr>
+<td><tt>--LeakVariable</tt></td>
+<td><tt><em>string</em></tt></td>
+<td> For dynamic leakers, the formal parameter that will be tested Default=0.</td>
+</tr>
+<tr>
+<td><tt>--LeakValue</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> For dynamic leakers, the value that the formal parameter will be tested against Default=0.</td>
+</tr>
+<tr>
+<td><tt>--LeakKind</tt></td>
+<td><tt>static, dynamic, dynamic_byte</tt></td>
+<td> Select the kind of leaking code to be inserted. Default=static.
+<ul>
+   <li> <tt>static</tt> = insert the encrypted code into a variable
+   <li> <tt>dynamic</tt> = return the encrypted code when a particular formal parameter has a particular value
+   <li> <tt>dynamic_byte</tt> = return the i:th byte of the encrypted code depending on the value of the formal parameter
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--LeakDebug</tt></td>
+<td><tt><em>boolean</em></tt></td>
+<td> Turn debugging on or off. Default=false.</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c235" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>static</code> leaker simply inserts the encrypted source
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>static</code> leaker simply inserts the encrypted source
 code of the secret function as a string. For example, this command</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
    --Transform=Leak \
       --LeakKind=static \
       --Functions=foo \
       --LeakSecretFunction=main 
 </code></pre>
-produces this code
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">produces this code</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">char *leak_global_enc  =    0;
 
 int foo(int x) { 
@@ -114,11 +165,13 @@ int foo(int x) {
   return (g);
 }
 </code></pre>
+</center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c236" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>dynamic</code> leaker will leak the entire
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>dynamic</code> leaker will leak the entire
 (encrypted) source code of the secret function, but only when a
 particular formal parameter has a particular value. For example,
 this command</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
     --Transform=Leak \
        --LeakKind=dynamic \
@@ -127,10 +180,12 @@ this command</p></div></div></section>
        --LeakValue=42 \
        --LeakSecretFunction=main 
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c237" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">will transform function <code>foo</code> such that when formal parameter <code>x!=42</code> 
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">will transform function <code>foo</code> such that when formal parameter <code>x!=42</code> 
 the function behaves normally, but when <code>x==42</code>, it will leak the source of
 main <code>main</code>. Note that for this transformation, the signature of <code>foo</code>
 changes:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">struct leak_object {
    long key ;
    char *enc ;
@@ -159,10 +214,12 @@ struct result_object foo(int x) {
   }
 }
 </code></pre>
+</center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c238" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>dynamic_byte</code> leaker will leak one byte at a time of the 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5973" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>dynamic_byte</code> leaker will leak one byte at a time of the 
 (encrypted) secret function. The byte leaked depends on the value
 of the selected formal parameter. For example, this command</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
    --Transform=Leak \
       --LeakKind=dynamic_byte \
@@ -171,9 +228,11 @@ of the selected formal parameter. For example, this command</p></div></div></sec
       --LeakValue=42 \
       --LeakSecretFunction=main 
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c239" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">will transform function <code>foo</code> such that when formal parameter <code>x<=42</code> 
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5974" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">will transform function <code>foo</code> such that when formal parameter <code>x<=42</code> 
 the function behaves normally, but when <code>x>42</code>, it will leak byte <code>x-42</code> 
 of the encryption of <code>main</code>:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int foo(int x) { 
   int return_var ;
   char *leak_enc ;
@@ -188,6 +247,7 @@ of the encryption of <code>main</code>:</p></div></div></section>
   }
 }
 </code></pre>
+</center>
 
 <br>
 <h3 align=center>Issues</h3>

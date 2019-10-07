@@ -84,9 +84,43 @@ h3 {
 </section>
 
 <br><br><br><br>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Operations for displaying internal data structures.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Operations for displaying internal data structures.</p></div></div></section>
 
-INSERT-OPTION options.in Transform:InfoKind:
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>Info</tt></td>
+<td> Print internal information. </td>
+</tr>
+<tr>
+<td><tt>--InfoKind</tt></td>
+<td><tt>cfg, fun, src, linear, WS, DG, CG, alias, globals</tt></td>
+<td> Information to print. For <tt>cfg</tt>, <tt>fun</tt>, and <tt>linear</tt> use <tt>--Functions</tt>, as usual, to specify which functions to print. <tt>--Transform=Info --InfoKind=src --Functions=foo</tt> is a good way to examine a function after each transformation. 
+<ul>
+   <li> <tt>cfg</tt> = Control Flow Graph
+   <li> <tt>fun</tt> = Function in internal format
+   <li> <tt>src</tt> = Function in source form
+   <li> <tt>linear</tt> = Function in internal linearized block format (used as a starting point for flattening and branch functions)
+   <li> <tt>WS</tt> = Working Set
+   <li> <tt>DG</tt> = Dependency Graph
+   <li> <tt>CG</tt> = Call Graph
+   <li> <tt>alias</tt> = Print the pointer-graphs
+   <li> <tt>globals</tt> = List of global symbols in the original program.
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+</center>
 
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>

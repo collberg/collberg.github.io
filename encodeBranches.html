@@ -85,18 +85,19 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of these transformations is to make it harder for 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of these transformations is to make it harder for 
 automatic analysis tools (such as disassemblers) to determine
 the target of branches.</p></div></div></section>
 
-<H3>Branch Functions</H3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c235" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation implements a simplistic version of Linn and Debray's 
+<br>
+<h3 align=center>Branch Functions</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation implements a simplistic version of Linn and Debray's 
 branch functions. We doen't use perfect hash tables, as suggested
 in Linn and Debray's paper, since this is hard to do as a
 source-to-source transformation. Rather, we simply pass the offset to
 jump to as an argument to the branch function.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c236" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The generated code looks like this, where the call to the branch function <code>bf</code>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The generated code looks like this, where the call to the branch function <code>bf</code>
 actually results in a direct jump to <code>lab2</code>:</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void bf(unsigned long offset) {
   __asm__  volatile   ("addq  %0, 8(%%rbp)": : "r" (offset));
@@ -111,20 +112,21 @@ int main() {
 }
 </code></pre>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c237" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">By default, a function is flattened prior to direct jumps
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">By default, a function is flattened prior to direct jumps
 being replaced by calls to branch functionThis creates more direct 
 jumps and hence more opportunities to apply the branch function 
 transformation. Turn this off with <code>--BranchFunsFlatten=false</code>. </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c238" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Before branches can be replaced by calls to a branch
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Before branches can be replaced by calls to a branch
 function, at least one such function needs to be constructed,
 using the <code>--Transform=InitBranchFuns</code> transformation.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c239" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The branch function is not obfuscated and hence trivial to find. 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5973" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The branch function is not obfuscated and hence trivial to find. 
 It's therefore a good idea to merge it with other functions in the program.</p></div></div></section>
 
-<H3>X86 Branch Obfuscations</H3>
+<br>
+<h3 align=center>X86 Branch Obfuscations</h3>
 We implement two standard branch obfuscations used by many
 packers:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      push target
@@ -138,7 +140,8 @@ and
       ret
 </code></pre>
 
-<H3>NOP sleds</H3>
+<br>
+<h3 align=center>NOP sleds</h3>
 The <code>--AntiBranchAnalysisKinds=goto2nopSled</code> switch turns this code
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      goto L
       ...
@@ -165,7 +168,7 @@ dependent:
             --AntiBranchAnalysisKinds=goto2nopSled \
             --AntiBranchAnalysisOpaqueStructs=Input 
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c240" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5974" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 The current nop-sled is trivial, consisting of random lists of 
 x86 bytes that have no effect:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   cmc
@@ -180,12 +183,70 @@ x86 bytes that have no effect:
    ...
 </code></pre>
 
-INSERT-OPTION options.in Transform:AntiBranchAnalysisKinds:AntiBranchAnalysisOpaqueStructs:AntiBranchAnalysisObfuscateBranchFunCall:AntiBranchAnalysisBranchFunFlatten:AntiBranchAnalysisBranchFunAddressOffset:
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>AntiBranchAnalysis</tt></td>
+<td> Replace branches with other constructs. </td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisKinds</tt></td>
+<td><tt>branchFuns, goto2call, goto2push, goto2nopSled, *</tt></td>
+<td> Comma-separated list of the kinds of constructs branches can be replaced with. Default=branchFuns.
+<ul>
+   <li> <tt>branchFuns</tt> = Generate calls to branch functions. <tt>--Transform=InitBranchFuns</tt> must be given prior to this transform
+   <li> <tt>goto2call</tt> = Replace <tt>goto L</tt> with <tt>push L; call lab; ret; lab: ret</tt>
+   <li> <tt>goto2push</tt> = Replace <tt>goto L</tt> with <tt>push L; ret</tt>
+   <li> <tt>goto2nopSled</tt> = Replace <tt>goto L</tt> with <tt> goto *p</tt> where p is the address of a sequence of nop:s that eventually lead to L
+   <li> <tt>*</tt> = Same as branchFuns,goto2call,goto2push
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisOpaqueStructs</tt></td>
+<td><tt>list, array, input, env, *</tt></td>
+<td> Comma-separated list of the kinds of opaque constructs to use. Default=list,array.
+<ul>
+   <li> <tt>list</tt> = Generate opaque expressions using linked lists
+   <li> <tt>array</tt> = Generate opaque expressions using arrays
+   <li> <tt>input</tt> = Generate opaque expressions that depend on input. Requires <tt>--Inputs</tt> to set invariants over input.
+   <li> <tt>env</tt> = Generate opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
+   <li> <tt>*</tt> = Same as list,array,input,env
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisObfuscateBranchFunCall</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Obfuscate the branch function call Default=true.</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisBranchFunFlatten</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Flatten before replacing jumps. This opens up more opportunities for replacing unconditional branches. Default=true.</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisBranchFunAddressOffset</tt></td>
+<td><tt><em>integer</em></tt></td>
+<td> The offset (in bytes) of the return address on the stack, for branch functions. May differ based on operating system, word size, and compiler. Default=8.</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c241" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation has many issues, and should only be used with great care:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5975" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation has many issues, and should only be used with great care:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Currently, only x86 assembly code is generated. If someone is interested
@@ -219,7 +280,7 @@ INSERT-OPTION options.in Transform:AntiBranchAnalysisKinds:AntiBranchAnalysisOpa
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c242" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The Branch Function transformation implements a simplistic version of Linn and Debray's 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5976" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The Branch Function transformation implements a simplistic version of Linn and Debray's 
 <a href="https://www.cs.arizona.edu/~debray/Publications/disasm-resist.pdf">
 Obfuscation of Executable Code to Improve Resistance to Static
 Disassembly</a>, Linn and Debray's algorithm replaces
@@ -227,13 +288,13 @@ direct jumps with calls to a special <em>branch function</em> which
 sets the return address to the target of the original branch, and then
 returns.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c243" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are many attacks published on branch functions, including
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5977" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are many attacks published on branch functions, including
 <a href="https://www.usenix.org/legacy/publications/library/proceedings/sec04/tech/full_papers/kruegel/kruegel_html/disassemble.html">
 Static Disassembly of Obfuscated Binaries</a> by Christopher Kruegel, William Robertson, Fredrik Valeur and Giovanni Vigna,
 and <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.302.7805">Deobfuscation: Reverse engineering obfuscated code</a>
 by Sharath Udupah, Saumya Debray, and Matias Madou.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c244" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Kevin A. Roundy and Barton P. Miller's survey paper
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5978" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Kevin A. Roundy and Barton P. Miller's survey paper
 <a href="http://dl.acm.org/citation.cfm?id=2522972">
 Binary-code obfuscations in prevalent packer tools</a> 
 is a good source of information on techniques used

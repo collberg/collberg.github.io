@@ -85,7 +85,7 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4559" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of this transformation is to disrupt analysis tools that
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of this transformation is to disrupt analysis tools that
 make use of dynamic taint analysis. </p></div></div></section>
 
 <center><img width="400px" src="tigress3-images/implicit-flow-6.png"></center>
@@ -93,7 +93,7 @@ make use of dynamic taint analysis. </p></div></div></section>
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4560" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We use two basic ways to copy a variable using control-, rather than
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We use two basic ways to copy a variable using control-, rather than
 data-flow:</p></div></div></section>
 <section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ol>
@@ -101,21 +101,76 @@ data-flow:</p></div></div></section>
       <li> copying it bit by bit, tested in an if-statement. </li>
 </ol>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4561" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This can be done in a simple loop, an unrolled loop, or by throwing
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This can be done in a simple loop, an unrolled loop, or by throwing
 exceptions caught in a signal handler. This leads to a total of
 five different copy methods.</p></div></div></section>
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4562" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you want to copy using signals you must first generate the signal handlers
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you want to copy using signals you must first generate the signal handlers
 using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p></div></div></section>
 
-INSERT-OPTION options.in Transform:AntiTaintAnalysisKinds:AntiTaintAnalysisSysCalls:AntiTaintAnalysisImplicitFlow
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>AntiTaintAnalysis</tt></td>
+<td> Transform the code by inserting <em>implicit flow</em> such that dynamic taint analysis becomes less precise. </td>
+</tr>
+<tr>
+<td><tt>--AntiTaintAnalysisKinds</tt></td>
+<td><tt>argv, sysCalls, vars, *</tt></td>
+<td> Comma-separated list of the kinds of anti-taint analysis transformations to employ. Default=none.
+<ul>
+   <li> <tt>argv</tt> = Insert implicit flow from <tt>argv</tt> and <tt>argc</tt> in <tt>main</tt>.
+   <li> <tt>sysCalls</tt> = Insert implicit flow from output variables of common system calls.
+   <li> <tt>vars</tt> = Insert implicit flow to a variable whenever it is written to. Use <tt>--LocalVariables=..</tt> and <tt>--GlobalVariables=...</tt> to specify which variables should be copied.
+   <li> <tt>*</tt> = Same as all options turned on.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--AntiTaintAnalysisSysCalls</tt></td>
+<td><tt>getpid, scanf, *</tt></td>
+<td> Comma-separated list of the system calls whose output should be passed through implicit flow. Only two calls are currently implemented. Default=all system calls.
+<ul>
+   <li> <tt>getpid</tt> = Insert implicit flow to the output of <tt>getpid</tt>.
+   <li> <tt>scanf</tt> = Insert implicit flow to the output of <tt>scanf</tt>.
+   <li> <tt>*</tt> = Same as all options turned on.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--AntiTaintAnalysisImplicitFlow</tt></td>
+<td><tt>single, compose, select, majority, repeat, until</tt></td>
+<td> S-expression of the implicit flow combiners to use. Default=none.
+<ul>
+   <li> <tt>single</tt> = The expression <tt>(single a> inserts a simple implicit flow, where a is one of
+   <li> <tt>compose</tt> = The S-expression <tt>(compose a b c)</tt> inserts an implicit flow where the output of <tt>a</tt>
+   <li> <tt>select</tt> = The S-expression <tt>(select a b c)</tt> inserts an implicit flow that picks among <tt>a,b,c</tt>
+   <li> <tt>majority</tt> = The S-expression <tt>(majority a b c)</tt> inserts an implicit flow that uses majority logic
+   <li> <tt>repeat</tt> = The S-expression <tt>(repeat a n)</tt> (where <tt>n</tt> is an integer) is equivalent to
+   <li> <tt>until</tt> = The S-expression <tt>(until a m n)</tt> (where <tt>m,n</tt> are integers, <tt>m<n</tt>)
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <a class="anchor" id="examples">&nbsp;</a>
-<H3>Examples</H3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4563" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The code to copy <code>argc</code> using bit-by-bit copy and signals 
+<br>
+<h3 align=center>Examples</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The code to copy <code>argc</code> using bit-by-bit copy and signals 
 would look something like this:</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  argc_origPtr13 = (unsigned char *)(& argc);
   argc_copyPtr15 = (unsigned char *)(& argc_copy14);
@@ -137,7 +192,7 @@ would look something like this:</p></div></div></section>
     size_iter16 ++;
   }
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4564" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">with this signal handler and these global variables:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5973" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">with this signal handler and these global variables:</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char TempVar;
 int BitVar;
 void handler(int sig ) { 
@@ -148,7 +203,7 @@ void handler(int sig ) {
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4565" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Currently, we can only un-taint a few variables:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5974" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Currently, we can only un-taint a few variables:</p></div></div></section>
 <section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ol>
       <li> <code>argc</code> and <code>argv</code> in <code>main</code>, </li>
@@ -158,11 +213,11 @@ void handler(int sig ) {
       <li> The function handler to a jitted function (using the <code>--JitImplicitFlow</code> option). </li>
 </ol>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4566" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We will add more as requested!</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5975" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We will add more as requested!</p></div></div></section>
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4567" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The implementation is based on ideas from
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5976" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The implementation is based on ideas from
 <a href="http://www.isg.rhul.ac.uk/sullivan/pubs/tr/ata07.pdf">
    Anti-Taint-Analysis: Practical Evasion Techniques Against Information Flow Based Malware Defense
 </a> by Lorenzo Cavallaro, Prateek Saxena, and R. Sekar and

@@ -86,7 +86,7 @@ h3 {
 <br><br><br><br>
 
 <a class="anchor" id="addOpaque">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4559" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Break up code blocks by inserting opaque predicates. Requires that 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Break up code blocks by inserting opaque predicates. Requires that 
 at least the <a href="http://tigress.cs.arizona.edu/transformPage/docs/utils_opaque/index.html">InitOpaque</a>
 transform has been previously issued and, preferably, that one or more 
  <a href="http://tigress.cs.arizona.edu/transformPage/docs/utils_opaque/index.html">UpdateOpaque</a>
@@ -94,7 +94,81 @@ transformations have been given.</p></div></div></section>
 
 <center><img width="400px" src="tigress3-images/opaque-3.png"></center>
 
-INSERT-OPTION options.in Transform:AddOpaqueCount:AddOpaqueKinds:AddOpaqueObfuscate:AddOpaqueSplitKinds:AddOpaqueSplitLevel:AddOpaqueStructs
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>AddOpaque</tt></td>
+<td> Add opaque predicates to split up control-flow. </td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueCount</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> How many opaques to add to each function. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueKinds</tt></td>
+<td><tt>call, bug, true, junk, fake, question, *</tt></td>
+<td> Comma-separated list of the types of insertions of bogus computation allowed. Default=<tt>call,bug,true,junk,question</tt>.
+<ul>
+   <li> <tt>call</tt> = <tt>if (false) RandomFunction()</tt>
+   <li> <tt>bug</tt> = <tt>if (false) BuggyStatement else RealStatement</tt>
+   <li> <tt>true</tt> = <tt>if (true) RealStatement</tt>
+   <li> <tt>junk</tt> = <tt>if (false) asm(".byte random bytes")</tt>
+   <li> <tt>fake</tt> = <tt>if (False) NonExistingFunction()</tt>
+   <li> <tt>question</tt> = <tt>if (True || False) RealStatement else CopyOfRealStatement</tt>
+   <li> <tt>*</tt> = Turns all options on.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueObfuscate</tt></td>
+<td><tt><em>BOOL</em></tt></td>
+<td> Perform some light obfuscation of copied code when using the 'question' opaque predicate. Default=true.</td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueSplitKinds</tt></td>
+<td><tt>top, block, deep, recursive, level, inside</tt></td>
+<td> Comma-separated list specifying the order in which different split methods are attempted when <tt>--AddOpaqueKinds=question</tt> is specified. Default=top,block,deep,recursive.
+<ul>
+   <li> <tt>top</tt> = split the top-level list of statements into two functions <tt>funcname_split_1</tt> and <tt>funcname_split_2</tt>.
+   <li> <tt>block</tt> = split a basic block (list of assignment and call statements) into two functions.
+   <li> <tt>deep</tt> = split out a nested control structure of at least height>2 into its own function <tt>funcname_split_1</tt>.
+   <li> <tt>recursive</tt> = same as block, but calls to split functions are also allowed to be split out.
+   <li> <tt>level</tt> = split out a statement at a level specified by <tt>--AddOpaqueSplitLevel</tt>.
+   <li> <tt>inside</tt> = split out a statement at the innermost nesting level.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueSplitLevel</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Levels which could be split out when specifying <tt>--AddOpaqueSplitKinds=level</tt> Default=1.</td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueStructs</tt></td>
+<td><tt>list, array, input, env, *</tt></td>
+<td> Default=list,array.
+<ul>
+   <li> <tt>list</tt> = Generate opaque expressions using linked lists
+   <li> <tt>array</tt> = Generate opaque expressions using arrays
+   <li> <tt>input</tt> = Generate opaque expressions that depend on input. Requires <tt>--Inputs</tt> to set invariants over input.
+   <li> <tt>env</tt> = Generate opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
+   <li> <tt>*</tt> = Same as list,array,input,env
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
@@ -113,7 +187,7 @@ There are two sources of diversity:
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4560" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This is the code generated for the arguments options to <code>--AddOpaqueKinds</code>:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This is the code generated for the arguments options to <code>--AddOpaqueKinds</code>:</p></div></div></section>
 <center>
 <table align=center  class="smalltab">
    <tr> 
@@ -353,11 +427,11 @@ obfuscate the split out functions yourself.
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4561" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
 coerce the linker to ignore such errors. With <code>gcc</code> you can use this option:</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   -Wl,--unresolved-symbols=ignore-in-object-files 
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4562" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">No similar option seems to exist for <code>clang</code>.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">No similar option seems to exist for <code>clang</code>.</p></div></div></section>
 
 
   <script src="assets/popper/popper.min.js"></script>

@@ -85,16 +85,16 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">One of the uses of Tigress is as an educational tool. The <code>--Transform=RandomFuns</code>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">One of the uses of Tigress is as an educational tool. The <code>--Transform=RandomFuns</code>
 option will generate a random function that can subsequently be transformed using any
 combination of Tigress obfuscations, and then given to students as a cracking target.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c235" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can generate a program for the students to reverse engineer:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can generate a program for the students to reverse engineer:</p></div></div></section>
    <center><img width="400px" src="tigress3-images/education-deobfuscate-3.png"></center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c236" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">or you can generate a program for them to crack:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">or you can generate a program for them to crack:</p></div></div></section>
    <center><img width="400px" src="tigress3-images/education-crack-3.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c237" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Depending on the sophistication of your students, you can vary the length of the transformation
 sequence, the difficulty of the transformations, the options to the transformations, 
 the complexity of the generated challenge function, and either give them source to untangle
@@ -102,26 +102,30 @@ the complexity of the generated challenge function, and either give them source 
 real-world challenge).
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c238" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We typically give each student 3 programs, of different levels of difficulty,
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We typically give each student 3 programs, of different levels of difficulty,
 to attack. Thanks to the diversity of Tigress-generated programs, each challenge
 is unique, making it harder for students to cheat.</p></div></div></section> 
 
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c239" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5973" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Below is part of the script we use to generate take-home exams for our students.
 It contains two <em>assets</em>, a password check and an expired time check, 
 and it's the students' job to disable these.
 </p></div></div></section>
 Start by creating this file, <code>empty.c</code>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
-#include<stdio.h>
-#include<time.h>
-#include<pthread.h>
+#include &le;stdio.h&gt; 
+#include &le;time.h&gt;
+#include &le;pthread.h&gt;
 </code></pre>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"># Generate the cleartext challenge program. This is hidden from the students.
-tigress --Verbosity=1 --Seed=$seed6 --Environment=x86_64:Darwin:Clang:5.1 \
+</center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5974" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Generate the cleartext challenge program. This is hidden from the students:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 --Environment=x86_64:Darwin:Clang:5.1 \
       --Transform=RandomFuns \
          --RandomFunsName=SECRET \
          --Verbosity=5 \
@@ -144,10 +148,13 @@ tigress --Verbosity=1 --Seed=$seed6 --Environment=x86_64:Darwin:Clang:5.1 \
          --RandomFunsPassword=secret \
          --RandomFunsFailureKind=segv \
       --out=6-input.c empty.c
+</code></pre>
+</center>
 
-# Generate an empty program with the same interface as the challenge program
-# for the students to fill out
-tigress --Verbosity=1 --Seed=$seed6 \
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5975" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Next, generate an empty program with the same interface as the challenge program
+for the students to fill out:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 \
       --Transform=RandomFuns --RandomFunsName=SECRET \
          --RandomFunsType=long \
          --RandomFunsInputSize=1 \
@@ -158,9 +165,12 @@ tigress --Verbosity=1 --Seed=$seed6 \
          --RandomFunsOutputSize=1 \
          --RandomFunsCodeSize=0 \
       --out=6-answer.c empty.c
+</code></pre>
+</center>
 
-# Obfuscate the challenge program. 
-tigress --Verbosity=1 --Seed=$seed6 --FilePrefix=obf \
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5976" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Finally, pbfuscate the challenge program. </p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 --FilePrefix=obf \
       --Transform=InitEntropy \
          --Functions=main\
       --Transform=InitOpaque \
@@ -188,11 +198,12 @@ tigress --Verbosity=1 --Seed=$seed6 --FilePrefix=obf \
          --CleanUpKinds=annotations,constants,names \
       --out=6-challenge.c 6-input.c
 </code></pre>
+</center>
 
 <a class="anchor" id="structure">&nbsp;</a>
 <br>
 <h3 align=center>Structure of Random Programs</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c240" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To fulfill our needs, a random program generator must have certain characteristics:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5977" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To fulfill our needs, a random program generator must have certain characteristics:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> in order to make it easy for reverse engineers to automate attacks, the 
@@ -215,7 +226,8 @@ tigress --Verbosity=1 --Seed=$seed6 --FilePrefix=obf \
    </li>
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c241" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The generated challenge programs all take the following simple form:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5978" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The generated challenge programs all take the following simple form:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include &le;stdio.h&gt; 
 #include &le;stdlib.h&gt;
 
@@ -244,10 +256,11 @@ int main(int argc, char** argv) {
   }
 } 
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c242" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">That is, a challenge program reads one or more longs from standard in, 
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5979" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">That is, a challenge program reads one or more longs from standard in, 
 and produces one or more longs on standard out.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c243" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Internally, generated <code>SECRET</code> functions share the same basic structure:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5980" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Internally, generated <code>SECRET</code> functions share the same basic structure:
 an <em>expansion phase</em>, a <em>mixing phase</em>, and a <em>compression phase</em>:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
@@ -262,7 +275,7 @@ an <em>expansion phase</em>, a <em>mixing phase</em>, and a <em>compression phas
    </li>
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c244" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is an example:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5981" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is an example:</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void SECRET(unsigned long input[1] , unsigned long output[1] ) { 
   unsigned long state[4] ;
   unsigned long local1 ;
@@ -293,7 +306,201 @@ an <em>expansion phase</em>, a <em>mixing phase</em>, and a <em>compression phas
 }
 </code></pre>
 
-INSERT-OPTION options.in Transform:RandomFunsFunctionFunctionCount:RandomFunsTrace:RandomFunsInputSize:RandomFunsLocalStaticStateSize:RandomFunsLocalDynamicStateSize:RandomFunsGlobalStaticStateSize:RandomFunsGlobalDynamicStateSize:RandomFunsOutputSize:RandomFunsCodeSize:RandomFunsLoopSize:RandomFunsBoolSize:RandomFunsType:RandomFunsName:RandomFunsFailureKind:RandomFunsInputKind:RandomFunsDummyFailure:RandomFunsActivationCode:RandomFunsPassword:RandomFunsTimeCheckCount:RandomFunsActivationCodeCheckCount:RandomFunsPasswordCheckCount:RandomFunsControlStructures:RandomFunsBasicBlockSize:RandomFunsForBound:RandomFunsOperators:RandomFunsPointTest
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>RandomFuns</tt></td>
+<td> Generate a random function useful as an attack target. </td>
+</tr>
+<tr>
+<td><tt>--RandomFunsFunctionFunctionCount</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Number of functions to generate. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsTrace</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Insert tracing in the generated program. 0=no tracing. 1=trace function entry and exit. 2=as 1, but also trace control points. 3=as 2, but also trace individual statements. 4=as 3, but also trace the values of the STATE variable at each statement. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsInputSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Size of input. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsLocalStaticStateSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Size of function-local static state. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsLocalDynamicStateSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Size of function-local dynamic state, i.e. the number of linked structures (lists, trees, etc) that can be built. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsGlobalStaticStateSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Size of global static state. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsGlobalDynamicStateSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Size of global dynamic state, i.e. the number of linked structures (lists, trees, etc) that can be built. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsOutputSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Size of output. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsCodeSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Size of the generated code. This is the number of nodes in generated Abstract Syntax Tree. Default=10.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsLoopSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Maximum count of loop iterations. Used to control the length of execution. Default=None.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsBoolSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Size of boolean expressions, specifically the number of conjunctions and disjunctions (&& and ||) that are used to build up expressions. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsType</tt></td>
+<td><tt>char, short, int, long, float, double</tt></td>
+<td> Type of input/output/state. Default=long.
+<ul>
+   <li> <tt>char</tt> = C int type
+   <li> <tt>short</tt> = C int type
+   <li> <tt>int</tt> = C int type
+   <li> <tt>long</tt> = C long type
+   <li> <tt>float</tt> = C float type
+   <li> <tt>double</tt> = C double type
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsName</tt></td>
+<td><tt>string</tt></td>
+<td> The name of the generated function. </td>
+</tr>
+<tr>
+<td><tt>--RandomFunsFailureKind</tt></td>
+<td><tt>message, abort, segv</tt></td>
+<td> The manner in which a triggered asset may fail. Comma-separated list. Default=segv.
+<ul>
+   <li> <tt>message</tt> = Print a message.
+   <li> <tt>abort</tt> = Call the <tt>abort</tt> function.
+   <li> <tt>segv</tt> = Die with a segmentation fault.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsInputKind</tt></td>
+<td><tt>argv, stdin</tt></td>
+<td> How inputs are read by the program, through the command line or stdin. Default=argv.
+<ul>
+   <li> <tt>argv</tt> = Enter input to the program on the command line.
+   <li> <tt>stdin</tt> = Enter input to the program through stdin.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsDummyFailure</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Generates excatly the same code whether true or false, except the failure code is rendered impotent. In other words, <tt>--RandomFunsDummyFailure=true<tt> will have the failure code inserted, but inactive. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsActivationCode</tt></td>
+<td><tt>int</tt></td>
+<td> The code the user has to enter (as the first command line arguments) to be allowed to run the program. Default=42.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsPassword</tt></td>
+<td><tt>string</tt></td>
+<td> The password the user has to enter (read from standar input) to be allowed to run the program. Default="42".</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsTimeCheckCount</tt></td>
+<td><tt>int</tt></td>
+<td> The number of checks for expired time (<tt>gettimeofday() > someTimeInThePast</tt>) to be inserted in the program. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsActivationCodeCheckCount</tt></td>
+<td><tt>int</tt></td>
+<td> The number of checks for correct activation code to be inserted in the program. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsPasswordCheckCount</tt></td>
+<td><tt>int</tt></td>
+<td> The number of checks for correct password to be inserted in the program. Probably only 0 and 1 make sense here, since the user will be prompted for a password once for every check. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsControlStructures</tt></td>
+<td><tt>S-Expression</tt></td>
+<td> If set, will define the nested control structures of the generated function. Otherwise, a random structure will be generated. The argument is an S-Expression, where each subexpression has one of the forms <tt>(bb INTSPEC)</tt> (for a basic block consisting of a certain number of assignment statements), <tt>(for <em>S-expression</em>)</tt> (for a for-loop with a given body), or <tt>(if <em>S-expression</em> <em>S-expression</em>)</tt> (for an if-statement with a given then and else part), or <tt>(switch <em>S-expression</em> <em>S-expression</em>)</tt> (for a switch-statement with a given list of cases and a default case). For example, <tt>--RandomFunsControlStructures='(for ((bb 4)))'</tt> will generate a body consisting of a for-loop with 4 assignment statements in the body. <tt>(for ((bb 4) (if ((bb 1)) ((bb 2)))))</tt> also puts an if-statement inside the loop. <tt>(for ((bb 4) (if ((bb 1)) ((for (bb 2))))))</tt> puts a for-loop inside the else-part of the if-statement. <tt>(switch ((bb 4) (if ((bb 1)))) (bb 4))</tt> creates a switch-statment with two cases (a basic block and an if-statement), and a basic block as the default case,. Default=none.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsBasicBlockSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> The size of basic blocks, when control structures are not explicitly specified using <tt>RandomFunsControlStructures</tt>. Default=3.</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsForBound</tt></td>
+<td><tt>constant, input, boundedInput, boundedAny</tt></td>
+<td> The allowable upper bound in a for-statement. Comma-separated list. Default=constant.
+<ul>
+   <li> <tt>constant</tt> = Literal integer.
+   <li> <tt>input</tt> = Value from the input array, could cause index out of bounds.
+   <li> <tt>boundedInput</tt> = Value from the input array, will not cause index out of bounds.
+   <li> <tt>boundedAny</tt> = Value from the any source, will not cause index out of bounds.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsOperators</tt></td>
+<td><tt>PlusA, MinusA, Mult, Div, Mod, Shiftlt, Shiftrt, Lt, Gt, Le, Ge, Eq, Ne, BAnd, BXor, BOr, *</tt></td>
+<td> The allowable operators in expressions. Comma-separated list. Default=all.
+<ul>
+   <li> <tt>PlusA</tt> = +
+   <li> <tt>MinusA</tt> = -
+   <li> <tt>Mult</tt> = *
+   <li> <tt>Div</tt> = /
+   <li> <tt>Mod</tt> = %
+   <li> <tt>Shiftlt</tt> = <<
+   <li> <tt>Shiftrt</tt> = >>
+   <li> <tt>Lt</tt> = <
+   <li> <tt>Gt</tt> = >
+   <li> <tt>Le</tt> = =<
+   <li> <tt>Ge</tt> = >=
+   <li> <tt>Eq</tt> = ==
+   <li> <tt>Ne</tt> = !=
+   <li> <tt>BAnd</tt> = &
+   <li> <tt>BXor</tt> = ^
+   <li> <tt>BOr</tt> = |
+   <li> <tt>*</tt> = all operators
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--RandomFunsPointTest</tt></td>
+<td><tt>BOOL</tt></td>
+<td> Add <tt>if (output[0] == 4242424242U) printf("You win!\n");</tt> after the call to the generated function. The idea is to replace (by hand) 4242424242U with one actual output of the function. This can be used as another reverse engineering challenge: "<em>Find an input for which the program prints <tt>"You win!</tt>.</em> Default=false.</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
@@ -331,7 +538,7 @@ INSERT-OPTION options.in Transform:RandomFunsFunctionFunctionCount:RandomFunsTra
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c245" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Random function generation is described in 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5982" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Random function generation is described in 
 <a href="https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/banescu">
    Predicting the Resilience of Obfuscated Code Against Symbolic Execution Attacks via Machine Learning
 </a> by Sebastian Banescu, Christian Collberg, and Alexander Pretschner, USENIX Security 2017.

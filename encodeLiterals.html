@@ -85,17 +85,50 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Obfuscate integer and/or string literals (such as <tt>42</tt> or <tt>"42"</tt>). 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Obfuscate integer and/or string literals (such as <tt>42</tt> or <tt>"42"</tt>). 
 Literal integers can be replaced with opaque expressions, which
 requires that the InitOpaque transformation has been previously issued. Literal strings can be
 replaced with a function that generates them at runtime.</p></div></div></section>
 
-INSERT-OPTION options.in Transform:EncodeLiteralsKinds:EncodeLiteralsEncoderName
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>EncodeLiterals</tt></td>
+<td> Replace literal integers and strings with less obvious expressions. </td>
+</tr>
+<tr>
+<td><tt>--EncodeLiteralsKinds</tt></td>
+<td><tt>integer, string, *</tt></td>
+<td> Specify the types of literals to encode Default=integer,string.
+<ul>
+   <li> <tt>integer</tt> = Replace literal integers with opaque expressions
+   <li> <tt>string</tt> = Replace literal strings with calls to a function that generates them
+   <li> <tt>*</tt> = Same as integer,string
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--EncodeLiteralsEncoderName</tt></td>
+<td><tt>string</tt></td>
+<td> The name of the generated encoder function (only for encoded strings). Default=None.</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c235" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Note that the generated string encoding function is trivial, by design.
 To be made less conspicuous, it should itself be transformed, for example using the
 <a href="http://tigress.cs.arizona.edu/transformPage/docs/virtualize/index.html">Virtualize</a>

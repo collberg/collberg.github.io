@@ -85,34 +85,115 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Some transformations need a source of randomness during execution. For this
 reason, we can insert statements that collect random values, preferably from
 variables that are input dependent.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c235" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 We support two basic ways to collect entropy. You can insert statements within your program
 that collect values from (hopefully) input-dependent variables. Or, you can spin up a background 
 thread that intermittently does so automatically. Regardless, the randomness we collect is of low quality, 
 but good enough for our purposes.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c236" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 At a minimum, you should issue the <code>--Transform=InitEntropy</code> transformation,
 since this creates the variables that hold the entropy.
 You should issue as many <code>--Transform=UpdateEntropy</code> as you
 can, making sure you collect entropy from variables that are truly input dependent.
 </p></div></div></section>
 
-INSERT-OPTION initEntropy.in Transform:InitEntropyKinds:InitEntropyThreadName:InitEntropyThreadSleep:InitEntropyTrace
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>InitEntropy</tt></td>
+<td> Add initialization of the entropy variables. </td>
+</tr>
+<tr>
+<td><tt>--InitEntropyKinds</tt></td>
+<td><tt>thread, vars, *</tt></td>
+<td> Comma-separated list of the kinds of entropy generation to add. Default=thread,var.
+<ul>
+   <li> <tt>thread</tt> = Generate a background thread to update the entropy
+   <li> <tt>vars</tt> = Update the entropy from input-dependent variables found in the program
+   <li> <tt>*</tt> = Same as thread,vars
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--InitEntropyThreadName</tt></td>
+<td><tt>string</tt></td>
+<td> The name of the generated background thread Default=entropyThread.</td>
+</tr>
+<tr>
+<td><tt>--InitEntropyThreadSleep</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> How long the background thread will sleep after having updated the entropy, in nanoseconds Default=1000.</td>
+</tr>
+<tr>
+<td><tt>--InitEntropyTrace</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Trace the updates to entropy variables Default=false.</td>
+</tr>
+</table>
+</div>
 
-INSERT-OPTION updateEntropy.in Transform:UpdateEntropyVars:UpdateEntropyTrace:UpdateEntropyKinds
+</center>
+
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>UpdateEntropy</tt></td>
+<td> Add updates to the entropy variables. </td>
+</tr>
+<tr>
+<td><tt>--UpdateEntropyVars</tt></td>
+<td><tt><em>IDENTSPEC</em></tt></td>
+<td> Add to the entropy variables from these variables. Default=*.</td>
+</tr>
+<tr>
+<td><tt>--UpdateEntropyTrace</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Trace the updates to the entropy variables. Default=FALSE.</td>
+</tr>
+<tr>
+<td><tt>--UpdateEntropyKinds</tt></td>
+<td><tt>thread, vars, *</tt></td>
+<td> Comma-separated list of the kinds of entropy generation to add. Default=thread,var.
+<ul>
+   <li> <tt>thread</tt> = Generate a background thread to update the entropy
+   <li> <tt>vars</tt> = Update the entropy from input-dependent variables found in the program
+   <li> <tt>*</tt> = Same as thread,vars
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c237" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 The command below initializes the entropy variables in <code>main</code>,
 and then collects randomness from variables <code>x,y,z</code> 
 in function <code>inputData</code>, from variable <code>packet</code>
@@ -152,7 +233,7 @@ function is called <em>ENTROPYTHREAD</em>, and it sleeps for
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c238" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea of using threads and CPU performance counters to generate random numbers 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea of using threads and CPU performance counters to generate random numbers 
 was first introduced by Adrian Colesa, Radu Tudoran, and Sebastian Banescu in
 <a href="https://ieeexplore.ieee.org/document/5204851">Software Random Number Generation Based on Race Conditions</a>.
 Our implementation isn't as advanced at theirs since it only uses X86's <code>rdtsc</code> counter. Unfortunately, other

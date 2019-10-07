@@ -85,7 +85,7 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Merge multiple functions into one. An extra formal argument is added 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Merge multiple functions into one. An extra formal argument is added 
 to allow call sites to call any of the functions.
 This transformation is useful as a precursor to virtualization or jitting:
 if you want to virtualize both <code>foo</code> and <code>bar</code>,
@@ -93,18 +93,18 @@ first merge them together, then virtualize the result.</p></div></div></section>
 
 <center><img width="400px" src="tigress3-images/merge.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c235" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The transformation merges the argument list and the local variables
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The transformation merges the argument list and the local variables
 of the functions, thereby tying them together.</p></div></div></section>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c236" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Merging relies on the Flatten transformation, and has the same sources of diversity as it.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Merging relies on the Flatten transformation, and has the same sources of diversity as it.</p></div></div></section>
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c237" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are several ways to merge. In a simple merge, the function bodies
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are several ways to merge. In a simple merge, the function bodies
 are simply put in an if-nest. This is simplistic, of course, but sufficient
 if you are going to, say, virtualize or jit the merged function. If you set 
 <code>--MergeFlatten=true</code> then constituent functions are first
@@ -112,16 +112,92 @@ flattened, then the resulting blocks are merged together, and finally
 a dispatch method is added (switch, goto, or indirect, selected by
 <code>--MergeFlattenDispatch</code>).</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c238" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The merged function is named</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The merged function is named</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   prefix ^ fun1 ^ "_" ^ fun2  ^ "_" ^ ...
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c239" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">where <code>^</code> is concatenation.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5973" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">where <code>^</code> is concatenation.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c240" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">It is a good idea to run a <code>--Trandform=RndArgs</code> transformation after
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5974" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">It is a good idea to run a <code>--Trandform=RndArgs</code> transformation after
 this one to hide the obvious extra argument that's been added to
 the function.</p></div></div></section>
 
-INSERT-OPTION options.in Transform:MergeName:MergeObfuscateSelect:MergeOpaqueStructs:MergeFlatten:MergeFlattenDispatch:MergeSplitBasicBlocks:MergeRandomizeBlocks:MergeConditionalKinds
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>Merge</tt></td>
+<td> Merge of two or more functions. Two different types of merge are supported: simple merge (<tt>if () function1 else if () function2 else ...</tt>) and flatten merge, where the functions are first flattened, and then the resulting blocks are woven together. This transformation modifies the signature of the function (an extra formal <em> selector</em> argument is added that selects between the constituent functions at runtime), and this cannot be done for functions whose address is taken. <tt>--Functions=\*</tt> merges together all functions in the program whose signatures can be changed, <tt>--Functions=%50</tt> merges together about half of them, etc. It is a good idea to follow this transform by a <tt>RndArgs</tt> transform to hide the extra selector argument. </td>
+</tr>
+<tr>
+<td><tt>--MergeName</tt></td>
+<td><tt>string</tt></td>
+<td> If set, the merged function will be named <em>prefix_name</em>, otherwise it will be named <em>prefix_originalName1_originalName2</em>. Note that it's unpredictable which function will be the first and the second, so it's better to set the merged named explicitly. </td>
+</tr>
+<tr>
+<td><tt>--MergeObfuscateSelect</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Whether the extra parameter passed to the merged function should be obfuscated with opaque expressions or not. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--MergeOpaqueStructs</tt></td>
+<td><tt>list, array, *</tt></td>
+<td> Type of opaque predicate to use. Traditionally, for this transformation, <tt>array</tt> is used. Default=array.
+<ul>
+   <li> <tt>list</tt> = Generate opaque expressions using linked lists
+   <li> <tt>array</tt> = Generate opaque expressions using arrays
+   <li> <tt>*</tt> = Same as list,array
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--MergeFlatten</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Whether to flatten before merging or not. Default=true.</td>
+</tr>
+<tr>
+<td><tt>--MergeFlattenDispatch</tt></td>
+<td><tt>switch, goto, indirect, ?</tt></td>
+<td> Dispatch method used for flattened merge. Default=switch.
+<ul>
+   <li> <tt>switch</tt> = dispatch by <tt>while(1) {switch (next) {blocks}}</tt>
+   <li> <tt>goto</tt> = dispatch by <tt>{labl1: block1; goto block2;}</tt>
+   <li> <tt>indirect</tt> = dispatch by <tt>goto* (jtab[next])</tt>
+   <li> <tt>?</tt> = select an dispatch method at random.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--MergeSplitBasicBlocks</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> If true, then basic blocks (sequences of assignment and call statements without intervening branches) will be split up into indiviual blocks prior to merging. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--MergeRandomizeBlocks</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> If true, then basic block sequences will be randomized. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--MergeConditionalKinds</tt></td>
+<td><tt>branch, compute, flag</tt></td>
+<td> If merging before flattening, this option describes ways to transform conditional branches. Default=branch.
+<ul>
+   <li> <tt>branch</tt> = Use normal branches, such as <tt>if (a>b) goto L1 else goto L2</tt>
+   <li> <tt>compute</tt> = Compute the branch, such as <tt>x=(a>b); goto *(<em>expression over <tt>x</tt></em>)</tt>
+   <li> <tt>flag</tt> = Compute the branch from the values of the flag register, such as <tt>asm("cmp a b;pushf;pop"); goto *(<em>expression over <tt>flag register</tt></em>)</tt>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <!-- -------------------------------------------------------------------------------- -->
 <a class="anchor" id="issues">&nbsp;</a>

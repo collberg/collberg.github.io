@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
   <meta name="description" content="Web Site Builder Description">
   
-  <title>CleanUp</title>
+  <title>Split</title>
   <link rel="preload" as="style" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
 <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap.min.css">
@@ -85,13 +85,12 @@ h3 {
 
 <br><br><br><br>
 
-<!-- =============================================================================================== -->
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you are compiling to binary, the compiler will take care
-of removing unused variables, and the names of functions 
-will no longer be relevant. If, however, you want to distribute
-obfuscated source (useful, for example, for simple reverse
-engineering exercises given to students), you may want to
-clean up the code prior to distributing it.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Outline pieces of a function into their own functions. This transformation is
+   useful, for example, to break a large, virtualized, function into smaller,
+   less conspicuous, pieces. Four different splitting methods are supported. The order in which
+   they are tried can affect the naturalness of the resulting code.</p></div></div></section>
+
+<center><img width="400px" src="tigress3-images/split-2.png"></center>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -104,30 +103,63 @@ clean up the code prior to distributing it.</p></div></div></section>
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
 <tr>
 <td><tt>--Transform</tt></td>
-<td><tt>CleanUp</tt></td>
-<td> Transformation to run last, to clean up the generated code. </td>
+<td><tt>Split</tt></td>
+<td> Outline pieces of a function </td>
 </tr>
 <tr>
-<td><tt>--CleanUpKinds</tt></td>
-<td><tt>names, annotations, constants, randomize, compress, *</tt></td>
-<td> Specify types of cleanup to perform Default=names,annotations,constants,randomize.
+<td><tt>--SplitKinds</tt></td>
+<td><tt>top, block, deep, recursive, level, inside</tt></td>
+<td> Comma-separated list specifying the order in which different split methods are attempted. Default=top,block,deep,recursive.
 <ul>
-   <li> <tt>names</tt> = Replace identifiers with less obvious ones
-   <li> <tt>annotations</tt> = Remove annotations that Tigress uses internally. Tigress should not be called again on a file that has had annotations removed
-   <li> <tt>constants</tt> = Fold constant expressions
-   <li> <tt>randomize</tt> = Randomly reorder functions in the output file
-   <li> <tt>compress</tt> = Compress the output file by removing blank lines and extra spaces
-   <li> <tt>*</tt> = Same as names,annotations,constants
+   <li> <tt>top</tt> = split the top-level list of statements into two functions <tt>funcname_split_1</tt> and <tt>funcname_split_2</tt>.
+   <li> <tt>block</tt> = split a basic block (list of assignment and call statements) into two functions.
+   <li> <tt>deep</tt> = split out a nested control structure of at least height>2 into its own function <tt>funcname_split_1</tt>.
+   <li> <tt>recursive</tt> = same as block, but calls to split functions are also allowed to be split out.
+   <li> <tt>level</tt> = split out a statement at a level specified by <tt>--SplitLevel</tt>.
+   <li> <tt>inside</tt> = split out a statement at the innermost nesting level.
 </ul>
 </td>
+</tr>
+<tr>
+<td><tt>--SplitCount</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> How many times to attempt the split. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--SplitName</tt></td>
+<td><tt>string</tt></td>
+<td> If set, the split out functions will be named <em>prefix_name_number</em>, otherwise they will be named <em>prefix_originalName_split_number</em>. Default=top,block,deep,recursive.</td>
+</tr>
+<tr>
+<td><tt>--SplitLevel</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Levels which could be split out when specifying <tt>--SplitKinds=level</tt>. Default=1.</td>
 </tr>
 </table>
 </div>
 
 </center>
 
-
-
+<a class="anchor" id="examples">&nbsp;</a>
+<br>
+<h3 align=center>Examples</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This command first tries to split function <tt>foo</tt> at most 100 times,
+then applies the <tt>block split</tt> transformation to the resulting
+outlined function. Note the use of a regular expression to specify the
+names of the functions that were generated in the first transformation:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
+   --Transform=split \
+       --SplitKinds=deep,block,top \
+       --SplitCount=100 \
+       --Functions=foo \
+   --Transform=Split \
+       --SplitKinds=block \
+       --SplitCount=100 \
+       --Functions=/.\*foo_split.\*/ \
+   --out=foo prog.c
+</code></pre>
+</center>
 
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>

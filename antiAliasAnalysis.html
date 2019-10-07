@@ -85,25 +85,24 @@ h3 {
 
 <br><br><br><br>
 
-The goal of this transformation is to disrupt static analysis tools that
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of this transformation is to disrupt static analysis tools that
 make use of inter-procedural alias analysis. The current implementation
 is simplistic: we simply replace all direct function calls with indirect
-ones.
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4559" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
-A call to <code>x = foo(n)</code> turns into
+ones.</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A call to <code>x = foo(n)</code> turns into</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void *arr[]  = {..., &amp; foo, ... };
 
 int main () {
    int x = ((int (*)(int n ))arr[expr<sup>=42</sup>])(n);
 }
 </code></pre>
-where <code>arr</code> is a global array containing function
-addresses, and <code>expr<sup>=42</sup></code> is an <a href="http://tigress.cs.arizona.edu/transformPage/docs/utils_opaque/index.html">opaque expression</a>
-computing the index of <code>foo</code>'s address in <code>arr</code>.
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4560" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> where <code>arr</code> is a global array containing function
+addresses, and <code>expr<sup>=42</sup></code> is an
+opaque expression computing the index of <code>foo</code>'s address in <code>arr</code>.
 To make analysis a bit harder, we can also insert bogus elements
 in <code>arr</code>, and insert updates to these bogus elements.
-Here, both <code>arr[6]</code> and <code>arr[7]</code> are bogus:
+Here, both <code>arr[6]</code> and <code>arr[7]</code> are bogus:</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int main () {
    int x;
    arr[expr<sup>=6</sup>] = arr[expr<sup>=42</sup>];
@@ -111,12 +110,39 @@ Here, both <code>arr[6]</code> and <code>arr[7]</code> are bogus:
 }
 </code></pre>
 
-INSERT-OPTION options.in Transform:AntiAliasAnalysisObfuscateIndex:AntiAliasAnalysisBogusEntries
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>AntiAliasAnalysis</tt></td>
+<td> Transform the code by replacing direct function calls with indirect ones, making alias analysis become less precise. </td>
+</tr>
+<tr>
+<td><tt>--AntiAliasAnalysisObfuscateIndex</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Use opaque expressions to compute function addresses. Default=true.</td>
+</tr>
+<tr>
+<td><tt>--AntiAliasAnalysisBogusEntries</tt></td>
+<td><tt>BOOLSPEC</tt></td>
+<td> Add bogus function addresses, and bogus updates to them. Default=true.</td>
+</tr>
+</table>
+</div>
+
+</center>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4561" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">It is best to perform this transformation at the end of the
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">It is best to perform this transformation at the end of the
 transformation sequence, when all functions (including new ones
 generated by the virtualize, split, and merge transformations) are
 known. The reason is that, by definition, this transformation makes

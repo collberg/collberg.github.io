@@ -85,25 +85,102 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Several transformations rely on boolean and integer expressions that have
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Several transformations rely on boolean and integer expressions that have
 a known value, known as <em>opaque predicates and expressions</em>.
 To construct these, data structures with precise invariants are added to
 the code.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c235" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">At a minimum, you must create one or more opaque invariant data structures:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">At a minimum, you must create one or more opaque invariant data structures:
 </p></div></div></section>
 
-INSERT-OPTION initOpaque.in Transform:InitOpaqueStructs:InitOpaqueCount:InitOpaqueTrace:InitOpaqueSize
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>InitOpaque</tt></td>
+<td> Add opaque initialization code. This initialization code <em>has to</em> be added to a function that gets called <em>before</em> any uses of opaque predicates, usually, but not necessarily, to <tt>main</tt>. </td>
+</tr>
+<tr>
+<td><tt>--InitOpaqueStructs</tt></td>
+<td><tt>list, array, input, env, *</tt></td>
+<td> Comma-separated list of the kinds of opaque constructs to add. Default=list,array.
+<ul>
+   <li> <tt>list</tt> = Generate opaque expressions using linked lists
+   <li> <tt>array</tt> = Generate opaque expressions using arrays
+   <li> <tt>input</tt> = Generate opaque expressions that depend on input. Requires <tt>--Inputs</tt> to set invariants over input.
+   <li> <tt>env</tt> = Generate opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
+   <li> <tt>*</tt> = Same as list,array,input,env
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--InitOpaqueCount</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> How many opaque data structures (lists or arrays) to add to the program. They will be split roughly evenly between the different declared opaque structures. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--InitOpaqueTrace</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Print the generated structure. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--InitOpaqueSize</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> Size of opaque arrays. Default=30.</td>
+</tr>
+</table>
+</div>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c236" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To frustrate analysis, updates that maintain the invariants should
+</center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To frustrate analysis, updates that maintain the invariants should
    be sprinkled throughout the program. This is done by the <code>--Transform=UpdateOpaque</code>
    option:
 </p></div></div></section>
 
-INSERT-OPTION updateOpaque.in Transform:UpdateOpaqueCount:UpdateOpaqueTrace:UpdateOpaqueAllowAddNodes
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>UpdateOpaque</tt></td>
+<td> Add code that makes updates to opaque predicates. </td>
+</tr>
+<tr>
+<td><tt>--UpdateOpaqueCount</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> How many updates to opaque data structures to add to the function. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--UpdateOpaqueTrace</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Print the updated structure. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--UpdateOpaqueAllowAddNodes</tt></td>
+<td><tt>bool</tt></td>
+<td> Is it safe to malloc new nodes for the opaque data structure in this function? Only set to true if the function is called sparingly. Default=false.</td>
+</tr>
+</table>
+</div>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c237" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> <b>Note:</b> In <code>--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
+</center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> <b>Note:</b> In <code>--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
      must execute before any use of an opaque expression. Easiest is to set 
      <code>--Transform=InitOpaque --Functions=main</code> but this is best avoided since it
      is very obvious.</p></div></div></section>
@@ -111,7 +188,7 @@ INSERT-OPTION updateOpaque.in Transform:UpdateOpaqueCount:UpdateOpaqueTrace:Upda
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c238" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress will generate copious numbers of extra local
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress will generate copious numbers of extra local
 variables and statements of the form <code>_*__BARRIER_* = 1</code>,
 <code>_*__BEGIN_* = 1</code>, <code>_*__END_* = 1</code>. They
 will be removed by any competent compiler, or by the
