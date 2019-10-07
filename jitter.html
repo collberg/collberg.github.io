@@ -85,14 +85,15 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1432" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation translates a function <code>F</code> into a new function <code>F'</code> consisting
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4846" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation translates a function <code>F</code> into a new function <code>F'</code> consisting
 of a sequence of intermediate code instructions such
 that, when <code>F'</code> is executed, <code>F</code> will be dynamically compiled
 to machine code. I.e., this is an example of
 <em>runtime code generation</em>, or <em>just-in-time compilation</em>,
 or <em>dynamic unpacking</em>.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1433" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For example, the first few lines of a jitted function may look like this:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4847" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For example, the first few lines of a jitted function may look like this:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x ) { 
    ...
     p3 = jit_init();
@@ -102,12 +103,18 @@ or <em>dynamic unpacking</em>.</p></div></div></section>
     localSize6 = jit_allocai(p3, 8L);
     jit_add_op(p3, JIT_DECL_ARG, ((0 << 4) | (2 << 2)) | 2, 0, 4, 0L, 0L, 0);
     jit_add_op(p3, JIT_DECL_ARG, ((0 << 4) | (2 << 2)) | 2, 0, 4, 0L, 0L, 0);
-    jit_add_op(p3, JIT_ADD | 2, ((2 << 4) | (1 << 2)) | 3, 0 | ((0 << 1) | (1 << 4)), 0 | ((2 << 1) | (0 << 4)), (jit_value )(localSize6 + 4), 0L, 0);
-    jit_add_op(p3, JIT_GETARG, ((0 << 4) | (2 << 2)) | 3, 0 | ((0 << 1) | (2 << 4)), 1L, 0L, 0L, 0);
-    jit_add_op(p3, JIT_ST | 1, ((0 << 4) | (1 << 2)) | 1, 0 | ((0 << 1) | (1 << 4)), 0 | ((0 << 1) | (2 << 4)), 0L, 4, 0);
-    jit_add_op(p3, JIT_ADD | 2, ((2 << 4) | (1 << 2)) | 3, 0 | ((0 << 1) | (3 << 4)), 0 | ((2 << 1) | (0 << 4)), (jit_value )(localSize6 + 0), 0L, 0);
-    jit_add_op(p3, JIT_GETARG, ((0 << 4) | (2 << 2)) | 3, 0 | ((0 << 1) | (4 << 4)), 0L, 0L, 0L, 0);
-    jit_add_op(p3, JIT_ST | 1, ((0 << 4) | (1 << 2)) | 1, 0 | ((0 << 1) | (3 << 4)), 0 | ((0 << 1) | (4 << 4)), 0L, 4, 0);
+    jit_add_op(p3, JIT_ADD | 2, ((2 << 4) | (1 << 2)) | 3, 0 | ((0 << 1) | 
+                   (1 << 4)), 0 | ((2 << 1) | (0 << 4)), (jit_value )(localSize6 + 4), 0L, 0);
+    jit_add_op(p3, JIT_GETARG, ((0 << 4) | (2 << 2)) | 3, 0 | ((0 << 1) | 
+                    (2 << 4)), 1L, 0L, 0L, 0);
+    jit_add_op(p3, JIT_ST | 1, ((0 << 4) | (1 << 2)) | 1, 0 | ((0 << 1) | 
+                    (1 << 4)), 0 | ((0 << 1) | (2 << 4)), 0L, 4, 0);
+    jit_add_op(p3, JIT_ADD | 2, ((2 << 4) | (1 << 2)) | 3, 0 | ((0 << 1) | 
+                    (3 << 4)), 0 | ((2 << 1) | (0 << 4)), (jit_value )(localSize6 + 0), 0L, 0);
+    jit_add_op(p3, JIT_GETARG, ((0 << 4) | (2 << 2)) | 3, 0 | ((0 << 1) | 
+                    (4 << 4)), 0L, 0L, 0L, 0);
+    jit_add_op(p3, JIT_ST | 1, ((0 << 4) | (1 << 2)) | 1, 0 | ((0 << 1) | 
+                    (3 << 4)), 0 | ((0 << 1) | (4 << 4)), 0L, 4, 0);
    ...
    jit_generate_code(p6);
    ...
@@ -115,49 +122,54 @@ or <em>dynamic unpacking</em>.</p></div></div></section>
    return (result58);
 }
 </code></pre>
+</center>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1434" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Intermediate code operators (the <code>JIT_MOV</code>, <code>JIT_EQ</code>, etc. in the
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4848" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Intermediate code operators (the <code>JIT_MOV</code>, <code>JIT_EQ</code>, etc. in the
 example above) are randomized every time Tigress is invoked. Thus, the
 statement</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">op11 = jit_add_op(p6, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L);
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1435" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">may be compiled into</p></div></div></section>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4849" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">may be compiled into</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">op11 = jit_add_op(p6, 42, 2, 0, 0L, 0L, 0L);
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1436" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">where "42" will be a different literal for every invocation. </p></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1437" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1438" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There is <em>no</em> diversity in the dynamically generated code at this point;
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4850" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">where "42" will be a different literal for every invocation. </p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4851" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4852" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There is <em>no</em> diversity in the dynamically generated code at this point;
 i.e., every time the program is run, the same code is generated.</p></div></div></section>
 
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1439" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">In order to invoke this feature you must add <i>one of</i> the following directives to the
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4853" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">In order to invoke this feature you must add <i>one of</i> the following directives to the
 top of your C file (adjusting the path depending on which version of 
 Tigress you have installed):</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "PATH_TO_TIGRESS/bin/tigress-unstable/jitter-i386.c"
 #include "PATH_TO_TIGRESS/bin/tigress-unstable/jitter-amd64.c"
 #include "PATH_TO_TIGRESS/bin/tigress-unstable/jitter-sparc.c"
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1440" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">or, if you're using <code>clang</code> (not supported by <code>gcc</code>), run Tigress with</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4854" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">or, if you're using <code>clang</code> (not supported by <code>gcc</code>), run Tigress with</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress -include $TIGRESS_HOME/jitter-amd64.c --Transform=Jit ...
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1441" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">or, if you're on Darwin,</p></div></div></section> 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4855" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">or, if you're on Darwin,</p></div></div></section> 
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress -include $TIGRESS_HOME/apple.h -include $TIGRESS_HOME/jitter-amd64.c --Transform=Jit ...
 </code></pre>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1442" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you set the option <code>--JitFrequency=n</code> for <code>n>0</code>, the
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4856" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you set the option <code>--JitFrequency=n</code> for <code>n>0</code>, the
 function will be jitted every <code>n</code>:th time it is called. This
 means that every <code>n</code>:th time the function is called, its
 address trace (but not its instruction trace) will change. With
 <code>--JitFrequency=0</code>, the function will only be jitted the
 first time it is called.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1443" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4857" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 To disrupt <a href="#taint">dynamic taint analysis</a>, the option <code>--JitImplicitFlow</code> 
 inserts implicit flow between where the function gets generated, and where it is invoked:</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x ) { 
@@ -167,7 +179,7 @@ inserts implicit flow between where the function gets generated, and where it is
   return (result58);
 }
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1444" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">As usual, this transformation needs to be combined with others to break up
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4858" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">As usual, this transformation needs to be combined with others to break up
 the predictable static structure. The <code>Split</code> and <code>Virtualize</code>
 transformations are particularly appropriate.</p></div></div></section>
 
@@ -322,7 +334,7 @@ transformations are particularly appropriate.</p></div></div></section>
 <a class="anchor" id="permanent">&nbsp;</a>
 <br>
 <h3 align=center>Permanent Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1445" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These are issues with jitted code that will probably never be
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4859" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These are issues with jitted code that will probably never be
 resolved: </p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
@@ -345,7 +357,7 @@ main(){int n=2;double x[n];f();exit(0);}
 <a class="anchor" id="future">&nbsp;</a>
 <br>
 <h3 align=center>Future Development</h3> 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1446" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Our current plan is use the jitter as a vehicle
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4860" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Our current plan is use the jitter as a vehicle
 to build dynamic obfuscation and tamper-proofing transformations that
 make use of self-modifying code in a portable way. We believe this
 will be the first system to use portable self-modifying code for 
@@ -354,7 +366,7 @@ software protection purposes.</p></div></div></section>
 <a class="anchor" id="acknowledgments">&nbsp;</a>
 <br>
 <h3 align=center>Acknowledgments</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1447" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This feature of Tigress is based on the <a href="http://myjit.sourceforge.net">MyJit</a>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4861" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This feature of Tigress is based on the <a href="http://myjit.sourceforge.net">MyJit</a>
 library by Petr Kraj&#269;a. We are indebted to Petr for his hard work modifying
 MyJit to fit our needs.</p></div></div></section>
 
