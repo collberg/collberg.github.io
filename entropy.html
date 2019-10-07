@@ -85,20 +85,20 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1432" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Some transformations need a source of randomness during execution. For this
 reason, we can insert statements that collect random values, preferably from
 variables that are input dependent.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1433" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 We support two basic ways to collect entropy. You can insert statements within your program
 that collect values from (hopefully) input-dependent variables. Or, you can spin up a background 
 thread that intermittently does so automatically. Regardless, the randomness we collect is of low quality, 
 but good enough for our purposes.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1434" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 At a minimum, you should issue the <code>--Transform=InitEntropy</code> transformation,
 since this creates the variables that hold the entropy.
 You should issue as many <code>--Transform=UpdateEntropy</code> as you
@@ -150,6 +150,8 @@ can, making sure you collect entropy from variables that are truly input depende
 
 </center>
 
+<br>
+
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
@@ -193,7 +195,7 @@ can, making sure you collect entropy from variables that are truly input depende
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1435" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 The command below initializes the entropy variables in <code>main</code>,
 and then collects randomness from variables <code>x,y,z</code> 
 in function <code>inputData</code>, from variable <code>packet</code>
@@ -203,41 +205,44 @@ thread from the <code>tigress_init</code> function. The thread
 function is called <em>ENTROPYTHREAD</em>, and it sleeps for
 1000000 nanoseconds between updates.
 </p></div></div></section>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">        tigress --Seed=0 --Verbosity=1 --Environment=... \
-            --Transform=InitEntropy \
-	       --InitEntropyThreadName=ENTROPYTHREAD \
-               --InitEntropyThreadSleep=1000000\
-               --InitEntropyKinds=vars,thread \
-               --InitEntropyTrace=true \
-            --Transform=UpdateEntropy \
-                --Functions=inputData \
-                --UpdateEntropyKinds=vars \
-                --UpdateEntropyTrace=true \
-                --UpdateEntropyVars=x,y,z \
-            --Transform=UpdateEntropy \
-                --Functions=acceptNetworkPacket \
-                --UpdateEntropyKinds=vars \
-                --UpdateEntropyTrace=true \
-                --UpdateEntropyVars=packet \
-            --Transform=UpdateEntropy \
-                --Functions=random \
-                --UpdateEntropyKinds=vars \
-                --UpdateEntropyTrace=true \
-                --UpdateEntropyVars=p\* \
-            --Transform=UpdateEntropy \
-                --Functions=tigress_init \
-                --UpdateEntropyKinds=thread \
-</code></pre>
 
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 --Verbosity=1 --Environment=... \
+    --Transform=InitEntropy \
+       --InitEntropyThreadName=ENTROPYTHREAD \
+       --InitEntropyThreadSleep=1000000\
+       --InitEntropyKinds=vars,thread \
+       --InitEntropyTrace=true \
+    --Transform=UpdateEntropy \
+       --Functions=inputData \
+       --UpdateEntropyKinds=vars \
+       --UpdateEntropyTrace=true \
+       --UpdateEntropyVars=x,y,z \
+    --Transform=UpdateEntropy \
+       --Functions=acceptNetworkPacket \
+       --UpdateEntropyKinds=vars \
+       --UpdateEntropyTrace=true \
+       --UpdateEntropyVars=packet \
+    --Transform=UpdateEntropy \
+       --Functions=random \
+       --UpdateEntropyKinds=vars \
+       --UpdateEntropyTrace=true \
+       --UpdateEntropyVars=p\* \
+    --Transform=UpdateEntropy \
+       --Functions=tigress_init \
+       --UpdateEntropyKinds=thread \
+</code></pre>
+</center>
 
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea of using threads and CPU performance counters to generate random numbers 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1436" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea of using threads and CPU performance counters to generate random numbers 
 was first introduced by Adrian Colesa, Radu Tudoran, and Sebastian Banescu in
 <a href="https://ieeexplore.ieee.org/document/5204851">Software Random Number Generation Based on Race Conditions</a>.
 Our implementation isn't as advanced at theirs since it only uses X86's <code>rdtsc</code> counter. Unfortunately, other
-counters are not available from user mode.</p></div></div></section>
+counters are not available from user mode.
+</p></div></div></section>
 
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>

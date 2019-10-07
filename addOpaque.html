@@ -86,13 +86,14 @@ h3 {
 <br><br><br><br>
 
 <a class="anchor" id="addOpaque">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Break up code blocks by inserting opaque predicates. Requires that 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1432" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Break up code blocks by inserting opaque predicates. Requires that 
 at least the <a href="http://tigress.cs.arizona.edu/transformPage/docs/utils_opaque/index.html">InitOpaque</a>
 transform has been previously issued and, preferably, that one or more 
  <a href="http://tigress.cs.arizona.edu/transformPage/docs/utils_opaque/index.html">UpdateOpaque</a>
 transformations have been given.</p></div></div></section>
 
 <center><img width="400px" src="tigress3-images/opaque-3.png"></center>
+<br>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -173,115 +174,113 @@ transformations have been given.</p></div></div></section>
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-There are two sources of diversity:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1433" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are two sources of diversity:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
-  <li>The types of opaque predicates used, which is controlled by the
-      <a href="http://tigress.cs.arizona.edu/transformPage/docs/utils_opaque/index.html">InitOpaque</a>
+  <li>The types of opaque predicates used, which is controlled by the InitOpaque
       transformation.
+   </li>
   <li>The location in the target function where the split takes places, which is
       randomized.
+   </li>
 </ul>
 </div></div></div></section>
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This is the code generated for the arguments options to <code>--AddOpaqueKinds</code>:</p></div></div></section>
-<center>
-<table align=center  class="smalltab">
-   <tr> 
-      <th>Argument</th>
-      <th>Generated code</th>
-   </tr>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1434" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This is the code generated for the arguments options to <code>--AddOpaqueKinds</code>:</p></div></div></section>
 
-   <tr>
-      <td><code>call</code></td>
-      <td> 
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> <code>call</code>:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=false</sup> then
    call to random existing function
 </code></pre>
-      </td>
-   </tr>
+</center>
+    </li>
 
-   <tr>
-      <td><code>fake</code></td>
-      <td> 
+   <li><code>fake</code>:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=false</sup> then
    call to non-existing function
 </code></pre>
-      </td>
-   </tr>
+</center>
+    </li>
 
-   <tr>
-      <td><code>true</code></td>
-      <td> 
+   <li> <code>true</code>:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=true</sup> then
    existing statement
 </code></pre>
-      </td>
-   </tr>
+</center>
+    </li>
 
-
-   <tr>
-      <td><code>bug</code></td>
-      <td> 
+    <li><code>bug</code>:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=true</sup> then
    existing statement
 else
    buggified version of the statement
 </code></pre>
-      </td>
-   </tr>
+</center>
+    </li>
 
-   <tr>
-      <td><code>question</code></td>
-      <td> 
+   <li><code>question</code>:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=true || false</sup> then
    existing statement
 else
    obfuscated version of the statement
 </code></pre>
-      </td>
-   </tr>
+</center>
+    </li>
 
-
-   <tr>
-      <td><code>junk</code></td>
-      <td> 
+   <li><code>junk</code>:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=false</sup> then
    asm(".byte RandomBytes")
 </code></pre>
-      </td>
-   </tr>
+</center>
+    </li>
 
-
-   <tr>
-      <td><code>question</code></td>
-      <td> 
+   <li><code>question</code>:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=?</sup> then
    original statement
 else
    obfuscated version of the statement
 </code></pre>
-      </td>
-   </tr>
 </center>
+   </li>
+</ul>
+</div></div></div></section>
 
 
 <a class="anchor" id="QuestionMark">&nbsp;</a>
 <br>
 <h3 align=center>Question-mark Predicates</h3>
-Consider the following script:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1435" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Consider the following script:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
    --Inputs="+1:int:42,-1:length:1?10" \
    --Transform=InitImplicitFlow \
    --Transform=InitEntropy \
-   --Transform=InitOpaque --Functions=main --InitOpaqueCount=2 --InitOpaqueStructs=list,array,input,env \
-   --Transform=AddOpaque --Functions=obf3 --AddOpaqueKinds=question --AddOpaqueSplitKinds=inside \
-      --AddOpaqueCount=10 arith.c --out=arith_out.c
+   --Transform=InitOpaque \
+      --Functions=main \
+      --InitOpaqueCount=2 \
+      --InitOpaqueStructs=list,array,input,env \
+   --Transform=AddOpaque \
+      --Functions=obf3 \
+      --AddOpaqueKinds=question \
+      --AddOpaqueSplitKinds=inside \
+      --AddOpaqueCount=10 \
+   arith.c --out=arith_out.c
 </code></pre>
-The result will look something like this:
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1436" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The result will look something like this:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">     {
       strcmp_result5 = (int )strlen(*(_4_main__argv + (_4_main__argc - 1)));
       }
@@ -403,35 +402,41 @@ The result will look something like this:
     }
 }
 </code></pre>
-Notice that we attempt (and sometimes fail) to select opaque predicates 
-<code>expr<sup>1</sup><=expr<sup>2</sup></code> such that
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1437" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Notice that we attempt (and sometimes fail) to select opaque predicates 
+<code>expr<sup>1</sup><=expr<sup>2</sup></code> such that</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> all the <code>expr<sup>i</sup></code> are independent of each other (i.e. 
         analyzing a function should require you to break all the predicates
-        in it); </li>
+        in it); 
+   </li>
    <li> the <code>expr<sup>i</sup></code> depend on input (either because they 
         are created from an entropy source or from invariants over the command 
-        line arguments); and </li>
+        line arguments); and 
+   </li>
    <li> <code>expr<sup>1</sup></code> and <code>expr<sup>2</sup></code> are computed
         from different sources.
+   </li>
 </ul>
 </div></div></div></section>
-For the question-mark predicate we use the function splitter. You should
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1438" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For the question-mark predicate we use the function splitter. You should
 experiment with different splitting methods to get the effect that you 
 want, by setting <code>--AddOpaqueSplitKinds=...</code> and 
 <code>--AddOpaqueSplitLevel=...</code>. <code>--AddOpaqueObfuscate=true</code> does
 some light obfuscation to the code in one of the branches; you can, of course,
-obfuscate the split out functions yourself.
+obfuscate the split out functions yourself.</p></div></div></section>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1439" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
 coerce the linker to ignore such errors. With <code>gcc</code> you can use this option:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   -Wl,--unresolved-symbols=ignore-in-object-files 
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">No similar option seems to exist for <code>clang</code>.</p></div></div></section>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1440" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">No similar option seems to exist for <code>clang</code>.</p></div></div></section>
 
 
   <script src="assets/popper/popper.min.js"></script>

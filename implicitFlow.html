@@ -84,7 +84,7 @@ h3 {
 </section>
 
 <br><br><br><br>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5968" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1432" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
    Several transformations, in particular
    AntiTaintAnalysis,
    use implicit flow as a basic building block. Before you can use these you need
@@ -114,7 +114,7 @@ h3 {
       --AntiTaintAnalysisImplicitFlow="(repeat mem_cache_time 3)" \
    input.c --out=output.c
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5969" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1433" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
    Here, we specify that we might want to use the implicit flow variants
     <code>trivial_thread_1,trivial_counter,mem_cache_time,mem_cache_thread_1,file_cache_time,file_cache_thread_1,jit_time</code>.
    We then insert implicit flow using <code>(repeat mem_cache_time 3)</code> after any assignment to the variable <code>b</code> in
@@ -210,10 +210,11 @@ h3 {
 
 <a class="anchor" id="implicitFlowKinds">&nbsp;</a>
 <br>
-<h3 align=center>Implicit Flow Kinds</h3>
+<h3 align=center>Algorithms </h3>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Some primitives are based on the timing differences between
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1434" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Some primitives are based on the timing differences between
 a slow and a fast process:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void P'() {
    value=0;   
    for(i in [0...(bits in b)-1]) {
@@ -229,9 +230,11 @@ a slow and a fast process:</p></div></div></section>
    a = value;
 }
 </code></pre>
+</center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A variant of such timing-based flow primitives use threads
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1435" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A variant of such timing-based flow primitives use threads
 to do the timing. This helps with stealth:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int result;
 void slow(int v) {
    <b>slow process</b>(<em>param</em>);
@@ -254,36 +257,47 @@ void P'() {
    }
 }
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are two implementations of these threading-based primitives,
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1436" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are two implementations of these threading-based primitives,
 using either one or two threads. This allows you to embed threading
 code that matches the code that is already in the program.</p></div></div></section>
 
-<center>
-<table align=center >
-   <tr><th>Kind</th><th>Description</th> </tr>
-   <tr><td><code> counter_int</code></td>            
-      <td> Copy a variable by counting up to its value. I.e., the assigment 
+
+<a class="anchor" id="implicitFlowKinds">&nbsp;</a>
+<br>
+<h3 align=center>Implicit Flow Kinds</h3>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li><code>counter_int</code>:
+      Copy a variable by counting up to its value. I.e., the assigment 
          <code>a=b</code> is transformed into
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int i,a = 0;
 for(i=0;i&lt;b;i++)
    a++;
 </code></pre>
-   </td>
-   </tr>
-   <tr><td><code> counter_float</code></td>          
-         <td>Same as <code> counter_int</code>, but using a float.</td>
-   </tr>
-   <tr><td><code> counter_signal</code></td>         
-         <td>Copy a variable bitr-by-bit using a signal handler:</td>
-   </tr>
-   <tr><td><code> bitcopy_unrolled</code></td>       
-         <td>Copy a variable bit-by-bit, each bit tested by an if-statement.</td>
-   </tr>
-   <tr><td><code> bitcopy_loop</code></td>
-         <td>Loop over the bits in a variable and copy each bit by testing in an if-statement.</td>
-   </tr>
-   <tr><td><code> bitcopy_signal</code></td> 
-         <td>Loop over the bits in a variable and copy each bit in a signal handler. 
+</center>
+   </li>
+
+   <li> <code> counter_float</code>: 
+        Same as <code> counter_int</code>, but using a float.
+   </li>
+
+   <li> <code> counter_signal</code>: 
+        Copy a variable bit-by-bit using a signal handler.
+   </li>
+
+   <li> <code> bitcopy_unrolled</code>: 
+        Copy a variable bit-by-bit, each bit tested by an if-statement
+   </li>
+
+   <li><code> bitcopy_loop</code>: 
+         Loop over the bits in a variable and copy each bit by testing in an if-statement.
+   </li>
+
+   <li><code> bitcopy_signal</code>: 
+         Loop over the bits in a variable and copy each bit in a signal handler:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned int value;
 int bitNo;
 void handler(int sig){
@@ -303,22 +317,28 @@ void handler(int sig){
   a = value;
 }
 </code></pre>
-   </td>
-   </tr>
-   <tr><td><code> file_write</code></td>             
-       <td>Copy a variable byte-by-byte by writing to a file and reading it back again.</td>
-   </tr>
-   <tr><td><code> trivial_clock</code></td>          
-         <td>Copy a variable by timing a trivial loop.</td>
-   </tr>
-   <tr><td><code> trivial_thread_1</code></td>         
-         <td>Same as <code> trivial_clock</code>, but using threads for timing.</td>
-   </tr>
-   <tr><td><code> trivial_thread_2</code></td>         
-         <td>Same as <code> trivial_thread_1</code>, but using two threads instead of one.</td>
-   </tr>
-   <tr><td><code> file_cache_time </code></td>       
-         <td>Copy a variable by timing a file being read with caching turned on or off.
+</center>
+   </li>
+
+   <li><code> file_write</code>:
+      Copy a variable byte-by-byte by writing to a file and reading it back again.
+   </li>
+
+   <li><code> trivial_clock</code>:
+      Copy a variable by timing a trivial loop.
+   </li>
+
+   <li><code> trivial_thread_1</code>:
+      Same as <code> trivial_clock</code>, but using threads for timing.
+   </li>
+
+   <li><code> trivial_thread_2</code>:
+       Same as <code> trivial_thread_1</code>, but using two threads instead of one.
+   </li>
+
+   <li><code> file_cache_time </code>:
+        Copy a variable by timing a file being read with caching turned on or off:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"><b>process</b><(<em>param</em>,<em>nocache</em>):
    posix_memalign(&buf,pagesize,
                   pagesize);
@@ -344,16 +364,20 @@ void handler(int sig){
 <b>fast process</b>(<em>param</em>):
    <b>process</b>(<em>param</em>,0):
 </code></pre>
-   </td>
-   </tr>
-   <tr><td><code> file_cache_thread_1</code></td>      
-         <td>Same as <code> file_cache_time </code>, but using threads for timing.</td>
-   </tr>
-   <tr><td><code> file_cache_thread_2</code></td>         
-         <td>Same as <code> file_cache_thread_1</code>, but using two threads instead of one.</td>
-   </tr>
-   <tr><td><code> mem_cache_time</code></td>         
-         <td>Copy a variable by timing a CPU data cache being read with or without caching.
+</center>
+   </li>
+
+   <li><code> file_cache_thread_1</code>:
+         Same as <code> file_cache_time </code>, but using threads for timing.
+   </li>
+
+   <li><code> file_cache_thread_2</code>:
+       Same as <code> file_cache_thread_1</code>, but using two threads instead of one.
+   </li>
+
+   <li><code> mem_cache_time</code>:
+       Copy a variable by timing a CPU data cache being read with or without caching:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">posix_memalign(&buf1,pagesize,64);
 posix_memalign(&buf2,pagesize,64);
 <b>slow process</b>(<em>param</em>):
@@ -371,16 +395,20 @@ posix_memalign(&buf2,pagesize,64);
       *((long *)buf2) = sum;
    }
 </code></pre>
-</td>
-   </tr>
-   <tr><td><code> mem_cache_thread_1</code></td>       
-         <td>Same as <code> mem_cache_time</code>, but using threads for timing.</td>
-   </tr>
-   <tr><td><code> mem_cache_thread_2</code></td>         
-         <td>Same as <code> mem_cache_thread_1</code>, but using two threads instead of one.</td>
-   </tr>
-   <tr><td><code> time_jit</code></td>               
-         <td>Copy a variable by timing a jitted function.
+<center>
+   </li>
+
+   <li><code> mem_cache_thread_1</code>:
+       Same as <code> mem_cache_time</code>, but using threads for timing.
+   </li>
+
+   <li><code> mem_cache_thread_2</code>:
+        Same as <code> mem_cache_thread_1</code>, but using two threads instead of one.
+   </li>
+
+   <li><code> time_jit</code>:
+       Copy a variable by timing a jitted function:
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int freq=0;
 void foo(input,output) {
    static void (*foop)(...,...);
@@ -403,14 +431,15 @@ fast process(param);
    foo(...,...);
    time=time()-start;
 </code></pre>
-   </td>
-   </tr>
 </center>
+   </li>
+</ul>
+</div></div></div></section>
 
 <a class="anchor" id="training">&nbsp;</a>
 <br>
 <h3 align=center>Training</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5973" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1437" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 All the implicit flow primitives that are based on timing need to be <em>trained</em>,
 i.e. we have to run tests to see what is a good threshold between slow and fast
 primitives. There are two major kinds of training, <code>gap</code> and <code>resend</code>.
@@ -420,6 +449,7 @@ statistical tests (<em>Wilson's Score Rule</em>) to figure out how many times a
 bit should be sent in order to achieve a particular confidence level and target error
 rate. The commands look like this:
 </p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
    --Functions=... \
    --InitImplicitFlowKinds=... \
@@ -431,7 +461,9 @@ rate. The commands look like this:
    --InitImplicitFlowTrainingGapMinGap=90 \
    --InitImplicitFlowTrainingKind=gap \
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5974" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">or like this:</p></div></div></section>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1438" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">or like this:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
    --Functions=... \
    --InitImplicitFlowKinds=... \
@@ -440,32 +472,40 @@ rate. The commands look like this:
    --InitImplicitFlowTrainingResendTargetErrorRate=0.00001 \
    --InitImplicitFlowTrainingKind=resend \
 </code></pre>
+</center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5975" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The output would look like this (for the <code>resend</code> training kind):</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1439" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The output would look like this (for the <code>resend</code> training kind):</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">TRAINING_DATA '(mem_cache_time 4496.000000 16 4)'
 </code></pre>
-</p></div></div></section>which means that for the <code>mem_cache_time</code> implicit flow primitive, a parameter value of "16" is optimal,
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1440" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">which means that for the <code>mem_cache_time</code> implicit flow primitive, a parameter value of "16" is optimal,
 that each bit needs to be sent "4" times, and that the threshold between slow and fast processes is
 "4496". You can then feed this into another run of tigress:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
    --InitImplicitFlowTrain=false \
    --InitImplicitFlowTrainingData='(mem_cache_time 4496.000000 16 4)' \
 --Transform=AntiTaintAnalysis \
    --Functions=... \
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5976" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can also run the training at startup time of your program, i.e., insert your
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1441" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can also run the training at startup time of your program, i.e., insert your
 training code at the beginning of <code>main</code>:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
    --InitImplicitFlowTrain=true \
 --Transform=AntiTaintAnalysis \
    --Functions=... \
 </code></pre>
+</center>
 
 <a class="anchor" id="combiners">&nbsp;</a>
 <br>
 <h3 align=center>Implicit Flow Combiners</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5977" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Implicit flow primitives can be combined for improved correctness and higher levels
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1442" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Implicit flow primitives can be combined for improved correctness and higher levels
 of resistance to analysis. Combiners are expressed as S-expressions:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">type combiner = 
    | (single primitive)
    | (compose combiner combiner ...)
@@ -474,26 +514,35 @@ of resistance to analysis. Combiners are expressed as S-expressions:</p></div></
    | (repeat combiner int)
    | (until combiner int int)
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5978" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Their behavior as as follows:</p></div></div></section>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1443" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Their behavior as as follows:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
-   <li> <code>(compose a b c)</code> chains together several combiners, i.e. <code>a(b(c))</code>. 
+   <li> <code>(compose a b c)</code> chains together several combiners, i.e. <code>a(b(c))</code>.
+   </li> 
    <li> <code>(select a b c)</code> picks one of combiners <code>a,b,c</code> at random, based on
 input.
+   </li> 
    <li> <code>(majority a b c)</code> chooses the most frequently occurring value computed by <code>a,b,c</code>.
+   </li> 
    <li> <code>(repeat a n)</code> is equivalent to <code>(majority a a ... a)</code> with n copies of <tt.a</code>.
+   </li> 
    <li> <code>(until a m n)</code> continuously repeats combiner <code>a</code> m times until there is at least n agreements on the resulting value.
+   </li> 
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5979" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You would use these in the <code>AntiTaintAnalysis</code> command's
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1444" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You would use these in the <code>AntiTaintAnalysis</code> command's
 <code>--AntiTaintAnalysisImplicitFlow=...</code> option:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   --Transform=AntiTaintAnalysis \
    --Functions=main \
    --AntiTaintAnalysisKinds=vars \
    --LocalVariables=main:b \
    --AntiTaintAnalysisImplicitFlow="(repeat mem_cache_thread_1 3)" \
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5980" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some examples of combiners:</p></div></div></section>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1445" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some examples of combiners:</p></div></div></section>
+<center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  (single counter_int)
   (single counter_float)
   (single counter_signal)
@@ -513,6 +562,7 @@ input.
   (majority mem_cache_thread_1 bitcopy_loop counter_signal)
   (majority mem_cache_thread_1 file_cache_time bitcopy_loop counter_signal counter_float)
 </code></pre>
+</center>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -664,7 +714,7 @@ input.
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5981" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The implicit flow library is described in
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1446" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The implicit flow library is described in
 <a href="https://www.ieee-security.org/TC/EuroSP2018">
    Probabilistic Obfuscation through Covert Channels
 </a>, 
