@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.10, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.10, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Site Builder Description">
+  
+  <title>AntiTaintAnalysis</title>
+  <link rel="preload" as="style" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+<link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+ 
+<style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
+</head>
+<body>
+
+  <section class="menu cid-rCFaEeaKON" once="menu" id="menu1-v">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/tigress-white-copy-154x122.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="index.html">
+                        
+                        Home</a>
+                </li><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="introduction.html">
+                        
+                        Introduction</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="usage.html">Usage</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="transformations.html">Transformations</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="publications.html">Publications</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="FAQ.html">FAQ</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="consulting.html">Consulting/Training</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html">Contact</a></li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<br><br><br><br>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9618" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of this transformation is to disrupt analysis tools that
+make use of dynamic taint analysis. </p></div></div></section>
+
+<center><img width="400px" src="tigress3-images/implicit-flow-6.png"></center>
+
+<a class="anchor" id="diversity">&nbsp;</a>
+<br>
+<h3 align=center>Diversity</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9619" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We use two basic ways to copy a variable using control-, rather than
+data-flow:</p></div></div></section>
+<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ol>
+      <li> counting up to the value of the variable, and </li>
+      <li> copying it bit by bit, tested in an if-statement. </li>
+</ol>
+</div></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9620" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This can be done in a simple loop, an unrolled loop, or by throwing
+exceptions caught in a signal handler. This leads to a total of
+five different copy methods.</p></div></div></section>
+
+<a class="anchor" id="usage">&nbsp;</a>
+<br>
+<h3 align=center>Usage</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9621" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you want to copy using signals you must first generate the signal handlers
+using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p></div></div></section>
+
+INSERT-OPTION options.in Transform:AntiTaintAnalysisKinds:AntiTaintAnalysisSysCalls:AntiTaintAnalysisImplicitFlow
+
+<a class="anchor" id="examples">&nbsp;</a>
+<H3>Examples</H3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9622" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The code to copy <code>argc</code> using bit-by-bit copy and signals 
+would look something like this:</p></div></div></section>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  argc_origPtr13 = (unsigned char *)(& argc);
+  argc_copyPtr15 = (unsigned char *)(& argc_copy14);
+  size_iter16 = 0;
+  while (size_iter16 < 4) {
+    TempVar = 0;
+    signal(31, handler);
+    BitVar = 0;
+    while (BitVar < 8) {
+      if ((*argc_origPtr13 >> BitVar) & 1) {
+        raise(31);
+      } 
+      BitVar ++;
+    }
+    signal(31, (void (*)(void *sig ))1);
+    *argc_copyPtr15 = TempVar;
+    argc_origPtr13 ++;
+    argc_copyPtr15 ++;
+    size_iter16 ++;
+  }
+</code></pre>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9623" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">with this signal handler and these global variables:</p></div></div></section>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char TempVar;
+int BitVar;
+void handler(int sig ) { 
+  TempVar |= 1 << BitVar;
+}
+</code></pre>
+
+<a class="anchor" id="issues">&nbsp;</a>
+<br>
+<h3 align=center>Issues</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9624" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Currently, we can only un-taint a few variables:</p></div></div></section>
+<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ol>
+      <li> <code>argc</code> and <code>argv</code> in <code>main</code>, </li>
+      <li> the output values of a few system and library calls: <code>getpid</code> and <code>scanf</code>, </li>
+      <li> the virtual PC in a virtualized function (using the <code>--VirtualizeImplicitFlowVPC</code>
+           option). </li>
+      <li> The function handler to a jitted function (using the <code>--JitImplicitFlow</code> option). </li>
+</ol>
+</div></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9625" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We will add more as requested!</p></div></div></section>
+<a class="anchor" id="references">&nbsp;</a>
+<br>
+<h3 align=center>References</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9626" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The implementation is based on ideas from
+<a href="http://www.isg.rhul.ac.uk/sullivan/pubs/tr/ata07.pdf">
+   Anti-Taint-Analysis: Practical Evasion Techniques Against Information Flow Based Malware Defense
+</a> by Lorenzo Cavallaro, Prateek Saxena, and R. Sekar and
+<a href ="http://olivier.mehani.name/publications/2013sarwar_scrubdroid.pdf"> 
+   On the Effectiveness of Dynamic Taint Analysis for Protecting Against 
+       Private Information Leaks on Android-based Devices
+</a> by Golam Sarwar, Olivier Mehani, Roksana Boreli, and Mohamed-Ali Kaafar.</p></div></div></section>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script async src="assets/tether/tether.min.js"></script>
+  <script async src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script async src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script async src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script async src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script async src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script async src="assets/theme/js/script.js"></script>
+  
+  
+  <input name="animation" type="hidden">
+  
+</body>
+</html>
