@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.10, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.10, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Site Builder Description">
+  
+  <title>EncodeBranches</title>
+  <link rel="preload" as="style" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+<link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+ 
+<style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
+</head>
+<body>
+
+  <section class="menu cid-rCFaEeaKON" once="menu" id="menu1-v">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/tigress-white-copy-154x122.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="index.html">
+                        
+                        Home</a>
+                </li><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="introduction.html">
+                        
+                        Introduction</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="usage.html">Usage</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="transformations.html">Transformations</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="publications.html">Publications</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="FAQ.html">FAQ</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="consulting.html">Consulting/Training</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html">Contact</a></li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<br><br><br><br>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of these transformations is to make it harder for 
+automatic analysis tools (such as disassemblers) to determine
+the target of branches.</p></div></div></section>
+
+<H3>Branch Functions</H3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c235" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation implements a simplistic version of Linn and Debray's 
+branch functions. We doen't use perfect hash tables, as suggested
+in Linn and Debray's paper, since this is hard to do as a
+source-to-source transformation. Rather, we simply pass the offset to
+jump to as an argument to the branch function.</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c236" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The generated code looks like this, where the call to the branch function <code>bf</code>
+actually results in a direct jump to <code>lab2</code>:</p></div></div></section>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void bf(unsigned long offset) {
+  __asm__  volatile   ("addq  %0, 8(%%rbp)": : "r" (offset));
+}
+
+int main() {
+   bf((unsigned long)(&& lab2) - (unsigned long)(&& lab3));
+   lab3: 
+       __asm__  volatile   (".byte 0x76,0x9b,0x8e,0x1b,0x4d":);
+   ...
+   lab2: ...;
+}
+</code></pre>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c237" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">By default, a function is flattened prior to direct jumps
+being replaced by calls to branch functionThis creates more direct 
+jumps and hence more opportunities to apply the branch function 
+transformation. Turn this off with <code>--BranchFunsFlatten=false</code>. </p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c238" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Before branches can be replaced by calls to a branch
+function, at least one such function needs to be constructed,
+using the <code>--Transform=InitBranchFuns</code> transformation.
+</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c239" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The branch function is not obfuscated and hence trivial to find. 
+It's therefore a good idea to merge it with other functions in the program.</p></div></div></section>
+
+<H3>X86 Branch Obfuscations</H3>
+We implement two standard branch obfuscations used by many
+packers:
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      push target
+      call lab
+      ret
+lab:
+      ret
+</code></pre>
+and
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      push target
+      ret
+</code></pre>
+
+<H3>NOP sleds</H3>
+The <code>--AntiBranchAnalysisKinds=goto2nopSled</code> switch turns this code
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      goto L
+      ...
+   L:
+</code></pre>
+into this code
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      goto *(R+<em>expression</em>)
+      ...
+    R: 
+      nop
+      nop
+      ...
+      nop
+    L:
+</code></pre>
+The expression is opaque such that the branch falls somewhere within the
+nop sled. The intention is to combine this transformation with input-dependent opaque
+predicates so that the actual jump address will be random and input
+dependent:
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Input=... \
+        --Transform=InitOpaque 
+           --InitOpaqueKind=Input \
+        --Transform=AntiBranchAnalysis \
+            --AntiBranchAnalysisKinds=goto2nopSled \
+            --AntiBranchAnalysisOpaqueStructs=Input 
+</code></pre>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c240" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+The current nop-sled is trivial, consisting of random lists of 
+x86 bytes that have no effect:
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   cmc
+   std
+   cld
+   nop
+   stc
+   cmc
+   clc
+   stc
+   wait
+   ...
+</code></pre>
+
+INSERT-OPTION options.in Transform:AntiBranchAnalysisKinds:AntiBranchAnalysisOpaqueStructs:AntiBranchAnalysisObfuscateBranchFunCall:AntiBranchAnalysisBranchFunFlatten:AntiBranchAnalysisBranchFunAddressOffset:
+
+<a class="anchor" id="issues">&nbsp;</a>
+<br>
+<h3 align=center>Issues</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c241" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation has many issues, and should only be used with great care:</p></div></div></section>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> Currently, only x86 assembly code is generated. If someone is interested
+        in helping to port this to other platforms, let me know. </li>
+   <li> It appears as <code>goto2push</code> and <code>goto2call</code> will often cause
+       <code>clang</code> to generate the wrong code. 
+<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ol>
+          <li> <code>gcc 4.6</code> appears to do the right thing. 
+          <li> <code>gcc 4.8</code> appears to occasionally hang when compiling our generated code.
+</ol>
+</div></div></div></section>
+      The issue is that the generated inline assembly code
+      contains jumps. Newer versions of <code>gcc</code> have an
+      <a href="http://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html#Extended%20asm%20with%20goto">
+      <code>asm goto</code></a> construct which ought to help with this.
+      <code>Clang</code> lacks this feature. </li>
+  <li> Make sure you set the <code>--Environment=...</code> option appropriately
+       if you are going to use <code>goto2push</code> and <code>goto2call</code> and
+       test the generated code thoroughly. <code>goto2push</code> and <code>goto2call</code>
+       are turned off by default. </li>
+   <li> Running this transformation on the same function twice seems to
+        occasionally break. </li>
+   <li> The NOP sled currently uses only trivial instructions that
+        do not modify registers. Eventually, we'll get around to implementing 
+        a nop-generator (similar to <a href="https://www.metasploit.com">MetaSploit's</a>) 
+        that also allows more complex instructions. </li>
+</ul>
+</div></div></div></section>
+
+<a class="anchor" id="references">&nbsp;</a>
+<br>
+<h3 align=center>References</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c242" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The Branch Function transformation implements a simplistic version of Linn and Debray's 
+<a href="https://www.cs.arizona.edu/~debray/Publications/disasm-resist.pdf">
+Obfuscation of Executable Code to Improve Resistance to Static
+Disassembly</a>, Linn and Debray's algorithm replaces
+direct jumps with calls to a special <em>branch function</em> which
+sets the return address to the target of the original branch, and then
+returns.</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c243" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are many attacks published on branch functions, including
+<a href="https://www.usenix.org/legacy/publications/library/proceedings/sec04/tech/full_papers/kruegel/kruegel_html/disassemble.html">
+Static Disassembly of Obfuscated Binaries</a> by Christopher Kruegel, William Robertson, Fredrik Valeur and Giovanni Vigna,
+and <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.302.7805">Deobfuscation: Reverse engineering obfuscated code</a>
+by Sharath Udupah, Saumya Debray, and Matias Madou.</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c244" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Kevin A. Roundy and Barton P. Miller's survey paper
+<a href="http://dl.acm.org/citation.cfm?id=2522972">
+Binary-code obfuscations in prevalent packer tools</a> 
+is a good source of information on techniques used
+by current obfuscation tools.</p></div></div></section>
+
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script async src="assets/tether/tether.min.js"></script>
+  <script async src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script async src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script async src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script async src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script async src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script async src="assets/theme/js/script.js"></script>
+  
+  
+  <input name="animation" type="hidden">
+  
+</body>
+</html>

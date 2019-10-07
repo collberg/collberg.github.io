@@ -85,7 +85,7 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3255" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Merge multiple functions into one. An extra formal argument is added 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c234" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Merge multiple functions into one. An extra formal argument is added 
 to allow call sites to call any of the functions.
 This transformation is useful as a precursor to virtualization or jitting:
 if you want to virtualize both <code>foo</code> and <code>bar</code>,
@@ -93,18 +93,18 @@ first merge them together, then virtualize the result.</p></div></div></section>
 
 <center><img width="400px" src="tigress3-images/merge.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3256" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The transformation merges the argument list and the local variables
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c235" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The transformation merges the argument list and the local variables
 of the functions, thereby tying them together.</p></div></div></section>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3257" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Merging relies on the Flatten transformation, and has the same sources of diversity as it.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c236" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Merging relies on the Flatten transformation, and has the same sources of diversity as it.</p></div></div></section>
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3258" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are several ways to merge. In a simple merge, the function bodies
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c237" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are several ways to merge. In a simple merge, the function bodies
 are simply put in an if-nest. This is simplistic, of course, but sufficient
 if you are going to, say, virtualize or jit the merged function. If you set 
 <code>--MergeFlatten=true</code> then constituent functions are first
@@ -112,12 +112,12 @@ flattened, then the resulting blocks are merged together, and finally
 a dispatch method is added (switch, goto, or indirect, selected by
 <code>--MergeFlattenDispatch</code>).</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3259" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The merged function is named</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c238" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The merged function is named</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   prefix ^ fun1 ^ "_" ^ fun2  ^ "_" ^ ...
 </code></pre>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3260" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">where <code>^</code> is concatenation.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c239" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">where <code>^</code> is concatenation.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3261" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">It is a good idea to run a <code>--Trandform=RndArgs</code> transformation after
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c240" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">It is a good idea to run a <code>--Trandform=RndArgs</code> transformation after
 this one to hide the obvious extra argument that's been added to
 the function.</p></div></div></section>
 
