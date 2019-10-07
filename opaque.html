@@ -85,13 +85,13 @@ h3 {
 
 <br><br><br><br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4846" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Several transformations rely on boolean and integer expressions that have
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7387" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Several transformations rely on boolean and integer expressions that have
 a known value, known as <em>opaque predicates and expressions</em>.
 To construct these, data structures with precise invariants are added to
 the code.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4847" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">At a minimum, you must create one or more opaque invariant data structures:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7388" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">At a minimum, you must create one or more opaque invariant data structures:
 </p></div></div></section>
 
 <center>
@@ -141,7 +141,7 @@ the code.
 
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4848" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To frustrate analysis, updates that maintain the invariants should
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7389" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To frustrate analysis, updates that maintain the invariants should
    be sprinkled throughout the program. This is done by the <code>--Transform=UpdateOpaque</code>
    option:
 </p></div></div></section>
@@ -180,7 +180,7 @@ the code.
 
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4849" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> <b>Note:</b> In <code>--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7390" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> <b>Note:</b> In <code>--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
      must execute before any use of an opaque expression. Easiest is to set 
      <code>--Transform=InitOpaque --Functions=main</code> but this is best avoided since it
      is very obvious.</p></div></div></section>
@@ -188,7 +188,7 @@ the code.
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4850" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress will generate copious numbers of extra local
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7391" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress will generate copious numbers of extra local
 variables and statements of the form <code>_*__BARRIER_* = 1</code>,
 <code>_*__BEGIN_* = 1</code>, <code>_*__END_* = 1</code>. They
 will be removed by any competent compiler, or by the
