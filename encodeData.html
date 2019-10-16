@@ -89,7 +89,7 @@ h3 {
 <center><img width="500px" src="tigress3-images/encodeData-front-page.png"></center>
 
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c548" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Encode integer variables so that they have a non-standard
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5683" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Encode integer variables so that they have a non-standard
 data representation. The goal is for a variable's real value (and
 the values of intermediate expressions used to compute it) to never
 be revealed, until it is printed or otherwise escapes the
@@ -99,8 +99,8 @@ replaced with:</p></div></div></section>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">v' = a*v + b
 </code></pre>
 </center>                
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c549" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">where <code>a</code> is a random odd integer and <code>b</code> a 
-random integer. For example, given this program<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c550" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5684" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">where <code>a</code> is a random odd integer and <code>b</code> a 
+random integer. For example, given this program<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5685" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 <center>                
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int main () {
   int arg1 = ...
@@ -112,7 +112,7 @@ random integer. For example, given this program<section class="engine"><a href="
 }
 </code></pre>
 </center>                
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c551" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress might produce the following:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5686" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress might produce the following:</p></div></div></section>
 <center>                
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">a = 1789355803 * arg1 + 1391591831;
 b = 1789355803 * arg2 + 1391591831;
@@ -124,7 +124,7 @@ printf("x=%i\n", -757949677 * x - 3670706997);
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c552" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A typical invokation of this transformation lists a collection of local
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5687" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A typical invokation of this transformation lists a collection of local
 variables and formal parameters, and global variables:</p></div></div></section>
 <center>                
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   --Transform=EncodeData \
@@ -133,7 +133,7 @@ variables and formal parameters, and global variables:</p></div></div></section>
       --EncodeDataCodecs=poly1
 </code></pre>
 </center>                
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c553" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These variables should all be integers, pointers to integers, arrays of integers, or combinations
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5688" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These variables should all be integers, pointers to integers, arrays of integers, or combinations
 of these. In the example above, <code>g1</code> may be an <code>int</code>, <code>L1</code> an <code>int*</code>, 
 <code>L2</code> an array of <code>int</code>s, and <code>L3</code> an array of pointers to <code>int</code>s.</p></div></div></section>
 
@@ -172,7 +172,7 @@ of these. In the example above, <code>g1</code> may be an <code>int</code>, <cod
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c554" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you ask Tigress to encode a variable <code>x</code>, then all variables
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5689" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you ask Tigress to encode a variable <code>x</code>, then all variables
 related to <code>x</code> through aliasing must also be encoded.
 In cases where our alias analysis algorithm isn't precise enough, encoding
 will fail at transformation time. For large programs, the alias analysis
@@ -181,7 +181,7 @@ routine may take a very long time.</p></div></div></section>
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c555" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation is based on ideas from several Cloakware/IRDETO papers and patents:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5690" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation is based on ideas from several Cloakware/IRDETO papers and patents:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> <a href="http://dl.acm.org/citation.cfm?id=1375702">Compiler-Based Infrastructure for Software-Protection</a>,
