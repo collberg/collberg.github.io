@@ -8185,3 +8185,53 @@ section.lazy-placeholder:after {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s;
 }
+.cid-rF0JQ6o8mm {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-rF0JQ6o8mm .card-box {
+  padding: 0 2rem;
+  color: #ffffff;
+}
+.cid-rF0JQ6o8mm .mbr-section-btn {
+  padding-top: 1rem;
+}
+.cid-rF0JQ6o8mm .mbr-section-btn a {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.cid-rF0JQ6o8mm h4 {
+  font-weight: 600;
+  margin-bottom: 0;
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 20px;
+  color: #ffffff;
+}
+.cid-rF0JQ6o8mm a {
+  color: #ffffff;
+  font-weight: 400;
+}
+.cid-rF0JQ6o8mm p {
+  margin-bottom: 0;
+  text-align: left;
+  padding-top: 1.5rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+.cid-rF0JQ6o8mm .mbr-text {
+  color: #ffffff;
+  font-weight: 200;
+}
+.cid-rF0JQ6o8mm .card-wrapper {
+  height: 100%;
+  padding-bottom: 2rem;
+  background: #2d7387;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.3s;
+}
+.cid-rF0JQ6o8mm .card-wrapper:hover {
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s;
+}
