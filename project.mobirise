@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Tigress",
-    "currentPage": "usage.html",
+    "currentPage": "introduction.html",
     "theme": {
       "name": "mobirise4",
       "title": "Mobirise 4",
@@ -34,7 +34,7 @@
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.10.10",
     "siteFonts": [],
-    "uniqCompNum": 23,
+    "uniqCompNum": 24,
     "versionPublish": "4.10.10",
     "favicon": "@PROJECT_PATH@/assets/images/tigress-white-128x101.png",
     "noImageResize": "",
@@ -2416,13 +2416,13 @@
             "theme": "absent",
             "slides": [
               {
-                "image": "@PROJECT_PATH@/assets/images/wasm-2-640x360.jpg",
+                "image": "@PROJECT_PATH@/assets/images/tigress.022-640x360.jpg",
                 "linkUrl": "http://google.com",
                 "link": false,
-                "src": "@PROJECT_PATH@/assets/images/wasm-1801x684.png",
-                "tooltip": "@PROJECT_PATH@/assets/images/wasm-2-85x48.png",
-                "title": "title 3",
-                "text": "text 3",
+                "src": "@PROJECT_PATH@/assets/images/tigress.022-1920x1080.png",
+                "tooltip": "@PROJECT_PATH@/assets/images/tigress.022-85x48.png",
+                "title": "title 2",
+                "text": "text 2",
                 "active": true
               }
             ],
@@ -2431,7 +2431,7 @@
             "hideControls": false,
             "responsive": "1",
             "paddingTop": "0",
-            "paddingBottom": "0",
+            "paddingBottom": 0,
             "captionsEffect": "slide",
             "showBullets": false,
             "bgColor": "#ffffff",
@@ -2450,12 +2450,7 @@
             "Extension"
           ],
           "_name": "wowslider",
-          "_anchor": "wowslider-g",
-          "_customHTML": "<section class=\"mbr-wowslider-container mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-wowslider-container--absent\" data-ride=\"carousel\" data-keyboard=\"false\" data-wrap=\"true\" data-interval=\"false\" data-rv-view=\"45\" style=\"background-color: rgb(255, 255, 255);\">\n    <div class=\"mbr-wowslider\">\n        <div class=\"ws_images\">\n            <ul>\n                <li>\n                    \n                    <img src=\"@PROJECT_PATH@/assets/images/wasm-2-640x360.jpg\" alt=\"title 3\" title=\"title 3\"> text 3\n                </li>\n            </ul>\n        </div>\n        <div class=\"ws_bullets\">\n            <div>\n                <a href=\"#\" title=\"\">\n                    <span><img alt=\"slide1\" src=\"@PROJECT_PATH@/assets/images/wasm-2-85x48.png\"></span>\n                </a>\n            </div>\n        </div>\n        <div class=\"ws_shadow\"></div>\n        <div class=\"mbr-wowslider-options\">\n            <div class=\"params\" data-paddingbottom=\"0\" data-anim-type=\"basic\" data-theme=\"absent\" data-autoplay=\"true\" data-paddingtop=\"0\" data-fullscreen=\"true\" data-showbullets=\"false\" data-timeout=\"2\" data-duration=\"2\" data-height=\"360\" data-width=\"640\" data-responsive=\"1\" data-showcaptions=\"false\" data-captionseffect=\"slide\" data-hidecontrols=\"false\"></div>\n        </div>\n</div></section>",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": [],
-          "_customCSS": "",
-          "_customTemplate": true
+          "_anchor": "wowslider-n"
         },
         {
           "alias": false,
