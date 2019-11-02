@@ -83,16 +83,30 @@ h3 {
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/x">free css templates</a></section><section class="mbr-section article content1 cid-rDQOMX8P31" id="content1-u">
+<section class="engine"><a href="https://mobirise.info/n">simple web templates</a></section><section class="mbr-section article content1 cid-rDQOMX8P31" id="content1-u">
     
      
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><br></p><p><br></p><p>A trival invocation of Tigress looks like this:</p></div>
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><br></p><p><br></p><p>To obfuscate your program with Tigress first include the tigress.h file supplied in the Tigress distribution directory, and then invoke Tigress specifying at least one transformation applied to at least one function. Here is a trivial example where Tigress is flattening the function bar in the program foo.c:</p></div>
         </div>
     </div>
 </section>
+
+<div id="custom-html-k"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#include "PATH-TO-TIGRESS-INSTALLATION/tigress.h"
+void bar () {
+    ...
+}
+int main () {
+   ...
+}
+</code></pre>
+</div>
+</center>
+</div>
 
 <div id="custom-html-i"><center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>tigress \
@@ -103,45 +117,6 @@ h3 {
 </code></pre>
 </center>
 </div>
-
-<section class="mbr-section article content1 cid-rDQOofipfg" id="content1-t">
-    
-     
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong>Note to academics. </strong>We see Tigress used in many research projects, and this is very satisfying! We encourage anyone working in reverse engineering to try to attack Tigress-generated code, and anyone working in software protection to compare their techniques against the standard set of techniques provided by Tigress. We are always keen to collaborate, so please get in touch if you have some interesting ideas to work on! That said, we often see papers where researchers have used Tigress and where the analyses they perform are not as accurate as one would like. Here are some common problems we've seen:</p></div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d">
-     
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-                    <li><strong>"We run Tigress with default options". </strong>There is no such thing. By "default", Tigress does nothing! There are lots of different transformations, lots of different options, and you need to specify which ones you used. Different options to the same transformation can have radically different performance characteristics.</li>
-                    <li><strong>"Tigress does not support transformation X". &nbsp;</strong>There are lots of transformations. Lots of options. To be sure you're not missing something, contact me.&nbsp;</li>
-                    <li><strong>"Tigress-generated code crashed, so we ignored it."</strong> I'm not saying there are no bugs, but Tigress has been used in commercial projects and I believe it mostly "works". If you find a bug, contact me. Often, the problem is system specific and can be taken care of by simply adding another compiler flag or #define.</li><li>&nbsp;<strong>"Tigress-generated code is slow".</strong> Yeah, true, but again, it depends on the particular set of options you're using. Virtualization, for example, has specfic options to generate faster code. Again, if you're unsure you're running the best possible Tigress script, contact me.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section article content1 cid-rE3e77IkyO" id="content1-g">
-    
-     
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>
-                <strong> C source language.</strong>&nbsp;Tigress supports the C99 language. Depending on your compiler, you may have to add a switch (such as -std=c99 for gcc) to indicate this.</p></div>
-        </div>
-    </div>
-</section>
 
 <section class="mbr-section article content1 cid-rE3ete9d8p" id="content1-h">
     
@@ -173,20 +148,14 @@ h3 {
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong>Multiple Input Files.</strong>&nbsp;<span style="font-size: 1rem;">Note that Tigress accepts <em>exactly one</em> C file as input. This is so that Tigress can do whole-program analysis and transformations. If your project has multiple files you must first merge them together into one. Tigress (through the CIL library on which it is built) supports allows you to merge your source files automatically. Below, the first three commands are replacements, essentially, for compiling each of the source file, x1.c, x2.c, and x3.c. If, for example, you need to pass different options when compiling the different files, you'd do it here (Note that options passed through to the compiler have one dash ("-"), while options passed to Tigress start with two ("--").)</span><span style="font-size: 1rem;">. The merged source file (named merged.c) can subsequently be passed to Tigress for transformation. See CIL's documentation to learn more about the merging process.</span></p></div>
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong>Multiple Input Files.</strong>&nbsp;<span style="font-size: 1rem;">Note that Tigress accepts <em>exactly one</em> C file as input. This is so that Tigress can do whole-program analysis and transformations. If your project has multiple files you must first merge them together into one. Tigress (through the CIL library on which it is built) allows you to merge your source files automatically. For complex scenarios, see the CIL information page about <a href="http://cil-project.github.io/cil/doc/html/cil/merger.html#sec-merger" target="_blank">merging</a>. For simple cases, all you have to do to merge two files file1.c and file2.c into full.c, is to call the tigress-merge program like this:&nbsp;</span></p></div>
         </div>
     </div>
 </section>
 
 <div id="custom-html-k"><!-- Type valid HTML here -->
 <center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>$TIGRESS_HOME/cilly --merge -c x1.c -o x1.o
-
-$TIGRESS_HOME/cilly --merge -c x2.c -o x2.o
-
-$TIGRESS_HOME/cilly --merge -c x3.c -o x4.o
-
-$TIGRESS_HOME/cilly --merge --keepmerged x1.o x2.o x3.o -o merged --mergedout=merged.c 
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>$ tigress-merge file1.c file2.c --out=full.c
 </code></pre></center></div>
 
 <section class="mbr-section article content1 cid-rE3kNoI7NA" id="content1-l">
@@ -224,7 +193,7 @@ $TIGRESS_HOME/cilly --merge --keepmerged x1.o x2.o x3.o -o merged --mergedout=me
         <div class="media-container-column mbr-white">
             
             
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>WebAssembly</strong>: Below is an example of how to first obfuscate with Tigress, then compile with <a href="https://emscripten.org" target="_blank">Emscripten</a> to a WebAssembly/html/Javascript package. Notice the use of the CIL_MACHINE environment variable and the --envmachine argument to Tigress--these specify that the word size of the target machine (WASM) is different from that of the machine of which Tigress is run. Notice also the --gcc=emcc argument to Tigress. This specifies that the WebAssembly compiler (emcc) should be used, rather than the native C compiler.<br></p>
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>WebAssembly</strong>: Below is an example of how to first obfuscate a C progra foo_in.c with Tigress, and then compile the obfuscated file foo_obf.c with <a href="https://emscripten.org" target="_blank">Emscripten</a> to a WebAssembly/html/Javascript package. Note the use of the CIL_MACHINE environment variable and the --envmachine argument to Tigress; these specify that the word size of the target machine (WASM) is different from that of the machine of which Tigress is run. Notice also the --gcc=emcc argument to Tigress. This specifies that the WebAssembly compiler (emcc) should be used, rather than the native C compiler.<br></p>
             
         </div>
     </div>
@@ -282,7 +251,7 @@ tigress \
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>
-                <strong> Bugs and other issues.</strong>&nbsp;There are some platform specific issues (particularly on Darwin), and some bugs that originate either in CIL or the underlying compilers. Here's what we know about:</p></div>
+                <strong> Bugs and other issues.</strong>&nbsp;There are some platform specific issues (particularly on clang/Darwin), and some bugs that originate either in CIL or the underlying compilers. Here's what we know about:</p></div>
         </div>
     </div>
 </section>

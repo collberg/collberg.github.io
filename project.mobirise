@@ -34,7 +34,7 @@
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.10.10",
     "siteFonts": [],
-    "uniqCompNum": 17,
+    "uniqCompNum": 23,
     "versionPublish": "4.10.10",
     "favicon": "@PROJECT_PATH@/assets/images/tigress-white-128x101.png",
     "noImageResize": "",
@@ -1695,7 +1695,7 @@
         {
           "_customTemplate": true,
           "_afterNavbarItem": false,
-          "_customHTML": "<!-- Type valid HTML here -->\n<center>\n    <div style=\"width:800px;overflow:auto\">\n<pre><code>    tigress --Verbosity=1 --Environment=x86_64:Linux:Gcc:4.6 --Seed=42 \\\n        --Transform=Flatten \\\n           --Functions=bar \\\n           --FlattenDispatch=switch \\\n           --FlattenObfuscateNext=false \\\n           --FlattenRandomizeBlocks=true \\\n           --FlattenConditionalKinds=branch,compute,flag \\\n           --FlattenImplicitFlowNext=true \\\n        --Transform=Virtualize \\\n           --Functions=bar \\\n           --VirtualizeDispatch=direct \\\n        --Transform=CleanUp \\\n        --CleanUpKinds=annotations,constants,names \\\n        --out=foo_out.c foo.c\n</code></pre>\n    </div>\n</center>",
+          "_customHTML": "<!-- Type valid HTML here -->\n<center>\n    <div style=\"width:800px;overflow:auto\">\n<pre style=\"text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black\"><code>tigress --Verbosity=1 --Environment=x86_64:Linux:Gcc:4.6 --Seed=42 \\\n   --Transform=Flatten \\\n      --Functions=bar \\\n      --FlattenDispatch=switch \\\n      --FlattenObfuscateNext=false \\\n      --FlattenRandomizeBlocks=true \\\n      --FlattenConditionalKinds=branch,compute,flag \\\n      --FlattenImplicitFlowNext=true \\\n   --Transform=Virtualize \\\n      --Functions=bar \\\n      --VirtualizeDispatch=direct \\\n   --Transform=CleanUp \\\n       --CleanUpKinds=annotations,constants,names \\\n   --out=foo_out.c foo.c\n</code></pre>\n    </div>\n</center>",
           "_customCSS": "/* Type valid CSS here */\npre {\n  display: block;\n  font-family: monospace;\n  white-space: pre;\n  margin: 1em 0;\n   background: #ffffff;\n   border: 2px solid #777;\n\n} \n\ndiv {\n  padding: 0px 0;\n  color: #ffffff;\n  text-align: left;\n}\np {\n  font-size: 80px;\n  color: #777;\n}",
           "alias": "code-editor",
           "_tags": [
@@ -2399,7 +2399,7 @@
             }
           },
           "_name": "header9",
-          "_customHTML": "<section class=\"header9\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\">\n\n        <input type=\"checkbox\" name=\"halfSize\" title=\"Half Size\">\n        <select title=\"Align\" name=\"alignHalf\" condition=\"halfSize\">\n            <option value=\"1\" selected>Left</option>\n            <option value=\"2\">Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/background3.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"media-container-column mbr-white\" mbr-class=\"{'col-lg-8 col-md-10': halfSize, 'm-auto': halfSize &&  alignHalf==2, 'ml-auto': halfSize &&  alignHalf==3}\">\n            <h1 class=\"mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n                FULL SCREEN INTRO\n            </h1>\n            <h3 class=\"mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showSubTitle\">\n                Beautiful mobile websites\n            </h3>\n            <p class=\"mbr-text align-left pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>WebAssembly</b>: The typical way to protect code running in the browser from attacks by the user is to write the code in Javascript and transform it with a Javascript obfuscator. An alternative approach is to write the code in C, transform it with a tool such as Tigress, and then to compile using&nbsp;<a href=\"https://emscripten.org\" target=\"_blank\">Emscripten</a> to a WebAssembly/html/Javascript package:<br></p>\n            <div class=\"mbr-section-btn align-left\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-primary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">LEARN MORE</a></div>\n        </div>\n    </div>\n\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"header9\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\">\n\n        <input type=\"checkbox\" name=\"halfSize\" title=\"Half Size\">\n        <select title=\"Align\" name=\"alignHalf\" condition=\"halfSize\">\n            <option value=\"1\" selected>Left</option>\n            <option value=\"2\">Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/background3.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"media-container-column mbr-white\" mbr-class=\"{'col-lg-8 col-md-10': halfSize, 'm-auto': halfSize &&  alignHalf==2, 'ml-auto': halfSize &&  alignHalf==3}\">\n            <h1 class=\"mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n                FULL SCREEN INTRO\n            </h1>\n            <h3 class=\"mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showSubTitle\">\n                Beautiful mobile websites\n            </h3>\n            <p class=\"mbr-text align-left pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>WebAssembly</b>: The typical way to protect code running in the browser from attacks by the user is to write the code in Javascript and transform it with a Javascript obfuscator. An alternative approach is to write the code in C, transform it with Tigress, and to compile the resulting code using&nbsp;<a href=\"https://emscripten.org\" target=\"_blank\">Emscripten</a>&nbsp;(a C-to-WASM compiler)&nbsp;to a WebAssembly/html/Javascript package. This package can be loaded by most browsers. The advantage of this approach is that the resulting code can run at near-native speeds and that Tigress supports more powerful obfuscating transformations than most Javascript obfuscators. Here's a depiction of the process;<br></p>\n            <div class=\"mbr-section-btn align-left\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-primary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">LEARN MORE</a></div>\n        </div>\n    </div>\n\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
           "_anchor": "header9-d",
           "_isUserblock": true,
           "_sourceTheme": "mobirise4",
@@ -2416,11 +2416,11 @@
             "theme": "absent",
             "slides": [
               {
-                "image": "@PROJECT_PATH@/assets/images/wasm-1-640x360.jpg",
+                "image": "@PROJECT_PATH@/assets/images/wasm-2-640x360.jpg",
                 "linkUrl": "http://google.com",
                 "link": false,
-                "src": "@PROJECT_PATH@/assets/images/wasm-1920x1080.png",
-                "tooltip": "@PROJECT_PATH@/assets/images/wasm-1-85x48.png",
+                "src": "@PROJECT_PATH@/assets/images/wasm-1801x684.png",
+                "tooltip": "@PROJECT_PATH@/assets/images/wasm-2-85x48.png",
                 "title": "title 3",
                 "text": "text 3",
                 "active": true
@@ -2450,7 +2450,91 @@
             "Extension"
           ],
           "_name": "wowslider",
-          "_anchor": "wowslider-g"
+          "_anchor": "wowslider-g",
+          "_customHTML": "<section class=\"mbr-wowslider-container mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-wowslider-container--absent\" data-ride=\"carousel\" data-keyboard=\"false\" data-wrap=\"true\" data-interval=\"false\" data-rv-view=\"45\" style=\"background-color: rgb(255, 255, 255);\">\n    <div class=\"mbr-wowslider\">\n        <div class=\"ws_images\">\n            <ul>\n                <li>\n                    \n                    <img src=\"@PROJECT_PATH@/assets/images/wasm-2-640x360.jpg\" alt=\"title 3\" title=\"title 3\"> text 3\n                </li>\n            </ul>\n        </div>\n        <div class=\"ws_bullets\">\n            <div>\n                <a href=\"#\" title=\"\">\n                    <span><img alt=\"slide1\" src=\"@PROJECT_PATH@/assets/images/wasm-2-85x48.png\"></span>\n                </a>\n            </div>\n        </div>\n        <div class=\"ws_shadow\"></div>\n        <div class=\"mbr-wowslider-options\">\n            <div class=\"params\" data-paddingbottom=\"0\" data-anim-type=\"basic\" data-theme=\"absent\" data-autoplay=\"true\" data-paddingtop=\"0\" data-fullscreen=\"true\" data-showbullets=\"false\" data-timeout=\"2\" data-duration=\"2\" data-height=\"360\" data-width=\"640\" data-responsive=\"1\" data-showcaptions=\"false\" data-captionseffect=\"slide\" data-hidecontrols=\"false\"></div>\n        </div>\n</div></section>",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_customCSS": "",
+          "_customTemplate": true
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-text, blockquote": {
+              "color": "#767676"
+            }
+          },
+          "_name": "content1",
+          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline=\"\" title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline=\"\" mbr-article=\"\" mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><b>Note to academics. </b>We see Tigress used in many research projects, and this is very satisfying! We encourage anyone working in reverse engineering to try to attack Tigress-generated code, and anyone working in software protection to compare their techniques against the standard set of techniques provided by Tigress. We are always keen to collaborate, so please get in touch if you have some interesting ideas to work on! That said, we often see papers where researchers have used Tigress and where the analyses they perform are not as accurate as one would like. Here are some common problems we've seen:</p></div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "content1-l",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "rGGTmJ78Q8",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".counter-container": {
+              "color": "#767676",
+              "ul": {
+                "margin-bottom": "0",
+                "li": {
+                  "margin-bottom": "1rem",
+                  "& when (@stylizedCounters)": {
+                    "list-style": "none",
+                    "&:before": {
+                      "position": "absolute",
+                      "left": "0px",
+                      "margin-top": "-10px",
+                      "padding-top": "3px",
+                      "content": "''",
+                      "display": "inline-block",
+                      "text-align": "center",
+                      "margin": "0px 10px",
+                      "line-height": "20px",
+                      "transition": "all .2s",
+                      "color": "contrast(@counterColor)",
+                      "background": "@counterColor",
+                      "width": "25px",
+                      "height": "25px",
+                      "border-radius": "50%",
+                      "& when (@countersType = 'circle')": {
+                        "background": "none",
+                        "border": "1px solid @counterColor",
+                        "color": "@counterColor"
+                      },
+                      "& when (@countersType = 'square')": {
+                        "border-radius": "0"
+                      },
+                      "& when (@mark)": {
+                        "content": "'✓'"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "_name": "content12",
+          "_customHTML": "<section class=\"mbr-section article content12\">\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"checkbox\" title=\"Stylized Counters\" name=\"stylizedCounters\" checked=\"\">\n        <input type=\"color\" title=\"Counter Color\" name=\"counterColor\" value=\"#149dcc\" condition=\"stylizedCounters\">\n        <input type=\"checkbox\" title=\"Stylized Counters\" name=\"stylizedCounters\" checked=\"\">\n        <input type=\"checkbox\" title=\"Mark\" name=\"mark\" condition=\"stylizedCounters\" checked=\"\">\n        <select title=\"Counters Type\" name=\"countersType\" condition=\"stylizedCounters\">\n            <option value=\"default\" selected=\"\">Сircle Fill</option>\n            <option value=\"circle\">Circle</option>\n            <option value=\"square\">Square</option>\n        </select>   \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text counter-container col-12 col-md-8 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline=\"\" mbr-article=\"\">\n                <ul>\n                    <li><b>\"We run Tigress with default options\". </b>There is no such thing. By \"default\", Tigress does nothing! There are lots of different transformations, lots of different options, and you need to specify which ones you used. Different options to the same transformation can have radically different performance characteristics.</li>\n                    <li><b>\"Tigress does not support transformation X\". &nbsp;</b>There are lots of transformations. Lots of options. To be sure you're not missing something, contact me.&nbsp;</li>\n                    <li><b>\"Tigress-generated code crashed, so we ignored it.\"</b> I'm not saying there are no bugs, but Tigress has been used in commercial projects and I believe it mostly \"works\". If you find a bug, contact me. Often, the problem is system specific and can be taken care of by simply adding another compiler flag or #define.</li><li>&nbsp;<b>\"Tigress-generated code is slow\".</b> Yeah, true, but again, it depends on the particular set of options you're using. Virtualization, for example, has specfic options to generate faster code. Again, if you're unsure you're running the best possible Tigress script, contact me.</li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "content12-m",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "rGGTnbo2KH",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
         }
       ]
     },
@@ -3761,13 +3845,28 @@
             }
           },
           "_name": "content1",
-          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"3\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><br></p><p><br></p><p>A trival invocation of Tigress looks like this:</p></div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"3\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><br></p><p><br></p><p>To obfuscate your program with Tigress first include the tigress.h file supplied in the Tigress distribution directory, and then invoke Tigress specifying at least one transformation applied to at least one function. Here is a trivial example where Tigress is flattening the function bar in the program foo.c:</p></div>\n        </div>\n    </div>\n</section>",
           "_cid": "rDQOMX8P31",
           "_anchor": "content1-u",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
           "_params": {}
+        },
+        {
+          "_customTemplate": true,
+          "_afterNavbarItem": false,
+          "_customHTML": "<center>\n    <div style=\"width:600px;overflow:auto\">\n    <pre style=\"text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;\"><code contenteditable=\"\" spellcheck=\"false\">#include \"PATH-TO-TIGRESS-INSTALLATION/tigress.h\"\nvoid bar () {\n    ...\n}\nint main () {\n   ...\n}\n</code></pre>\n</div>\n</center>\n",
+          "_customCSS": "/* Type valid CSS here */\npre {\n  display: block;\n  font-family: monospace;\n  white-space: pre;\n  margin: 1em 0;\n   background: #ffffff;\n   border: 2px solid #777;\n\n} \n\ndiv {\n  padding: 0px 0;\n  color: #ffffff;\n  text-align: left;\n}\np {\n  font-size: 80px;\n  color: #777;\n}",
+          "alias": "code-editor",
+          "_tags": [
+            "Extension"
+          ],
+          "_name": "pro.custom-html",
+          "_params": {},
+          "_anchor": "custom-html-k",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": []
         },
         {
           "alias": false,
@@ -4219,102 +4318,6 @@
             }
           },
           "_name": "content1",
-          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><b>Note to academics. </b>We see Tigress used in many research projects, and this is very satisfying! We encourage anyone working in reverse engineering to try to attack Tigress-generated code, and anyone working in software protection to compare their techniques against the standard set of techniques provided by Tigress. We are always keen to collaborate, so please get in touch if you have some interesting ideas to work on! That said, we often see papers where researchers have used Tigress and where the analyses they perform are not as accurate as one would like. Here are some common problems we've seen:</p></div>\n        </div>\n    </div>\n</section>",
-          "_cid": "rDQOofipfg",
-          "_anchor": "content1-t",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".counter-container": {
-              "color": "#767676",
-              "ul": {
-                "margin-bottom": "0",
-                "li": {
-                  "margin-bottom": "1rem",
-                  "& when (@stylizedCounters)": {
-                    "list-style": "none",
-                    "&:before": {
-                      "position": "absolute",
-                      "left": "0px",
-                      "margin-top": "-10px",
-                      "padding-top": "3px",
-                      "content": "''",
-                      "display": "inline-block",
-                      "text-align": "center",
-                      "margin": "0px 10px",
-                      "line-height": "20px",
-                      "transition": "all .2s",
-                      "color": "contrast(@counterColor)",
-                      "background": "@counterColor",
-                      "width": "25px",
-                      "height": "25px",
-                      "border-radius": "50%",
-                      "& when (@countersType = 'circle')": {
-                        "background": "none",
-                        "border": "1px solid @counterColor",
-                        "color": "@counterColor"
-                      },
-                      "& when (@countersType = 'square')": {
-                        "border-radius": "0"
-                      },
-                      "& when (@mark)": {
-                        "content": "'✓'"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "_name": "content12",
-          "_customHTML": "<section class=\"mbr-section article content12\">\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"checkbox\" title=\"Stylized Counters\" name=\"stylizedCounters\" checked>\n        <input type=\"color\" title=\"Counter Color\" name=\"counterColor\" value=\"#149dcc\" condition=\"stylizedCounters\">\n        <input type=\"checkbox\" title=\"Stylized Counters\" name=\"stylizedCounters\" checked>\n        <input type=\"checkbox\" title=\"Mark\" name=\"mark\" condition=\"stylizedCounters\" checked>\n        <select title=\"Counters Type\" name=\"countersType\" condition=\"stylizedCounters\">\n            <option value=\"default\" selected>Сircle Fill</option>\n            <option value=\"circle\">Circle</option>\n            <option value=\"square\">Square</option>\n        </select>   \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text counter-container col-12 col-md-8 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article>\n                <ul>\n                    <li><b>\"We run Tigress with default options\". </b>There is no such thing. By \"default\", Tigress does nothing! There are lots of different transformations, lots of different options, and you need to specify which ones you used. Different options to the same transformation can have radically different performance characteristics.</li>\n                    <li><b>\"Tigress does not support transformation X\". &nbsp;</b>There are lots of transformations. Lots of options. To be sure you're not missing something, contact me.&nbsp;</li>\n                    <li><b>\"Tigress-generated code crashed, so we ignored it.\"</b> I'm not saying there are no bugs, but Tigress has been used in commercial projects and I believe it mostly \"works\". If you find a bug, contact me. Often, the problem is system specific and can be taken care of by simply adding another compiler flag or #define.</li><li>&nbsp;<b>\"Tigress-generated code is slow\".</b> Yeah, true, but again, it depends on the particular set of options you're using. Virtualization, for example, has specfic options to generate faster code. Again, if you're unsure you're running the best possible Tigress script, contact me.</li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "rDNq15ll1q",
-          "_anchor": "content12-d",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": [],
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-text, blockquote": {
-              "color": "#767676"
-            }
-          },
-          "_name": "content1",
-          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p>\n                <b> C source language.</b>&nbsp;Tigress supports the C99 language. Depending on your compiler, you may have to add a switch (such as -std=c99 for gcc) to indicate this.</p></div>\n        </div>\n    </div>\n</section>",
-          "_cid": "rE3e77IkyO",
-          "_anchor": "content1-g",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-text, blockquote": {
-              "color": "#767676"
-            }
-          },
-          "_name": "content1",
           "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p>\n                <b> Command line options.</b>&nbsp;These are some useful Tigress command line options:</p></div>\n        </div>\n    </div>\n</section>",
           "_cid": "rE3ete9d8p",
           "_anchor": "content1-h",
@@ -4348,7 +4351,7 @@
             }
           },
           "_name": "content1",
-          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><b>Multiple Input Files.</b>&nbsp;<span style=\"font-size: 1rem;\">Note that Tigress accepts <i>exactly one</i> C file as input. This is so that Tigress can do whole-program analysis and transformations. If your project has multiple files you must first merge them together into one. Tigress (through the CIL library on which it is built) supports allows you to merge your source files automatically. Below, the first three commands are replacements, essentially, for compiling each of the source file, x1.c, x2.c, and x3.c. If, for example, you need to pass different options when compiling the different files, you'd do it here (Note that options passed through to the compiler have one dash (\"-\"), while options passed to Tigress start with two (\"--\").)</span><span style=\"font-size: 1rem;\">. The merged source file (named merged.c) can subsequently be passed to Tigress for transformation. See CIL's documentation to learn more about the merging process.</span></p></div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><b>Multiple Input Files.</b>&nbsp;<span style=\"font-size: 1rem;\">Note that Tigress accepts <i>exactly one</i> C file as input. This is so that Tigress can do whole-program analysis and transformations. If your project has multiple files you must first merge them together into one. Tigress (through the CIL library on which it is built) allows you to merge your source files automatically. For complex scenarios, see the CIL information page about <a href=\"http://cil-project.github.io/cil/doc/html/cil/merger.html#sec-merger\" target=\"_blank\">merging</a>. For simple cases, all you have to do to merge two files file1.c and file2.c into full.c, is to call the tigress-merge program like this:&nbsp;</span></p></div>\n        </div>\n    </div>\n</section>",
           "_cid": "rE3ethkTec",
           "_anchor": "content1-i",
           "_protectedParams": [],
@@ -4359,7 +4362,7 @@
         {
           "_customTemplate": true,
           "_afterNavbarItem": false,
-          "_customHTML": "<!-- Type valid HTML here -->\n<center>\n<pre style=\"text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black\"><code>$TIGRESS_HOME/cilly --merge -c x1.c -o x1.o\n\n$TIGRESS_HOME/cilly --merge -c x2.c -o x2.o\n\n$TIGRESS_HOME/cilly --merge -c x3.c -o x4.o\n\n$TIGRESS_HOME/cilly --merge --keepmerged x1.o x2.o x3.o -o merged --mergedout=merged.c \n</code></pre></center>",
+          "_customHTML": "<!-- Type valid HTML here -->\n<center>\n<pre style=\"text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black\"><code>$ tigress-merge file1.c file2.c --out=full.c\n</code></pre></center>",
           "_customCSS": "/* Type valid CSS here */\n\ndiv {\n  padding: 80px 0;\n  color: #777;\n  text-align: center;\n}\np {\n  font-size: 60px;\n  color: #777;\n}",
           "alias": "code-editor",
           "_tags": [
@@ -4427,7 +4430,7 @@
             }
           },
           "_name": "header9",
-          "_customHTML": "<section class=\"header9\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\">\n\n        <input type=\"checkbox\" name=\"halfSize\" title=\"Half Size\">\n        <select title=\"Align\" name=\"alignHalf\" condition=\"halfSize\">\n            <option value=\"1\" selected>Left</option>\n            <option value=\"2\">Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/background3.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"media-container-column mbr-white\" mbr-class=\"{'col-lg-8 col-md-10': halfSize, 'm-auto': halfSize &&  alignHalf==2, 'ml-auto': halfSize &&  alignHalf==3}\">\n            <h1 class=\"mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n                FULL SCREEN INTRO\n            </h1>\n            <h3 class=\"mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showSubTitle\">\n                Beautiful mobile websites\n            </h3>\n            <p class=\"mbr-text align-left pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>WebAssembly</b>: Below is an example of how to first obfuscate with Tigress, then compile with <a href=\"https://emscripten.org\" target=\"_blank\">Emscripten</a> to a WebAssembly/html/Javascript package. Notice the use of the CIL_MACHINE environment variable and the --envmachine argument to Tigress--these specify that the word size of the target machine (WASM) is different from that of the machine of which Tigress is run. Notice also the --gcc=emcc argument to Tigress. This specifies that the WebAssembly compiler (emcc) should be used, rather than the native C compiler.<br></p>\n            <div class=\"mbr-section-btn align-left\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-primary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">LEARN MORE</a></div>\n        </div>\n    </div>\n\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"header9\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\">\n\n        <input type=\"checkbox\" name=\"halfSize\" title=\"Half Size\">\n        <select title=\"Align\" name=\"alignHalf\" condition=\"halfSize\">\n            <option value=\"1\" selected>Left</option>\n            <option value=\"2\">Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/background3.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"media-container-column mbr-white\" mbr-class=\"{'col-lg-8 col-md-10': halfSize, 'm-auto': halfSize &&  alignHalf==2, 'ml-auto': halfSize &&  alignHalf==3}\">\n            <h1 class=\"mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n                FULL SCREEN INTRO\n            </h1>\n            <h3 class=\"mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showSubTitle\">\n                Beautiful mobile websites\n            </h3>\n            <p class=\"mbr-text align-left pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>WebAssembly</b>: Below is an example of how to first obfuscate a C progra foo_in.c with Tigress, and then compile the obfuscated file foo_obf.c with <a href=\"https://emscripten.org\" target=\"_blank\">Emscripten</a> to a WebAssembly/html/Javascript package. Note the use of the CIL_MACHINE environment variable and the --envmachine argument to Tigress; these specify that the word size of the target machine (WASM) is different from that of the machine of which Tigress is run. Notice also the --gcc=emcc argument to Tigress. This specifies that the WebAssembly compiler (emcc) should be used, rather than the native C compiler.<br></p>\n            <div class=\"mbr-section-btn align-left\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-primary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">LEARN MORE</a></div>\n        </div>\n    </div>\n\n    <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
           "_anchor": "header9-e",
           "_isUserblock": true,
           "_sourceTheme": "mobirise4",
@@ -4474,7 +4477,7 @@
             }
           },
           "_name": "content1",
-          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p>\n                <b> Bugs and other issues.</b>&nbsp;There are some platform specific issues (particularly on Darwin), and some bugs that originate either in CIL or the underlying compilers. Here's what we know about:</p></div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p>\n                <b> Bugs and other issues.</b>&nbsp;There are some platform specific issues (particularly on clang/Darwin), and some bugs that originate either in CIL or the underlying compilers. Here's what we know about:</p></div>\n        </div>\n    </div>\n</section>",
           "_cid": "rE3rhVoWZt",
           "_anchor": "content1-n",
           "_protectedParams": [],
