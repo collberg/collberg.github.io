@@ -83,7 +83,7 @@ h3 {
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/v">html templates</a></section><section class="mbr-section article content1 cid-rDQOMX8P31" id="content1-u">
+<section class="engine"><a href="https://mobirise.info/x">free css templates</a></section><section class="mbr-section article content1 cid-rDQOMX8P31" id="content1-u">
     
      
 
@@ -212,6 +212,67 @@ $TIGRESS_HOME/cilly --merge --keepmerged x1.o x2.o x3.o -o merged --mergedout=me
 </code></pre></center>
 
 
+</div>
+
+<section class="header9 cid-rGDOlD4yG3" id="header9-e">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>WebAssembly</strong>: Below is an example of how to first obfuscate with Tigress, then compile with <a href="https://emscripten.org" target="_blank">Emscripten</a> to a WebAssembly/html/Javascript package. Notice the use of the CIL_MACHINE environment variable and the --envmachine argument to Tigress--these specify that the word size of the target machine (WASM) is different from that of the machine of which Tigress is run. Notice also the --gcc=emcc argument to Tigress. This specifies that the WebAssembly compiler (emcc) should be used, rather than the native C compiler.<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-f"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">export EMSDKPATH=PATH-TO-EMCC-INSTALLATION/emsdk/emscripten/1.38.29/system/include/
+
+export CIL_MACHINE="short=2,2 int=4,4 long=4,4 long_long=8,8 pointer=4,4 alignof_enum=4 float=4,4 \
+             double=8,8 long_double=8,8 void=1 bool=1,1 fun=1,4 alignof_string=1 max_alignment=16 \
+             size_t=unsigned_long wchar_t=int char_signed=true const_string_literals=true \
+             big_endian=false __thread_is_keyword=true __builtin_va_list=true underscore_name=true"
+             
+tigress \
+   --gcc=emcc \
+   --envmachine \
+   -D _Float128=double \
+   -I $EMSDKPATH \
+   --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=Flatten \
+      --Functions=bar \
+   --out=foo_obf.c foo_in.c 
+</code></pre>
+</div>
+</center>
+</div>
+
+<div id="custom-html-g"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">emcc \
+   -I $EMSDKPATH \
+   -O2 \
+   foo_obf.c \
+   -o foo_wasm.html \
+   -s WASM=1 \
+   -s ALLOW_MEMORY_GROWTH=1 \
+   -s AGGRESSIVE_VARIABLE_ELIMINATION=1 \
+   -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
+   -s USE_WEBGL2=1 \
+   -s USE_GLFW=3 \
+   -s FULL_ES3=1 \
+   -fmacro-backtrace-limit=0
+</code></pre>
+</div>
+</center>
 </div>
 
 <section class="mbr-section article content1 cid-rE3rhVoWZt" id="content1-n">
