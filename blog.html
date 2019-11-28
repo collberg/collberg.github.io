@@ -67,7 +67,7 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/n">free simple site templates</a></section><section class="header9 cid-rJ92i1BvHI" id="header9-k">
+<section class="engine"><a href="https://mobirise.info/c">site builder</a></section><section class="header9 cid-rJ92i1BvHI" id="header9-k">
 
     
 
@@ -96,8 +96,27 @@
         <div class="media-container-column mbr-white">
             
             <h3 class="mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style display-2"><strong>
-                New Transformation SelfModify</strong></h3>
+                New Transformation: SelfModify</strong></h3>
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>November 20, 2019. </strong>&nbsp;We have added a transformation,&nbsp;<strong>SelfModify,&nbsp;</strong>which transforms a function into one that modifies itself at runtime. This transformation is currently only available for X86/64 targets. It can, of course, be combined with other transformations, but it is probably best run at the very end of the transformation chain. One interesting aspect of this transformation is that when combined with virtualization with a direct or indirect threaded dispatch, the indirect jumps to the instruction handlers are replaced with (self-modified) direct jumps! This should confuse analyses that rely on indirect branches to locate the instruction handlers. For dynamic analyses, this transformation shouldn't do very much; the instructions that are executed will be the same, except for the ones that modify the code. Analyses that assume that instruction addresses uniquely identify unique code will, of course, also be confused when a code location is reused for different instructions.&nbsp;<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="header9 cid-rJ9hd0ByKh" id="header9-n">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            <h3 class="mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style display-2"><strong>
+                New Platform: WebAssembly</strong></h3>
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>November 13, 2019.&nbsp;</strong>Tigress can now obfuscate C code that can then be compiled to WebAssaembly using the Emscripten compiler. This means that if you want to protect the confidentiality or integrity of code running in your clients' browser, you can write it in C, obfuscate it with Tigress, providing much higher levels of protection than obfuscated Javascript, and with (sometimes), lower overhead. With my student Yang Yang Lu and colleague Jasvir Nagra we're working on a paper on applications and performance aspects of this technology.<br></p>
             
         </div>
     </div>
