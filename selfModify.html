@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/selfModify-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3201" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of these transformations is to maske functions self-modifying. Currently, only indirect branches are transformed.
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1454" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of these transformations is to maske functions self-modifying. Currently, only indirect branches are transformed.
    This transformation is therefore particularly useful after transformations that introduce indirect branches, such as
    virtualization with a direct or indirect dispatch. Here's an example, transforming a function <code>add</code> that 
    only does <code>x++</code>:</p></div></div></section>
@@ -100,19 +100,26 @@ h3 {
             --VirtualizeDispatch=direct \
          --Transform=SelfModify \
             --Functions=add \
+            --SelfModifyFraction=%100 \
+            --SelfModifySubExpressions=false \
+            --SelfModifyOperators=\* \
+            --SelfModifyKinds=\* \
+            --SelfModifyBogusInstructions=0 \
    inc.c --out=obf.c
+</code></pre>
+</center>
 
-> gcc -segprot __TEXT rwx rwx obf.c -o obf.exe   # Darwin
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1455" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that we need to compile the generated code in such a way that the text segment pages are writable:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> gcc -segprot __TEXT rwx rwx obf.c -o obf.exe   # Darwin
 
 > gcc --static -Wl,--omagic obf.c -o obf.exe     # Linux
 </code></pre>
 </center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1456" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">See <a href="https://stackoverflow.com/questions/27581279/make-text-segment-writable-elf">here</a>
+for alternatives.</p></div></div></section> 
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3202" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that we need to compile the generated code in such a way that the text segment pages are writable.
-See <a href="https://stackoverflow.com/questions/27581279/make-text-segment-writable-elf">here</a>
-for alternatives.</p></div></div></section>
-
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3203" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each indirect branch turns into the following code, where the byte sequence corresponds to
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1457" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each indirect branch turns into the following code, where the byte sequence corresponds to
 the X86 8-byte direct jump:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addr = (unsigned long *)((unsigned long )(&& Lab) + 6);
@@ -120,7 +127,7 @@ the X86 8-byte direct jump:</p></div></div></section>
   Lab: asm volatile(".byte 0xff, 0x25, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00":);
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3204" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here's the resulting code for virtualization followed by self-modification:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1458" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here's the resulting code for virtualization followed by self-modification:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void add(void) { 
   char _1_add_$locals[4] ;
@@ -171,18 +178,67 @@ the X86 8-byte direct jump:</p></div></div></section>
 </tr>
 <tr>
 <td><tt>--SelfModifyKinds</tt></td>
-<td><tt>indirectBranch</tt></td>
-<td> Instructions to self-modify. Currently only indirect branches can be transformed. Default=indirectBranch.
+<td><tt>indirectBranch, arithmetic, comparisons</tt></td>
+<td> Types of instructions to self-modify. Default=indirectBranch.
 <ul>
    <li> <tt>indirectBranch</tt> = Transform indirect branches
+   <li> <tt>arithmetic</tt> = Transform binary arithmetic expressions
+   <li> <tt>comparisons</tt> = Transform binary comparisons
 </ul>
 </td>
+</tr>
+<tr>
+<td><tt>--SelfModifyFraction</tt></td>
+<td><tt><em>FRACSPEC</em></tt></td>
+<td> How many statements should be self-modified. Default=%100.</td>
+</tr>
+<tr>
+<td><tt>--SelfModifySubExpressions</tt></td>
+<td><tt><em>BOOLSPEC</em></tt></td>
+<td> Recurse into sub-expressions with transforming an expression. Can cause bugs. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--SelfModifyBogusInstructions</tt></td>
+<td><tt>PlusA, MinusA, Mult, Div, Mod, Shiftlt, Shiftrt, Lt, Gt, Le, Ge, Eq, Ne, *</tt></td>
+<td> Which binary operators to modify. Default=*.
+<ul>
+   <li> <tt>PlusA</tt> = +
+   <li> <tt>MinusA</tt> = -
+   <li> <tt>Mult</tt> = *
+   <li> <tt>Div</tt> = /
+   <li> <tt>Mod</tt> = %
+   <li> <tt>Shiftlt</tt> = <<
+   <li> <tt>Shiftrt</tt> = >>
+   <li> <tt>Lt</tt> = <
+   <li> <tt>Gt</tt> = >
+   <li> <tt>Le</tt> = =<
+   <li> <tt>Ge</tt> = >=
+   <li> <tt>Eq</tt> = ==
+   <li> <tt>Ne</tt> = !=
+   <li> <tt>*</tt> = all operators
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--SelfModifyBogusInstructions</tt></td>
+<td><tt><em>INTSPEC</em></tt></td>
+<td> How many bogus instructions to insert inside the self-modify template to avoid pattern-matching attacks. Right now, the inserted instructions are simple 1-byte x86 instructions that are equivalent to NOPs. Default=0.</td>
 </tr>
 </table>
 </div>
 
 </center>
 </br>
+
+<br>
+<h3 align=center>Issues</h3>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li>If you see an error message: <tt>Simplify: makeThreeAddress for AddrOf</tt>, set <tt>--SelfModifySubExpressions=false</tt> There's a bug in CIL that I don't know how to fix.</li>
+</ul>
+</div></div></div></section>
+
+   
 
 
   <script src="assets/popper/popper.min.js"></script>
