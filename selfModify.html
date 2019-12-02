@@ -88,10 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/selfModify-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1454" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of these transformations is to maske functions self-modifying. Currently, only indirect branches are transformed.
-   This transformation is therefore particularly useful after transformations that introduce indirect branches, such as
-   virtualization with a direct or indirect dispatch. Here's an example, transforming a function <code>add</code> that 
-   only does <code>x++</code>:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7340" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of these transformations is to make functions self-modifying. Here's how Tigress is invoked:
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> tigress  --Environment=x86_64:Darwin:Clang:5.1 \
@@ -109,58 +106,119 @@ h3 {
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1455" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that we need to compile the generated code in such a way that the text segment pages are writable:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7341" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that we need to compile the generated code in such a way that the text segment pages are writable
+(See <a href="https://stackoverflow.com/questions/27581279/make-text-segment-writable-elf">here</a>
+for alternatives):</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> gcc -segprot __TEXT rwx rwx obf.c -o obf.exe   # Darwin
 
 > gcc --static -Wl,--omagic obf.c -o obf.exe     # Linux
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1456" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">See <a href="https://stackoverflow.com/questions/27581279/make-text-segment-writable-elf">here</a>
-for alternatives.</p></div></div></section> 
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1457" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each indirect branch turns into the following code, where the byte sequence corresponds to
-the X86 8-byte direct jump:</p></div></div></section>
+<br>
+<h3 align=center>Binary Arithmetic Expressions and Comparisons</h3> 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7342" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The transformation inserts a binary code template at the top of the function. There's
+one template for each type (int/long) and one for arithmetic, one for comparisons, and
+one for branches. They look roughly like this:</p></div></div></section>
 <center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addr = (unsigned long *)((unsigned long )(&& Lab) + 6);
-  *addr = address-to-jump-to;
-  Lab: asm volatile(".byte 0xff, 0x25, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00":);
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 5);
+  *addrPtr10 = (unsigned long )(& A);
+  addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 18);
+  *addrPtr10 = (unsigned long )(& B);
+  addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 41);
+  *addrPtr10 = (unsigned long )(& C);
+  addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 61);
+  *addrPtr10 = (unsigned long )(&& Lab_2);
+  Lab_1: 
+  __asm__  volatile   (
+      ".byte 0x50;\n"             // push %eax/rax
+      ".byte 0x51;\n"             // push %ecx/rcx
+      ".byte 0x56;\n"             // push %rsi/esi
+      ".byte 0x48, 0xb8,0xc,0x7b,0x21,0x3d,0x54,0x2d,0xc0,0x1;\n"   //movabs &A,%rax
+      ".byte 0x8b, 0x00;\n"       // movl (%rax),%eax
+      ".byte 0x48, 0xb9,0x4f,0x40,0x2f,0xa3,0xd0,0xdc,0x24,0x42;\n" //movabs &B,%rcx
+      ".byte 0x8b, 0x09;\n"       // (%rcx),%ecx
+      ".byte 0x31, 0xf6;\n"       // xorl  %rsi,%rsi
+      ".byte 0x39, 0xc8;\n"       // cmpl  %rcx, %rax
+      ".byte 0x40, 0x0f, 0x9c, 0xc6;\n" // setl  %sil
+      ".byte 0x48, 0xb9,0x7f,0x91,0x1c,0xaf,0xab,0x5f,0x2d,0x6a;\n" // movabs &C,%rcx 
+      ".byte 0x67, 0x89, 0x31;\n" // movl %esi,(%rcx)
+      ".byte 0x5e;\n"             // popq %rsi/esi
+      ".byte 0x59;\n"             // popq %ecx/rcx
+      ".byte 0x58;\n"             // popq %eax/rax
+      ".byte 0xff, 0x25, 00, 00, 00, 00, 0xba,0xee,0x19,0x51,0x13,0x4b,0x12,0xdb;\n" // jmp (%rip)
+  :);
+  Lab_2: 
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1458" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here's the resulting code for virtualization followed by self-modification:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7343" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Then, for each binary operation in the remainder of the function, the following code
+is inserted:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    A = i;
+    B = n;
+    addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_3) + 6);
+    *addrPtr10 = (unsigned long )(&& Lab_1);
+    addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 61);
+    *addrPtr10 = (unsigned long )(&& Lab_4);
+    opPtr11 = (int *)((unsigned long )(&& Lab_1) + 35);
+    *opPtr11 = 0xc69c0f40L;    // setl   %sil
+    Lab_3: 
+    __asm__  volatile   (
+      ".byte 0xff, 0x25, 00, 00, 00, 00, 0x3b,0x21,0x2e,0xd7,0xc5,0x44,0xf0,0xdd;\n" //jmp (%rip)
+    :); 
+    Lab_4: 
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7344" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">At runtime, this makes the following changes to the executable code:</p></div></div></section>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> set the opcode to the appropriate one (<tt>setl</tt> in this case),</li>
+   <li> set the address that makes us jump to the template (<tt>Lab_1</tt>), </li>
+   <li> set the return address in the template (the last instruction) to return to location <tt>Lab_4</tt>. </li>
+</ul>
+</div></div></div></section>
+
+<br>
+<h3 align=center>Virtualization/Flattening + Self-Modification</h3> 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7345" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation is particularly useful after transformations that
+introduce indirect branches, such as virtualization and flattening
+with a direct or indirect dispatch. Below is an example, transforming
+a function <code>add</code> that only does <code>x++</code>:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void add(void) { 
-  char _1_add_$locals[4] ;
-  union _1_add_$node _1_add_$stack[1][32] ;
-  union _1_add_$node *_1_add_$sp[1] ;
-  void **_1_add_$pc[1] ;
-  void *_1_add_$array[1][12]  = {{&& _1_add__local$result_STA_0$value_LIT_0, (void *)0UL,
-                                  && _1_add__load_int$left_STA_0$result_STA_0, ...}};
-  _1_add_$sp[0] = _1_add_$stack[0];
-  _1_add_$pc[0] = _1_add_$array[0];
+  ...
 
-  branchAddr9 = (unsigned long *)((unsigned long )(&& Lab_2000002) + 6);
-  *branchAddr9 = *(_1_add_$pc[0]);
-  Lab_2000002: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00":);
-
-  Lab_2000001: /* CIL Label */ ;
-  _1_add__load_int$left_STA_0$result_STA_0: /* CIL Label */ ;
+  //----------------- Instruction Handler ----------------------
+  Lab_1: _1_add__load_int$left_STA_0$result_STA_0: 
   (_1_add_$pc[0]) ++;
   (_1_add_$sp[0] + 0)->_int = *((int *)(_1_add_$sp[0] + 0)->_void_star);
-  {
-  branchAddr10 = (unsigned long *)((unsigned long )(&& Lab_2000003) + 6);
+  
+  // BEGIN indirect branch to the next instruction starts here
+  branchAddr10 = (unsigned long *)((unsigned long )(&& Lab_3) + 6);
   *branchAddr10 = *(_1_add_$pc[0]);
-  Lab_2000003: /* CIL Label */ 
+  Lab_3: /* CIL Label */ 
   __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00":);
-  }
-  _1_add__returnVoid$: /* CIL Label */ ;
+  // END
+
+  //----------------- Instruction Handler ----------------------
+  _1_add__returnVoid$: 
   (_1_add_$pc[0]) ++;
   return;
   ...
 }
 </code></pre>
 </center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7346" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here, each indirect branch turns into the following code, where the byte sequence
+corresponds to the X86 8-byte direct jump:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addr = (unsigned long *)((unsigned long )(&& Lab) + 6);
+  *addr = address-to-jump-to;
+  Lab: asm volatile(".byte 0xff, 0x25, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00":);
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7347" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This is interesting, since some de-virtualization transformations look for indirect
+branches, and these are now gone from the code.</p></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -234,7 +292,10 @@ the X86 8-byte direct jump:</p></div></div></section>
 <h3 align=center>Issues</h3>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
-   <li>If you see an error message: <tt>Simplify: makeThreeAddress for AddrOf</tt>, set <tt>--SelfModifySubExpressions=false</tt> There's a bug in CIL that I don't know how to fix.</li>
+   <li>If you see an error message "<tt>Simplify: makeThreeAddress for AddrOf</tt>", set <tt>--SelfModifySubExpressions=false</tt> There's a bug in CIL that I don't know how to fix.</li>
+   <li>At this time, there is not much diversity in generated code; it's very tamplate-y. 
+       To break up the templates somewhat, set <tt>--SelfModifyBogusInstructions=0?5</tt>. This inserts
+       between 0 and 5 NOP-equivalent bytes between the template instructions.
 </ul>
 </div></div></div></section>
 
