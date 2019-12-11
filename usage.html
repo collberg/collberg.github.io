@@ -83,7 +83,7 @@ h3 {
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/e">how to make your own site</a></section><section class="mbr-section article content1 cid-rDQOMX8P31" id="content1-u">
+<section class="engine"><a href="https://mobirise.info/o">portfolio site templates</a></section><section class="mbr-section article content1 cid-rDQOMX8P31" id="content1-u">
     
      
 
@@ -239,6 +239,67 @@ tigress \
    -s USE_GLFW=3 \
    -s FULL_ES3=1 \
    -fmacro-backtrace-limit=0
+</code></pre>
+</div>
+</center>
+</div>
+
+<section class="header9 cid-rKmkPnlndO" id="header9-r">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Android</strong>: Tigress has not been extensively tested on Android, but the following commands seem to work. Download the Android NDK from&nbsp;<a href="https://developer.android.com/ndk/downloads" target="_blank">https://developer.android.com/ndk/downloads</a>. Create the following shell script, nam it&nbsp;<strong>"compiler", </strong>and<strong>&nbsp;</strong>set the target to the platform for which you want to compile:<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-s"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#!/bin/sh
+
+./toolchains/llvm/prebuilt/darwin-x86_64/bin/clang -target aarch64-none-linux-android21 "$@"
+</code></pre>
+</div>
+</center>
+</div>
+
+<section class="header9 cid-rKmmnUwKkb" id="header9-u">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you're not on OSX, you need to replace darwin-x86_64 with the appropriate path. Set CIL_MACHINE to the appropriate value for your target (depending on if it is a 32 or 64 bit architecture). Assuming you have two files foo.c and bar.c, issue these commands to merge them into out.c and obfuscate them into obf.c:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-t"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; cd android-ndk-r20b
+
+&gt; chmod a+rx ./compiler
+
+&gt; CIL_MACHINE="short=2,2 int=4,4 long=4,4 ...; export CIL_MACHINE;
+
+&gt; tigress-merge --Environment=x86_64:Linux:Gcc:4.6 --envmachine --gcc=./compiler foo.c bar.c --out=out.c
+&gt; tigress --Environment=x86_64:Linux:Gcc:4.6 --envmachine --gcc=./compiler --Transform=Flatten --Functions=fib out.c --out=obf.c
 </code></pre>
 </div>
 </center>
