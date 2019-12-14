@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Tigress",
-    "currentPage": "blog.html",
+    "currentPage": "introduction.html",
     "theme": {
       "name": "mobirise4",
       "title": "Mobirise 4",
@@ -34,7 +34,7 @@
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.10.10",
     "siteFonts": [],
-    "uniqCompNum": 16,
+    "uniqCompNum": 17,
     "versionPublish": "4.10.10",
     "favicon": "@PROJECT_PATH@/assets/images/tigress-white-128x101.png",
     "noImageResize": "",
@@ -2412,6 +2412,49 @@
           "_params": {}
         },
         {
+          "_params": {
+            "autoplay": false,
+            "animType": "basic",
+            "theme": "absent",
+            "slides": [
+              {
+                "image": "@PROJECT_PATH@/assets/images/tigress.022-1-640x360.jpg",
+                "linkUrl": "http://google.com",
+                "link": false,
+                "src": "@PROJECT_PATH@/assets/images/tigress.022-640x360.jpg",
+                "tooltip": "@PROJECT_PATH@/assets/images/tigress.022-1-85x48.png",
+                "title": "title 2",
+                "text": "text 2",
+                "active": true
+              }
+            ],
+            "fullScreen": true,
+            "showCaptions": false,
+            "hideControls": false,
+            "responsive": "1",
+            "paddingTop": "0",
+            "paddingBottom": "0",
+            "captionsEffect": "slide",
+            "showBullets": false,
+            "bgColor": "#ffffff",
+            "timeout": 2,
+            "duration": 2,
+            "customSize": false,
+            "customWidth": "1600",
+            "customHeight": "1080",
+            "size": "640x360",
+            "width": "640",
+            "height": "360"
+          },
+          "articleLayout": false,
+          "alias": "wowslider",
+          "_tags": [
+            "Extension"
+          ],
+          "_name": "wowslider",
+          "_anchor": "wowslider-g"
+        },
+        {
           "alias": false,
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
@@ -2422,7 +2465,7 @@
             }
           },
           "_name": "content1",
-          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline=\"\" title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline=\"\" mbr-article=\"\" mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><b>Note to academics. </b>We see Tigress used in many research projects, and this is very satisfying! We encourage anyone working in reverse engineering to try to attack Tigress-generated code, and anyone working in software protection to compare their techniques against the standard set of techniques provided by Tigress. We are always keen to collaborate, so please get in touch if you have some interesting ideas to work on! That said, we often see papers where researchers have used Tigress and where the analyses they perform are not as accurate as one would like. Here are some common problems we've seen:</p></div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><b>Note to academics. </b>We see Tigress used in many research projects, and this is very satisfying! We encourage anyone working in reverse engineering to try to attack Tigress-generated code, and anyone working in software protection to compare their techniques against the standard set of techniques provided by Tigress. We are always keen to collaborate, so please get in touch if you have some interesting ideas to work on! That said, we often see papers where researchers have used Tigress and where the analyses they perform are not as accurate as one would like. Here are some common problems we've seen:</p></div>\n        </div>\n    </div>\n</section>",
           "_anchor": "content1-l",
           "_isUserblock": true,
           "_sourceTheme": "mobirise4",
@@ -2489,20 +2532,6 @@
           "_global": false,
           "_once": false,
           "_params": {}
-        },
-        {
-          "_customTemplate": true,
-          "_afterNavbarItem": false,
-          "_customHTML": "<!-- Type valid HTML here -->\n\n<center><img width=\"500px\" src=\"assets/images/wasm-2-640x360.jpg\"></center>\n\n",
-          "_customCSS": "/* Type valid CSS here */\n\ndiv {\n  padding: 80px 0;\n  color: #777;\n  text-align: center;\n}\np {\n  font-size: 60px;\n  color: #777;\n}",
-          "alias": "code-editor",
-          "_tags": [
-            "Extension"
-          ],
-          "_name": "pro.custom-html",
-          "_anchor": "custom-html-o",
-          "_PHPplaceholders": [],
-          "_JSplaceholders": []
         }
       ]
     },
