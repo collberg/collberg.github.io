@@ -8354,8 +8354,28 @@ section.lazy-placeholder:after {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s;
 }
-.cid-rKEoNWl22p {
+.cid-rLQ8Xfdfo6 {
   padding-top: 135px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-rLQ8Xfdfo6 h1 {
+  color: #616161;
+}
+.cid-rLQ8Xfdfo6 h3 {
+  color: #616161;
+  font-size: 24px;
+}
+.cid-rLQ8Xfdfo6 h2,
+.cid-rLQ8Xfdfo6 h3,
+.cid-rLQ8Xfdfo6 p {
+  color: #767676;
+}
+.cid-rLQ8Xfdfo6 .mbr-section-subtitle {
+  font-style: normal;
+}
+.cid-rKEoNWl22p {
+  padding-top: 30px;
   padding-bottom: 0px;
   background-color: #ffffff;
 }
