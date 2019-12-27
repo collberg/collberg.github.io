@@ -77,7 +77,7 @@ h3 {
                     <a class="nav-link link text-white display-4" href="introduction.html">
                         
                         Introduction</a>
-</li><li class="nav-item"><a class="nav-link link text-white display-4" href="usage.html">Usage</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="transformations.html">Transformations</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="publications.html">Publications</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="FAQ.html">FAQ</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="consulting.html">Consulting/Training</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html">Contact</a></li></ul>
+</li><li class="nav-item"><a class="nav-link link text-white display-4" href="usage.html">Usage</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="transformations.html">Transformations</a></li>li class="nav-item"><a class="nav-link link text-white display-4" href="recipes.html">Recipes</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="publications.html">Publications</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="FAQ.html">FAQ</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="consulting.html">Consulting/Training</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html">Contact</a></li></ul>
             
         </div>
     </nav>
@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/split-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9609" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Outline pieces of a function into their own functions. This transformation is
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4378" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Outline pieces of a function into their own functions. This transformation is
    useful, for example, to break a large, virtualized, function into smaller,
    less conspicuous, pieces. Four different splitting methods are supported. The order in which
    they are tried can affect the naturalness of the resulting code.</p></div></div></section>
@@ -129,7 +129,7 @@ h3 {
 <tr>
 <td><tt>--SplitName</tt></td>
 <td><tt>string</tt></td>
-<td> If set, the split out functions will be named <em>prefix_name_number</em>, otherwise they will be named <em>prefix_originalName_split_number</em>. Default=top,block,deep,recursive.</td>
+<td> If <tt>--SplitName=name</tt> is givent, the split out functions will be named <em>prefix_name_number</em>, otherwise they will be named <em>prefix_originalName_split_number</em>. Default=none.</td>
 </tr>
 <tr>
 <td><tt>--SplitLevel</tt></td>
@@ -145,7 +145,7 @@ h3 {
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9610" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This command first tries to split function <tt>foo</tt> at most 100 times,
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4379" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This command first tries to split function <tt>foo</tt> at most 100 times,
 then applies the <tt>block split</tt> transformation to the resulting
 outlined function. Note the use of a regular expression to specify the
 names of the functions that were generated in the first transformation:</p></div></div></section>
@@ -162,6 +162,20 @@ names of the functions that were generated in the first transformation:</p></div
    --out=foo prog.c
 </code></pre>
 </center>
+
+<a class="anchor" id="Issues">&nbsp;</a>
+<br>
+<h3 align=center>Issues</h3>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li>For functions that have many locals, the number of formal parameters may explode.
+       This is particularly an issue for WebAssembly, since compilers will put a limit
+       on the number of formal parameters. <tt>--SplitLocalsAsFormals=false</tt> will
+       instead just add one formal, a pointer to a <tt>struct</tt> that holds all the
+       locals. This option still has a bug in it; you will know, since it causes a
+       compile-time error.</li>
+</ul>
+</div></div></div></section>
 
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
