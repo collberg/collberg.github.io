@@ -21,9 +21,9 @@ struct _opaque_pthread_t ;
 struct timespec ;
 struct timeval ;
 struct _2_init_tigress_1_opaque_NodeStruct {
-   int data ;
    struct _2_init_tigress_1_opaque_NodeStruct *prev ;
    struct _2_init_tigress_1_opaque_NodeStruct *next ;
+   int data ;
 };
 extern int gettimeofday(struct timeval *tv , void *tz ) ;
 typedef struct _opaque_pthread_attr_t __darwin_pthread_attr_t;
@@ -42,7 +42,6 @@ extern unsigned int strlen(char const   *s ) ;
 extern int open(char const   *filename , int oflag  , ...) ;
 typedef struct _opaque_pthread_condattr_t __darwin_pthread_condattr_t;
 extern int pthread_barrier_destroy(int *barrier ) ;
-extern int strncmp(char const   *s1 , char const   *s2 , unsigned int maxlen ) ;
 struct _opaque_pthread_mutex_t {
    long __sig ;
    char __opaque[56] ;
@@ -57,7 +56,8 @@ typedef struct _opaque_pthread_mutexattr_t __darwin_pthread_mutexattr_t;
 typedef __darwin_pthread_mutexattr_t pthread_mutexattr_t;
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_init(pthread_mutex_t * __restrict   ,
                                                                                                                               pthread_mutexattr_t const   * _Nullable __restrict   ) ;
-unsigned long _1_entropy  =    7585780221146226605UL;
+extern int strncmp(char const   *s1 , char const   *s2 , unsigned int maxlen ) ;
+unsigned long _1_entropy  =    9042506488591766566UL;
 typedef long __darwin_time_t;
 struct timespec {
    __darwin_time_t tv_sec ;
@@ -67,9 +67,9 @@ extern int ( /* format attribute */  printf)(char const   * __restrict    , ...)
 int _global_argc  =    0;
 extern int pthread_cond_signal(struct _opaque_pthread_cond_t *cond ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_ptr_2  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
+extern int scanf(char const   *format  , ...) ;
 extern int raise(int sig ) ;
 extern int pthread_barrier_init(int *barrier , int *attr , unsigned int count ) ;
-extern int scanf(char const   *format  , ...) ;
 char **_global_envp  =    (char **)0;
 typedef struct _opaque_pthread_t *__darwin_pthread_t;
 extern int unlink(char const   *filename ) ;
@@ -79,8 +79,8 @@ extern int pthread_barrier_wait(int *barrier ) ;
 extern int pthread_mutex_lock(struct _opaque_pthread_mutex_t *mutex ) ;
 extern void *memcpy(void *s1 , void const   *s2 , unsigned int size ) ;
 unsigned long _1_alwaysZero  =    0;
-extern int gethostname(char *name , unsigned int namelen ) ;
 extern void *dlsym(void *handle , char *symbol ) ;
+extern int gethostname(char *name , unsigned int namelen ) ;
 extern void abort() ;
 extern unsigned long strtoul(char const   *str , char const   *endptr , int base ) ;
 struct __darwin_pthread_handler_rec {
@@ -88,16 +88,16 @@ struct __darwin_pthread_handler_rec {
    void *__arg ;
    struct __darwin_pthread_handler_rec *__next ;
 };
-extern void free(void *ptr ) ;
 extern int fprintf(struct __sFILE *stream , char const   *format  , ...) ;
-extern void exit(int status ) ;
-int main(int argc , char **argv , char **_formal_envp ) ;
+extern void free(void *ptr ) ;
 extern void signal(int sig , void *func ) ;
+int main(int argc , char **argv , char **_formal_envp ) ;
+extern void exit(int status ) ;
 void init_tigress(void) ;
 typedef struct __sFILE FILE;
 __inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) ;
-extern int close(int filedes ) ;
 extern int mprotect(void *addr , unsigned int len , int prot ) ;
+extern int close(int filedes ) ;
 struct _opaque_pthread_t {
    long __sig ;
    struct __darwin_pthread_handler_rec *__cleanup_stack ;
@@ -116,14 +116,13 @@ extern int fcntl(int filedes , int cmd  , ...) ;
 typedef __int64_t __darwin_off_t;
 void _3_bf_1(unsigned long offset )  __attribute__((__optimize__(0), __optimize__("-fno-omit-frame-pointer"),
 __noinline__)) ;
-extern int pthread_cond_wait(struct _opaque_pthread_cond_t *cond , struct _opaque_pthread_cond_t *mutex ) ;
 extern void perror(char const   *str ) ;
+extern int pthread_cond_wait(struct _opaque_pthread_cond_t *cond , struct _opaque_pthread_cond_t *mutex ) ;
 void fac(int n ) ;
 struct _opaque_pthread_condattr_t {
    long __sig ;
    char __opaque[8] ;
 };
-extern int write(int filedes , void *buf , unsigned int nbyte ) ;
 struct _opaque_pthread_cond_t {
    long __sig ;
    char __opaque[40] ;
@@ -132,22 +131,23 @@ typedef __darwin_pthread_cond_t pthread_cond_t;
 typedef __darwin_pthread_condattr_t pthread_condattr_t;
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_init(pthread_cond_t * __restrict   ,
                                                                                                                              pthread_condattr_t const   * _Nullable __restrict   )  __asm__("_pthread_cond_init")  ;
+extern int write(int filedes , void *buf , unsigned int nbyte ) ;
 typedef struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_StructureType;
 extern int ptrace(int request , void *pid , void *addr , int data ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_list_1  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
-extern float strtof(char const   *str , char const   *endptr ) ;
 extern unsigned int strnlen(char const   *s , unsigned int maxlen ) ;
+extern float strtof(char const   *str , char const   *endptr ) ;
 struct timeval {
    long tv_sec ;
    int tv_usec ;
 };
-extern long clock(void) ;
 extern void qsort(void *base , unsigned int nel , unsigned int width , int (*compar)(void *a ,
                                                                                      void *b ) ) ;
+extern long clock(void) ;
 typedef __darwin_off_t fpos_t;
 extern long time(long *tloc ) ;
-extern int rand() ;
 extern int read(int filedes , void *buf , unsigned int nbyte ) ;
+extern int rand() ;
 typedef __darwin_pthread_t pthread_t;
 extern int strcmp(char const   *a , char const   *b ) ;
 extern void *fopen(char const   *filename , char const   *mode ) ;
@@ -180,142 +180,54 @@ struct __sFILE {
    fpos_t _offset ;
 };
 extern int pthread_mutex_unlock(struct _opaque_pthread_mutex_t *mutex ) ;
+extern int atoi(char const   *s ) ;
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_create(pthread_t __attribute__((__nullable__))  * _Nonnull __restrict   ,
                                                                                                                           pthread_attr_t const   * _Nullable __restrict   ,
                                                                                                                           void * _Nullable  (* _Nonnull  )(void * _Nullable   ) ,
                                                                                                                           void * _Nullable __restrict   ) ;
-extern int atoi(char const   *s ) ;
 unsigned int _2_init_tigress__opaque_array[30]  = 
-  {      8,      579,      3,      213, 
-        488,      5,      323,      12, 
-        5,      103,      271,      7, 
-        188,      33,      77,      78, 
-        460,      22,      243,      628, 
-        64,      288,      89,      86, 
-        333,      642,      4,      128, 
-        138};
-extern int fscanf(struct __sFILE *stream , char const   *format  , ...) ;
+  {      8,      362,      3,      493, 
+        432,      5,      303,      390, 
+        5,      383,      5,      7, 
+        133,      47,      1,      288, 
+        502,      95,      218,      628, 
+        22,      428,      656,      41, 
+        68,      201,      34,      403, 
+        698};
 extern int fseek(struct __sFILE *stream , long offs , int whence ) ;
+extern int fscanf(struct __sFILE *stream , char const   *format  , ...) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_list_2  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
 void megaInit(void) ;
 void fib(int n ) ;
-void fac(int n ) 
+__inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) 
 { 
-  int s ;
-  int i ;
-  unsigned long _5_fac_next ;
-  void *_5_fac_jumpTab[8]  = {&& _5_fac_lab1, && _5_fac_lab2, && _5_fac_lab1, && _5_fac_lab4,
-                              && _5_fac_lab5, && _5_fac_lab6, && _5_fac_lab7, && _5_fac_lab8};
-  int _5_fac__BEGIN_3 ;
-  int _5_fac__END_3 ;
-  int _5_fac__BEGIN_4 ;
-  int _5_fac__END_4 ;
-  int _5_fac__BEGIN_5 ;
-  int _5_fac__END_5 ;
-  int _5_fac__BEGIN_6 ;
-  int _5_fac__END_6 ;
-  int _5_fac__BEGIN_7 ;
-  int _5_fac__END_7 ;
-  int _5_fac__BEGIN_8 ;
-  int _5_fac__END_8 ;
-  int _5_fac__BEGIN_9 ;
-  int _5_fac__END_9 ;
-  int _5_fac__BEGIN_10 ;
-  int _5_fac__END_10 ;
+  unsigned char *tmp ;
+  unsigned char tmp___0 ;
+  int tmp___1 ;
 
   {
-  _5_fac_next = 6;
-  goto *(_5_fac_jumpTab[_5_fac_next - 1]);
-  _5_fac_lab4: /* CIL Label */ ;
-  {  /* __blockattribute__(__ATOMIC__)*/ 
-  _5_fac__BEGIN_3 = 1;
-  _3_bf_1((unsigned long )(&& _5_fac_lab1));
-  Lab_2000001: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xc,0xb4,0xe5,0x14,0x85,0x7d":);
-  _5_fac__END_3 = 1;
-  }
-
-
-  _5_fac_lab8: /* CIL Label */ ;
-  if (((unsigned int )((~ (i ^ n) >> 1) + (i & ~ n)) >> 31U) & 1) {
-    {  /* __blockattribute__(__ATOMIC__)*/ 
-    _5_fac__BEGIN_4 = 1;
-    _3_bf_1((unsigned long )(&& _5_fac_lab1));
-    Lab_2000002: /* CIL Label */ 
-    __asm__  volatile   (".byte 0x0":);
-    _5_fac__END_4 = 1;
+  (_p->_w) --;
+  if (_p->_w >= 0) {
+    tmp = _p->_p;
+    (_p->_p) ++;
+    tmp___0 = (unsigned char )_c;
+    *tmp = tmp___0;
+    return ((int )tmp___0);
+  } else
+  if (_p->_w >= _p->_lbfsize) {
+    if ((int )((char )_c) != 10) {
+      tmp = _p->_p;
+      (_p->_p) ++;
+      tmp___0 = (unsigned char )_c;
+      *tmp = tmp___0;
+      return ((int )tmp___0);
+    } else {
+      tmp___1 = __swbuf(_c, _p);
+      return (tmp___1);
     }
-
-
   } else {
-    {  /* __blockattribute__(__ATOMIC__)*/ 
-    _5_fac__BEGIN_5 = 1;
-    _3_bf_1((unsigned long )(&& _5_fac_lab7));
-    Lab_2000003: /* CIL Label */ 
-    __asm__  volatile   (".byte 0x97":);
-    _5_fac__END_5 = 1;
-    }
-
-
-  }
-  _5_fac_lab1: /* CIL Label */ 
-  s = (s & i) * (s | i) + (s & ~ i) * (~ s & i);
-  i = (i | 1) + (i & 1);
-  {  /* __blockattribute__(__ATOMIC__)*/ 
-  _5_fac__BEGIN_6 = 1;
-  _3_bf_1((unsigned long )(&& _5_fac_lab2));
-  Lab_2000004: /* CIL Label */ 
-  __asm__  volatile   (".byte 0x85":);
-  _5_fac__END_6 = 1;
-  }
-
-
-  _5_fac_lab6: /* CIL Label */ 
-  s = 1;
-  i = 2;
-  {  /* __blockattribute__(__ATOMIC__)*/ 
-  _5_fac__BEGIN_7 = 1;
-  _3_bf_1((unsigned long )(&& _5_fac_lab2));
-  Lab_2000005: /* CIL Label */ 
-  __asm__  volatile   (".byte 0x25,0x9c,0xd9,0x43,0x17,0xa2":);
-  _5_fac__END_7 = 1;
-  }
-
-
-  _5_fac_lab5: /* CIL Label */ ;
-  return;
-  _5_fac_lab7: /* CIL Label */ 
-  printf((char const   */* __restrict  */)"fac(%i)=%i\n", n, s);
-  {  /* __blockattribute__(__ATOMIC__)*/ 
-  _5_fac__BEGIN_8 = 1;
-  _3_bf_1((unsigned long )(&& _5_fac_lab5));
-  Lab_2000006: /* CIL Label */ 
-  __asm__  volatile   (".byte 0x8a,0x17,0xc2,0x52,0x18,0x97,0x3b":);
-  _5_fac__END_8 = 1;
-  }
-
-
-  _5_fac_lab2: /* CIL Label */ ;
-  if (_2_init_tigress_1_opaque_ptr_1 != _2_init_tigress_1_opaque_ptr_2) {
-    {  /* __blockattribute__(__ATOMIC__)*/ 
-    _5_fac__BEGIN_9 = 1;
-    _3_bf_1((unsigned long )(&& _5_fac_lab8));
-    Lab_2000007: /* CIL Label */ 
-    __asm__  volatile   (".byte 0x0,0x41,0x83,0xe7,0xed":);
-    _5_fac__END_9 = 1;
-    }
-
-
-  } else {
-    {  /* __blockattribute__(__ATOMIC__)*/ 
-    _5_fac__BEGIN_10 = 1;
-    _3_bf_1((unsigned long )(&& _5_fac_lab4));
-    Lab_2000008: /* CIL Label */ 
-    __asm__  volatile   (".byte 0x98":);
-    _5_fac__END_10 = 1;
-    }
-
-
+    tmp___1 = __swbuf(_c, _p);
+    return (tmp___1);
   }
 }
 }
@@ -335,9 +247,9 @@ void init_tigress(void)
   p1->prev = p1;
   _2_init_tigress_1_opaque_list_1 = p1;
   i2 = 0;
-  while (i2 < 3) {
+  while (i2 < 2) {
     p3 = (struct _2_init_tigress_1_opaque_NodeStruct *)malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
-    p3->data = i2 * ((_1_entropy | 9) + (_1_entropy & 9));
+    p3->data = i2 * (((_1_entropy + 10) + 1UL) + ((- _1_entropy - 1UL) | (- 10 - 1UL)));
     p3->next = _2_init_tigress_1_opaque_list_1->next;
     p3->prev = _2_init_tigress_1_opaque_list_1;
     (_2_init_tigress_1_opaque_list_1->next)->prev = p3;
@@ -360,6 +272,30 @@ void _3_bf_1(unsigned long offset )
 
   {
   __asm__  volatile   ("movq  %0, 8(%%rbp)": : "r" (offset));
+}
+}
+int main(int argc , char **argv , char **_formal_envp ) 
+{ 
+  int _BARRIER_0 ;
+
+  {
+  megaInit();
+  _global_argc = argc;
+  _global_argv = argv;
+  _global_envp = _formal_envp;
+  _BARRIER_0 = 1;
+  init_tigress();
+  fac(10);
+  fib(10);
+  return (0);
+}
+}
+void megaInit(void) 
+{ 
+
+
+  {
+
 }
 }
 void fib(int n ) 
@@ -403,7 +339,7 @@ void fib(int n )
   _5_fib__BEGIN_11 = 1;
   _3_bf_1((unsigned long )(&& _5_fib_lab5));
   Lab_2000009: /* CIL Label */ 
-  __asm__  volatile   (".byte 0x48,0xc7,0xe8,0xbe":);
+  __asm__  volatile   (".byte 0x33,0x0,0x0,0x55,0x48,0x89,0xe5":);
   _5_fib__END_11 = 1;
   }
 
@@ -414,18 +350,18 @@ void fib(int n )
   _5_fib__BEGIN_12 = 1;
   _3_bf_1((unsigned long )(&& _5_fib_lab8));
   Lab_2000010: /* CIL Label */ 
-  __asm__  volatile   (".byte 0x42,0x20,0x7f,0x1a,0x7d,0x7":);
+  __asm__  volatile   (".byte 0x31,0xd8,0x4a,0xf0,0x28,0xa9,0xe5":);
   _5_fib__END_12 = 1;
   }
 
 
   _5_fib_lab5: /* CIL Label */ ;
-  if (((unsigned int )(((((n - i) & - (n >= i)) + ((n - i) & - (n >= i))) & (((n - i) & - (n >= i)) >> 31)) - ((n - i) & - (n >= i))) >> 31U) & 1) {
+  if (_2_init_tigress_1_opaque_ptr_1 != _2_init_tigress_1_opaque_ptr_2) {
     {  /* __blockattribute__(__ATOMIC__)*/ 
     _5_fib__BEGIN_13 = 1;
-    _3_bf_1((unsigned long )(&& _5_fib_lab3));
+    _3_bf_1((unsigned long )(&& _5_fib_lab7));
     Lab_2000011: /* CIL Label */ 
-    __asm__  volatile   (".byte 0x0,0x1":);
+    __asm__  volatile   (".byte 0x3f,0x76,0x5d,0x5a,0x83":);
     _5_fib__END_13 = 1;
     }
 
@@ -433,9 +369,9 @@ void fib(int n )
   } else {
     {  /* __blockattribute__(__ATOMIC__)*/ 
     _5_fib__BEGIN_14 = 1;
-    _3_bf_1((unsigned long )(&& _5_fib_lab7));
+    _3_bf_1((unsigned long )(&& _5_fib_lab0));
     Lab_2000012: /* CIL Label */ 
-    __asm__  volatile   (".byte 0x39,0x55,0xf1":);
+    __asm__  volatile   (".byte 0x0,0xc7,0x85,0xa8,0xf9,0xff":);
     _5_fib__END_14 = 1;
     }
 
@@ -446,18 +382,18 @@ void fib(int n )
   _5_fib__BEGIN_15 = 1;
   _3_bf_1((unsigned long )(&& _5_fib_lab3));
   Lab_2000013: /* CIL Label */ 
-  __asm__  volatile   (".byte 0x9b,0x17,0x3d,0x72,0x9b,0xff,0xb3":);
+  __asm__  volatile   (".byte 0x9f,0x3d,0x0,0x1":);
   _5_fib__END_15 = 1;
   }
 
 
   _5_fib_lab7: /* CIL Label */ ;
-  if (_2_init_tigress_1_opaque_ptr_1 != _2_init_tigress_1_opaque_ptr_2) {
+  if (((unsigned int )(((((n - i) & - (n >= i)) << 1) & (((n - i) & - (n >= i)) >> 31)) - ((n - i) & - (n >= i))) >> 31U) & 1) {
     {  /* __blockattribute__(__ATOMIC__)*/ 
     _5_fib__BEGIN_16 = 1;
-    _3_bf_1((unsigned long )(&& _5_fib_lab6));
+    _3_bf_1((unsigned long )(&& _5_fib_lab3));
     Lab_2000014: /* CIL Label */ 
-    __asm__  volatile   (".byte 0x13,0x23":);
+    __asm__  volatile   (".byte 0x21,0x3,0x0,0x0,0x41,0x81,0xe7,0xed":);
     _5_fib__END_16 = 1;
     }
 
@@ -465,9 +401,9 @@ void fib(int n )
   } else {
     {  /* __blockattribute__(__ATOMIC__)*/ 
     _5_fib__BEGIN_17 = 1;
-    _3_bf_1((unsigned long )(&& _5_fib_lab0));
+    _3_bf_1((unsigned long )(&& _5_fib_lab6));
     Lab_2000015: /* CIL Label */ 
-    __asm__  volatile   (".byte 0x0,0x0,0xe8,0xcb,0x31,0x0,0x0":);
+    __asm__  volatile   (".byte 0x8b,0x51,0x60,0x4c,0x8b,0x42,0x40,0x48":);
     _5_fib__END_17 = 1;
     }
 
@@ -482,66 +418,130 @@ void fib(int n )
   _5_fib__BEGIN_18 = 1;
   _3_bf_1((unsigned long )(&& _5_fib_lab5));
   Lab_2000016: /* CIL Label */ 
-  __asm__  volatile   (".byte 0x25,0x31,0x0,0x0,0x48,0x85":);
+  __asm__  volatile   (".byte 0xf7,0xf0,0xcb,0x3f,0x59,0x1f,0x8,0x74":);
   _5_fib__END_18 = 1;
   }
 
 
 }
 }
-__inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) 
+void fac(int n ) 
 { 
-  unsigned char *tmp ;
-  unsigned char tmp___0 ;
-  int tmp___1 ;
+  int s ;
+  int i ;
+  unsigned long _5_fac_next ;
+  void *_5_fac_jumpTab[8]  = {&& _5_fac_lab0, && _5_fac_lab1, && _5_fac_lab2, && _5_fac_lab3,
+                              && _5_fac_lab0, && _5_fac_lab5, && _5_fac_lab6, && _5_fac_lab7};
+  int _5_fac__BEGIN_3 ;
+  int _5_fac__END_3 ;
+  int _5_fac__BEGIN_4 ;
+  int _5_fac__END_4 ;
+  int _5_fac__BEGIN_5 ;
+  int _5_fac__END_5 ;
+  int _5_fac__BEGIN_6 ;
+  int _5_fac__END_6 ;
+  int _5_fac__BEGIN_7 ;
+  int _5_fac__END_7 ;
+  int _5_fac__BEGIN_8 ;
+  int _5_fac__END_8 ;
+  int _5_fac__BEGIN_9 ;
+  int _5_fac__END_9 ;
+  int _5_fac__BEGIN_10 ;
+  int _5_fac__END_10 ;
 
   {
-  (_p->_w) --;
-  if (_p->_w >= 0) {
-    tmp = _p->_p;
-    (_p->_p) ++;
-    tmp___0 = (unsigned char )_c;
-    *tmp = tmp___0;
-    return ((int )tmp___0);
-  } else
-  if (_p->_w >= _p->_lbfsize) {
-    if ((int )((char )_c) != 10) {
-      tmp = _p->_p;
-      (_p->_p) ++;
-      tmp___0 = (unsigned char )_c;
-      *tmp = tmp___0;
-      return ((int )tmp___0);
-    } else {
-      tmp___1 = __swbuf(_c, _p);
-      return (tmp___1);
-    }
-  } else {
-    tmp___1 = __swbuf(_c, _p);
-    return (tmp___1);
+  _5_fac_next = 6;
+  goto *(_5_fac_jumpTab[_5_fac_next - 0]);
+  _5_fac_lab1: /* CIL Label */ 
+  s = (s & i) * (s | i) + (s & ~ i) * (~ s & i);
+  i = (i ^ 1) + ((i & 1) << 1);
+  {  /* __blockattribute__(__ATOMIC__)*/ 
+  _5_fac__BEGIN_3 = 1;
+  _3_bf_1((unsigned long )(&& _5_fac_lab0));
+  Lab_2000001: /* CIL Label */ 
+  __asm__  volatile   (".byte 0x6,0xb2,0xaf,0x63,0x7e,0x8,0xfa,0x7e":);
+  _5_fac__END_3 = 1;
   }
-}
-}
-void megaInit(void) 
-{ 
 
 
-  {
+  _5_fac_lab3: /* CIL Label */ ;
+  if (_2_init_tigress_1_opaque_ptr_1 == _2_init_tigress_1_opaque_ptr_2) {
+    {  /* __blockattribute__(__ATOMIC__)*/ 
+    _5_fac__BEGIN_4 = 1;
+    _3_bf_1((unsigned long )(&& _5_fac_lab2));
+    Lab_2000002: /* CIL Label */ 
+    __asm__  volatile   (".byte 0xf8,0xff,0x74,0x3b,0x8d,0x48,0xcf,0xf9":);
+    _5_fac__END_4 = 1;
+    }
 
-}
-}
-int main(int argc , char **argv , char **_formal_envp ) 
-{ 
-  int _BARRIER_0 ;
 
-  {
-  megaInit();
-  _global_argc = argc;
-  _global_argv = argv;
-  _global_envp = _formal_envp;
-  _BARRIER_0 = 1;
-  init_tigress();
-  fac(10);
-  fib(10);
-  return (0);
+  } else {
+    {  /* __blockattribute__(__ATOMIC__)*/ 
+    _5_fac__BEGIN_5 = 1;
+    _3_bf_1((unsigned long )(&& _5_fac_lab0));
+    Lab_2000003: /* CIL Label */ 
+    __asm__  volatile   (".byte 0x0,0xbb,0x1,0x0":);
+    _5_fac__END_5 = 1;
+    }
+
+
+  }
+  _5_fac_lab6: /* CIL Label */ 
+  s = 1;
+  i = 2;
+  {  /* __blockattribute__(__ATOMIC__)*/ 
+  _5_fac__BEGIN_6 = 1;
+  _3_bf_1((unsigned long )(&& _5_fac_lab3));
+  Lab_2000004: /* CIL Label */ 
+  __asm__  volatile   (".byte 0x55,0xc9,0xe5,0x2f,0xdb,0x2f,0x8a,0x6f":);
+  _5_fac__END_6 = 1;
+  }
+
+
+  _5_fac_lab5: /* CIL Label */ ;
+  return;
+  _5_fac_lab0: /* CIL Label */ ;
+  if (((unsigned int )((i | ~ n) & ((i ^ n) | ~ (n - i))) >> 31U) & 1) {
+    {  /* __blockattribute__(__ATOMIC__)*/ 
+    _5_fac__BEGIN_7 = 1;
+    _3_bf_1((unsigned long )(&& _5_fac_lab1));
+    Lab_2000005: /* CIL Label */ 
+    __asm__  volatile   (".byte 0x54,0x26,0x21,0x16":);
+    _5_fac__END_7 = 1;
+    }
+
+
+  } else {
+    {  /* __blockattribute__(__ATOMIC__)*/ 
+    _5_fac__BEGIN_8 = 1;
+    _3_bf_1((unsigned long )(&& _5_fac_lab7));
+    Lab_2000006: /* CIL Label */ 
+    __asm__  volatile   (".byte 0x37,0x0,0x0,0x31,0xff":);
+    _5_fac__END_8 = 1;
+    }
+
+
+  }
+  _5_fac_lab7: /* CIL Label */ 
+  printf((char const   */* __restrict  */)"fac(%i)=%i\n", n, s);
+  {  /* __blockattribute__(__ATOMIC__)*/ 
+  _5_fac__BEGIN_9 = 1;
+  _3_bf_1((unsigned long )(&& _5_fac_lab5));
+  Lab_2000007: /* CIL Label */ 
+  __asm__  volatile   (".byte 0x60,0x48,0x8b,0x7e,0x60,0xb8":);
+  _5_fac__END_9 = 1;
+  }
+
+
+  _5_fac_lab2: /* CIL Label */ ;
+  {  /* __blockattribute__(__ATOMIC__)*/ 
+  _5_fac__BEGIN_10 = 1;
+  _3_bf_1((unsigned long )(&& _5_fac_lab7));
+  Lab_2000008: /* CIL Label */ 
+  __asm__  volatile   (".byte 0x48,0x8d,0x35":);
+  _5_fac__END_10 = 1;
+  }
+
+
 }
 }

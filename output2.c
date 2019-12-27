@@ -23,17 +23,17 @@ struct _opaque_pthread_t ;
 struct timespec ;
 struct timeval ;
 struct _2_init_tigress_1_opaque_NodeStruct {
+   struct _2_init_tigress_1_opaque_NodeStruct *next ;
    int data ;
    struct _2_init_tigress_1_opaque_NodeStruct *prev ;
-   struct _2_init_tigress_1_opaque_NodeStruct *next ;
 };
 extern int gettimeofday(struct timeval *tv , void *tz ) ;
 typedef struct _opaque_pthread_attr_t __darwin_pthread_attr_t;
 extern int pthread_cond_broadcast(struct _opaque_pthread_cond_t *cond ) ;
 char **_global_argv  =    (char **)0;
 typedef long long __int64_t;
-extern int getpagesize() ;
 extern int posix_memalign(void **memptr , unsigned int alignment , unsigned int size ) ;
+extern int getpagesize() ;
 extern int pthread_join(void *thread , void **value_ptr ) ;
 struct _opaque_pthread_attr_t {
    long __sig ;
@@ -44,7 +44,6 @@ extern unsigned int strlen(char const   *s ) ;
 extern int open(char const   *filename , int oflag  , ...) ;
 typedef struct _opaque_pthread_condattr_t __darwin_pthread_condattr_t;
 extern int pthread_barrier_destroy(int *barrier ) ;
-extern int strncmp(char const   *s1 , char const   *s2 , unsigned int maxlen ) ;
 struct _opaque_pthread_mutex_t {
    long __sig ;
    char __opaque[56] ;
@@ -59,7 +58,8 @@ typedef struct _opaque_pthread_mutexattr_t __darwin_pthread_mutexattr_t;
 typedef __darwin_pthread_mutexattr_t pthread_mutexattr_t;
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_init(pthread_mutex_t * __restrict   ,
                                                                                                                               pthread_mutexattr_t const   * _Nullable __restrict   ) ;
-unsigned long _1_entropy  =    8029005638326001937UL;
+extern int strncmp(char const   *s1 , char const   *s2 , unsigned int maxlen ) ;
+unsigned long _1_entropy  =    1205847982700084983UL;
 typedef long __darwin_time_t;
 struct timespec {
    __darwin_time_t tv_sec ;
@@ -69,9 +69,9 @@ extern int ( /* format attribute */  printf)(char const   * __restrict    , ...)
 int _global_argc  =    0;
 extern int pthread_cond_signal(struct _opaque_pthread_cond_t *cond ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_ptr_2  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
-extern int pthread_barrier_init(int *barrier , int *attr , unsigned int count ) ;
 extern int scanf(char const   *format  , ...) ;
 extern int raise(int sig ) ;
+extern int pthread_barrier_init(int *barrier , int *attr , unsigned int count ) ;
 char **_global_envp  =    (char **)0;
 typedef struct _opaque_pthread_t *__darwin_pthread_t;
 extern int unlink(char const   *filename ) ;
@@ -91,31 +91,31 @@ struct __darwin_pthread_handler_rec {
    void *__arg ;
    struct __darwin_pthread_handler_rec *__next ;
 };
-extern void free(void *ptr ) ;
 extern int fprintf(struct __sFILE *stream , char const   *format  , ...) ;
-extern void exit(int status ) ;
-extern void signal(int sig , void *func ) ;
+extern void free(void *ptr ) ;
 int main(int argc , char **argv , char **_formal_envp ) ;
+extern void signal(int sig , void *func ) ;
+extern void exit(int status ) ;
 void init_tigress(void) ;
 typedef struct __sFILE FILE;
 __inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) ;
-extern int close(int filedes ) ;
 extern int mprotect(void *addr , unsigned int len , int prot ) ;
+extern int close(int filedes ) ;
 struct _opaque_pthread_t {
    long __sig ;
    struct __darwin_pthread_handler_rec *__cleanup_stack ;
    char __opaque[8176] ;
 };
-extern double strtod(char const   *str , char const   *endptr ) ;
 extern double log(double x ) ;
+extern double strtod(char const   *str , char const   *endptr ) ;
 extern double ceil(double x ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_ptr_1  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
 struct __sbuf {
    unsigned char *_base ;
    int _size ;
 };
-extern int fcntl(int filedes , int cmd  , ...) ;
 extern int fclose(void *stream ) ;
+extern int fcntl(int filedes , int cmd  , ...) ;
 union _3_fac_$node {
    char _char ;
    unsigned int _unsigned_int ;
@@ -145,13 +145,14 @@ union _3_fib_$node {
    int _int ;
    short _short ;
 };
-extern void perror(char const   *str ) ;
 extern int pthread_cond_wait(struct _opaque_pthread_cond_t *cond , struct _opaque_pthread_cond_t *mutex ) ;
+extern void perror(char const   *str ) ;
 void fac(int n ) ;
 struct _opaque_pthread_condattr_t {
    long __sig ;
    char __opaque[8] ;
 };
+extern int write(int filedes , void *buf , unsigned int nbyte ) ;
 struct _opaque_pthread_cond_t {
    long __sig ;
    char __opaque[40] ;
@@ -160,19 +161,18 @@ typedef __darwin_pthread_cond_t pthread_cond_t;
 typedef __darwin_pthread_condattr_t pthread_condattr_t;
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_init(pthread_cond_t * __restrict   ,
                                                                                                                              pthread_condattr_t const   * _Nullable __restrict   )  __asm__("_pthread_cond_init")  ;
-extern int write(int filedes , void *buf , unsigned int nbyte ) ;
 typedef struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_StructureType;
 extern int ptrace(int request , void *pid , void *addr , int data ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_list_1  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
-extern float strtof(char const   *str , char const   *endptr ) ;
 extern unsigned int strnlen(char const   *s , unsigned int maxlen ) ;
+extern float strtof(char const   *str , char const   *endptr ) ;
 struct timeval {
    long tv_sec ;
    int tv_usec ;
 };
+extern long clock(void) ;
 extern void qsort(void *base , unsigned int nel , unsigned int width , int (*compar)(void *a ,
                                                                                      void *b ) ) ;
-extern long clock(void) ;
 typedef __darwin_off_t fpos_t;
 extern long time(long *tloc ) ;
 extern int read(int filedes , void *buf , unsigned int nbyte ) ;
@@ -209,78 +209,127 @@ struct __sFILE {
    fpos_t _offset ;
 };
 extern int pthread_mutex_unlock(struct _opaque_pthread_mutex_t *mutex ) ;
+extern int atoi(char const   *s ) ;
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_create(pthread_t __attribute__((__nullable__))  * _Nonnull __restrict   ,
                                                                                                                           pthread_attr_t const   * _Nullable __restrict   ,
                                                                                                                           void * _Nullable  (* _Nonnull  )(void * _Nullable   ) ,
                                                                                                                           void * _Nullable __restrict   ) ;
-extern int atoi(char const   *s ) ;
 unsigned int _2_init_tigress__opaque_array[30]  = 
-  {      123,      26,      3,      128, 
-        103,      5,      343,      460, 
-        5,      213,      138,      7, 
-        328,      250,      95,      408, 
-        285,      64,      213,      600, 
-        48,      153,      124,      72, 
-        83,      369,      2,      333, 
-        397};
+  {      258,      691,      3,      308, 
+        425,      5,      278,      537, 
+        5,      3,      187,      7, 
+        33,      12,      57,      358, 
+        670,      43,      448,      159, 
+        85,      468,      292,      13, 
+        143,      243,      80,      498, 
+        369};
 extern int fseek(struct __sFILE *stream , long offs , int whence ) ;
 extern int fscanf(struct __sFILE *stream , char const   *format  , ...) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_list_2  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
 char const   *_3_fac_$strings  =    "fac(%i)=%i\n\000";
 void megaInit(void) ;
 void fib(int n ) ;
+int main(int argc , char **argv , char **_formal_envp ) 
+{ 
+  int _BARRIER_0 ;
+
+  {
+  megaInit();
+  _global_argc = argc;
+  _global_argv = argv;
+  _global_envp = _formal_envp;
+  _BARRIER_0 = 1;
+  init_tigress();
+  fac(10);
+  fib(10);
+  return (0);
+}
+}
+void init_tigress(void) 
+{ 
+  struct _2_init_tigress_1_opaque_NodeStruct *p1 ;
+  int i2 ;
+  struct _2_init_tigress_1_opaque_NodeStruct *p3 ;
+  int _2_init_tigress__BEGIN_1 ;
+  int _2_init_tigress__END_1 ;
+  int _2_init_tigress__BARRIER_2 ;
+
+  {
+  _2_init_tigress__BEGIN_1 = 1;
+  p1 = (struct _2_init_tigress_1_opaque_NodeStruct *)malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
+  p1->next = p1;
+  p1->prev = p1;
+  _2_init_tigress_1_opaque_list_1 = p1;
+  i2 = 0;
+  while (i2 < 4) {
+    p3 = (struct _2_init_tigress_1_opaque_NodeStruct *)malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
+    p3->data = i2 * (((_1_entropy + 9) + 1UL) + ((- _1_entropy - 1UL) | (- 9 - 1UL)));
+    p3->next = _2_init_tigress_1_opaque_list_1->next;
+    p3->prev = _2_init_tigress_1_opaque_list_1;
+    (_2_init_tigress_1_opaque_list_1->next)->prev = p3;
+    _2_init_tigress_1_opaque_list_1->next = p3;
+    i2 ++;
+  }
+  _2_init_tigress_1_opaque_ptr_1 = _2_init_tigress_1_opaque_list_1->next;
+  _2_init_tigress_1_opaque_ptr_2 = _2_init_tigress_1_opaque_ptr_1;
+  _2_init_tigress_1_opaque_ptr_2 = _2_init_tigress_1_opaque_ptr_2->next;
+  _2_init_tigress__END_1 = 1;
+  _2_init_tigress__BARRIER_2 = 1;
+  return;
+}
+}
 void fib(int n ) 
 { 
   char _3_fib_$locals[40] ;
   union _3_fib_$node _3_fib_$stack[1][32] ;
   union _3_fib_$node *_3_fib_$sp[1] ;
   void **_3_fib_$pc[1] ;
-  void *_3_fib_$array[1][93]  = {{&& _3_fib__local$result_STA_0$value_LIT_0, (void *)4UL,
+  void *_3_fib_$array[1][93]  = {{&& _3_fib__constant_int$result_STA_0$value_LIT_0,
+                                  (void *)0UL, && _3_fib__local$result_STA_0$value_LIT_0,
+                                  (void *)4UL, && _3_fib__store_int$left_STA_0$right_STA_1,
                                   && _3_fib__constant_int$result_STA_0$value_LIT_0,
-                                  (void *)0UL, && _3_fib__store_int$right_STA_0$left_STA_1,
-                                  && _3_fib__local$result_STA_0$value_LIT_0, (void *)8UL,
+                                  (void *)1UL, && _3_fib__local$result_STA_0$value_LIT_0,
+                                  (void *)8UL, && _3_fib__store_int$left_STA_0$right_STA_1,
                                   && _3_fib__constant_int$result_STA_0$value_LIT_0,
-                                  (void *)1UL, && _3_fib__store_int$right_STA_0$left_STA_1,
-                                  && _3_fib__local$result_STA_0$value_LIT_0, (void *)12UL,
+                                  (void *)1UL, && _3_fib__local$result_STA_0$value_LIT_0,
+                                  (void *)12UL, && _3_fib__store_int$left_STA_0$right_STA_1,
                                   && _3_fib__constant_int$result_STA_0$value_LIT_0,
-                                  (void *)1UL, && _3_fib__store_int$right_STA_0$left_STA_1,
+                                  (void *)1UL, && _3_fib__local$result_STA_0$value_LIT_0,
+                                  (void *)16UL, && _3_fib__store_int$left_STA_0$right_STA_1,
+                                  && _3_fib__goto$label_LAB_0, (void *)1UL, && _3_fib__formal$result_STA_0$value_LIT_0,
+                                  (void *)0UL, && _3_fib__load_int$left_STA_0$result_STA_0,
                                   && _3_fib__local$result_STA_0$value_LIT_0, (void *)16UL,
-                                  && _3_fib__constant_int$result_STA_0$value_LIT_0,
-                                  (void *)1UL, && _3_fib__store_int$right_STA_0$left_STA_1,
-                                  && _3_fib__goto$label_LAB_0, (void *)1UL, && _3_fib__local$result_STA_0$value_LIT_0,
-                                  (void *)16UL, && _3_fib__load_int$left_STA_0$result_STA_0,
-                                  && _3_fib__formal$result_STA_0$value_LIT_0, (void *)0UL,
-                                  && _3_fib__load_int$left_STA_0$result_STA_0, && _3_fib__Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1,
+                                  && _3_fib__load_int$left_STA_0$result_STA_0, && _3_fib__Lt_int_int2int$left_STA_0$result_STA_0$right_STA_1,
                                   && _3_fib__branchIfTrue$expr_STA_0$label_LAB_0,
                                   (void *)5UL, && _3_fib__goto$label_LAB_0, (void *)1UL,
                                   && _3_fib__goto$label_LAB_0, (void *)36UL, && _3_fib__local$result_STA_0$value_LIT_0,
-                                  (void *)12UL, && _3_fib__local$result_STA_0$value_LIT_0,
+                                  (void *)4UL, && _3_fib__load_int$left_STA_0$result_STA_0,
+                                  && _3_fib__local$result_STA_0$value_LIT_0, (void *)8UL,
+                                  && _3_fib__load_int$left_STA_0$result_STA_0, && _3_fib__PlusA_int_int2int$right_STA_0$result_STA_0$left_STA_1,
+                                  && _3_fib__local$result_STA_0$value_LIT_0, (void *)12UL,
+                                  && _3_fib__store_int$left_STA_0$right_STA_1, && _3_fib__local$result_STA_0$value_LIT_0,
                                   (void *)8UL, && _3_fib__load_int$left_STA_0$result_STA_0,
                                   && _3_fib__local$result_STA_0$value_LIT_0, (void *)4UL,
-                                  && _3_fib__load_int$left_STA_0$result_STA_0, && _3_fib__PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
-                                  && _3_fib__store_int$right_STA_0$left_STA_1, && _3_fib__local$result_STA_0$value_LIT_0,
-                                  (void *)4UL, && _3_fib__local$result_STA_0$value_LIT_0,
-                                  (void *)8UL, && _3_fib__load_int$left_STA_0$result_STA_0,
-                                  && _3_fib__store_int$right_STA_0$left_STA_1, && _3_fib__local$result_STA_0$value_LIT_0,
-                                  (void *)8UL, && _3_fib__local$result_STA_0$value_LIT_0,
+                                  && _3_fib__store_int$left_STA_0$right_STA_1, && _3_fib__local$result_STA_0$value_LIT_0,
                                   (void *)12UL, && _3_fib__load_int$left_STA_0$result_STA_0,
-                                  && _3_fib__store_int$right_STA_0$left_STA_1, && _3_fib__local$result_STA_0$value_LIT_0,
-                                  (void *)16UL, && _3_fib__constant_int$result_STA_0$value_LIT_0,
-                                  (void *)1UL, && _3_fib__local$result_STA_0$value_LIT_0,
+                                  && _3_fib__local$result_STA_0$value_LIT_0, (void *)8UL,
+                                  && _3_fib__store_int$left_STA_0$right_STA_1, && _3_fib__local$result_STA_0$value_LIT_0,
                                   (void *)16UL, && _3_fib__load_int$left_STA_0$result_STA_0,
-                                  && _3_fib__PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
-                                  && _3_fib__store_int$right_STA_0$left_STA_1, && _3_fib__goto$label_LAB_0,
+                                  && _3_fib__constant_int$result_STA_0$value_LIT_0,
+                                  (void *)1UL, && _3_fib__PlusA_int_int2int$right_STA_0$result_STA_0$left_STA_1,
+                                  && _3_fib__local$result_STA_0$value_LIT_0, (void *)16UL,
+                                  && _3_fib__store_int$left_STA_0$right_STA_1, && _3_fib__goto$label_LAB_0,
                                   (void *)4294967251UL, && _3_fib__goto$label_LAB_0,
                                   (void *)4294967249UL, && _3_fib__string$result_STA_0$value_LIT_0,
                                   (void *)0UL, && _3_fib__convert_void_star2void_star$left_STA_0$result_STA_0,
                                   && _3_fib__local$result_STA_0$value_LIT_0, (void *)24UL,
                                   && _3_fib__store_void_star$left_STA_0$right_STA_1,
-                                  && _3_fib__local$result_STA_0$value_LIT_0, (void *)32UL,
                                   && _3_fib__formal$result_STA_0$value_LIT_0, (void *)0UL,
-                                  && _3_fib__load_int$left_STA_0$result_STA_0, && _3_fib__store_int$right_STA_0$left_STA_1,
-                                  && _3_fib__local$result_STA_0$value_LIT_0, (void *)36UL,
+                                  && _3_fib__load_int$left_STA_0$result_STA_0, && _3_fib__local$result_STA_0$value_LIT_0,
+                                  (void *)32UL, && _3_fib__store_int$left_STA_0$right_STA_1,
                                   && _3_fib__local$result_STA_0$value_LIT_0, (void *)12UL,
-                                  && _3_fib__load_int$left_STA_0$result_STA_0, && _3_fib__store_int$right_STA_0$left_STA_1,
+                                  && _3_fib__load_int$left_STA_0$result_STA_0, && _3_fib__local$result_STA_0$value_LIT_0,
+                                  (void *)36UL, && _3_fib__store_int$left_STA_0$right_STA_1,
                                   && _3_fib__call$func_LIT_0, (void *)1UL, && _3_fib__goto$label_LAB_0,
                                   (void *)1UL, && _3_fib__returnVoid$}};
   int selfModify_BEGIN_25 ;
@@ -289,21 +338,21 @@ void fib(int n )
   int selfModify_BEGIN_26 ;
   int selfModify_END_26 ;
   unsigned long *branchAddr21 ;
-  int left22 ;
-  int right23 ;
-  int result24 ;
   int selfModify_BEGIN_27 ;
   int selfModify_END_27 ;
-  unsigned long *addrPtr27 ;
-  unsigned int *opPtr28 ;
+  unsigned long *branchAddr24 ;
   int selfModify_BEGIN_28 ;
   int selfModify_END_28 ;
+  unsigned long *branchAddr27 ;
+  int left28 ;
+  int right29 ;
+  int result30 ;
   int selfModify_BEGIN_29 ;
   int selfModify_END_29 ;
-  unsigned long *branchAddr33 ;
+  unsigned long *addrPtr33 ;
+  unsigned int *opPtr34 ;
   int selfModify_BEGIN_30 ;
   int selfModify_END_30 ;
-  unsigned long *branchAddr36 ;
   int selfModify_BEGIN_31 ;
   int selfModify_END_31 ;
   unsigned long *branchAddr39 ;
@@ -312,36 +361,36 @@ void fib(int n )
   unsigned long *branchAddr42 ;
   int selfModify_BEGIN_33 ;
   int selfModify_END_33 ;
+  unsigned long *branchAddr45 ;
   int selfModify_BEGIN_34 ;
   int selfModify_END_34 ;
-  unsigned long *branchAddr47 ;
+  unsigned long *branchAddr48 ;
   int selfModify_BEGIN_35 ;
   int selfModify_END_35 ;
-  unsigned long *branchAddr50 ;
-  int left51 ;
-  int right52 ;
-  int result53 ;
+  unsigned long *branchAddr51 ;
   int selfModify_BEGIN_36 ;
   int selfModify_END_36 ;
-  unsigned long *addrPtr56 ;
-  unsigned int *opPtr57 ;
+  unsigned long *branchAddr54 ;
   int selfModify_BEGIN_37 ;
   int selfModify_END_37 ;
   int selfModify_BEGIN_38 ;
   int selfModify_END_38 ;
-  unsigned long *branchAddr62 ;
+  unsigned long *branchAddr59 ;
   int selfModify_BEGIN_39 ;
   int selfModify_END_39 ;
-  unsigned long *branchAddr65 ;
+  unsigned long *branchAddr62 ;
   int selfModify_BEGIN_40 ;
   int selfModify_END_40 ;
-  unsigned long *branchAddr68 ;
+  unsigned long *branchAddr65 ;
+  int left66 ;
+  int right67 ;
+  int result68 ;
   int selfModify_BEGIN_41 ;
   int selfModify_END_41 ;
-  unsigned long *branchAddr71 ;
+  unsigned long *addrPtr71 ;
+  unsigned int *opPtr72 ;
   int selfModify_BEGIN_42 ;
   int selfModify_END_42 ;
-  unsigned long *branchAddr74 ;
   int selfModify_BEGIN_43 ;
   int selfModify_END_43 ;
   unsigned long *branchAddr77 ;
@@ -350,95 +399,95 @@ void fib(int n )
   unsigned long *branchAddr80 ;
 
   {
-  if (((((_1_alwaysZero & (((_1_entropy - 6) - ((_1_entropy | ~ 6) + (_1_entropy | ~ 6))) - 2UL)) * (_1_alwaysZero | (((_1_entropy - 6) - ((_1_entropy | ~ 6) + (_1_entropy | ~ 6))) - 2UL)) + (_1_alwaysZero & ~ (((_1_entropy - 6) - ((_1_entropy | ~ 6) + (_1_entropy | ~ 6))) - 2UL)) * (~ _1_alwaysZero & (((_1_entropy - 6) - ((_1_entropy | ~ 6) + (_1_entropy | ~ 6))) - 2UL))) | 0) << 1UL) - (((_1_alwaysZero & (((_1_entropy - 6) - ((_1_entropy | ~ 6) + (_1_entropy | ~ 6))) - 2UL)) * (_1_alwaysZero | (((_1_entropy - 6) - ((_1_entropy | ~ 6) + (_1_entropy | ~ 6))) - 2UL)) + (_1_alwaysZero & ~ (((_1_entropy - 6) - ((_1_entropy | ~ 6) + (_1_entropy | ~ 6))) - 2UL)) * (~ _1_alwaysZero & (((_1_entropy - 6) - ((_1_entropy | ~ 6) + (_1_entropy | ~ 6))) - 2UL))) ^ 0)) {
-    goto *((void *)((_1_entropy - ~ 1) - 1UL));
+  if (_2_init_tigress_1_opaque_ptr_1 == _2_init_tigress_1_opaque_ptr_2) {
+    goto *((void *)((_1_entropy & ~ 2) + 2));
   } else {
 
   }
-  addrPtr27 = (unsigned long *)((unsigned long )(&& Lab_2000051) + 45);
-  *addrPtr27 = (unsigned long )(& left22);
-  addrPtr27 = (unsigned long *)((unsigned long )(&& Lab_2000051) + 77);
-  *addrPtr27 = (unsigned long )(& right23);
-  addrPtr27 = (unsigned long *)((unsigned long )(&& Lab_2000051) + 147);
-  *addrPtr27 = (unsigned long )(& result24);
-  opPtr28 = (unsigned int *)((unsigned long )(&& Lab_2000051) + 131);
-  addrPtr27 = (unsigned long *)((unsigned long )(&& Lab_2000051) + 216);
-  *addrPtr27 = (unsigned long )(&& Lab_2000052);
-  selfModify_BEGIN_27 = 1;
-  Lab_2000051: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xfc,0xf9,0xfd,0xf5,0xf8,0xfc,0xf8,0x90,0x9b,0xf9;\n"
+  addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000055) + 45);
+  *addrPtr33 = (unsigned long )(& left28);
+  addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000055) + 77);
+  *addrPtr33 = (unsigned long )(& right29);
+  addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000055) + 147);
+  *addrPtr33 = (unsigned long )(& result30);
+  opPtr34 = (unsigned int *)((unsigned long )(&& Lab_2000055) + 131);
+  addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000055) + 216);
+  *addrPtr33 = (unsigned long )(&& Lab_2000056);
+  selfModify_BEGIN_29 = 1;
+  Lab_2000055: /* CIL Label */ 
+  __asm__  volatile   (".byte 0x9b,0x90,0xf9,0xfc,0x90,0xfd,0x90,0xf5,0x9b,0x9b;\n"
                        ".byte 0x50;\n"
-                       ".byte 0xf9,0xfc,0xfd,0xf9,0xfc,0xfd,0xfd,0xf5,0xfc,0xfc;\n"
+                       ".byte 0xf5,0xfc,0x90,0xf9,0x9b,0xf5,0x9b,0x90,0xfc,0x90;\n"
                        ".byte 0x51;\n"
-                       ".byte 0xf8,0xf8,0x90,0xf8,0xfd,0xf5,0xf9,0xfc,0x9b,0xf9;\n"
+                       ".byte 0x9b,0xf5,0xf9,0xfd,0xfc,0x90,0x90,0xf9,0xfc,0x9b;\n"
                        ".byte 0x56;\n"
-                       ".byte 0xf5,0xf8,0xfd,0xfc,0x9b,0x90,0xfc,0x9b,0xfd,0xfc;\n"
+                       ".byte 0x90,0xf9,0xf5,0xfd,0xfc,0xf9,0xfd,0xf5,0xf9,0xfd;\n"
                        ".byte 0x48, 0xb8, 0xc,0x7b,0x21,0x3d,0x54,0x2d,0xc0,0x1;\n"
-                       ".byte 0xf5,0xf8,0xfd,0x9b,0xf8,0x90,0xf8,0xf8,0x9b,0x90;\n"
+                       ".byte 0xf5,0x90,0xfd,0xfd,0x9b,0xf9,0x90,0xfd,0x90,0x90;\n"
                        ".byte 0x8b, 0x00;\n"
-                       ".byte 0x9b,0xfc,0xf8,0x90,0xfc,0xf8,0x9b,0xfd,0xf5,0x9b;\n"
+                       ".byte 0xfc,0xf5,0xfc,0xfd,0x9b,0xf5,0xfc,0xf9,0x9b,0xfc;\n"
                        ".byte 0x48, 0xb9, 0x4f,0x40,0x2f,0xa3,0xd0,0xdc,0x24,0x42;\n"
-                       ".byte 0x9b,0xf9,0xfd,0xfd,0xfd,0xf9,0xf8,0xf5,0x9b,0xf5;\n"
+                       ".byte 0xf8,0xfc,0xf9,0xf8,0xfc,0x9b,0xfd,0xf8,0x90,0xf8;\n"
                        ".byte 0x8b, 0x09;\n"
-                       ".byte 0x9b,0xfd,0xf8,0xf9,0xf8,0xf8,0xfc,0xfc,0xf9,0x9b;\n"
+                       ".byte 0xfc,0xfd,0xf9,0xf5,0xfd,0x9b,0xf9,0xfc,0xf8,0xfc;\n"
                        ".byte 0x31, 0xf6;\n"
-                       ".byte 0x9b,0x9b,0xf5,0xf8,0x90,0xf9,0x90,0xf5,0x90,0x90;\n"
+                       ".byte 0xfc,0xf5,0xf9,0x9b,0xf8,0x9b,0x90,0xfd,0xfc,0xf8;\n"
                        ".byte 0x39, 0xc8;\n"
-                       ".byte 0x90,0xfd,0xf5,0x90,0x90,0x90,0xfc,0xfd,0x9b,0x9b;\n"
+                       ".byte 0xfc,0xfc,0xf9,0xf5,0x90,0x90,0x90,0x9b,0xf9,0xf9;\n"
                        ".byte  0x40, 0x0f, 0x9c, 0xc6;\n"
-                       ".byte 0xf5,0xf9,0xf9,0xf8,0x9b,0xfd,0xf8,0x90,0xf5,0x90;\n"
+                       ".byte 0x90,0xfc,0xfc,0xf9,0xf5,0xf9,0xfd,0x9b,0x90,0xf9;\n"
                        ".byte 0x48, 0xb9, 0x7f,0x91,0x1c,0xaf,0xab,0x5f,0x2d,0x6a;\n"
-                       ".byte 0xf5,0xf8,0xfd,0xf5,0xf5,0x90,0xfc,0xf5,0xf5,0xf8;\n"
+                       ".byte 0xf9,0xfc,0xf9,0xf9,0xf9,0x90,0xf9,0xf5,0xfd,0x9b;\n"
                        ".byte 0x89, 0x31;\n"
-                       ".byte 0xf5,0x90,0xf9,0xf9,0xfd,0xf5,0xf5,0x90,0xfd,0xf8;\n"
+                       ".byte 0xfc,0xf5,0x9b,0x90,0xfc,0xfd,0xf9,0xf5,0xf9,0x9b;\n"
                        ".byte 0x5e;\n"
-                       ".byte 0xf5,0xfc,0x90,0x90,0xf5,0x90,0xfd,0xfc,0xfd,0xf5;\n"
+                       ".byte 0x9b,0xfd,0xfd,0x90,0x90,0xfc,0x9b,0xf9,0xf9,0xf8;\n"
                        ".byte 0x59;\n"
-                       ".byte 0x90,0xf9,0xf8,0xf9,0x9b,0xf5,0x9b,0x9b,0xfd,0x9b;\n"
+                       ".byte 0xf9,0xfd,0xf5,0xf5,0xfd,0x9b,0xf5,0xfc,0x90,0x90;\n"
                        ".byte 0x58;\n"
-                       ".byte 0xf9,0xf5,0xf8,0x9b,0xf5,0x9b,0xf8,0xf9,0xf9,0x90;\n"
+                       ".byte 0xfd,0xf9,0xfc,0xfd,0xfc,0xf5,0x90,0x9b,0xfc,0x90;\n"
                        ".byte 0xff, 0x25, 00, 00, 00, 00, 0xba,0xee,0x19,0x51,0x13,0x4b,0x12,0xdb;\n"
-                       ".byte 0xf9,0xf9,0xf9,0xfc,0xf8,0xf9,0xfd,0x90,0xf8,0x9b;\n":);
-  Lab_2000052: /* CIL Label */ 
-  selfModify_END_27 = 1;
-  addrPtr56 = (unsigned long *)((unsigned long )(&& Lab_2000069) + 34);
-  *addrPtr56 = (unsigned long )(& left51);
-  addrPtr56 = (unsigned long *)((unsigned long )(&& Lab_2000069) + 66);
-  *addrPtr56 = (unsigned long )(& right52);
-  addrPtr56 = (unsigned long *)((unsigned long )(&& Lab_2000069) + 112);
-  *addrPtr56 = (unsigned long )(& result53);
-  opPtr57 = (unsigned int *)((unsigned long )(&& Lab_2000069) + 96);
-  addrPtr56 = (unsigned long *)((unsigned long )(&& Lab_2000069) + 170);
-  *addrPtr56 = (unsigned long )(&& Lab_2000070);
-  selfModify_BEGIN_36 = 1;
-  Lab_2000069: /* CIL Label */ 
-  __asm__  volatile   (".byte 0x90,0xfd,0xf9,0xf9,0x90,0xf8,0x90,0xf8,0xfc,0xfc;\n"
+                       ".byte 0xf5,0xfc,0xf9,0x9b,0xf5,0x9b,0xfd,0xfd,0xf8,0x9b;\n":);
+  Lab_2000056: /* CIL Label */ 
+  selfModify_END_29 = 1;
+  addrPtr71 = (unsigned long *)((unsigned long )(&& Lab_2000079) + 34);
+  *addrPtr71 = (unsigned long )(& left66);
+  addrPtr71 = (unsigned long *)((unsigned long )(&& Lab_2000079) + 66);
+  *addrPtr71 = (unsigned long )(& right67);
+  addrPtr71 = (unsigned long *)((unsigned long )(&& Lab_2000079) + 112);
+  *addrPtr71 = (unsigned long )(& result68);
+  opPtr72 = (unsigned int *)((unsigned long )(&& Lab_2000079) + 96);
+  addrPtr71 = (unsigned long *)((unsigned long )(&& Lab_2000079) + 170);
+  *addrPtr71 = (unsigned long )(&& Lab_2000080);
+  selfModify_BEGIN_41 = 1;
+  Lab_2000079: /* CIL Label */ 
+  __asm__  volatile   (".byte 0x90,0xf5,0x90,0xfd,0x90,0x90,0xfc,0x90,0xfc,0xf9;\n"
                        ".byte 0x50;\n"
-                       ".byte 0xfd,0xf8,0xf5,0xf9,0xfc,0xfc,0xf8,0xf9,0xf9,0xf9;\n"
+                       ".byte 0xf8,0xfd,0xf9,0xfc,0xf5,0x9b,0xf9,0x9b,0x90,0x9b;\n"
                        ".byte 0x51;\n"
-                       ".byte 0xfd,0xf8,0xfd,0xf8,0xf8,0xfd,0xfc,0xf9,0xf8,0xfc;\n"
+                       ".byte 0x9b,0xf8,0xf5,0xfc,0xf8,0xfc,0xfd,0xf5,0xfc,0xf5;\n"
                        ".byte 0x48, 0xb8, 0xba,0xfe,0xbf,0xc,0x98,0x82,0xce,0xba;\n"
-                       ".byte 0x90,0x9b,0x9b,0xfd,0xfc,0xf5,0xfc,0xf9,0xfd,0xfc;\n"
+                       ".byte 0x90,0x90,0x9b,0xf5,0xf5,0x90,0xf5,0xf5,0x90,0xfd;\n"
                        ".byte 0x8b, 0x00;\n"
-                       ".byte 0xfc,0xfc,0xf9,0xfc,0xf5,0xf5,0xfd,0xf8,0xfc,0x9b;\n"
+                       ".byte 0xf9,0x9b,0xf9,0x90,0x90,0xf9,0xfd,0x90,0x9b,0xf5;\n"
                        ".byte 0x48, 0xb9,  0xaa,0xa0,0x4c,0x99,0xf3,0x41,0x8a,0x1f;\n"
-                       ".byte 0xf5,0x9b,0xf9,0xf5,0x90,0xf8,0xf5,0xf8,0xf9,0xf5;\n"
+                       ".byte 0xf5,0xf5,0xf5,0xfd,0xf8,0xf9,0xfc,0x9b,0xfc,0xf9;\n"
                        ".byte 0x8b, 0x09;\n"
-                       ".byte 0x90,0x9b,0xf5,0xfc,0xf5,0x9b,0xfc,0xf5,0x9b,0x90;\n"
+                       ".byte 0xf5,0xf8,0xfc,0x90,0xf5,0xfd,0x9b,0xf8,0xf9,0xfd;\n"
                        ".byte  0x90, 0x01, 0xc8, 0x90;\n"
-                       ".byte 0xf8,0xfd,0xf9,0x9b,0xfd,0xf9,0xf8,0xfd,0x9b,0xfc;\n"
+                       ".byte 0xf5,0xf9,0xfd,0x90,0x9b,0xf8,0xf8,0xfd,0x90,0xf5;\n"
                        ".byte 0x48, 0xb9, 0xe4,0xe8,0xd7,0xc6,0x78,0x78,0x14,0xcd;\n"
-                       ".byte 0x9b,0x9b,0xfc,0xfc,0xf5,0xf5,0xf8,0xfc,0xf9,0xfd;\n"
+                       ".byte 0xfc,0xf9,0xfd,0xf8,0xf5,0xf5,0xfc,0xf8,0xf9,0x90;\n"
                        ".byte 0x89, 0x01;\n"
-                       ".byte 0xf8,0xf9,0xfd,0xfc,0x90,0xfc,0xfc,0xf9,0x90,0xfc;\n"
+                       ".byte 0xf5,0xf8,0x9b,0xf5,0x9b,0xf9,0xfd,0x9b,0xf9,0xfd;\n"
                        ".byte 0x59;\n"
-                       ".byte 0xf9,0x90,0xf8,0xfc,0x9b,0xfc,0xf5,0xf5,0xf5,0xf8;\n"
+                       ".byte 0xfc,0xfc,0xf5,0xf9,0xf9,0xf5,0xf8,0xfc,0x90,0xfc;\n"
                        ".byte 0x58;\n"
-                       ".byte 0x9b,0xfd,0xf9,0xf9,0xfc,0xfc,0xfc,0xf8,0x90,0xfd;\n"
+                       ".byte 0x90,0x9b,0x9b,0xf8,0xfc,0x90,0xf5,0xf8,0xf8,0xfc;\n"
                        ".byte 0xff, 0x25, 00, 00, 00, 00, 0xfc,0x21,0x9e,0x25,0x66,0xe9,0xfc,0x6a;\n"
-                       ".byte 0xfc,0x9b,0xf9,0xfd,0x9b,0xf5,0xfd,0xfd,0xfd,0xf8;\n":);
-  Lab_2000070: /* CIL Label */ 
-  selfModify_END_36 = 1;
+                       ".byte 0xfd,0xfc,0xf9,0x9b,0x9b,0x90,0xf9,0xf5,0xfd,0xfc;\n":);
+  Lab_2000080: /* CIL Label */ 
+  selfModify_END_41 = 1;
   {
   _3_fib_$sp[0] = _3_fib_$stack[0];
   _3_fib_$pc[0] = _3_fib_$array[0];
@@ -448,7 +497,7 @@ void fib(int n )
   *branchAddr18 = (unsigned long )*(_3_fib_$pc[0]);
   selfModify_BEGIN_25 = 1;
   Lab_2000047: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x60,0xba,0xe9,0x43,0x48,0x23,0x3d,0xb;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xb5,0x14,0x5c,0x2e,0x9e,0xc9,0x4f,0x69;\n":);
   Lab_2000048: /* CIL Label */ 
   selfModify_END_25 = 1;
   }
@@ -456,32 +505,59 @@ void fib(int n )
   {
 
   }
-  _3_fib__call$func_LIT_0: /* CIL Label */ 
+  _3_fib__convert_void_star2void_star$left_STA_0$result_STA_0: /* CIL Label */ 
   {
 
   }
   {
   (_3_fib_$pc[0]) ++;
-  }
-  switch (*((int *)_3_fib_$pc[0])) {
-  case 1: 
-  {
-  printf(*((char const   * __restrict  *)(_3_fib_$locals + 24)), *((int *)(_3_fib_$locals + 32)),
-         *((int *)(_3_fib_$locals + 36)));
-  }
-  break;
-  }
-  {
-  (_3_fib_$pc[0]) ++;
+  (_3_fib_$sp[0] + 0)->_void_star = (_3_fib_$sp[0] + 0)->_void_star;
   }
   {
   branchAddr21 = (unsigned long *)((unsigned long )(&& Lab_2000049) + 6);
   *branchAddr21 = (unsigned long )*(_3_fib_$pc[0]);
   selfModify_BEGIN_26 = 1;
   Lab_2000049: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x2d,0x32,0x9f,0x63,0xe2,0x5f,0x5d,0xd3;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x86,0xc,0xaf,0x2a,0xa5,0x5f,0xfd,0x93;\n":);
   Lab_2000050: /* CIL Label */ 
   selfModify_END_26 = 1;
+  }
+  _3_fib__store_int$left_STA_0$right_STA_1: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  *((int *)(_3_fib_$sp[0] + 0)->_void_star) = (_3_fib_$sp[0] + -1)->_int;
+  _3_fib_$sp[0] += -2;
+  }
+  {
+  branchAddr24 = (unsigned long *)((unsigned long )(&& Lab_2000051) + 6);
+  *branchAddr24 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_27 = 1;
+  Lab_2000051: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x92,0x4c,0xed,0x0,0xc4,0x88,0x70,0x52;\n":);
+  Lab_2000052: /* CIL Label */ 
+  selfModify_END_27 = 1;
+  }
+  _3_fib__local$result_STA_0$value_LIT_0: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  (_3_fib_$sp[0] + 1)->_void_star = (void *)(_3_fib_$locals + *((int *)_3_fib_$pc[0]));
+  (_3_fib_$sp[0]) ++;
+  (_3_fib_$pc[0]) ++;
+  }
+  {
+  branchAddr27 = (unsigned long *)((unsigned long )(&& Lab_2000053) + 6);
+  *branchAddr27 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_28 = 1;
+  Lab_2000053: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xf7,0xbf,0xb8,0x50,0xb2,0x1d,0xcd,0xb8;\n":);
+  Lab_2000054: /* CIL Label */ 
+  selfModify_END_28 = 1;
   }
   _3_fib__branchIfTrue$expr_STA_0$label_LAB_0: /* CIL Label */ 
   {
@@ -491,19 +567,19 @@ void fib(int n )
   (_3_fib_$pc[0]) ++;
   }
   {
-  left22 = (_3_fib_$sp[0] + 0)->_int;
-  right23 = 0;
-  addrPtr27 = (unsigned long *)((unsigned long )(&& Lab_2000053) + 6);
-  *addrPtr27 = (unsigned long )(&& Lab_2000051);
-  addrPtr27 = (unsigned long *)((unsigned long )(&& Lab_2000051) + 216);
-  *addrPtr27 = (unsigned long )(&& Lab_2000054);
-  *opPtr28 = 3331657536U;
-  selfModify_BEGIN_28 = 1;
-  Lab_2000053: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x77,0x95,0x7b,0x4f,0x7e,0xb6,0xa5,0xdc;\n":);
-  Lab_2000054: /* CIL Label */ 
-  selfModify_END_28 = 1;
-  if (result24) {
+  left28 = (_3_fib_$sp[0] + 0)->_int;
+  right29 = 0;
+  addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000057) + 6);
+  *addrPtr33 = (unsigned long )(&& Lab_2000055);
+  addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000055) + 216);
+  *addrPtr33 = (unsigned long )(&& Lab_2000058);
+  *opPtr34 = 3331657536U;
+  selfModify_BEGIN_30 = 1;
+  Lab_2000057: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x86,0x7,0x72,0xf8,0x5e,0x41,0x8c,0x32;\n":);
+  Lab_2000058: /* CIL Label */ 
+  selfModify_END_30 = 1;
+  if (result30) {
     {
     _3_fib_$pc[0] += *((int *)_3_fib_$pc[0]);
     }
@@ -517,220 +593,13 @@ void fib(int n )
   (_3_fib_$sp[0]) --;
   }
   {
-  branchAddr33 = (unsigned long *)((unsigned long )(&& Lab_2000055) + 6);
-  *branchAddr33 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_29 = 1;
-  Lab_2000055: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x22,0x58,0xb3,0xf,0x71,0x81,0xc2,0xd6;\n":);
-  Lab_2000056: /* CIL Label */ 
-  selfModify_END_29 = 1;
-  }
-  _3_fib__load_int$left_STA_0$result_STA_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  (_3_fib_$sp[0] + 0)->_int = *((int *)(_3_fib_$sp[0] + 0)->_void_star);
-  }
-  {
-  branchAddr36 = (unsigned long *)((unsigned long )(&& Lab_2000057) + 6);
-  *branchAddr36 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_30 = 1;
-  Lab_2000057: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xd2,0x6b,0x3f,0xf3,0x9d,0x3e,0x32,0x53;\n":);
-  Lab_2000058: /* CIL Label */ 
-  selfModify_END_30 = 1;
-  }
-  _3_fib__store_void_star$left_STA_0$right_STA_1: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  *((void **)(_3_fib_$sp[0] + 0)->_void_star) = (_3_fib_$sp[0] + -1)->_void_star;
-  _3_fib_$sp[0] += -2;
-  }
-  {
   branchAddr39 = (unsigned long *)((unsigned long )(&& Lab_2000059) + 6);
   *branchAddr39 = (unsigned long )*(_3_fib_$pc[0]);
   selfModify_BEGIN_31 = 1;
   Lab_2000059: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x8e,0xa2,0x7b,0x99,0xf1,0x7,0x12,0xf8;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x60,0x36,0x12,0xef,0x3f,0x29,0xda,0x34;\n":);
   Lab_2000060: /* CIL Label */ 
   selfModify_END_31 = 1;
-  }
-  _3_fib__string$result_STA_0$value_LIT_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  (_3_fib_$sp[0] + 1)->_void_star = (void *)(_3_fib_$strings + *((int *)_3_fib_$pc[0]));
-  (_3_fib_$sp[0]) ++;
-  (_3_fib_$pc[0]) ++;
-  }
-  {
-  branchAddr42 = (unsigned long *)((unsigned long )(&& Lab_2000061) + 6);
-  *branchAddr42 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_32 = 1;
-  Lab_2000061: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xb3,0x27,0x48,0xaf,0xc4,0xa7,0x75,0x9a;\n":);
-  Lab_2000062: /* CIL Label */ 
-  selfModify_END_32 = 1;
-  }
-  _3_fib__Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  {
-  left22 = (_3_fib_$sp[0] + -1)->_int;
-  right23 = (_3_fib_$sp[0] + 0)->_int;
-  addrPtr27 = (unsigned long *)((unsigned long )(&& Lab_2000063) + 6);
-  *addrPtr27 = (unsigned long )(&& Lab_2000051);
-  addrPtr27 = (unsigned long *)((unsigned long )(&& Lab_2000051) + 216);
-  *addrPtr27 = (unsigned long )(&& Lab_2000064);
-  *opPtr28 = 3332116288U;
-  selfModify_BEGIN_33 = 1;
-  Lab_2000063: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x36,0xbc,0x3,0x44,0xe0,0xa0,0x2e,0xbb;\n":);
-  Lab_2000064: /* CIL Label */ 
-  selfModify_END_33 = 1;
-  (_3_fib_$sp[0] + -1)->_int = result24;
-  }
-  (_3_fib_$sp[0]) --;
-  }
-  {
-  branchAddr47 = (unsigned long *)((unsigned long )(&& Lab_2000065) + 6);
-  *branchAddr47 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_34 = 1;
-  Lab_2000065: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x41,0x51,0xd6,0x6e,0x3b,0x24,0x58,0x8;\n":);
-  Lab_2000066: /* CIL Label */ 
-  selfModify_END_34 = 1;
-  }
-  _3_fib__convert_void_star2void_star$left_STA_0$result_STA_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  (_3_fib_$sp[0] + 0)->_void_star = (_3_fib_$sp[0] + 0)->_void_star;
-  }
-  {
-  branchAddr50 = (unsigned long *)((unsigned long )(&& Lab_2000067) + 6);
-  *branchAddr50 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_35 = 1;
-  Lab_2000067: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x38,0xa7,0xe6,0x6a,0xba,0x5e,0xd6,0xde;\n":);
-  Lab_2000068: /* CIL Label */ 
-  selfModify_END_35 = 1;
-  }
-  _3_fib__PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  {
-  left51 = (_3_fib_$sp[0] + 0)->_int;
-  right52 = (_3_fib_$sp[0] + -1)->_int;
-  addrPtr56 = (unsigned long *)((unsigned long )(&& Lab_2000071) + 6);
-  *addrPtr56 = (unsigned long )(&& Lab_2000069);
-  addrPtr56 = (unsigned long *)((unsigned long )(&& Lab_2000069) + 170);
-  *addrPtr56 = (unsigned long )(&& Lab_2000072);
-  *opPtr57 = 2429026704U;
-  selfModify_BEGIN_37 = 1;
-  Lab_2000071: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x76,0xc8,0xf8,0xe1,0x15,0xcb,0x49,0x92;\n":);
-  Lab_2000072: /* CIL Label */ 
-  selfModify_END_37 = 1;
-  (_3_fib_$sp[0] + -1)->_int = result53;
-  }
-  (_3_fib_$sp[0]) --;
-  }
-  {
-  branchAddr62 = (unsigned long *)((unsigned long )(&& Lab_2000073) + 6);
-  *branchAddr62 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_38 = 1;
-  Lab_2000073: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x85,0x0,0x1c,0xbc,0x9c,0xc4,0xec,0xef;\n":);
-  Lab_2000074: /* CIL Label */ 
-  selfModify_END_38 = 1;
-  }
-  _3_fib__returnVoid$: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  }
-  return;
-  {
-  branchAddr65 = (unsigned long *)((unsigned long )(&& Lab_2000075) + 6);
-  *branchAddr65 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_39 = 1;
-  Lab_2000075: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x17,0x99,0x89,0xa9,0x8d,0x88,0xa1,0x35;\n":);
-  Lab_2000076: /* CIL Label */ 
-  selfModify_END_39 = 1;
-  }
-  _3_fib__goto$label_LAB_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  _3_fib_$pc[0] += *((int *)_3_fib_$pc[0]);
-  }
-  {
-  branchAddr68 = (unsigned long *)((unsigned long )(&& Lab_2000077) + 6);
-  *branchAddr68 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_40 = 1;
-  Lab_2000077: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x2b,0x67,0x24,0x57,0x15,0x24,0xb4,0x19;\n":);
-  Lab_2000078: /* CIL Label */ 
-  selfModify_END_40 = 1;
-  }
-  _3_fib__local$result_STA_0$value_LIT_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  (_3_fib_$sp[0] + 1)->_void_star = (void *)(_3_fib_$locals + *((int *)_3_fib_$pc[0]));
-  (_3_fib_$sp[0]) ++;
-  (_3_fib_$pc[0]) ++;
-  }
-  {
-  branchAddr71 = (unsigned long *)((unsigned long )(&& Lab_2000079) + 6);
-  *branchAddr71 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_41 = 1;
-  Lab_2000079: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x15,0xfe,0x34,0xd7,0xe0,0x1e,0x9,0x97;\n":);
-  Lab_2000080: /* CIL Label */ 
-  selfModify_END_41 = 1;
-  }
-  _3_fib__constant_int$result_STA_0$value_LIT_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fib_$pc[0]) ++;
-  (_3_fib_$sp[0] + 1)->_int = *((int *)_3_fib_$pc[0]);
-  (_3_fib_$sp[0]) ++;
-  (_3_fib_$pc[0]) ++;
-  }
-  {
-  branchAddr74 = (unsigned long *)((unsigned long )(&& Lab_2000081) + 6);
-  *branchAddr74 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_42 = 1;
-  Lab_2000081: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x18,0x18,0xc4,0x28,0xed,0xe8,0x8b,0x73;\n":);
-  Lab_2000082: /* CIL Label */ 
-  selfModify_END_42 = 1;
   }
   _3_fib__formal$result_STA_0$value_LIT_0: /* CIL Label */ 
   {
@@ -751,64 +620,212 @@ void fib(int n )
   (_3_fib_$pc[0]) ++;
   }
   {
-  branchAddr77 = (unsigned long *)((unsigned long )(&& Lab_2000083) + 6);
-  *branchAddr77 = (unsigned long )*(_3_fib_$pc[0]);
-  selfModify_BEGIN_43 = 1;
-  Lab_2000083: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x79,0x8d,0x25,0xe9,0xa2,0x22,0xe8,0x52;\n":);
-  Lab_2000084: /* CIL Label */ 
-  selfModify_END_43 = 1;
+  branchAddr42 = (unsigned long *)((unsigned long )(&& Lab_2000061) + 6);
+  *branchAddr42 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_32 = 1;
+  Lab_2000061: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x28,0x2a,0xae,0xad,0xac,0xb8,0x3b,0xdf;\n":);
+  Lab_2000062: /* CIL Label */ 
+  selfModify_END_32 = 1;
   }
-  _3_fib__store_int$right_STA_0$left_STA_1: /* CIL Label */ 
+  _3_fib__returnVoid$: /* CIL Label */ 
   {
 
   }
   {
   (_3_fib_$pc[0]) ++;
-  *((int *)(_3_fib_$sp[0] + -1)->_void_star) = (_3_fib_$sp[0] + 0)->_int;
+  }
+  return;
+  {
+  branchAddr45 = (unsigned long *)((unsigned long )(&& Lab_2000063) + 6);
+  *branchAddr45 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_33 = 1;
+  Lab_2000063: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x7,0xd,0x21,0x9d,0xf4,0xd5,0x7f,0x4c;\n":);
+  Lab_2000064: /* CIL Label */ 
+  selfModify_END_33 = 1;
+  }
+  _3_fib__call$func_LIT_0: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  }
+  switch (*((int *)_3_fib_$pc[0])) {
+  case 1: 
+  {
+  printf(*((char const   * __restrict  *)(_3_fib_$locals + 24)), *((int *)(_3_fib_$locals + 32)),
+         *((int *)(_3_fib_$locals + 36)));
+  }
+  break;
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  }
+  {
+  branchAddr48 = (unsigned long *)((unsigned long )(&& Lab_2000065) + 6);
+  *branchAddr48 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_34 = 1;
+  Lab_2000065: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x28,0xc5,0xb8,0x65,0xc,0xf9,0x1c,0x47;\n":);
+  Lab_2000066: /* CIL Label */ 
+  selfModify_END_34 = 1;
+  }
+  _3_fib__store_void_star$left_STA_0$right_STA_1: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  *((void **)(_3_fib_$sp[0] + 0)->_void_star) = (_3_fib_$sp[0] + -1)->_void_star;
   _3_fib_$sp[0] += -2;
+  }
+  {
+  branchAddr51 = (unsigned long *)((unsigned long )(&& Lab_2000067) + 6);
+  *branchAddr51 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_35 = 1;
+  Lab_2000067: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xda,0xb,0x73,0x16,0xe3,0x75,0x41,0xbc;\n":);
+  Lab_2000068: /* CIL Label */ 
+  selfModify_END_35 = 1;
+  }
+  _3_fib__constant_int$result_STA_0$value_LIT_0: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  (_3_fib_$sp[0] + 1)->_int = *((int *)_3_fib_$pc[0]);
+  (_3_fib_$sp[0]) ++;
+  (_3_fib_$pc[0]) ++;
+  }
+  {
+  branchAddr54 = (unsigned long *)((unsigned long )(&& Lab_2000069) + 6);
+  *branchAddr54 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_36 = 1;
+  Lab_2000069: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xef,0xa3,0xc9,0x7e,0xfb,0x70,0x6a,0x65;\n":);
+  Lab_2000070: /* CIL Label */ 
+  selfModify_END_36 = 1;
+  }
+  _3_fib__Lt_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  {
+  left28 = (_3_fib_$sp[0] + 0)->_int;
+  right29 = (_3_fib_$sp[0] + -1)->_int;
+  addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000071) + 6);
+  *addrPtr33 = (unsigned long )(&& Lab_2000055);
+  addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000055) + 216);
+  *addrPtr33 = (unsigned long )(&& Lab_2000072);
+  *opPtr34 = 3332116288U;
+  selfModify_BEGIN_37 = 1;
+  Lab_2000071: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x15,0x7e,0x5c,0x5c,0xc2,0x13,0x3a,0x88;\n":);
+  Lab_2000072: /* CIL Label */ 
+  selfModify_END_37 = 1;
+  (_3_fib_$sp[0] + -1)->_int = result30;
+  }
+  (_3_fib_$sp[0]) --;
+  }
+  {
+  branchAddr59 = (unsigned long *)((unsigned long )(&& Lab_2000073) + 6);
+  *branchAddr59 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_38 = 1;
+  Lab_2000073: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xf9,0x74,0x46,0x4b,0x32,0x10,0x49,0x4;\n":);
+  Lab_2000074: /* CIL Label */ 
+  selfModify_END_38 = 1;
+  }
+  _3_fib__goto$label_LAB_0: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  _3_fib_$pc[0] += *((int *)_3_fib_$pc[0]);
+  }
+  {
+  branchAddr62 = (unsigned long *)((unsigned long )(&& Lab_2000075) + 6);
+  *branchAddr62 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_39 = 1;
+  Lab_2000075: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xe0,0xca,0xc0,0x3b,0xdd,0x7d,0xb1,0xb0;\n":);
+  Lab_2000076: /* CIL Label */ 
+  selfModify_END_39 = 1;
+  }
+  _3_fib__string$result_STA_0$value_LIT_0: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  (_3_fib_$sp[0] + 1)->_void_star = (void *)(_3_fib_$strings + *((int *)_3_fib_$pc[0]));
+  (_3_fib_$sp[0]) ++;
+  (_3_fib_$pc[0]) ++;
+  }
+  {
+  branchAddr65 = (unsigned long *)((unsigned long )(&& Lab_2000077) + 6);
+  *branchAddr65 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_40 = 1;
+  Lab_2000077: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x79,0xf1,0x1b,0xec,0xc,0xa5,0x5f,0x4c;\n":);
+  Lab_2000078: /* CIL Label */ 
+  selfModify_END_40 = 1;
+  }
+  _3_fib__PlusA_int_int2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  {
+  left66 = (_3_fib_$sp[0] + -1)->_int;
+  right67 = (_3_fib_$sp[0] + 0)->_int;
+  addrPtr71 = (unsigned long *)((unsigned long )(&& Lab_2000081) + 6);
+  *addrPtr71 = (unsigned long )(&& Lab_2000079);
+  addrPtr71 = (unsigned long *)((unsigned long )(&& Lab_2000079) + 170);
+  *addrPtr71 = (unsigned long )(&& Lab_2000082);
+  *opPtr72 = 2429026704U;
+  selfModify_BEGIN_42 = 1;
+  Lab_2000081: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xa2,0x53,0xeb,0x2a,0x5b,0x48,0xbf,0x78;\n":);
+  Lab_2000082: /* CIL Label */ 
+  selfModify_END_42 = 1;
+  (_3_fib_$sp[0] + -1)->_int = result68;
+  }
+  (_3_fib_$sp[0]) --;
+  }
+  {
+  branchAddr77 = (unsigned long *)((unsigned long )(&& Lab_2000083) + 6);
+  *branchAddr77 = (unsigned long )*(_3_fib_$pc[0]);
+  selfModify_BEGIN_43 = 1;
+  Lab_2000083: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x33,0x84,0xcf,0xbc,0xa5,0xeb,0x48,0x88;\n":);
+  Lab_2000084: /* CIL Label */ 
+  selfModify_END_43 = 1;
+  }
+  _3_fib__load_int$left_STA_0$result_STA_0: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fib_$pc[0]) ++;
+  (_3_fib_$sp[0] + 0)->_int = *((int *)(_3_fib_$sp[0] + 0)->_void_star);
   }
   {
   branchAddr80 = (unsigned long *)((unsigned long )(&& Lab_2000085) + 6);
   *branchAddr80 = (unsigned long )*(_3_fib_$pc[0]);
   selfModify_BEGIN_44 = 1;
   Lab_2000085: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xe4,0xec,0xe1,0x1b,0x1,0xfe,0x65,0x94;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xee,0xbe,0x16,0x37,0x41,0x44,0xcf,0xb5;\n":);
   Lab_2000086: /* CIL Label */ 
   selfModify_END_44 = 1;
   }
-}
-}
-void init_tigress(void) 
-{ 
-  struct _2_init_tigress_1_opaque_NodeStruct *p1 ;
-  int i2 ;
-  struct _2_init_tigress_1_opaque_NodeStruct *p3 ;
-  int _2_init_tigress__BEGIN_1 ;
-  int _2_init_tigress__END_1 ;
-  int _2_init_tigress__BARRIER_2 ;
-
-  {
-  _2_init_tigress__BEGIN_1 = 1;
-  p1 = (struct _2_init_tigress_1_opaque_NodeStruct *)malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
-  p1->next = p1;
-  p1->prev = p1;
-  _2_init_tigress_1_opaque_list_1 = p1;
-  i2 = 0;
-  while (i2 < 2) {
-    p3 = (struct _2_init_tigress_1_opaque_NodeStruct *)malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
-    p3->data = i2 * ((_1_entropy ^ 1) + ((_1_entropy & 1) + (_1_entropy & 1)));
-    p3->next = _2_init_tigress_1_opaque_list_1->next;
-    p3->prev = _2_init_tigress_1_opaque_list_1;
-    (_2_init_tigress_1_opaque_list_1->next)->prev = p3;
-    _2_init_tigress_1_opaque_list_1->next = p3;
-    i2 ++;
-  }
-  _2_init_tigress_1_opaque_ptr_1 = _2_init_tigress_1_opaque_list_1->next;
-  _2_init_tigress_1_opaque_ptr_2 = _2_init_tigress_1_opaque_ptr_1;
-  _2_init_tigress__END_1 = 1;
-  _2_init_tigress__BARRIER_2 = 1;
-  return;
 }
 }
 void fac(int n ) 
@@ -823,10 +840,10 @@ void fac(int n )
                                   && _3_fac__constant_int$result_STA_0$value_LIT_0,
                                   (void *)2UL, && _3_fac__local$result_STA_0$value_LIT_0,
                                   (void *)8UL, && _3_fac__store_int$left_STA_0$right_STA_1,
-                                  && _3_fac__goto$label_LAB_0, (void *)1UL, && _3_fac__local$result_STA_0$value_LIT_0,
-                                  (void *)8UL, && _3_fac__load_int$left_STA_0$result_STA_0,
-                                  && _3_fac__formal$result_STA_0$value_LIT_0, (void *)0UL,
-                                  && _3_fac__load_int$left_STA_0$result_STA_0, && _3_fac__Le_int_int2int$right_STA_0$result_STA_0$left_STA_1,
+                                  && _3_fac__goto$label_LAB_0, (void *)1UL, && _3_fac__formal$result_STA_0$value_LIT_0,
+                                  (void *)0UL, && _3_fac__load_int$left_STA_0$result_STA_0,
+                                  && _3_fac__local$result_STA_0$value_LIT_0, (void *)8UL,
+                                  && _3_fac__load_int$left_STA_0$result_STA_0, && _3_fac__Le_int_int2int$left_STA_0$result_STA_0$right_STA_1,
                                   && _3_fac__branchIfTrue$expr_STA_0$label_LAB_0,
                                   (void *)5UL, && _3_fac__goto$label_LAB_0, (void *)1UL,
                                   && _3_fac__goto$label_LAB_0, (void *)24UL, && _3_fac__local$result_STA_0$value_LIT_0,
@@ -841,10 +858,10 @@ void fac(int n )
                                   && _3_fac__local$result_STA_0$value_LIT_0, (void *)8UL,
                                   && _3_fac__store_int$left_STA_0$right_STA_1, && _3_fac__goto$label_LAB_0,
                                   (void *)4294967263UL, && _3_fac__goto$label_LAB_0,
-                                  (void *)4294967261UL, && _3_fac__string$result_STA_0$value_LIT_0,
+                                  (void *)4294967261UL, && _3_fac__local$result_STA_0$value_LIT_0,
+                                  (void *)16UL, && _3_fac__string$result_STA_0$value_LIT_0,
                                   (void *)0UL, && _3_fac__convert_void_star2void_star$left_STA_0$result_STA_0,
-                                  && _3_fac__local$result_STA_0$value_LIT_0, (void *)16UL,
-                                  && _3_fac__store_void_star$left_STA_0$right_STA_1,
+                                  && _3_fac__store_void_star$right_STA_0$left_STA_1,
                                   && _3_fac__formal$result_STA_0$value_LIT_0, (void *)0UL,
                                   && _3_fac__load_int$left_STA_0$result_STA_0, && _3_fac__local$result_STA_0$value_LIT_0,
                                   (void *)24UL, && _3_fac__store_int$left_STA_0$right_STA_1,
@@ -879,141 +896,141 @@ void fac(int n )
   unsigned long *branchAddr37 ;
   int selfModify_BEGIN_10 ;
   int selfModify_END_10 ;
+  unsigned long *branchAddr40 ;
   int selfModify_BEGIN_11 ;
   int selfModify_END_11 ;
-  unsigned long *branchAddr42 ;
-  int left43 ;
-  int right44 ;
-  int result45 ;
+  unsigned long *branchAddr43 ;
   int selfModify_BEGIN_12 ;
   int selfModify_END_12 ;
-  unsigned long *addrPtr48 ;
-  unsigned int *opPtr49 ;
+  unsigned long *branchAddr46 ;
   int selfModify_BEGIN_13 ;
   int selfModify_END_13 ;
+  unsigned long *branchAddr49 ;
+  int left50 ;
+  int right51 ;
+  int result52 ;
   int selfModify_BEGIN_14 ;
   int selfModify_END_14 ;
-  unsigned long *branchAddr54 ;
+  unsigned long *addrPtr55 ;
+  unsigned int *opPtr56 ;
   int selfModify_BEGIN_15 ;
   int selfModify_END_15 ;
-  unsigned long *branchAddr57 ;
   int selfModify_BEGIN_16 ;
   int selfModify_END_16 ;
-  unsigned long *branchAddr60 ;
+  unsigned long *branchAddr61 ;
   int selfModify_BEGIN_17 ;
   int selfModify_END_17 ;
-  unsigned long *branchAddr63 ;
+  unsigned long *branchAddr64 ;
   int selfModify_BEGIN_18 ;
   int selfModify_END_18 ;
-  unsigned long *branchAddr66 ;
+  unsigned long *branchAddr67 ;
   int selfModify_BEGIN_19 ;
   int selfModify_END_19 ;
+  unsigned long *branchAddr70 ;
   int selfModify_BEGIN_20 ;
   int selfModify_END_20 ;
-  unsigned long *branchAddr71 ;
   int selfModify_BEGIN_21 ;
   int selfModify_END_21 ;
-  unsigned long *branchAddr74 ;
+  unsigned long *branchAddr75 ;
   int selfModify_BEGIN_22 ;
   int selfModify_END_22 ;
-  unsigned long *branchAddr77 ;
+  unsigned long *branchAddr78 ;
   int selfModify_BEGIN_23 ;
   int selfModify_END_23 ;
-  unsigned long *branchAddr80 ;
   int selfModify_BEGIN_24 ;
   int selfModify_END_24 ;
   unsigned long *branchAddr83 ;
 
   {
-  if (_2_init_tigress_1_opaque_ptr_1 != _2_init_tigress_1_opaque_ptr_2) {
-    goto *((void *)((_1_entropy | 2) - (_1_entropy & 2)));
+  if ((((_1_alwaysZero & ((_1_entropy & 7) * (_1_entropy | 7) + (_1_entropy & ~ 7) * (~ _1_entropy & 7))) * (_1_alwaysZero | ((_1_entropy & 7) * (_1_entropy | 7) + (_1_entropy & ~ 7) * (~ _1_entropy & 7))) + (_1_alwaysZero & ~ ((_1_entropy & 7) * (_1_entropy | 7) + (_1_entropy & ~ 7) * (~ _1_entropy & 7))) * (~ _1_alwaysZero & ((_1_entropy & 7) * (_1_entropy | 7) + (_1_entropy & ~ 7) * (~ _1_entropy & 7)))) | 0) + (((_1_alwaysZero & ((_1_entropy & 7) * (_1_entropy | 7) + (_1_entropy & ~ 7) * (~ _1_entropy & 7))) * (_1_alwaysZero | ((_1_entropy & 7) * (_1_entropy | 7) + (_1_entropy & ~ 7) * (~ _1_entropy & 7))) + (_1_alwaysZero & ~ ((_1_entropy & 7) * (_1_entropy | 7) + (_1_entropy & ~ 7) * (~ _1_entropy & 7))) * (~ _1_alwaysZero & ((_1_entropy & 7) * (_1_entropy | 7) + (_1_entropy & ~ 7) * (~ _1_entropy & 7)))) & 0)) {
+    goto *((void *)((_1_entropy - ~ 6) - 1UL));
   } else {
 
   }
-  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 34);
+  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 45);
   *addrPtr22 = (unsigned long )(& left17);
-  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 66);
+  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 77);
   *addrPtr22 = (unsigned long )(& right18);
-  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 112);
+  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 147);
   *addrPtr22 = (unsigned long )(& result19);
-  opPtr23 = (unsigned int *)((unsigned long )(&& Lab_2000005) + 96);
-  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 170);
+  opPtr23 = (unsigned int *)((unsigned long )(&& Lab_2000005) + 131);
+  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 216);
   *addrPtr22 = (unsigned long )(&& Lab_2000006);
   selfModify_BEGIN_4 = 1;
   Lab_2000005: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xfc,0x90,0xf5,0xfc,0xfd,0xf5,0x90,0xfc,0x90,0xf9;\n"
+  __asm__  volatile   (".byte 0xfc,0xfc,0xfd,0xf8,0xf8,0xfc,0xf5,0xfc,0x90,0xf8;\n"
                        ".byte 0x50;\n"
-                       ".byte 0x90,0x90,0xfd,0xf5,0xf8,0xf5,0xf9,0x90,0xf8,0xfc;\n"
+                       ".byte 0xf5,0xfc,0xfc,0xfd,0x90,0xf9,0xf5,0x90,0x9b,0x90;\n"
                        ".byte 0x51;\n"
-                       ".byte 0xf9,0xf9,0x9b,0xf9,0xfd,0x90,0xfd,0xfc,0x90,0xfc;\n"
-                       ".byte 0x48, 0xb8, 0xba,0xfe,0xbf,0xc,0x98,0x82,0xce,0xba;\n"
-                       ".byte 0xfc,0xf9,0x9b,0xfc,0x90,0xf9,0x90,0xf9,0xfd,0xf8;\n"
+                       ".byte 0xfc,0x90,0xf9,0xf8,0x9b,0xf9,0x9b,0xfd,0x9b,0x90;\n"
+                       ".byte 0x56;\n"
+                       ".byte 0xfc,0xf5,0xf9,0xf9,0xf9,0x90,0xfc,0x90,0x90,0x90;\n"
+                       ".byte 0x48, 0xb8, 0xc,0x7b,0x21,0x3d,0x54,0x2d,0xc0,0x1;\n"
+                       ".byte 0x9b,0xf8,0x90,0xf5,0xf9,0xf5,0xfc,0x90,0x90,0xfd;\n"
                        ".byte 0x8b, 0x00;\n"
-                       ".byte 0xf9,0xfd,0x9b,0x9b,0xfd,0xf8,0x90,0xf9,0xfd,0xf8;\n"
-                       ".byte 0x48, 0xb9,  0xaa,0xa0,0x4c,0x99,0xf3,0x41,0x8a,0x1f;\n"
-                       ".byte 0xf8,0xfc,0xfd,0xf8,0xf5,0x90,0xfd,0xf5,0xfd,0xfd;\n"
+                       ".byte 0x90,0xf9,0xf5,0xf9,0xf5,0x90,0xfd,0x90,0xf8,0x90;\n"
+                       ".byte 0x48, 0xb9, 0x4f,0x40,0x2f,0xa3,0xd0,0xdc,0x24,0x42;\n"
+                       ".byte 0xf5,0xf5,0x9b,0xfd,0x9b,0xf8,0xf5,0xfd,0xfc,0xfc;\n"
                        ".byte 0x8b, 0x09;\n"
-                       ".byte 0xf5,0xf8,0xf5,0x90,0xf5,0x90,0xfc,0x9b,0xf8,0xfd;\n"
-                       ".byte  0x90, 0x01, 0xc8, 0x90;\n"
-                       ".byte 0xf9,0xf9,0xf8,0xf8,0xf8,0xf9,0x9b,0x9b,0x9b,0xf9;\n"
-                       ".byte 0x48, 0xb9, 0xe4,0xe8,0xd7,0xc6,0x78,0x78,0x14,0xcd;\n"
-                       ".byte 0x90,0xf5,0xfc,0x9b,0xf8,0xf8,0xf5,0xf5,0xfc,0xfc;\n"
-                       ".byte 0x89, 0x01;\n"
-                       ".byte 0xfc,0xf8,0xf9,0x9b,0x90,0x90,0xfd,0x90,0x90,0x9b;\n"
+                       ".byte 0xfc,0xf8,0xf8,0x9b,0xf8,0xf9,0x9b,0xf9,0x9b,0xf5;\n"
+                       ".byte 0x31, 0xf6;\n"
+                       ".byte 0xf8,0xfc,0xfc,0xf8,0xfd,0xf8,0xf9,0x9b,0xfc,0xfd;\n"
+                       ".byte 0x39, 0xc8;\n"
+                       ".byte 0x90,0x90,0xfd,0xfc,0xf9,0x90,0x90,0xfc,0xfc,0xfc;\n"
+                       ".byte  0x40, 0x0f, 0x9c, 0xc6;\n"
+                       ".byte 0xfc,0xfd,0xf9,0xfc,0xfc,0xfc,0x90,0xf5,0x90,0xf5;\n"
+                       ".byte 0x48, 0xb9, 0x7f,0x91,0x1c,0xaf,0xab,0x5f,0x2d,0x6a;\n"
+                       ".byte 0x90,0x9b,0x90,0xfc,0xfd,0xf8,0x9b,0xfd,0xf9,0x90;\n"
+                       ".byte 0x89, 0x31;\n"
+                       ".byte 0xfd,0x90,0xf5,0xfd,0x9b,0x90,0xfd,0xfc,0xfd,0x9b;\n"
+                       ".byte 0x5e;\n"
+                       ".byte 0x9b,0xf5,0xfd,0xf9,0xf8,0xf5,0x90,0xfd,0xf8,0xf9;\n"
                        ".byte 0x59;\n"
-                       ".byte 0xf9,0xf5,0xfc,0xf8,0x9b,0x90,0x90,0xfc,0xf5,0x9b;\n"
+                       ".byte 0xf5,0xf8,0xf5,0xfc,0x90,0xf5,0xfd,0xfd,0x90,0xf9;\n"
                        ".byte 0x58;\n"
-                       ".byte 0xf8,0xf8,0xf9,0x9b,0xf8,0xf8,0xfd,0x90,0xf8,0xf5;\n"
-                       ".byte 0xff, 0x25, 00, 00, 00, 00, 0xfc,0x21,0x9e,0x25,0x66,0xe9,0xfc,0x6a;\n"
-                       ".byte 0xf8,0x9b,0x9b,0xf8,0xf9,0xf9,0xf8,0x90,0xf8,0x90;\n":);
+                       ".byte 0xf9,0xfc,0xf9,0xfd,0xf5,0x9b,0xf5,0x9b,0xf8,0xf9;\n"
+                       ".byte 0xff, 0x25, 00, 00, 00, 00, 0xba,0xee,0x19,0x51,0x13,0x4b,0x12,0xdb;\n"
+                       ".byte 0xfc,0xf9,0xf8,0xf9,0x90,0x9b,0xf5,0x9b,0xf9,0x90;\n":);
   Lab_2000006: /* CIL Label */ 
   selfModify_END_4 = 1;
-  addrPtr48 = (unsigned long *)((unsigned long )(&& Lab_2000021) + 45);
-  *addrPtr48 = (unsigned long )(& left43);
-  addrPtr48 = (unsigned long *)((unsigned long )(&& Lab_2000021) + 77);
-  *addrPtr48 = (unsigned long )(& right44);
-  addrPtr48 = (unsigned long *)((unsigned long )(&& Lab_2000021) + 147);
-  *addrPtr48 = (unsigned long )(& result45);
-  opPtr49 = (unsigned int *)((unsigned long )(&& Lab_2000021) + 131);
-  addrPtr48 = (unsigned long *)((unsigned long )(&& Lab_2000021) + 216);
-  *addrPtr48 = (unsigned long )(&& Lab_2000022);
-  selfModify_BEGIN_12 = 1;
-  Lab_2000021: /* CIL Label */ 
-  __asm__  volatile   (".byte 0x9b,0xf9,0x9b,0xf9,0x90,0x9b,0xf9,0xfc,0xfc,0xf5;\n"
+  addrPtr55 = (unsigned long *)((unsigned long )(&& Lab_2000025) + 34);
+  *addrPtr55 = (unsigned long )(& left50);
+  addrPtr55 = (unsigned long *)((unsigned long )(&& Lab_2000025) + 66);
+  *addrPtr55 = (unsigned long )(& right51);
+  addrPtr55 = (unsigned long *)((unsigned long )(&& Lab_2000025) + 112);
+  *addrPtr55 = (unsigned long )(& result52);
+  opPtr56 = (unsigned int *)((unsigned long )(&& Lab_2000025) + 96);
+  addrPtr55 = (unsigned long *)((unsigned long )(&& Lab_2000025) + 170);
+  *addrPtr55 = (unsigned long )(&& Lab_2000026);
+  selfModify_BEGIN_14 = 1;
+  Lab_2000025: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xf5,0xf8,0xf5,0xf8,0x9b,0xf5,0x90,0xfd,0xf9,0xf5;\n"
                        ".byte 0x50;\n"
-                       ".byte 0x90,0x90,0x9b,0x90,0x9b,0x9b,0xfd,0xfc,0xfc,0x90;\n"
+                       ".byte 0xf9,0x90,0xf8,0x9b,0xfc,0x90,0xf9,0x90,0xf5,0xf9;\n"
                        ".byte 0x51;\n"
-                       ".byte 0xf5,0xf5,0xf9,0xf8,0xfd,0xfc,0xf8,0xf8,0xf9,0xf8;\n"
-                       ".byte 0x56;\n"
-                       ".byte 0xf5,0xf5,0xf5,0xf5,0x9b,0xfd,0xf9,0xfd,0x9b,0x90;\n"
-                       ".byte 0x48, 0xb8, 0xc,0x7b,0x21,0x3d,0x54,0x2d,0xc0,0x1;\n"
-                       ".byte 0x90,0xf5,0xfd,0x90,0xf5,0x9b,0xf8,0xfd,0x90,0xfd;\n"
+                       ".byte 0xfc,0xf8,0xf8,0xf8,0xf9,0xf5,0xfd,0xf5,0x9b,0x9b;\n"
+                       ".byte 0x48, 0xb8, 0xba,0xfe,0xbf,0xc,0x98,0x82,0xce,0xba;\n"
+                       ".byte 0xf9,0xfd,0xf8,0xfd,0x90,0xf5,0xfd,0xf9,0x90,0xf8;\n"
                        ".byte 0x8b, 0x00;\n"
-                       ".byte 0x90,0x9b,0xf5,0x90,0xf5,0xf9,0xf9,0x90,0xf9,0xf5;\n"
-                       ".byte 0x48, 0xb9, 0x4f,0x40,0x2f,0xa3,0xd0,0xdc,0x24,0x42;\n"
-                       ".byte 0xf8,0x90,0xf5,0xf8,0x9b,0xf9,0xf9,0xfd,0xfd,0xf5;\n"
+                       ".byte 0xfc,0x90,0xfd,0xf8,0x90,0xfc,0x9b,0x9b,0x90,0x9b;\n"
+                       ".byte 0x48, 0xb9,  0xaa,0xa0,0x4c,0x99,0xf3,0x41,0x8a,0x1f;\n"
+                       ".byte 0xfc,0xfc,0xf8,0xf9,0x90,0xf8,0xfd,0x9b,0xf9,0x9b;\n"
                        ".byte 0x8b, 0x09;\n"
-                       ".byte 0xf5,0xf5,0x90,0xf5,0xfc,0x90,0xfd,0x90,0xf9,0x90;\n"
-                       ".byte 0x31, 0xf6;\n"
-                       ".byte 0xfd,0x9b,0xf5,0xfd,0xf9,0xf8,0x90,0x90,0xfc,0x90;\n"
-                       ".byte 0x39, 0xc8;\n"
-                       ".byte 0xf5,0x90,0xf8,0xf5,0xf5,0xf9,0xfc,0xf9,0xf5,0xf9;\n"
-                       ".byte  0x40, 0x0f, 0x9c, 0xc6;\n"
-                       ".byte 0x90,0xfd,0x90,0xfc,0xf8,0x90,0xf5,0x90,0xf9,0xf8;\n"
-                       ".byte 0x48, 0xb9, 0x7f,0x91,0x1c,0xaf,0xab,0x5f,0x2d,0x6a;\n"
-                       ".byte 0x9b,0xf8,0xf8,0xf5,0xf9,0xfd,0xf9,0xf5,0xf8,0xfc;\n"
-                       ".byte 0x89, 0x31;\n"
-                       ".byte 0x9b,0xf8,0x9b,0xfd,0xfd,0xfd,0xfd,0xf5,0xf9,0xf5;\n"
-                       ".byte 0x5e;\n"
-                       ".byte 0x90,0xfd,0xf5,0xfd,0x90,0xfd,0x9b,0x9b,0xf9,0x9b;\n"
+                       ".byte 0xfd,0xf8,0x9b,0x9b,0xfd,0xf5,0x90,0x9b,0xf9,0x9b;\n"
+                       ".byte  0x90, 0x01, 0xc8, 0x90;\n"
+                       ".byte 0x90,0xfc,0xfd,0x90,0xfd,0xfd,0xf8,0x9b,0x9b,0xf8;\n"
+                       ".byte 0x48, 0xb9, 0xe4,0xe8,0xd7,0xc6,0x78,0x78,0x14,0xcd;\n"
+                       ".byte 0xf8,0xf9,0xf9,0xfd,0x9b,0x90,0x90,0x90,0xfc,0x9b;\n"
+                       ".byte 0x89, 0x01;\n"
+                       ".byte 0x90,0xf5,0xf9,0x9b,0xfc,0xf5,0x9b,0x90,0x90,0xf8;\n"
                        ".byte 0x59;\n"
-                       ".byte 0xfd,0x9b,0xf5,0xf8,0xf5,0x90,0x90,0xf9,0xf5,0xf8;\n"
+                       ".byte 0xfc,0x9b,0xfd,0xf9,0x9b,0x90,0xf5,0x90,0x9b,0xf9;\n"
                        ".byte 0x58;\n"
-                       ".byte 0xfc,0x9b,0xfc,0xfc,0xf8,0xf9,0xf9,0xf5,0xf8,0xfd;\n"
-                       ".byte 0xff, 0x25, 00, 00, 00, 00, 0xba,0xee,0x19,0x51,0x13,0x4b,0x12,0xdb;\n"
-                       ".byte 0xfd,0x90,0xfd,0xf5,0xfd,0xf8,0xf8,0xf5,0xf8,0x90;\n":);
-  Lab_2000022: /* CIL Label */ 
-  selfModify_END_12 = 1;
+                       ".byte 0xf9,0xf8,0xf8,0x9b,0xf9,0xf8,0xf5,0x9b,0xf8,0x90;\n"
+                       ".byte 0xff, 0x25, 00, 00, 00, 00, 0xfc,0x21,0x9e,0x25,0x66,0xe9,0xfc,0x6a;\n"
+                       ".byte 0xf5,0xfd,0xf8,0xf5,0xf8,0xf8,0xf5,0x9b,0xf5,0x9b;\n":);
+  Lab_2000026: /* CIL Label */ 
+  selfModify_END_14 = 1;
   {
   _3_fac_$sp[0] = _3_fac_$stack[0];
   _3_fac_$pc[0] = _3_fac_$array[0];
@@ -1023,7 +1040,7 @@ void fac(int n )
   *branchAddr16 = (unsigned long )*(_3_fac_$pc[0]);
   selfModify_BEGIN_3 = 1;
   Lab_2000003: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xa9,0x80,0x35,0x55,0xda,0x13,0x51,0x42;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x4f,0xd9,0x55,0xb2,0xf7,0x1e,0x6b,0x5d;\n":);
   Lab_2000004: /* CIL Label */ 
   selfModify_END_3 = 1;
   }
@@ -1031,23 +1048,23 @@ void fac(int n )
   {
 
   }
-  _3_fac__PlusA_int_int2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ 
+  _3_fac__Le_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ 
   {
 
   }
   {
   (_3_fac_$pc[0]) ++;
   {
-  left17 = (_3_fac_$sp[0] + -1)->_int;
-  right18 = (_3_fac_$sp[0] + 0)->_int;
+  left17 = (_3_fac_$sp[0] + 0)->_int;
+  right18 = (_3_fac_$sp[0] + -1)->_int;
   addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000007) + 6);
   *addrPtr22 = (unsigned long )(&& Lab_2000005);
-  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 170);
+  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 216);
   *addrPtr22 = (unsigned long )(&& Lab_2000008);
-  *opPtr23 = 2429026704U;
+  *opPtr23 = 3332247360U;
   selfModify_BEGIN_5 = 1;
   Lab_2000007: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x5b,0x2a,0x4b,0x5e,0x19,0x5d,0xa,0xbd;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x3a,0x53,0x7e,0xac,0xf,0x8c,0x57,0xd5;\n":);
   Lab_2000008: /* CIL Label */ 
   selfModify_END_5 = 1;
   (_3_fac_$sp[0] + -1)->_int = result19;
@@ -1059,9 +1076,26 @@ void fac(int n )
   *branchAddr28 = (unsigned long )*(_3_fac_$pc[0]);
   selfModify_BEGIN_6 = 1;
   Lab_2000009: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xcd,0x62,0x5b,0xa8,0x69,0x42,0xef,0xce;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xd,0x61,0x8b,0xe5,0x92,0x70,0x3,0x3a;\n":);
   Lab_2000010: /* CIL Label */ 
   selfModify_END_6 = 1;
+  }
+  _3_fac__returnVoid$: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fac_$pc[0]) ++;
+  }
+  return;
+  {
+  branchAddr31 = (unsigned long *)((unsigned long )(&& Lab_2000011) + 6);
+  *branchAddr31 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_7 = 1;
+  Lab_2000011: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x28,0xcb,0xbf,0xc1,0x8,0x97,0xac,0xfc;\n":);
+  Lab_2000012: /* CIL Label */ 
+  selfModify_END_7 = 1;
   }
   _3_fac__goto$label_LAB_0: /* CIL Label */ 
   {
@@ -1072,13 +1106,50 @@ void fac(int n )
   _3_fac_$pc[0] += *((int *)_3_fac_$pc[0]);
   }
   {
-  branchAddr31 = (unsigned long *)((unsigned long )(&& Lab_2000011) + 6);
-  *branchAddr31 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_7 = 1;
-  Lab_2000011: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xc8,0x29,0xbf,0x24,0x4f,0xe6,0xd9,0x6;\n":);
-  Lab_2000012: /* CIL Label */ 
-  selfModify_END_7 = 1;
+  branchAddr34 = (unsigned long *)((unsigned long )(&& Lab_2000013) + 6);
+  *branchAddr34 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_8 = 1;
+  Lab_2000013: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xc5,0xee,0xd7,0xd6,0x21,0x4,0xe3,0xfb;\n":);
+  Lab_2000014: /* CIL Label */ 
+  selfModify_END_8 = 1;
+  }
+  _3_fac__constant_int$result_STA_0$value_LIT_0: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fac_$pc[0]) ++;
+  (_3_fac_$sp[0] + 1)->_int = *((int *)_3_fac_$pc[0]);
+  (_3_fac_$sp[0]) ++;
+  (_3_fac_$pc[0]) ++;
+  }
+  {
+  branchAddr37 = (unsigned long *)((unsigned long )(&& Lab_2000015) + 6);
+  *branchAddr37 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_9 = 1;
+  Lab_2000015: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x8e,0xe8,0xe,0x60,0x68,0x64,0xb1,0x64;\n":);
+  Lab_2000016: /* CIL Label */ 
+  selfModify_END_9 = 1;
+  }
+  _3_fac__store_int$left_STA_0$right_STA_1: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fac_$pc[0]) ++;
+  *((int *)(_3_fac_$sp[0] + 0)->_void_star) = (_3_fac_$sp[0] + -1)->_int;
+  _3_fac_$sp[0] += -2;
+  }
+  {
+  branchAddr40 = (unsigned long *)((unsigned long )(&& Lab_2000017) + 6);
+  *branchAddr40 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_10 = 1;
+  Lab_2000017: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x80,0x73,0xf1,0x8b,0x65,0xda,0xc1,0x80;\n":);
+  Lab_2000018: /* CIL Label */ 
+  selfModify_END_10 = 1;
   }
   _3_fac__call$func_LIT_0: /* CIL Label */ 
   {
@@ -1099,31 +1170,49 @@ void fac(int n )
   (_3_fac_$pc[0]) ++;
   }
   {
-  branchAddr34 = (unsigned long *)((unsigned long )(&& Lab_2000013) + 6);
-  *branchAddr34 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_8 = 1;
-  Lab_2000013: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x69,0x91,0xa3,0x24,0xc5,0x99,0x2,0x65;\n":);
-  Lab_2000014: /* CIL Label */ 
-  selfModify_END_8 = 1;
+  branchAddr43 = (unsigned long *)((unsigned long )(&& Lab_2000019) + 6);
+  *branchAddr43 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_11 = 1;
+  Lab_2000019: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x4d,0xda,0x50,0x86,0x38,0x48,0x73,0xb9;\n":);
+  Lab_2000020: /* CIL Label */ 
+  selfModify_END_11 = 1;
   }
-  _3_fac__store_int$left_STA_0$right_STA_1: /* CIL Label */ 
+  _3_fac__string$result_STA_0$value_LIT_0: /* CIL Label */ 
   {
 
   }
   {
   (_3_fac_$pc[0]) ++;
-  *((int *)(_3_fac_$sp[0] + 0)->_void_star) = (_3_fac_$sp[0] + -1)->_int;
-  _3_fac_$sp[0] += -2;
+  (_3_fac_$sp[0] + 1)->_void_star = (void *)(_3_fac_$strings + *((int *)_3_fac_$pc[0]));
+  (_3_fac_$sp[0]) ++;
+  (_3_fac_$pc[0]) ++;
   }
   {
-  branchAddr37 = (unsigned long *)((unsigned long )(&& Lab_2000015) + 6);
-  *branchAddr37 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_9 = 1;
-  Lab_2000015: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x9b,0x5c,0x73,0xa9,0x40,0xdd,0x20,0xe5;\n":);
-  Lab_2000016: /* CIL Label */ 
-  selfModify_END_9 = 1;
+  branchAddr46 = (unsigned long *)((unsigned long )(&& Lab_2000021) + 6);
+  *branchAddr46 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_12 = 1;
+  Lab_2000021: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x46,0x52,0x38,0xf7,0x45,0x16,0xa1,0x4f;\n":);
+  Lab_2000022: /* CIL Label */ 
+  selfModify_END_12 = 1;
+  }
+  _3_fac__convert_void_star2void_star$left_STA_0$result_STA_0: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fac_$pc[0]) ++;
+  (_3_fac_$sp[0] + 0)->_void_star = (_3_fac_$sp[0] + 0)->_void_star;
+  }
+  {
+  branchAddr49 = (unsigned long *)((unsigned long )(&& Lab_2000023) + 6);
+  *branchAddr49 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_13 = 1;
+  Lab_2000023: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x41,0x45,0xfa,0xb7,0xee,0x61,0x71,0xab;\n":);
+  Lab_2000024: /* CIL Label */ 
+  selfModify_END_13 = 1;
   }
   _3_fac__Mult_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ 
   {
@@ -1132,91 +1221,47 @@ void fac(int n )
   {
   (_3_fac_$pc[0]) ++;
   {
-  left17 = (_3_fac_$sp[0] + 0)->_int;
-  right18 = (_3_fac_$sp[0] + -1)->_int;
-  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000017) + 6);
-  *addrPtr22 = (unsigned long )(&& Lab_2000005);
-  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 170);
-  *addrPtr22 = (unsigned long )(&& Lab_2000018);
-  *opPtr23 = 3249475472U;
-  selfModify_BEGIN_10 = 1;
-  Lab_2000017: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xdc,0xd7,0x71,0xf4,0x8,0xda,0x44,0xf4;\n":);
-  Lab_2000018: /* CIL Label */ 
-  selfModify_END_10 = 1;
-  (_3_fac_$sp[0] + -1)->_int = result19;
-  }
-  (_3_fac_$sp[0]) --;
-  }
-  {
-  branchAddr42 = (unsigned long *)((unsigned long )(&& Lab_2000019) + 6);
-  *branchAddr42 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_11 = 1;
-  Lab_2000019: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x6f,0xe4,0x62,0x61,0x7b,0x18,0xea,0x89;\n":);
-  Lab_2000020: /* CIL Label */ 
-  selfModify_END_11 = 1;
-  }
-  _3_fac__branchIfTrue$expr_STA_0$label_LAB_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fac_$pc[0]) ++;
-  }
-  {
-  left43 = (_3_fac_$sp[0] + 0)->_int;
-  right44 = 0;
-  addrPtr48 = (unsigned long *)((unsigned long )(&& Lab_2000023) + 6);
-  *addrPtr48 = (unsigned long )(&& Lab_2000021);
-  addrPtr48 = (unsigned long *)((unsigned long )(&& Lab_2000021) + 216);
-  *addrPtr48 = (unsigned long )(&& Lab_2000024);
-  *opPtr49 = 3331657536U;
-  selfModify_BEGIN_13 = 1;
-  Lab_2000023: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xc8,0x2f,0xe1,0x70,0xe4,0x24,0xda,0xd;\n":);
-  Lab_2000024: /* CIL Label */ 
-  selfModify_END_13 = 1;
-  if (result45) {
-    {
-    _3_fac_$pc[0] += *((int *)_3_fac_$pc[0]);
-    }
-  } else {
-    {
-    (_3_fac_$pc[0]) ++;
-    }
-  }
-  }
-  {
-  (_3_fac_$sp[0]) --;
-  }
-  {
-  branchAddr54 = (unsigned long *)((unsigned long )(&& Lab_2000025) + 6);
-  *branchAddr54 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_14 = 1;
-  Lab_2000025: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xd,0x3c,0xfd,0x8a,0x49,0x25,0x3c,0xbc;\n":);
-  Lab_2000026: /* CIL Label */ 
-  selfModify_END_14 = 1;
-  }
-  _3_fac__constant_int$result_STA_0$value_LIT_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fac_$pc[0]) ++;
-  (_3_fac_$sp[0] + 1)->_int = *((int *)_3_fac_$pc[0]);
-  (_3_fac_$sp[0]) ++;
-  (_3_fac_$pc[0]) ++;
-  }
-  {
-  branchAddr57 = (unsigned long *)((unsigned long )(&& Lab_2000027) + 6);
-  *branchAddr57 = (unsigned long )*(_3_fac_$pc[0]);
+  left50 = (_3_fac_$sp[0] + 0)->_int;
+  right51 = (_3_fac_$sp[0] + -1)->_int;
+  addrPtr55 = (unsigned long *)((unsigned long )(&& Lab_2000027) + 6);
+  *addrPtr55 = (unsigned long )(&& Lab_2000025);
+  addrPtr55 = (unsigned long *)((unsigned long )(&& Lab_2000025) + 170);
+  *addrPtr55 = (unsigned long )(&& Lab_2000028);
+  *opPtr56 = 3249475472U;
   selfModify_BEGIN_15 = 1;
   Lab_2000027: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x9e,0x1d,0xb5,0x3c,0xc4,0xeb,0x76,0xa9;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xde,0x88,0xed,0x22,0xbb,0x41,0x59,0x55;\n":);
   Lab_2000028: /* CIL Label */ 
   selfModify_END_15 = 1;
+  (_3_fac_$sp[0] + -1)->_int = result52;
+  }
+  (_3_fac_$sp[0]) --;
+  }
+  {
+  branchAddr61 = (unsigned long *)((unsigned long )(&& Lab_2000029) + 6);
+  *branchAddr61 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_16 = 1;
+  Lab_2000029: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x44,0xd0,0xed,0x5b,0xcf,0x44,0x9a,0xd1;\n":);
+  Lab_2000030: /* CIL Label */ 
+  selfModify_END_16 = 1;
+  }
+  _3_fac__load_int$left_STA_0$result_STA_0: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fac_$pc[0]) ++;
+  (_3_fac_$sp[0] + 0)->_int = *((int *)(_3_fac_$sp[0] + 0)->_void_star);
+  }
+  {
+  branchAddr64 = (unsigned long *)((unsigned long )(&& Lab_2000031) + 6);
+  *branchAddr64 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_17 = 1;
+  Lab_2000031: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xa4,0xf0,0x94,0xb9,0xe0,0x19,0x78,0xa6;\n":);
+  Lab_2000032: /* CIL Label */ 
+  selfModify_END_17 = 1;
   }
   _3_fac__formal$result_STA_0$value_LIT_0: /* CIL Label */ 
   {
@@ -1237,30 +1282,63 @@ void fac(int n )
   (_3_fac_$pc[0]) ++;
   }
   {
-  branchAddr60 = (unsigned long *)((unsigned long )(&& Lab_2000029) + 6);
-  *branchAddr60 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_16 = 1;
-  Lab_2000029: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xa4,0x84,0xcc,0xda,0x4f,0x83,0xf4,0x9f;\n":);
-  Lab_2000030: /* CIL Label */ 
-  selfModify_END_16 = 1;
+  branchAddr67 = (unsigned long *)((unsigned long )(&& Lab_2000033) + 6);
+  *branchAddr67 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_18 = 1;
+  Lab_2000033: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x16,0x78,0x23,0xfa,0x43,0xca,0x5f,0xfc;\n":);
+  Lab_2000034: /* CIL Label */ 
+  selfModify_END_18 = 1;
   }
-  _3_fac__returnVoid$: /* CIL Label */ 
+  _3_fac__store_void_star$right_STA_0$left_STA_1: /* CIL Label */ 
   {
 
   }
   {
   (_3_fac_$pc[0]) ++;
+  *((void **)(_3_fac_$sp[0] + -1)->_void_star) = (_3_fac_$sp[0] + 0)->_void_star;
+  _3_fac_$sp[0] += -2;
   }
-  return;
   {
-  branchAddr63 = (unsigned long *)((unsigned long )(&& Lab_2000031) + 6);
-  *branchAddr63 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_17 = 1;
-  Lab_2000031: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x7d,0x28,0xf7,0xd7,0x22,0xb5,0x88,0x73;\n":);
-  Lab_2000032: /* CIL Label */ 
-  selfModify_END_17 = 1;
+  branchAddr70 = (unsigned long *)((unsigned long )(&& Lab_2000035) + 6);
+  *branchAddr70 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_19 = 1;
+  Lab_2000035: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x5,0x96,0xde,0xfa,0x96,0x18,0xe0,0x47;\n":);
+  Lab_2000036: /* CIL Label */ 
+  selfModify_END_19 = 1;
+  }
+  _3_fac__PlusA_int_int2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ 
+  {
+
+  }
+  {
+  (_3_fac_$pc[0]) ++;
+  {
+  left50 = (_3_fac_$sp[0] + -1)->_int;
+  right51 = (_3_fac_$sp[0] + 0)->_int;
+  addrPtr55 = (unsigned long *)((unsigned long )(&& Lab_2000037) + 6);
+  *addrPtr55 = (unsigned long )(&& Lab_2000025);
+  addrPtr55 = (unsigned long *)((unsigned long )(&& Lab_2000025) + 170);
+  *addrPtr55 = (unsigned long )(&& Lab_2000038);
+  *opPtr56 = 2429026704U;
+  selfModify_BEGIN_20 = 1;
+  Lab_2000037: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xec,0x1f,0xed,0xf5,0xba,0x73,0xf2,0x7c;\n":);
+  Lab_2000038: /* CIL Label */ 
+  selfModify_END_20 = 1;
+  (_3_fac_$sp[0] + -1)->_int = result52;
+  }
+  (_3_fac_$sp[0]) --;
+  }
+  {
+  branchAddr75 = (unsigned long *)((unsigned long )(&& Lab_2000039) + 6);
+  *branchAddr75 = (unsigned long )*(_3_fac_$pc[0]);
+  selfModify_BEGIN_21 = 1;
+  Lab_2000039: /* CIL Label */ 
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x50,0xa3,0x46,0x8f,0x17,0x90,0xba,0xc8;\n":);
+  Lab_2000040: /* CIL Label */ 
+  selfModify_END_21 = 1;
   }
   _3_fac__local$result_STA_0$value_LIT_0: /* CIL Label */ 
   {
@@ -1273,133 +1351,56 @@ void fac(int n )
   (_3_fac_$pc[0]) ++;
   }
   {
-  branchAddr66 = (unsigned long *)((unsigned long )(&& Lab_2000033) + 6);
-  *branchAddr66 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_18 = 1;
-  Lab_2000033: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x41,0x7e,0x11,0x93,0x20,0x41,0x58,0x78;\n":);
-  Lab_2000034: /* CIL Label */ 
-  selfModify_END_18 = 1;
-  }
-  _3_fac__Le_int_int2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fac_$pc[0]) ++;
-  {
-  left43 = (_3_fac_$sp[0] + -1)->_int;
-  right44 = (_3_fac_$sp[0] + 0)->_int;
-  addrPtr48 = (unsigned long *)((unsigned long )(&& Lab_2000035) + 6);
-  *addrPtr48 = (unsigned long )(&& Lab_2000021);
-  addrPtr48 = (unsigned long *)((unsigned long )(&& Lab_2000021) + 216);
-  *addrPtr48 = (unsigned long )(&& Lab_2000036);
-  *opPtr49 = 3332247360U;
-  selfModify_BEGIN_19 = 1;
-  Lab_2000035: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x2f,0xfd,0x1b,0x54,0x7c,0x84,0x5e,0x77;\n":);
-  Lab_2000036: /* CIL Label */ 
-  selfModify_END_19 = 1;
-  (_3_fac_$sp[0] + -1)->_int = result45;
-  }
-  (_3_fac_$sp[0]) --;
-  }
-  {
-  branchAddr71 = (unsigned long *)((unsigned long )(&& Lab_2000037) + 6);
-  *branchAddr71 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_20 = 1;
-  Lab_2000037: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xa3,0x73,0x37,0x19,0xa5,0xd8,0x86,0x86;\n":);
-  Lab_2000038: /* CIL Label */ 
-  selfModify_END_20 = 1;
-  }
-  _3_fac__string$result_STA_0$value_LIT_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fac_$pc[0]) ++;
-  (_3_fac_$sp[0] + 1)->_void_star = (void *)(_3_fac_$strings + *((int *)_3_fac_$pc[0]));
-  (_3_fac_$sp[0]) ++;
-  (_3_fac_$pc[0]) ++;
-  }
-  {
-  branchAddr74 = (unsigned long *)((unsigned long )(&& Lab_2000039) + 6);
-  *branchAddr74 = (unsigned long )*(_3_fac_$pc[0]);
-  selfModify_BEGIN_21 = 1;
-  Lab_2000039: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x69,0xba,0x61,0x1c,0xa1,0x83,0xfa,0xea;\n":);
-  Lab_2000040: /* CIL Label */ 
-  selfModify_END_21 = 1;
-  }
-  _3_fac__convert_void_star2void_star$left_STA_0$result_STA_0: /* CIL Label */ 
-  {
-
-  }
-  {
-  (_3_fac_$pc[0]) ++;
-  (_3_fac_$sp[0] + 0)->_void_star = (_3_fac_$sp[0] + 0)->_void_star;
-  }
-  {
-  branchAddr77 = (unsigned long *)((unsigned long )(&& Lab_2000041) + 6);
-  *branchAddr77 = (unsigned long )*(_3_fac_$pc[0]);
+  branchAddr78 = (unsigned long *)((unsigned long )(&& Lab_2000041) + 6);
+  *branchAddr78 = (unsigned long )*(_3_fac_$pc[0]);
   selfModify_BEGIN_22 = 1;
   Lab_2000041: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x95,0x6a,0x9e,0x90,0xfe,0xcb,0x10,0xda;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0xaf,0x1a,0xc3,0xf0,0xdc,0xb2,0xfc,0x39;\n":);
   Lab_2000042: /* CIL Label */ 
   selfModify_END_22 = 1;
   }
-  _3_fac__load_int$left_STA_0$result_STA_0: /* CIL Label */ 
+  _3_fac__branchIfTrue$expr_STA_0$label_LAB_0: /* CIL Label */ 
   {
 
   }
   {
   (_3_fac_$pc[0]) ++;
-  (_3_fac_$sp[0] + 0)->_int = *((int *)(_3_fac_$sp[0] + 0)->_void_star);
   }
   {
-  branchAddr80 = (unsigned long *)((unsigned long )(&& Lab_2000043) + 6);
-  *branchAddr80 = (unsigned long )*(_3_fac_$pc[0]);
+  left17 = (_3_fac_$sp[0] + 0)->_int;
+  right18 = 0;
+  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000043) + 6);
+  *addrPtr22 = (unsigned long )(&& Lab_2000005);
+  addrPtr22 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 216);
+  *addrPtr22 = (unsigned long )(&& Lab_2000044);
+  *opPtr23 = 3331657536U;
   selfModify_BEGIN_23 = 1;
   Lab_2000043: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x8b,0xfc,0x2f,0xcc,0xe,0x51,0xe8,0xdd;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x72,0x88,0x9,0x6a,0x1b,0x7f,0xd3,0x94;\n":);
   Lab_2000044: /* CIL Label */ 
   selfModify_END_23 = 1;
+  if (result19) {
+    {
+    _3_fac_$pc[0] += *((int *)_3_fac_$pc[0]);
+    }
+  } else {
+    {
+    (_3_fac_$pc[0]) ++;
+    }
   }
-  _3_fac__store_void_star$left_STA_0$right_STA_1: /* CIL Label */ 
-  {
-
   }
   {
-  (_3_fac_$pc[0]) ++;
-  *((void **)(_3_fac_$sp[0] + 0)->_void_star) = (_3_fac_$sp[0] + -1)->_void_star;
-  _3_fac_$sp[0] += -2;
+  (_3_fac_$sp[0]) --;
   }
   {
   branchAddr83 = (unsigned long *)((unsigned long )(&& Lab_2000045) + 6);
   *branchAddr83 = (unsigned long )*(_3_fac_$pc[0]);
   selfModify_BEGIN_24 = 1;
   Lab_2000045: /* CIL Label */ 
-  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x9e,0xc,0xa6,0x92,0x30,0xbb,0xea,0xab;\n":);
+  __asm__  volatile   (".byte 0xff, 0x25, 00, 00, 00, 00, 0x16,0x87,0x84,0x93,0x7a,0x34,0x12,0x40;\n":);
   Lab_2000046: /* CIL Label */ 
   selfModify_END_24 = 1;
   }
-}
-}
-int main(int argc , char **argv , char **_formal_envp ) 
-{ 
-  int _BARRIER_0 ;
-
-  {
-  megaInit();
-  _global_argc = argc;
-  _global_argv = argv;
-  _global_envp = _formal_envp;
-  _BARRIER_0 = 1;
-  init_tigress();
-  fac(10);
-  fib(10);
-  return (0);
 }
 }
 __inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) 
