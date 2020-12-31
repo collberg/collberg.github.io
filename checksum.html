@@ -90,7 +90,7 @@ h3 {
 
 
 <a class="anchor" id="checksum">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c970" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6539" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
    This transformation inserts <em>checkers</em> into the program
    in order to ensure the integrity of the codebytes.
    A checker computes a hash over a code region and, if the hash is
@@ -105,7 +105,7 @@ h3 {
    flattening or virtualization), making them harder to 
    detect.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c971" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Checkers can be invoked over a function prior to it being called,
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6540" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Checkers can be invoked over a function prior to it being called,
 ensuring that the function hasn't been tampered with before it is 
 executed. This is illustrated in this figure, where <tt>foo</tt> 
 is checked by the pink checker, prior to being called. 
@@ -113,7 +113,7 @@ The <tt>e<sup>1</sup></tt> value is the expected  hash value computed
 over <tt>foo</tt>. 
 </p></div></div></section>
 <center><img width="500px" src="tigress3-images/overlap.png"></center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c972" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6541" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Checkers can also cover arbitrary levels of overlapping,
 randomly chosen, code regions. This is the case for the
 orange and blue checkers. Here, <tt>f<sup>2</sup></tt>
@@ -121,26 +121,26 @@ and <tt>t<sup>2</sup></tt> represent the range of addresses
 covered by the orange checker.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c973" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6542" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Unlike other Tigress transformations, the <tt>Checksum</tt> 
 transform requires a post-processing step. This is performed
 by the <tt>tigress_post</tt> program:
 </p></div></div></section>
 <center><img width="700px" src="tigress3-images/overview.png"></center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c974" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6543" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 The <tt>Checksum</tt> transformation generates two
-files: the Tigress-obfuscated output file (here <tt>P1.c</tt>) into
+files: the Tigress-obfuscated output file (here <tt>P<sup>1</sup>.c</tt>) into
 which checkers have been inserted and a file (here <tt>hashes.c</tt>) 
 that contains information about the generated hash functions.
-This filee needs to be compiled into a dynamically linked <tt>.so</tt> file.
+This file needs to be compiled into a dynamically linked <tt>.so</tt> file.
 The <tt>tigress_post</tt> post-processor
-reads the compiled obfuscated file (<tt>P1.exe</tt>) and
+reads the compiled obfuscated file (<tt>P<sup>1</sup>.exe</tt>) and
 <tt>hashes.so</tt> and generates a patched
-executable file (here <tt>P2.exe</tt>).
+executable file (here <tt>P<sup>2</sup>.exe</tt>).
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c975" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here's an example of how to call Tigress and <tt>tigress_post</tt>:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6544" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here's an example of how to call Tigress and <tt>tigress_post</tt>:</p></div></div></section>
 <center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"># Run Tigress, generating 3 files: hashes.c, hashes.txt, and obf.c.
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"># Run Tigress, generating 2 files: hashes.c and obf.c.
 > tigress --Seed=0 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
        --Verbosity=0 \
        --Transform=InitEntropy --Functions=main --InitEntropyKinds=vars \
@@ -162,11 +162,11 @@ executable file (here <tt>P2.exe</tt>).
 > gcc -static -fPIC -fno-plt -o obf.exe obf.c     # for Linux
 > gcc         -fPIC -fno-plt -o obf.exe obf.c     # for Darwin
 
-# Compile hashes.so into a shared object file hashes.so which will be
+# Compile hashes.c into a shared object file hashes.so which will be
 # read by tigress_post:
 > gcc -shared -o hashes.so -fPIC hashes.c
 
-# Patch the executable obf.exe. Note that tigress_post will mpodify 
+# Patch the executable obf.exe. Note that tigress_post will modify 
 # obf.exe (i.e. the input file and output file are the same):
 > tigress_post \
            --Action=checksum \
@@ -174,7 +174,7 @@ executable file (here <tt>P2.exe</tt>).
            obf.exe
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c976" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Note that, unlike all other Tigress transformations, <tt>--Transform=Checksum</tt>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6545" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Note that, unlike all other Tigress transformations, <tt>--Transform=Checksum</tt>
 does not make use of the <tt>--Functions=..</tt> option. Instead, there are three options
 that determine <em>which functions</em> should be checked (<tt>--ChecksumFunctionsToBeCheckedAtCallSite=...</tt>)
 and into which functions we are allowed to insert checkers (<tt>--ChecksumInsertCheckersInTheseFunctions=...</tt>
@@ -191,7 +191,7 @@ and <tt>--ChecksumDoNotInsertCheckersInTheseFunctions=...</tt>):
 
 <br>
 <h3 align=center>Hash Functions</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c977" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A randomly generated checker looks like this:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6546" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A randomly generated checker looks like this:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">/*******************************************************************************/
 /* Inline template to be patched by tigress_post.                              */
@@ -226,26 +226,26 @@ if (hashVar != expectedHashVar) {
 /*******************************************************************************/
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c978" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The word at <tt>L4</tt> will (after patching by <tt>tigress_post</tt>) hold
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6547" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The word at <tt>L4</tt> will (after patching by <tt>tigress_post</tt>) hold
 the address of the region that the hash function will check, <tt>L5</tt>
 will hold the address of the end of that region, and <tt>L6</tt> will hold
 the expected hash value.</p></div></div></section>
 
 <br>
 <h3 align=center>tigress_post --Action=checksum</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c979" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The purpose of <code>tigress_post --Action=checksum</code> is to patch the checker
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6548" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The purpose of <code>tigress_post --Action=checksum</code> is to patch the checker
 ``templates'' that were inserted by Tigress:</p></div></div></section>
 
 <center><img width="700px" src="tigress3-images/tigress_post.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c980" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> There are three main steps: first the executable is parsed and the 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6549" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> There are three main steps: first the executable is parsed and the 
 templates are located, then each checker is assigned to a region of the text 
 segment, and finally the hash value is computed and the templates are patched. 
 An option <code>tigress_post ... --OverlapRate=int ...</code> can be set to adjust the number checkers will 
 check each region of the text segment.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c981" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><tt>tigress_post</tt> has the following options:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6550" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><tt>tigress_post</tt> has the following options:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Action=checksum 
     Patch the checkers after the 'tigress --Transform=Checksum' transformation.
@@ -285,12 +285,12 @@ check each region of the text segment.
 
 <br>
 <h3 align=center>tigress_post --Action=kill</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c982" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To check that the checkers inserted by Tigress actually trigger when 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6551" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To check that the checkers inserted by Tigress actually trigger when 
 the executable is modified, you can use the <code>tigress_post --Action=kill</code> 
 command. It will randomly modify one or more bits in the executable which
 should cause the responses to trigger.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c983" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These are the relevant <tt>tigress_post</tt> options:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6552" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These are the relevant <tt>tigress_post</tt> options:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Action=kill       
    Destroy a function to test that the checkers trigger a response.
@@ -305,7 +305,7 @@ should cause the responses to trigger.</p></div></div></section>
 
 <br>
 <h3 align=center>Plugin Responders</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c984" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a few simple built-in responders. You can easily add your own by adding
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6553" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a few simple built-in responders. You can easily add your own by adding
 a few parameter-less void functions to your input program:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void responder_1 () {
@@ -324,7 +324,7 @@ void responder_3 () {
 }
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c985" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The body of these functions will be inserted in the checkers. The funtions themselves
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6554" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The body of these functions will be inserted in the checkers. The funtions themselves
 will be removed from the source by Tigress. These are the relevant options:</p></div></div></section> 
 
 <center>
@@ -337,67 +337,110 @@ will be removed from the source by Tigress. These are the relevant options:</p><
 
 <br>
 <h3 align=center>Visualizing Results</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c986" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Calling <code>tigress_post --ShowResults</code> will generate a table like this:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6555" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Calling <code>tigress_post --ShowResults</code> will generate a table like this:</p></div></div></section>
 <center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">+========+=============================+===============+===============+========+========+========+
-| Region |         Address range, size |      Function | Checker, size |      A |      B |      C |
-+========+=============================+===============+===============+========+========+========+
-|      0 |  [100004800, 1000048ff],256 |           sum |               |        |        | hash_9 |
-|      1 |   [100004900, 10000490f],16 |               |    hash_3,191 |        |        | hash_9 |
-|      2 |  [100004910, 1000049ff],240 |               |               |        | hash_1 | hash_9 |
-|      3 |   [100004a00, 100004a0f],16 |               |    hash_0,239 |        | hash_1 | hash_9 |
-|      4 |  [100004a10, 100004aff],240 |               |               | hash_0 | hash_1 | hash_9 |
-|      5 |   [100004b00, 100004b0f],16 |               |    hash_6,606 |        |        | hash_9 |
-|      6 |  [100004b10, 100004cff],496 |               |               |        |        | hash_9 |
-|      7 |   [100004d00, 100004d0f],16 |               |   hash_9,1273 |        |        |        |
-|      8 |  [100004d10, 100004ebf],432 |               |               |        |        |        |
-+--------+-----------------------------+---------------+---------------+--------+--------+--------+
-|      9 |  [100004ec0, 100004f3f],128 |           fib |               |        |        |        |
-+--------+-----------------------------+---------------+---------------+--------+--------+--------+
-|     10 |   [100004f40, 100004f4f],16 |           dbg |               |        |        |        |
-+--------+-----------------------------+---------------+---------------+--------+--------+--------+
-|     11 |   [100004f50, 100004f5f],16 |      megaInit |               |        |        |        |
-+--------+-----------------------------+---------------+---------------+--------+--------+--------+
-|     12 |  [100004f60, 100004fff],160 |   loop_switch |               |        |        |        |
-|     13 |   [100005000, 10000500f],16 |               |    hash_1,493 | hash_2 |        |        |
-|     14 | [100005010, 1000054ff],1264 |               |               | hash_2 |        |        |
-|     15 |   [100005500, 10000550f],16 |               |    hash_4,254 |        |        |        |
-|     16 |  [100005510, 1000056ff],496 |               |               | hash_8 |        |        |
-|     17 |   [100005700, 10000570f],16 |               |   hash_7,1004 | hash_8 |        |        |
-|     18 |  [100005710, 10000583f],304 |               |               | hash_8 | hash_7 |        |
-+--------+-----------------------------+---------------+---------------+--------+--------+--------+
-|     19 |   [100005840, 10000589f],96 | switch_switch |               |        | hash_7 |        |
-+--------+-----------------------------+---------------+---------------+--------+--------+--------+
-|     20 |  [1000058a0, 100005a3f],416 |          main |               | hash_6 | hash_7 |        |
-+--------+-----------------------------+---------------+---------------+--------+--------+--------+
-|     21 |  [100005a40, 100005aff],192 |           fac |               | hash_6 | hash_7 |        |
-|     22 |   [100005b00, 100005b0f],16 |               |    hash_8,813 |        |        |        |
-|     23 | [100005b10, 100005fff],1264 |               |               | hash_5 |        |        |
-|     24 |   [100006000, 10000600f],16 |               |   hash_5,1263 |        |        |        |
-|     25 |  [100006010, 1000060ff],240 |               |               | hash_4 |        |        |
-|     26 |   [100006100, 10000610f],16 |               |   hash_2,1278 | hash_4 |        |        |
-|     27 |  [100006110, 1000061cf],192 |               |               | hash_3 |        |        |
-+--------+-----------------------------+---------------+---------------+--------+--------+--------+
-|     28 |  [1000061d0, 1000062c3],244 |       __sputc |               |        |        |        |
-+--------+-----------------------------+---------------+---------------+--------+--------+--------+
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">+========+===========================================+===============+=====================================+========+========+========+========+========+========+
+| region |    section, priority, address range, size |      function |             template, checker, size |      A |      B |      C |      D |      E |      F |
++========+===========================================+===============+=====================================+========+========+========+========+========+========+
+|      0 |    text,0.5,[0x100002d40, 0x100002d4f],16 |     _megaInit |                                     |        |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|      1 |    text,1.0,[0x100002d50, 0x100002d8f],64 |  _loop_switch |                                     | hash_8 |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|      2 |   text,0.5,[0x100002d90, 0x100002e8f],256 |      ___sputc |                                     |        |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|      3 |   text,0.5,[0x100002e90, 0x100003007],376 |         _main |                                     |        |        |        |        |        |        |
+|      4 |     text,1.0,[0x100003008, 0x10000300b],4 |               |           start=100002d50,hash_8,64 |        |        |        |        |        |        |
+|      5 |     text,1.0,[0x10000300c, 0x10000300f],4 |               |             end=100002d8f,hash_8,64 |        |        |        |        |        |        |
+|      6 |     text,1.0,[0x100003010, 0x100003013],4 |               |         expected=5a11fe33,hash_8,64 |        |        |        |        |        |        |
+|      7 |   text,0.5,[0x100003014, 0x10000311f],268 |               |                                     |        |        |        |        |        |        |
+|      8 |     text,1.0,[0x100003120, 0x100003123],4 |               |           start=100003dc0,hash_0,96 |        |        |        |        |        |        |
+|      9 |     text,1.0,[0x100003124, 0x100003127],4 |               |             end=100003e1f,hash_0,96 |        |        |        |        |        |        |
+|     10 |     text,1.0,[0x100003128, 0x10000312b],4 |               |         expected=37f9a377,hash_0,96 |        |        |        |        |        |        |
+|     11 |   text,0.5,[0x10000312c, 0x1000031ff],212 |               |                                     |        |        |        |        |        |        |
+|     12 |     text,1.0,[0x100003200, 0x100003203],4 |               |           start=100003dc0,hash_1,96 |        |        |        |        |        |        |
+|     13 |     text,1.0,[0x100003204, 0x100003207],4 |               |             end=100003e1f,hash_1,96 |        |        |        |        |        |        |
+|     14 |     text,1.0,[0x100003208, 0x10000320b],4 |               |         expected=37f9a377,hash_1,96 |        |        |        |        |        |        |
+|     15 |   text,0.5,[0x10000320c, 0x1000033d7],460 |               |                                     |        |        |        |        |        |        |
+|     16 |     text,1.0,[0x1000033d8, 0x1000033db],4 |               |           start=100003dc0,hash_2,96 |        |        |        |        |        |        |
+|     17 |     text,1.0,[0x1000033dc, 0x1000033df],4 |               |             end=100003e1f,hash_2,96 |        |        |        |        |        |        |
+|     18 |     text,1.0,[0x1000033e0, 0x1000033e3],4 |               |         expected=37f9a377,hash_2,96 |        |        |        |        |        |        |
+|     19 |   text,0.5,[0x1000033e4, 0x1000034f7],276 |               |                                     |        |        |        |        |        |        |
+|     20 |     text,1.0,[0x1000034f8, 0x1000034fb],4 |               |           start=100003dc0,hash_3,96 |        |        |        |        |        |        |
+|     21 |     text,1.0,[0x1000034fc, 0x1000034ff],4 |               |             end=100003e1f,hash_3,96 |        |        |        |        |        |        |
+|     22 |     text,1.0,[0x100003500, 0x100003503],4 |               |         expected=37f9a377,hash_3,96 |        |        |        |        |        |        |
+|     23 |   text,0.5,[0x100003504, 0x100003617],276 |               |                                     |        |        |        |        |        |        |
+|     24 |     text,1.0,[0x100003618, 0x10000361b],4 |               |           start=100003dc0,hash_4,96 |        |        |        |        |        |        |
+|     25 |     text,1.0,[0x10000361c, 0x10000361f],4 |               |             end=100003e1f,hash_4,96 |        |        |        |        |        |        |
+|     26 |     text,1.0,[0x100003620, 0x100003627],8 |               | expected=a8b3c8039f4a6b74,hash_4,96 |        |        |        |        |        |        |
+|     27 |   text,0.5,[0x100003628, 0x100003987],864 |               |                                     |        |        |        |        |        |        |
+|     28 |     text,1.0,[0x100003988, 0x10000398b],4 |               |           start=100003dc0,hash_5,96 |        |        |        |        |        |        |
+|     29 |     text,1.0,[0x10000398c, 0x10000398f],4 |               |             end=100003e1f,hash_5,96 |        |        |        |        |        |        |
+|     30 |     text,1.0,[0x100003990, 0x100003993],4 |               |         expected=37f9a377,hash_5,96 |        |        |        |        |        |        |
+|     31 |   text,0.5,[0x100003994, 0x100003aa7],276 |               |                                     |        |        |        |        |        |        |
+|     32 |     text,1.0,[0x100003aa8, 0x100003aab],4 |               |          start=100003e20,hash_6,128 |        |        |        |        |        |        |
+|     33 |     text,1.0,[0x100003aac, 0x100003aaf],4 |               |            end=100003e9f,hash_6,128 |        |        |        |        |        |        |
+|     34 |     text,1.0,[0x100003ab0, 0x100003ab3],4 |               |        expected=2a71a278,hash_6,128 |        |        |        |        |        |        |
+|     35 |   text,0.5,[0x100003ab4, 0x100003c1f],364 |               |                                     |        |        |        |        |        |        |
+|     36 |     text,1.0,[0x100003c20, 0x100003c23],4 |               |           start=100003ea0,hash_7,96 |        |        |        |        |        |        |
+|     37 |     text,1.0,[0x100003c24, 0x100003c27],4 |               |             end=100003eff,hash_7,96 |        |        |        |        |        |        |
+|     38 |     text,1.0,[0x100003c28, 0x100003c2f],8 |               | expected=14d8ac0977e8efd8,hash_7,96 |        |        |        |        |        |        |
+|     39 |   text,0.5,[0x100003c30, 0x100003d3f],272 |               |                                     |        |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|     40 |    text,0.5,[0x100003d40, 0x100003d9f],96 | _switch_sw... |                                     |        |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|     41 |    text,0.5,[0x100003da0, 0x100003dbf],32 | _tigress_exit |                                     |        |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|     42 |    text,1.0,[0x100003dc0, 0x100003e1f],96 |          _fac |                                     | hash_0 | hash_1 | hash_2 | hash_3 | hash_4 | hash_5 |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|     43 |   text,1.0,[0x100003e20, 0x100003e9f],128 |          _fib |                                     | hash_6 |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|     44 |    text,1.0,[0x100003ea0, 0x100003eff],96 |          _sum |                                     | hash_7 |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|     45 |    text,0.5,[0x100003f00, 0x100003f4f],80 | _tigress_r... |                                     |        |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|     46 |     text,0.5,[0x100003f50, 0x100003f55],6 |          _dbg |                                     |        |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
+|     47 | cstring,1.0,[0x100003f56, 0x100003fb7],98 |               |                                     |        |        |        |        |        |        |
++--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c987" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The first three columns show that the <tt>.text</tt>-segment has been broken up into 
-29 <em>regions</em>. The <tt>sum</tt> function, for example, has been broken up into
-9 regions. The fourth column shows that there are 10 checkers, named <tt>hash_0</tt> through
-<tt>hash_9</tt>. You can learn more about these checkers by inspecting the 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6556" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The first three columns show that the <tt>.text</tt>-segment has been broken up into 
+47 <em>regions</em>. The <tt>main</tt> function, for example, has been broken up into
+37 regions. The fourth column shows that there are 9 checkers, named <tt>hash_0</tt> through
+<tt>hash_8</tt>. You can learn more about these checkers by inspecting the 
 files generated by Tigress (the <tt>--ChecksumHashFunctionsCFile=hashes.c 
 --ChecksumHashFunctionsDataFile=hashes.txt</tt> options provide the names of
 the files).  The <tt>size</tt> field shows how many bytes each hash function is
 checking. The function <tt>hash_7</tt>, for example, computes a hash over 
-1004 bytes of the text segment. Columns A-C, finally, show which regions each hash
+the <tt>sum</tt> function. Columns A-F, finally, show which regions each hash
 function is covering. The function <tt>hash_7</tt>, again, computes a hash
-over regions 11-21, i.e. virtual addresses <tt>[100004f50,100005aff]</tt>. 
-Note that <tt>hash_6</tt> and <tt>hash_8</tt> also partially cover the same 
-address ranges. 
+over region 44. 
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c988" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that the amount of overlap needs to be controlled with options to
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6557" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Calling <code>tigress_post --ShowResults</code> will also generate tables that provide some statistical information:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">Number of bytes checked by each hash function
+=============================================
+Hash function 'hash_0' checks 96 bytes
+Hash function 'hash_1' checks 96 bytes
+Hash function 'hash_2' checks 96 bytes
+Hash function 'hash_3' checks 96 bytes
+Hash function 'hash_4' checks 96 bytes
+Hash function 'hash_5' checks 96 bytes
+Hash function 'hash_6' checks 128 bytes
+Hash function 'hash_7' checks 96 bytes
+Hash function 'hash_8' checks 64 bytes
+On average, a hash function checks 96.0 bytes
+
+Number of hash function checking each byte
+==========================================
+4344 bytes are checked by 0 checkers
+288 bytes are checked by 1 checkers
+96 bytes are checked by 6 checkers
+The average byte is checked by 0.2 hash functions
+</code></pre>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6558" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that the amount of overlap needs to be controlled with options to
 both Tigress and <tt>tigress_post</tt>: for more overlap you need to
 introduce more checkers (using
 <code>tigress --ChecksumRequiredNumberOfSegmentCheckers=...</code>)
@@ -518,7 +561,7 @@ and increase the overlap rate in <tt>tigress_post</tt> (<code>tigress_post --Ove
 <td> The name of the generated file containing hash functions. It should be compiled into a <tt>.so</tt> file and becomes input into <tt>tigress_post</tt>. Default=hashFunctions.c.</td>
 </tr>
 <tr>
-<td><tt>--ChecksumSegments</tt></td>
+<td><tt>--ChecksumProtectSegments</tt></td>
 <td><tt>text, rodata</tt></td>
 <td> Comma-separated list of which segments to protect. Default=NONE.
 <ul>
