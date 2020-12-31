@@ -649,19 +649,19 @@ void MERGED(void *tigressRetVal , int n__0 , int whichBlock__7 )
   _4_MERGED__call$func_LIT_0: /* CIL Label */ ;
   (_4_MERGED_$pc[0]) ++;
   switch (*((int *)_4_MERGED_$pc[0])) {
-  case 2: 
-  printf(*((char const   * __restrict  *)(_4_MERGED_$locals + 48)), *((int *)(_4_MERGED_$locals + 56)),
-         *((int *)(_4_MERGED_$locals + 60)));
-  break;
   case 1: 
   printf(*((char const   * __restrict  *)(_4_MERGED_$locals + 24)), *((int *)(_4_MERGED_$locals + 32)),
          *((int *)(_4_MERGED_$locals + 36)));
   break;
-  case 3: 
-  *((void **)(_4_MERGED_$locals + 72)) = malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
+  case 2: 
+  printf(*((char const   * __restrict  *)(_4_MERGED_$locals + 48)), *((int *)(_4_MERGED_$locals + 56)),
+         *((int *)(_4_MERGED_$locals + 60)));
   break;
   case 4: 
   *((void **)(_4_MERGED_$locals + 88)) = malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
+  break;
+  case 3: 
+  *((void **)(_4_MERGED_$locals + 72)) = malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
   break;
   }
   (_4_MERGED_$pc[0]) ++;
