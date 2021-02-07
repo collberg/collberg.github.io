@@ -89,7 +89,7 @@ h3 {
 <center><img width="500px" src="tigress3-images/plugins-front-page.png"></center>
 
 <a class="anchor" id="plugins">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2752" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a simple way of letting you add code (we call
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8170" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a simple way of letting you add code (we call
 them <em>plugins</em>) that we can then incorporate into the
 obfuscated program. For now, there are just two applications of
 plugins: you can provide your own <em>responders</em>
@@ -97,7 +97,7 @@ plugins: you can provide your own <em>responders</em>
 to your application.  Responders are code snippets that will be invoked
 when there has been some sort of integrity violation, such as a 
 checksum failure, and invariants are true facts about your code
-which can be used to create opaque predicates. These are the 
+that can be used to create opaque predicates. These are the 
 available options:</p></div></div></section>
 
 <center>
@@ -130,37 +130,52 @@ available options:</p></div></div></section>
 </center>
 </br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2753" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The plugin functions are only used during obfuscation and are removed from the resulting
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8171" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The plugin functions are only used during obfuscation and are removed from the resulting
 program.</p></div></div></section>
 
 <a class="anchor" id="invariants">&nbsp;</a>
 <br>
 <h3 align=center>Invariants</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2754" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Invariant plugin functions should always return an int, and can
-have either zero or parameters. In the latter case, the arguments
-are <tt>(int argc, char** argv)</tt> the same command line parameters
-given to <tt>main</tt>. The name of an invariant plugin function
-should start with the <em>prefix</em> (set by
-the <tt>--InitPluginsInvariantPrefix=<em>prefix</em></tt>
-option) and be followed by an encoding of the value the function will
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8172" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The purpose of invariant plugins is to allow the application
+developer to provide properties about the program that Tigress itself
+would not be able to figure out. These properties can then be used in
+Tigress transformations, often causing the program to crash or
+misbehave if an adversary modifies the program such that the
+invariants are violated.</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8173" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Invariant plugin functions should always return an int, and can
+have either zero or two parameters. In the latter case, the arguments
+are <tt>(int argc, char** argv)</tt> which will be replaced at runtime
+with the same command line parameters given to <tt>main</tt>. The name
+of an invariant plugin function should start with the <em>prefix</em>
+(set by the <tt>--InitPluginsInvariantPrefix=<em>prefix</em></tt>
+option) and be followed by an encoding of the value(s) the function will
 return. These are the possible specifications:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li><tt>ANY</tt> : the function returns an arbitrary value.</li>
-   <li><tt>VALUE_<em></em></tt>: the function always returns the integer value <em>value</em>.</li>
-   <li><tt>MIN_<em>value</em></tt>: the function always returns an integer value greater than or equal to <em>value</em>.</li>
-   <li><tt>MAX_<em>value</em></tt>: the function always returns an integer value less than or equal to <em>value</em>.</li>
-   <li><tt>RANGE_<em>from</em>_<em>to</em></tt>: the function always returns an integer value in the range <tt>[<em>from</em>, <em>to</em>]</tt>, inclusive.</li>
+   <li><tt>VALUE_<em>alue</em></tt>: the function always returns the integer <em>value</em>.</li>
+   <li><tt>MIN_<em>value</em></tt>: the function always returns an integer greater than or equal to <em>value</em>.</li>
+   <li><tt>MAX_<em>value</em></tt>: the function always returns an integer less than or equal to <em>value</em>.</li>
+   <li><tt>RANGE_<em>from</em>_<em>to</em></tt>: the function always returns an integer in the range <tt>[<em>from</em>, <em>to</em>]</tt>, inclusive.</li>
 </ul>
 </div></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2755" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The purpose of these invariant plugins is to provide properties about the
-program that Tigress itself would not be able to figure out. These properties
-can then be used in Tigress transformations, often causing the program
-to crash or misbehave if an adversary modifies the program such that 
-the invariants are violated.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8174" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For example, you could add the following function to your application: </p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int highScore = 0;     /* Always less than 100! */
+...
+int acme_RANGE_0_99 (void) {
+   return highScore;
+}
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8175" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea here is that transformations which use opaque predicates will
+introduce code that assumes that <tt>0 &le; highScore &lt; 100<\tt>. If
+an attacker modifies the code so that <tt>highScore</tt> is outside of
+this range, the program will start to misbehave.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2756" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is how you would call tigress with the <tt>AddOpaque</tt> transform:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8176" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is how you would call tigress with the <tt>AddOpaque</tt> transform:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
            --Transform=InitPlugins  --InitPluginsInvariantPrefix=invariant    \
@@ -172,7 +187,7 @@ the invariants are violated.</p></div></div></section>
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2757" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some examples:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8177" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some examples of invariant plugin functions:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">/* Returns a random value */
 int invariant_ANY (void) {
@@ -216,14 +231,15 @@ int invariant_RANGE_1_3 (int argc, char** argv) {
 <a class="anchor" id="responders">&nbsp;</a>
 <br>
 <h3 align=center>Responders</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2758" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a few simple built-in responders that can be used in the
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8178" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a few simple built-in responders that can be used in the
 <tt>Checksum</tt> transformation. With plugins, you can easily add
-your own responders plugin functions to your input program. These
+your own responders to your application. The responder plugin
 functions should return <tt>void</tt>, and, like invariant plugins,
 can have either zero or two <tt>(int argc, char** argv)</tt>
 parameters.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2759" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is how you would call tigress with the <tt>Checksum</tt> transform:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8179" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is how you would invoke tigress to use your own plugin 
+responders with the <tt>Checksum</tt> transform:</p></div></div></section>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
@@ -233,7 +249,7 @@ parameters.</p></div></div></section>
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2760" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some simple examples of responder plugins:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8180" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some simple examples of responder plugins:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void responder_1 () {
    abort();
