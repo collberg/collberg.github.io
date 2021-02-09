@@ -89,7 +89,7 @@ h3 {
 <center><img width="500px" src="tigress3-images/plugins-front-page.png"></center>
 
 <a class="anchor" id="plugins">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1061" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a simple way of letting you add code (we call
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6694" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a simple way of letting you add code (we call
 them <em>plugins</em>) that we can then incorporate into the
 obfuscated program. For now, there are just two applications of
 plugins: you can provide your own <em>responders</em>
@@ -130,38 +130,43 @@ available options:</p></div></div></section>
 </center>
 </br>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1062" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The plugin functions are only used during obfuscation and are removed from the resulting
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6695" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Plugin functions can take parameters. Two special parameters {\tt argc} and {\tt argv}
+(of type <tt>int</tt> and <tt>char**</tt>, respectively) will be initialized with the 
+arguments passed to <tt>main()</tt>. Any remaining formal parameters (which need to be
+of arithmetic types) will be initialized with random local variables found where the 
+plugin function is inserted. They can be read but should, obviously, not be modified,
+unless you're writing a <em>responder</em> that you want to crash the program.</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6696" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The plugin functions are only used during obfuscation and are removed from the resulting
 program.</p></div></div></section>
 
 <a class="anchor" id="invariants">&nbsp;</a>
 <br>
 <h3 align=center>Invariants</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1063" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The purpose of invariant plugins is to allow the application
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6697" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The purpose of invariant plugins is to allow the application
 developer to provide properties about the program that Tigress itself
 would not be able to figure out. These properties can then be used in
 Tigress transformations, often causing the program to crash or
 misbehave if an adversary modifies the program such that the
 invariants no longer hold.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1064" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Invariant plugin functions should always return an int, and can
-have either zero or two parameters. In the latter case, the arguments
-are <tt>(int argc, char** argv)</tt> which will be replaced at runtime
-with the same command line parameters given to <tt>main</tt>. The name
-of an invariant plugin function should start with the <em>prefix</em>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6698" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Invariant plugin functions should always return an int. The name of
+an invariant plugin function should start with the <em>prefix</em>
 (set by the <tt>--InitPluginsInvariantPrefix=<em>prefix</em></tt>
-option) and be followed by an encoding of the value(s) the function will
-return. These are the possible specifications:</p></div></div></section>
+option) and be followed by an encoding of the value(s) the function
+will return. These are the possible specifications:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li><tt>ANY</tt> : the function returns an arbitrary value.</li>
-   <li><tt>VALUE_<em>alue</em></tt>: the function always returns the integer <em>value</em>.</li>
-   <li><tt>MIN_<em>value</em></tt>: the function always returns an integer greater than or equal to <em>value</em>.</li>
-   <li><tt>MAX_<em>value</em></tt>: the function always returns an integer less than or equal to <em>value</em>.</li>
-   <li><tt>RANGE_<em>from</em>_<em>to</em></tt>: the function always returns an integer in the range <tt>[<em>from</em>, <em>to</em>]</tt>, inclusive.</li>
+   <li><tt>VALUE_<em>value</em></tt> : the function always returns the integer <em>value</em>.</li>
+   <li><tt>MIN_<em>value</em></tt> : the function always returns an integer greater than or equal to <em>value</em>.</li>
+   <li><tt>MAX_<em>value</em></tt> : the function always returns an integer less than or equal to <em>value</em>.</li>
+   <li><tt>RANGE_<em>from</em>_<em>to</em></tt> : the function always returns an integer in the range <tt>[<em>from</em>, <em>to</em>]</tt>, inclusive.</li>
 </ul>
 </div></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1065" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For example, you could add the following function to your application: </p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6699" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For example, if you have set <tt>--InitPluginsInvariantPrefix=<em>acme</em></tt> 
+you could add the following function to your application: </p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int highScore = 0;     /* Always less than 100! */
 ...
@@ -170,15 +175,15 @@ int acme_RANGE_0_99 (void) {
 }
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1066" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea here is that transformations which use opaque predicates will
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6700" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea here is that transformations which use opaque predicates will
 introduce code that assumes that <tt>0 &le; highScore &lt; 100</tt>. If
 an attacker modifies the code so that <tt>highScore</tt> is outside of
 this range, the program will start to misbehave.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1067" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is how you would call Tigress with the <tt>AddOpaque</tt> transform:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6701" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is how you would call Tigress with the <tt>AddOpaque</tt> transform:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
-           --Transform=InitPlugins  --InitPluginsInvariantPrefix=invariant    \
+           --Transform=InitPlugins  --InitPluginsInvariantPrefix=acme    \
            --Transform=InitOpaque --Functions=main --InitOpaqueStructs=plugin    \
            --Transform=AddOpaque \
               --Functions=* \
@@ -187,41 +192,41 @@ this range, the program will start to misbehave.</p></div></div></section>
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1068" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some examples of invariant plugin functions:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6702" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some examples of invariant plugin functions:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">/* Returns a random value */
-int invariant_ANY (void) {
+int acme_ANY (void) {
    return list_length(myList);
 }
 
 /* Returns 42. */
-int invariant_VALUE_42 (void) {
+int acme_VALUE_42 (void) {
    return aes_key[4];
 }
 
 /* Returns 5. */
-int invariant_VALUE_5 (void) {
+int acme_VALUE_5 (void) {
    return 5;
 }
 
 /* Returns a value in [10..]. */
-int invariant_MIN_10 (int argc, char** argv) {
+int acme_MIN_10 () {
    return 10 + random();
 }
 
 /* Returns a value in [10..]. */
-int invariant_MAX_10 (int argc, char** argv) {
+int acme_MAX_10 () {
    return (random() % 11);
 }
 
 /* Returns a value in [10..20]. */
-int invariant_RANGE_10_20 (int argc, char** argv) {
+int acme_RANGE_10_20 () {
    return 10 + (random() % 11);
 }
 
 /* Returns the length of the argument list, for a program
    that is expected to be called with 1,2, or 3 arguments . */
-int invariant_RANGE_1_3 (int argc, char** argv) {
+int acme_RANGE_1_3 (int argc) {
    return argc;
 }
 </code></pre>
@@ -231,13 +236,13 @@ int invariant_RANGE_1_3 (int argc, char** argv) {
 <a class="anchor" id="responders">&nbsp;</a>
 <br>
 <h3 align=center>Responders</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1069" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a few simple built-in responders that can be used in the
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6703" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a few simple built-in responders that can be used in the
 <tt>Checksum</tt> transformation. With plugins, you can easily add
 your own responders to your application. Responder plugin
 functions should always return <tt>void</tt>, and, like invariant plugins,
 can have either zero or two parameters <tt>(int argc, char** argv)</tt>.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1070" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is how you would invoke Tigress to use your own plugin 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6704" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is how you would invoke Tigress to use your own plugin 
 responders with the <tt>Checksum</tt> transform:</p></div></div></section>
 
 <center>
@@ -248,13 +253,13 @@ responders with the <tt>Checksum</tt> transform:</p></div></div></section>
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1071" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some simple examples of responder plugins:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6705" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some simple examples of responder plugins:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void responder_1 () {
    abort();
 }
 void responder_2 (int argc, char** argv) {
-   argc[argc-1] = '\0';
+   argv[argc-1] = '\0';
 }
 void responder_3 () {
    for(int i=0; i<10; i++) {
@@ -272,6 +277,155 @@ void responder_5 () {
 </code></pre>
 </center>
 
+<a class="anchor" id="opaque">&nbsp;</a>
+<br>
+<h3 align=center>Write Your Own Opaque Library!</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6706" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Using plugins you can write your own opaque predicate library. Two more plugin functions are available to
+facilitate this, <en>initialize</em> and <em>update</em>:</p></div></div></section>
+
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>InitPlugins</tt></td>
+<td> Initialize the plugin system. </td>
+</tr>
+<tr>
+<td><tt>--InitPluginsInvariantPrefix</tt></td>
+<td><tt><em>String</em></tt></td>
+<td> The prefix for the name of invariant plugin functions. Default=NONE.</td>
+</tr>
+<tr>
+<td><tt>--InitPluginsInitializePrefix</tt></td>
+<td><tt><em>String</em></tt></td>
+<td> The prefix for the name of initializer plugin functions. Default=NONE.</td>
+</tr>
+<tr>
+<td><tt>--InitPluginsUpdatePrefix</tt></td>
+<td><tt><em>String</em></tt></td>
+<td> The prefix for the name of update plugin functions. Default=NONE.</td>
+</tr>
+</table>
+</div>
+
+</center>
+</br>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6707" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here's a simple example of a library that you would add to the beginning of your application:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int alwaysEven;
+
+void initialize_even (int argc) {
+   alwaysEven = (argc+1) * 2;
+}
+
+void update_even_1 () {
+   alwaysEven += 2;
+}
+
+void update_even_2 (int f) {
+   alwaysEven += f + (f % 2);
+}
+
+int invariant_even_VALUE_0 (void) {
+   return alwaysEven%2;
+}
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6708" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This library adds a global variable <tt>alwaysEven</tt> which, as the name implies, is alwas even.
+The body of the <tt>initialize_even</tt> function will be inserted in the function where you want 
+initializations to take place, and the two update functions will be inserted by the <tt>UpdateOpaque</tt>
+transformation. Here is the call to Tigress:</p></div></div></section>
+
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress  ... \
+     --Transform=InitPlugins  \
+        --InitPluginsInvariantPrefix=invariant    \
+        --InitPluginsInitializePrefix=initialize    \
+        --InitPluginsUpdatePrefix=update    \
+     --Transform=InitOpaque   \
+         --Functions=main \
+          --InitOpaqueStructs=plugin    \
+     --Transform=AddOpaque \
+        --Functions=* \
+        --AddOpaqueKinds=true \
+        --AddOpaqueStructs=plugin \
+     --Transform=UpdateOpaque \
+        --Functions=* \
+        --UpdateOpaqueCount=10 
+</code></pre>
+</center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6709" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Below another example which uses linked list to make an opaque predicate library.
+There are two invariants that hold over this list: the list is always of even length 
+and the elements of the list are always odd:<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6710" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">typedef struct intList {
+   struct intListNode* first;
+} *INTLIST;
+
+typedef struct intListNode {
+   int value;
+   struct intListNode* next;
+} *INTLISTNODE;
+
+typedef INTLIST intList_t;
+typedef INTLISTNODE intListNode_t;
+
+intList_t list;
+
+void initialize_list (int argc) {
+   list = (intList_t) malloc(sizeof(struct intList));
+   list->first = NULL;
+   for(int i=0; i < (argc * 2); i++) {
+      intListNode_t r = (intListNode_t) malloc(sizeof(struct intListNode));
+      r->value = i*2+1;
+      r->next = list->first;
+      list->first = r;
+   }
+}
+
+void update_list (int v1, int v2) {
+   intListNode_t r = (intListNode_t) malloc(sizeof(struct intListNode));
+   r->value = v1*2+1;
+   r->next = list->first;
+   list->first = r;
+   r = (intListNode_t) malloc(sizeof(struct intListNode));
+   r->value = v2*4+1;
+   r->next = list->first;
+   list->first = r;
+}
+
+int invariant_length_VALUE_0 () {
+   int length = 0;
+   intListNode_t i = list->first;
+   while (i != NULL) {
+     length++;
+     i = i->next;
+   };
+   return length % 2;
+}
+
+int invariant_odd_VALUE_0 (int v) {
+   int value = 3;
+   intListNode_t i = list->first;
+   int times = v;
+   while ((i != NULL) && (times > 0)) {
+     value = i->value;
+     times--;
+     i = i->next;
+   };
+   return value % 2 - 1;
+}
+</code></pre>
+</center>
 
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
