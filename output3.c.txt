@@ -296,120 +296,120 @@ static int emit_push_caller_saved_regs(struct jit *jit , jit_op *op ) ;
 typedef struct __anonstruct__RuneCharClass_1021650748 _RuneCharClass;
 __inline static int jit_set_get(jit_set *s , int value ) ;
 enum JIT_OPCODE {
-    JIT_CALL = 0,
-    JIT_COMMENT = 8,
-    JIT_BLT = 16,
-    JIT_TRUNC = 24,
-    JIT_LT = 32,
-    JIT_MEMCPY = 40,
-    JIT_GETARG = 48,
-    JIT_FMOV = 56,
-    JIT_FBGT = 64,
-    JIT_PUTARG = 72,
-    JIT_DIV = 80,
-    JIT_BGE = 88,
-    JIT_ROUND = 96,
-    JIT_BOSUB = 104,
-    JIT_BNE = 112,
-    JIT_TRANSFER_CPY = 120,
-    JIT_FBNE = 128,
-    JIT_BMC = 136,
-    JIT_FBGE = 144,
-    JIT_FRETVAL = 152,
-    JIT_GE = 160,
-    JIT_NOP = 168,
-    JIT_NE = 176,
-    JIT_FLD = 184,
-    JIT_FNEG = 192,
-    JIT_X86_ADDMUL = 200,
-    JIT_FBLT = 208,
-    JIT_TRANSFER_ADDS = 216,
-    JIT_PREPARE = 224,
-    JIT_ADD = 232,
-    JIT_LSH = 240,
-    JIT_FBEQ = 248,
-    JIT_MARK = 256,
-    JIT_FRSB = 264,
-    JIT_FSUB = 272,
-    JIT_AND = 280,
-    JIT_CODE_ALIGN = 288,
-    JIT_XOR = 296,
-    JIT_LD = 304,
-    JIT_RSB = 312,
-    JIT_OR = 320,
-    JIT_CEIL = 328,
-    JIT_LDX = 336,
-    JIT_FLOOR = 344,
-    JIT_FADD = 352,
-    JIT_X86_STXI = 360,
-    JIT_MUL = 368,
-    JIT_PROLOG = 376,
-    JIT_FSTX = 384,
-    JIT_BLE = 392,
-    JIT_ALLOCA = 400,
-    JIT_DATA_BYTE = 408,
-    JIT_FPUTARG = 416,
-    JIT_REF_DATA = 424,
-    JIT_BOADD = 432,
-    JIT_RETVAL = 440,
-    JIT_MOV = 448,
-    JIT_BNOSUB = 456,
-    JIT_FORCE_ASSOC = 464,
-    JIT_RENAMEREG = 472,
-    JIT_DATA_REF_DATA = 480,
-    JIT_TRANSFER_OR = 488,
-    JIT_SUBX = 496,
+    JIT_SUBX = 0,
+    JIT_GETARG = 8,
+    JIT_PROLOG = 16,
+    JIT_TRANSFER = 24,
+    JIT_BEQ = 32,
+    JIT_NE = 40,
+    JIT_FBEQ = 48,
+    JIT_LD = 56,
+    JIT_X86_STI = 64,
+    JIT_GT = 72,
+    JIT_ADDX = 80,
+    JIT_FMUL = 88,
+    JIT_X86_STXI = 96,
+    JIT_PATCH = 104,
+    JIT_RENAMEREG = 112,
+    JIT_LREG = 120,
+    JIT_FADD = 128,
+    JIT_TRACE = 136,
+    JIT_FMOV = 144,
+    JIT_COMMENT = 152,
+    JIT_FLDX = 160,
+    JIT_LE = 168,
+    JIT_FRET = 176,
+    JIT_GE = 184,
+    JIT_BNE = 192,
+    JIT_FNEG = 200,
+    JIT_TRANSFER_ADDS = 208,
+    JIT_BGE = 216,
+    JIT_FBLT = 224,
+    JIT_TRUNC = 232,
+    JIT_TRANSFER_SUB = 240,
+    JIT_SUB = 248,
+    JIT_CODESTART = 256,
+    JIT_X86_ADDIMM = 264,
+    JIT_X86_ADDMUL = 272,
+    JIT_NOT = 280,
+    JIT_FBGT = 288,
+    JIT_BNOADD = 296,
+    JIT_BGT = 304,
+    JIT_SYNCREG = 312,
+    JIT_BMC = 320,
+    JIT_ROUND = 328,
+    JIT_FULL_SPILL = 336,
+    JIT_REF_DATA = 344,
+    JIT_SUBC = 352,
+    JIT_PUTARG = 360,
+    JIT_TOUCH = 368,
+    JIT_DATA_REF_DATA = 376,
+    JIT_FSUB = 384,
+    JIT_EQ = 392,
+    JIT_ADDC = 400,
+    JIT_FRETVAL = 408,
+    JIT_HMUL = 416,
+    JIT_DIV = 424,
+    JIT_UREG = 432,
+    JIT_MARK = 440,
+    JIT_OR = 448,
+    JIT_TRANSFER_SUBS = 456,
+    JIT_STX = 464,
+    JIT_MSG = 472,
+    JIT_CODE_ALIGN = 480,
+    JIT_ALLOCA = 488,
+    JIT_DATA_BYTES = 496,
     JIT_FST = 504,
-    JIT_FDIV = 512,
-    JIT_SUB = 520,
-    JIT_BEQ = 528,
-    JIT_TRANSFER_ADD = 536,
-    JIT_CODESTART = 544,
-    JIT_JMP = 552,
-    JIT_DATA_BYTES = 560,
-    JIT_X86_STI = 568,
-    JIT_SUBC = 576,
-    JIT_UREG = 584,
-    JIT_TRACE = 592,
-    JIT_TOUCH = 600,
-    JIT_X86_ADDIMM = 608,
-    JIT_BMS = 616,
-    JIT_REF_CODE = 624,
-    JIT_EQ = 632,
-    JIT_MSG = 640,
-    JIT_PATCH = 648,
-    JIT_FLDX = 656,
-    JIT_NEG = 664,
-    JIT_BGT = 672,
-    JIT_DECL_ARG = 680,
-    JIT_TRANSFER_SUB = 688,
-    JIT_FMUL = 696,
-    JIT_NOT = 704,
-    JIT_RSH = 712,
-    JIT_FORCE_SPILL = 720,
-    JIT_BNOADD = 728,
-    JIT_FBLE = 736,
-    JIT_STX = 744,
-    JIT_MEMSET = 752,
-    JIT_FULL_SPILL = 760,
-    JIT_HMUL = 768,
-    JIT_TRANSFER_AND = 776,
-    JIT_RET = 784,
-    JIT_LE = 792,
-    JIT_ADDC = 800,
-    JIT_TRANSFER = 808,
-    JIT_TRANSFER_SUBS = 816,
-    JIT_GT = 824,
-    JIT_DATA_REF_CODE = 832,
-    JIT_ST = 840,
-    JIT_ADDX = 848,
-    JIT_FRET = 856,
-    JIT_MOD = 864,
-    JIT_EXT = 872,
-    JIT_LABEL = 880,
-    JIT_SYNCREG = 888,
-    JIT_LREG = 896,
-    JIT_TRANSFER_XOR = 904
+    JIT_TRANSFER_OR = 512,
+    JIT_FLD = 520,
+    JIT_CEIL = 528,
+    JIT_FBGE = 536,
+    JIT_FDIV = 544,
+    JIT_BOADD = 552,
+    JIT_MEMSET = 560,
+    JIT_BNOSUB = 568,
+    JIT_ST = 576,
+    JIT_RSH = 584,
+    JIT_BLT = 592,
+    JIT_FORCE_SPILL = 600,
+    JIT_AND = 608,
+    JIT_NOP = 616,
+    JIT_RETVAL = 624,
+    JIT_PREPARE = 632,
+    JIT_LSH = 640,
+    JIT_FSTX = 648,
+    JIT_FBLE = 656,
+    JIT_MOD = 664,
+    JIT_ADD = 672,
+    JIT_JMP = 680,
+    JIT_DATA_REF_CODE = 688,
+    JIT_FPUTARG = 696,
+    JIT_XOR = 704,
+    JIT_TRANSFER_CPY = 712,
+    JIT_RET = 720,
+    JIT_LABEL = 728,
+    JIT_TRANSFER_XOR = 736,
+    JIT_RSB = 744,
+    JIT_BMS = 752,
+    JIT_BLE = 760,
+    JIT_TRANSFER_ADD = 768,
+    JIT_FORCE_ASSOC = 776,
+    JIT_FRSB = 784,
+    JIT_TRANSFER_AND = 792,
+    JIT_BOSUB = 800,
+    JIT_DATA_BYTE = 808,
+    JIT_MOV = 816,
+    JIT_FLOOR = 824,
+    JIT_REF_CODE = 832,
+    JIT_DECL_ARG = 840,
+    JIT_EXT = 848,
+    JIT_MEMCPY = 856,
+    JIT_NEG = 864,
+    JIT_LDX = 872,
+    JIT_LT = 880,
+    JIT_MUL = 888,
+    JIT_FBNE = 896,
+    JIT_CALL = 904
 } ;
 union __anonunion_value_178427841 {
    long generic ;
@@ -1120,21 +1120,21 @@ void jit_optimize_unused_assignments(struct jit *jit )
   op = tmp;
   while ((unsigned long )op != (unsigned long )((void *)0)) {
     if (((int )op->spec & 3) == 3) {
-      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 800U) {
+      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 400U) {
         goto __Cont;
       } else
-      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 848U) {
+      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 80U) {
         goto __Cont;
       } else
-      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 576U) {
+      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 352U) {
         goto __Cont;
       } else
-      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 496U) {
+      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 0U) {
         goto __Cont;
       }
       tmp___0 = jit_set_get(op->live_out, (int )op->arg[0]);
       if (! tmp___0) {
-        op->code = (unsigned short)168;
+        op->code = (unsigned short)616;
         op->spec = (unsigned char)0;
       }
     }
@@ -1191,7 +1191,7 @@ static int emit_pop_callee_saved_regs(struct jit *jit )
     if (r->callee_saved) {
       o = op->next;
       while ((unsigned long )o != (unsigned long )((void *)0)) {
-        if ((unsigned int )((jit_opcode )((int )o->code & 65528)) == 376U) {
+        if ((unsigned int )((jit_opcode )((int )o->code & 65528)) == 16U) {
           break;
         }
         tmp = uses_hw_reg(o, (jit_value )r->id, 0);
@@ -1414,16 +1414,16 @@ static int is_active_register(struct jit_reg_allocator *al , jit_hw_reg *reg , j
   if ((unsigned long )op->next == (unsigned long )((void *)0)) {
     return (0);
   }
-  if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 72U) {
+  if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 360U) {
     return (1);
   } else
-  if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 416U) {
+  if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 696U) {
     return (1);
   } else
-  if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 0U) {
+  if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 904U) {
     return (1);
   }
-  if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 440U) {
+  if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 624U) {
     if ((unsigned long )reg == (unsigned long )al->ret_reg) {
       return (1);
     }
@@ -1484,7 +1484,7 @@ jit_label *jit_get_label(struct jit *jit )
   {
   tmp = malloc((size_t )sizeof(jit_label ));
   r = (jit_label *)tmp;
-  jit_add_op(jit, (unsigned short)880, (unsigned char)2, (long )r, 0L, 0L, (unsigned char)0,
+  jit_add_op(jit, (unsigned short)728, (unsigned char)2, (long )r, 0L, 0L, (unsigned char)0,
              (struct jit_debug_info *)((void *)0));
   r->next = jit->labels;
   jit->labels = r;
@@ -2613,7 +2613,7 @@ static void associate_register(struct jit_reg_allocator *al , jit_op *op , int i
   {
   tmp = rmap_get(op->regmap, op->arg[i]);
   reg = tmp;
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 152U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 408U) {
     printf((char const   */* __restrict  */)":JJJ:%i\n", reg->id);
   }
   if (reg) {
@@ -2623,7 +2623,7 @@ static void associate_register(struct jit_reg_allocator *al , jit_op *op , int i
     if (tmp___2) {
       op->r_arg[i] = (jit_value )-1;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 0U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 904U) {
       reg = make_free_reg(al, op, op->arg[i]);
       rmap_assoc(op->regmap, op->arg[i], reg);
       op->r_arg[i] = (jit_value )reg->id;
@@ -3171,13 +3171,13 @@ __inline static void jit_prepare_spills_on_jmpr_targets(struct jit *jit )
   tmp = jit_op_first(jit->ops);
   op = tmp;
   while ((unsigned long )op != (unsigned long )((void *)0)) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 624U) {
-      tmp___0 = jit_op_new((unsigned short)762, (unsigned char)0, 0L, 0L, 0L, (unsigned char)0);
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
+      tmp___0 = jit_op_new((unsigned short)338, (unsigned char)0, 0L, 0L, 0L, (unsigned char)0);
       newop = tmp___0;
       jit_op_prepend(op->jmp_addr, newop);
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
-      tmp___0 = jit_op_new((unsigned short)762, (unsigned char)0, 0L, 0L, 0L, (unsigned char)0);
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 688U) {
+      tmp___0 = jit_op_new((unsigned short)338, (unsigned char)0, 0L, 0L, 0L, (unsigned char)0);
       newop = tmp___0;
       jit_op_prepend(op->jmp_addr, newop);
     }
@@ -3212,10 +3212,10 @@ __inline static int jit_op_is_cflow(jit_op *op )
   int tmp ;
 
   {
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 0U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 904U) {
     goto _L;
   } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 552U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 680U) {
     _L: /* CIL Label */ 
     if ((int )op->code & 2) {
       return (1);
@@ -3252,7 +3252,7 @@ void jit_check_code(struct jit *jit , int warnings )
   tmp = jit_op_first(jit->ops);
   op = tmp;
   while (op) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
       jit->current_func = op;
     }
     if (! op->debug_info) {
@@ -3328,7 +3328,7 @@ static int emit_push_caller_saved_regs(struct jit *jit , jit_op *op )
   stack_offset = 0;
   al = jit->reg_al;
   while (op) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 0U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 904U) {
       break;
     }
     op = op->next;
@@ -7349,22 +7349,22 @@ __inline static void jit_correct_float_imms(struct jit *jit )
     if (! op->fp) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 56U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 144U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 416U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 696U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 184U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 520U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 656U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 160U) {
       goto __Cont;
     }
     if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 504U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 384U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 648U) {
       goto __Cont;
     }
     i = 1;
@@ -7374,7 +7374,7 @@ __inline static void jit_correct_float_imms(struct jit *jit )
       }
       i ++;
     }
-    tmp___0 = jit_op_new((unsigned short)58, (unsigned char )((2 << 2) | 3), (jit_value )(1 | (1 << 1)),
+    tmp___0 = jit_op_new((unsigned short)146, (unsigned char )((2 << 2) | 3), (jit_value )(1 | (1 << 1)),
                          0L, 0L, (unsigned char)0);
     newop = tmp___0;
     newop->fp = (unsigned char)1;
@@ -7398,7 +7398,7 @@ __inline static int is_suitable_mul(jit_op *op )
 
   {
   arg = op->arg[2];
-  if ((int )op->code == 370) {
+  if ((int )op->code == 890) {
     if (arg == 2L) {
       tmp = 1;
     } else
@@ -7412,7 +7412,7 @@ __inline static int is_suitable_mul(jit_op *op )
     }
   } else
   _L: /* CIL Label */ 
-  if ((int )op->code == 242) {
+  if ((int )op->code == 642) {
     if (arg == 1L) {
       tmp = 1;
     } else
@@ -10948,10 +10948,10 @@ __inline static int make_addmuli(jit_op *op , jit_op *nextop )
   int tmp ;
 
   {
-  nextop->code = (unsigned short)202;
+  nextop->code = (unsigned short)274;
   nextop->spec = (unsigned char )(((2 << 4) | (1 << 2)) | 3);
   nextop->arg[1] = op->arg[1];
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 368U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 888U) {
     tmp = shift_index((int )op->arg[2]);
     nextop->arg_size = (unsigned char )tmp;
   } else {
@@ -11004,7 +11004,7 @@ int jit_allocai(struct jit *jit , int size )
   {
   tmp = jit_value_align((jit_value )size, (jit_value )16);
   real_size = tmp;
-  jit_add_op(jit, (unsigned short)402, (unsigned char)2, real_size, (jit_value )0,
+  jit_add_op(jit, (unsigned short)490, (unsigned char)2, real_size, (jit_value )0,
              (jit_value )0, (unsigned char)0, (struct jit_debug_info *)((void *)0));
   tmp___0 = jit_current_func_info(jit);
   tmp___0->allocai_mem += real_size;
@@ -11026,7 +11026,7 @@ static int uses_hw_reg(struct jit_op *op , jit_value reg , int fp )
   int i ;
 
   {
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 472U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 112U) {
     if (op->r_arg[0] == reg) {
       return (1);
     }
@@ -13467,11 +13467,11 @@ static int join_addi_addr(jit_op *op , jit_op *nextop )
   } else {
     return (0);
   }
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 520U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 248U) {
     op->arg[2] = - op->arg[2];
   }
   make_nop(op);
-  nextop->code = (unsigned short)608;
+  nextop->code = (unsigned short)264;
   nextop->spec = (unsigned char )(((1 << 4) | (1 << 2)) | 3);
   if (nextop->arg[1] == nextop->arg[2]) {
     op->arg[2] *= 2L;
@@ -13557,7 +13557,7 @@ static int join_addr_addi(jit_op *op , jit_op *nextop )
     return (0);
   }
   make_nop(op);
-  nextop->code = (unsigned short)608;
+  nextop->code = (unsigned short)264;
   nextop->spec = (unsigned char )(((1 << 4) | (1 << 2)) | 3);
   nextop->arg[2] = nextop->arg[2];
   tmp = __builtin_object_size((void *)(& nextop->flt_imm), 0);
@@ -13573,7 +13573,7 @@ static void rename_reg(jit_op *op , int r1 , int r2 )
 
 
   {
-  insert_reg_op(472, op, (jit_value )r1, (jit_value )r2);
+  insert_reg_op(112, op, (jit_value )r1, (jit_value )r2);
   return;
 }
 }
@@ -13584,7 +13584,7 @@ static int check_register_types(struct jit *jit , jit_op *op , char *msg_buf )
 
   {
   switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-  case 48U: 
+  case 8U: 
   tmp = jit_current_func_info(jit);
   info = tmp;
   if ((unsigned int )(info->args + op->arg[1])->type == 2U) {
@@ -13612,10 +13612,10 @@ static int check_register_types(struct jit *jit , jit_op *op , char *msg_buf )
     return (0);
   }
   break;
-  case 344U: 
-  case 96U: 
+  case 824U: 
   case 328U: 
-  case 24U: 
+  case 528U: 
+  case 232U: 
   case 504U: 
   if (((int )op->spec & 3) != 1) {
     if (((int )op->spec & 3) != 3) {
@@ -13640,8 +13640,8 @@ static int check_register_types(struct jit *jit , jit_op *op , char *msg_buf )
     }
   }
   break;
-  case 184U: 
-  case 872U: 
+  case 520U: 
+  case 848U: 
   if (((int )op->spec & 3) != 1) {
     if (((int )op->spec & 3) != 3) {
       goto _L___5;
@@ -13665,7 +13665,7 @@ static int check_register_types(struct jit *jit , jit_op *op , char *msg_buf )
     }
   }
   break;
-  case 656U: 
+  case 160U: 
   if (((int )op->spec & 3) != 1) {
     if (((int )op->spec & 3) != 3) {
       goto _L___10;
@@ -13700,7 +13700,7 @@ static int check_register_types(struct jit *jit , jit_op *op , char *msg_buf )
     }
   }
   break;
-  case 384U: 
+  case 648U: 
   if (((int )op->spec & 3) != 1) {
     if (((int )op->spec & 3) != 3) {
       goto _L___15;
@@ -13735,8 +13735,8 @@ static int check_register_types(struct jit *jit , jit_op *op , char *msg_buf )
     }
   }
   break;
-  case 464U: 
-  case 720U: 
+  case 776U: 
+  case 600U: 
   return (0);
   default: 
   if (! op->fp) {
@@ -13852,7 +13852,7 @@ __inline static void make_nop(jit_op *op )
 
 
   {
-  op->code = (unsigned short)168;
+  op->code = (unsigned short)616;
   op->spec = (unsigned char)0;
   return;
 }
@@ -13896,7 +13896,7 @@ static int print_load_op(struct jit_disasm *disasm , struct output_buf *linebuf 
 
   {
   switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-  case 896U: 
+  case 120U: 
   ob_append(linebuf, disasm->indent_template);
   tmp = jit_get_op_name(op);
   ob_append(linebuf, tmp);
@@ -13904,8 +13904,8 @@ static int print_load_op(struct jit_disasm *disasm , struct output_buf *linebuf 
   jit_get_reg_name(disasm, rbuf, (int )op->arg[1]);
   ob_append(linebuf, rbuf);
   return (1);
-  case 888U: 
-  case 584U: 
+  case 312U: 
+  case 432U: 
   ob_append(linebuf, disasm->indent_template);
   tmp___0 = jit_get_op_name(op);
   ob_append(linebuf, tmp___0);
@@ -13913,7 +13913,7 @@ static int print_load_op(struct jit_disasm *disasm , struct output_buf *linebuf 
   jit_get_reg_name(disasm, rbuf, (int )op->arg[0]);
   ob_append(linebuf, rbuf);
   return (1);
-  case 472U: 
+  case 112U: 
   rmap_is_associated((op->prev)->regmap, (int )op->arg[1], 0, & reg);
   ob_append(linebuf, disasm->indent_template);
   tmp___1 = jit_get_op_name(op);
@@ -13923,7 +13923,7 @@ static int print_load_op(struct jit_disasm *disasm , struct output_buf *linebuf 
   jit_get_reg_name(disasm, rbuf, (int )reg);
   ob_append(linebuf, rbuf);
   return (1);
-  case 760U: 
+  case 336U: 
   ob_append(linebuf, disasm->indent_template);
   tmp___2 = jit_get_op_name(op);
   ob_append(linebuf, tmp___2);
@@ -14053,7 +14053,7 @@ static void load_reg(struct jit_op *op , jit_hw_reg *hreg , long reg )
 
 
   {
-  insert_reg_op(896, op, (jit_value )hreg->id, reg);
+  insert_reg_op(120, op, (jit_value )hreg->id, reg);
   return;
 }
 }
@@ -14138,7 +14138,7 @@ static int assign_getarg(jit_op *op , struct jit_reg_allocator *al )
           rmap_assoc(op->regmap, op->arg[0], hreg);
           op->r_arg[0] = (jit_value )hreg->id;
           op->r_arg[1] = op->arg[1];
-          op->code = (unsigned short)168;
+          op->code = (unsigned short)616;
           return (1);
         }
       }
@@ -14175,23 +14175,23 @@ void jit_optimize_st_ops(struct jit *jit )
   tmp = jit_op_first(jit->ops);
   op = tmp;
   while ((unsigned long )op != (unsigned long )((void *)0)) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 840U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 576U) {
       if (op->prev) {
-        if ((int )(op->prev)->code == 450) {
+        if ((int )(op->prev)->code == 818) {
           if (op->arg[1] == (op->prev)->arg[0]) {
             if ((op->prev)->arg[1] >= (-0x7FFFFFFF-1)) {
               if ((op->prev)->arg[1] <= 2147483647L) {
                 tmp___0 = jit_set_get(op->live_out, (int )op->arg[1]);
                 if (! tmp___0) {
                   if (! ((int )op->code & 2)) {
-                    op->code = (unsigned short)569;
+                    op->code = (unsigned short)65;
                     op->spec = (unsigned char )((2 << 2) | 1);
                   } else {
-                    op->code = (unsigned short)570;
+                    op->code = (unsigned short)66;
                     op->spec = (unsigned char )((2 << 2) | 2);
                   }
                   op->arg[1] = (op->prev)->arg[1];
-                  (op->prev)->code = (unsigned short)168;
+                  (op->prev)->code = (unsigned short)616;
                   (op->prev)->spec = (unsigned char)0;
                 }
               }
@@ -14200,23 +14200,23 @@ void jit_optimize_st_ops(struct jit *jit )
         }
       }
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 744U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 464U) {
       if (op->prev) {
-        if ((int )(op->prev)->code == 450) {
+        if ((int )(op->prev)->code == 818) {
           if (op->arg[2] == (op->prev)->arg[0]) {
             if ((op->prev)->arg[1] >= (-0x7FFFFFFF-1)) {
               if ((op->prev)->arg[1] <= 2147483647L) {
                 tmp___1 = jit_set_get(op->live_out, (int )op->arg[2]);
                 if (! tmp___1) {
                   if (! ((int )op->code & 2)) {
-                    op->code = (unsigned short)361;
+                    op->code = (unsigned short)97;
                     op->spec = (unsigned char )(((2 << 4) | (1 << 2)) | 1);
                   } else {
-                    op->code = (unsigned short)362;
+                    op->code = (unsigned short)98;
                     op->spec = (unsigned char )(((2 << 4) | (1 << 2)) | 2);
                   }
                   op->arg[2] = (op->prev)->arg[1];
-                  (op->prev)->code = (unsigned short)168;
+                  (op->prev)->code = (unsigned short)616;
                   (op->prev)->spec = (unsigned char)0;
                 }
               }
@@ -14350,13 +14350,13 @@ __inline static int flw_analyze_op(struct jit *jit , jit_op *op , struct jit_fun
   tmp___0 = jit_set_size(op->live_in);
   live_in_size = tmp___0;
   if (op->jmp_addr) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 624U) {
-      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 832U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 832U) {
+      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 688U) {
         jit_set_addall(op->live_out, (op->jmp_addr)->live_in);
       }
     }
   }
-  if ((int )op->code == 553) {
+  if ((int )op->code == 681) {
     if (code_refs->size < 0) {
       initialize_code_refs(code_refs, func_info);
     }
@@ -14367,14 +14367,14 @@ __inline static int flw_analyze_op(struct jit *jit , jit_op *op , struct jit_fun
     }
     goto skip;
   }
-  if ((int )op->code == 554) {
+  if ((int )op->code == 682) {
     goto skip;
   }
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 784U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 720U) {
     op->live_out = jit_set_new();
     goto skip;
   } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 856U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 176U) {
     op->live_out = jit_set_new();
     goto skip;
   }
@@ -14397,7 +14397,7 @@ __inline static int flw_analyze_op(struct jit *jit , jit_op *op , struct jit_fun
     }
     i___1 ++;
   }
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
     flw_analyze_prolog(jit, op, func_info);
   }
   if (changed) {
@@ -15021,7 +15021,7 @@ __inline static void jit_flw_analysis(struct jit *jit )
   tmp = jit_op_first(jit->ops);
   op = tmp;
   while (op) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
       first = op;
       while (1) {
         if ((unsigned long )op->next == (unsigned long )((void *)0)) {
@@ -15029,7 +15029,7 @@ __inline static void jit_flw_analysis(struct jit *jit )
           analyze_function(jit, first, second);
           break;
         } else
-        if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 376U) {
+        if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 16U) {
           second = op;
           analyze_function(jit, first, second);
           break;
@@ -15656,7 +15656,7 @@ struct jit *jit_init(void)
   {
   tmp = malloc((size_t )sizeof(struct jit ));
   r = (struct jit *)tmp;
-  r->ops = jit_op_new((unsigned short)544, (unsigned char)0, 0L, 0L, 0L, (unsigned char)0);
+  r->ops = jit_op_new((unsigned short)256, (unsigned char)0, 0L, 0L, 0L, (unsigned char)0);
   r->last_op = r->ops;
   r->optimizations = 0U;
   r->buf = (unsigned char *)((void *)0);
@@ -15954,10 +15954,10 @@ static int check_data_references(jit_op *op , char *msg_buf )
   int tmp ;
 
   {
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 424U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 344U) {
     goto _L;
   } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 480U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
     _L: /* CIL Label */ 
     tmp = jit_op_is_data_op(op->jmp_addr);
     if (! tmp) {
@@ -15973,7 +15973,7 @@ static void unload_reg(jit_op *op , jit_hw_reg *hreg , long virt_reg )
 
 
   {
-  insert_reg_op(584, op, virt_reg, (jit_value )hreg->id);
+  insert_reg_op(432, op, virt_reg, (jit_value )hreg->id);
   return;
 }
 }
@@ -16018,28 +16018,28 @@ static int check_op_without_effect(jit_op *op , char *msg_buf )
 
   {
   code = (jit_opcode )((int )op->code & 65528);
+  if ((unsigned int )code == 400U) {
+    return (0);
+  } else
+  if ((unsigned int )code == 80U) {
+    return (0);
+  } else
+  if ((unsigned int )code == 352U) {
+    return (0);
+  } else
+  if ((unsigned int )code == 0U) {
+    return (0);
+  } else
+  if ((unsigned int )code == 552U) {
+    return (0);
+  } else
   if ((unsigned int )code == 800U) {
     return (0);
   } else
-  if ((unsigned int )code == 848U) {
+  if ((unsigned int )code == 296U) {
     return (0);
   } else
-  if ((unsigned int )code == 576U) {
-    return (0);
-  } else
-  if ((unsigned int )code == 496U) {
-    return (0);
-  } else
-  if ((unsigned int )code == 432U) {
-    return (0);
-  } else
-  if ((unsigned int )code == 104U) {
-    return (0);
-  } else
-  if ((unsigned int )code == 728U) {
-    return (0);
-  } else
-  if ((unsigned int )code == 456U) {
+  if ((unsigned int )code == 568U) {
     return (0);
   }
   i = 0;
@@ -16426,7 +16426,7 @@ __inline static void jit_prepare_reg_counts(struct jit *jit )
     if (! op) {
       goto _L;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
       _L: /* CIL Label */ 
       if (info) {
         info->gp_reg_count = last_gp + 1;
@@ -16472,7 +16472,7 @@ __inline static void jit_prepare_reg_counts(struct jit *jit )
       }
       i ++;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 680U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 840U) {
       declared_args ++;
       if (op->arg[0] == 2L) {
         fp_args ++;
@@ -16480,25 +16480,25 @@ __inline static void jit_prepare_reg_counts(struct jit *jit )
         gp_args ++;
       }
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 224U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 632U) {
       xop = op;
       while (1) {
-        if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 72U) {
+        if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 360U) {
           (xop->arg[0]) ++;
         } else
-        if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 416U) {
+        if ((unsigned int )((jit_opcode )((int )(op->next)->code & 65528)) == 696U) {
           (xop->arg[1]) ++;
         } else {
           next_code = (jit_opcode )((int )(op->next)->code & 65528);
-          if ((unsigned int )next_code == 0U) {
+          if ((unsigned int )next_code == 904U) {
             break;
           }
-          if ((unsigned int )next_code != 592U) {
-            if ((unsigned int )next_code != 288U) {
-              if ((unsigned int )next_code != 584U) {
-                if ((unsigned int )next_code != 896U) {
-                  if ((unsigned int )next_code != 472U) {
-                    if ((unsigned int )next_code != 888U) {
+          if ((unsigned int )next_code != 136U) {
+            if ((unsigned int )next_code != 480U) {
+              if ((unsigned int )next_code != 432U) {
+                if ((unsigned int )next_code != 120U) {
+                  if ((unsigned int )next_code != 112U) {
+                    if ((unsigned int )next_code != 312U) {
                       printf((char const   */* __restrict  */)"Garbage in the prepare-call block. Opcode: %x\n",
                              (unsigned int )next_code >> 3);
                       abort();
@@ -16569,7 +16569,7 @@ static void sync_reg(jit_op *op , jit_hw_reg *hreg , jit_value virt_reg )
 
 
   {
-  insert_reg_op(888, op, virt_reg, (jit_value )hreg->id);
+  insert_reg_op(312, op, virt_reg, (jit_value )hreg->id);
   return;
 }
 }
@@ -16934,12 +16934,12 @@ static jit_tree *prepare_labels(struct jit *jit )
   tmp = jit_op_first(jit->ops);
   op = tmp;
   while ((unsigned long )op != (unsigned long )((void *)0)) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 648U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 104U) {
       n = jit_tree_insert(n, (long )op, (void *)x, (int *)((void *)0));
       n = jit_tree_insert(n, op->arg[0], (void *)(- x), (int *)((void *)0));
       x ++;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 880U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 728U) {
       n = jit_tree_insert(n, op->arg[0], (void *)x, (int *)((void *)0));
       x ++;
     }
@@ -18099,52 +18099,52 @@ static int is_cond_branch_op(jit_op *op )
 
   {
   code = (jit_opcode )((int )op->code & 65528);
-  if ((unsigned int )code == 16U) {
+  if ((unsigned int )code == 592U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 392U) {
+  if ((unsigned int )code == 760U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 672U) {
+  if ((unsigned int )code == 304U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 88U) {
+  if ((unsigned int )code == 216U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 528U) {
+  if ((unsigned int )code == 32U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 112U) {
+  if ((unsigned int )code == 192U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 208U) {
+  if ((unsigned int )code == 224U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 736U) {
+  if ((unsigned int )code == 656U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 64U) {
+  if ((unsigned int )code == 288U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 144U) {
+  if ((unsigned int )code == 536U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 248U) {
+  if ((unsigned int )code == 48U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 128U) {
+  if ((unsigned int )code == 896U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 432U) {
+  if ((unsigned int )code == 552U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 104U) {
+  if ((unsigned int )code == 800U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 728U) {
+  if ((unsigned int )code == 296U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 456U) {
+  if ((unsigned int )code == 568U) {
     tmp = 1;
   } else {
     tmp = 0;
@@ -18165,13 +18165,13 @@ __inline static void mark_livecode(jit_op *op )
     if (op->jmp_addr) {
       mark_livecode(op->jmp_addr);
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 784U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 720U) {
       return;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 856U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 176U) {
       return;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 552U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 680U) {
       return;
     }
     op = op->next;
@@ -19362,11 +19362,11 @@ static int join_muli_addr(jit_op *op , jit_op *nextop )
     tmp___0 = nextop->arg[1];
   }
   add_reg = tmp___0;
-  nextop->code = (unsigned short)201;
+  nextop->code = (unsigned short)273;
   nextop->spec = (unsigned char )(((1 << 4) | (1 << 2)) | 3);
   nextop->arg[1] = add_reg;
   nextop->arg[2] = op->arg[1];
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 368U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 888U) {
     tmp___1 = shift_index((int )op->arg[2]);
     nextop->arg_size = (unsigned char )tmp___1;
   } else {
@@ -21344,7 +21344,7 @@ static int emit_push_callee_saved_regs(struct jit *jit , jit_op *op )
     if (r->callee_saved) {
       o = op->next;
       while ((unsigned long )o != (unsigned long )((void *)0)) {
-        if ((unsigned int )((jit_opcode )((int )o->code & 65528)) == 376U) {
+        if ((unsigned int )((jit_opcode )((int )o->code & 65528)) == 16U) {
           break;
         }
         tmp = uses_hw_reg(o, (jit_value )r->id, 0);
@@ -21455,17 +21455,17 @@ int jit_optimize_join_addmul(struct jit *jit )
   tmp = jit_op_first(jit->ops);
   op = tmp;
   while ((unsigned long )op != (unsigned long )((void *)0)) {
-    tmp___0 = join_2ops(op, 370, 234, & join_muli_addi);
+    tmp___0 = join_2ops(op, 890, 674, & join_muli_addi);
     change |= tmp___0;
-    tmp___1 = join_2ops(op, 242, 234, & join_muli_addi);
+    tmp___1 = join_2ops(op, 642, 674, & join_muli_addi);
     change |= tmp___1;
-    tmp___2 = join_2ops(op, 370, 233, & join_muli_addr);
+    tmp___2 = join_2ops(op, 890, 673, & join_muli_addr);
     change |= tmp___2;
-    tmp___3 = join_2ops(op, 242, 233, & join_muli_addr);
+    tmp___3 = join_2ops(op, 642, 673, & join_muli_addr);
     change |= tmp___3;
-    tmp___4 = join_2ops(op, 370, 322, & join_muli_ori);
+    tmp___4 = join_2ops(op, 890, 450, & join_muli_ori);
     change |= tmp___4;
-    tmp___5 = join_2ops(op, 242, 322, & join_muli_ori);
+    tmp___5 = join_2ops(op, 642, 450, & join_muli_ori);
     change |= tmp___5;
     op = op->next;
   }
@@ -21853,7 +21853,7 @@ __inline static void jump_adjustment(struct jit *jit , jit_op *op )
   jit_rmap *tgt_regmap ;
 
   {
-  if ((int )op->code == 554) {
+  if ((int )op->code == 682) {
     cur_regmap = op->regmap;
     tgt_regmap = (op->jmp_addr)->regmap;
     rmap_sync(op, cur_regmap, tgt_regmap, 1);
@@ -21875,7 +21875,7 @@ static int assign_jmp(jit_op *op , struct jit_reg_allocator *al )
   int tmp___2 ;
 
   {
-  if ((int )op->code == 554) {
+  if ((int )op->code == 682) {
     return (0);
   }
   i = 0;
@@ -21944,7 +21944,7 @@ void jit_message(struct jit *j , char *s )
 
   {
   tmp = jit_debug_info_new("head.c", "jit_message", 19);
-  jit_add_op(j, (unsigned short)642, (unsigned char)2, (jit_value )s, 0L, 0L, (unsigned char)0,
+  jit_add_op(j, (unsigned short)474, (unsigned char)2, (jit_value )s, 0L, 0L, (unsigned char)0,
              tmp);
   return;
 }
@@ -21984,10 +21984,10 @@ __inline static void jit_flw_initialize(struct jit *jit )
       }
       i ++;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
       func_info = (struct jit_func_info *)op->arg[1];
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 48U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 8U) {
       arg_id = (int )op->arg[1];
       if ((unsigned int )(func_info->args + arg_id)->type != 2U) {
         jit_set_add(op->live_in, (3 << 1) | ((arg_id & 268435455) << 4));
@@ -22086,10 +22086,10 @@ void jit_patch_local_addrs(struct jit *jit )
   tmp = jit_op_first(jit->ops);
   op = tmp;
   while ((unsigned long )op != (unsigned long )((void *)0)) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 624U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
       goto _L;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 424U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 344U) {
       _L: /* CIL Label */ 
       buf = jit->buf + op->patch_addr;
       tmp___2 = jit_is_label(jit, (void *)op->arg[1]);
@@ -22177,10 +22177,10 @@ void jit_patch_local_addrs(struct jit *jit )
         break;
       }
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 688U) {
       goto _L___0;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 480U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
       _L___0: /* CIL Label */ 
       buf___0 = jit->buf + op->patch_addr;
       tmp___21 = jit_is_label(jit, (void *)op->arg[0]);
@@ -22799,7 +22799,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
   sign = ! ((int )op->code & 4);
   found = 1;
   switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-  case 232U: 
+  case 672U: 
   if (a1 != a2) {
     if (a1 != a3) {
       if (imm) {
@@ -23088,25 +23088,25 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     emit_alu_op(jit, op, 0, imm);
   }
   break;
-  case 800U: 
+  case 400U: 
   emit_alu_op(jit, op, 0, imm);
   break;
-  case 848U: 
+  case 80U: 
   emit_alu_op(jit, op, 2, imm);
   break;
-  case 520U: 
+  case 248U: 
   emit_sub_op(jit, op, imm);
   break;
-  case 576U: 
+  case 352U: 
   emit_subx_op(jit, op, 5, imm);
   break;
-  case 496U: 
+  case 0U: 
   emit_subx_op(jit, op, 3, imm);
   break;
-  case 312U: 
+  case 744U: 
   emit_rsb_op(jit, op, imm);
   break;
-  case 664U: 
+  case 864U: 
   if (a1 != a2) {
     while (1) {
       if (sizeof(void *) == 2U) {
@@ -23207,16 +23207,16 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 320U: 
+  case 448U: 
   emit_alu_op(jit, op, 1, imm);
   break;
-  case 296U: 
+  case 704U: 
   emit_alu_op(jit, op, 6, imm);
   break;
-  case 280U: 
+  case 608U: 
   emit_alu_op(jit, op, 4, imm);
   break;
-  case 704U: 
+  case 280U: 
   if (a1 != a2) {
     while (1) {
       if (sizeof(void *) == 2U) {
@@ -23317,10 +23317,10 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 240U: 
+  case 640U: 
   emit_shift_op(jit, op, 4, imm);
   break;
-  case 712U: 
+  case 584U: 
   if (sign) {
     tmp___72 = 7;
   } else {
@@ -23328,88 +23328,88 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
   }
   emit_shift_op(jit, op, tmp___72, imm);
   break;
-  case 32U: 
+  case 880U: 
   emit_cond_op(jit, op, 2, imm, sign);
   break;
-  case 792U: 
+  case 168U: 
   emit_cond_op(jit, op, 3, imm, sign);
   break;
-  case 824U: 
+  case 72U: 
   emit_cond_op(jit, op, 4, imm, sign);
   break;
-  case 160U: 
+  case 184U: 
   emit_cond_op(jit, op, 5, imm, sign);
   break;
-  case 632U: 
+  case 392U: 
   emit_cond_op(jit, op, 0, imm, sign);
   break;
-  case 176U: 
+  case 40U: 
   emit_cond_op(jit, op, 1, imm, sign);
   break;
-  case 16U: 
+  case 592U: 
   emit_branch_op(jit, op, 2, imm, sign);
   break;
-  case 392U: 
+  case 760U: 
   emit_branch_op(jit, op, 3, imm, sign);
   break;
-  case 672U: 
+  case 304U: 
   emit_branch_op(jit, op, 4, imm, sign);
   break;
-  case 88U: 
+  case 216U: 
   emit_branch_op(jit, op, 5, imm, sign);
   break;
-  case 528U: 
+  case 32U: 
   emit_branch_op(jit, op, 0, imm, sign);
   break;
-  case 112U: 
+  case 192U: 
   emit_branch_op(jit, op, 1, imm, sign);
   break;
-  case 616U: 
+  case 752U: 
   emit_branch_mask_op(jit, op, 1, imm);
   break;
-  case 136U: 
+  case 320U: 
   emit_branch_mask_op(jit, op, 0, imm);
   break;
-  case 432U: 
+  case 552U: 
   emit_branch_overflow_op(jit, op, 0, imm, 0);
   break;
-  case 104U: 
+  case 800U: 
   emit_branch_overflow_op(jit, op, 5, imm, 0);
   break;
-  case 728U: 
+  case 296U: 
   emit_branch_overflow_op(jit, op, 0, imm, 1);
   break;
-  case 456U: 
+  case 568U: 
   emit_branch_overflow_op(jit, op, 5, imm, 1);
   break;
-  case 368U: 
+  case 888U: 
   emit_mul_op(jit, op, imm, sign, 0);
   break;
-  case 768U: 
+  case 416U: 
   emit_mul_op(jit, op, imm, sign, 1);
   break;
-  case 80U: 
+  case 424U: 
   emit_div_op(jit, op, imm, sign, 0);
   break;
-  case 864U: 
+  case 664U: 
   emit_div_op(jit, op, imm, sign, 1);
   break;
-  case 0U: 
+  case 904U: 
   emit_funcall(jit, op, imm);
   break;
-  case 648U: 
+  case 104U: 
   while (1) {
     target = (struct jit_op *)a1;
     if (! target->in_use) {
       break;
     }
     switch ((unsigned int )((jit_opcode )((int )target->code & 65528))) {
-    case 424U: 
-    case 624U: 
+    case 344U: 
+    case 832U: 
     target->arg[1] = (jit_value )jit->ip - (jit_value )jit->buf;
     break;
-    case 480U: 
-    case 832U: 
+    case 376U: 
+    case 688U: 
     target->arg[0] = (jit_value )jit->ip - (jit_value )jit->buf;
     break;
     default: 
@@ -23510,7 +23510,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 552U: 
+  case 680U: 
   op->patch_addr = (jit_value )jit->ip - (jit_value )jit->buf;
   if ((int )op->code & 1) {
     while (1) {
@@ -23592,7 +23592,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     }
   }
   break;
-  case 784U: 
+  case 720U: 
   if (! imm) {
     if (a1 != 0L) {
       while (1) {
@@ -23812,19 +23812,19 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 72U: 
+  case 360U: 
   funcall_put_arg(jit, op);
   break;
-  case 416U: 
+  case 696U: 
   funcall_fput_arg(jit, op);
   break;
-  case 48U: 
+  case 8U: 
   emit_get_arg(jit, op);
   break;
-  case 640U: 
+  case 472U: 
   emit_msg_op(jit, op);
   break;
-  case 592U: 
+  case 136U: 
   emit_trace_op(jit, op);
   while ((unsigned long )jit->ip % 16UL) {
     while (1) {
@@ -23838,61 +23838,61 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     }
   }
   break;
-  case 304U: 
+  case 56U: 
   emit_ld_op(jit, op, a1, a2);
   break;
-  case 336U: 
+  case 872U: 
   emit_ldx_op(jit, op, a1, a2, a3);
   break;
   case 504U: 
   emit_sse_fst_op(jit, op, a1, a2);
   break;
-  case 384U: 
+  case 648U: 
   emit_sse_fstx_op(jit, op, a1, a2, a3);
   break;
-  case 184U: 
+  case 520U: 
   emit_sse_fld_op(jit, op, a1, a2);
   break;
-  case 656U: 
+  case 160U: 
   emit_sse_fldx_op(jit, op, a1, a2, a3);
   break;
-  case 40U: 
+  case 856U: 
   emit_memcpy(jit, op, a1, a2, a3);
   break;
-  case 752U: 
+  case 560U: 
   emit_memset(jit, op, a1, a2, a3, (int )op->arg_size);
   break;
-  case 808U: 
+  case 24U: 
   emit_transfer_init(jit, op, a1, a2, a3, (int )op->arg_size);
   break;
-  case 120U: 
+  case 712U: 
   emit_transfer_loop(jit, (jit_op *)a1);
   break;
-  case 904U: 
+  case 736U: 
   emit_transfer_op(jit, op, 6);
   break;
-  case 776U: 
+  case 792U: 
   emit_transfer_op(jit, op, 4);
   break;
-  case 488U: 
+  case 512U: 
   emit_transfer_op(jit, op, 1);
   break;
-  case 536U: 
+  case 768U: 
   emit_transfer_op(jit, op, 0);
   break;
-  case 688U: 
+  case 240U: 
   emit_transfer_op(jit, op, 5);
   break;
-  case 400U: 
+  case 488U: 
   break;
-  case 680U: 
+  case 840U: 
   break;
-  case 440U: 
+  case 624U: 
   break;
-  case 880U: 
+  case 728U: 
   ((jit_label *)a1)->pos = (jit_value )jit->ip - (jit_value )jit->buf;
   break;
-  case 288U: 
+  case 480U: 
   while ((unsigned long )jit->ip % (unsigned long )op->arg[0]) {
     while (1) {
       while (1) {
@@ -23905,8 +23905,8 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     }
   }
   break;
-  case 424U: 
-  case 624U: 
+  case 344U: 
+  case 832U: 
   op->patch_addr = (jit_value )jit->ip - (jit_value )jit->buf;
   while (1) {
     while (1) {
@@ -23986,9 +23986,9 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 408U: 
+  case 808U: 
   break;
-  case 760U: 
+  case 336U: 
   break;
   default: 
   found = 0;
@@ -23997,7 +23997,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     return;
   }
   switch ((int )op->code) {
-  case 449: 
+  case 817: 
   if (a1 != a2) {
     while (1) {
       if (sizeof(void *) == 2U) {
@@ -24066,7 +24066,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     }
   }
   break;
-  case 450: 
+  case 818: 
   if (a2 == 0L) {
     while (1) {
       while (1) {
@@ -24153,15 +24153,15 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     }
   }
   break;
-  case 224: 
+  case 632: 
   funcall_prepare(jit, op, (int )(a1 + a2));
   tmp___174 = emit_push_caller_saved_regs(jit, op);
   jit->push_count += tmp___174;
   break;
-  case 376: 
+  case 16: 
   emit_prolog_op(jit, op);
   break;
-  case 842: 
+  case 578: 
   while (1) {
     if ((int )op->arg_size == 2) {
       tmp___175 = jit->ip;
@@ -24242,7 +24242,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 841: 
+  case 577: 
   while (1) {
     if ((int )op->arg_size == 2) {
       tmp___188 = jit->ip;
@@ -24338,7 +24338,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 746: 
+  case 466: 
   while (1) {
     if ((int )op->arg_size == 2) {
       tmp___213 = jit->ip;
@@ -24521,7 +24521,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 745: 
+  case 465: 
   while (1) {
     while (1) {
       if ((int )op->arg_size > 4) {
@@ -24654,7 +24654,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 57: 
+  case 145: 
   while (1) {
     tmp___264 = jit->ip;
     (jit->ip) ++;
@@ -24696,46 +24696,46 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 58: 
+  case 146: 
   sse_mov_reg_safeimm(jit, op, a1, & op->flt_imm);
   break;
-  case 353: 
+  case 129: 
   emit_sse_alu_op(jit, op, 88);
   break;
-  case 273: 
+  case 385: 
   emit_sse_sub_op(jit, op, a1, a2, a3);
   break;
-  case 265: 
+  case 785: 
   emit_sse_sub_op(jit, op, a1, a3, a2);
   break;
-  case 697: 
+  case 89: 
   emit_sse_alu_op(jit, op, 89);
   break;
-  case 513: 
+  case 545: 
   emit_sse_div_op(jit, a1, a2, a3);
   break;
-  case 193: 
+  case 201: 
   emit_sse_neg_op(jit, op, a1, a2);
   break;
-  case 209: 
+  case 225: 
   emit_sse_branch(jit, op, a1, a2, a3, 2);
   break;
-  case 65: 
+  case 289: 
   emit_sse_branch(jit, op, a1, a2, a3, 4);
   break;
-  case 145: 
+  case 537: 
   emit_sse_branch(jit, op, a1, a2, a3, 5);
   break;
-  case 737: 
+  case 657: 
   emit_sse_branch(jit, op, a1, a3, a2, 5);
   break;
-  case 249: 
+  case 49: 
   emit_sse_branch(jit, op, a1, a3, a2, 0);
   break;
-  case 129: 
+  case 897: 
   emit_sse_branch(jit, op, a1, a3, a2, 1);
   break;
-  case 873: 
+  case 849: 
   while (1) {
     tmp___271 = jit->ip;
     (jit->ip) ++;
@@ -24777,7 +24777,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 25: 
+  case 233: 
   while (1) {
     tmp___278 = jit->ip;
     (jit->ip) ++;
@@ -24819,31 +24819,31 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 329: 
+  case 529: 
   emit_sse_floor(jit, a1, a2, 0);
   break;
-  case 345: 
+  case 825: 
   emit_sse_floor(jit, a1, a2, 1);
   break;
-  case 97: 
+  case 329: 
   emit_sse_round(jit, op, a1, a2);
   break;
-  case 857: 
+  case 177: 
   emit_fret_op(jit, op);
   break;
-  case 152: 
+  case 408: 
   emit_fretval_op(jit, op);
   break;
-  case 584: 
+  case 432: 
   emit_ureg(jit, a1, (int )a2);
   break;
-  case 896: 
+  case 120: 
   emit_lreg(jit, (int )a1, a2);
   break;
-  case 888: 
+  case 312: 
   emit_ureg(jit, a1, (int )a2);
   break;
-  case 472: 
+  case 112: 
   while (1) {
     if (sizeof(void *) == 2U) {
       tmp___285 = jit->ip;
@@ -24910,11 +24910,11 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 544: 
+  case 256: 
   break;
-  case 168: 
+  case 616: 
   break;
-  case 570: 
+  case 66: 
   while (1) {
     while (1) {
       if ((int )op->arg_size > 4) {
@@ -25056,7 +25056,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 569: 
+  case 65: 
   while (1) {
     if ((int )op->arg_size == 2) {
       tmp___322 = jit->ip;
@@ -25255,7 +25255,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 362: 
+  case 98: 
   while (1) {
     if ((int )op->arg_size == 2) {
       tmp___387 = jit->ip;
@@ -25715,7 +25715,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 361: 
+  case 97: 
   while (1) {
     while (1) {
       if ((int )op->arg_size > 4) {
@@ -26001,7 +26001,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 201: 
+  case 273: 
   while (1) {
     while (1) {
       if (a1 > 7L) {
@@ -26101,7 +26101,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 202: 
+  case 274: 
   while (1) {
     while (1) {
       if (a1 > 7L) {
@@ -26231,7 +26231,7 @@ void jit_gen_op(struct jit *jit , struct jit_op *op )
     break;
   }
   break;
-  case 608: 
+  case 264: 
   tmp___556 = __builtin_object_size((void *)(& tmp___555), 0);
   __builtin___memcpy_chk((void *)(& tmp___555), (void const   *)(& op->flt_imm), sizeof(jit_value ),
                          tmp___556);
@@ -28238,7 +28238,7 @@ int print_op_compilable(struct jit_disasm *disasm , struct jit_op *op , jit_tree
       ob_printf(linebuf, ":\n");
     }
   }
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 8U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 152U) {
     print_comment(linebuf, op);
     goto direct_print;
   }
@@ -28252,20 +28252,20 @@ int print_op_compilable(struct jit_disasm *disasm , struct jit_op *op , jit_tree
     }
   } else
   _L: /* CIL Label */ 
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 624U) {
-    ob_printf(linebuf, "jit_op * op_%li = ", (unsigned long )op >> 4);
-  } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 424U) {
-    ob_printf(linebuf, "jit_op * op_%li = ", (unsigned long )op >> 4);
-  } else
   if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
     ob_printf(linebuf, "jit_op * op_%li = ", (unsigned long )op >> 4);
   } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 480U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 344U) {
+    ob_printf(linebuf, "jit_op * op_%li = ", (unsigned long )op >> 4);
+  } else
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 688U) {
+    ob_printf(linebuf, "jit_op * op_%li = ", (unsigned long )op >> 4);
+  } else
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
     ob_printf(linebuf, "jit_op * op_%li = ", (unsigned long )op >> 4);
   }
   switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-  case 880U: 
+  case 728U: 
   ob_printf(linebuf, "jit_label * ");
   tmp___2 = jit_tree_search(labels, op->arg[0]);
   lab___0 = tmp___2;
@@ -28274,14 +28274,14 @@ int print_op_compilable(struct jit_disasm *disasm , struct jit_op *op , jit_tree
   }
   ob_printf(linebuf, " = jit_get_label(p");
   goto print;
-  case 648U: 
+  case 104U: 
   ob_printf(linebuf, "jit_patch  (p, op_%li", (unsigned long )op->arg[0] >> 4);
   goto print;
-  case 408U: 
+  case 808U: 
   ob_printf(linebuf, "jit_data_byte(p, ");
   ob_printf(linebuf, (char const   *)disasm->generic_value_template, op->arg[0]);
   goto print;
-  case 560U: 
+  case 496U: 
   i = 0;
   while ((jit_value )i < op->arg[0]) {
     ob_printf(linebuf, "jit_data_byte(p, ");
@@ -28292,25 +28292,25 @@ int print_op_compilable(struct jit_disasm *disasm , struct jit_op *op , jit_tree
     i ++;
   }
   goto print;
-  case 424U: 
-  case 624U: 
+  case 344U: 
+  case 832U: 
   tmp___3 = jit_get_op_name(op);
   ob_printf(linebuf, "jit_%s(p, ", tmp___3);
   print_arg(disasm, linebuf, op, 1);
   ob_append(linebuf, (char *)", ");
   print_addr(disasm, linebuf, labels, op, 1);
   goto print;
-  case 480U: 
-  case 832U: 
+  case 376U: 
+  case 688U: 
   tmp___4 = jit_get_op_name(op);
   ob_printf(linebuf, "jit_data_%s(p, ", tmp___4 + 1);
   print_addr(disasm, linebuf, labels, op, 0);
   goto print;
-  case 288U: 
+  case 480U: 
   ob_printf(linebuf, "jit_code_align  (p, ");
   ob_printf(linebuf, (char const   *)disasm->generic_value_template, op->arg[0]);
   goto print;
-  case 224U: 
+  case 632U: 
   ob_printf(linebuf, "jit_prepare(p");
   goto print;
   default: 
@@ -28325,14 +28325,14 @@ int print_op_compilable(struct jit_disasm *disasm , struct jit_op *op , jit_tree
   ob_pad(linebuf, 15);
   ob_append(linebuf, (char *)"(p,");
   switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-  case 640U: 
+  case 472U: 
   print_str(linebuf, (char *)op->arg[0]);
   if (! ((int )op->code & 2)) {
     ob_append(linebuf, (char *)", ");
     print_arg(disasm, linebuf, op, 2);
   }
   break;
-  case 680U: 
+  case 840U: 
   switch (op->arg[0]) {
   case 0L: 
   ob_append(linebuf, (char *)"JIT_SIGNED_NUM");
@@ -28692,7 +28692,7 @@ void print_full_op_name(struct output_buf *linebuf , jit_op *op )
   tmp = jit_get_op_name(op);
   op_name = tmp;
   ob_append(linebuf, op_name);
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 0U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 904U) {
     if (((int )op->code & 7) & 2) {
       return;
     }
@@ -28730,16 +28730,16 @@ __inline static void initialize_code_refs(struct code_refs_cache *code_refs , st
   code_refs->size = 0;
   while (1) {
     if (op) {
-      if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 376U)) {
+      if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 16U)) {
         break;
       }
     } else {
       break;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 624U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
       (code_refs->size) ++;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 688U) {
       (code_refs->size) ++;
     }
     op = op->next;
@@ -28750,18 +28750,18 @@ __inline static void initialize_code_refs(struct code_refs_cache *code_refs , st
   i = 0;
   while (1) {
     if (op) {
-      if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 376U)) {
+      if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 16U)) {
         break;
       }
     } else {
       break;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 624U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
       tmp___0 = i;
       i ++;
       *(code_refs->ops + tmp___0) = op;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 688U) {
       tmp___0 = i;
       i ++;
       *(code_refs->ops + tmp___0) = op;
@@ -28814,58 +28814,58 @@ __inline static void branch_adjustment(struct jit *jit , jit_op *op )
   tmp___3 = rmap_equal(op, cur_regmap, tgt_regmap);
   if (! tmp___3) {
     switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-    case 528U: 
-    op->code = (unsigned short )(112 | ((int )op->code & 7));
+    case 32U: 
+    op->code = (unsigned short )(192 | ((int )op->code & 7));
     break;
-    case 672U: 
-    op->code = (unsigned short )(392 | ((int )op->code & 7));
+    case 304U: 
+    op->code = (unsigned short )(760 | ((int )op->code & 7));
     break;
-    case 88U: 
-    op->code = (unsigned short )(16 | ((int )op->code & 7));
+    case 216U: 
+    op->code = (unsigned short )(592 | ((int )op->code & 7));
     break;
-    case 112U: 
-    op->code = (unsigned short )(528 | ((int )op->code & 7));
+    case 192U: 
+    op->code = (unsigned short )(32 | ((int )op->code & 7));
     break;
-    case 16U: 
-    op->code = (unsigned short )(88 | ((int )op->code & 7));
+    case 592U: 
+    op->code = (unsigned short )(216 | ((int )op->code & 7));
     break;
-    case 392U: 
-    op->code = (unsigned short )(672 | ((int )op->code & 7));
+    case 760U: 
+    op->code = (unsigned short )(304 | ((int )op->code & 7));
     break;
-    case 432U: 
-    op->code = (unsigned short )(728 | ((int )op->code & 7));
+    case 552U: 
+    op->code = (unsigned short )(296 | ((int )op->code & 7));
     break;
-    case 104U: 
-    op->code = (unsigned short )(456 | ((int )op->code & 7));
+    case 800U: 
+    op->code = (unsigned short )(568 | ((int )op->code & 7));
     break;
-    case 728U: 
-    op->code = (unsigned short )(432 | ((int )op->code & 7));
+    case 296U: 
+    op->code = (unsigned short )(552 | ((int )op->code & 7));
     break;
-    case 456U: 
-    op->code = (unsigned short )(104 | ((int )op->code & 7));
+    case 568U: 
+    op->code = (unsigned short )(800 | ((int )op->code & 7));
     break;
-    case 248U: 
-    op->code = (unsigned short )(128 | ((int )op->code & 7));
+    case 48U: 
+    op->code = (unsigned short )(896 | ((int )op->code & 7));
     break;
-    case 64U: 
-    op->code = (unsigned short )(736 | ((int )op->code & 7));
+    case 288U: 
+    op->code = (unsigned short )(656 | ((int )op->code & 7));
     break;
-    case 144U: 
-    op->code = (unsigned short )(208 | ((int )op->code & 7));
+    case 536U: 
+    op->code = (unsigned short )(224 | ((int )op->code & 7));
     break;
-    case 128U: 
-    op->code = (unsigned short )(248 | ((int )op->code & 7));
+    case 896U: 
+    op->code = (unsigned short )(48 | ((int )op->code & 7));
     break;
-    case 208U: 
-    op->code = (unsigned short )(144 | ((int )op->code & 7));
+    case 224U: 
+    op->code = (unsigned short )(536 | ((int )op->code & 7));
     break;
-    case 736U: 
-    op->code = (unsigned short )(64 | ((int )op->code & 7));
+    case 656U: 
+    op->code = (unsigned short )(288 | ((int )op->code & 7));
     break;
     default: 
     break;
     }
-    tmp___0 = jit_op_new((unsigned short)554, (unsigned char)2, op->arg[0], 0L, 0L,
+    tmp___0 = jit_op_new((unsigned short)682, (unsigned char)2, op->arg[0], 0L, 0L,
                          (unsigned char)0);
     o = tmp___0;
     o->r_arg[0] = op->r_arg[0];
@@ -28879,7 +28879,7 @@ __inline static void branch_adjustment(struct jit *jit , jit_op *op )
       (op->jmp_addr)->r_arg[0] = (jit_value )o;
     }
     jit_op_append(op, o);
-    tmp___2 = jit_op_new((unsigned short)648, (unsigned char)2, (jit_value )op, 0L,
+    tmp___2 = jit_op_new((unsigned short)104, (unsigned char)2, (jit_value )op, 0L,
                          0L, (unsigned char)0);
     o2 = tmp___2;
     o2->r_arg[0] = o2->arg[0];
@@ -28940,10 +28940,10 @@ static void jit_dead_code_analysis(struct jit *jit , int remove_dead_code )
   tmp___0 = jit_op_first(jit->ops);
   op___0 = tmp___0;
   while (op___0) {
-    if ((unsigned int )((jit_opcode )((int )op___0->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op___0->code & 65528)) == 16U) {
       mark_livecode(op___0);
     }
-    if ((unsigned int )((jit_opcode )((int )op___0->code & 65528)) == 832U) {
+    if ((unsigned int )((jit_opcode )((int )op___0->code & 65528)) == 688U) {
       mark_livecode(op___0->jmp_addr);
     }
     op___0 = op___0->next;
@@ -28951,31 +28951,31 @@ static void jit_dead_code_analysis(struct jit *jit , int remove_dead_code )
   tmp___1 = jit_op_first(jit->ops);
   op___1 = tmp___1;
   while (op___1) {
-    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 544U) {
+    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 256U) {
       op___1->in_use = (unsigned char)1;
     }
-    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 408U) {
+    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 808U) {
       op___1->in_use = (unsigned char)1;
     }
-    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 832U) {
+    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 688U) {
+      op___1->in_use = (unsigned char)1;
+    }
+    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 376U) {
       op___1->in_use = (unsigned char)1;
     }
     if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 480U) {
       op___1->in_use = (unsigned char)1;
     }
-    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 288U) {
+    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 728U) {
       op___1->in_use = (unsigned char)1;
     }
-    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 880U) {
+    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 104U) {
       op___1->in_use = (unsigned char)1;
     }
-    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 648U) {
+    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 152U) {
       op___1->in_use = (unsigned char)1;
     }
-    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 8U) {
-      op___1->in_use = (unsigned char)1;
-    }
-    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 256U) {
+    if ((unsigned int )((jit_opcode )((int )op___1->code & 65528)) == 440U) {
       op___1->in_use = (unsigned char)1;
     }
     op___1 = op___1->next;
@@ -28987,7 +28987,7 @@ static void jit_dead_code_analysis(struct jit *jit , int remove_dead_code )
   op___2 = tmp___2;
   while (op___2) {
     if (! op___2->in_use) {
-      if ((unsigned int )((jit_opcode )((int )op___2->code & 65528)) == 760U) {
+      if ((unsigned int )((jit_opcode )((int )op___2->code & 65528)) == 336U) {
         goto skip;
       }
       next = op___2->next;
@@ -29278,18 +29278,18 @@ static void emit_trace_op(struct jit *jit , jit_op *op )
   trace = 0;
   prev_code = (jit_opcode )((int )(op->prev)->code & 65528);
   next_code = (jit_opcode )((int )(op->next)->code & 65528);
-  if ((unsigned int )prev_code == 376U) {
+  if ((unsigned int )prev_code == 16U) {
     trace |= 1;
   } else
-  if ((unsigned int )prev_code == 880U) {
+  if ((unsigned int )prev_code == 728U) {
     trace |= 1;
   } else
-  if ((unsigned int )prev_code == 648U) {
+  if ((unsigned int )prev_code == 104U) {
     trace |= 1;
   }
-  if ((unsigned int )next_code != 376U) {
-    if ((unsigned int )next_code != 880U) {
-      if ((unsigned int )next_code != 648U) {
+  if ((unsigned int )next_code != 16U) {
+    if ((unsigned int )next_code != 728U) {
+      if ((unsigned int )next_code != 104U) {
         trace |= 2;
       }
     }
@@ -29730,19 +29730,19 @@ __inline static void jit_expand_patches_and_labels(struct jit *jit )
   tmp = jit_op_first(jit->ops);
   op = tmp;
   while ((unsigned long )op != (unsigned long )((void *)0)) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 648U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 104U) {
       ((jit_op *)op->arg[0])->jmp_addr = op;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 880U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 728U) {
       ((jit_label *)op->arg[0])->op = op;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 880U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 728U) {
       tmp___0 = jit_is_label(jit, (void *)op->arg[0]);
       if (tmp___0) {
         op->jmp_addr = ((jit_label *)op->arg[0])->op;
       }
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 880U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 728U) {
       tmp___1 = jit_is_label(jit, (void *)op->arg[1]);
       if (tmp___1) {
         op->jmp_addr = ((jit_label *)op->arg[1])->op;
@@ -29794,7 +29794,7 @@ __inline static void jit_free_op(struct jit_op *op )
   if (op->debug_info) {
     free((void *)op->debug_info);
   }
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
     info = (struct jit_func_info *)op->arg[1];
     free((void *)info->args);
     free((void *)info);
@@ -29850,10 +29850,10 @@ static int check_code_references(jit_op *op , char *msg_buf )
   int tmp ;
 
   {
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 624U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
     goto _L;
   } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 688U) {
     _L: /* CIL Label */ 
     tmp = jit_op_is_data_op(op->jmp_addr);
     if (tmp) {
@@ -29955,7 +29955,7 @@ jit_op *jit_add_prolog(struct jit *jit , void *func , struct jit_debug_info *deb
   void *tmp___0 ;
 
   {
-  tmp = jit_add_op(jit, (unsigned short)376, (unsigned char)2, (long )func, 0L, 0L,
+  tmp = jit_add_op(jit, (unsigned short)16, (unsigned char)2, (long )func, 0L, 0L,
                    (unsigned char)0, (struct jit_debug_info *)((void *)0));
   op = tmp;
   tmp___0 = malloc((size_t )sizeof(struct jit_func_info ));
@@ -29975,10 +29975,10 @@ static int check_missing_patches(jit_op *op , char *msg_buf )
   int tmp ;
 
   {
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 0U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 904U) {
     goto _L___1;
   } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 552U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 680U) {
     _L___1: /* CIL Label */ 
     if ((int )op->code & 2) {
       goto _L;
@@ -30551,46 +30551,46 @@ static void jit_correct_long_imms(struct jit *jit )
     if (! ((int )op->code & 2)) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 552U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 680U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 0U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 904U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 648U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 104U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 448U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 816U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 72U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 360U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 640U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 472U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 8U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 152U) {
+      goto __Cont;
+    }
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
+      goto __Cont;
+    }
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 688U) {
       goto __Cont;
     }
     if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
       goto __Cont;
     }
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 344U) {
+      goto __Cont;
+    }
     if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 480U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 776U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 424U) {
-      goto __Cont;
-    }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 624U) {
-      goto __Cont;
-    }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 464U) {
-      goto __Cont;
-    }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 592U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 136U) {
       goto __Cont;
     }
     i = 1;
@@ -30603,7 +30603,7 @@ static void jit_correct_long_imms(struct jit *jit )
     value = op->arg[imm_arg];
     tmp___1 = jit_imm_overflow(jit, op, value);
     if (tmp___1) {
-      tmp___0 = jit_op_new((unsigned short)450, (unsigned char )((2 << 2) | 3), (long )(1 << 1),
+      tmp___0 = jit_op_new((unsigned short)818, (unsigned char )((2 << 2) | 3), (long )(1 << 1),
                            value, 0L, (unsigned char )sizeof(void *));
       newop = tmp___0;
       jit_op_prepend(op, newop);
@@ -31831,7 +31831,7 @@ static void emit_ld_op(struct jit *jit , jit_op *op , jit_value a1 , jit_value a
     return;
   }
   switch ((int )op->code) {
-  case 306: 
+  case 58: 
   while (1) {
     if ((int )op->arg_size == 4) {
       while (1) {
@@ -31949,7 +31949,7 @@ static void emit_ld_op(struct jit *jit , jit_op *op , jit_value a1 , jit_value a
     break;
   }
   break;
-  case 310: 
+  case 62: 
   while (1) {
     if ((int )op->arg_size == 8) {
       goto _L;
@@ -32102,7 +32102,7 @@ static void emit_ld_op(struct jit *jit , jit_op *op , jit_value a1 , jit_value a
     break;
   }
   break;
-  case 305: 
+  case 57: 
   while (1) {
     if ((int )op->arg_size == 4) {
       while (1) {
@@ -32250,7 +32250,7 @@ static void emit_ld_op(struct jit *jit , jit_op *op , jit_value a1 , jit_value a
     break;
   }
   break;
-  case 309: 
+  case 61: 
   while (1) {
     if ((int )op->arg_size == 8) {
       goto _L___0;
@@ -32479,28 +32479,28 @@ static int check_argument_sizes(jit_op *op , char *msg_buf )
 
   {
   switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-  case 744U: 
-  case 840U: 
-  case 336U: 
-  case 304U: 
+  case 464U: 
+  case 576U: 
+  case 872U: 
+  case 56U: 
   tmp = valid_size((int )op->arg_size);
   if (tmp) {
     return (0);
   }
   break;
-  case 152U: 
-  case 856U: 
-  case 416U: 
-  case 384U: 
+  case 408U: 
+  case 176U: 
+  case 696U: 
+  case 648U: 
   case 504U: 
-  case 656U: 
-  case 184U: 
+  case 160U: 
+  case 520U: 
   tmp___0 = valid_fsize((int )op->arg_size);
   if (tmp___0) {
     return (0);
   }
   break;
-  case 680U: 
+  case 840U: 
   if (op->arg[0] == 0L) {
     goto _L;
   } else
@@ -33492,29 +33492,29 @@ static jit_op *print_combined_op(FILE *f , struct jit *jit , struct jit_op *op ,
 
   {
   opcode = (jit_opcode )((int )op->code & 65528);
-  if ((unsigned int )opcode == 408U) {
+  if ((unsigned int )opcode == 808U) {
     goto _L;
   } else
-  if ((unsigned int )opcode == 560U) {
+  if ((unsigned int )opcode == 496U) {
     _L: /* CIL Label */ 
     fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)".text\n%s.byte\n",
             jit_disasm_general.indent_template);
     fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)".data\n");
     while (1) {
       if (op) {
-        if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 408U)) {
-          if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 560U)) {
+        if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 808U)) {
+          if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 496U)) {
             break;
           }
         }
       } else {
         break;
       }
-      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 408U) {
+      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 808U) {
         fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)"%02x ",
                 (int )((unsigned char )op->arg[0]));
       }
-      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 560U) {
+      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 496U) {
         i = 0;
         while ((jit_value )i < op->arg[0]) {
           fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)"%02x ",
@@ -33531,7 +33531,7 @@ static jit_op *print_combined_op(FILE *f , struct jit *jit , struct jit_op *op ,
     op = op->prev;
     return (op);
   }
-  if ((unsigned int )opcode == 8U) {
+  if ((unsigned int )opcode == 152U) {
     fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)".comment\n");
     print_op(f, & jit_disasm_general, op, labels, 256);
     fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)"\n");
@@ -33541,15 +33541,15 @@ static jit_op *print_combined_op(FILE *f , struct jit *jit , struct jit_op *op ,
   print_op(f, & jit_disasm_general, op, labels, 256);
   fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)"\n");
   switch ((unsigned int )opcode) {
-  case 288U: 
+  case 480U: 
   if (op->next) {
     fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)"\n.nl\n");
     fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)".addr=%lx\n",
             (unsigned long )(jit->buf + (op->next)->code_offset));
   }
   break;
-  case 480U: 
-  case 832U: 
+  case 376U: 
+  case 688U: 
   fprintf((FILE */* __restrict  */)f, (char const   */* __restrict  */)".data\n");
   print_op_bytes(f, jit, op);
   break;
@@ -34419,21 +34419,21 @@ void jit_collect_statistics(struct jit *jit )
       }
       new_hint->refs = 0;
       new_hint->last_pos = ops_from_return;
-      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 440U) {
+      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 624U) {
         (new_hint->should_be_eax) ++;
       } else
-      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 784U) {
+      if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 720U) {
         (new_hint->should_be_eax) ++;
       }
       new_hints = jit_tree_insert(new_hints, reg___0, (jit_tree_value )new_hint, (int *)((void *)0));
       i ++;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 0U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 904U) {
       mark_calleesaved_regs(new_hints, op);
     }
     hints_refcount_inc(new_hints);
     op->allocator_hints = new_hints;
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
       last_hints = (jit_tree *)((void *)0);
       ops_from_return = 0;
     } else {
@@ -34451,7 +34451,7 @@ static int check_uninitialized_registers(jit_op *op , char *msg_buf )
   size_t tmp ;
 
   {
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 376U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) != 16U) {
     return (0);
   }
   if ((unsigned long )(op->live_in)->root != (unsigned long )((void *)0)) {
@@ -34975,7 +34975,7 @@ static int join_muli_ori(jit_op *op , jit_op *nextop )
   if (! tmp) {
     return (0);
   }
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 368U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 888U) {
     max = (int )op->arg[2];
     tmp___1 = max;
   } else {
@@ -35126,7 +35126,7 @@ static void emit_transfer_op(struct jit *jit , jit_op *op , int alu_op )
 
   {
   init_op = op->prev;
-  while ((unsigned int )((jit_opcode )((int )init_op->code & 65528)) != 808U) {
+  while ((unsigned int )((jit_opcode )((int )init_op->code & 65528)) != 24U) {
     init_op = init_op->prev;
   }
   tinf = (struct transfer_info *)init_op->addendum;
@@ -35801,7 +35801,7 @@ void jit_optimize_frame_ptr(struct jit *jit )
     if (! op) {
       goto _L;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
       _L: /* CIL Label */ 
       if (info) {
         if (! uses_frame_ptr) {
@@ -35816,16 +35816,16 @@ void jit_optimize_frame_ptr(struct jit *jit )
     if (! op) {
       break;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 400U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 488U) {
       uses_frame_ptr |= 1;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 584U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 432U) {
       uses_frame_ptr |= 1;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 896U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 120U) {
       uses_frame_ptr |= 1;
     } else
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 888U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 312U) {
       uses_frame_ptr |= 1;
     }
     op = op->next;
@@ -36043,13 +36043,13 @@ int jit_optimize_join_addimm(struct jit *jit )
   tmp = jit_op_first(jit->ops);
   op = tmp;
   while ((unsigned long )op != (unsigned long )((void *)0)) {
-    tmp___0 = join_2ops(op, 233, 234, & join_addr_addi);
+    tmp___0 = join_2ops(op, 673, 674, & join_addr_addi);
     change |= tmp___0;
-    tmp___1 = join_2ops(op, 233, 522, & join_addr_addi);
+    tmp___1 = join_2ops(op, 673, 250, & join_addr_addi);
     change |= tmp___1;
-    tmp___2 = join_2ops(op, 234, 233, & join_addi_addr);
+    tmp___2 = join_2ops(op, 674, 673, & join_addi_addr);
     change |= tmp___2;
-    tmp___3 = join_2ops(op, 522, 233, & join_addi_addr);
+    tmp___3 = join_2ops(op, 250, 673, & join_addi_addr);
     change |= tmp___3;
     op = op->next;
   }
@@ -36075,10 +36075,10 @@ int print_op(FILE *f , struct jit_disasm *disasm , struct jit_op *op , jit_tree 
   {
   tmp = ob_new();
   linebuf = tmp;
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 880U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 728U) {
     goto _L;
   } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 648U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 104U) {
     _L: /* CIL Label */ 
     tmp___0 = jit_tree_search(labels, op->arg[0]);
     lab = tmp___0;
@@ -36093,11 +36093,11 @@ int print_op(FILE *f , struct jit_disasm *disasm , struct jit_op *op , jit_tree 
     }
     goto print;
   }
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 8U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 152U) {
     print_comment(linebuf, op);
     goto print;
   }
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 592U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 136U) {
     ob_append(linebuf, disasm->indent_template);
     ob_append(linebuf, (char *)".trace");
     goto print;
@@ -36115,13 +36115,13 @@ int print_op(FILE *f , struct jit_disasm *disasm , struct jit_op *op , jit_tree 
   ob_append(linebuf, disasm->indent_template);
   if ((int )*(op_name + 0) == 46) {
     switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-    case 288U: 
-    case 408U: 
+    case 480U: 
+    case 808U: 
     ob_printf(linebuf, "%s ", op_name);
     ob_pad(linebuf, 13);
     ob_printf(linebuf, (char const   *)disasm->generic_value_template, op->arg[0]);
     goto print;
-    case 560U: 
+    case 496U: 
     ob_printf(linebuf, "%s ", op_name);
     ob_pad(linebuf, 13);
     i = 0;
@@ -36131,8 +36131,8 @@ int print_op(FILE *f , struct jit_disasm *disasm , struct jit_op *op , jit_tree 
       i ++;
     }
     goto print;
-    case 480U: 
-    case 832U: 
+    case 376U: 
+    case 688U: 
     ob_printf(linebuf, "%s ", op_name);
     ob_pad(linebuf, 13);
     print_addr(disasm, linebuf, labels, op, 0);
@@ -36156,23 +36156,23 @@ int print_op(FILE *f , struct jit_disasm *disasm , struct jit_op *op , jit_tree 
     ob_append(linebuf, (char *)" (qword)");
   }
   switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-  case 224U: 
+  case 632U: 
   break;
-  case 640U: 
+  case 472U: 
   print_str(linebuf, (char *)op->arg[0]);
   if (! ((int )op->code & 2)) {
     ob_append(linebuf, (char *)", ");
     print_arg(disasm, linebuf, op, 2);
   }
   break;
-  case 424U: 
-  case 624U: 
+  case 344U: 
+  case 832U: 
   ob_append(linebuf, (char *)" ");
   print_arg(disasm, linebuf, op, 1);
   ob_append(linebuf, (char *)", ");
   print_addr(disasm, linebuf, labels, op, 1);
   break;
-  case 680U: 
+  case 840U: 
   switch (op->arg[0]) {
   case 0L: 
   ob_append(linebuf, (char *)" integer");
@@ -36427,12 +36427,12 @@ void jit_generate_code(struct jit *jit )
     }
     offset_1 = (unsigned long )(jit->ip - jit->buf);
     switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-    case 408U: 
+    case 808U: 
     tmp___2 = jit->ip;
     (jit->ip) ++;
     *tmp___2 = (unsigned char )op->arg[0];
     break;
-    case 560U: 
+    case 496U: 
     while ((long )jit->buf_capacity - (jit->ip - jit->buf) < op->arg[0]) {
       jit_buf_expand(jit);
     }
@@ -36444,8 +36444,8 @@ void jit_generate_code(struct jit *jit )
       i ++;
     }
     break;
-    case 480U: 
-    case 832U: 
+    case 376U: 
+    case 688U: 
     op->patch_addr = (jit_value )jit->ip - (jit_value )jit->buf;
     i___0 = 0;
     while ((unsigned int )i___0 < sizeof(void *)) {
@@ -36454,11 +36454,11 @@ void jit_generate_code(struct jit *jit )
       i___0 ++;
     }
     break;
+    case 368U: 
+    case 440U: 
+    case 152U: 
+    case 776U: 
     case 600U: 
-    case 256U: 
-    case 8U: 
-    case 464U: 
-    case 720U: 
     break;
     default: 
     jit_gen_op(jit, op);
@@ -36487,7 +36487,7 @@ void jit_generate_code(struct jit *jit )
   tmp___6 = jit_op_first(jit->ops);
   op___0 = tmp___6;
   while ((unsigned long )op___0 != (unsigned long )((void *)0)) {
-    if ((unsigned int )((jit_opcode )((int )op___0->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op___0->code & 65528)) == 16U) {
       *((void **)op___0->arg[0]) = (void *)(jit->buf + op___0->patch_addr);
     }
     op___0 = op___0->next;
@@ -36525,7 +36525,7 @@ jit_op *jit_data_bytes(struct jit *jit , jit_value count , unsigned char *data )
   unsigned int tmp___0 ;
 
   {
-  tmp = jit_add_op(jit, (unsigned short)562, (unsigned char)2, count, (jit_value )0,
+  tmp = jit_add_op(jit, (unsigned short)498, (unsigned char)2, count, (jit_value )0,
                    (jit_value )0, (unsigned char)0, (struct jit_debug_info *)((void *)0));
   op = tmp;
   op->addendum = malloc((size_t )count);
@@ -36835,21 +36835,21 @@ static int check_data_alignment(jit_op *op , char *msg_buf )
   if (tmp) {
     return (0);
   } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 288U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 480U) {
     return (0);
   }
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 880U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 728U) {
     return (0);
   } else
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 648U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 104U) {
     return (0);
   }
   prev = op->prev;
   while (prev) {
-    if ((unsigned int )((jit_opcode )((int )prev->code & 65528)) == 880U) {
+    if ((unsigned int )((jit_opcode )((int )prev->code & 65528)) == 728U) {
       prev = prev->prev;
     } else
-    if ((unsigned int )((jit_opcode )((int )prev->code & 65528)) == 648U) {
+    if ((unsigned int )((jit_opcode )((int )prev->code & 65528)) == 104U) {
       prev = prev->prev;
     } else {
       break;
@@ -36881,14 +36881,14 @@ static void cleanup(struct jit *jit )
       jit_set_free(op->live_out);
       op->live_out = (struct jit_set *)((void *)0);
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
       if (op->arg[1]) {
         info = (struct jit_func_info *)op->arg[1];
         free((void *)info->args);
         info->args = (struct jit_inp_arg *)((void *)0);
       }
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 224U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 632U) {
       op->arg[0] = (jit_value )0;
       op->arg[1] = (jit_value )0;
     }
@@ -36917,7 +36917,7 @@ static void assign_regs(struct jit *jit , struct jit_op *op )
   {
   skip = 0;
   al = jit->reg_al;
-  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+  if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
     info = (struct jit_func_info *)op->arg[1];
     al->current_func_info = info;
     assign_regs_for_args(al, op);
@@ -36927,37 +36927,37 @@ static void assign_regs(struct jit *jit , struct jit_op *op )
     op->regmap = rmap_clone((op->prev)->regmap);
   }
   switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-  case 224U: 
+  case 632U: 
   prepare_registers_for_call(al, op);
   break;
-  case 72U: 
+  case 360U: 
   skip = 1;
   break;
-  case 416U: 
+  case 696U: 
   skip = 1;
   break;
-  case 440U: 
+  case 624U: 
   skip = assign_ret_reg(op, al->ret_reg);
   break;
-  case 152U: 
+  case 408U: 
   skip = assign_ret_reg(op, al->fpret_reg);
   break;
-  case 48U: 
+  case 8U: 
   skip = assign_getarg(op, al);
   break;
-  case 0U: 
+  case 904U: 
   skip = assign_call(op, al);
   break;
-  case 552U: 
+  case 680U: 
   skip = assign_jmp(op, al);
   break;
-  case 760U: 
+  case 336U: 
   skip = spill_all_registers(op, al);
   break;
-  case 720U: 
+  case 600U: 
   skip = force_spill(op);
   break;
-  case 464U: 
+  case 776U: 
   skip = force_assoc(op, al);
   break;
   default: 
@@ -41423,221 +41423,221 @@ char *jit_get_op_name(struct jit_op *op )
 
   {
   switch ((unsigned int )((jit_opcode )((int )op->code & 65528))) {
-  case 448U: 
+  case 816U: 
   return ((char *)"mov");
-  case 304U: 
-  return ((char *)"ld");
-  case 336U: 
-  return ((char *)"ldx");
-  case 840U: 
-  return ((char *)"st");
-  case 744U: 
-  return ((char *)"stx");
-  case 40U: 
-  return ((char *)"memcpy");
-  case 752U: 
-  return ((char *)"memset");
-  case 552U: 
-  return ((char *)"jmp");
-  case 648U: 
-  return ((char *)".patch");
-  case 224U: 
-  return ((char *)"prepare");
-  case 72U: 
-  return ((char *)"putarg");
-  case 0U: 
-  return ((char *)"call");
-  case 784U: 
-  return ((char *)"ret");
-  case 376U: 
-  return ((char *)"prolog");
-  case 48U: 
-  return ((char *)"getarg");
-  case 440U: 
-  return ((char *)"retval");
-  case 400U: 
-  return ((char *)"alloca");
-  case 680U: 
-  return ((char *)"declare_arg");
-  case 232U: 
-  return ((char *)"add");
-  case 800U: 
-  return ((char *)"addc");
-  case 848U: 
-  return ((char *)"addx");
-  case 520U: 
-  return ((char *)"sub");
-  case 576U: 
-  return ((char *)"subc");
-  case 496U: 
-  return ((char *)"subx");
-  case 312U: 
-  return ((char *)"rsb");
-  case 664U: 
-  return ((char *)"neg");
-  case 368U: 
-  return ((char *)"mul");
-  case 768U: 
-  return ((char *)"hmul");
-  case 80U: 
-  return ((char *)"div");
-  case 864U: 
-  return ((char *)"mod");
-  case 320U: 
-  return ((char *)"or");
-  case 296U: 
-  return ((char *)"xor");
-  case 280U: 
-  return ((char *)"and");
-  case 240U: 
-  return ((char *)"lsh");
-  case 712U: 
-  return ((char *)"rsh");
-  case 704U: 
-  return ((char *)"not");
-  case 32U: 
-  return ((char *)"lt");
-  case 792U: 
-  return ((char *)"le");
-  case 824U: 
-  return ((char *)"gt");
-  case 160U: 
-  return ((char *)"ge");
-  case 632U: 
-  return ((char *)"eq");
-  case 176U: 
-  return ((char *)"ne");
-  case 16U: 
-  return ((char *)"blt");
-  case 392U: 
-  return ((char *)"ble");
-  case 672U: 
-  return ((char *)"bgt");
-  case 88U: 
-  return ((char *)"bge");
-  case 528U: 
-  return ((char *)"beq");
-  case 112U: 
-  return ((char *)"bne");
-  case 616U: 
-  return ((char *)"bms");
-  case 136U: 
-  return ((char *)"bmc");
-  case 432U: 
-  return ((char *)"boadd");
-  case 104U: 
-  return ((char *)"bosub");
-  case 728U: 
-  return ((char *)"bnoadd");
-  case 456U: 
-  return ((char *)"bnosub");
-  case 584U: 
-  return ((char *)".ureg");
-  case 896U: 
-  return ((char *)".lreg");
-  case 544U: 
-  return ((char *)".code");
-  case 880U: 
-  return ((char *)".label");
-  case 888U: 
-  return ((char *)".syncreg");
-  case 472U: 
-  return ((char *)".renamereg");
-  case 640U: 
-  return ((char *)"msg");
-  case 8U: 
-  return ((char *)".comment");
-  case 168U: 
-  return ((char *)"nop");
-  case 288U: 
-  return ((char *)".align");
-  case 408U: 
-  return ((char *)".byte");
-  case 560U: 
-  return ((char *)".bytes");
-  case 832U: 
-  return ((char *)".ref_code");
-  case 480U: 
-  return ((char *)".ref_data");
-  case 624U: 
-  return ((char *)"ref_code");
-  case 424U: 
-  return ((char *)"ref_data");
-  case 760U: 
-  return ((char *)".full_spill");
-  case 592U: 
-  return ((char *)".trace");
-  case 720U: 
-  return ((char *)"force_spill");
-  case 464U: 
-  return ((char *)"force_assoc");
-  case 256U: 
-  return ((char *)"mark");
-  case 600U: 
-  return ((char *)"touch");
-  case 808U: 
-  return ((char *)"transfer");
-  case 120U: 
-  return ((char *)"transfer_cpy");
-  case 776U: 
-  return ((char *)"transfer_and");
-  case 488U: 
-  return ((char *)"transfer_or");
-  case 904U: 
-  return ((char *)"transfer_xor");
-  case 536U: 
-  return ((char *)"transfer_add");
-  case 688U: 
-  return ((char *)"transfer_sub");
   case 56U: 
-  return ((char *)"fmov");
-  case 352U: 
-  return ((char *)"fadd");
-  case 272U: 
-  return ((char *)"fsub");
-  case 264U: 
-  return ((char *)"frsb");
-  case 696U: 
-  return ((char *)"fmul");
-  case 512U: 
-  return ((char *)"fdiv");
-  case 192U: 
-  return ((char *)"fneg");
-  case 152U: 
-  return ((char *)"fretval");
-  case 416U: 
-  return ((char *)"fputarg");
+  return ((char *)"ld");
   case 872U: 
-  return ((char *)"ext");
-  case 96U: 
-  return ((char *)"round");
-  case 24U: 
-  return ((char *)"trunc");
-  case 344U: 
-  return ((char *)"floor");
-  case 328U: 
-  return ((char *)"ceil");
-  case 208U: 
-  return ((char *)"fblt");
-  case 736U: 
-  return ((char *)"fble");
-  case 64U: 
-  return ((char *)"fbgt");
-  case 144U: 
-  return ((char *)"fbge");
+  return ((char *)"ldx");
+  case 576U: 
+  return ((char *)"st");
+  case 464U: 
+  return ((char *)"stx");
+  case 856U: 
+  return ((char *)"memcpy");
+  case 560U: 
+  return ((char *)"memset");
+  case 680U: 
+  return ((char *)"jmp");
+  case 104U: 
+  return ((char *)".patch");
+  case 632U: 
+  return ((char *)"prepare");
+  case 360U: 
+  return ((char *)"putarg");
+  case 904U: 
+  return ((char *)"call");
+  case 720U: 
+  return ((char *)"ret");
+  case 16U: 
+  return ((char *)"prolog");
+  case 8U: 
+  return ((char *)"getarg");
+  case 624U: 
+  return ((char *)"retval");
+  case 488U: 
+  return ((char *)"alloca");
+  case 840U: 
+  return ((char *)"declare_arg");
+  case 672U: 
+  return ((char *)"add");
+  case 400U: 
+  return ((char *)"addc");
+  case 80U: 
+  return ((char *)"addx");
   case 248U: 
-  return ((char *)"fbeq");
-  case 128U: 
-  return ((char *)"fbne");
+  return ((char *)"sub");
+  case 352U: 
+  return ((char *)"subc");
+  case 0U: 
+  return ((char *)"subx");
+  case 744U: 
+  return ((char *)"rsb");
+  case 864U: 
+  return ((char *)"neg");
+  case 888U: 
+  return ((char *)"mul");
+  case 416U: 
+  return ((char *)"hmul");
+  case 424U: 
+  return ((char *)"div");
+  case 664U: 
+  return ((char *)"mod");
+  case 448U: 
+  return ((char *)"or");
+  case 704U: 
+  return ((char *)"xor");
+  case 608U: 
+  return ((char *)"and");
+  case 640U: 
+  return ((char *)"lsh");
+  case 584U: 
+  return ((char *)"rsh");
+  case 280U: 
+  return ((char *)"not");
+  case 880U: 
+  return ((char *)"lt");
+  case 168U: 
+  return ((char *)"le");
+  case 72U: 
+  return ((char *)"gt");
   case 184U: 
-  return ((char *)"fld");
+  return ((char *)"ge");
+  case 392U: 
+  return ((char *)"eq");
+  case 40U: 
+  return ((char *)"ne");
+  case 592U: 
+  return ((char *)"blt");
+  case 760U: 
+  return ((char *)"ble");
+  case 304U: 
+  return ((char *)"bgt");
+  case 216U: 
+  return ((char *)"bge");
+  case 32U: 
+  return ((char *)"beq");
+  case 192U: 
+  return ((char *)"bne");
+  case 752U: 
+  return ((char *)"bms");
+  case 320U: 
+  return ((char *)"bmc");
+  case 552U: 
+  return ((char *)"boadd");
+  case 800U: 
+  return ((char *)"bosub");
+  case 296U: 
+  return ((char *)"bnoadd");
+  case 568U: 
+  return ((char *)"bnosub");
+  case 432U: 
+  return ((char *)".ureg");
+  case 120U: 
+  return ((char *)".lreg");
+  case 256U: 
+  return ((char *)".code");
+  case 728U: 
+  return ((char *)".label");
+  case 312U: 
+  return ((char *)".syncreg");
+  case 112U: 
+  return ((char *)".renamereg");
+  case 472U: 
+  return ((char *)"msg");
+  case 152U: 
+  return ((char *)".comment");
+  case 616U: 
+  return ((char *)"nop");
+  case 480U: 
+  return ((char *)".align");
+  case 808U: 
+  return ((char *)".byte");
+  case 496U: 
+  return ((char *)".bytes");
+  case 688U: 
+  return ((char *)".ref_code");
+  case 376U: 
+  return ((char *)".ref_data");
+  case 832U: 
+  return ((char *)"ref_code");
+  case 344U: 
+  return ((char *)"ref_data");
+  case 336U: 
+  return ((char *)".full_spill");
+  case 136U: 
+  return ((char *)".trace");
+  case 600U: 
+  return ((char *)"force_spill");
+  case 776U: 
+  return ((char *)"force_assoc");
+  case 440U: 
+  return ((char *)"mark");
+  case 368U: 
+  return ((char *)"touch");
+  case 24U: 
+  return ((char *)"transfer");
+  case 712U: 
+  return ((char *)"transfer_cpy");
+  case 792U: 
+  return ((char *)"transfer_and");
+  case 512U: 
+  return ((char *)"transfer_or");
+  case 736U: 
+  return ((char *)"transfer_xor");
+  case 768U: 
+  return ((char *)"transfer_add");
+  case 240U: 
+  return ((char *)"transfer_sub");
+  case 144U: 
+  return ((char *)"fmov");
+  case 128U: 
+  return ((char *)"fadd");
+  case 384U: 
+  return ((char *)"fsub");
+  case 784U: 
+  return ((char *)"frsb");
+  case 88U: 
+  return ((char *)"fmul");
+  case 544U: 
+  return ((char *)"fdiv");
+  case 200U: 
+  return ((char *)"fneg");
+  case 408U: 
+  return ((char *)"fretval");
+  case 696U: 
+  return ((char *)"fputarg");
+  case 848U: 
+  return ((char *)"ext");
+  case 328U: 
+  return ((char *)"round");
+  case 232U: 
+  return ((char *)"trunc");
+  case 824U: 
+  return ((char *)"floor");
+  case 528U: 
+  return ((char *)"ceil");
+  case 224U: 
+  return ((char *)"fblt");
   case 656U: 
+  return ((char *)"fble");
+  case 288U: 
+  return ((char *)"fbgt");
+  case 536U: 
+  return ((char *)"fbge");
+  case 48U: 
+  return ((char *)"fbeq");
+  case 896U: 
+  return ((char *)"fbne");
+  case 520U: 
+  return ((char *)"fld");
+  case 160U: 
   return ((char *)"fldx");
   case 504U: 
   return ((char *)"fst");
-  case 384U: 
+  case 648U: 
   return ((char *)"fstx");
-  case 856U: 
+  case 176U: 
   return ((char *)"fret");
   default: 
   return ((char *)"(unknown)");
@@ -42039,19 +42039,19 @@ void jit_trace(struct jit *jit , int verbosity )
   tmp = jit_op_first(jit->ops);
   op = tmp->next;
   while ((unsigned long )op != (unsigned long )((void *)0)) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
+      goto __Cont;
+    }
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 808U) {
+      goto __Cont;
+    }
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 688U) {
+      goto __Cont;
+    }
     if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
       goto __Cont;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 408U) {
-      goto __Cont;
-    }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 832U) {
-      goto __Cont;
-    }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 480U) {
-      goto __Cont;
-    }
-    tmp___0 = jit_op_new((unsigned short)592, (unsigned char)2, (long )verbosity,
+    tmp___0 = jit_op_new((unsigned short)136, (unsigned char)2, (long )verbosity,
                          0L, 0L, (unsigned char)0);
     o = tmp___0;
     o->r_arg[0] = o->arg[0];
@@ -42166,7 +42166,7 @@ void jit_messager(struct jit *j , char *s , int i )
 
   {
   tmp = jit_debug_info_new("head.c", "jit_messager", 23);
-  jit_add_op(j, (unsigned short)641, (unsigned char )((1 << 2) | 2), (jit_value )s,
+  jit_add_op(j, (unsigned short)473, (unsigned char )((1 << 2) | 2), (jit_value )s,
              (long )((i & 268435455) << 4), 0L, (unsigned char)0, tmp);
   return;
 }
@@ -42189,19 +42189,19 @@ static int is_transfer_op(jit_op *op )
 
   {
   code = (jit_opcode )((int )op->code & 65528);
-  if ((unsigned int )code == 536U) {
+  if ((unsigned int )code == 768U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 688U) {
+  if ((unsigned int )code == 240U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 488U) {
+  if ((unsigned int )code == 512U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 904U) {
+  if ((unsigned int )code == 736U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 776U) {
+  if ((unsigned int )code == 792U) {
     tmp = 1;
   } else {
     tmp = 0;
@@ -42809,7 +42809,7 @@ static void emit_ldx_op(struct jit *jit , jit_op *op , jit_value a1 , jit_value 
     return;
   }
   switch ((int )op->code) {
-  case 338: 
+  case 874: 
   while (1) {
     if ((int )op->arg_size == 4) {
       while (1) {
@@ -43131,7 +43131,7 @@ static void emit_ldx_op(struct jit *jit , jit_op *op , jit_value a1 , jit_value 
     break;
   }
   break;
-  case 342: 
+  case 878: 
   while (1) {
     if ((int )op->arg_size == 8) {
       goto _L___7;
@@ -43516,7 +43516,7 @@ static void emit_ldx_op(struct jit *jit , jit_op *op , jit_value a1 , jit_value 
     break;
   }
   break;
-  case 337: 
+  case 873: 
   while (1) {
     if ((int )op->arg_size == 4) {
       while (1) {
@@ -43728,7 +43728,7 @@ static void emit_ldx_op(struct jit *jit , jit_op *op , jit_value a1 , jit_value 
     break;
   }
   break;
-  case 341: 
+  case 877: 
   while (1) {
     if ((int )op->arg_size == 8) {
       goto _L___10;
@@ -44407,7 +44407,7 @@ __inline static void jit_prepare_arguments(struct jit *jit )
   argpos = 0;
   phys_reg = 0;
   while (op) {
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 376U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 16U) {
       info = (struct jit_func_info *)op->arg[1];
       info->has_prolog = 1;
       gp_arg_pos = 0;
@@ -44415,7 +44415,7 @@ __inline static void jit_prepare_arguments(struct jit *jit )
       argpos = 0;
       phys_reg = 0;
     }
-    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 680U) {
+    if ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 840U) {
       (info->args + argpos)->type = (enum jit_inp_type )op->arg[0];
       (info->args + argpos)->size = (int )op->arg[1];
       if (op->arg[0] == 2L) {
@@ -44461,8 +44461,8 @@ static int jit_op_is_data_op(jit_op *op )
   {
   while (1) {
     if (op) {
-      if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 880U)) {
-        if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 648U)) {
+      if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 728U)) {
+        if (! ((unsigned int )((jit_opcode )((int )op->code & 65528)) == 104U)) {
           break;
         }
       }
@@ -44475,16 +44475,16 @@ static int jit_op_is_data_op(jit_op *op )
     return (0);
   }
   code = (jit_opcode )((int )op->code & 65528);
-  if ((unsigned int )code == 408U) {
+  if ((unsigned int )code == 808U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 560U) {
+  if ((unsigned int )code == 496U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 832U) {
+  if ((unsigned int )code == 688U) {
     tmp = 1;
   } else
-  if ((unsigned int )code == 480U) {
+  if ((unsigned int )code == 376U) {
     tmp = 1;
   } else {
     tmp = 0;
