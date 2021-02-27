@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/encodeExternal-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7084" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of this transformation is to hide calls to external functions, such
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c489" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The goal of this transformation is to hide calls to external functions, such
 as system calls or calls to standard library functions. The current implementation 
 is simplistic: we simply replace direct calls with indirect ones, and load the
 address of the functions using <em>dlsym()</em>.</p></div></div></section>
@@ -149,7 +149,7 @@ address of the functions using <em>dlsym()</em>.</p></div></div></section>
 </br>
 
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7085" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Consider the following program <code>syscall.c</code> which makes two system calls to <code>getpid</code>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c490" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Consider the following program <code>syscall.c</code> which makes two system calls to <code>getpid</code>
 and <code>gettimeofday</code>:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include&lt;stdio.h&gt;
@@ -169,7 +169,7 @@ int main () {
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7086" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We obfuscate using the following script:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c491" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">We obfuscate using the following script:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> tigress -ldl \
         --Environment=x86_64:Darwin:Clang:5.1 \
@@ -189,14 +189,14 @@ int main () {
 > gcc -o syscall_out syscall_out.c -ldl
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7087" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>InitEncodeExternal</code> transformation uses <code>dlsym()</code> to load
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c492" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>InitEncodeExternal</code> transformation uses <code>dlsym()</code> to load
 the system calls we want to hide by name, the <code>EncodeLiterals</code> transformation
 hides these names in a function we call <code>STRINGENCODER</code>, the
 <code>Virtualize</code> transformation hides what's going on in the <code>STRINGENCODER</code>
 function, and finally, the <code>EncodeExternal</code> transformation replaces the 
 direct calls to the system calls in <code>main()</code> with indirect ones.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7088" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The resulting code will look something like this:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c493" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The resulting code will look something like this:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void *_externalFunctionPtrArray[2];
 
@@ -234,7 +234,7 @@ int main( ) {
 }
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7089" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note how this program no longer has any mention of <code>getpid</code>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c494" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note how this program no longer has any mention of <code>getpid</code>
 and <code>gettimeofday</code>. The transformation is purely static,
 of course; at runtime it is trivial to see that these functions are
 being called.</p></div></div></section>
