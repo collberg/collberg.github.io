@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
   <meta name="description" content="Web Site Builder Description">
   
-  <title>Virtualize</title>
+  <title>Checksum</title>
   <link rel="preload" as="style" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
 <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap.min.css">
@@ -90,7 +90,7 @@ h3 {
 
 
 <a class="anchor" id="checksum">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8480" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2580" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
    This transformation inserts <em>checkers</em> into the program
    in order to ensure the integrity of the codebytes.
    A checker computes a hash over a code region and, if the hash is
@@ -105,7 +105,7 @@ h3 {
    flattening or virtualization), making them harder to 
    detect.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8481" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Checkers can be invoked over a function prior to it being called,
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2581" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Checkers can be invoked over a function prior to it being called,
 ensuring that the function hasn't been tampered with before it is 
 executed. This is illustrated in this figure, where <tt>foo</tt> 
 is checked by the pink checker, prior to being called. 
@@ -113,7 +113,7 @@ The <tt>e<sup>1</sup></tt> value is the expected  hash value computed
 over <tt>foo</tt>. 
 </p></div></div></section>
 <center><img width="500px" src="tigress3-images/overlap.png"></center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8482" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2582" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Checkers can also cover arbitrary levels of overlapping,
 randomly chosen, code regions. This is the case for the
 orange and blue checkers. Here, <tt>f<sup>2</sup></tt>
@@ -121,13 +121,13 @@ and <tt>t<sup>2</sup></tt> represent the range of addresses
 covered by the orange checker.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8483" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2583" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Unlike other Tigress transformations, the <tt>Checksum</tt> 
 transform requires a post-processing step. This is performed
 by the <tt>tigress_post</tt> program:
 </p></div></div></section>
 <center><img width="700px" src="tigress3-images/overview.png"></center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8484" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2584" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 The <tt>Checksum</tt> transformation generates two
 files: the Tigress-obfuscated output file (here <tt>P<sup>1</sup>.c</tt>) into
 which checkers have been inserted and a file (here <tt>hashes.c</tt>) 
@@ -138,7 +138,7 @@ reads the compiled obfuscated file (<tt>P<sup>1</sup>.exe</tt>) and
 <tt>hashes.so</tt> and generates a patched
 executable file (here <tt>P<sup>2</sup>.exe</tt>).
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8485" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here's an example of how to call Tigress and <tt>tigress_post</tt>:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2585" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here's an example of how to call Tigress and <tt>tigress_post</tt>:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"># Run Tigress, generating 2 files: hashes.c and obf.c.
 > tigress --Seed=0 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
@@ -159,7 +159,7 @@ executable file (here <tt>P<sup>2</sup>.exe</tt>).
 
 # Compile the obfuscated program, making sure to use position-independent
 # code. Link statically, if available:
-> gcc -static -fPIC -fno-plt -o obf.exe obf.c     # for Linux
+> gcc -static -fPIC -fno-plt -fcf-protection=none -o obf.exe obf.c     # for Linux
 > gcc         -fPIC -fno-plt -o obf.exe obf.c     # for Darwin
 
 # Compile hashes.c into a shared object file hashes.so which will be
@@ -174,7 +174,7 @@ executable file (here <tt>P<sup>2</sup>.exe</tt>).
            obf.exe
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8486" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Note that, unlike all other Tigress transformations, <tt>--Transform=Checksum</tt>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2586" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Note that, unlike all other Tigress transformations, <tt>--Transform=Checksum</tt>
 does not make use of the <tt>--Functions=..</tt> option. Instead, there are three options
 that determine <em>which functions</em> should be checked (<tt>--ChecksumFunctionsToBeCheckedAtCallSite=...</tt>)
 and into which functions we are allowed to insert checkers (<tt>--ChecksumInsertCheckersInTheseFunctions=...</tt>
@@ -191,7 +191,7 @@ and <tt>--ChecksumDoNotInsertCheckersInTheseFunctions=...</tt>):
 
 <br>
 <h3 align=center>Hash Functions</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8487" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A randomly generated checker looks like this:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2587" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A randomly generated checker looks like this:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">/*******************************************************************************/
 /* Inline template to be patched by tigress_post.                              */
@@ -226,26 +226,26 @@ if (hashVar != expectedHashVar) {
 /*******************************************************************************/
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8488" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The word at <tt>L4</tt> will (after patching by <tt>tigress_post</tt>) hold
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2588" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The word at <tt>L4</tt> will (after patching by <tt>tigress_post</tt>) hold
 the address of the region that the hash function will check, <tt>L5</tt>
 will hold the address of the end of that region, and <tt>L6</tt> will hold
 the expected hash value.</p></div></div></section>
 
 <br>
 <h3 align=center>tigress_post --Action=checksum</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8489" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The purpose of <code>tigress_post --Action=checksum</code> is to patch the checker
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2589" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The purpose of <code>tigress_post --Action=checksum</code> is to patch the checker
 ``templates'' that were inserted by Tigress:</p></div></div></section>
 
 <center><img width="700px" src="tigress3-images/tigress_post.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8490" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> There are three main steps: first the executable is parsed and the 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2590" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> There are three main steps: first the executable is parsed and the 
 templates are located, then each checker is assigned to a region of the text 
 segment, and finally the hash value is computed and the templates are patched. 
 An option <code>tigress_post ... --OverlapRate=int ...</code> can be set to adjust the number checkers will 
 check each region of the text segment.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8491" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><tt>tigress_post</tt> has the following options:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2591" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><tt>tigress_post</tt> has the following options:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Action=checksum 
     Patch the checkers after the 'tigress --Transform=Checksum' transformation.
@@ -285,12 +285,12 @@ check each region of the text segment.
 
 <br>
 <h3 align=center>tigress_post --Action=kill</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8492" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To check that the checkers inserted by Tigress actually trigger when 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2592" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">To check that the checkers inserted by Tigress actually trigger when 
 the executable is modified, you can use the <code>tigress_post --Action=kill</code> 
 command. It will randomly modify one or more bits in the executable which
 should cause the responses to trigger.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8493" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These are the relevant <tt>tigress_post</tt> options:
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2593" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These are the relevant <tt>tigress_post</tt> options:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Action=kill       
    Destroy a function to test that the checkers trigger a response.
@@ -308,7 +308,7 @@ should cause the responses to trigger.</p></div></div></section>
 
 <br>
 <h3 align=center>Plugin Responders</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8494" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a few simple built-in responders. You can easily add your own by adding
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2594" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Tigress has a few simple built-in responders. You can easily add your own by adding
 a plugin function to your input program:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void responder_1 () {
@@ -319,7 +319,7 @@ a plugin function to your input program:</p></div></div></section>
 }
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8495" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The body of these functions will be inserted in the checkers. These are the relevant options:</p></div></div></section> 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2595" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The body of these functions will be inserted in the checkers. These are the relevant options:</p></div></div></section> 
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... \
@@ -329,11 +329,11 @@ a plugin function to your input program:</p></div></div></section>
          ...
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8496" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can read more about plugins <a href="plugins.html">here.</a></p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2596" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can read more about plugins <a href="plugins.html">here.</a></p></div></div></section>
 
 <br>
 <h3 align=center>Visualizing Results</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8497" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Calling <code>tigress_post --ShowResults</code> will generate a table like this:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2597" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Calling <code>tigress_post --ShowResults</code> will generate a table like this:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">+========+===========================================+===============+=====================================+========+========+========+========+========+========+
 | region |    section, priority, address range, size |      function |             template, checker, size |      A |      B |      C |      D |      E |      F |
@@ -400,7 +400,7 @@ a plugin function to your input program:</p></div></div></section>
 +--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8498" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The first three columns show that the <tt>.text</tt>-segment has been broken up into 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2598" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The first three columns show that the <tt>.text</tt>-segment has been broken up into 
 47 <em>regions</em>. The <tt>main</tt> function, for example, has been broken up into
 37 regions. The fourth column shows that there are 9 checkers, named <tt>hash_0</tt> through
 <tt>hash_8</tt>. You can learn more about these checkers by inspecting the 
@@ -413,7 +413,7 @@ function is covering. The function <tt>hash_7</tt>, again, computes a hash
 over region 44. 
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8499" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Calling <code>tigress_post --ShowResults</code> will also generate tables that provide some statistical information:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2599" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Calling <code>tigress_post --ShowResults</code> will also generate tables that provide some statistical information:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">Number of bytes checked by each hash function
 =============================================
@@ -436,7 +436,7 @@ Number of hash function checking each byte
 The average byte is checked by 0.2 hash functions
 </code></pre>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8500" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that the amount of overlap needs to be controlled with options to
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2600" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that the amount of overlap needs to be controlled with options to
 both Tigress and <tt>tigress_post</tt>: for more overlap you need to
 introduce more checkers (using
 <code>tigress --ChecksumRequiredNumberOfSegmentCheckers=...</code>)
@@ -582,6 +582,18 @@ and increase the overlap rate in <tt>tigress_post</tt> (<code>tigress_post --Ove
    <li> The first part of the checkers (containing the address ranges to be checked and the expected hash value)
         is currently not diversified and are easy to locate.
    <li> The response should be separated from the check in time and space. It is currently not.
+   <li> On recent versions of gcc/x86, the compiler inserts the instruction <a href="https://stackoverflow.com/questions/56905811/what-does-endbr64-instruction-actually-do"><tt>endbr64</tt></a>. This causes no end of problems; in particular, we calculate the wrong address of the segments we're supposed to check, typically causing a crash. In excruciating detail, we generate the code below, and the compiler inserts the <tt>endbr64</tt> instruction <em>after</em> the label, which means we can't calculate the address of the <tt>asm</tt> instruction:
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  if (_2_main_1_opaque_ptr_1 == _2_main_1_opaque_ptr_2) {
+    Lab_2000002: 
+    __asm__  volatile   (".balign 8,0xf9;\n"
+                         ".long 0xAAAAA001;\n"
+                         ".long 0xBBBBB001;\n"
+                         ".quad 0xCCCCCCCCCCCCC001;\n":);
+  } else {
+
+  }
+</code></pre>
+     If you notice this issue compile your program with {\tt -fcf-protection=none} which turns off branch checking. 
 </ul>
 </div></div></div></section>
 
