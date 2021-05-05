@@ -68,20 +68,20 @@ extern int ( /* format attribute */  printf)(char const   * __restrict    , ...)
 int _global_argc  =    0;
 extern int pthread_cond_signal(struct _opaque_pthread_cond_t *cond ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_ptr_2  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
-extern int raise(int sig ) ;
 extern int scanf(char const   *format  , ...) ;
 extern int pthread_barrier_init(int *barrier , int *attr , unsigned int count ) ;
+extern int raise(int sig ) ;
 char **_global_envp  =    (char **)0;
 typedef struct _opaque_pthread_t *__darwin_pthread_t;
 extern int unlink(char const   *filename ) ;
 typedef struct _opaque_pthread_cond_t __darwin_pthread_cond_t;
 extern double difftime(long tv1 , long tv0 ) ;
 extern int pthread_barrier_wait(int *barrier ) ;
-extern void *memcpy(void *s1 , void const   *s2 , unsigned int size ) ;
 extern int pthread_mutex_lock(struct _opaque_pthread_mutex_t *mutex ) ;
+extern void *memcpy(void *s1 , void const   *s2 , unsigned int size ) ;
 unsigned long _1_alwaysZero  =    0;
-extern void *dlsym(void *handle , char *symbol ) ;
 extern int gethostname(char *name , unsigned int namelen ) ;
+extern void *dlsym(void *handle , char *symbol ) ;
 extern void abort() ;
 extern unsigned long strtoul(char const   *str , char const   *endptr , int base ) ;
 struct __darwin_pthread_handler_rec {
@@ -91,21 +91,21 @@ struct __darwin_pthread_handler_rec {
 };
 extern int fprintf(struct __sFILE *stream , char const   *format  , ...) ;
 extern void free(void *ptr ) ;
-extern void signal(int sig , void *func ) ;
 extern void exit(int status ) ;
+extern void signal(int sig , void *func ) ;
 int main(int argc , char **argv , char **_formal_envp ) ;
 char const   *_4_MERGED_$strings  =    "fac(%i)=%i\n\000fib(%i)=%i\n\000";
 typedef struct __sFILE FILE;
 __inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) ;
-extern int mprotect(void *addr , unsigned int len , int prot ) ;
 extern int close(int filedes ) ;
+extern int mprotect(void *addr , unsigned int len , int prot ) ;
 struct _opaque_pthread_t {
    long __sig ;
    struct __darwin_pthread_handler_rec *__cleanup_stack ;
    char __opaque[8176] ;
 };
-extern double strtod(char const   *str , char const   *endptr ) ;
 extern double log(double x ) ;
+extern double strtod(char const   *str , char const   *endptr ) ;
 extern double ceil(double x ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_ptr_1  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
 struct __sbuf {
@@ -116,12 +116,8 @@ void MERGED(void *tigressRetVal , int n__0 , int whichBlock__7 ) ;
 extern int fclose(void *stream ) ;
 extern int fcntl(int filedes , int cmd  , ...) ;
 typedef __int64_t __darwin_off_t;
-extern int pthread_cond_wait(struct _opaque_pthread_cond_t *cond , struct _opaque_pthread_cond_t *mutex ) ;
 extern void perror(char const   *str ) ;
-struct _opaque_pthread_condattr_t {
-   long __sig ;
-   char __opaque[8] ;
-};
+extern int pthread_cond_wait(struct _opaque_pthread_cond_t *cond , struct _opaque_pthread_cond_t *mutex ) ;
 union _4_MERGED_$node {
    char _char ;
    unsigned int _unsigned_int ;
@@ -136,6 +132,11 @@ union _4_MERGED_$node {
    int _int ;
    short _short ;
 };
+struct _opaque_pthread_condattr_t {
+   long __sig ;
+   char __opaque[8] ;
+};
+extern int write(int filedes , void *buf , unsigned int nbyte ) ;
 struct _opaque_pthread_cond_t {
    long __sig ;
    char __opaque[40] ;
@@ -144,12 +145,11 @@ typedef __darwin_pthread_cond_t pthread_cond_t;
 typedef __darwin_pthread_condattr_t pthread_condattr_t;
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_init(pthread_cond_t * __restrict   ,
                                                                                                                              pthread_condattr_t const   * _Nullable __restrict   )  __asm__("_pthread_cond_init")  ;
-extern int write(int filedes , void *buf , unsigned int nbyte ) ;
 typedef struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_StructureType;
 extern int ptrace(int request , void *pid , void *addr , int data ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_list_1  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
-extern float strtof(char const   *str , char const   *endptr ) ;
 void _5_stringEncoder(int n , char str[] ) ;
+extern float strtof(char const   *str , char const   *endptr ) ;
 extern unsigned int strnlen(char const   *s , unsigned int maxlen ) ;
 struct timeval {
    long tv_sec ;
@@ -163,12 +163,12 @@ extern long time(long *tloc ) ;
 extern int rand() ;
 extern int read(int filedes , void *buf , unsigned int nbyte ) ;
 typedef __darwin_pthread_t pthread_t;
-extern int strcmp(char const   *a , char const   *b ) ;
 extern void *fopen(char const   *filename , char const   *mode ) ;
+extern int strcmp(char const   *a , char const   *b ) ;
 extern double sqrt(double x ) ;
 extern int __swbuf(int  , FILE * ) ;
-extern void *malloc(unsigned int size ) ;
 extern long strtol(char const   *str , char const   *endptr , int base ) ;
+extern void *malloc(unsigned int size ) ;
 extern int snprintf(char *str , unsigned int size , char const   *format  , ...) ;
 extern int nanosleep(struct timespec  const  *__rqtp , struct timespec *__rmtp )  __asm__("_nanosleep")  ;
 struct __sFILE {
@@ -212,65 +212,12 @@ extern int fscanf(struct __sFILE *stream , char const   *format  , ...) ;
 extern int fseek(struct __sFILE *stream , long offs , int whence ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_list_2  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
 void megaInit(void) ;
-__inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) 
-{ 
-  unsigned char *tmp ;
-  unsigned char tmp___0 ;
-  int tmp___1 ;
-
-  {
-  (_p->_w) --;
-  if (_p->_w >= 0) {
-    tmp = _p->_p;
-    (_p->_p) ++;
-    tmp___0 = (unsigned char )_c;
-    *tmp = tmp___0;
-    return ((int )tmp___0);
-  } else
-  if (_p->_w >= _p->_lbfsize) {
-    if ((int )((char )_c) != 10) {
-      tmp = _p->_p;
-      (_p->_p) ++;
-      tmp___0 = (unsigned char )_c;
-      *tmp = tmp___0;
-      return ((int )tmp___0);
-    } else {
-      tmp___1 = __swbuf(_c, _p);
-      return (tmp___1);
-    }
-  } else {
-    tmp___1 = __swbuf(_c, _p);
-    return (tmp___1);
-  }
-}
-}
 void megaInit(void) 
 { 
 
 
   {
 
-}
-}
-int main(int argc , char **argv , char **_formal_envp ) 
-{ 
-  int _BARRIER_0 ;
-
-  {
-  megaInit();
-  _global_argc = argc;
-  _global_argv = argv;
-  _global_envp = _formal_envp;
-  _BARRIER_0 = (_2_init_tigress_1_opaque_ptr_1 != _2_init_tigress_1_opaque_ptr_2) - (_2_init_tigress_1_opaque_ptr_1 == _2_init_tigress_1_opaque_ptr_2);
-  MERGED(0L + (int )((((_1_alwaysZero & (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL)))) * (_1_alwaysZero | (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL)))) + (_1_alwaysZero & ~ (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL)))) * (~ _1_alwaysZero & (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL))))) ^ 0) + ((((_1_alwaysZero & (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL)))) * (_1_alwaysZero | (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL)))) + (_1_alwaysZero & ~ (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL)))) * (~ _1_alwaysZero & (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL))))) & 0) + (((_1_alwaysZero & (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL)))) * (_1_alwaysZero | (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL)))) + (_1_alwaysZero & ~ (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL)))) * (~ _1_alwaysZero & (((_1_entropy + 3) + 1UL) + ((- _1_entropy - 1UL) | (- 3 - 1UL))))) & 0))),
-         argc, (int )((long )(_2_init_tigress__opaque_array[((unsigned int )((_1_entropy ^ 7) - (((_1_entropy ^ 7) << 1UL) & ((long )(_1_entropy ^ 7) >> 63L))) % 10) * 3 + 0] % _2_init_tigress__opaque_array[5]) + -1L));
-  MERGED((int )((long )(_2_init_tigress__opaque_array[((unsigned int )(((_1_entropy + 3) + ((long )(_1_entropy + 3) >> 63L)) ^ ((long )(_1_entropy + 3) >> 63L)) % 10) * 3 + 0] % _2_init_tigress__opaque_array[5]) + -3L),
-         (int )((long )(_2_init_tigress__opaque_array[((unsigned int )((_1_entropy * 8 + ((long )(_1_entropy * 8) >> 63L)) ^ ((long )(_1_entropy * 8) >> 63L)) % 10) * 3 + 0] % _2_init_tigress__opaque_array[5]) + 7L),
-         0L + (int )(((((_1_alwaysZero & ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4))) * (_1_alwaysZero | ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4))) + (_1_alwaysZero & ~ ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4))) * (~ _1_alwaysZero & ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4)))) ^ ~ 0) + ((((_1_alwaysZero & ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4))) * (_1_alwaysZero | ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4))) + (_1_alwaysZero & ~ ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4))) * (~ _1_alwaysZero & ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4)))) | 0) + (((_1_alwaysZero & ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4))) * (_1_alwaysZero | ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4))) + (_1_alwaysZero & ~ ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4))) * (~ _1_alwaysZero & ((_1_entropy & 4) * (_1_entropy | 4) + (_1_entropy & ~ 4) * (~ _1_entropy & 4)))) | 0))) + 1UL));
-  MERGED(0L + (int )((((_1_alwaysZero & ((_1_entropy & 3) * (_1_entropy | 3) + (_1_entropy & ~ 3) * (~ _1_entropy & 3))) * (_1_alwaysZero | ((_1_entropy & 3) * (_1_entropy | 3) + (_1_entropy & ~ 3) * (~ _1_entropy & 3))) + (_1_alwaysZero & ~ ((_1_entropy & 3) * (_1_entropy | 3) + (_1_entropy & ~ 3) * (~ _1_entropy & 3))) * (~ _1_alwaysZero & ((_1_entropy & 3) * (_1_entropy | 3) + (_1_entropy & ~ 3) * (~ _1_entropy & 3)))) ^ 0) + ((((_1_alwaysZero & ((_1_entropy & 3) * (_1_entropy | 3) + (_1_entropy & ~ 3) * (~ _1_entropy & 3))) * (_1_alwaysZero | ((_1_entropy & 3) * (_1_entropy | 3) + (_1_entropy & ~ 3) * (~ _1_entropy & 3))) + (_1_alwaysZero & ~ ((_1_entropy & 3) * (_1_entropy | 3) + (_1_entropy & ~ 3) * (~ _1_entropy & 3))) * (~ _1_alwaysZero & ((_1_entropy & 3) * (_1_entropy | 3) + (_1_entropy & ~ 3) * (~ _1_entropy & 3)))) & 0) << 1UL)),
-         (int )((long )(_2_init_tigress__opaque_array[((unsigned int )((_1_entropy ^ 4) - (((_1_entropy ^ 4) + (_1_entropy ^ 4)) & ((long )(_1_entropy ^ 4) >> 63L))) % 10) * 3 + 1] % _2_init_tigress__opaque_array[11]) + 5L),
-         1L + (int )((((_1_alwaysZero & ((_1_entropy & ~ 7) + 7)) * (_1_alwaysZero | ((_1_entropy & ~ 7) + 7)) + (_1_alwaysZero & ~ ((_1_entropy & ~ 7) + 7)) * (~ _1_alwaysZero & ((_1_entropy & ~ 7) + 7))) ^ 0) + ((((_1_alwaysZero & ((_1_entropy & ~ 7) + 7)) * (_1_alwaysZero | ((_1_entropy & ~ 7) + 7)) + (_1_alwaysZero & ~ ((_1_entropy & ~ 7) + 7)) * (~ _1_alwaysZero & ((_1_entropy & ~ 7) + 7))) & 0) + (((_1_alwaysZero & ((_1_entropy & ~ 7) + 7)) * (_1_alwaysZero | ((_1_entropy & ~ 7) + 7)) + (_1_alwaysZero & ~ ((_1_entropy & ~ 7) + 7)) * (~ _1_alwaysZero & ((_1_entropy & ~ 7) + 7))) & 0))));
-  return ((int )((long )(_2_init_tigress__opaque_array[((unsigned int )(((_1_entropy | 6) + ((long )(_1_entropy | 6) >> 63L)) ^ ((long )(_1_entropy | 6) >> 63L)) % 10) * 3 + 1] % _2_init_tigress__opaque_array[11]) + -5L));
 }
 }
 void MERGED(void *tigressRetVal , int n__0 , int whichBlock__7 ) 
@@ -756,6 +703,27 @@ void MERGED(void *tigressRetVal , int n__0 , int whichBlock__7 )
   goto *(*(_4_MERGED_$pc[0]));
 }
 }
+int main(int argc , char **argv , char **_formal_envp ) 
+{ 
+  int _BARRIER_0 ;
+
+  {
+  megaInit();
+  _global_argc = argc;
+  _global_argv = argv;
+  _global_envp = _formal_envp;
+  _BARRIER_0 = (_2_init_tigress_1_opaque_ptr_1 != _2_init_tigress_1_opaque_ptr_2) - (_2_init_tigress_1_opaque_ptr_1 == _2_init_tigress_1_opaque_ptr_2);
+  MERGED((_2_init_tigress_1_opaque_ptr_1 == _2_init_tigress_1_opaque_ptr_2) + (_2_init_tigress_1_opaque_ptr_1 == _2_init_tigress_1_opaque_ptr_2),
+         argc, ((_2_init_tigress_1_opaque_ptr_1 == _2_init_tigress_1_opaque_ptr_2) + (_2_init_tigress_1_opaque_ptr_1 != _2_init_tigress_1_opaque_ptr_2)) + 1);
+  MERGED((int )((long )(_2_init_tigress__opaque_array[((unsigned int )((_1_entropy ^ 7) - (((_1_entropy ^ 7) << 1UL) & ((long )(_1_entropy ^ 7) >> 63L))) % 10) * 3 + 0] % _2_init_tigress__opaque_array[5]) + -3L),
+         _2_init_tigress_1_opaque_ptr_1 != _2_init_tigress_1_opaque_ptr_2 ? 10 : argc,
+         0L + (int )((((_1_alwaysZero & ((_1_entropy + ~ 4) + 1UL)) * (_1_alwaysZero | ((_1_entropy + ~ 4) + 1UL)) + (_1_alwaysZero & ~ ((_1_entropy + ~ 4) + 1UL)) * (~ _1_alwaysZero & ((_1_entropy + ~ 4) + 1UL))) - ~ 0) - 1UL));
+  MERGED((_2_init_tigress_1_opaque_ptr_1 == _2_init_tigress_1_opaque_ptr_2) + (_2_init_tigress_1_opaque_ptr_1 == _2_init_tigress_1_opaque_ptr_2),
+         (int )((long )(_2_init_tigress__opaque_array[((unsigned int )((_1_entropy * 10 ^ ((long )(_1_entropy * 10) >> 63L)) - ((long )(_1_entropy * 10) >> 63L)) % 10) * 3 + 0] % _2_init_tigress__opaque_array[5]) + 7L),
+         (int )((long )(_2_init_tigress__opaque_array[((unsigned int )(((_1_entropy | 7) + ((long )(_1_entropy | 7) >> 63L)) ^ ((long )(_1_entropy | 7) >> 63L)) % 10) * 3 + 0] % _2_init_tigress__opaque_array[5]) + -2L));
+  return (0L + (int )((((_1_alwaysZero & ((_1_entropy ^ 5) + ((_1_entropy & 5) + (_1_entropy & 5)))) * (_1_alwaysZero | ((_1_entropy ^ 5) + ((_1_entropy & 5) + (_1_entropy & 5)))) + (_1_alwaysZero & ~ ((_1_entropy ^ 5) + ((_1_entropy & 5) + (_1_entropy & 5)))) * (~ _1_alwaysZero & ((_1_entropy ^ 5) + ((_1_entropy & 5) + (_1_entropy & 5))))) - ~ 0) - 1UL));
+}
+}
 void _5_stringEncoder(int n , char str[] ) 
 { 
   int encodeStrings_i3 ;
@@ -764,6 +732,38 @@ void _5_stringEncoder(int n , char str[] )
   encodeStrings_i3 = 0;
   switch (n) {
 
+  }
+}
+}
+__inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) 
+{ 
+  unsigned char *tmp ;
+  unsigned char tmp___0 ;
+  int tmp___1 ;
+
+  {
+  (_p->_w) --;
+  if (_p->_w >= 0) {
+    tmp = _p->_p;
+    (_p->_p) ++;
+    tmp___0 = (unsigned char )_c;
+    *tmp = tmp___0;
+    return ((int )tmp___0);
+  } else
+  if (_p->_w >= _p->_lbfsize) {
+    if ((int )((char )_c) != 10) {
+      tmp = _p->_p;
+      (_p->_p) ++;
+      tmp___0 = (unsigned char )_c;
+      *tmp = tmp___0;
+      return ((int )tmp___0);
+    } else {
+      tmp___1 = __swbuf(_c, _p);
+      return (tmp___1);
+    }
+  } else {
+    tmp___1 = __swbuf(_c, _p);
+    return (tmp___1);
   }
 }
 }

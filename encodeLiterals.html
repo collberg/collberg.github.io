@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/encodeLiterals-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6983" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Obfuscate integer and/or string literals (such as <tt>42</tt> or <tt>"42"</tt>). 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1733" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Obfuscate integer and/or string literals (such as <tt>42</tt> or <tt>"42"</tt>). 
 Literal integers can be replaced with opaque expressions, which
 requires that the InitOpaque transformation has been previously issued. Literal strings can be
 replaced with a function that generates them at runtime.</p></div></div></section>
@@ -123,16 +123,77 @@ replaced with a function that generates them at runtime.</p></div></div></sectio
 <td><tt>string</tt></td>
 <td> The name of the generated encoder function (only for encoded strings). Default=None.</td>
 </tr>
+<tr>
+<td><tt>--EncodeLiteralsMaxLevel</tt></td>
+<td><tt><em>IntSpec</em></tt></td>
+<td> How deep to recurse into split integer expressions. Default=100.</td>
+</tr>
+<tr>
+<td><tt>--EncodeLiteralsMaxTransforms</tt></td>
+<td><tt><em>IntSpec</em></tt></td>
+<td> How many transformations to perform on each split integer expression. Default=100.</td>
+</tr>
+<tr>
+<td><tt>--EncodeLiteralsIntegerKinds</tt></td>
+<td><tt>opaque, split</tt></td>
+<td> Specify how to encode integer literals. Default=opaque.
+<ul>
+   <li> <tt>opaque</tt> = Replace literal integers with opaque expressions
+   <li> <tt>split</tt> = Replace literal integers by splitting into subparts, and then doing EncodeArithmetic on them.
+</ul>
+</td>
+</tr>
 </table>
 </div>
 
 </center>
 </br>
 
+<br>
+<h3 align=center>Regions</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1734" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can apply this transformation to a part of a function. First, include <tt>tigress.h</tt> as usual, then enclose the regions you 
+want to transform using the <tt>ENCODE_INTEGER_BEGIN</tt> and <tt>ENCODE_INTEGER_END</tt> macros: </p></div></div></section>
+
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
+
+void foo () {  
+   ...
+
+   ENCODE_INTEGER_BEGIN(obfuscateThis);
+
+   int x = 1234567;
+
+   ENCODE_INTEGER_END(obfuscateThis);
+
+   ...
+
+   ENCODE_INTEGER_BEGIN(obfuscateThat);
+
+   int y = 7654321;
+
+   ENCODE_INTEGER_END(obfuscateThat);
+
+   ...
+}
+</code></pre>
+</center>
+
+Then, in your tigress command, include the <tt>-Regions=...</tt> option:
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... \
+   --Transform=EncodeLiterals \
+      --Functions=foo \
+      --Regions=obfuscateThis,obfuscateThat \
+      --EncodeLiteralsIntegerKinds=split \
+   ...
+</code></pre>
+</center>
+
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c6984" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1735" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Note that the generated string encoding function is trivial, by design.
 To be made less conspicuous, it should itself be transformed, for example using the
 <a href="http://tigress.cs.arizona.edu/transformPage/docs/virtualize/index.html">Virtualize</a>
