@@ -88,20 +88,20 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/entropy-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4723" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3569" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Some transformations need a source of randomness during execution. For this
 reason, we can insert statements that collect random values, preferably from
 variables that are input dependent.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4724" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3570" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 We support two basic ways to collect entropy. You can insert statements within your program
 that collect values from (hopefully) input-dependent variables. Or, you can spin up a background 
 thread that intermittently does so automatically. Regardless, the randomness we collect is of low quality, 
 but good enough for our purposes.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4725" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3571" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 At a minimum, you should issue the <code>--Transform=InitEntropy</code> transformation,
 since this creates the variables that hold the entropy.
 You should issue as many <code>--Transform=UpdateEntropy</code> as you
@@ -140,12 +140,12 @@ can, making sure you collect entropy from variables that are truly input depende
 </tr>
 <tr>
 <td><tt>--InitEntropyThreadSleep</tt></td>
-<td><tt><em>INTSPEC</em></tt></td>
+<td><tt><em><a href="top-level.html#arguments">INTSPEC</a></em></tt></td>
 <td> How long the background thread will sleep after having updated the entropy, in nanoseconds Default=1000.</td>
 </tr>
 <tr>
 <td><tt>--InitEntropyTrace</tt></td>
-<td><tt><em>BOOLSPEC</em></tt></td>
+<td><tt><em><a href="top-level.html#arguments">BOOLSPEC</a></em></tt></td>
 <td> Trace the updates to entropy variables Default=false.</td>
 </tr>
 </table>
@@ -172,12 +172,12 @@ can, making sure you collect entropy from variables that are truly input depende
 </tr>
 <tr>
 <td><tt>--UpdateEntropyVars</tt></td>
-<td><tt><em>IDENTSPEC</em></tt></td>
+<td><tt><em><a href="top-level.html#arguments">IDENTSPEC</a></em></tt></td>
 <td> Add to the entropy variables from these variables. Default=*.</td>
 </tr>
 <tr>
 <td><tt>--UpdateEntropyTrace</tt></td>
-<td><tt><em>BOOLSPEC</em></tt></td>
+<td><tt><em><a href="top-level.html#arguments">BOOLSPEC</a></em></tt></td>
 <td> Trace the updates to the entropy variables. Default=FALSE.</td>
 </tr>
 <tr>
@@ -200,7 +200,7 @@ can, making sure you collect entropy from variables that are truly input depende
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4726" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3572" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 The command below initializes the entropy variables in <code>main</code>,
 and then collects randomness from variables <code>x,y,z</code> 
 in function <code>inputData</code>, from variable <code>packet</code>
@@ -242,7 +242,7 @@ function is called <em>ENTROPYTHREAD</em>, and it sleeps for
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4727" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea of using threads and CPU performance counters to generate random numbers 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c3573" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea of using threads and CPU performance counters to generate random numbers 
 was first introduced by Adrian Colesa, Radu Tudoran, and Sebastian Banescu in
 <a href="https://ieeexplore.ieee.org/document/5204851">Software Random Number Generation Based on Race Conditions</a>.
 Our implementation isn't as advanced at theirs since it only uses X86's <code>rdtsc</code> counter. Unfortunately, other
