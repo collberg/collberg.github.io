@@ -89,7 +89,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/top-level-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9559" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4153" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
 that selects the type of transformation and the <code>--Functions</code> option that
 selects the function(s) to which it should be applied. The Tigress options described here
  apply to <strong>all</strong> transformations. Each transformation additionally has their
@@ -116,7 +116,7 @@ own set of options, all prefixed by the name of the transformation.</p></div></d
 </tr>
 <tr>
 <td><tt>--Seed</tt></td>
-<td><tt><em><a href="top-level.html#arguments">INTSPEC</a></em></tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> The randomization seed. <code>--Seed=0</code> makes Tigress generate its own seed. </td>
 </tr>
 <tr>
@@ -126,12 +126,12 @@ own set of options, all prefixed by the name of the transformation.</p></div></d
 </tr>
 <tr>
 <td><tt>--Skip</tt></td>
-<td><tt><a href="top-level.html#arguments">BOOLSPEC</a></tt></td>
+<td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
 <td> Skip a particular transformation. Typically, use like this to skip transformation <code>T1</code>: <code>tigress --Transform=T1 --Skip=true ... --Transform=T2 --Skip=false ...</code>. This can be useful when you have a long sequence  of transformations and want to experiment with turning certain ones on or off. Default=false.</td>
 </tr>
 <tr>
 <td><tt>--Input</tt></td>
-<td><tt><a href="top-level.html#arguments">INPUTSPEC</a></tt></td>
+<td><tt><a href="top-level.html#INPUTSPEC">INPUTSPEC</a></tt></td>
 <td> Specify invariants over the command line arguments, such the range of integer values a particular argument may take, the range of lengths of an argument, or the string value of an argument. These are used by the <em>input</em> opaque predicate, which is created by <code>--InitOpaqueStructs=input</code>. Default=0.</td>
 </tr>
 </table>
@@ -145,7 +145,7 @@ own set of options, all prefixed by the name of the transformation.</p></div></d
 <a class="anchor" id="targets">&nbsp;</a>
 <br>
 <h3 align=center>Selecting Targets</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9560" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4154" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 To avoid name clashes and to allow you to specify the results of a 
 transformation, prefixes can be added to all new identifiers. For
 example, after a <code>Split</code> transformation, you may want to
@@ -189,17 +189,17 @@ to make sure that new names don't clash with old ones. Use
 </tr>
 <tr>
 <td><tt>--Functions</tt></td>
-<td><tt><em><a href="top-level.html#arguments">IDENTSPEC</a></em></tt></td>
+<td><tt><em><a href="top-level.html#IDENTSPEC">IDENTSPEC</a></em></tt></td>
 <td> The functions to which the transformation should be applied. See below for how to specify a set of functions. </td>
 </tr>
 <tr>
 <td><tt>--GlobalVariables</tt></td>
-<td><tt><em><a href="top-level.html#arguments">IDENTSPEC</a></em></tt></td>
+<td><tt><em><a href="top-level.html#IDENTSPEC">IDENTSPEC</a></em></tt></td>
 <td> The global variables to which the transformation should be applied. Currently only used for the <code>--Transform=EncodeData</code> transformation. </td>
 </tr>
 <tr>
 <td><tt>--LocalVariables</tt></td>
-<td><tt><em><a href="top-level.html#arguments">LOCALSPEC</a></em></tt></td>
+<td><tt><em><a href="top-level.html#LOCALSPEC">LOCALSPEC</a></em></tt></td>
 <td> The local variables and formal parameters to which the transformation should be applied. Currently only used for the <code>--Transform=EncodeData</code> transformation. </td>
 </tr>
 <tr>
@@ -239,12 +239,12 @@ to make sure that new names don't clash with old ones. Use
 <a class="anchor" id="arguments">&nbsp;</a>
 <br>
 <h3 align=center>Argument Specifications</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9561" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4155" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 For options that take an integer an argument we provide an <em>INTSPEC</em> 
 notation that allows randomized selection of the value. There's a similar
 <em>BOOLSPEC</em> notation for booleans.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9562" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4156" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 All transformations require you to specify the set of functions to
 which they should be applied. <em>IDENTSPEC</em> (identifier
 specifications) allow you to flexibly select all or some of the
@@ -277,7 +277,7 @@ a function.
 <tr>
 <td><tt><em>FRACSPEC</em></tt></td>
 <td><tt>*, int, int?int, %int</tt></td>
-<td> The <em>FRACSPEC</em> notation allows the selection of a fraction of a set of elements. 
+<td> <a class="anchor" id="FRACSPEC">&nbsp;</a> The <em>FRACSPEC</em> notation allows the selection of a fraction of a set of elements. 
 <ul>
    <li> <tt>*</tt> = 100%
    <li> <tt>int</tt> = select exactly this number of elements (if they exist)
@@ -289,7 +289,7 @@ a function.
 <tr>
 <td><tt><em>BOOLSPEC</em></tt></td>
 <td><tt>?, true, false</tt></td>
-<td> The <em>BOOLSPEC</em> notation allows randomized selection of boolean valued options. 
+<td> <a class="anchor" id="BOOLSPEC">&nbsp;</a> The <em>BOOLSPEC</em> notation allows randomized selection of boolean valued options. 
 <ul>
    <li> <tt>?</tt> = select a random boolean value
    <li> <tt>true</tt> = select <em>true</em>
@@ -300,7 +300,7 @@ a function.
 <tr>
 <td><tt><em>IDENTSPEC</em></tt></td>
 <td><tt>*, ?int, %int, /regexp/, string</tt></td>
-<td> Many transformations require you to specify the set of functions to which they should be applied. Trivally, you can say <code>--Functions=foo</code> to apply the obfuscation only to <code>foo</code>, but frequently you need more flexibility than that. The <em>IDENTSPEC</em> notation provides this functionality. Some transformations also use identifier specifications to specify variables, as in <code>--UpdateEntropyVar=\*</code> which would select all variables of a function. 
+<td> <a class="anchor" id="IDENTSPEC">&nbsp;</a> Many transformations require you to specify the set of functions to which they should be applied. Trivally, you can say <code>--Functions=foo</code> to apply the obfuscation only to <code>foo</code>, but frequently you need more flexibility than that. The <em>IDENTSPEC</em> notation provides this functionality. Some transformations also use identifier specifications to specify variables, as in <code>--UpdateEntropyVar=\*</code> which would select all variables of a function. 
 <ul>
    <li> <tt>*</tt> = select all available identifiers
    <li> <tt>?int</tt> = randomly select <code>int</code> number of identifiers
@@ -313,12 +313,12 @@ a function.
 <tr>
 <td><tt><em>LOCALSPEC</em></tt></td>
 <td><tt></tt></td>
-<td> The <em>LOCALSPEC</em> notation is used to specify a set of local variables and formal parameters. For example, <code>--LocalVariables='main:i,j;foo:\*'=\*</code> would select all variables of <code>foo</code> and <code>i</code> and <code>j</code> of <code>main</code>. The notation is a semicolon-separated list of <em>IDENTSPEC:IDENTSPEC</em>. </td>
+<td> <a class="anchor" id="LOCALSPEC">&nbsp;</a> The <em>LOCALSPEC</em> notation is used to specify a set of local variables and formal parameters. For example, <code>--LocalVariables='main:i,j;foo:\*'=\*</code> would select all variables of <code>foo</code> and <code>i</code> and <code>j</code> of <code>main</code>. The notation is a semicolon-separated list of <em>IDENTSPEC:IDENTSPEC</em>. </td>
 </tr>
 <tr>
 <td><tt><em>INPUTSPEC</em></tt></td>
 <td><tt>int, ?int, int?, int?int, +int, -int, "int", "string", "length"</tt></td>
-<td> The <code>--Input=...</code> switch allows you to specify invariants over the command line arguments. These are used when you set <code>--AddOpaqueStructs=input</code> and <code>--VirtualizeOpaqueStructs=input</code> to create opaque constructs that appear to depend on input. An input specification is a coomma-separated list of 3-tuples: <em>position:kind:value</em>. I.e., <code>--Input=<em>position:kind:value</em>,<em>position:kind:value</em>,...</code> For example, consider the input specification <code>--InputSpec=+1:int:34?56,-1:length:1?</code> The first tuple specifies that the first command line argument must evaluate to an integer in the range 34-56, and the last argument has a length of exactly 1 character. Specifically, <em>position=/+n|-n/</em>, i.e. the <code>n</code>:th command line argument from the beginning or end of the line. The second part of the 3-tuple, <em>kind</em> is <em>/int|string|length/</em>, specifying that an invariant over a command line argument is a range of integer values, a particular string value, or the length (in characters) of an argument. The last part of the 3-tuple, <em>value</em>, allows you to specify four types of ranges: <code>/[0-9]+/</code>, <code>/?[0-9]+/</code>, <code>/[0-9]+?/</code>, and <code>/[0-9]+?[0-9]+/</code>,<code>/[0-9]*?/</code>, for a specfic value n, a range [n,..], a range [..,n], and a range [n..m]. <code>n</code> (a single integer) specifies a specific value, <code>n?</code> specifies a range starting at <code>n</code> 
+<td> <a class="anchor" id="INPUTSPEC">&nbsp;</a> The <code>--Input=...</code> switch allows you to specify invariants over the command line arguments. These are used when you set <code>--AddOpaqueStructs=input</code> and <code>--VirtualizeOpaqueStructs=input</code> to create opaque constructs that appear to depend on input. An input specification is a coomma-separated list of 3-tuples: <em>position:kind:value</em>. I.e., <code>--Input=<em>position:kind:value</em>,<em>position:kind:value</em>,...</code> For example, consider the input specification <code>--InputSpec=+1:int:34?56,-1:length:1?</code> The first tuple specifies that the first command line argument must evaluate to an integer in the range 34-56, and the last argument has a length of exactly 1 character. Specifically, <em>position=/+n|-n/</em>, i.e. the <code>n</code>:th command line argument from the beginning or end of the line. The second part of the 3-tuple, <em>kind</em> is <em>/int|string|length/</em>, specifying that an invariant over a command line argument is a range of integer values, a particular string value, or the length (in characters) of an argument. The last part of the 3-tuple, <em>value</em>, allows you to specify four types of ranges: <code>/[0-9]+/</code>, <code>/?[0-9]+/</code>, <code>/[0-9]+?/</code>, and <code>/[0-9]+?[0-9]+/</code>,<code>/[0-9]*?/</code>, for a specfic value n, a range [n,..], a range [..,n], and a range [n..m]. <code>n</code> (a single integer) specifies a specific value, <code>n?</code> specifies a range starting at <code>n</code> 
 <ul>
    <li> <tt>int</tt> = <em>range specification:</em> matches a particular integer
    <li> <tt>?int</tt> = <em>range specification:</em> matches any value from <code>int</code> and up
@@ -339,7 +339,7 @@ a function.
 </br>
 
 <br>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9563" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here are some examples:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4157" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here are some examples:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li>Randomly select 3 functions and "foo":
@@ -365,7 +365,7 @@ a function.
    <li>
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9564" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that some care needs to be exercised when specifiying
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4158" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that some care needs to be exercised when specifiying
 identifiers, since some renaming can happen during obfuscation.</p></div></div></section>
 
   <script src="assets/popper/popper.min.js"></script>
