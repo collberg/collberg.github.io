@@ -90,12 +90,14 @@ h3 {
 
 
 <!-- =============================================================================================== -->
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9546" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you are compiling to binary, the compiler will take care
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4479" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">If you are compiling to binary, the compiler will take care
 of removing unused variables, and the names of functions 
 will no longer be relevant. If, however, you want to distribute
 obfuscated source (useful, for example, for simple reverse
 engineering exercises given to students), you may want to
 clean up the code prior to distributing it.</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4480" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformations should always be the last one to be invoked.</tt>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -113,7 +115,7 @@ clean up the code prior to distributing it.</p></div></div></section>
 </tr>
 <tr>
 <td><tt>--CleanUpKinds</tt></td>
-<td><tt>names, annotations, constants, randomize, compress, *</tt></td>
+<td><tt>names, annotations, constants, randomize, compress, noExterns, noMain, removeUnusedFunctions, *</tt></td>
 <td> Specify types of cleanup to perform Default=names,annotations,constants,randomize.
 <ul>
    <li> <tt>names</tt> = Replace identifiers with less obvious ones
@@ -121,9 +123,27 @@ clean up the code prior to distributing it.</p></div></div></section>
    <li> <tt>constants</tt> = Fold constant expressions
    <li> <tt>randomize</tt> = Randomly reorder functions in the output file
    <li> <tt>compress</tt> = Compress the output file by removing blank lines and extra spaces
+   <li> <tt>noExterns</tt> = Do not output any extern declarations. Instead, you must insert the corresponding <tt>#inlude</tt> files.
+   <li> <tt>noMain</tt> = Do not outout the <tt>main()</tt> function. This can be useful if you are transforming a library, and inserted a dummy <tt>main()</tt> that should be removed.
+   <li> <tt>removeUnusedFunctions</tt> = Remove functions not reachable from <tt>main()</tt>. Use <tt>--CleanUpRoots</tt> for functions not reachable from main, but which are still invoked spontaneously.
    <li> <tt>*</tt> = Same as names,annotations,constants
 </ul>
 </td>
+</tr>
+<tr>
+<td><tt>--CleanUpDumpCallGraph</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Print the call graph computed during unused function removal as a .dot file. Default=False.</td>
+</tr>
+<tr>
+<td><tt>--CleanUpDoNotRemove</tt></td>
+<td><tt><em>String,String,...</em></tt></td>
+<td> Comma-separated list of function names which should not be removed by the <tt>removeUnusedFunctions</tt> transformation. Default=NONE.</td>
+</tr>
+<tr>
+<td><tt>--CleanUpRoots</tt></td>
+<td><tt><em>String,String,...</em></tt></td>
+<td> For the <tt>removeUnusedFunctions</tt> transformation, you can provide a comma-separated list of function names which are spontaneously called. Normally, this is just 'main', but if you have functions which are run spontaneously as threads, for example, and not directly reachable from main, include them here. Similarly for functions whose address are taken but which are never invoked directly. Default=main.</td>
 </tr>
 </table>
 </div>

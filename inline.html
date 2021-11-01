@@ -90,7 +90,7 @@ h3 {
 
 
 <a class="anchor" id="inline">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7483" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4479" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
    This transformation replaces a function call with the body of the 
    function. Here is an example script:
 </p></div></div></section>
@@ -106,7 +106,7 @@ h3 {
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7484" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Recursive functions and functions with variable number of arguments cannot be inlined.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4480" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Recursive functions and functions with variable number of arguments cannot be inlined.</p></div></div></section>
 
 <br>
 <h3 align=center>Options</h3>
@@ -128,6 +128,23 @@ h3 {
 <td><tt>--InlineKeepFunctions</tt></td>
 <td><tt><em>String,String,...</em></tt></td>
 <td> Do not delete these functions after inlining. Default=NONE.</td>
+</tr>
+<tr>
+<td><tt>--InlineDumpCallGraph</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Save the callgraph as a .dot file. Default=False.</td>
+</tr>
+<tr>
+<td><tt>--InlineOptimizeKinds</tt></td>
+<td><tt>constProp, copyProp, mergeLocals, gotos</tt></td>
+<td> List of optimizing transformations to apply Default=NONE.
+<ul>
+   <li> <tt>constProp</tt> = <em>Constant Propagation</em>, i.e. replace a variable with its value, if it is constant.
+   <li> <tt>copyProp</tt> = <em>Copy Propagation</em>, i.e. after the assignment <tt>x=y</tt> replaces uses of variable <tt>x</tt> with <tt>y</tt>.
+   <li> <tt>mergeLocals</tt> = Reduce the number of local variables by merging locals that are not live at the same time. Particularly useful after inlining.
+   <li> <tt>gotos</tt> = Remove extra labels and gotos that were inserted during the inlining process.
+</ul>
+</td>
 </tr>
 </table>
 </div>

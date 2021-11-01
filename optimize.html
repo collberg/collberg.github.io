@@ -90,9 +90,11 @@ h3 {
 
 
 <a class="anchor" id="optimize">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c7483" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4479" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
    Some standard intra-procedural optimizations. Useful to clean up code after certain
-   transformations. This transformation is experimental.
+   transformations. This transformation is experimental. <tt>mergeLocals</tt> is particularly
+   useful after inlining, as it reduces the number of local variables in the combined function.
+   This can be helpful for subsequent transformations (like virtualization).
 </p></div></div></section>
 
 <br>
@@ -118,9 +120,19 @@ h3 {
 <ul>
    <li> <tt>constProp</tt> = <em>Constant Propagation</em>, i.e. replace a variable with its value, if it is constant.
    <li> <tt>copyProp</tt> = <em>Copy Propagation</em>, i.e. after the assignment <tt>x=y</tt> replaces uses of variable <tt>x</tt> with <tt>y</tt>.
-   <li> <tt>mergeLocals</tt> = Not yet implemented.
+   <li> <tt>mergeLocals</tt> = Reduce the number of local variables by merging locals that are not live at the same time. Particularly useful after inlining,
 </ul>
 </td>
+</tr>
+<tr>
+<td><tt>--OptimizeDumpInterferenceGraph</tt></td>
+<td><tt></tt></td>
+<td> For, <tt>mergeLocals</tt>, write the interference graph to a *.neato file. It can be visualized using <tt>neato -Tpdf foo-interferenceGraph.neato > foo.pdf</tt>. Default=False.</td>
+</tr>
+<tr>
+<td><tt>--OptimizeShortMergedNames</tt></td>
+<td><tt></tt></td>
+<td> For, <tt>mergeLocals</tt>, generate short names for merged local variables, instead of the default <tt>var1_var2_...</tt>. Default=False.</td>
 </tr>
 </table>
 </div>

@@ -9,115 +9,404 @@
 #pragma clang assume_nonnull end
 struct _2_init_tigress_1_opaque_NodeStruct ;
 union _4_MERGED_$node ;
+struct __anonstruct_lldiv_t_86583852 ;
+struct __anonstruct_w_S_422959016 ;
+struct __anonstruct_w_T_422959015 ;
+struct __darwin_i386_avx_state ;
+struct __darwin_i386_float_state ;
+struct __darwin_mcontext_avx32 ;
+struct __darwin_mcontext_avx512_64 ;
+struct __darwin_opmask_reg ;
+struct __darwin_x86_avx512_state64 ;
+struct __darwin_x86_debug_state32 ;
+struct __darwin_x86_float_state64 ;
+struct __sigaction ;
+struct __siginfo ;
+struct _opaque_pthread_condattr_t ;
+struct itimerval ;
+struct proc_rlimit_control_wakeupmon ;
+enum __anonenum_788482901 ;
+enum __anonenum_idtype_t_558242672 ;
+struct __anonstruct_div_t_773697287 ;
+struct __anonstruct_ldiv_t_748949161 ;
+union __anonunion___mbstate_t_250061491 ;
+struct __darwin_fp_control ;
+struct __darwin_fp_status ;
+struct __darwin_i386_avx512_state ;
+struct __darwin_i386_exception_state ;
+struct __darwin_i386_thread_state ;
+struct __darwin_mcontext32 ;
+struct __darwin_mcontext64 ;
+struct __darwin_mcontext64_full ;
+struct __darwin_mcontext_avx512_32 ;
+struct __darwin_mcontext_avx512_64_full ;
+struct __darwin_mcontext_avx64 ;
+struct __darwin_mcontext_avx64_full ;
+struct __darwin_mmst_reg ;
 struct __darwin_pthread_handler_rec ;
+struct __darwin_sigaltstack ;
+struct __darwin_ucontext ;
+struct __darwin_x86_avx_state64 ;
+struct __darwin_x86_cpmu_state64 ;
+struct __darwin_x86_debug_state64 ;
+struct __darwin_x86_exception_state64 ;
+struct __darwin_x86_thread_full_state64 ;
+struct __darwin_x86_thread_state64 ;
+struct __darwin_xmm_reg ;
+struct __darwin_ymm_reg ;
+struct __darwin_zmm_reg ;
 struct __sFILE ;
 struct __sFILEX ;
 struct __sbuf ;
+union __sigaction_u ;
+struct __x86_pagein_state ;
 struct _opaque_pthread_attr_t ;
 struct _opaque_pthread_cond_t ;
-struct _opaque_pthread_condattr_t ;
 struct _opaque_pthread_mutex_t ;
 struct _opaque_pthread_mutexattr_t ;
+struct _opaque_pthread_once_t ;
+struct _opaque_pthread_rwlock_t ;
+struct _opaque_pthread_rwlockattr_t ;
 struct _opaque_pthread_t ;
-struct timespec ;
+struct clockinfo ;
+struct fd_set ;
+struct pthread_override_s ;
+struct rlimit ;
+struct rusage ;
 struct timeval ;
-struct _2_init_tigress_1_opaque_NodeStruct {
-   struct _2_init_tigress_1_opaque_NodeStruct *next ;
-   int data ;
-   struct _2_init_tigress_1_opaque_NodeStruct *prev ;
-};
-extern int gettimeofday(struct timeval *tv , void *tz ) ;
-typedef struct _opaque_pthread_attr_t __darwin_pthread_attr_t;
-extern int pthread_cond_broadcast(struct _opaque_pthread_cond_t *cond ) ;
-char **_global_argv  =    (char **)0;
-typedef long long __int64_t;
-extern int getpagesize() ;
-extern int posix_memalign(void **memptr , unsigned int alignment , unsigned int size ) ;
-extern int pthread_join(void *thread , void **value_ptr ) ;
-struct _opaque_pthread_attr_t {
+struct timeval64 ;
+enum __anonenum_clockid_t_447627989 ;
+struct rusage_info_v0 ;
+struct rusage_info_v1 ;
+struct rusage_info_v2 ;
+struct rusage_info_v3 ;
+struct rusage_info_v4 ;
+struct sched_param ;
+struct sigaction ;
+struct sigevent ;
+struct sigstack ;
+union sigval ;
+struct sigvec ;
+struct timespec ;
+struct timezone ;
+struct tm ;
+union wait ;
+extern long mrand48(void)  __attribute__((__availability__(swift,unavailable,message="Use arc4random instead."))) ;
+struct _opaque_pthread_cond_t {
    long __sig ;
-   char __opaque[56] ;
+   char __opaque[40] ;
 };
-typedef __darwin_pthread_attr_t pthread_attr_t;
-extern int open(char const   *filename , int oflag  , ...) ;
-extern unsigned int strlen(char const   *s ) ;
-typedef struct _opaque_pthread_condattr_t __darwin_pthread_condattr_t;
-extern int pthread_barrier_destroy(int *barrier ) ;
-struct _opaque_pthread_mutex_t {
-   long __sig ;
-   char __opaque[56] ;
-};
-typedef struct _opaque_pthread_mutex_t __darwin_pthread_mutex_t;
-typedef __darwin_pthread_mutex_t pthread_mutex_t;
+typedef struct _opaque_pthread_cond_t __darwin_pthread_cond_t;
+typedef __darwin_pthread_cond_t pthread_cond_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_broadcast(pthread_cond_t * ) ;
+extern int putchar_unlocked(int  ) ;
+typedef short int16_t;
+typedef int16_t int_fast16_t;
 struct _opaque_pthread_mutexattr_t {
    long __sig ;
    char __opaque[8] ;
 };
 typedef struct _opaque_pthread_mutexattr_t __darwin_pthread_mutexattr_t;
 typedef __darwin_pthread_mutexattr_t pthread_mutexattr_t;
-extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_init(pthread_mutex_t * __restrict   ,
-                                                                                                                              pthread_mutexattr_t const   * _Nullable __restrict   ) ;
-extern int strncmp(char const   *s1 , char const   *s2 , unsigned int maxlen ) ;
-unsigned long _1_entropy  =    1205847982700084983UL;
-typedef long __darwin_time_t;
-struct timespec {
-   __darwin_time_t tv_sec ;
-   long tv_nsec ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_setprioceiling(pthread_mutexattr_t * ,
+                                                                                                                                            int  ) ;
+struct __darwin_fp_control {
+   unsigned short __invalid : 1 ;
+   unsigned short __denorm : 1 ;
+   unsigned short __zdiv : 1 ;
+   unsigned short __ovrfl : 1 ;
+   unsigned short __undfl : 1 ;
+   unsigned short __precis : 1 ;
+   unsigned short  : 2 ;
+   unsigned short __pc : 2 ;
+   unsigned short __rc : 2 ;
+   unsigned short  : 1 ;
+   unsigned short  : 3 ;
 };
-extern int ( /* format attribute */  printf)(char const   * __restrict    , ...) ;
-int _global_argc  =    0;
-extern int pthread_cond_signal(struct _opaque_pthread_cond_t *cond ) ;
-struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_ptr_2  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
-extern int scanf(char const   *format  , ...) ;
-extern int pthread_barrier_init(int *barrier , int *attr , unsigned int count ) ;
-extern int raise(int sig ) ;
-char **_global_envp  =    (char **)0;
-typedef struct _opaque_pthread_t *__darwin_pthread_t;
-extern int unlink(char const   *filename ) ;
-typedef struct _opaque_pthread_cond_t __darwin_pthread_cond_t;
-extern double difftime(long tv1 , long tv0 ) ;
-extern int pthread_barrier_wait(int *barrier ) ;
-extern int pthread_mutex_lock(struct _opaque_pthread_mutex_t *mutex ) ;
-extern void *memcpy(void *s1 , void const   *s2 , unsigned int size ) ;
-unsigned long _1_alwaysZero  =    0;
-extern int gethostname(char *name , unsigned int namelen ) ;
-extern void *dlsym(void *handle , char *symbol ) ;
-extern void abort() ;
-extern unsigned long strtoul(char const   *str , char const   *endptr , int base ) ;
-struct __darwin_pthread_handler_rec {
-   void (*__routine)(void * ) ;
-   void *__arg ;
-   struct __darwin_pthread_handler_rec *__next ;
+struct __darwin_fp_status {
+   unsigned short __invalid : 1 ;
+   unsigned short __denorm : 1 ;
+   unsigned short __zdiv : 1 ;
+   unsigned short __ovrfl : 1 ;
+   unsigned short __undfl : 1 ;
+   unsigned short __precis : 1 ;
+   unsigned short __stkflt : 1 ;
+   unsigned short __errsumm : 1 ;
+   unsigned short __c0 : 1 ;
+   unsigned short __c1 : 1 ;
+   unsigned short __c2 : 1 ;
+   unsigned short __tos : 3 ;
+   unsigned short __c3 : 1 ;
+   unsigned short __busy : 1 ;
 };
-extern int fprintf(struct __sFILE *stream , char const   *format  , ...) ;
-extern void free(void *ptr ) ;
-extern void exit(int status ) ;
-extern void signal(int sig , void *func ) ;
-int main(int argc , char **argv , char **_formal_envp ) ;
-char const   *_4_MERGED_$strings  =    "fac(%i)=%i\n\000fib(%i)=%i\n\000";
-typedef struct __sFILE FILE;
-__inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) ;
-extern int close(int filedes ) ;
-extern int mprotect(void *addr , unsigned int len , int prot ) ;
-struct _opaque_pthread_t {
+struct __darwin_mmst_reg {
+   char __mmst_reg[10] ;
+   char __mmst_rsrv[6] ;
+};
+struct __darwin_opmask_reg {
+   char __opmask_reg[8] ;
+};
+struct __darwin_xmm_reg {
+   char __xmm_reg[16] ;
+};
+struct __darwin_ymm_reg {
+   char __ymm_reg[32] ;
+};
+typedef unsigned short __uint16_t;
+typedef unsigned int __uint32_t;
+typedef unsigned char __uint8_t;
+struct __darwin_i386_avx512_state {
+   int __fpu_reserved[2] ;
+   struct __darwin_fp_control __fpu_fcw ;
+   struct __darwin_fp_status __fpu_fsw ;
+   __uint8_t __fpu_ftw ;
+   __uint8_t __fpu_rsrv1 ;
+   __uint16_t __fpu_fop ;
+   __uint32_t __fpu_ip ;
+   __uint16_t __fpu_cs ;
+   __uint16_t __fpu_rsrv2 ;
+   __uint32_t __fpu_dp ;
+   __uint16_t __fpu_ds ;
+   __uint16_t __fpu_rsrv3 ;
+   __uint32_t __fpu_mxcsr ;
+   __uint32_t __fpu_mxcsrmask ;
+   struct __darwin_mmst_reg __fpu_stmm0 ;
+   struct __darwin_mmst_reg __fpu_stmm1 ;
+   struct __darwin_mmst_reg __fpu_stmm2 ;
+   struct __darwin_mmst_reg __fpu_stmm3 ;
+   struct __darwin_mmst_reg __fpu_stmm4 ;
+   struct __darwin_mmst_reg __fpu_stmm5 ;
+   struct __darwin_mmst_reg __fpu_stmm6 ;
+   struct __darwin_mmst_reg __fpu_stmm7 ;
+   struct __darwin_xmm_reg __fpu_xmm0 ;
+   struct __darwin_xmm_reg __fpu_xmm1 ;
+   struct __darwin_xmm_reg __fpu_xmm2 ;
+   struct __darwin_xmm_reg __fpu_xmm3 ;
+   struct __darwin_xmm_reg __fpu_xmm4 ;
+   struct __darwin_xmm_reg __fpu_xmm5 ;
+   struct __darwin_xmm_reg __fpu_xmm6 ;
+   struct __darwin_xmm_reg __fpu_xmm7 ;
+   char __fpu_rsrv4[224] ;
+   int __fpu_reserved1 ;
+   char __avx_reserved1[64] ;
+   struct __darwin_xmm_reg __fpu_ymmh0 ;
+   struct __darwin_xmm_reg __fpu_ymmh1 ;
+   struct __darwin_xmm_reg __fpu_ymmh2 ;
+   struct __darwin_xmm_reg __fpu_ymmh3 ;
+   struct __darwin_xmm_reg __fpu_ymmh4 ;
+   struct __darwin_xmm_reg __fpu_ymmh5 ;
+   struct __darwin_xmm_reg __fpu_ymmh6 ;
+   struct __darwin_xmm_reg __fpu_ymmh7 ;
+   struct __darwin_opmask_reg __fpu_k0 ;
+   struct __darwin_opmask_reg __fpu_k1 ;
+   struct __darwin_opmask_reg __fpu_k2 ;
+   struct __darwin_opmask_reg __fpu_k3 ;
+   struct __darwin_opmask_reg __fpu_k4 ;
+   struct __darwin_opmask_reg __fpu_k5 ;
+   struct __darwin_opmask_reg __fpu_k6 ;
+   struct __darwin_opmask_reg __fpu_k7 ;
+   struct __darwin_ymm_reg __fpu_zmmh0 ;
+   struct __darwin_ymm_reg __fpu_zmmh1 ;
+   struct __darwin_ymm_reg __fpu_zmmh2 ;
+   struct __darwin_ymm_reg __fpu_zmmh3 ;
+   struct __darwin_ymm_reg __fpu_zmmh4 ;
+   struct __darwin_ymm_reg __fpu_zmmh5 ;
+   struct __darwin_ymm_reg __fpu_zmmh6 ;
+   struct __darwin_ymm_reg __fpu_zmmh7 ;
+};
+typedef long __darwin_ssize_t;
+typedef int __int32_t;
+typedef __int32_t __darwin_blksize_t;
+struct _opaque_pthread_once_t {
    long __sig ;
-   struct __darwin_pthread_handler_rec *__cleanup_stack ;
-   char __opaque[8176] ;
+   char __opaque[8] ;
 };
-extern double log(double x ) ;
-extern double strtod(char const   *str , char const   *endptr ) ;
-extern double ceil(double x ) ;
-struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_ptr_1  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
-struct __sbuf {
-   unsigned char *_base ;
-   int _size ;
+typedef struct __sFILE FILE;
+extern int putc(int  , FILE * ) ;
+struct _opaque_pthread_mutex_t {
+   long __sig ;
+   char __opaque[56] ;
 };
-void MERGED(void *tigressRetVal , int n__0 , int whichBlock__7 ) ;
-extern int fclose(void *stream ) ;
-extern int fcntl(int filedes , int cmd  , ...) ;
-typedef __int64_t __darwin_off_t;
-extern void perror(char const   *str ) ;
-extern int pthread_cond_wait(struct _opaque_pthread_cond_t *cond , struct _opaque_pthread_cond_t *mutex ) ;
+typedef struct _opaque_pthread_mutex_t __darwin_pthread_mutex_t;
+typedef __darwin_pthread_mutex_t pthread_mutex_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_timedwait_relative_np(pthread_cond_t * ,
+                                                                                                                                              pthread_mutex_t * ,
+                                                                                                                                              struct timespec  const  * _Nullable   ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_gettype(pthread_mutexattr_t const   * __restrict   ,
+                                                                                                                                     int * __restrict   ) ;
+struct _opaque_pthread_attr_t {
+   long __sig ;
+   char __opaque[56] ;
+};
+typedef struct _opaque_pthread_attr_t __darwin_pthread_attr_t;
+typedef __darwin_pthread_attr_t pthread_attr_t;
+typedef unsigned int qos_class_t;
+extern int __attribute__((__availability__(ios,introduced=8.0), __availability__(macos,introduced=10.10)))  pthread_attr_get_qos_class_np(pthread_attr_t * __restrict  __attr ,
+                                                                                                                                          qos_class_t * _Nullable __restrict  __qos_class ,
+                                                                                                                                          int * _Nullable __restrict  __relative_priority ) ;
+__inline extern int ( __attribute__((__always_inline__)) __darwin_fd_isset)(int _fd ,
+                                                                            struct fd_set  const  *_p ) ;
+extern FILE *__stdinp ;
+extern  __attribute__((__noreturn__)) void __attribute__((__availability__(macos,introduced=10.4),
+__availability__(ios,introduced=2.0)))  pthread_exit(void * _Nullable   ) ;
+typedef struct _opaque_pthread_condattr_t __darwin_pthread_condattr_t;
+extern char *ctermid(char * ) ;
+typedef long __darwin_time_t;
+typedef __darwin_time_t time_t;
+extern time_t mktime(struct tm * )  __asm__("_mktime")  ;
+struct _2_init_tigress_1_opaque_NodeStruct {
+   struct _2_init_tigress_1_opaque_NodeStruct *next ;
+   int data ;
+   struct _2_init_tigress_1_opaque_NodeStruct *prev ;
+};
+struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_ptr_2  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
+__inline static __uint16_t _OSSwapInt16(__uint16_t _data ) ;
+extern int fputs(char const   * __restrict   , FILE * __restrict   )  __asm__("_fputs")  ;
+extern void arc4random_addrandom(unsigned char * , int  )  __attribute__((__availability__(watchos,deprecated=3.0,message="use arc4random_stir"),
+__availability__(watchos,introduced=1.0), __availability__(tvos,deprecated=10.0,message="use arc4random_stir"),
+__availability__(tvos,introduced=2.0), __availability__(ios,deprecated=10.0,message="use arc4random_stir"),
+__availability__(ios,introduced=2.0), __availability__(macosx,deprecated=10.12,message="use arc4random_stir"),
+__availability__(macosx,introduced=10.0))) ;
+typedef __int32_t __darwin_suseconds_t;
+struct timeval {
+   __darwin_time_t tv_sec ;
+   __darwin_suseconds_t tv_usec ;
+};
+struct rusage {
+   struct timeval ru_utime ;
+   struct timeval ru_stime ;
+   long ru_maxrss ;
+   long ru_ixrss ;
+   long ru_idrss ;
+   long ru_isrss ;
+   long ru_minflt ;
+   long ru_majflt ;
+   long ru_nswap ;
+   long ru_inblock ;
+   long ru_oublock ;
+   long ru_msgsnd ;
+   long ru_msgrcv ;
+   long ru_nsignals ;
+   long ru_nvcsw ;
+   long ru_nivcsw ;
+};
+extern void funlockfile(FILE * ) ;
+extern int setiopolicy_np(int  , int  , int  )  __attribute__((__availability__(macosx,introduced=10.5))) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setstackaddr(pthread_attr_t * ,
+                                                                                                                                     void * ) ;
+typedef unsigned long long __uint64_t;
+struct __darwin_x86_debug_state64 {
+   __uint64_t __dr0 ;
+   __uint64_t __dr1 ;
+   __uint64_t __dr2 ;
+   __uint64_t __dr3 ;
+   __uint64_t __dr4 ;
+   __uint64_t __dr5 ;
+   __uint64_t __dr6 ;
+   __uint64_t __dr7 ;
+};
+extern int setitimer(int  , struct itimerval  const  * __restrict   , struct itimerval * __restrict   ) ;
+extern int __attribute__((__availability__(ios,introduced=8.0), __availability__(macos,introduced=10.10)))  pthread_attr_set_qos_class_np(pthread_attr_t *__attr ,
+                                                                                                                                          qos_class_t __qos_class ,
+                                                                                                                                          int __relative_priority ) ;
+typedef signed char int8_t;
+typedef int8_t int_least8_t;
+typedef unsigned long __darwin_size_t;
+typedef __darwin_size_t size_t;
+extern size_t fread(void * __restrict  __ptr , size_t __size , size_t __nitems , FILE * __restrict  __stream ) ;
+typedef unsigned long long u_int64_t;
+extern FILE *tmpfile(void) ;
+extern  __attribute__((__noreturn__)) void abort(void)  __attribute__((__cold__)) ;
+extern int getloadavg(double * , int  ) ;
+typedef __uint32_t __darwin_wctype_t;
+typedef __int32_t __darwin_pid_t;
+typedef __darwin_pid_t pid_t;
+extern pid_t wait4(pid_t  , int * , int  , struct rusage * ) ;
+extern char __attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead."),
+__availability__(swift,unavailable,message="Use mkstemp(3) instead.")))  *tempnam(char const   *__dir ,
+                                                                                  char const   *__prefix )  __asm__("_tempnam")  ;
+struct sched_param {
+   int sched_priority ;
+   char __opaque[4] ;
+};
+struct tm {
+   int tm_sec ;
+   int tm_min ;
+   int tm_hour ;
+   int tm_mday ;
+   int tm_mon ;
+   int tm_year ;
+   int tm_wday ;
+   int tm_yday ;
+   int tm_isdst ;
+   long tm_gmtoff ;
+   char *tm_zone ;
+};
+typedef __darwin_ssize_t ssize_t;
+extern ssize_t getline(char ** __restrict  __linep , size_t * __restrict  __linecapp ,
+                       FILE * __restrict  __stream )  __attribute__((__availability__(macosx,introduced=10.7))) ;
+typedef u_int64_t user_ulong_t;
+extern int getrusage(int  , struct rusage * ) ;
+typedef __uint32_t __darwin_sigset_t;
+typedef __darwin_sigset_t sigset_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_sigmask(int  ,
+                                                                                                                           sigset_t const   * _Nullable   ,
+                                                                                                                           sigset_t * _Nullable   )  __asm__("_pthread_sigmask")  ;
+extern int fileno(FILE * ) ;
+typedef __builtin_va_list __darwin_va_list;
+typedef __darwin_va_list va_list;
+extern int ( /* format attribute */  vsprintf)(char * __restrict   , char const   * __restrict   ,
+                                               va_list  )  __attribute__((__availability__(swift,unavailable,message="Use vsnprintf instead."))) ;
+extern int ( /* format attribute */  vprintf)(char const   * __restrict   , va_list  ) ;
+extern int cgetent(char ** , char ** , char const   * ) ;
+extern void tzset(void) ;
+typedef struct _opaque_pthread_t *__darwin_pthread_t;
+typedef __darwin_pthread_t pthread_t;
+extern pthread_t __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  pthread_self(void) ;
+struct __darwin_i386_avx_state {
+   int __fpu_reserved[2] ;
+   struct __darwin_fp_control __fpu_fcw ;
+   struct __darwin_fp_status __fpu_fsw ;
+   __uint8_t __fpu_ftw ;
+   __uint8_t __fpu_rsrv1 ;
+   __uint16_t __fpu_fop ;
+   __uint32_t __fpu_ip ;
+   __uint16_t __fpu_cs ;
+   __uint16_t __fpu_rsrv2 ;
+   __uint32_t __fpu_dp ;
+   __uint16_t __fpu_ds ;
+   __uint16_t __fpu_rsrv3 ;
+   __uint32_t __fpu_mxcsr ;
+   __uint32_t __fpu_mxcsrmask ;
+   struct __darwin_mmst_reg __fpu_stmm0 ;
+   struct __darwin_mmst_reg __fpu_stmm1 ;
+   struct __darwin_mmst_reg __fpu_stmm2 ;
+   struct __darwin_mmst_reg __fpu_stmm3 ;
+   struct __darwin_mmst_reg __fpu_stmm4 ;
+   struct __darwin_mmst_reg __fpu_stmm5 ;
+   struct __darwin_mmst_reg __fpu_stmm6 ;
+   struct __darwin_mmst_reg __fpu_stmm7 ;
+   struct __darwin_xmm_reg __fpu_xmm0 ;
+   struct __darwin_xmm_reg __fpu_xmm1 ;
+   struct __darwin_xmm_reg __fpu_xmm2 ;
+   struct __darwin_xmm_reg __fpu_xmm3 ;
+   struct __darwin_xmm_reg __fpu_xmm4 ;
+   struct __darwin_xmm_reg __fpu_xmm5 ;
+   struct __darwin_xmm_reg __fpu_xmm6 ;
+   struct __darwin_xmm_reg __fpu_xmm7 ;
+   char __fpu_rsrv4[224] ;
+   int __fpu_reserved1 ;
+   char __avx_reserved1[64] ;
+   struct __darwin_xmm_reg __fpu_ymmh0 ;
+   struct __darwin_xmm_reg __fpu_ymmh1 ;
+   struct __darwin_xmm_reg __fpu_ymmh2 ;
+   struct __darwin_xmm_reg __fpu_ymmh3 ;
+   struct __darwin_xmm_reg __fpu_ymmh4 ;
+   struct __darwin_xmm_reg __fpu_ymmh5 ;
+   struct __darwin_xmm_reg __fpu_ymmh6 ;
+   struct __darwin_xmm_reg __fpu_ymmh7 ;
+};
+extern char *gets(char * ) ;
 union _4_MERGED_$node {
    char _char ;
    unsigned int _unsigned_int ;
@@ -132,45 +421,715 @@ union _4_MERGED_$node {
    int _int ;
    short _short ;
 };
+struct _opaque_pthread_rwlock_t {
+   long __sig ;
+   char __opaque[192] ;
+};
+typedef struct _opaque_pthread_rwlock_t __darwin_pthread_rwlock_t;
+typedef __darwin_pthread_rwlock_t pthread_rwlock_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlock_tryrdlock(pthread_rwlock_t * )  __asm__("_pthread_rwlock_tryrdlock")  ;
+typedef struct fd_set fd_set;
+extern char *ptsname(int  ) ;
 struct _opaque_pthread_condattr_t {
    long __sig ;
    char __opaque[8] ;
 };
-extern int write(int filedes , void *buf , unsigned int nbyte ) ;
-struct _opaque_pthread_cond_t {
-   long __sig ;
-   char __opaque[40] ;
-};
-typedef __darwin_pthread_cond_t pthread_cond_t;
 typedef __darwin_pthread_condattr_t pthread_condattr_t;
-extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_init(pthread_cond_t * __restrict   ,
-                                                                                                                             pthread_condattr_t const   * _Nullable __restrict   )  __asm__("_pthread_cond_init")  ;
-typedef struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_StructureType;
-extern int ptrace(int request , void *pid , void *addr , int data ) ;
-struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_list_1  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
-void _5_stringEncoder(int n , char str[] ) ;
-extern float strtof(char const   *str , char const   *endptr ) ;
-extern unsigned int strnlen(char const   *s , unsigned int maxlen ) ;
-struct timeval {
-   long tv_sec ;
-   int tv_usec ;
-};
-extern long clock(void) ;
-extern void qsort(void *base , unsigned int nel , unsigned int width , int (*compar)(void *a ,
-                                                                                     void *b ) ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_condattr_getpshared(pthread_condattr_t const   * __restrict   ,
+                                                                                                                                       int * __restrict   ) ;
+extern int rand_r(unsigned int * )  __attribute__((__availability__(swift,unavailable,message="Use arc4random instead."))) ;
+typedef int int32_t;
+typedef int32_t int_fast32_t;
+typedef long long __int64_t;
+typedef __int64_t __darwin_off_t;
 typedef __darwin_off_t fpos_t;
-extern long time(long *tloc ) ;
-extern int rand() ;
-extern int read(int filedes , void *buf , unsigned int nbyte ) ;
-typedef __darwin_pthread_t pthread_t;
-extern void *fopen(char const   *filename , char const   *mode ) ;
-extern int strcmp(char const   *a , char const   *b ) ;
-extern double sqrt(double x ) ;
-extern int __swbuf(int  , FILE * ) ;
-extern long strtol(char const   *str , char const   *endptr , int base ) ;
-extern void *malloc(unsigned int size ) ;
-extern int snprintf(char *str , unsigned int size , char const   *format  , ...) ;
+extern int daemon(int  , int  )  __asm__("_daemon$1050") __attribute__((__availability__(tvos,unavailable),
+__availability__(watchos,unavailable), __availability__(macosx,introduced=10.0,deprecated=10.5,message="Use posix_spawn APIs instead."))) ;
+extern time_t time(time_t * ) ;
+extern int __srget(FILE * ) ;
+extern void *( __attribute__((__warn_unused_result__)) malloc)(size_t __size )  __attribute__((__alloc_size__(1))) ;
+extern long long atoll(char const   * ) ;
+typedef long long int64_t;
+typedef int64_t register_t;
+extern int adjtime(struct timeval  const  * , struct timeval * ) ;
+typedef long __darwin_ptrdiff_t;
+extern int getw(FILE * ) ;
+extern char *realpath(char const   * __restrict   , char * __restrict   )  __asm__("_realpath$DARWIN_EXTSN")  ;
+typedef struct __anonstruct_ldiv_t_748949161 ldiv_t;
+struct __darwin_i386_exception_state {
+   __uint16_t __trapno ;
+   __uint16_t __cpu ;
+   __uint32_t __err ;
+   __uint32_t __faultvaddr ;
+};
+extern int sched_get_priority_max(int  ) ;
+extern int __darwin_check_fd_set_overflow(int  , void const   * , int  )  __attribute__((__weak_import__)) ;
+__inline extern int ( __attribute__((__always_inline__)) __darwin_check_fd_set)(int _a ,
+                                                                                void const   *_b ) ;
+typedef struct __anonstruct_lldiv_t_86583852 lldiv_t;
+extern char *getenv(char const   * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_join(pthread_t  ,
+                                                                                                                        void * _Nullable  * _Nullable   )  __asm__("_pthread_join")  ;
+typedef __int64_t __darwin_blkcnt_t;
+typedef __uint32_t __darwin_useconds_t;
+typedef struct _opaque_pthread_once_t __darwin_pthread_once_t;
+typedef unsigned int uint32_t;
+typedef uint32_t uint_least32_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_getconcurrency(void) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_signal(pthread_cond_t * ) ;
+typedef int __darwin_wctrans_t;
+typedef signed char __int8_t;
+extern double difftime(time_t  , time_t  ) ;
+extern int ( /* format attribute */  vsnprintf)(char * __restrict  __str , size_t __size ,
+                                                char const   * __restrict  __format ,
+                                                va_list  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_atfork(void (* _Nullable  )(void) ,
+                                                                                                                          void (* _Nullable  )(void) ,
+                                                                                                                          void (* _Nullable  )(void) ) ;
+typedef enum __anonenum_clockid_t_447627989 clockid_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_lock(pthread_mutex_t * ) ;
+extern int ( /* format attribute */  sprintf)(char * __restrict   , char const   * __restrict   
+                                              , ...)  __attribute__((__availability__(swift,unavailable,message="Use snprintf instead."))) ;
+extern double erand48(unsigned short * ) ;
+typedef unsigned int __darwin_natural_t;
+typedef __darwin_natural_t __darwin_mach_port_name_t;
+typedef __darwin_mach_port_name_t __darwin_mach_port_t;
+typedef __darwin_mach_port_t mach_port_t;
+extern mach_port_t __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  pthread_mach_thread_np(pthread_t  ) ;
+struct __darwin_x86_thread_state64 {
+   __uint64_t __rax ;
+   __uint64_t __rbx ;
+   __uint64_t __rcx ;
+   __uint64_t __rdx ;
+   __uint64_t __rdi ;
+   __uint64_t __rsi ;
+   __uint64_t __rbp ;
+   __uint64_t __rsp ;
+   __uint64_t __r8 ;
+   __uint64_t __r9 ;
+   __uint64_t __r10 ;
+   __uint64_t __r11 ;
+   __uint64_t __r12 ;
+   __uint64_t __r13 ;
+   __uint64_t __r14 ;
+   __uint64_t __r15 ;
+   __uint64_t __rip ;
+   __uint64_t __rflags ;
+   __uint64_t __cs ;
+   __uint64_t __fs ;
+   __uint64_t __gs ;
+};
+struct __darwin_x86_thread_full_state64 {
+   struct __darwin_x86_thread_state64 __ss64 ;
+   __uint64_t __ds ;
+   __uint64_t __es ;
+   __uint64_t __ss ;
+   __uint64_t __gsbase ;
+};
+extern int renameatx_np(int  , char const   * , int  , char const   * , unsigned int  )  __attribute__((__availability__(watchos,introduced=3.0),
+__availability__(tvos,introduced=10.0), __availability__(ios,introduced=10.0), __availability__(macosx,introduced=10.12))) ;
+typedef __uint32_t __darwin_id_t;
+typedef __darwin_id_t id_t;
+enum __anonenum_idtype_t_558242672 {
+    P_ALL = 0,
+    P_PID = 1,
+    P_PGID = 2
+} ;
+typedef enum __anonenum_idtype_t_558242672 idtype_t;
+typedef struct __siginfo siginfo_t;
+extern int waitid(idtype_t  , id_t  , siginfo_t * , int  )  __asm__("_waitid")  ;
+extern struct tm *getdate(char const   * ) ;
+typedef __uint16_t __darwin_mode_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getstacksize(pthread_attr_t const   * __restrict   ,
+                                                                                                                                     size_t * __restrict   ) ;
+extern  __attribute__((__noreturn__)) void exit(int  ) ;
+extern int putc_unlocked(int  , FILE * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_setschedparam(pthread_t  ,
+                                                                                                                                 int  ,
+                                                                                                                                 struct sched_param  const  * ) ;
+extern int __attribute__((__availability__(ios,introduced=8.0), __availability__(macos,introduced=10.10)))  pthread_get_qos_class_np(pthread_t __pthread ,
+                                                                                                                                     qos_class_t * _Nullable __restrict  __qos_class ,
+                                                                                                                                     int * _Nullable __restrict  __relative_priority ) ;
+extern int ( /* format attribute */  vscanf)(char const   * __restrict  __format ,
+                                             va_list  ) ;
+struct _opaque_pthread_t {
+   long __sig ;
+   struct __darwin_pthread_handler_rec *__cleanup_stack ;
+   char __opaque[8176] ;
+};
+typedef int __darwin_wchar_t;
+typedef __darwin_wchar_t wchar_t;
+extern int mbtowc(wchar_t * __restrict   , char const   * __restrict   , size_t  ) ;
+extern int abs(int  )  __attribute__((__const__)) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_trylock(pthread_mutex_t * ) ;
+extern int __mb_cur_max ;
+extern int getiopolicy_np(int  , int  )  __attribute__((__availability__(macosx,introduced=10.5))) ;
+extern long labs(long  )  __attribute__((__const__)) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setstacksize(pthread_attr_t * ,
+                                                                                                                                     size_t  ) ;
+extern int lutimes(char const   * , struct timeval  const  * )  __attribute__((__availability__(macosx,introduced=10.5))) ;
+typedef int64_t int_least64_t;
+extern int __attribute__((__availability__(tvos,introduced=11.3), __availability__(watchos,introduced=4.3),
+__availability__(ios,introduced=11.3), __availability__(macos,introduced=10.13.4)))  pthread_mutexattr_getpolicy_np(pthread_mutexattr_t const   * __restrict   ,
+                                                                                                                    int * __restrict   ) ;
+extern int cgetmatch(char const   * , char const   * ) ;
+typedef u_int64_t syscall_arg_t;
+extern int __vsprintf_chk(char * __restrict   , int  , size_t  , char const   * __restrict   ,
+                          va_list  ) ;
+extern char *cgetcap(char * , char const   * , int  ) ;
+extern int __attribute__((__availability__(tvos,unavailable), __availability__(watchos,unavailable),
+__availability__(ios,unavailable), __availability__(macos,introduced=10.0), __availability__(swift,unavailable,message="Use posix_spawn APIs or NSTask instead.")))  system(char const   * )  __asm__("_system")  ;
+typedef unsigned char uint8_t;
+typedef uint8_t uint_least8_t;
+typedef long intmax_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setscope(pthread_attr_t * ,
+                                                                                                                                 int  ) ;
+extern int utimes(char const   * , struct timeval  const  * ) ;
+extern float strtof(char const   * , char ** )  __asm__("_strtof")  ;
+enum __anonenum_788482901 {
+    QOS_CLASS_USER_INTERACTIVE = 33,
+    QOS_CLASS_USER_INITIATED = 25,
+    QOS_CLASS_DEFAULT = 21,
+    QOS_CLASS_UTILITY = 17,
+    QOS_CLASS_BACKGROUND = 9,
+    QOS_CLASS_UNSPECIFIED = 0
+} ;
+struct _opaque_pthread_rwlockattr_t {
+   long __sig ;
+   char __opaque[16] ;
+};
+typedef struct _opaque_pthread_rwlockattr_t __darwin_pthread_rwlockattr_t;
+typedef __darwin_pthread_rwlockattr_t pthread_rwlockattr_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlockattr_setpshared(pthread_rwlockattr_t * ,
+                                                                                                                                         int  ) ;
+extern size_t fwrite(void const   * __restrict  __ptr , size_t __size , size_t __nitems ,
+                     FILE * __restrict  __stream )  __asm__("_fwrite")  ;
+extern char *fcvt(double  , int  , int * __restrict   , int * __restrict   ) ;
+typedef unsigned long __darwin_clock_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_setprioceiling(pthread_mutex_t * __restrict   ,
+                                                                                                                                        int  ,
+                                                                                                                                        int * __restrict   ) ;
+extern int pclose(FILE * )  __attribute__((__availability__(swift,unavailable,message="Use posix_spawn APIs or NSTask instead."))) ;
+struct __darwin_zmm_reg {
+   char __zmm_reg[64] ;
+};
+struct __darwin_x86_avx512_state64 {
+   int __fpu_reserved[2] ;
+   struct __darwin_fp_control __fpu_fcw ;
+   struct __darwin_fp_status __fpu_fsw ;
+   __uint8_t __fpu_ftw ;
+   __uint8_t __fpu_rsrv1 ;
+   __uint16_t __fpu_fop ;
+   __uint32_t __fpu_ip ;
+   __uint16_t __fpu_cs ;
+   __uint16_t __fpu_rsrv2 ;
+   __uint32_t __fpu_dp ;
+   __uint16_t __fpu_ds ;
+   __uint16_t __fpu_rsrv3 ;
+   __uint32_t __fpu_mxcsr ;
+   __uint32_t __fpu_mxcsrmask ;
+   struct __darwin_mmst_reg __fpu_stmm0 ;
+   struct __darwin_mmst_reg __fpu_stmm1 ;
+   struct __darwin_mmst_reg __fpu_stmm2 ;
+   struct __darwin_mmst_reg __fpu_stmm3 ;
+   struct __darwin_mmst_reg __fpu_stmm4 ;
+   struct __darwin_mmst_reg __fpu_stmm5 ;
+   struct __darwin_mmst_reg __fpu_stmm6 ;
+   struct __darwin_mmst_reg __fpu_stmm7 ;
+   struct __darwin_xmm_reg __fpu_xmm0 ;
+   struct __darwin_xmm_reg __fpu_xmm1 ;
+   struct __darwin_xmm_reg __fpu_xmm2 ;
+   struct __darwin_xmm_reg __fpu_xmm3 ;
+   struct __darwin_xmm_reg __fpu_xmm4 ;
+   struct __darwin_xmm_reg __fpu_xmm5 ;
+   struct __darwin_xmm_reg __fpu_xmm6 ;
+   struct __darwin_xmm_reg __fpu_xmm7 ;
+   struct __darwin_xmm_reg __fpu_xmm8 ;
+   struct __darwin_xmm_reg __fpu_xmm9 ;
+   struct __darwin_xmm_reg __fpu_xmm10 ;
+   struct __darwin_xmm_reg __fpu_xmm11 ;
+   struct __darwin_xmm_reg __fpu_xmm12 ;
+   struct __darwin_xmm_reg __fpu_xmm13 ;
+   struct __darwin_xmm_reg __fpu_xmm14 ;
+   struct __darwin_xmm_reg __fpu_xmm15 ;
+   char __fpu_rsrv4[96] ;
+   int __fpu_reserved1 ;
+   char __avx_reserved1[64] ;
+   struct __darwin_xmm_reg __fpu_ymmh0 ;
+   struct __darwin_xmm_reg __fpu_ymmh1 ;
+   struct __darwin_xmm_reg __fpu_ymmh2 ;
+   struct __darwin_xmm_reg __fpu_ymmh3 ;
+   struct __darwin_xmm_reg __fpu_ymmh4 ;
+   struct __darwin_xmm_reg __fpu_ymmh5 ;
+   struct __darwin_xmm_reg __fpu_ymmh6 ;
+   struct __darwin_xmm_reg __fpu_ymmh7 ;
+   struct __darwin_xmm_reg __fpu_ymmh8 ;
+   struct __darwin_xmm_reg __fpu_ymmh9 ;
+   struct __darwin_xmm_reg __fpu_ymmh10 ;
+   struct __darwin_xmm_reg __fpu_ymmh11 ;
+   struct __darwin_xmm_reg __fpu_ymmh12 ;
+   struct __darwin_xmm_reg __fpu_ymmh13 ;
+   struct __darwin_xmm_reg __fpu_ymmh14 ;
+   struct __darwin_xmm_reg __fpu_ymmh15 ;
+   struct __darwin_opmask_reg __fpu_k0 ;
+   struct __darwin_opmask_reg __fpu_k1 ;
+   struct __darwin_opmask_reg __fpu_k2 ;
+   struct __darwin_opmask_reg __fpu_k3 ;
+   struct __darwin_opmask_reg __fpu_k4 ;
+   struct __darwin_opmask_reg __fpu_k5 ;
+   struct __darwin_opmask_reg __fpu_k6 ;
+   struct __darwin_opmask_reg __fpu_k7 ;
+   struct __darwin_ymm_reg __fpu_zmmh0 ;
+   struct __darwin_ymm_reg __fpu_zmmh1 ;
+   struct __darwin_ymm_reg __fpu_zmmh2 ;
+   struct __darwin_ymm_reg __fpu_zmmh3 ;
+   struct __darwin_ymm_reg __fpu_zmmh4 ;
+   struct __darwin_ymm_reg __fpu_zmmh5 ;
+   struct __darwin_ymm_reg __fpu_zmmh6 ;
+   struct __darwin_ymm_reg __fpu_zmmh7 ;
+   struct __darwin_ymm_reg __fpu_zmmh8 ;
+   struct __darwin_ymm_reg __fpu_zmmh9 ;
+   struct __darwin_ymm_reg __fpu_zmmh10 ;
+   struct __darwin_ymm_reg __fpu_zmmh11 ;
+   struct __darwin_ymm_reg __fpu_zmmh12 ;
+   struct __darwin_ymm_reg __fpu_zmmh13 ;
+   struct __darwin_ymm_reg __fpu_zmmh14 ;
+   struct __darwin_ymm_reg __fpu_zmmh15 ;
+   struct __darwin_zmm_reg __fpu_zmm16 ;
+   struct __darwin_zmm_reg __fpu_zmm17 ;
+   struct __darwin_zmm_reg __fpu_zmm18 ;
+   struct __darwin_zmm_reg __fpu_zmm19 ;
+   struct __darwin_zmm_reg __fpu_zmm20 ;
+   struct __darwin_zmm_reg __fpu_zmm21 ;
+   struct __darwin_zmm_reg __fpu_zmm22 ;
+   struct __darwin_zmm_reg __fpu_zmm23 ;
+   struct __darwin_zmm_reg __fpu_zmm24 ;
+   struct __darwin_zmm_reg __fpu_zmm25 ;
+   struct __darwin_zmm_reg __fpu_zmm26 ;
+   struct __darwin_zmm_reg __fpu_zmm27 ;
+   struct __darwin_zmm_reg __fpu_zmm28 ;
+   struct __darwin_zmm_reg __fpu_zmm29 ;
+   struct __darwin_zmm_reg __fpu_zmm30 ;
+   struct __darwin_zmm_reg __fpu_zmm31 ;
+};
+extern uint32_t arc4random_uniform(uint32_t __upper_bound )  __attribute__((__availability__(macosx,introduced=10.7))) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getscope(pthread_attr_t const   * __restrict   ,
+                                                                                                                                 int * __restrict   ) ;
+extern int cgetustr(char * , char const   * , char ** ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getschedpolicy(pthread_attr_t const   * __restrict   ,
+                                                                                                                                       int * __restrict   ) ;
+extern char *asctime(struct tm  const  * ) ;
+struct __darwin_x86_avx_state64 {
+   int __fpu_reserved[2] ;
+   struct __darwin_fp_control __fpu_fcw ;
+   struct __darwin_fp_status __fpu_fsw ;
+   __uint8_t __fpu_ftw ;
+   __uint8_t __fpu_rsrv1 ;
+   __uint16_t __fpu_fop ;
+   __uint32_t __fpu_ip ;
+   __uint16_t __fpu_cs ;
+   __uint16_t __fpu_rsrv2 ;
+   __uint32_t __fpu_dp ;
+   __uint16_t __fpu_ds ;
+   __uint16_t __fpu_rsrv3 ;
+   __uint32_t __fpu_mxcsr ;
+   __uint32_t __fpu_mxcsrmask ;
+   struct __darwin_mmst_reg __fpu_stmm0 ;
+   struct __darwin_mmst_reg __fpu_stmm1 ;
+   struct __darwin_mmst_reg __fpu_stmm2 ;
+   struct __darwin_mmst_reg __fpu_stmm3 ;
+   struct __darwin_mmst_reg __fpu_stmm4 ;
+   struct __darwin_mmst_reg __fpu_stmm5 ;
+   struct __darwin_mmst_reg __fpu_stmm6 ;
+   struct __darwin_mmst_reg __fpu_stmm7 ;
+   struct __darwin_xmm_reg __fpu_xmm0 ;
+   struct __darwin_xmm_reg __fpu_xmm1 ;
+   struct __darwin_xmm_reg __fpu_xmm2 ;
+   struct __darwin_xmm_reg __fpu_xmm3 ;
+   struct __darwin_xmm_reg __fpu_xmm4 ;
+   struct __darwin_xmm_reg __fpu_xmm5 ;
+   struct __darwin_xmm_reg __fpu_xmm6 ;
+   struct __darwin_xmm_reg __fpu_xmm7 ;
+   struct __darwin_xmm_reg __fpu_xmm8 ;
+   struct __darwin_xmm_reg __fpu_xmm9 ;
+   struct __darwin_xmm_reg __fpu_xmm10 ;
+   struct __darwin_xmm_reg __fpu_xmm11 ;
+   struct __darwin_xmm_reg __fpu_xmm12 ;
+   struct __darwin_xmm_reg __fpu_xmm13 ;
+   struct __darwin_xmm_reg __fpu_xmm14 ;
+   struct __darwin_xmm_reg __fpu_xmm15 ;
+   char __fpu_rsrv4[96] ;
+   int __fpu_reserved1 ;
+   char __avx_reserved1[64] ;
+   struct __darwin_xmm_reg __fpu_ymmh0 ;
+   struct __darwin_xmm_reg __fpu_ymmh1 ;
+   struct __darwin_xmm_reg __fpu_ymmh2 ;
+   struct __darwin_xmm_reg __fpu_ymmh3 ;
+   struct __darwin_xmm_reg __fpu_ymmh4 ;
+   struct __darwin_xmm_reg __fpu_ymmh5 ;
+   struct __darwin_xmm_reg __fpu_ymmh6 ;
+   struct __darwin_xmm_reg __fpu_ymmh7 ;
+   struct __darwin_xmm_reg __fpu_ymmh8 ;
+   struct __darwin_xmm_reg __fpu_ymmh9 ;
+   struct __darwin_xmm_reg __fpu_ymmh10 ;
+   struct __darwin_xmm_reg __fpu_ymmh11 ;
+   struct __darwin_xmm_reg __fpu_ymmh12 ;
+   struct __darwin_xmm_reg __fpu_ymmh13 ;
+   struct __darwin_xmm_reg __fpu_ymmh14 ;
+   struct __darwin_xmm_reg __fpu_ymmh15 ;
+};
+extern time_t timelocal(struct tm * const   ) ;
+extern int __sprintf_chk(char * __restrict   , int  , size_t  , char const   * __restrict   
+                         , ...) ;
 extern int nanosleep(struct timespec  const  *__rqtp , struct timespec *__rmtp )  __asm__("_nanosleep")  ;
+extern char *ctime_r(time_t const   * , char * ) ;
+typedef __darwin_pthread_once_t pthread_once_t;
+extern void clearerr(FILE * ) ;
+typedef unsigned long long uint64_t;
+typedef uint64_t uint_least64_t;
+extern time_t posix2time(time_t  ) ;
+extern void setkey(char const   * )  __asm__("_setkey")  ;
+typedef __int32_t __darwin_dev_t;
+typedef __darwin_dev_t dev_t;
+typedef __darwin_mode_t mode_t;
+extern char *devname(dev_t  , mode_t  ) ;
+extern long long strtoll(char const   *__str , char **__endptr , int __base ) ;
+typedef __darwin_off_t off_t;
+struct __anonstruct_ldiv_t_748949161 {
+   long quot ;
+   long rem ;
+};
+extern ssize_t getdelim(char ** __restrict  __linep , size_t * __restrict  __linecapp ,
+                        int __delimiter , FILE * __restrict  __stream )  __attribute__((__availability__(macosx,introduced=10.7))) ;
+extern qos_class_t __attribute__((__availability__(macos,introduced=10.10), __availability__(ios,introduced=8.0)))  qos_class_self(void) ;
+char **_global_argv  =    (char **)0;
+extern int ftrylockfile(FILE * ) ;
+extern int posix_memalign(void **__memptr , size_t __alignment , size_t __size )  __attribute__((__availability__(macosx,introduced=10.6))) ;
+typedef __darwin_wchar_t __darwin_rune_t;
+typedef __darwin_rune_t rune_t;
+struct rusage_info_v1 {
+   uint8_t ri_uuid[16] ;
+   uint64_t ri_user_time ;
+   uint64_t ri_system_time ;
+   uint64_t ri_pkg_idle_wkups ;
+   uint64_t ri_interrupt_wkups ;
+   uint64_t ri_pageins ;
+   uint64_t ri_wired_size ;
+   uint64_t ri_resident_size ;
+   uint64_t ri_phys_footprint ;
+   uint64_t ri_proc_start_abstime ;
+   uint64_t ri_proc_exit_abstime ;
+   uint64_t ri_child_user_time ;
+   uint64_t ri_child_system_time ;
+   uint64_t ri_child_pkg_idle_wkups ;
+   uint64_t ri_child_interrupt_wkups ;
+   uint64_t ri_child_pageins ;
+   uint64_t ri_child_elapsed_abstime ;
+};
+extern long random(void)  __attribute__((__availability__(swift,unavailable,message="Use arc4random instead."))) ;
+typedef unsigned short u_int16_t;
+extern int fgetpos(FILE * __restrict   , fpos_t * ) ;
+extern int fgetc(FILE * ) ;
+extern void flockfile(FILE * ) ;
+extern int feof(FILE * ) ;
+extern int putchar(int  ) ;
+extern void srandomdev(void) ;
+extern int putenv(char * )  __asm__("_putenv")  ;
+struct sigvec {
+   void (*sv_handler)(int  ) ;
+   int sv_mask ;
+   int sv_flags ;
+};
+extern int ( /* format attribute */  scanf)(char const   * __restrict    , ...) ;
+typedef unsigned long __darwin_pthread_key_t;
+typedef __darwin_pthread_key_t pthread_key_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_key_create(pthread_key_t * ,
+                                                                                                                              void (* _Nullable  )(void * ) ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlock_rdlock(pthread_rwlock_t * )  __asm__("_pthread_rwlock_rdlock")  ;
+typedef struct pthread_override_s *pthread_override_t;
+extern pthread_override_t __attribute__((__availability__(macos,introduced=10.10),
+__availability__(ios,introduced=8.0)))  pthread_override_qos_class_start_np(pthread_t __pthread ,
+                                                                            qos_class_t __qos_class ,
+                                                                            int __relative_priority ) ;
+extern int getsubopt(char ** , char * const  * , char ** ) ;
+struct __darwin_x86_exception_state64 {
+   __uint16_t __trapno ;
+   __uint16_t __cpu ;
+   __uint32_t __err ;
+   __uint64_t __faultvaddr ;
+};
+struct __darwin_x86_float_state64 {
+   int __fpu_reserved[2] ;
+   struct __darwin_fp_control __fpu_fcw ;
+   struct __darwin_fp_status __fpu_fsw ;
+   __uint8_t __fpu_ftw ;
+   __uint8_t __fpu_rsrv1 ;
+   __uint16_t __fpu_fop ;
+   __uint32_t __fpu_ip ;
+   __uint16_t __fpu_cs ;
+   __uint16_t __fpu_rsrv2 ;
+   __uint32_t __fpu_dp ;
+   __uint16_t __fpu_ds ;
+   __uint16_t __fpu_rsrv3 ;
+   __uint32_t __fpu_mxcsr ;
+   __uint32_t __fpu_mxcsrmask ;
+   struct __darwin_mmst_reg __fpu_stmm0 ;
+   struct __darwin_mmst_reg __fpu_stmm1 ;
+   struct __darwin_mmst_reg __fpu_stmm2 ;
+   struct __darwin_mmst_reg __fpu_stmm3 ;
+   struct __darwin_mmst_reg __fpu_stmm4 ;
+   struct __darwin_mmst_reg __fpu_stmm5 ;
+   struct __darwin_mmst_reg __fpu_stmm6 ;
+   struct __darwin_mmst_reg __fpu_stmm7 ;
+   struct __darwin_xmm_reg __fpu_xmm0 ;
+   struct __darwin_xmm_reg __fpu_xmm1 ;
+   struct __darwin_xmm_reg __fpu_xmm2 ;
+   struct __darwin_xmm_reg __fpu_xmm3 ;
+   struct __darwin_xmm_reg __fpu_xmm4 ;
+   struct __darwin_xmm_reg __fpu_xmm5 ;
+   struct __darwin_xmm_reg __fpu_xmm6 ;
+   struct __darwin_xmm_reg __fpu_xmm7 ;
+   struct __darwin_xmm_reg __fpu_xmm8 ;
+   struct __darwin_xmm_reg __fpu_xmm9 ;
+   struct __darwin_xmm_reg __fpu_xmm10 ;
+   struct __darwin_xmm_reg __fpu_xmm11 ;
+   struct __darwin_xmm_reg __fpu_xmm12 ;
+   struct __darwin_xmm_reg __fpu_xmm13 ;
+   struct __darwin_xmm_reg __fpu_xmm14 ;
+   struct __darwin_xmm_reg __fpu_xmm15 ;
+   char __fpu_rsrv4[96] ;
+   int __fpu_reserved1 ;
+};
+struct __darwin_mcontext64 {
+   struct __darwin_x86_exception_state64 __es ;
+   struct __darwin_x86_thread_state64 __ss ;
+   struct __darwin_x86_float_state64 __fs ;
+};
+extern int fflush(FILE * ) ;
+extern int puts(char const   * ) ;
+struct timeval64 {
+   __int64_t tv_sec ;
+   __int64_t tv_usec ;
+};
+extern pid_t waitpid(pid_t  , int * , int  )  __asm__("_waitpid")  ;
+typedef long __darwin_intptr_t;
+typedef __darwin_intptr_t intptr_t;
+struct __darwin_i386_thread_state {
+   unsigned int __eax ;
+   unsigned int __ebx ;
+   unsigned int __ecx ;
+   unsigned int __edx ;
+   unsigned int __edi ;
+   unsigned int __esi ;
+   unsigned int __ebp ;
+   unsigned int __esp ;
+   unsigned int __ss ;
+   unsigned int __eflags ;
+   unsigned int __eip ;
+   unsigned int __cs ;
+   unsigned int __ds ;
+   unsigned int __es ;
+   unsigned int __fs ;
+   unsigned int __gs ;
+};
+extern FILE *fmemopen(void * __restrict  __buf , size_t __size , char const   * __restrict  __mode )  __attribute__((__availability__(watchos,introduced=4.0),
+__availability__(tvos,introduced=11.0), __availability__(ios,introduced=11.0), __availability__(macos,introduced=10.13))) ;
+extern void (*signal(int  , void (*)(int  ) ))(int  ) ;
+char const   *_4_MERGED_$strings  =    "fac(%i)=%i\n\000fib(%i)=%i\n\000";
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getstackaddr(pthread_attr_t const   * __restrict   ,
+                                                                                                                                     void * _Nullable  * _Nonnull __restrict   ) ;
+typedef unsigned long uintptr_t;
+enum __anonenum_clockid_t_447627989 {
+    _CLOCK_REALTIME = 0,
+    _CLOCK_MONOTONIC = 6,
+    _CLOCK_MONOTONIC_RAW = 4,
+    _CLOCK_MONOTONIC_RAW_APPROX = 5,
+    _CLOCK_UPTIME_RAW = 8,
+    _CLOCK_UPTIME_RAW_APPROX = 9,
+    _CLOCK_PROCESS_CPUTIME_ID = 12,
+    _CLOCK_THREAD_CPUTIME_ID = 16
+} ;
+extern int __attribute__((__availability__(watchos,introduced=3.0), __availability__(tvos,introduced=10.0),
+__availability__(ios,introduced=10.0), __availability__(macosx,introduced=10.12)))  clock_getres(clockid_t __clock_id ,
+                                                                                                 struct timespec *__res ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_getprioceiling(pthread_mutex_t const   * __restrict   ,
+                                                                                                                                        int * __restrict   ) ;
+struct __darwin_mcontext_avx512_64_full {
+   struct __darwin_x86_exception_state64 __es ;
+   struct __darwin_x86_thread_full_state64 __ss ;
+   struct __darwin_x86_avx512_state64 __fs ;
+};
+extern char *setstate(char const   * ) ;
+extern size_t __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  pthread_get_stacksize_np(pthread_t  ) ;
+struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_ptr_1  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
+typedef __uint64_t __darwin_ino64_t;
+typedef __darwin_ino64_t __darwin_ino_t;
+extern void rewind(FILE * ) ;
+__inline static __uint32_t _OSSwapInt32(__uint32_t _data ) ;
+extern int __attribute__((__availability__(watchos,introduced=3.0), __availability__(tvos,introduced=10.0),
+__availability__(ios,introduced=10.0), __availability__(macosx,introduced=10.12)))  clock_gettime(clockid_t __clock_id ,
+                                                                                                  struct timespec *__tp ) ;
+typedef char __darwin_uuid_string_t[37];
+extern struct tm *localtime(time_t const   * ) ;
+typedef int __darwin_ct_rune_t;
+struct __darwin_i386_float_state {
+   int __fpu_reserved[2] ;
+   struct __darwin_fp_control __fpu_fcw ;
+   struct __darwin_fp_status __fpu_fsw ;
+   __uint8_t __fpu_ftw ;
+   __uint8_t __fpu_rsrv1 ;
+   __uint16_t __fpu_fop ;
+   __uint32_t __fpu_ip ;
+   __uint16_t __fpu_cs ;
+   __uint16_t __fpu_rsrv2 ;
+   __uint32_t __fpu_dp ;
+   __uint16_t __fpu_ds ;
+   __uint16_t __fpu_rsrv3 ;
+   __uint32_t __fpu_mxcsr ;
+   __uint32_t __fpu_mxcsrmask ;
+   struct __darwin_mmst_reg __fpu_stmm0 ;
+   struct __darwin_mmst_reg __fpu_stmm1 ;
+   struct __darwin_mmst_reg __fpu_stmm2 ;
+   struct __darwin_mmst_reg __fpu_stmm3 ;
+   struct __darwin_mmst_reg __fpu_stmm4 ;
+   struct __darwin_mmst_reg __fpu_stmm5 ;
+   struct __darwin_mmst_reg __fpu_stmm6 ;
+   struct __darwin_mmst_reg __fpu_stmm7 ;
+   struct __darwin_xmm_reg __fpu_xmm0 ;
+   struct __darwin_xmm_reg __fpu_xmm1 ;
+   struct __darwin_xmm_reg __fpu_xmm2 ;
+   struct __darwin_xmm_reg __fpu_xmm3 ;
+   struct __darwin_xmm_reg __fpu_xmm4 ;
+   struct __darwin_xmm_reg __fpu_xmm5 ;
+   struct __darwin_xmm_reg __fpu_xmm6 ;
+   struct __darwin_xmm_reg __fpu_xmm7 ;
+   char __fpu_rsrv4[224] ;
+   int __fpu_reserved1 ;
+};
+struct __darwin_mcontext32 {
+   struct __darwin_i386_exception_state __es ;
+   struct __darwin_i386_thread_state __ss ;
+   struct __darwin_i386_float_state __fs ;
+};
+typedef struct rusage_info_v4 rusage_info_current;
+extern long long llabs(long long  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlock_destroy(pthread_rwlock_t * )  __asm__("_pthread_rwlock_destroy")  ;
+typedef __uint32_t __darwin_uid_t;
+typedef __darwin_uid_t uid_t;
+extern int cgetfirst(char ** , char ** ) ;
+extern void __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  pthread_testcancel(void)  __asm__("_pthread_testcancel")  ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_condattr_setpshared(pthread_condattr_t * ,
+                                                                                                                                       int  ) ;
+extern char *ctermid_r(char * ) ;
+extern unsigned long long strtoull(char const   *__str , char **__endptr , int __base ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlock_init(pthread_rwlock_t * __restrict   ,
+                                                                                                                               pthread_rwlockattr_t const   * _Nullable __restrict   )  __asm__("_pthread_rwlock_init")  ;
+void _5_stringEncoder(int n , char str[] ) ;
+extern int __attribute__((__availability__(ios,introduced=3.2), __availability__(macos,introduced=10.6)))  pthread_getname_np(pthread_t  ,
+                                                                                                                              char * ,
+                                                                                                                              size_t  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_getpshared(pthread_mutexattr_t const   * __restrict   ,
+                                                                                                                                        int * __restrict   ) ;
+extern lldiv_t lldiv(long long  , long long  ) ;
+typedef __darwin_suseconds_t suseconds_t;
+extern void __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  * _Nullable  pthread_getspecific(pthread_key_t  ) ;
+typedef unsigned char __darwin_uuid_t[16];
+struct __darwin_mcontext64_full {
+   struct __darwin_x86_exception_state64 __es ;
+   struct __darwin_x86_thread_full_state64 __ss ;
+   struct __darwin_x86_float_state64 __fs ;
+};
+union sigval {
+   int sival_int ;
+   void *sival_ptr ;
+};
+struct sigevent {
+   int sigev_notify ;
+   int sigev_signo ;
+   union sigval sigev_value ;
+   void (*sigev_notify_function)(union sigval  ) ;
+   pthread_attr_t *sigev_notify_attributes ;
+};
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_unlock(pthread_mutex_t * ) ;
+typedef union __anonunion___mbstate_t_250061491 __mbstate_t;
+extern void *reallocf(void *__ptr , size_t __size )  __attribute__((__alloc_size__(2))) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_getprioceiling(pthread_mutexattr_t const   * __restrict   ,
+                                                                                                                                            int * __restrict   ) ;
+extern int cgetset(char const   * ) ;
+void megaInit(void) ;
+extern int posix_openpt(int  ) ;
+__inline static __uint64_t _OSSwapInt64(__uint64_t _data ) ;
+typedef u_int64_t user_addr_t;
+extern int gettimeofday(struct timeval * __restrict   , void * __restrict   ) ;
+extern char *devname_r(dev_t  , mode_t  , char *buf , int len ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_key_delete(pthread_key_t  ) ;
+extern int __attribute__((__availability__(ios,introduced=5.0), __availability__(macos,introduced=10.7)))  pthread_mutexattr_setpolicy_np(pthread_mutexattr_t * ,
+                                                                                                                                          int  ) ;
+extern FILE *funopen(void const   * , int (* _Nullable  )(void * , char * , int  ) ,
+                     int (* _Nullable  )(void * , char const   * , int  ) , fpos_t (* _Nullable  )(void * ,
+                                                                                                   fpos_t  ,
+                                                                                                   int  ) ,
+                     int (* _Nullable  )(void * ) ) ;
+extern int cgetstr(char * , char const   * , char ** ) ;
+extern size_t strftime(char * __restrict   , size_t  , char const   * __restrict   ,
+                       struct tm  const  * __restrict   )  __asm__("_strftime")  ;
+typedef struct __anonstruct_div_t_773697287 div_t;
+struct timezone {
+   int tz_minuteswest ;
+   int tz_dsttime ;
+};
+extern char *getbsize(int * , long * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_is_threaded_np(void) ;
+extern char const   *fmtcheck(char const   * , char const   * ) ;
+extern int ( /* format attribute */  printf)(char const   * __restrict    , ...) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlock_wrlock(pthread_rwlock_t * )  __asm__("_pthread_rwlock_wrlock")  ;
+extern int renameat(int  , char const   * , int  , char const   * )  __attribute__((__availability__(macosx,introduced=10.10))) ;
+extern int daylight ;
+extern long lrand48(void)  __attribute__((__availability__(swift,unavailable,message="Use arc4random instead."))) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlockattr_getpshared(pthread_rwlockattr_t const   * __restrict   ,
+                                                                                                                                         int * __restrict   ) ;
+extern unsigned long strtoul(char const   *__str , char **__endptr , int __base ) ;
+typedef __darwin_clock_t clock_t;
+typedef int32_t int_least32_t;
+extern FILE *popen(char const   * , char const   * )  __asm__("_popen") __attribute__((__availability__(swift,unavailable,message="Use posix_spawn APIs or NSTask instead."))) ;
+typedef uint64_t uint_fast64_t;
+extern FILE *__stderrp ;
+extern int __attribute__((__availability__(ios,introduced=8.0), __availability__(macos,introduced=10.10)))  pthread_set_qos_class_self_np(qos_class_t __qos_class ,
+                                                                                                                                          int __relative_priority ) ;
+extern char *mktemp(char * ) ;
+extern long nrand48(unsigned short * )  __attribute__((__availability__(swift,unavailable,message="Use arc4random instead."))) ;
+extern pid_t wait(int * )  __asm__("_wait")  ;
+extern void __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  pthread_yield_np(void) ;
+extern void sranddev(void) ;
+extern char *initstate(unsigned int  , char * , size_t  ) ;
+typedef __uint32_t __darwin_socklen_t;
+extern uint32_t arc4random(void) ;
+extern int radixsort(unsigned char const   **__base , int __nel , unsigned char const   *__table ,
+                     unsigned int __endbyte ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlockattr_destroy(pthread_rwlockattr_t * ) ;
+extern pid_t wait3(int * , int  , struct rusage * ) ;
+extern FILE *__stdoutp ;
+typedef int sig_atomic_t;
+typedef unsigned char u_int8_t;
+extern  __attribute__((__noreturn__)) void _Exit(int  ) ;
+__inline extern void ( __attribute__((__always_inline__)) __darwin_fd_clr)(int _fd ,
+                                                                           struct fd_set * const  _p ) ;
+extern void srand48(long  ) ;
+extern int getpriority(int  , id_t  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4),
+__availability__(swift,unavailable,message="Use lazily initialized globals instead")))  pthread_once(pthread_once_t * ,
+                                                                                                     void (* _Nonnull  )(void) ) ;
+extern int renamex_np(char const   * , char const   * , unsigned int  )  __attribute__((__availability__(watchos,introduced=3.0),
+__availability__(tvos,introduced=10.0), __availability__(ios,introduced=10.0), __availability__(macosx,introduced=10.12))) ;
+extern int cgetclose(void) ;
+extern off_t ftello(FILE *__stream ) ;
+extern int const   sys_nerr ;
+typedef unsigned long uintmax_t;
+extern time_t time2posix(time_t  ) ;
+struct __sbuf {
+   unsigned char *_base ;
+   int _size ;
+};
 struct __sFILE {
    unsigned char *_p ;
    int _r ;
@@ -193,12 +1152,408 @@ struct __sFILE {
    int _blksize ;
    fpos_t _offset ;
 };
-extern int pthread_mutex_unlock(struct _opaque_pthread_mutex_t *mutex ) ;
-extern int atoi(char const   *s ) ;
-extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_create(pthread_t __attribute__((__nullable__))  * _Nonnull __restrict   ,
-                                                                                                                          pthread_attr_t const   * _Nullable __restrict   ,
-                                                                                                                          void * _Nullable  (* _Nonnull  )(void * _Nullable   ) ,
-                                                                                                                          void * _Nullable __restrict   ) ;
+extern int atoi(char const   * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_getprotocol(pthread_mutexattr_t const   * __restrict   ,
+                                                                                                                                         int * __restrict   ) ;
+extern int ( /* format attribute */  fscanf)(FILE * __restrict   , char const   * __restrict   
+                                             , ...) ;
+struct sigstack {
+   char *ss_sp ;
+   int ss_onstack ;
+};
+typedef struct __darwin_fp_control __darwin_fp_control_t;
+extern int fputc(int  , FILE * ) ;
+extern void psort(void *__base , size_t __nel , size_t __width , int (* _Nonnull  __compar)(void const   * ,
+                                                                                            void const   * ) )  __attribute__((__availability__(macosx,introduced=10.6))) ;
+extern void qsort_r(void *__base , size_t __nel , size_t __width , void * , int (* _Nonnull  __compar)(void * ,
+                                                                                                       void const   * ,
+                                                                                                       void const   * ) ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_setpshared(pthread_mutexattr_t * ,
+                                                                                                                                        int  ) ;
+extern int ( /* format attribute */  dprintf)(int  , char const   * __restrict   
+                                              , ...)  __attribute__((__availability__(macosx,introduced=10.7))) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setstack(pthread_attr_t * ,
+                                                                                                                                 void * ,
+                                                                                                                                 size_t  ) ;
+typedef unsigned int __darwin_fsfilcnt_t;
+extern void lcong48(unsigned short * ) ;
+extern char *suboptarg ;
+extern char *asctime_r(struct tm  const  * __restrict   , char * __restrict   ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setinheritsched(pthread_attr_t * ,
+                                                                                                                                        int  ) ;
+extern int rename(char const   *__old , char const   *__new ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_init(pthread_mutex_t * __restrict   ,
+                                                                                                                              pthread_mutexattr_t const   * _Nullable __restrict   ) ;
+unsigned long _1_entropy  =    1205847982700084983UL;
+struct timespec {
+   __darwin_time_t tv_sec ;
+   long tv_nsec ;
+};
+int _global_argc  =    0;
+struct __siginfo {
+   int si_signo ;
+   int si_errno ;
+   int si_code ;
+   pid_t si_pid ;
+   uid_t si_uid ;
+   int si_status ;
+   void *si_addr ;
+   union sigval si_value ;
+   long si_band ;
+   unsigned long __pad[7] ;
+};
+typedef uint8_t uint_fast8_t;
+typedef int64_t user_off_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_condattr_init(pthread_condattr_t * ) ;
+extern int ( /* format attribute */  __svfscanf)(FILE * , char const   * , va_list  ) ;
+extern int mkstemp(char * ) ;
+union __sigaction_u {
+   void (*__sa_handler)(int  ) ;
+   void (*__sa_sigaction)(int  , struct __siginfo * , void * ) ;
+};
+struct __sigaction {
+   union __sigaction_u __sigaction_u ;
+   void (*sa_tramp)(void * , int  , int  , siginfo_t * , void * ) ;
+   sigset_t sa_mask ;
+   int sa_flags ;
+};
+extern int putw(int  , FILE * ) ;
+struct __darwin_mcontext_avx64 {
+   struct __darwin_x86_exception_state64 __es ;
+   struct __darwin_x86_thread_state64 __ss ;
+   struct __darwin_x86_avx_state64 __fs ;
+};
+extern long a64l(char const   * ) ;
+__inline extern void ( __attribute__((__always_inline__)) __darwin_fd_set)(int _fd ,
+                                                                           struct fd_set * const  _p ) ;
+extern int cgetnum(char * , char const   * , long * ) ;
+struct __darwin_mcontext_avx512_64 {
+   struct __darwin_x86_exception_state64 __es ;
+   struct __darwin_x86_thread_state64 __ss ;
+   struct __darwin_x86_avx512_state64 __fs ;
+};
+typedef int8_t int_fast8_t;
+struct __darwin_pthread_handler_rec {
+   void (*__routine)(void * ) ;
+   void *__arg ;
+   struct __darwin_pthread_handler_rec *__next ;
+};
+extern int ( /* format attribute */  fprintf)(FILE * __restrict   , char const   * __restrict   
+                                              , ...) ;
+typedef unsigned short uint16_t;
+typedef uint16_t uint_fast16_t;
+__inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) ;
+extern int sched_yield(void) ;
+extern int setenv(char const   *__name , char const   *__value , int __overwrite )  __asm__("_setenv")  ;
+extern double strtod(char const   * , char ** )  __asm__("_strtod")  ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_condattr_destroy(pthread_condattr_t * ) ;
+extern void setprogname(char const   * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_setcanceltype(int  ,
+                                                                                                                                 int * _Nullable   )  __asm__("_pthread_setcanceltype")  ;
+extern int ( /* format attribute */  sscanf)(char const   * __restrict   , char const   * __restrict   
+                                             , ...) ;
+extern int fpurge(FILE * ) ;
+extern long long strtoq(char const   *__str , char **__endptr , int __base ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlock_unlock(pthread_rwlock_t * )  __asm__("_pthread_rwlock_unlock")  ;
+extern int __attribute__((__availability__(ios,introduced=3.2), __availability__(macos,introduced=10.6)))  pthread_setname_np(char const   * ) ;
+extern int getchar(void) ;
+extern int unsetenv(char const   * )  __asm__("_unsetenv")  ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_setspecific(pthread_key_t  ,
+                                                                                                                               void const   * _Nullable   ) ;
+typedef struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_StructureType;
+extern int heapsort(void *__base , size_t __nel , size_t __width , int (* _Nonnull  __compar)(void const   * ,
+                                                                                              void const   * ) ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_setprotocol(pthread_mutexattr_t * ,
+                                                                                                                                         int  ) ;
+extern size_t wcstombs(char * __restrict   , wchar_t const   * __restrict   , size_t  ) ;
+typedef __uint64_t rlim_t;
+extern long atol(char const   * ) ;
+extern int __swbuf(int  , FILE * ) ;
+extern size_t mbstowcs(wchar_t * __restrict   , char const   * __restrict   , size_t  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_detach(pthread_t  ) ;
+extern int ptsname_r(int fildes , char *buffer , size_t buflen )  __attribute__((__availability__(watchos,introduced=4.3),
+__availability__(tvos,introduced=11.3), __availability__(ios,introduced=11.3), __availability__(macos,introduced=10.13.4))) ;
+typedef int __darwin_nl_item;
+struct __darwin_mcontext_avx32 {
+   struct __darwin_i386_exception_state __es ;
+   struct __darwin_i386_thread_state __ss ;
+   struct __darwin_i386_avx_state __fs ;
+};
+extern pthread_t __attribute__((__nullable__, __availability__(macos,introduced=10.5),
+__availability__(ios,introduced=2.0)))  pthread_from_mach_thread_np(mach_port_t  ) ;
+extern FILE *zopen(char const   * , char const   * , int  ) ;
+extern int fseeko(FILE *__stream , off_t __offset , int __whence ) ;
+typedef struct __darwin_fp_status __darwin_fp_status_t;
+typedef int64_t user_time_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setschedparam(pthread_attr_t * __restrict   ,
+                                                                                                                                      struct sched_param  const  * __restrict   ) ;
+extern char *l64a(long  ) ;
+struct rusage_info_v2 {
+   uint8_t ri_uuid[16] ;
+   uint64_t ri_user_time ;
+   uint64_t ri_system_time ;
+   uint64_t ri_pkg_idle_wkups ;
+   uint64_t ri_interrupt_wkups ;
+   uint64_t ri_pageins ;
+   uint64_t ri_wired_size ;
+   uint64_t ri_resident_size ;
+   uint64_t ri_phys_footprint ;
+   uint64_t ri_proc_start_abstime ;
+   uint64_t ri_proc_exit_abstime ;
+   uint64_t ri_child_user_time ;
+   uint64_t ri_child_system_time ;
+   uint64_t ri_child_pkg_idle_wkups ;
+   uint64_t ri_child_interrupt_wkups ;
+   uint64_t ri_child_pageins ;
+   uint64_t ri_child_elapsed_abstime ;
+   uint64_t ri_diskio_bytesread ;
+   uint64_t ri_diskio_byteswritten ;
+};
+struct fd_set {
+   __int32_t fds_bits[1024UL / (sizeof(__int32_t ) * 8UL)] ;
+};
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_main_np(void) ;
+struct __anonstruct_w_S_422959016 {
+   unsigned int w_Stopval : 8 ;
+   unsigned int w_Stopsig : 8 ;
+   unsigned int w_Filler : 16 ;
+};
+struct __anonstruct_w_T_422959015 {
+   unsigned int w_Termsig : 7 ;
+   unsigned int w_Coredump : 1 ;
+   unsigned int w_Retcode : 8 ;
+   unsigned int w_Filler : 16 ;
+};
+union wait {
+   int w_status ;
+   struct __anonstruct_w_T_422959015 w_T ;
+   struct __anonstruct_w_S_422959016 w_S ;
+};
+struct __anonstruct_lldiv_t_86583852 {
+   long long quot ;
+   long long rem ;
+};
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getschedparam(pthread_attr_t const   * __restrict   ,
+                                                                                                                                      struct sched_param * __restrict   ) ;
+extern int getdate_err ;
+extern int ( /* format attribute */  asprintf)(char ** __restrict   , char const   * __restrict   
+                                               , ...) ;
+extern qos_class_t __attribute__((__availability__(macos,introduced=10.10), __availability__(ios,introduced=8.0)))  qos_class_main(void) ;
+extern char *ecvt(double  , int  , int * __restrict   , int * __restrict   ) ;
+extern struct tm *localtime_r(time_t const   * __restrict   , struct tm * __restrict   ) ;
+extern void *( __attribute__((__warn_unused_result__)) realloc)(void *__ptr , size_t __size )  __attribute__((__alloc_size__(2))) ;
+typedef __uint32_t __darwin_gid_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_setconcurrency(int  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setguardsize(pthread_attr_t * ,
+                                                                                                                                     size_t  ) ;
+extern int grantpt(int  ) ;
+unsigned long _1_alwaysZero  =    0;
+typedef struct __darwin_ucontext ucontext_t;
+extern long jrand48(unsigned short * )  __attribute__((__availability__(swift,unavailable,message="Use arc4random instead."))) ;
+extern int futimes(int  , struct timeval  const  * ) ;
+extern char const   *getprogname(void) ;
+extern char *tzname[] ;
+extern int ( /* format attribute */  vfscanf)(FILE * __restrict  __stream , char const   * __restrict  __format ,
+                                              va_list  ) ;
+struct rusage_info_v0 {
+   uint8_t ri_uuid[16] ;
+   uint64_t ri_user_time ;
+   uint64_t ri_system_time ;
+   uint64_t ri_pkg_idle_wkups ;
+   uint64_t ri_interrupt_wkups ;
+   uint64_t ri_pageins ;
+   uint64_t ri_wired_size ;
+   uint64_t ri_resident_size ;
+   uint64_t ri_phys_footprint ;
+   uint64_t ri_proc_start_abstime ;
+   uint64_t ri_proc_exit_abstime ;
+};
+extern int getitimer(int  , struct itimerval * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getguardsize(pthread_attr_t const   * __restrict   ,
+                                                                                                                                     size_t * __restrict   ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_equal(pthread_t __attribute__((__nullable__))   ,
+                                                                                                                         pthread_t __attribute__((__nullable__))   ) ;
+extern void srand(unsigned int  )  __attribute__((__availability__(swift,unavailable,message="Use arc4random instead."))) ;
+void MERGED(void *tigressRetVal , int n__0 , int whichBlock__7 ) ;
+struct proc_rlimit_control_wakeupmon {
+   uint32_t wm_flags ;
+   int32_t wm_rate ;
+};
+extern int cgetnext(char ** , char ** ) ;
+extern int atexit(void (* _Nonnull  )(void) ) ;
+extern int fclose(FILE * ) ;
+extern int __attribute__((__availability__(watchos,introduced=6.0), __availability__(tvos,introduced=13.0),
+__availability__(ios,introduced=13.0), __availability__(macosx,introduced=10.15)))  timespec_get(struct timespec *ts ,
+                                                                                                 int base ) ;
+struct __darwin_sigaltstack {
+   void *ss_sp ;
+   __darwin_size_t ss_size ;
+   int ss_flags ;
+};
+struct __darwin_ucontext {
+   int uc_onstack ;
+   __darwin_sigset_t uc_sigmask ;
+   struct __darwin_sigaltstack uc_stack ;
+   struct __darwin_ucontext *uc_link ;
+   __darwin_size_t uc_mcsize ;
+   struct __darwin_mcontext64 *uc_mcontext ;
+};
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_destroy(pthread_mutex_t * ) ;
+extern void __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  *pthread_get_stackaddr_np(pthread_t  ) ;
+extern FILE *open_memstream(char **__bufp , size_t *__sizep )  __attribute__((__availability__(watchos,introduced=4.0),
+__availability__(tvos,introduced=11.0), __availability__(ios,introduced=11.0), __availability__(macos,introduced=10.13))) ;
+extern int __vsnprintf_chk(char * __restrict   , size_t  , int  , size_t  , char const   * __restrict   ,
+                           va_list  ) ;
+struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_list_1  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
+typedef __darwin_ct_rune_t ct_rune_t;
+extern void qsort(void *__base , size_t __nel , size_t __width , int (* _Nonnull  __compar)(void const   * ,
+                                                                                            void const   * ) ) ;
+extern int getrlimit(int  , struct rlimit * )  __asm__("_getrlimit")  ;
+struct __darwin_x86_debug_state32 {
+   unsigned int __dr0 ;
+   unsigned int __dr1 ;
+   unsigned int __dr2 ;
+   unsigned int __dr3 ;
+   unsigned int __dr4 ;
+   unsigned int __dr5 ;
+   unsigned int __dr6 ;
+   unsigned int __dr7 ;
+};
+typedef unsigned int u_int32_t;
+extern FILE *fopen(char const   * __restrict  __filename , char const   * __restrict  __mode )  __asm__("_fopen")  ;
+struct __darwin_mcontext_avx512_32 {
+   struct __darwin_i386_exception_state __es ;
+   struct __darwin_i386_thread_state __ss ;
+   struct __darwin_i386_avx512_state __fs ;
+};
+extern long strtol(char const   *__str , char **__endptr , int __base ) ;
+extern long timezone  __asm__("_timezone")  ;
+typedef struct __darwin_mcontext64 *mcontext_t;
+struct rusage_info_v4 {
+   uint8_t ri_uuid[16] ;
+   uint64_t ri_user_time ;
+   uint64_t ri_system_time ;
+   uint64_t ri_pkg_idle_wkups ;
+   uint64_t ri_interrupt_wkups ;
+   uint64_t ri_pageins ;
+   uint64_t ri_wired_size ;
+   uint64_t ri_resident_size ;
+   uint64_t ri_phys_footprint ;
+   uint64_t ri_proc_start_abstime ;
+   uint64_t ri_proc_exit_abstime ;
+   uint64_t ri_child_user_time ;
+   uint64_t ri_child_system_time ;
+   uint64_t ri_child_pkg_idle_wkups ;
+   uint64_t ri_child_interrupt_wkups ;
+   uint64_t ri_child_pageins ;
+   uint64_t ri_child_elapsed_abstime ;
+   uint64_t ri_diskio_bytesread ;
+   uint64_t ri_diskio_byteswritten ;
+   uint64_t ri_cpu_time_qos_default ;
+   uint64_t ri_cpu_time_qos_maintenance ;
+   uint64_t ri_cpu_time_qos_background ;
+   uint64_t ri_cpu_time_qos_utility ;
+   uint64_t ri_cpu_time_qos_legacy ;
+   uint64_t ri_cpu_time_qos_user_initiated ;
+   uint64_t ri_cpu_time_qos_user_interactive ;
+   uint64_t ri_billed_system_time ;
+   uint64_t ri_serviced_system_time ;
+   uint64_t ri_logical_writes ;
+   uint64_t ri_lifetime_max_phys_footprint ;
+   uint64_t ri_instructions ;
+   uint64_t ri_cycles ;
+   uint64_t ri_billed_energy ;
+   uint64_t ri_serviced_energy ;
+   uint64_t ri_interval_max_phys_footprint ;
+   uint64_t ri_runnable_time ;
+};
+extern int fseek(FILE * , long  , int  ) ;
+extern double atof(char const   * ) ;
+typedef int16_t int_least16_t;
+union __anonunion___mbstate_t_250061491 {
+   char __mbstate8[128] ;
+   long long _mbstateL ;
+};
+extern int mergesort(void *__base , size_t __nel , size_t __width , int (* _Nonnull  __compar)(void const   * ,
+                                                                                               void const   * ) ) ;
+extern struct tm *gmtime(time_t const   * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getdetachstate(pthread_attr_t const   * ,
+                                                                                                                                       int * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_setcancelstate(int  ,
+                                                                                                                                  int * _Nullable   )  __asm__("_pthread_setcancelstate")  ;
+extern char *strptime(char const   * __restrict   , char const   * __restrict   ,
+                      struct tm * __restrict   )  __asm__("_strptime")  ;
+extern long ftell(FILE * ) ;
+extern int getchar_unlocked(void) ;
+extern int setlinebuf(FILE * ) ;
+typedef int64_t int_fast64_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_settype(pthread_mutexattr_t * ,
+                                                                                                                                     int  ) ;
+extern FILE *freopen(char const   * __restrict   , char const   * __restrict   , FILE * __restrict   )  __asm__("_freopen")  ;
+extern int ( /* format attribute */  vasprintf)(char ** __restrict   , char const   * __restrict   ,
+                                                va_list  ) ;
+typedef struct __darwin_sigaltstack stack_t;
+extern int __attribute__((__availability__(ios,introduced=8.0), __availability__(macos,introduced=10.10)))  pthread_override_qos_class_end_np(pthread_override_t __override ) ;
+extern int getc(FILE * ) ;
+extern time_t timegm(struct tm * const   ) ;
+extern FILE *fdopen(int  , char const   * )  __asm__("_fdopen")  ;
+extern unsigned short *seed48(unsigned short * ) ;
+typedef unsigned int __darwin_fsblkcnt_t;
+extern int ( /* format attribute */  vdprintf)(int  , char const   * __restrict   ,
+                                               va_list  )  __attribute__((__availability__(macosx,introduced=10.7))) ;
+struct sigaction {
+   union __sigaction_u __sigaction_u ;
+   sigset_t sa_mask ;
+   int sa_flags ;
+};
+extern int ungetc(int  , FILE * ) ;
+extern char *fgets(char * __restrict   , int  , FILE * ) ;
+typedef int64_t user_long_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_init(pthread_attr_t * ) ;
+extern char const   * const  sys_errlist[] ;
+struct itimerval {
+   struct timeval it_interval ;
+   struct timeval it_value ;
+};
+typedef uint16_t uint_least16_t;
+typedef u_int64_t user_size_t;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_signal_thread_np(pthread_cond_t * ,
+                                                                                                                                         pthread_t __attribute__((__nullable__))   ) ;
+typedef int __darwin_wint_t;
+extern int __snprintf_chk(char * __restrict   , size_t  , int  , size_t  , char const   * __restrict   
+                          , ...) ;
+extern int __attribute__((__availability__(ios,introduced=3.2), __availability__(macos,introduced=10.6)))  pthread_threadid_np(pthread_t __attribute__((__nullable__))   ,
+                                                                                                                               __uint64_t * _Nullable   ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_create_suspended_np(pthread_t __attribute__((__nullable__))  * _Nonnull   ,
+                                                                                                                                       pthread_attr_t const   * _Nullable   ,
+                                                                                                                                       void * _Nullable  (* _Nonnull  )(void * _Nullable   ) ,
+                                                                                                                                       void * _Nullable   ) ;
+extern long double strtold(char const   * , char ** ) ;
+extern void *bsearch(void const   *__key , void const   *__base , size_t __nel , size_t __width ,
+                     int (* _Nonnull  __compar)(void const   * , void const   * ) ) ;
+extern div_t div(int  , int  )  __attribute__((__const__)) ;
+extern struct tm *gmtime_r(time_t const   * __restrict   , struct tm * __restrict   ) ;
+typedef int64_t user_ssize_t;
+extern int getc_unlocked(FILE * ) ;
+extern char *fgetln(FILE * , size_t * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_wait(pthread_cond_t * __restrict   ,
+                                                                                                                             pthread_mutex_t * __restrict   )  __asm__("_pthread_cond_wait")  ;
+extern int __attribute__((__availability__(watchos,unavailable), __availability__(tvos,unavailable),
+__availability__(ios,unavailable), __availability__(macosx,introduced=10.12)))  clock_settime(clockid_t __clock_id ,
+                                                                                              struct timespec  const  *__tp ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_init(pthread_cond_t * __restrict   ,
+                                                                                                                             pthread_condattr_t const   * _Nullable __restrict   )  __asm__("_pthread_cond_init")  ;
+extern int remove(char const   * ) ;
+extern char *gcvt(double  , int  , char * ) ;
+extern clock_t clock(void)  __asm__("_clock")  ;
+extern char *ctime(time_t const   * ) ;
+extern int sradixsort(unsigned char const   **__base , int __nel , unsigned char const   *__table ,
+                      unsigned int __endbyte ) ;
+extern int ( /* format attribute */  snprintf)(char * __restrict  __str , size_t __size ,
+                                               char const   * __restrict  __format 
+                                               , ...) ;
+extern int fsetpos(FILE * , fpos_t const   * ) ;
+extern void tzsetwall(void) ;
 unsigned int _2_init_tigress__opaque_array[30]  = 
   {      258,      691,      3,      308, 
         425,      5,      278,      537, 
@@ -208,18 +1563,140 @@ unsigned int _2_init_tigress__opaque_array[30]  =
         85,      468,      292,      13, 
         143,      243,      80,      498, 
         369};
-extern int fscanf(struct __sFILE *stream , char const   *format  , ...) ;
-extern int fseek(struct __sFILE *stream , long offs , int whence ) ;
+extern int mblen(char const   *__s , size_t __n ) ;
 struct _2_init_tigress_1_opaque_NodeStruct *_2_init_tigress_1_opaque_list_2  =    (struct _2_init_tigress_1_opaque_NodeStruct *)0;
-void megaInit(void) ;
-void megaInit(void) 
-{ 
-
-
-  {
-
-}
-}
+extern int setvbuf(FILE * __restrict   , char * __restrict   , int  , size_t  ) ;
+typedef short __int16_t;
+typedef void *rusage_info_t;
+extern char __attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead."),
+__availability__(swift,unavailable,message="Use mkstemp(3) instead.")))  *tmpnam(char * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_getschedparam(pthread_t  ,
+                                                                                                                                 int * _Nullable __restrict   ,
+                                                                                                                                 struct sched_param * _Nullable __restrict   ) ;
+struct __x86_pagein_state {
+   int __pagein_error ;
+};
+extern void *( __attribute__((__warn_unused_result__)) aligned_alloc)(size_t __alignment ,
+                                                                      size_t __size )  __attribute__((__availability__(watchos,introduced=6.0),
+__availability__(tvos,introduced=13.0), __availability__(ios,introduced=13.0), __availability__(macosx,introduced=10.15),
+__alloc_size__(2))) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setschedpolicy(pthread_attr_t * ,
+                                                                                                                                       int  ) ;
+struct __darwin_mcontext_avx64_full {
+   struct __darwin_x86_exception_state64 __es ;
+   struct __darwin_x86_thread_full_state64 __ss ;
+   struct __darwin_x86_avx_state64 __fs ;
+};
+typedef uint32_t uint_fast32_t;
+typedef void (*sig_t)(int  );
+struct clockinfo {
+   int hz ;
+   int tick ;
+   int tickadj ;
+   int stathz ;
+   int profhz ;
+};
+extern int rpmatch(char const   * )  __attribute__((__availability__(watchos,introduced=6.0),
+__availability__(tvos,introduced=13.0), __availability__(ios,introduced=13.0), __availability__(macos,introduced=10.15))) ;
+extern ldiv_t ldiv(long  , long  )  __attribute__((__const__)) ;
+extern void arc4random_buf(void *__buf , size_t __nbytes )  __attribute__((__availability__(macosx,introduced=10.7))) ;
+extern void psort_r(void *__base , size_t __nel , size_t __width , void * , int (* _Nonnull  __compar)(void * ,
+                                                                                                       void const   * ,
+                                                                                                       void const   * ) )  __attribute__((__availability__(macosx,introduced=10.6))) ;
+extern void *( __attribute__((__warn_unused_result__)) calloc)(size_t __count , size_t __size )  __attribute__((__alloc_size__(1,2))) ;
+char **_global_envp  =    (char **)0;
+extern void arc4random_stir(void) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_init(pthread_mutexattr_t * ) ;
+typedef __mbstate_t __darwin_mbstate_t;
+extern int ( /* format attribute */  vfprintf)(FILE * __restrict   , char const   * __restrict   ,
+                                               va_list  ) ;
+extern void *valloc(size_t  )  __attribute__((__alloc_size__(1))) ;
+extern int setpriority(int  , id_t  , int  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getinheritsched(pthread_attr_t const   * __restrict   ,
+                                                                                                                                        int * __restrict   ) ;
+extern int select(int  , fd_set * __restrict   , fd_set * __restrict   , fd_set * __restrict   ,
+                  struct timeval * __restrict   )  __asm__("_select$1050")  ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlockattr_init(pthread_rwlockattr_t * ) ;
+extern int sched_get_priority_min(int  ) ;
+struct __darwin_x86_cpmu_state64 {
+   __uint64_t __ctrs[16] ;
+};
+extern int settimeofday(struct timeval  const  * , struct timezone  const  * ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_rwlock_trywrlock(pthread_rwlock_t * )  __asm__("_pthread_rwlock_trywrlock")  ;
+extern void *alloca(size_t  ) ;
+extern void free(void * ) ;
+int main(int argc , char **argv , char **_formal_envp ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setdetachstate(pthread_attr_t * ,
+                                                                                                                                       int  ) ;
+extern void setbuf(FILE * __restrict   , char * __restrict   ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_destroy(pthread_mutexattr_t * )  __asm__("_pthread_mutexattr_destroy")  ;
+extern int wctomb(char * , wchar_t  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getstack(pthread_attr_t const   * __restrict   ,
+                                                                                                                                 void * _Nullable  * _Nonnull __restrict   ,
+                                                                                                                                 size_t * __restrict   ) ;
+extern int unlockpt(int  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_kill(pthread_t  ,
+                                                                                                                        int  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_destroy(pthread_attr_t * ) ;
+extern int setrlimit(int  , struct rlimit  const  * )  __asm__("_setrlimit")  ;
+extern int ( /* format attribute */  vsscanf)(char const   * __restrict  __str , char const   * __restrict  __format ,
+                                              va_list  ) ;
+extern void perror(char const   * )  __attribute__((__cold__)) ;
+extern void srandom(unsigned int  ) ;
+extern __uint64_t __attribute__((__availability__(macosx,introduced=10.12), __availability__(ios,introduced=10.0),
+__availability__(tvos,introduced=10.0), __availability__(watchos,introduced=3.0)))  clock_gettime_nsec_np(clockid_t __clock_id ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_timedwait(pthread_cond_t * __restrict   ,
+                                                                                                                                  pthread_mutex_t * __restrict   ,
+                                                                                                                                  struct timespec  const  * _Nullable __restrict   )  __asm__("_pthread_cond_timedwait")  ;
+extern int rand(void)  __attribute__((__availability__(swift,unavailable,message="Use arc4random instead."))) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cancel(pthread_t  )  __asm__("_pthread_cancel")  ;
+extern double drand48(void) ;
+extern unsigned long long strtouq(char const   *__str , char **__endptr , int __base ) ;
+struct rlimit {
+   rlim_t rlim_cur ;
+   rlim_t rlim_max ;
+};
+extern int ferror(FILE * ) ;
+struct rusage_info_v3 {
+   uint8_t ri_uuid[16] ;
+   uint64_t ri_user_time ;
+   uint64_t ri_system_time ;
+   uint64_t ri_pkg_idle_wkups ;
+   uint64_t ri_interrupt_wkups ;
+   uint64_t ri_pageins ;
+   uint64_t ri_wired_size ;
+   uint64_t ri_resident_size ;
+   uint64_t ri_phys_footprint ;
+   uint64_t ri_proc_start_abstime ;
+   uint64_t ri_proc_exit_abstime ;
+   uint64_t ri_child_user_time ;
+   uint64_t ri_child_system_time ;
+   uint64_t ri_child_pkg_idle_wkups ;
+   uint64_t ri_child_interrupt_wkups ;
+   uint64_t ri_child_pageins ;
+   uint64_t ri_child_elapsed_abstime ;
+   uint64_t ri_diskio_bytesread ;
+   uint64_t ri_diskio_byteswritten ;
+   uint64_t ri_cpu_time_qos_default ;
+   uint64_t ri_cpu_time_qos_maintenance ;
+   uint64_t ri_cpu_time_qos_background ;
+   uint64_t ri_cpu_time_qos_utility ;
+   uint64_t ri_cpu_time_qos_legacy ;
+   uint64_t ri_cpu_time_qos_user_initiated ;
+   uint64_t ri_cpu_time_qos_user_interactive ;
+   uint64_t ri_billed_system_time ;
+   uint64_t ri_serviced_system_time ;
+};
+extern void setbuffer(FILE * , char * , int  ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_create(pthread_t __attribute__((__nullable__))  * _Nonnull __restrict   ,
+                                                                                                                          pthread_attr_t const   * _Nullable __restrict   ,
+                                                                                                                          void * _Nullable  (* _Nonnull  )(void * _Nullable   ) ,
+                                                                                                                          void * _Nullable __restrict   ) ;
+extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_cond_destroy(pthread_cond_t * ) ;
+struct __anonstruct_div_t_773697287 {
+   int quot ;
+   int rem ;
+};
 void MERGED(void *tigressRetVal , int n__0 , int whichBlock__7 ) 
 { 
   char _4_MERGED_$locals[96] ;
@@ -596,19 +2073,19 @@ void MERGED(void *tigressRetVal , int n__0 , int whichBlock__7 )
   _4_MERGED__call$func_LIT_0: /* CIL Label */ ;
   (_4_MERGED_$pc[0]) ++;
   switch (*((int *)_4_MERGED_$pc[0])) {
-  case 1: 
-  printf(*((char const   * __restrict  *)(_4_MERGED_$locals + 24)), *((int *)(_4_MERGED_$locals + 32)),
-         *((int *)(_4_MERGED_$locals + 36)));
+  case 4: 
+  *((void **)(_4_MERGED_$locals + 88)) = malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
   break;
   case 2: 
   printf(*((char const   * __restrict  *)(_4_MERGED_$locals + 48)), *((int *)(_4_MERGED_$locals + 56)),
          *((int *)(_4_MERGED_$locals + 60)));
   break;
-  case 4: 
-  *((void **)(_4_MERGED_$locals + 88)) = malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
-  break;
   case 3: 
   *((void **)(_4_MERGED_$locals + 72)) = malloc(sizeof(struct _2_init_tigress_1_opaque_NodeStruct ));
+  break;
+  case 1: 
+  printf(*((char const   * __restrict  *)(_4_MERGED_$locals + 24)), *((int *)(_4_MERGED_$locals + 32)),
+         *((int *)(_4_MERGED_$locals + 36)));
   break;
   }
   (_4_MERGED_$pc[0]) ++;
@@ -703,6 +2180,42 @@ void MERGED(void *tigressRetVal , int n__0 , int whichBlock__7 )
   goto *(*(_4_MERGED_$pc[0]));
 }
 }
+__inline static __uint32_t _OSSwapInt32(__uint32_t _data ) 
+{ 
+  int tmp ;
+
+  {
+  tmp = __builtin_bswap32((int )_data);
+  return ((__uint32_t )tmp);
+}
+}
+__inline extern void ( __attribute__((__always_inline__)) __darwin_fd_set)(int _fd ,
+                                                                           struct fd_set * const  _p ) 
+{ 
+  int tmp ;
+
+  {
+  tmp = __darwin_check_fd_set(_fd, (void const   *)_p);
+  if (tmp) {
+    _p->fds_bits[(unsigned long )_fd / (sizeof(__int32_t ) * 8UL)] |= (__int32_t )(1UL << (unsigned long )_fd % (sizeof(__int32_t ) * 8UL));
+  }
+  return;
+}
+}
+__inline extern int ( __attribute__((__always_inline__)) __darwin_check_fd_set)(int _a ,
+                                                                                void const   *_b ) 
+{ 
+  int tmp ;
+
+  {
+  if ((uintptr_t )(& __darwin_check_fd_set_overflow) != 0UL) {
+    tmp = __darwin_check_fd_set_overflow(_a, _b, 0);
+    return (tmp);
+  } else {
+    return (1);
+  }
+}
+}
 int main(int argc , char **argv , char **_formal_envp ) 
 { 
   int _BARRIER_0 ;
@@ -724,15 +2237,47 @@ int main(int argc , char **argv , char **_formal_envp )
   return (0L + (int )((((_1_alwaysZero & ((_1_entropy ^ 5) + ((_1_entropy & 5) + (_1_entropy & 5)))) * (_1_alwaysZero | ((_1_entropy ^ 5) + ((_1_entropy & 5) + (_1_entropy & 5)))) + (_1_alwaysZero & ~ ((_1_entropy ^ 5) + ((_1_entropy & 5) + (_1_entropy & 5)))) * (~ _1_alwaysZero & ((_1_entropy ^ 5) + ((_1_entropy & 5) + (_1_entropy & 5))))) - ~ 0) - 1UL));
 }
 }
-void _5_stringEncoder(int n , char str[] ) 
+__inline static __uint64_t _OSSwapInt64(__uint64_t _data ) 
 { 
-  int encodeStrings_i3 ;
+  long tmp ;
 
   {
-  encodeStrings_i3 = 0;
-  switch (n) {
+  tmp = __builtin_bswap64((long )_data);
+  return ((__uint64_t )tmp);
+}
+}
+void megaInit(void) 
+{ 
 
+
+  {
+
+}
+}
+__inline extern int ( __attribute__((__always_inline__)) __darwin_fd_isset)(int _fd ,
+                                                                            struct fd_set  const  *_p ) 
+{ 
+  int tmp ;
+
+  {
+  tmp = __darwin_check_fd_set(_fd, (void const   *)_p);
+  if (tmp) {
+    return (_p->fds_bits[(unsigned long )_fd / (sizeof(__int32_t ) * 8UL)] & (__int32_t )(1UL << (unsigned long )_fd % (sizeof(__int32_t ) * 8UL)));
   }
+  return (0);
+}
+}
+__inline extern void ( __attribute__((__always_inline__)) __darwin_fd_clr)(int _fd ,
+                                                                           struct fd_set * const  _p ) 
+{ 
+  int tmp ;
+
+  {
+  tmp = __darwin_check_fd_set(_fd, (void const   *)_p);
+  if (tmp) {
+    _p->fds_bits[(unsigned long )_fd / (sizeof(__int32_t ) * 8UL)] &= ~ ((__int32_t )(1UL << (unsigned long )_fd % (sizeof(__int32_t ) * 8UL)));
+  }
+  return;
 }
 }
 __inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p ) 
@@ -764,6 +2309,25 @@ __inline extern int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE 
   } else {
     tmp___1 = __swbuf(_c, _p);
     return (tmp___1);
+  }
+}
+}
+__inline static __uint16_t _OSSwapInt16(__uint16_t _data ) 
+{ 
+
+
+  {
+  return ((__uint16_t )(((int )_data << 8) | ((int )_data >> 8)));
+}
+}
+void _5_stringEncoder(int n , char str[] ) 
+{ 
+  int encodeStrings_i3 ;
+
+  {
+  encodeStrings_i3 = 0;
+  switch (n) {
+
   }
 }
 }
