@@ -86,7 +86,7 @@ h3 {
 <br><br><br><br>
 
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c635" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Below are some simple recipes that will make it easy for you to get
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5072" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Below are some simple recipes that will make it easy for you to get
 started using Tigress. See them as a starting point for you to explore
 all of Tigress' features, not as recommendations for particular
 situations. Before using any kind of software protection technique
@@ -102,7 +102,7 @@ you must start with a detailed security analysis:</p></div></div></section>
    <li>What are your adversary's tools and skill sets?</li>
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c636" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Only when you have answered these questions,
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5073" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Only when you have answered these questions,
 and have determined that obfuscation needs to be an integral part of
 your architecture, can you start putting together Tigress
 scripts. Over time we will add more recipes here. If you have found a
@@ -110,14 +110,14 @@ particular combination of Tigress transformations useful,
 please <a href="https://tigress.wtf/contact.html">let us know</a>, and
 we will add your recipe to the collection!</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c637" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">In the examples below we will be using these programs as input: <a href="test.c.txt">test.c</a>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5074" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">In the examples below we will be using these programs as input: <a href="test.c.txt">test.c</a>
 and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
 
 <!-- =============================================================================================== -->
 <br>
 <h3 align=center>Recipe #1: Opaque Predicates, Branch Functions, and Encoded Arithmetic</h3>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c638" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is a simple recipe that should have a relatively low performance impact:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5075" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is a simple recipe that should have a relatively low performance impact:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
      --Transform=InitEntropy \
@@ -142,7 +142,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test.c --out=output1.c 
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c639" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is the <a href="output1.c.txt">resulting code.</a> There are a few things to note here:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5076" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is the <a href="output1.c.txt">resulting code.</a> There are a few things to note here:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li>Most Tigress scripts require you to start off with a sequence of <tt>Init</tt>-transformations.
@@ -171,7 +171,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
 <br>
 <h3 align=center>Recipe #2: Virtualization and Self-Modification</h3>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c640" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation shows off a combination of two more powerful transformation, virtualization and
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5077" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This transformation shows off a combination of two more powerful transformation, virtualization and
    self-modifying code, that together is likely to have serious performance impact:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
@@ -193,7 +193,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test.c --out=output2.c 
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c641" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is the <a href="output2.c.txt">resulting code.</a> Here are a few things to note:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5078" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is the <a href="output2.c.txt">resulting code.</a> Here are a few things to note:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li>The <tt>--Skip-false</tt> option is handy to turn transformations on-and-off to try out
@@ -209,7 +209,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
 <br>
 <h3 align=center>Recipe #3: Virtualization and Dynamic Obfuscation</h3>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c642" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">In this recipe we first virtualize and then add dynamic obfusction; i.e. the program will
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5079" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">In this recipe we first virtualize and then add dynamic obfusction; i.e. the program will
    decode and re-encode itself as it is running. In this particular case we decode/encode 
    using the XTEA cipher:
 <center>
@@ -235,7 +235,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test-jit.c --out=output3.c 
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c643" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is the <a href="output3.c.txt">resulting code.</a> Here are a few things to note: </p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5080" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is the <a href="output3.c.txt">resulting code.</a> Here are a few things to note: </p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li>We use the <tt>Measure</tt> transformation along with differen values of <tt>Skip</tt> to
@@ -252,7 +252,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
 <br>
 <h3 align=center>Recipe #4: Merge, Virtualization, and Encode Literals </h3>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c644" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">In this recipe we first merge all functions together. This includes <tt>init_tigress</tt> which has important
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5081" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">In this recipe we first merge all functions together. This includes <tt>init_tigress</tt> which has important
    secrets in it, in particular the initalization of opaque structures:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=1 --Environment=x86_64:Darwin:Clang:5.1  \
@@ -274,7 +274,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test.c --out=output4.c 
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c645" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to note: </p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c5082" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to note: </p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li>There is no need to flatten the code in the merging process since we are going to 

@@ -88,20 +88,20 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/entropy-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4479" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8259" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Some transformations need a source of randomness during execution. For this
 reason, we can insert statements that collect random values, preferably from
 variables that are input dependent.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4480" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8260" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 We support two basic ways to collect entropy. You can insert statements within your program
 that collect values from (hopefully) input-dependent variables. Or, you can spin up a background 
 thread that intermittently does so automatically. Regardless, the randomness we collect is of low quality, 
 but good enough for our purposes.
 </p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4481" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8261" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 At a minimum, you should issue the <code>--Transform=InitEntropy</code> transformation,
 since this creates the variables that hold the entropy.
 You should issue as many <code>--Transform=UpdateEntropy</code> as you
@@ -201,7 +201,7 @@ can, making sure you collect entropy from variables that are truly input depende
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4482" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8262" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 The command below initializes the entropy variables in <code>main</code>,
 and then collects randomness from variables <code>x,y,z</code> 
 in function <code>inputData</code>, from variable <code>packet</code>
@@ -243,7 +243,7 @@ function is called <em>ENTROPYTHREAD</em>, and it sleeps for
 <a class="anchor" id="annotations">&nbsp;</a>
 <br>
 <h3 align=center>Source code annotations</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4483" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Instead of using <tt>--UpdateEntropyVars</tt> you can use annotations in the source code to directly indicate which 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8263" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Instead of using <tt>--UpdateEntropyVars</tt> you can use annotations in the source code to directly indicate which 
 variables should contribute to entropy calculation:</p></div></div></section>
 
 <center>
@@ -258,7 +258,7 @@ int foo (int x) {
 }
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4484" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You should place these annotations in locations where the variable depends on input. Here's the Tigress command:</tt>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8264" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You should place these annotations in locations where the variable depends on input. Here's the Tigress command:</tt>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... \
@@ -275,7 +275,7 @@ int foo (int x) {
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4485" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea of using threads and CPU performance counters to generate random numbers 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8265" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea of using threads and CPU performance counters to generate random numbers 
 was first introduced by Adrian Colesa, Radu Tudoran, and Sebastian Banescu in
 <a href="https://ieeexplore.ieee.org/document/5204851">Software Random Number Generation Based on Race Conditions</a>.
 Our implementation isn't as advanced at theirs since it only uses X86's <code>rdtsc</code> counter. Unfortunately, other

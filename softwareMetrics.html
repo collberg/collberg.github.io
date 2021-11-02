@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/softwareMetrics-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4479" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Compute common software complexity metrics. Right now, the Halstead metric
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8259" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Compute common software complexity metrics. Right now, the Halstead metric
 (see <a href="https://en.wikipedia.org/wiki/Halstead_complexity_measures">here<a/> and
      <a href="https://www.google.se/amp/s/www.geeksforgeeks.org/software-engineering-halsteads-software-metrics/amp">here</a>) 
 and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity metric</a> are available.</p></div></div></section>
@@ -110,13 +110,18 @@ and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclo
 <tr>
 <td><tt>--SoftwareMetricKind</tt></td>
 <td><tt>raw, halstead, mccabe</tt></td>
-<td> What measure to compute. Default=time.
+<td> What metric to compute. Default=halstead,mccabe.
 <ul>
    <li> <tt>raw</tt> = Raw counts of tokens, identifiers, etc.
    <li> <tt>halstead</tt> = The Halstead metric.
-   <li> <tt>mccabe</tt> = McCabes Cyclomatric Complexity metric.
+   <li> <tt>mccabe</tt> = McCabe's Cyclomatric Complexity metric.
 </ul>
 </td>
+</tr>
+<tr>
+<td><tt>--SoftwareMetricFileName</tt></td>
+<td><tt></tt></td>
+<td> One which file to print the metrics. If not set, print to standard output. Default=Stdout.</td>
 </tr>
 </table>
 </div>
@@ -124,10 +129,62 @@ and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclo
 </center>
 </br>
 
+<br>
+<h3 align=center>Example</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8260" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is an example where we print out the McCabe metric for three functions: the original <tt>fib</tt>,
+<tt>fib</tt> after flattning, and 
+<tt>fib</tt> after virtualization. Here is the <tt>tigress</tt> command:</p></div></div></section>
+
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+        --Transform=SoftwareMetrics \
+           --Functions=fib \
+           --SoftwareMetricsFileName=original.txt \
+           --SoftwareMetricsKind=mccabe \
+        --Transform=Copy \
+           --Functions=fib \
+           --CopyName=fib2 \
+        --Transform=Flatten \
+           --Functions=fib \
+        --Transform=SoftwareMetrics \
+           --Functions=fib \
+           --SoftwareMetricsFileName=flatten.txt \
+           --SoftwareMetricsKind=mccabe \
+        --Transform=Virtualize \
+           --Functions=fib2 \
+        --Transform=SoftwareMetrics \
+           --Functions=fib2 \
+           --SoftwareMetricsFileName=virtualize.txt \
+           --SoftwareMetricsKind=mccabe \
+        test1.c --out=obf.c
+</code></pre>
+</center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8261" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">And here is result:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> cat original.txt 
+McCabe.fib.E = 10
+McCabe.fib.N = 10
+McCabe.fib.P = 1
+McCabe.fib.value = 2
+> cat flatten.txt 
+McCabe.fib.E = 28
+McCabe.fib.N = 22
+McCabe.fib.P = 1
+McCabe.fib.value = 8
+> cat virtualize.txt 
+McCabe.fib2.E = 85
+McCabe.fib2.N = 68
+McCabe.fib2.P = 1
+McCabe.fib2.value = 19
+</code></pre>
+</center>
+
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c4480" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Don't expect the values computed by this transform to be identical to that produced by other tools.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8262" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Don't expect the values computed by this transform to be identical to that produced by other tools. It only makes
+sense to compare the metrics computed by Tigress with other metrics computed by Tigress:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> The control flow graphs we build will be different than those produced by other tools - this affects the McCabe metric.
