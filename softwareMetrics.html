@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/softwareMetrics-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8259" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Compute common software complexity metrics. Right now, the Halstead metric
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1934" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Compute common software complexity metrics. Right now, the Halstead metric
 (see <a href="https://en.wikipedia.org/wiki/Halstead_complexity_measures">here<a/> and
      <a href="https://www.google.se/amp/s/www.geeksforgeeks.org/software-engineering-halsteads-software-metrics/amp">here</a>) 
 and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity metric</a> are available.</p></div></div></section>
@@ -120,7 +120,7 @@ and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclo
 </tr>
 <tr>
 <td><tt>--SoftwareMetricFileName</tt></td>
-<td><tt></tt></td>
+<td><tt>string</tt></td>
 <td> One which file to print the metrics. If not set, print to standard output. Default=Stdout.</td>
 </tr>
 </table>
@@ -131,7 +131,7 @@ and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclo
 
 <br>
 <h3 align=center>Example</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8260" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is an example where we print out the McCabe metric for three functions: the original <tt>fib</tt>,
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1935" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here is an example where we print out the McCabe metric for three functions: the original <tt>fib</tt>,
 <tt>fib</tt> after flattning, and 
 <tt>fib</tt> after virtualization. Here is the <tt>tigress</tt> command:</p></div></div></section>
 
@@ -160,7 +160,10 @@ and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclo
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8261" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">And here is result:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1936" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">And here are the results (the variables are the same as seen 
+   <a href="https://en.wikipedia.org/wiki/Halstead_complexity_measures">here<a/> and
+   <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">here</a>):</p></div></div></section>
+
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> cat original.txt 
 McCabe.fib.E = 10
@@ -180,10 +183,12 @@ McCabe.fib2.value = 19
 </code></pre>
 </center>
 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1937" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">These metrics can be used to see how much change each transformation incurs.</p></div></div></section>
+
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8262" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Don't expect the values computed by this transform to be identical to that produced by other tools. It only makes
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1938" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Don't expect the values computed by this transform to be identical to that produced by other tools. It only makes
 sense to compare the metrics computed by Tigress with other metrics computed by Tigress:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
