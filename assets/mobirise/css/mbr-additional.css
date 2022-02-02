@@ -4561,6 +4561,42 @@ section.lazy-placeholder:after {
   font-size: 80px;
   color: #777;
 }
+.cid-sWi4iUUvoE {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-sWi4iUUvoE h1 {
+  color: #616161;
+}
+.cid-sWi4iUUvoE h2,
+.cid-sWi4iUUvoE h3,
+.cid-sWi4iUUvoE p {
+  color: #767676;
+}
+.cid-sWi4iUUvoE .mbr-section-subtitle {
+  font-style: italic;
+}
+#custom-html-y {
+  /* Type valid CSS here */
+}
+#custom-html-y pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0;
+  background: #ffffff;
+  border: 2px solid #777;
+}
+#custom-html-y div {
+  padding: 0px 0;
+  color: #ffffff;
+  text-align: left;
+}
+#custom-html-y p {
+  font-size: 80px;
+  color: #777;
+}
 .cid-rKmkPnlndO {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -5486,10 +5522,34 @@ section.lazy-placeholder:after {
 }
 .cid-rDchnY6HD8 {
   padding-top: 0px;
-  padding-bottom: 75px;
+  padding-bottom: 15px;
   background-color: #ffffff;
 }
 .cid-rDchnY6HD8 P {
+  color: #767676;
+}
+.cid-sWjrToULSC {
+  padding-top: 15px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.cid-sWjrToULSC h1 {
+  color: #616161;
+}
+.cid-sWjrToULSC h2,
+.cid-sWjrToULSC h3,
+.cid-sWjrToULSC p {
+  color: #767676;
+}
+.cid-sWjrToULSC .mbr-section-subtitle {
+  font-style: italic;
+}
+.cid-sWjrInP8TK {
+  padding-top: 0px;
+  padding-bottom: 15px;
+  background-color: #ffffff;
+}
+.cid-sWjrInP8TK P {
   color: #767676;
 }
 .cid-rCFaEeaKON .navbar {

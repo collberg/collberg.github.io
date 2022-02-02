@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/info-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1934" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Operations for displaying internal data structures.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1131" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Operations for displaying internal data structures.</p></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -106,7 +106,7 @@ h3 {
 </tr>
 <tr>
 <td><tt>--InfoKind</tt></td>
-<td><tt>cfg, fun, src, linear, WS, DG, CG, alias, globals</tt></td>
+<td><tt>cfg, fun, src, linear, WS, DG, CG, alias, globals, universe</tt></td>
 <td> Information to print. For <tt>cfg</tt>, <tt>fun</tt>, and <tt>linear</tt> use <tt>--Functions</tt>, as usual, to specify which functions to print. <tt>--Transform=Info --InfoKind=src --Functions=foo</tt> is a good way to examine a function after each transformation. 
 <ul>
    <li> <tt>cfg</tt> = Control Flow Graph
@@ -118,8 +118,19 @@ h3 {
    <li> <tt>CG</tt> = Call Graph
    <li> <tt>alias</tt> = Print the pointer-graphs
    <li> <tt>globals</tt> = List of global symbols in the original program.
+   <li> <tt>universe</tt> = Print the current universe of symbols.
 </ul>
 </td>
+</tr>
+<tr>
+<td><tt>--InfoUniverseFileName</tt></td>
+<td><tt>string</tt></td>
+<td> The name of the json file generated for the Tigress universe. <bf>From version 3.3</bf> Default=universe.json.</td>
+</tr>
+<tr>
+<td><tt>--InfoGlobalsFileName</tt></td>
+<td><tt>string</tt></td>
+<td> The name of the json file generated from Tigress global objects. <bf>From version 3.3</bf> Default=globals.json.</td>
 </tr>
 </table>
 </div>
