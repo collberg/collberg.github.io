@@ -41,35 +41,9 @@ h3 {
 }
 </style>
 
-
 </head>
 <body>
-  <section class="mbr-section article content1 cid-rDQOMX8P31" id="content1-u">
-    
-     
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><br></p><p><br></p><p>To obfuscate your program with Tigress first include the tigress.h file supplied in the Tigress distribution directory, and then invoke Tigress specifying at least one transformation applied to at least one function. Here is a trivial example where Tigress is flattening the function bar in the program foo.c:</p></div>
-        </div>
-    </div>
-</section>
-
-<section class="engine"><a href="https://mobirise.info/l">free website templates</a></section><div id="custom-html-k"><center>
-    <div style="width:600px;overflow:auto">
-    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#include "PATH-TO-TIGRESS-INSTALLATION/tigress.h"
-void bar () {
-    ...
-}
-int main () {
-   ...
-}
-</code></pre>
-</div>
-</center>
-</div>
-
-<section class="menu cid-rCFaEeaKON" once="menu" id="menu1-g">
+  <section class="menu cid-rCFaEeaKON" once="menu" id="menu1-g">
 
     
 
@@ -107,6 +81,31 @@ int main () {
         </div>
     </nav>
 </section>
+
+<section class="engine"><a href="https://mobirise.info">Mobirise</a></section><section class="mbr-section article content1 cid-rDQOMX8P31" id="content1-u">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><br></p><p><br></p><p>To obfuscate your program with Tigress first include the tigress.h file supplied in the Tigress distribution directory, and then invoke Tigress specifying at least one transformation applied to at least one function. Here is a trivial example where Tigress is flattening the function bar in the program foo.c:</p></div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-k"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#include "PATH-TO-TIGRESS-INSTALLATION/tigress.h"
+void bar () {
+    ...
+}
+int main () {
+   ...
+}
+</code></pre>
+</div>
+</center>
+</div>
 
 <div id="custom-html-i"><center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>tigress \
@@ -179,6 +178,36 @@ int main () {
 </code></pre></center>
 
 
+</div>
+
+<section class="header9 cid-thf80FGFH2" id="header9-y">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Generating CIL_MACHINE.</strong>&nbsp;You can generate <strong>CIL_MACHINE</strong> automatically. Look for the file <strong>machdep-ml.c </strong>in the Tigress distribution directory. &nbsp;Compile and run as shown below. You have to provide the compiler you're using, as well as the types of <strong>size_t</strong> and wide characters as these are not yet auto-detected. You need to run this on your target machine (i.e. the one you're cross-compiling <em>for</em>).<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-x"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; gcc -D_GNUCC \
+       -DTYPE_SIZE_T="\"unsigned long\"" \
+       -DTYPE_WCHAR_T=\"int\" machdep-ml.c -o machdep-ml
+&gt; ./machdep-ml --env | grep -v Generating
+short=2,2 int=4,4 long=8,8 .... underscore_name=true
+</code></pre>
+</div>
+</center>
 </div>
 
 <section class="header9 cid-rGDOlD4yG3" id="header9-e">
@@ -364,6 +393,5 @@ EMSDKPATH=PATH_TO_EMSDK_INSTALLATION/emsdk/upstream/include/c++/v1
   <script async src="assets/theme/js/script.js"></script>
   
   
-
 </body>
 </html>

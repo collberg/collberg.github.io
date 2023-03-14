@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/info-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c161" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Operations for displaying internal data structures.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2072" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Operations for displaying internal data structures.</p></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -106,16 +106,15 @@ h3 {
 </tr>
 <tr>
 <td><tt>--InfoKind</tt></td>
-<td><tt>cfg, fun, src, linear, WS, DG, CG, alias, globals, universe</tt></td>
+<td><tt>cfg, fun, dot, json, src, linear, alias, globals, universe</tt></td>
 <td> Information to print. For <tt>cfg</tt>, <tt>fun</tt>, and <tt>linear</tt> use <tt>--Functions</tt>, as usual, to specify which functions to print. <tt>--Transform=Info --InfoKind=src --Functions=foo</tt> is a good way to examine a function after each transformation. 
 <ul>
    <li> <tt>cfg</tt> = Control Flow Graph
    <li> <tt>fun</tt> = Function in internal format
+   <li> <tt>dot</tt> = Function in in graphviz format. Compile with <code>dot -Tpdf funname.dot > funname.pdf</code>.
+   <li> <tt>json</tt> = Function in JSON format. Set <tt>--Verbosity</tt> to adjust the amount of information presented.
    <li> <tt>src</tt> = Function in source form
    <li> <tt>linear</tt> = Function in internal linearized block format (used as a starting point for flattening and branch functions)
-   <li> <tt>WS</tt> = Working Set
-   <li> <tt>DG</tt> = Dependency Graph
-   <li> <tt>CG</tt> = Call Graph
    <li> <tt>alias</tt> = Print the pointer-graphs
    <li> <tt>globals</tt> = List of global symbols in the original program.
    <li> <tt>universe</tt> = Print the current universe of symbols.

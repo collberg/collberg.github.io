@@ -89,7 +89,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/top-level-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8310" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2072" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
 that selects the type of transformation and the <code>--Functions</code> option that
 selects the function(s) to which it should be applied. The Tigress options described here
  apply to <strong>all</strong> transformations. Each transformation additionally has their
@@ -122,7 +122,7 @@ own set of options, all prefixed by the name of the transformation.</p></div></d
 <tr>
 <td><tt>--Verbosity</tt></td>
 <td><tt>int</tt></td>
-<td> Tigress' chattiness level. <code>--Verbosity=0</code> makes Tigress quiet. <code>--Verbosity=1</code> prints each transformation as it is being applied. Higher levels also print out all the versions of functions and variables being constructed. Default=0.</td>
+<td> Tigress' chattiness level. <code>--Verbosity=0</code> makes Tigress quiet. <code>--Verbosity=1</code> prints each transformation as it is being applied. Higher levels also print out all the versions of functions and variables being constructed. If <code>--LogDir=dirName</code> is set, generated log files will go in <code>dirName</code>. Default=0.</td>
 </tr>
 <tr>
 <td><tt>--Skip</tt></td>
@@ -145,7 +145,7 @@ own set of options, all prefixed by the name of the transformation.</p></div></d
 <a class="anchor" id="targets">&nbsp;</a>
 <br>
 <h3 align=center>Selecting Targets</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8311" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2073" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 To avoid name clashes and to allow you to specify the results of a 
 transformation, prefixes can be added to all new identifiers. For
 example, after a <code>Split</code> transformation, you may want to
@@ -212,6 +212,11 @@ to make sure that new names don't clash with old ones. Use
 <td><tt><em>string</em></tt></td>
 <td> Whether to also save the output as a json file, and which file to save it on.  <b>From version 3.3</b> </td>
 </tr>
+<tr>
+<td><tt>--LogDir</tt></td>
+<td><tt><em>string</em></tt></td>
+<td> <code>--LogDir=dir</code> will create all future log files will go in the <code>dir</code> directory. If <code>dir</code> does not exist, it will be created. <b>From version 3.3.</b> </td>
+</tr>
 </table>
 </div>
 
@@ -244,12 +249,12 @@ to make sure that new names don't clash with old ones. Use
 <a class="anchor" id="arguments">&nbsp;</a>
 <br>
 <h3 align=center>Argument Specifications</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8312" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2074" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 For options that take an integer an argument we provide an <em>INTSPEC</em> 
 notation that allows randomized selection of the value. There's a similar
 <em>BOOLSPEC</em> notation for booleans.</p></div></div></section>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8313" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2075" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 All transformations require you to specify the set of functions to
 which they should be applied. <em>IDENTSPEC</em> (identifier
 specifications) allow you to flexibly select all or some of the
@@ -344,7 +349,7 @@ a function.
 </br>
 
 <br>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8314" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here are some examples:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2076" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"> Here are some examples:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li>Randomly select 3 functions and "foo":
@@ -370,7 +375,7 @@ a function.
    <li>
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8315" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that some care needs to be exercised when specifiying
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2077" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Note that some care needs to be exercised when specifiying
 identifiers, since some renaming can happen during obfuscation.</p></div></div></section>
 
 <!-- =============================================================================================== -->
@@ -378,7 +383,7 @@ identifiers, since some renaming can happen during obfuscation.</p></div></div><
 <a class="anchor" id="regions">&nbsp;</a>
 <br>
 <h3 align=center>Function Regions (<b>From version 3.3</b>) </h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8316" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2078" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Some transformations allow you to specify a <em>region</em> of a function to transform. In your 
 source program you use the macro <tt>TIGRESS_REGION(<em>region-name</em>,<em>code</em>)</tt>:
 </p></div></div></section>
@@ -393,7 +398,7 @@ void fib(int n) {
 
   int i;
   TIGRESS_REGION(region1,
-  for (i=1; i<n; i++) {
+  for (i=1; i&lt;n; i++) {
     s=a+b;
     a=b;
     b=s;
@@ -404,14 +409,14 @@ void fib(int n) {
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8317" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Then, in your tigress command, you add <tt>:<em>region-name</em></tt> to the <tt>--Functions</tt> option:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2079" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Then, in your tigress command, you add <tt>:<em>region-name</em></tt> to the <tt>--Functions</tt> option:</p></div></div></section>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... --Transform=Virtualize --Functions=fib:region1 ...  
 </code></pre>
 </center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8318" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Caveats:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2080" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Caveats:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Not all transforms currently support this feature.</li>.
@@ -427,7 +432,7 @@ void fib(int n) {
 <a class="anchor" id="regions">&nbsp;</a>
 <br>
 <h3 align=center>Json output (<b>From version 3.3</b>) </h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c8319" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2081" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 Typically, Tigress generates a C file as output, specified by the <tt>--out=<em>filename.c</em></tt> option. 
 If you want to process the output further you can also provide <tt>--outJson=<em>filename.json</em></tt> option
 which will produce the output file as an abstract syntax tree. There is no formal definition of this Json AST
