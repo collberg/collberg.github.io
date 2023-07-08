@@ -276,7 +276,7 @@ BEGIN-UNIVERSE
     "TransformationUpdates": {
       "Modified Function Implementations": [ "init_tigress" ],
       "New Global Variables": {
-        "__2_init_tigress__opaque_array": "INIT",
+        "__2_init_tigress_1__opaque_array": "INIT",
         "__2_init_tigress_1_opaque_ptr_2": "INIT",
         "__2_init_tigress_1_opaque_list_2": "INIT",
         "__2_init_tigress_1_opaque_ptr_1": "INIT",
@@ -3145,6 +3145,18 @@ struct timezone {
 };
 /* END STRUCT timezone LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/time.h:129 */
 
+/* BEGIN VARIABLE-DEF __2_init_tigress_1__opaque_array LOC=UNKNOWN */
+unsigned int __2_init_tigress_1__opaque_array[30]  = 
+  {      8,      362,      3,      493, 
+        432,      5,      303,      390, 
+        5,      383,      5,      7, 
+        133,      47,      1,      288, 
+        502,      95,      218,      628, 
+        22,      428,      656,      41, 
+        68,      201,      34,      403, 
+        698};
+/* END VARIABLE-DEF __2_init_tigress_1__opaque_array LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN getbsize LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:295 */
 extern char *getbsize(int * , long * ) ;
 /* END FUNCTION-DECL-EXTERN getbsize LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:295 */
@@ -4157,18 +4169,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 /* BEGIN FUNCTION-DECL-EXTERN pthread_get_stackaddr_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:526 */
 extern void __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  *pthread_get_stackaddr_np(pthread_t  ) ;
 /* END FUNCTION-DECL-EXTERN pthread_get_stackaddr_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:526 */
-
-/* BEGIN VARIABLE-DEF __2_init_tigress__opaque_array LOC=UNKNOWN */
-unsigned int __2_init_tigress__opaque_array[30]  = 
-  {      8,      362,      3,      493, 
-        432,      5,      303,      390, 
-        5,      383,      5,      7, 
-        133,      47,      1,      288, 
-        502,      95,      218,      628, 
-        22,      428,      656,      41, 
-        68,      201,      34,      403, 
-        698};
-/* END VARIABLE-DEF __2_init_tigress__opaque_array LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN open_memstream LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:357 */
 extern FILE *open_memstream(char **__bufp , size_t *__sizep )  __attribute__((__availability__(watchos,introduced=4.0),

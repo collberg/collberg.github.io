@@ -281,7 +281,7 @@ BEGIN-UNIVERSE
     "TransformationUpdates": {
       "Modified Function Implementations": [ "init_tigress" ],
       "New Global Variables": {
-        "__2_init_tigress__opaque_array": "INIT",
+        "__2_init_tigress_1__opaque_array": "INIT",
         "__2_init_tigress_1_opaque_ptr_2": "INIT",
         "__2_init_tigress_1_opaque_list_2": "INIT",
         "__2_init_tigress_1_opaque_ptr_1": "INIT",
@@ -3150,6 +3150,18 @@ struct timezone {
 };
 /* END STRUCT timezone LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/time.h:129 */
 
+/* BEGIN VARIABLE-DEF __2_init_tigress_1__opaque_array LOC=UNKNOWN */
+unsigned int __2_init_tigress_1__opaque_array[30]  = 
+  {      8,      362,      3,      493, 
+        432,      5,      303,      390, 
+        5,      383,      5,      7, 
+        133,      47,      1,      288, 
+        502,      95,      218,      628, 
+        22,      428,      656,      41, 
+        68,      201,      34,      403, 
+        698};
+/* END VARIABLE-DEF __2_init_tigress_1__opaque_array LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN getbsize LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:295 */
 extern char *getbsize(int * , long * ) ;
 /* END FUNCTION-DECL-EXTERN getbsize LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:295 */
@@ -4159,18 +4171,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 /* BEGIN FUNCTION-DECL-EXTERN pthread_get_stackaddr_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:526 */
 extern void __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  *pthread_get_stackaddr_np(pthread_t  ) ;
 /* END FUNCTION-DECL-EXTERN pthread_get_stackaddr_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:526 */
-
-/* BEGIN VARIABLE-DEF __2_init_tigress__opaque_array LOC=UNKNOWN */
-unsigned int __2_init_tigress__opaque_array[30]  = 
-  {      8,      362,      3,      493, 
-        432,      5,      303,      390, 
-        5,      383,      5,      7, 
-        133,      47,      1,      288, 
-        502,      95,      218,      628, 
-        22,      428,      656,      41, 
-        68,      201,      34,      403, 
-        698};
-/* END VARIABLE-DEF __2_init_tigress__opaque_array LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN __vsnprintf_chk LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:70 */
 extern int __vsnprintf_chk(char * __restrict   , size_t  , int  , size_t  , char const   * __restrict   ,
@@ -5334,9 +5334,9 @@ int main(int argc , char **argv , char **_formal_envp )
     break;
   }
   MERGED(0L + (int )(((((__1_alwaysZero & (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4))) * (__1_alwaysZero | (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4))) + (__1_alwaysZero & ~ (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4))) * (~ __1_alwaysZero & (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4)))) | 0) + (((__1_alwaysZero & (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4))) * (__1_alwaysZero | (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4))) + (__1_alwaysZero & ~ (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4))) * (~ __1_alwaysZero & (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4)))) | 0)) - (((__1_alwaysZero & (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4))) * (__1_alwaysZero | (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4))) + (__1_alwaysZero & ~ (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4))) * (~ __1_alwaysZero & (((__1_entropy & ~ 4) << 1UL) - (__1_entropy ^ 4)))) ^ 0)),
-         argc, (int )((long )(__2_init_tigress__opaque_array[((unsigned int )((__1_entropy - 8) - (((__1_entropy - 8) << 1UL) & ((long )(__1_entropy - 8) >> 63L))) % 10) * 3 + 1] % __2_init_tigress__opaque_array[11]) + -3L));
-  MERGED((int )((long )(__2_init_tigress__opaque_array[((unsigned int )(__1_entropy * 3 - ((__1_entropy * 3 + __1_entropy * 3) & ((long )(__1_entropy * 3) >> 63L))) % 10) * 3 + 1] % __2_init_tigress__opaque_array[11]) + -5L),
-         (int )((long )(__2_init_tigress__opaque_array[((unsigned int )(((__1_entropy + 4) + ((long )(__1_entropy + 4) >> 63L)) ^ ((long )(__1_entropy + 4) >> 63L)) % 10) * 3 + 0] % __2_init_tigress__opaque_array[5]) + 7L),
+         argc, (int )((long )(__2_init_tigress_1__opaque_array[((unsigned int )((__1_entropy - 8) - (((__1_entropy - 8) << 1UL) & ((long )(__1_entropy - 8) >> 63L))) % 10) * 3 + 1] % __2_init_tigress_1__opaque_array[11]) + -3L));
+  MERGED((int )((long )(__2_init_tigress_1__opaque_array[((unsigned int )(__1_entropy * 3 - ((__1_entropy * 3 + __1_entropy * 3) & ((long )(__1_entropy * 3) >> 63L))) % 10) * 3 + 1] % __2_init_tigress_1__opaque_array[11]) + -5L),
+         (int )((long )(__2_init_tigress_1__opaque_array[((unsigned int )(((__1_entropy + 4) + ((long )(__1_entropy + 4) >> 63L)) ^ ((long )(__1_entropy + 4) >> 63L)) % 10) * 3 + 0] % __2_init_tigress_1__opaque_array[5]) + 7L),
          0L + (int )((((__1_alwaysZero & ((__1_entropy | 9) - (__1_entropy & 9))) * (__1_alwaysZero | ((__1_entropy | 9) - (__1_entropy & 9))) + (__1_alwaysZero & ~ ((__1_entropy | 9) - (__1_entropy & 9))) * (~ __1_alwaysZero & ((__1_entropy | 9) - (__1_entropy & 9)))) ^ 0) + ((((__1_alwaysZero & ((__1_entropy | 9) - (__1_entropy & 9))) * (__1_alwaysZero | ((__1_entropy | 9) - (__1_entropy & 9))) + (__1_alwaysZero & ~ ((__1_entropy | 9) - (__1_entropy & 9))) * (~ __1_alwaysZero & ((__1_entropy | 9) - (__1_entropy & 9)))) & 0) + (((__1_alwaysZero & ((__1_entropy | 9) - (__1_entropy & 9))) * (__1_alwaysZero | ((__1_entropy | 9) - (__1_entropy & 9))) + (__1_alwaysZero & ~ ((__1_entropy | 9) - (__1_entropy & 9))) * (~ __1_alwaysZero & ((__1_entropy | 9) - (__1_entropy & 9)))) & 0))));
   MERGED((__2_init_tigress_1_opaque_ptr_1 != __2_init_tigress_1_opaque_ptr_2) - (__2_init_tigress_1_opaque_ptr_1 != __2_init_tigress_1_opaque_ptr_2),
          __2_init_tigress_1_opaque_ptr_1 != __2_init_tigress_1_opaque_ptr_2 ? 10 : 9,
