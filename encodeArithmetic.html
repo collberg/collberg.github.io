@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/encodeArithmetic-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9061" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Replace integer arithmetic with more complex expressions, encoded with
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2541" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Replace integer arithmetic with more complex expressions, encoded with
 <em>Mixed Boolean Expressions</em> (MBA). For example, the following identities can be used to encode
 integer addition:</p></div></div></section>
 <center>                
@@ -98,12 +98,12 @@ integer addition:</p></div></div></section>
       = 2&middot;(x &or; y) - (x &oplus; y) 
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9062" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For example, Tigress might replace</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2542" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For example, Tigress might replace</p></div></div></section>
 <center>                
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">z = x + y + w
 </code></pre>
 </center>                
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9063" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">with</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2543" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">with</p></div></div></section>
 <center>                
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">z = (((x ^ y) + ((x & y) << 1)) | w) + 
     (((x ^ y) + ((x & y) << 1)) & w);
@@ -126,10 +126,11 @@ integer addition:</p></div></div></section>
 </tr>
 <tr>
 <td><tt>--EncodeArithmeticKinds</tt></td>
-<td><tt>integer</tt></td>
-<td> Specify the types to encode. Currently, only integer is available. Default=integer.
+<td><tt>builtin, plugins</tt></td>
+<td> Specify the types to encode. Currently, only integer is available. <b>From version 3.3.3.</b> Default=builtin.
 <ul>
-   <li> <tt>integer</tt> = Replace integer arithmetic.
+   <li> <tt>builtin</tt> = Use Tigress' built-in MBA patterns
+   <li> <tt>plugins</tt> = Use plugin MBA expressions
 </ul>
 </td>
 </tr>
@@ -162,9 +163,9 @@ integer addition:</p></div></div></section>
 <a class="anchor" id="splitting">&nbsp;</a>
 <br>
 <h3 align=center>Splitting Encoded Expressions</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9064" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are two parts to attacking an MBA expression: first you have to find the expression, and then you have to
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2544" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are two parts to attacking an MBA expression: first you have to find the expression, and then you have to
 decode it (i.e. turn it back into something resembling it's original form). You can split up expressions to make them
-more diffiult to locate in the code (both statically and dynamically).<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9065" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+more diffiult to locate in the code (both statically and dynamically).<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2545" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -205,20 +206,20 @@ more diffiult to locate in the code (both statically and dynamically).<section c
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9066" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For each operator, there are many possible encodings, and
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2546" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For each operator, there are many possible encodings, and
 at transformation time, these are selected from randomly.</p></div></div></section>
 
 <a class="anchor" id="debugging">&nbsp;</a>
 <br>
 <h3 align=center>Debugging and Attacking (From version <b>3.3.2</b></h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9067" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There have been many recent papers on attacking MBA expressions. To facilitate such attacks 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2547" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There have been many recent papers on attacking MBA expressions. To facilitate such attacks 
 you can dump all the transformed expressions onto a Json file for further processing.
 Simply set <tt>--EncodeArithmeticDumpFileName=filename.json</tt>.</p></div></div></section>
 
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c9068" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Currently, the identities are taken from the book 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2548" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Currently, the identities are taken from the book 
 <a href="http://www.hackersdelight.org">Hacker's Delight</a>.
 </p></div></div></section>
 
