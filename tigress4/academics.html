@@ -7,10 +7,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <meta name="description" content="Web Page Generator Description">
   
   
-  <title>News</title>
+  <title>Academics</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -29,7 +29,7 @@
 </head>
 <body>
   
-  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+  <section class="menu cid-um6WrlTcsp" once="menu" id="menu1-7z">
 
     
 
@@ -66,15 +66,69 @@
     </nav>
 </section>
 
-<section class="mbr-section article content12 cid-sLWTiI6TQq" id="content12-z">
+
+
+<section class="header9 cid-um6Wrkocdp" id="header9-7q">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is an example of how to transform a function bar in a program foo.c using Tigress. The first transformation flattens the code, the second turns the flattened function into an interpreter:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+
+
+
+
+
+
+<section class="mbr-section content4 cid-um6WEm3oIG" id="content4-80">
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    For Academics</h2>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-um6WrlAcKp" id="content1-7x">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>We see Tigress used in many research projects, and this is very satisfying! We encourage anyone working in reverse engineering to try to attack Tigress-generated code, and anyone working in software protection to compare their techniques against the standard set of techniques provided by Tigress. We are always keen to collaborate, so please get in touch if you have some interesting ideas to work on! That said, we often see papers where researchers have used Tigress and where the analyses they perform are not as accurate as one would like. Here are some common problems we've seen:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 cid-um6WrlJClI" id="content12-7y">
      
 
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ul>
-                    <li><strong>New grant. </strong>Tigress is supported by a new <strong>$950,240</strong> NSF grant 2040206&nbsp;<strong>SaTC:TTP:Medium: The Tigress Endpoint Protection Tool.</strong></li><li><strong>Waleed M. </strong>will be joining the project as a senior software engineer!</li><li><strong>ARM64 support</strong>: Tigress now has partial support for Apple's Darwin/M1. <em>From version 3.3.</em></li>
-                    <li><strong>Checksum transformation. &nbsp;</strong>Tigress now provides function and region checksumming to ensure code integrity, <em>From version 3.3.</em></li><li> <strong>Inline transformation</strong>: &nbsp;Tigress now supports function inlining. <em>From version 3.3.</em></li><li><strong>Plugins</strong>: &nbsp;Tigress now allows you to, for example, add your own opaque predicates. <em>From version 3.3.</em></li><li><strong>Optimize transformation</strong>: Tigress now implements standard intra-procedural optimizations, useful, for example, after inlining. <em>From version 3.3.</em></li><li><strong>SoftwareMetrics transformation</strong>: Tigress now Implements standard Software Complexity Metrics. <em>From version 3.3.</em></li><li><strong>Function regions</strong>. Some transformations now support <em>function regions</em>, i.e. a transformation can be applied to a part of a function, rather then the whole one. <em>From version 3.3.2.</em></li><li><strong>Json support. </strong>We are slowly rolling out support for Json throughout Tigress. For example, the option<em> --jsonOut=filename.json </em>will generate the output program as an abstract syntax tree (AST) in Json format. This can be useful for further processing of the obfuscated code. <em>From version 3.3.2.</em></li><li><strong>Flatten Threaded Dispatch</strong>. The flatten transformation has a new dispatch method, <em>--FlattenDispatch=thread.</em> This uses pthreads to "parallelize" a function. This is pretty cool, as it's the first pthread-based Tigress transform. <em>From version 3.3.3.</em></li>
+                    <li><strong>"We run Tigress with default options". </strong>There is no such thing. By "default", Tigress does nothing! There are lots of different transformations, lots of different options, and you need to specify which ones you used. Different options to the same transformation can have radically different performance characteristics.</li>
+                    <li><strong>"Tigress does not support transformation X". &nbsp;</strong>There are lots of transformations. Lots of options. To be sure you're not missing something, contact me.&nbsp;</li>
+                    <li><strong>"Tigress-generated code crashed, so we ignored it."</strong> I'm not saying there are no bugs, but Tigress has been used in commercial projects and I believe it mostly "works". If you find a bug, contact me. Often, the problem is system specific and can be taken care of by simply adding another compiler flag or #define.</li><li>&nbsp;<strong>"Tigress-generated code is slow".</strong> Yeah, true, but again, it depends on the particular set of options you're using. Virtualization, for example, has specfic options to generate faster code. Again, if you're unsure you're running the best possible Tigress script, contact me.</li>
                 </ul>
             </div>
         </div>

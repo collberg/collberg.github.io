@@ -7,10 +7,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <meta name="description" content="Website Generator Description">
   
   
-  <title>News</title>
+  <title>Merge</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -25,11 +25,27 @@
 
   
   
-  
+  <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
 </head>
 <body>
   
-  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+  <section class="menu cid-um6NCde3MF" once="menu" id="menu1-64">
 
     
 
@@ -66,20 +82,37 @@
     </nav>
 </section>
 
-<section class="mbr-section article content12 cid-sLWTiI6TQq" id="content12-z">
-     
+<section class="mbr-section content4 cid-um6NHmHrxH" id="content4-65">
+
+    
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-                    <li><strong>New grant. </strong>Tigress is supported by a new <strong>$950,240</strong> NSF grant 2040206&nbsp;<strong>SaTC:TTP:Medium: The Tigress Endpoint Protection Tool.</strong></li><li><strong>Waleed M. </strong>will be joining the project as a senior software engineer!</li><li><strong>ARM64 support</strong>: Tigress now has partial support for Apple's Darwin/M1. <em>From version 3.3.</em></li>
-                    <li><strong>Checksum transformation. &nbsp;</strong>Tigress now provides function and region checksumming to ensure code integrity, <em>From version 3.3.</em></li><li> <strong>Inline transformation</strong>: &nbsp;Tigress now supports function inlining. <em>From version 3.3.</em></li><li><strong>Plugins</strong>: &nbsp;Tigress now allows you to, for example, add your own opaque predicates. <em>From version 3.3.</em></li><li><strong>Optimize transformation</strong>: Tigress now implements standard intra-procedural optimizations, useful, for example, after inlining. <em>From version 3.3.</em></li><li><strong>SoftwareMetrics transformation</strong>: Tigress now Implements standard Software Complexity Metrics. <em>From version 3.3.</em></li><li><strong>Function regions</strong>. Some transformations now support <em>function regions</em>, i.e. a transformation can be applied to a part of a function, rather then the whole one. <em>From version 3.3.2.</em></li><li><strong>Json support. </strong>We are slowly rolling out support for Json throughout Tigress. For example, the option<em> --jsonOut=filename.json </em>will generate the output program as an abstract syntax tree (AST) in Json format. This can be useful for further processing of the obfuscated code. <em>From version 3.3.2.</em></li><li><strong>Flatten Threaded Dispatch</strong>. The flatten transformation has a new dispatch method, <em>--FlattenDispatch=thread.</em> This uses pthreads to "parallelize" a function. This is pretty cool, as it's the first pthread-based Tigress transform. <em>From version 3.3.3.</em></li>
-                </ul>
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    File Merge</h2>
+                
+                
             </div>
         </div>
     </div>
 </section>
+
+<section class="mbr-section article content1 cid-um6NCbrF1w" id="content1-5p">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong>Multiple Input Files.</strong>&nbsp;<span style="font-size: 1rem;">Note that Tigress accepts <em>exactly one</em> C file as input. This is so that Tigress can do whole-program analysis and transformations. If your project has multiple files you must first merge them together into one. Tigress (through the CIL library on which it is built) allows you to merge your source files automatically. For complex scenarios, see the CIL information page about <a href="http://cil-project.github.io/cil/doc/html/cil/merger.html#sec-merger" target="_blank">merging</a>. For simple cases, all you have to do to merge two files file1.c and file2.c into full.c, is to call the tigress-merge program like this:&nbsp;</span></p></div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-5q"><!-- Type valid HTML here -->
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>$ tigress-merge file1.c file2.c --out=full.c
+</code></pre></center></div>
 
 
 <script src="assets/popper/popper.min.js"></script>

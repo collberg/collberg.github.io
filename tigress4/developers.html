@@ -7,10 +7,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <meta name="description" content="Web Page Generator Description">
   
   
-  <title>News</title>
+  <title>Developers</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -29,7 +29,7 @@
 </head>
 <body>
   
-  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+  <section class="menu cid-um6XCocMlb" once="menu" id="menu1-8b">
 
     
 
@@ -66,20 +66,83 @@
     </nav>
 </section>
 
-<section class="mbr-section article content12 cid-sLWTiI6TQq" id="content12-z">
-     
+
+
+<section class="header9 cid-um6XCmCNeD" id="header9-82">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is an example of how to transform a function bar in a program foo.c using Tigress. The first transformation flattens the code, the second turns the flattened function into an interpreter:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="mbr-section content4 cid-um6Ybp9MBu" id="content4-8c">
+
+    
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-                    <li><strong>New grant. </strong>Tigress is supported by a new <strong>$950,240</strong> NSF grant 2040206&nbsp;<strong>SaTC:TTP:Medium: The Tigress Endpoint Protection Tool.</strong></li><li><strong>Waleed M. </strong>will be joining the project as a senior software engineer!</li><li><strong>ARM64 support</strong>: Tigress now has partial support for Apple's Darwin/M1. <em>From version 3.3.</em></li>
-                    <li><strong>Checksum transformation. &nbsp;</strong>Tigress now provides function and region checksumming to ensure code integrity, <em>From version 3.3.</em></li><li> <strong>Inline transformation</strong>: &nbsp;Tigress now supports function inlining. <em>From version 3.3.</em></li><li><strong>Plugins</strong>: &nbsp;Tigress now allows you to, for example, add your own opaque predicates. <em>From version 3.3.</em></li><li><strong>Optimize transformation</strong>: Tigress now implements standard intra-procedural optimizations, useful, for example, after inlining. <em>From version 3.3.</em></li><li><strong>SoftwareMetrics transformation</strong>: Tigress now Implements standard Software Complexity Metrics. <em>From version 3.3.</em></li><li><strong>Function regions</strong>. Some transformations now support <em>function regions</em>, i.e. a transformation can be applied to a part of a function, rather then the whole one. <em>From version 3.3.2.</em></li><li><strong>Json support. </strong>We are slowly rolling out support for Json throughout Tigress. For example, the option<em> --jsonOut=filename.json </em>will generate the output program as an abstract syntax tree (AST) in Json format. This can be useful for further processing of the obfuscated code. <em>From version 3.3.2.</em></li><li><strong>Flatten Threaded Dispatch</strong>. The flatten transformation has a new dispatch method, <em>--FlattenDispatch=thread.</em> This uses pthreads to "parallelize" a function. This is pretty cool, as it's the first pthread-based Tigress transform. <em>From version 3.3.3.</em></li>
-                </ul>
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    For Developers</h2>
+                
+                
             </div>
         </div>
     </div>
 </section>
+
+<section class="header9 cid-um6XCmRQfb" id="header9-84">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Design</strong>. Tigress is built in OCaml (about 100,000 lines of code) and C (about 9000 lines) on top of two libraries: <a href="http://cil-project.github.io/cil/doc/html/cil/" target="_blank">CIL</a>&nbsp;(a C front end) and <a href="http://myjit.sourceforge.net" target="_blank">MyJit</a>&nbsp;(a run-time code generator):<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+
+
+<section class="header9 cid-um6XCn2Kh4" id="header9-85">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><br>Tigress supports all of the C99 language, including gcc extensions. The source-to-source design means that the transformed code can be easily examined, which is useful in a pedagogical setting. Also, Tigress' output, once compiled and stripped of symbols, is a good target for reverse engineering and de-virtualization exercises. <br><br><strong>Transformations.</strong>&nbsp;Tigress protects against static de-virtualization by generating virtual instruction sets of arbitrary complexity and diversity, by producing interpreters with multiple types of instruction dispatch, and by inserting code for anti alias analysis. Tigress protects against dynamic de-virtualization by merging the real code with bogus functions, by inserting implicit flow, and by creating slowly-executing reentrant interpreters. Tigress implements its own version of code packing through the use of runtime code generation. Finally, Tigress' dynamic transformation provides a generalized form of continuous runtime code modification.<br><br><strong>Diversity.</strong> Tigress is designed such that, from a single source program, it is possible to generate large numbers of highly diversified variants. This diversity is both static and dynamic, i.e. two variants will differ both in their machine code and in the resulting instruction traces. In essence, every decision Tigress makes is dependent on a randomization seed, controllable by the user. There are two major sources of diversity:<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+
+
+
 
 
 <script src="assets/popper/popper.min.js"></script>

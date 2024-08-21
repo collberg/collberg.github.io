@@ -7,10 +7,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <meta name="description" content="Website Generator Description">
   
   
-  <title>News</title>
+  <title>MacOS</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -25,11 +25,27 @@
 
   
   
-  
+  <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
 </head>
 <body>
   
-  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+  <section class="menu cid-um6LY6K765" once="menu" id="menu1-42">
 
     
 
@@ -66,19 +82,100 @@
     </nav>
 </section>
 
-<section class="mbr-section article content12 cid-sLWTiI6TQq" id="content12-z">
+<section class="mbr-section content4 cid-um6LY5L8na" id="content4-3u">
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    MacOS</h2>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-um6LY6340B" id="content1-3v">
+    
      
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-                    <li><strong>New grant. </strong>Tigress is supported by a new <strong>$950,240</strong> NSF grant 2040206&nbsp;<strong>SaTC:TTP:Medium: The Tigress Endpoint Protection Tool.</strong></li><li><strong>Waleed M. </strong>will be joining the project as a senior software engineer!</li><li><strong>ARM64 support</strong>: Tigress now has partial support for Apple's Darwin/M1. <em>From version 3.3.</em></li>
-                    <li><strong>Checksum transformation. &nbsp;</strong>Tigress now provides function and region checksumming to ensure code integrity, <em>From version 3.3.</em></li><li> <strong>Inline transformation</strong>: &nbsp;Tigress now supports function inlining. <em>From version 3.3.</em></li><li><strong>Plugins</strong>: &nbsp;Tigress now allows you to, for example, add your own opaque predicates. <em>From version 3.3.</em></li><li><strong>Optimize transformation</strong>: Tigress now implements standard intra-procedural optimizations, useful, for example, after inlining. <em>From version 3.3.</em></li><li><strong>SoftwareMetrics transformation</strong>: Tigress now Implements standard Software Complexity Metrics. <em>From version 3.3.</em></li><li><strong>Function regions</strong>. Some transformations now support <em>function regions</em>, i.e. a transformation can be applied to a part of a function, rather then the whole one. <em>From version 3.3.2.</em></li><li><strong>Json support. </strong>We are slowly rolling out support for Json throughout Tigress. For example, the option<em> --jsonOut=filename.json </em>will generate the output program as an abstract syntax tree (AST) in Json format. This can be useful for further processing of the obfuscated code. <em>From version 3.3.2.</em></li><li><strong>Flatten Threaded Dispatch</strong>. The flatten transformation has a new dispatch method, <em>--FlattenDispatch=thread.</em> This uses pthreads to "parallelize" a function. This is pretty cool, as it's the first pthread-based Tigress transform. <em>From version 3.3.3.</em></li>
-                </ul>
-            </div>
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><br></p><p><br></p><p>To obfuscate your program with Tigress first include the tigress.h file supplied in the Tigress distribution directory, and then invoke Tigress specifying at least one transformation applied to at least one function. Here is a trivial example where Tigress is flattening the function bar in the program foo.c:</p></div>
         </div>
     </div>
+</section>
+
+<div id="custom-html-3w"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#include "PATH-TO-TIGRESS-INSTALLATION/tigress.h"
+void bar () {
+    ...
+}
+int main () {
+   ...
+}
+</code></pre>
+</div>
+</center>
+</div>
+
+<div id="custom-html-3x"><center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>tigress \
+   --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=Flatten \
+      --Functions=bar \
+   --out=foo_out.c foo.c
+</code></pre>
+</center>
+</div>
+
+<section class="mbr-section article content1 cid-um6LY6iOfi" id="content1-3y">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>
+                <strong> Command line options.</strong>&nbsp;These are some useful Tigress command line options:</p></div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-3z"><!-- Type valid HTML here -->
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>*) tigress --help     : Show this message
+*) tigress --install  : Show how to install Tigress 
+*) tigress --license  : Display the tigress license
+*) tigress --bugs     : How to get past some known issues
+*) tigress --version  : Show the current Tigress version
+</code></pre>
+</center></div>
+
+<div id="custom-html-40"><!-- Type valid HTML here -->
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>$ tigress-merge file1.c file2.c --out=full.c
+</code></pre></center></div>
+
+<section class="header9 cid-um6LY6x36p" id="header9-41">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you're not on OSX, you need to replace darwin-x86_64 with the appropriate path. Set CIL_MACHINE to the appropriate value for your target (depending on if it is a 32 or 64 bit architecture). Assuming you have two files foo.c and bar.c, issue these commands to merge them into out.c and obfuscate them into obf.c:</p>
+            
+        </div>
+    </div>
+
+    
 </section>
 
 

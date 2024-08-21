@@ -7,10 +7,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <meta name="description" content="Web Page Generator Description">
   
   
-  <title>News</title>
+  <title>Quickstart</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -29,7 +29,7 @@
 </head>
 <body>
   
-  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+  <section class="menu cid-um6VWbLixi" once="menu" id="menu1-7o">
 
     
 
@@ -66,20 +66,70 @@
     </nav>
 </section>
 
-<section class="mbr-section article content12 cid-sLWTiI6TQq" id="content12-z">
-     
+<section class="header9 cid-um6VW9HKFa" id="header9-7e">
+
+    
+
+    
 
     <div class="container">
-        <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-                    <li><strong>New grant. </strong>Tigress is supported by a new <strong>$950,240</strong> NSF grant 2040206&nbsp;<strong>SaTC:TTP:Medium: The Tigress Endpoint Protection Tool.</strong></li><li><strong>Waleed M. </strong>will be joining the project as a senior software engineer!</li><li><strong>ARM64 support</strong>: Tigress now has partial support for Apple's Darwin/M1. <em>From version 3.3.</em></li>
-                    <li><strong>Checksum transformation. &nbsp;</strong>Tigress now provides function and region checksumming to ensure code integrity, <em>From version 3.3.</em></li><li> <strong>Inline transformation</strong>: &nbsp;Tigress now supports function inlining. <em>From version 3.3.</em></li><li><strong>Plugins</strong>: &nbsp;Tigress now allows you to, for example, add your own opaque predicates. <em>From version 3.3.</em></li><li><strong>Optimize transformation</strong>: Tigress now implements standard intra-procedural optimizations, useful, for example, after inlining. <em>From version 3.3.</em></li><li><strong>SoftwareMetrics transformation</strong>: Tigress now Implements standard Software Complexity Metrics. <em>From version 3.3.</em></li><li><strong>Function regions</strong>. Some transformations now support <em>function regions</em>, i.e. a transformation can be applied to a part of a function, rather then the whole one. <em>From version 3.3.2.</em></li><li><strong>Json support. </strong>We are slowly rolling out support for Json throughout Tigress. For example, the option<em> --jsonOut=filename.json </em>will generate the output program as an abstract syntax tree (AST) in Json format. This can be useful for further processing of the obfuscated code. <em>From version 3.3.2.</em></li><li><strong>Flatten Threaded Dispatch</strong>. The flatten transformation has a new dispatch method, <em>--FlattenDispatch=thread.</em> This uses pthreads to "parallelize" a function. This is pretty cool, as it's the first pthread-based Tigress transform. <em>From version 3.3.3.</em></li>
-                </ul>
-            </div>
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><br><br><br>Tigress is a diversifying virtualizer/obfuscator for the C language that supports many defenses against both static and dynamic reverse engineering and de-virtualization attacks.&nbsp;Tigress is a source-to-source transformer - it takes a C source program as input and returns a new C program as output. An <em>obfuscation script </em>(actually, a long sequence of command line options)<em>&nbsp;</em>describes the sequences of transformations that should be applied to the functions of the program:<br></p>
+            
         </div>
     </div>
+
+    
 </section>
+
+
+
+<section class="header9 cid-um6VWadrvN" id="header9-7f">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is an example of how to transform a function bar in a program foo.c using Tigress. The first transformation flattens the code, the second turns the flattened function into an interpreter:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-7g"><!-- Type valid HTML here -->
+<center>
+    <div style="width:800px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>tigress --Verbosity=1 --Environment=x86_64:Linux:Gcc:4.6 --Seed=42 \
+   --Transform=Flatten \
+      --Functions=bar \
+      --FlattenDispatch=switch \
+      --FlattenObfuscateNext=false \
+      --FlattenRandomizeBlocks=true \
+      --FlattenConditionalKinds=branch,compute,flag \
+      --FlattenImplicitFlowNext=true \
+   --Transform=Virtualize \
+      --Functions=bar \
+      --VirtualizeDispatch=direct \
+   --Transform=CleanUp \
+       --CleanUpKinds=annotations,constants,names \
+   --out=foo_out.c foo.c
+</code></pre>
+    </div>
+</center></div>
+
+
+
+
+
+
 
 
 <script src="assets/popper/popper.min.js"></script>

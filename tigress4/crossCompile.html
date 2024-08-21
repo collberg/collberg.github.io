@@ -7,10 +7,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <meta name="description" content="Website Generator Description">
   
   
-  <title>News</title>
+  <title>Cross Compile</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -25,11 +25,27 @@
 
   
   
-  
+  <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
 </head>
 <body>
   
-  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+  <section class="menu cid-um6NX7X0qG" once="menu" id="menu1-6q">
 
     
 
@@ -66,20 +82,76 @@
     </nav>
 </section>
 
-<section class="mbr-section article content12 cid-sLWTiI6TQq" id="content12-z">
-     
+<section class="mbr-section content4 cid-um6O8AYEmw" id="content4-7c">
+
+    
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-                    <li><strong>New grant. </strong>Tigress is supported by a new <strong>$950,240</strong> NSF grant 2040206&nbsp;<strong>SaTC:TTP:Medium: The Tigress Endpoint Protection Tool.</strong></li><li><strong>Waleed M. </strong>will be joining the project as a senior software engineer!</li><li><strong>ARM64 support</strong>: Tigress now has partial support for Apple's Darwin/M1. <em>From version 3.3.</em></li>
-                    <li><strong>Checksum transformation. &nbsp;</strong>Tigress now provides function and region checksumming to ensure code integrity, <em>From version 3.3.</em></li><li> <strong>Inline transformation</strong>: &nbsp;Tigress now supports function inlining. <em>From version 3.3.</em></li><li><strong>Plugins</strong>: &nbsp;Tigress now allows you to, for example, add your own opaque predicates. <em>From version 3.3.</em></li><li><strong>Optimize transformation</strong>: Tigress now implements standard intra-procedural optimizations, useful, for example, after inlining. <em>From version 3.3.</em></li><li><strong>SoftwareMetrics transformation</strong>: Tigress now Implements standard Software Complexity Metrics. <em>From version 3.3.</em></li><li><strong>Function regions</strong>. Some transformations now support <em>function regions</em>, i.e. a transformation can be applied to a part of a function, rather then the whole one. <em>From version 3.3.2.</em></li><li><strong>Json support. </strong>We are slowly rolling out support for Json throughout Tigress. For example, the option<em> --jsonOut=filename.json </em>will generate the output program as an abstract syntax tree (AST) in Json format. This can be useful for further processing of the obfuscated code. <em>From version 3.3.2.</em></li><li><strong>Flatten Threaded Dispatch</strong>. The flatten transformation has a new dispatch method, <em>--FlattenDispatch=thread.</em> This uses pthreads to "parallelize" a function. This is pretty cool, as it's the first pthread-based Tigress transform. <em>From version 3.3.3.</em></li>
-                </ul>
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    Cross Compile</h2>
+                
+                
             </div>
         </div>
     </div>
 </section>
+
+<section class="mbr-section article content1 cid-um6NX6p3Vg" id="content1-6d">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>
+                <strong> Cross-compilation and 32-vs-64-bit machine models.</strong>&nbsp;<span style="font-size: 1rem;">By default, we assume you're generating code for the machine on which you execute Tigress. If this is not the case, in particular, if your target machine has a different wordsize than the one you compile on, you must run Tigress with the<strong> --envmachine</strong> option and&nbsp;</span><span style="font-size: 1rem;">set the <strong>CIL_MACHINE</strong> environment variable with the relevant C type sizes. For the current version of Tigress, this is really only relevant for the virtualize transformation. See the <a href="https://people.eecs.berkeley.edu/~necula/cil/cil007.html" target="_blank">CIL documentation</a> for more information. </span></p><p><span style="font-size: 1rem;">If you want to use a specific compiler (other than the default gcc) &nbsp;you can use the <strong>--gcc=command</strong> to tell cilly which compiler to use, for example --gcc=arm-elf-gcc.</span></p><p><span style="font-size: 1rem;">Here's an example of how to set CIL_MACHINE for a typical 32-bit target:</span><br></p></div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-6e"><center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>CIL_MACHINE="short=2,2 int=4,4 long=4,4 long_long=8,8 pointer=4,4 \
+             alignof_enum=4 float=4,4 double=8,8 long_double=12,12 \
+             void=1 bool=1,1 fun=1,1 alignof_string=1 max_alignment=16 \
+             size_t=unsigned_int wchar_t=int char_signed=true \
+             const_string_literals=true big_endian=false \
+             __thread_is_keyword=true __builtin_va_list=true \
+             underscore_name=true"; export CIL_MACHINE;
+</code></pre></center>
+
+
+</div>
+
+<section class="header9 cid-um6NX6B3XX" id="header9-6f">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Generating CIL_MACHINE.</strong>&nbsp;You can generate <strong>CIL_MACHINE</strong> automatically. Look for the file <strong>machdep-ml.c </strong>in the Tigress distribution directory. &nbsp;Compile and run as shown below. You have to provide the compiler you're using, as well as the types of <strong>size_t</strong> and wide characters as these are not yet auto-detected. You need to run this on your target machine (i.e. the one you're cross-compiling <em>for</em>).<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-6g"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; gcc -D_GNUCC \
+       -DTYPE_SIZE_T="\"unsigned long\"" \
+       -DTYPE_WCHAR_T=\"int\" machdep-ml.c -o machdep-ml
+&gt; ./machdep-ml --env | grep -v Generating
+short=2,2 int=4,4 long=8,8 .... underscore_name=true
+</code></pre>
+</div>
+</center>
+</div>
 
 
 <script src="assets/popper/popper.min.js"></script>

@@ -7,10 +7,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <meta name="description" content="Web Page Creator Description">
   
   
-  <title>News</title>
+  <title>Control</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -66,16 +66,145 @@
     </nav>
 </section>
 
-<section class="mbr-section article content12 cid-sLWTiI6TQq" id="content12-z">
-     
+<section class="mbr-section content4 cid-um5QVzox1z" id="content4-1r">
+
+    
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-                    <li><strong>New grant. </strong>Tigress is supported by a new <strong>$950,240</strong> NSF grant 2040206&nbsp;<strong>SaTC:TTP:Medium: The Tigress Endpoint Protection Tool.</strong></li><li><strong>Waleed M. </strong>will be joining the project as a senior software engineer!</li><li><strong>ARM64 support</strong>: Tigress now has partial support for Apple's Darwin/M1. <em>From version 3.3.</em></li>
-                    <li><strong>Checksum transformation. &nbsp;</strong>Tigress now provides function and region checksumming to ensure code integrity, <em>From version 3.3.</em></li><li> <strong>Inline transformation</strong>: &nbsp;Tigress now supports function inlining. <em>From version 3.3.</em></li><li><strong>Plugins</strong>: &nbsp;Tigress now allows you to, for example, add your own opaque predicates. <em>From version 3.3.</em></li><li><strong>Optimize transformation</strong>: Tigress now implements standard intra-procedural optimizations, useful, for example, after inlining. <em>From version 3.3.</em></li><li><strong>SoftwareMetrics transformation</strong>: Tigress now Implements standard Software Complexity Metrics. <em>From version 3.3.</em></li><li><strong>Function regions</strong>. Some transformations now support <em>function regions</em>, i.e. a transformation can be applied to a part of a function, rather then the whole one. <em>From version 3.3.2.</em></li><li><strong>Json support. </strong>We are slowly rolling out support for Json throughout Tigress. For example, the option<em> --jsonOut=filename.json </em>will generate the output program as an abstract syntax tree (AST) in Json format. This can be useful for further processing of the obfuscated code. <em>From version 3.3.2.</em></li><li><strong>Flatten Threaded Dispatch</strong>. The flatten transformation has a new dispatch method, <em>--FlattenDispatch=thread.</em> This uses pthreads to "parallelize" a function. This is pretty cool, as it's the first pthread-based Tigress transform. <em>From version 3.3.3.</em></li>
-                </ul>
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    Control Flow Transformations</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
+                    These transformations obfuscate the bodies of functions by removing obvious control flow or inserting bogus control flow.</h3>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features3 cid-um59vMcEuu" id="features3-y">
+
+    
+
+    
+    <div class="container">
+        <div class="media-container-row">
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="virtualize.html"><img src="assets/images/front-page-1-492x277.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><a href="virtualize.html">
+                            Virtualize</a></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><a href="virtualize.html">Turn a function into a specialized interpreter.</a><br><br></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="jitter.html"><img src="assets/images/front-page-23-492x277.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><a href="jitter.html">Jit</a></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><a href="jitter.html">Turn a function into one that generates its code at runtime.</a><br></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="jitDynamic.html"><img src="assets/images/front-page-3-492x277.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><a href="jitDynamic.html">
+                            JitDynamic
+                        </a></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><a href="jitDynamic.html">Turn a function into one that continously transforms itself.</a><br></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="flatten.html"><img src="assets/images/front-page-4-492x277.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><a href="flatten.html">
+                            Flatten</a></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><a href="flatten.html">Remove control flow from a function.</a><br><br></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features3 cid-um59vMFEEg" id="features3-z">
+
+    
+
+    
+    <div class="container">
+        <div class="media-container-row">
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="addOpaque.html"><img src="assets/images/addopaque-front-page-491x276.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><span style="font-weight: normal;">Add Opaque</span></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><a href="addOpaque.html" class="text-white">Split control flow by inserting opaque branches.</a></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="encodeBranches.html"><img src="assets/images/encodebranches-front-page-491x276.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><strong><a href="encodeBranches.html" class="text-white" style="">Encode Branches</a></strong></h4>
+                        <p class="mbr-text mbr-fonts-style display-7">Make it <a href="encodeBranches.html" class="text-white">harder</a> to determine the target of branches,</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="assets/images/future-use-491x276.png" alt="" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><br><br><br></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="assets/images/future-use-491x276.png" alt="" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><br><br><br></p>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>

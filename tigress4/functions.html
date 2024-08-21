@@ -7,10 +7,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <meta name="description" content="Web Page Creator Description">
   
   
-  <title>News</title>
+  <title>Functions</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -29,7 +29,7 @@
 </head>
 <body>
   
-  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+  <section class="menu cid-um5AS22SuD" once="menu" id="menu1-1f">
 
     
 
@@ -66,16 +66,143 @@
     </nav>
 </section>
 
-<section class="mbr-section article content12 cid-sLWTiI6TQq" id="content12-z">
-     
+<section class="mbr-section content4 cid-um5Qd63QjO" id="content4-1q">
+
+    
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-                    <li><strong>New grant. </strong>Tigress is supported by a new <strong>$950,240</strong> NSF grant 2040206&nbsp;<strong>SaTC:TTP:Medium: The Tigress Endpoint Protection Tool.</strong></li><li><strong>Waleed M. </strong>will be joining the project as a senior software engineer!</li><li><strong>ARM64 support</strong>: Tigress now has partial support for Apple's Darwin/M1. <em>From version 3.3.</em></li>
-                    <li><strong>Checksum transformation. &nbsp;</strong>Tigress now provides function and region checksumming to ensure code integrity, <em>From version 3.3.</em></li><li> <strong>Inline transformation</strong>: &nbsp;Tigress now supports function inlining. <em>From version 3.3.</em></li><li><strong>Plugins</strong>: &nbsp;Tigress now allows you to, for example, add your own opaque predicates. <em>From version 3.3.</em></li><li><strong>Optimize transformation</strong>: Tigress now implements standard intra-procedural optimizations, useful, for example, after inlining. <em>From version 3.3.</em></li><li><strong>SoftwareMetrics transformation</strong>: Tigress now Implements standard Software Complexity Metrics. <em>From version 3.3.</em></li><li><strong>Function regions</strong>. Some transformations now support <em>function regions</em>, i.e. a transformation can be applied to a part of a function, rather then the whole one. <em>From version 3.3.2.</em></li><li><strong>Json support. </strong>We are slowly rolling out support for Json throughout Tigress. For example, the option<em> --jsonOut=filename.json </em>will generate the output program as an abstract syntax tree (AST) in Json format. This can be useful for further processing of the obfuscated code. <em>From version 3.3.2.</em></li><li><strong>Flatten Threaded Dispatch</strong>. The flatten transformation has a new dispatch method, <em>--FlattenDispatch=thread.</em> This uses pthreads to "parallelize" a function. This is pretty cool, as it's the first pthread-based Tigress transform. <em>From version 3.3.3.</em></li>
-                </ul>
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    Function Transformations</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
+                    These transformations modify the function interface by splitting functions into multiple pieces, merging unrelated functions, inlining function calls, etc.</h3>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features3 cid-um5ARZXCvy" id="features3-18">
+
+    
+
+    
+    <div class="container">
+        <div class="media-container-row">
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="split.html"><img src="assets/images/front-page-5-492x277.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><a href="split.html">
+                            Split</a></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><a href="split.html">Split a function into smaller parts.</a><br><a href="split.html"><br></a><br></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="merge.html"><img src="assets/images/front-page-6-492x277.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><a href="merge.html">Merge</a></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><a href="merge.html">Merge multipe functions into one.</a><br><br><br></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="addOpaque.html"><img src="assets/images/front-page-27-492x277.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-4"><span style="font-weight: normal;">Randomize Args</span><span style="font-weight: normal;"><br></span></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><a href="randomizeArguments.html" class="text-white">Reorder function arguments and/or add bogus arguments</a><br><a href="randomizeArguments.html" class="text-white"><br></a></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="inline.html"><img src="assets/images/inline-front-page-491x276.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><span style="font-weight: normal;"><a href="inline.html" class="text-white">Inline</a></span></h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><a href="inline.html" class="text-white text-primary">Replace a function call with the body of the called function.</a><a href="inline.html" class="text-white text-primary"><br></a><br></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features3 cid-um5AS0PL0P" id="features3-1b">
+
+    
+
+    
+    <div class="container">
+        <div class="media-container-row">
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="copy.html"><img src="assets/images/copy-front-page-491x276.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><span style="font-weight: normal;"><a href="copy.html" class="text-white">Copy</a></span></h4>
+                        <p class="mbr-text mbr-fonts-style display-4"></p><p><a href="copy.html" class="text-primary"></a>Make a copy of a function.<br><br></p><p></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <a href="randomFuns.html"><img src="assets/images/randomfuns-front-page-491x276.png" alt="" title=""></a>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7"><span style="font-weight: normal;"><a href="randomFuns.html" class="text-white">Random Function</a></span></h4>
+                        <p class="mbr-text mbr-fonts-style display-4"><br>Generate a random function.<br><br></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="assets/images/future-use-491x276.png" alt="" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">&nbsp;</h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><br><br><br><br></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="assets/images/future-use-491x276.png" alt="" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">&nbsp;</h4>
+                        <p class="mbr-text mbr-fonts-style display-7"><br><br><br><br></p>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>

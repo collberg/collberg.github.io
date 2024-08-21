@@ -7,10 +7,10 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <meta name="description" content="Website Generator Description">
   
   
-  <title>News</title>
+  <title>WASM</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -25,11 +25,27 @@
 
   
   
-  
+  <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
 </head>
 <body>
   
-  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+  <section class="menu cid-um6MLxzQfv" once="menu" id="menu1-5i">
 
     
 
@@ -66,20 +82,131 @@
     </nav>
 </section>
 
-<section class="mbr-section article content12 cid-sLWTiI6TQq" id="content12-z">
-     
+<section class="mbr-section content4 cid-um6MS4PLvm" id="content4-5j">
+
+    
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-                    <li><strong>New grant. </strong>Tigress is supported by a new <strong>$950,240</strong> NSF grant 2040206&nbsp;<strong>SaTC:TTP:Medium: The Tigress Endpoint Protection Tool.</strong></li><li><strong>Waleed M. </strong>will be joining the project as a senior software engineer!</li><li><strong>ARM64 support</strong>: Tigress now has partial support for Apple's Darwin/M1. <em>From version 3.3.</em></li>
-                    <li><strong>Checksum transformation. &nbsp;</strong>Tigress now provides function and region checksumming to ensure code integrity, <em>From version 3.3.</em></li><li> <strong>Inline transformation</strong>: &nbsp;Tigress now supports function inlining. <em>From version 3.3.</em></li><li><strong>Plugins</strong>: &nbsp;Tigress now allows you to, for example, add your own opaque predicates. <em>From version 3.3.</em></li><li><strong>Optimize transformation</strong>: Tigress now implements standard intra-procedural optimizations, useful, for example, after inlining. <em>From version 3.3.</em></li><li><strong>SoftwareMetrics transformation</strong>: Tigress now Implements standard Software Complexity Metrics. <em>From version 3.3.</em></li><li><strong>Function regions</strong>. Some transformations now support <em>function regions</em>, i.e. a transformation can be applied to a part of a function, rather then the whole one. <em>From version 3.3.2.</em></li><li><strong>Json support. </strong>We are slowly rolling out support for Json throughout Tigress. For example, the option<em> --jsonOut=filename.json </em>will generate the output program as an abstract syntax tree (AST) in Json format. This can be useful for further processing of the obfuscated code. <em>From version 3.3.2.</em></li><li><strong>Flatten Threaded Dispatch</strong>. The flatten transformation has a new dispatch method, <em>--FlattenDispatch=thread.</em> This uses pthreads to "parallelize" a function. This is pretty cool, as it's the first pthread-based Tigress transform. <em>From version 3.3.3.</em></li>
-                </ul>
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    WebAssembly</h2>
+                
+                
             </div>
         </div>
     </div>
 </section>
+
+<section class="header9 cid-um6MLwqMRK" id="header9-59">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>WebAssembly</strong>: Below is an example of how to first obfuscate a C program foo_in.c with Tigress, and then compile the obfuscated file foo_obf.c with <a href="https://emscripten.org" target="_blank">Emscripten</a> to a WebAssembly/html/Javascript package. Note the use of the CIL_MACHINE environment variable and the --envmachine argument to Tigress; these specify that the word size of the target machine (WASM) is different from that of the machine of which Tigress is run. Notice also the --gcc=emcc argument to Tigress. This specifies that the WebAssembly compiler (emcc) should be used, rather than the native C compiler.<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-5a"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">export EMSDKPATH=PATH-TO-EMCC-INSTALLATION/emsdk/emscripten/1.38.29/system/include/
+
+export CIL_MACHINE="short=2,2 int=4,4 long=4,4 long_long=8,8 pointer=4,4 alignof_enum=4 float=4,4 \
+             double=8,8 long_double=8,8 void=1 bool=1,1 fun=1,4 alignof_string=1 max_alignment=16 \
+             size_t=unsigned_long wchar_t=int char_signed=true const_string_literals=true \
+             big_endian=false __thread_is_keyword=true __builtin_va_list=true underscore_name=true"
+             
+tigress \
+   --gcc=emcc \
+   --envmachine \
+   -D _Float128=double \
+   -I $EMSDKPATH \
+   --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=Flatten \
+      --Functions=bar \
+   --out=foo_obf.c foo_in.c 
+</code></pre>
+</div>
+</center>
+</div>
+
+<div id="custom-html-5b"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">emcc \
+   -I $EMSDKPATH \
+   -O2 \
+   foo_obf.c \
+   -o foo_wasm.html \
+   -s WASM=1 \
+   -s ALLOW_MEMORY_GROWTH=1 \
+   -s AGGRESSIVE_VARIABLE_ELIMINATION=1 \
+   -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
+   -s USE_WEBGL2=1 \
+   -s USE_GLFW=3 \
+   -s FULL_ES3=1 \
+   -fmacro-backtrace-limit=0
+</code></pre>
+</div>
+</center>
+</div>
+
+<section class="header9 cid-um6MLwNlxO" id="header9-5c">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>WebAssembly (From Version 3.3)</strong>: Starting with Tigress version 3.3 and emscripten v. 14, &nbsp;it's easier to obfuscate for webassembly:<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-5d"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">
+EMSDKPATH=PATH_TO_EMSDK_INSTALLATION/emsdk/upstream/include/c++/v1
+
+&gt; tigress \
+           --Environment=wasm:Linux:Emcc:4.6 \
+           --Transform=Flatten --Functions=fib \
+           --out=obf.c foo.c 
+&gt; emcc \
+           -I $EMSDKPATH \
+           -O2 \
+           obf.c \
+           --emrun \
+           -o wasm.html \
+           -s WASM=1 \
+           -s ASSERTIONS=1 \
+           -s ALLOW_MEMORY_GROWTH=1 \
+           -s AGGRESSIVE_VARIABLE_ELIMINATION=1 \
+           -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
+           -s USE_WEBGL2=0 \
+           -s USE_GLFW=3 \
+           -s FULL_ES3=0 \
+           -fmacro-backtrace-limit=0
+
+&gt; emrun --browser safari wasm.html
+</code></pre>
+</div>
+</center>
+</div>
 
 
 <script src="assets/popper/popper.min.js"></script>
