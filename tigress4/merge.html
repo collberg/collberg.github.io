@@ -104,15 +104,40 @@ h3 {
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong>Multiple Input Files.</strong>&nbsp;<span style="font-size: 1rem;">Note that Tigress accepts <em>exactly one</em> C file as input. This is so that Tigress can do whole-program analysis and transformations. If your project has multiple files you must first merge them together into one. Tigress (through the CIL library on which it is built) allows you to merge your source files automatically. For complex scenarios, see the CIL information page about <a href="http://cil-project.github.io/cil/doc/html/cil/merger.html#sec-merger" target="_blank">merging</a>. For simple cases, all you have to do to merge two files file1.c and file2.c into full.c, is to call the tigress-merge program like this:&nbsp;</span></p></div>
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><span style="font-size: 1rem;">Note that Tigress accepts <em>exactly one</em> C file as input. This is so that Tigress can do whole-program analysis and transformations. For example, the <em>EncodeData</em> transformation has to perform a <em>whole program alias analysis</em> to avoid generating the wrong code, and the <em>Inline </em>transformation<em> -- </em>of course -- needs the code of a function in order to expand it inline.</span></p><p><span style="font-size: 1rem;">Therefore, if your project has multiple files you must first merge them together into one. You can either do this manually, or you can use the provided&nbsp;<strong>tigress-merge</strong> program. Once you have merged your modules together you can obfuscate them as normal using tigress:</span></p></div>
         </div>
     </div>
 </section>
 
-<div id="custom-html-5q"><!-- Type valid HTML here -->
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>$ tigress-merge file1.c file2.c --out=full.c
-</code></pre></center></div>
+<section class="cid-umbW7Ln3ns" id="image2-9n">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/overview.008-1-1443x812.png" alt="" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="header9 cid-umbWYJgUXB" id="header9-9o">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">For more complex merging scenarios, see the <a href="http://cil-project.github.io/cil/doc/html/cil/merger.html#sec-merger" class="text-primary">CIL information page about merging.</a>&nbsp;<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
 
 
 <script src="assets/popper/popper.min.js"></script>

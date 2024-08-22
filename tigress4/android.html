@@ -126,7 +126,7 @@ h3 {
         <div class="media-container-column mbr-white">
             
             
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Android</strong>: Tigress has not been extensively tested on Android, but the following commands seem to work. Download the Android NDK from&nbsp;<a href="https://developer.android.com/ndk/downloads" target="_blank">https://developer.android.com/ndk/downloads</a>. Create the following shell script, name it&nbsp;<strong>"compiler", </strong>and<strong>&nbsp;</strong>set the target to the platform for which you want to compile:<br></p>
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">To compile for Android, download the Android NDK from&nbsp;<a href="https://developer.android.com/ndk/downloads" target="_blank">https://developer.android.com/ndk/downloads</a>. Create the following shell script, name it&nbsp;<strong>"compiler"&nbsp;</strong>and<strong>&nbsp;</strong>set the target to the platform for which you want to compile:<br></p>
             
         </div>
     </div>
@@ -138,7 +138,8 @@ h3 {
 <div style="width:1000px;overflow:auto">
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#!/bin/sh
 
-./toolchains/llvm/prebuilt/darwin-x86_64/bin/clang -target aarch64-none-linux-android21 "$@"
+./toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang "$@"
+ "$@"
 </code></pre>
 </div>
 </center>
@@ -154,7 +155,7 @@ h3 {
         <div class="media-container-column mbr-white">
             
             
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you're not on OSX, you need to replace darwin-x86_64 with the appropriate path. Set CIL_MACHINE to the appropriate value for your target (depending on if it is a 32 or 64 bit architecture). Assuming you have two files foo.c and bar.c, issue these commands to merge them into out.c and obfuscate them into obf.c:</p>
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Add any compiler switches you need to the script. Then you can call Tigress as usual to obfuscate your code:</p>
             
         </div>
     </div>
@@ -162,16 +163,266 @@ h3 {
     
 </section>
 
-<div id="custom-html-4v"><center>
+<div id="custom-html-9p"><center>
 <div style="width:1000px;overflow:auto">
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; cd android-ndk-r20b
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false"> &gt; tigress \
+           --Environment=armv8:Linux:Gcc:4.6 --Compiler=./compiler \
+           --Transform=Flatten --Functions=main \
+           --out=test-flat.c test.c
+</code></pre>
+</div>
+</center>
+</div>
 
-&gt; chmod a+rx ./compiler
+<section class="mbr-section content4 cid-umcb777vRS" id="content4-9q">
 
-&gt; CIL_MACHINE="short=2,2 int=4,4 long=4,4 ...; export CIL_MACHINE;
+    
 
-&gt; tigress-merge --Environment=x86_64:Linux:Gcc:4.6 --envmachine --gcc=./compiler foo.c bar.c --out=out.c
-&gt; tigress --Environment=x86_64:Linux:Gcc:4.6 --envmachine --gcc=./compiler --Transform=Flatten --Functions=fib out.c --out=obf.c
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    Setting up the Android SDK</h2>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 cid-umcbfUtZvw" id="header9-9r">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">To ensure that your obfuscated code runs on Android devices, you need to test it on the Android emulator. First, download the latest version of Android Studio from the <a href="https://developer.android.com/studio" class="text-primary">official website</a> and follow the installation instructions specific to your operating system. To set it up, do:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="mbr-section article content12 cid-umcbTh3sjt" id="content12-9s">
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+                    <li>In Android Studio, Navigate to SDK Manager:</li></ul><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>File &gt; Settings &gt; Appearance &amp; Behavior &gt; System Settings &gt; Android SDK</strong></div><div><br></div><ul>
+                    <li>Under SDK Tools, make sure Android SDK <strong>Platform-Tools</strong> is installed. This package includes ADB.</li>
+                    <li><span style="font-size: 1rem;">To verify ADB is correctly installed, open a terminal or use the Android Studio Terminal and issue the command:</span><br></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-9t"><!-- Type valid HTML here -->
+<center>
+    <div style="width:800px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>&gt; adb version                                            
+</code></pre>
+    </div>
+</center></div>
+
+<section class="header9 cid-umccIZktg3" id="header9-9u">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If ADB is not on your execution path on Linux platforms, you will need to add the path to the ADB binary to your $PATH environment variable. By default, ADB is installed to <strong>$HOME/Android/Sdk/platform-tools.</strong> First, verify that ADB is found in this directory, then add this line to your <strong>~/.bashrc</strong> file:<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-9v"><!-- Type valid HTML here -->
+<center>
+    <div style="width:800px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>&gt; export PATH=$PATH:$HOME/Android/Sdk/platform-tools
+</code></pre>
+    </div>
+</center></div>
+
+<section class="header9 cid-umcdcxXLmH" id="header9-9w">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Then issue this command to start the ADB server:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-9x"><!-- Type valid HTML here -->
+<center>
+    <div style="width:800px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>&gt; adb start-server                                                
+</code></pre>
+    </div>
+</center></div>
+
+<section class="mbr-section content4 cid-umcdTv7Tto" id="content4-9y">
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    Setting up the ARM Emulator</h2>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 cid-umce34GWX5" id="header9-9z">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">In Android Studio, navigate to Android Virtual Device Manager. Click on + to Create Virtual Device:<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="cid-umceq4emAD" id="image2-a1">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/68747470733a2f2f692e696d6775722e636f6d2f6a4e615a44464d2e706e67-901x425.png" alt="" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="header9 cid-umceJmbzmA" id="header9-a2">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Choose any desired device and click <strong>Next</strong>.&nbsp;Select an ARM-based system image. For example, choose "<strong>arm64-v8a</strong>" under <strong>Other Images</strong>. Download and select this image, then click <strong>Next</strong>. <em>NOTE: ARM64 emulation on a x86 host currently only supported up to API level 27 Oreo.</em><br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="cid-umceWSbHwf" id="image2-a3">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/68747470733a2f2f692e696d6775722e636f6d2f6f595a55414f482e706e67-1-1362x928.png" alt="" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content12 cid-umcfKONAJl" id="content12-a5">
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+                    <li>Review your graphics as well as other settings before closing the emulator.</li></ul><ul>
+                    <li><span style="font-size: 1rem;">In the <strong>Device Manager</strong>, click the <strong>Play</strong> button next to the ARM-based emulator to launch it.</span></li><li><span style="font-size: 1rem;">Once the emulator has finished booting and is running, ADB should automatically connect to it. To verify that your emulated device is listed as a connected device.&nbsp;</span>run:<span style="font-size: 1rem;">&nbsp;</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-a6"><!-- Type valid HTML here -->
+<center>
+    <div style="width:800px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>&gt; adb devices                                               
+</code></pre>
+    </div>
+</center></div>
+
+<section class="mbr-section content4 cid-umcgRJT1D9" id="content4-a7">
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    Running on the ARM Emulator</h2>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 cid-umch9bX45a" id="header9-a9">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Create the following shell script and name it&nbsp;<strong>adbwrapper:</strong><br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-aa"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#!/bin/bash
+adb push a.out /data/local/tmp/
+adb shell chmod 755 /data/local/tmp/a.out
+adb shell /data/local/tmp/a.out
 </code></pre>
 </div>
 </center>

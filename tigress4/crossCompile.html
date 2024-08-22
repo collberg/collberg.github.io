@@ -98,6 +98,36 @@ h3 {
     </div>
 </section>
 
+<section class="header9 cid-umbqhtN1G8" id="header9-9j">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">By default, Tigress will generate code for the machine you're currently on, using a compiler that makes sense for your target. I.e., if you're on MacOS, Tigress will use Clang, if you're on Linux, Gcc, on Windows, cl:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="cid-umbpt55zHU" id="image2-9i">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/overview.003-2-1443x812.png" alt="" title="">
+            
+        </div>
+    </figure>
+</section>
+
 <section class="mbr-section article content1 cid-um6NX6p3Vg" id="content1-6d">
     
      
@@ -105,23 +135,22 @@ h3 {
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>
-                <strong> Cross-compilation and 32-vs-64-bit machine models.</strong>&nbsp;<span style="font-size: 1rem;">By default, we assume you're generating code for the machine on which you execute Tigress. If this is not the case, in particular, if your target machine has a different wordsize than the one you compile on, you must run Tigress with the<strong> --envmachine</strong> option and&nbsp;</span><span style="font-size: 1rem;">set the <strong>CIL_MACHINE</strong> environment variable with the relevant C type sizes. For the current version of Tigress, this is really only relevant for the virtualize transformation. See the <a href="https://people.eecs.berkeley.edu/~necula/cil/cil007.html" target="_blank">CIL documentation</a> for more information. </span></p><p><span style="font-size: 1rem;">If you want to use a specific compiler (other than the default gcc) &nbsp;you can use the <strong>--gcc=command</strong> to tell cilly which compiler to use, for example --gcc=arm-elf-gcc.</span></p><p><span style="font-size: 1rem;">Here's an example of how to set CIL_MACHINE for a typical 32-bit target:</span><br></p></div>
+                However, it is common to use Tigress in a cross-compilation scenario. For example, your development machine might run Linux/X86_64, but your target machine could be Android/Arm. Tigress is, in fact, designed for this scenario. You can set target using the --Compiler and --Environment options<span style="font-size: 1rem;">:</span></p></div>
         </div>
     </div>
 </section>
 
-<div id="custom-html-6e"><center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>CIL_MACHINE="short=2,2 int=4,4 long=4,4 long_long=8,8 pointer=4,4 \
-             alignof_enum=4 float=4,4 double=8,8 long_double=12,12 \
-             void=1 bool=1,1 fun=1,1 alignof_string=1 max_alignment=16 \
-             size_t=unsigned_int wchar_t=int char_signed=true \
-             const_string_literals=true big_endian=false \
-             __thread_is_keyword=true __builtin_va_list=true \
-             underscore_name=true"; export CIL_MACHINE;
-</code></pre></center>
+<section class="cid-umbrzGUb9W" id="image2-9k">
 
+    
 
-</div>
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/overview.006-1-1443x812.png" alt="" title="">
+            
+        </div>
+    </figure>
+</section>
 
 <section class="header9 cid-um6NX6B3XX" id="header9-6f">
 
@@ -133,7 +162,37 @@ h3 {
         <div class="media-container-column mbr-white">
             
             
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Generating CIL_MACHINE.</strong>&nbsp;You can generate <strong>CIL_MACHINE</strong> automatically. Look for the file <strong>machdep-ml.c </strong>in the Tigress distribution directory. &nbsp;Compile and run as shown below. You have to provide the compiler you're using, as well as the types of <strong>size_t</strong> and wide characters as these are not yet auto-detected. You need to run this on your target machine (i.e. the one you're cross-compiling <em>for</em>).<br></p>
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The reason for these machinations is that, even though Tigress is a source-2-source translator, it relies on knowing the sizes and alignments of all types. This information is encoded in "machdep" files in the TIgress distribution directory:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="cid-umbOTFfeOU" id="image2-9l">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 51%;">
+            <img src="assets/images/machdeps-filetree-571x241.png" alt="" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="header9 cid-umbOUVD99z" id="header9-9m">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If your target is not one of the ones provided, you can easily create your own machdep file and add it to the machdeps_json directory. Simply compile and run the machdep-ml.c file (also found in the Tigress distribution directory) on your target machine:<br></p>
             
         </div>
     </div>
@@ -143,11 +202,19 @@ h3 {
 
 <div id="custom-html-6g"><center>
     <div style="width:600px;overflow:auto">
-    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; gcc -D_GNUCC \
-       -DTYPE_SIZE_T="\"unsigned long\"" \
-       -DTYPE_WCHAR_T=\"int\" machdep-ml.c -o machdep-ml
-&gt; ./machdep-ml --env | grep -v Generating
-short=2,2 int=4,4 long=8,8 .... underscore_name=true
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; gcc-11 -D_GNUCC -o machdep-ml.exe machdep-ml.c
+&gt; machdep-ml.exe --json &gt; `uname -s`_`uname -m`_Gcc_0.json
+&gt; head Darwin_x86_64_Gcc_0.json
+{
+	 "version_major"    : 11,
+	 "version_minor"    : 3,
+	 "version"          : "11.3.0",
+	 "sizeof_short"               : 2,
+	 "sizeof_int"                 : 4,
+	 "sizeof_bool"                : 1,
+	 "sizeof_long"                : 8,
+	 "sizeof_longlong"            : 8,
+	 "sizeof_ptr"                 : 8,
 </code></pre>
 </div>
 </center>
