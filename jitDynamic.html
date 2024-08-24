@@ -72,14 +72,18 @@
 
 <center><img width="500px" src="tigress3-images/jitDynamic-front-page.png"></center>
 
-<p>This transformation is similar to the Jit
-transformation, except the jitted code is continuously modified and updated at runtime.</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This transformation is similar to the Jit
+transformation, except the jitted code is continuously modified and updated at runtime.</p></div></div></section>
 
 <a class="anchor" id="background">&nbsp;</a>
 <br>
 <h3 align=center>Background</h3> 
  
-<p>Our implementation is a generalization of a number of previously published schemes:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Our implementation is a generalization of a number of previously published schemes:</p></div></div></section>
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li><a href="http://link.springer.com/chapter/10.1007%2F3-540-61996-8_49#page-1">Aucsmith, Tamper Resistant Software: An Implementation, IH'96</a>
    </li>
@@ -92,7 +96,12 @@ transformation, except the jitted code is continuously modified and updated at r
 
    <li><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1245338&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1245338">Kanzaki, Exploiting Self-Modification Mechanism for Program Protection</a>
    </li>
-<p>Each of these schemes can be seen as a combination of two properties:</p>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Each of these schemes can be seen as a combination of two properties:</p></div></div></section>
    <li> the <em>level of granularity</em> at which the program is encoded and decoded
        (function-level, basic block-level, instruction-level, or byte-level), and 
    </li>
@@ -101,67 +110,67 @@ transformation, except the jitted code is continuously modified and updated at r
         and decoded.
    </li>
 
-<p>For example, Aucsmith's scheme works on basic blocks and encodes two
-blocks by xor:ing them with each other:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">For example, Aucsmith's scheme works on basic blocks and encodes two
+blocks by xor:ing them with each other:</p></div></div></section>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/aucksmith.m4v" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </center>
-<p>Pink-and-yellow striped block is the XOR of the pink and the yellow
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Pink-and-yellow striped block is the XOR of the pink and the yellow
 blocks. Right before we want to execute the yellow block, the blue
 block XORs the striped block with the pink block, and the yellow block
-appears in cleartext and we can jump to it.<p>
+appears in cleartext and we can jump to it.<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
 
-<p>Cappaert's scheme was originally designed to work at the
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Cappaert's scheme was originally designed to work at the
 granularity of functions and encodes by encrypting using a standard
-encryption algorithm, such as AES:</p>
+encryption algorithm, such as AES:</p></div></div></section>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/cappaert.m4v" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </center>
-<p> To avoid having to embed
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"> To avoid having to embed
 keys directly in the executable where they are easy to find, this
 scheme uses other blocks as the key. Here, the yellow block is
 encrypted using the pink block as the key. Before we execute the
 yellow block, the blue block decrypts it.  Then the yellow block
-appears in cleartext, and we can jump to it.</p>
+appears in cleartext, and we can jump to it.</p></div></div></section>
 
-<p>Kanzaki's scheme works at the
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Kanzaki's scheme works at the
 granularity of the raw bytes of the program and encodes/decodes
-by patching holes left in the code:</p>
+by patching holes left in the code:</p></div></div></section>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/kanzaki.m4v" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </center>
-<p>Here, the blue block has a hole in it which the pink block
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here, the blue block has a hole in it which the pink block
 patches. Then control can continue with the blue block, after
-which the yellow block will re-insert the hole.</p>
+which the yellow block will re-insert the hole.</p></div></div></section>
 
-<p>Madou's scheme was originally designed to work at the 
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Madou's scheme was originally designed to work at the 
 function level and encodes by letting blocks occupy the same space at 
 runtime. A special PATCH function restores blocks before they are
-needed:</p>
+needed:</p></div></div></section>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/madou.m4v" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </center>
-<p>Here, the yellow and grey blocks both exist in the same memory location. 
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here, the yellow and grey blocks both exist in the same memory location. 
 The blue block decodes the yellow block by patching it; then jumps to it, 
 then the brown block needs to execute the gray block, so it patches it, 
-and then jumps to it.</p>
+and then jumps to it.</p></div></div></section>
 
-<p>Our implementation of these schemes works at the granularity of basic
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Our implementation of these schemes works at the granularity of basic
 blocks and can be instantiated with arbitrary codecs (encoding/decoding
-schemes):</p>
+schemes):</p></div></div></section>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/general.m4v" type="video/mp4">
@@ -172,15 +181,19 @@ schemes):</p>
            are encoded using one of the available codecs,</li>
       <li> prior to a block being executed it is decoded, and </li>
       <li> after a block has finished executing it is eventually re-encoded. </li>
-<p>Note that in our implementation multiple encoding schemes can be used
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Note that in our implementation multiple encoding schemes can be used
 within one function: some basic blocks may be encoded using Aucsmith's
-scheme, some with Cappaert's scheme, etc.</p>
+scheme, some with Cappaert's scheme, etc.</p></div></div></section>
 
 <a class="anchor" id="codecs">&nbsp;</a>
 <br>
 <h3 align=center>Dynamic Codecs</h3> 
-<p>We will add new codecs over time. Currently, the following are implemented:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We will add new codecs over time. Currently, the following are implemented:</p></div></div></section>
 
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li><code>none</code>: No encoding
    </li>
@@ -211,6 +224,11 @@ scheme, some with Cappaert's scheme, etc.</p>
    <li><code>stolen_<em>byte/short/word</em></code>:
       Encodes/decodes by filling in/leaving a hole in the basic block.
    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -382,7 +400,7 @@ scheme, some with Cappaert's scheme, etc.</p>
 <a class="anchor" id="implementation">&nbsp;</a>
 <br>
 <h3 align=center>Implementation</h3> 
-<p>The Dynamic transformation follows the following steps to transform a function <code>F</code>:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The Dynamic transformation follows the following steps to transform a function <code>F</code>:</p></div></div></section>
    <li> Convert <code>F</code> to jitted code, identially to the 
         <a href="../../../transformPage/docs/jitter/index.html#usage">Jit</a>
         transformation;</li>
@@ -458,7 +476,7 @@ BLOCK 32 byte  24 127 82 142 1 193 218 46 10 34 19 201 130 55 248 122 67 145 230
 <a class="anchor" id="example">&nbsp;</a>
 <br>
 <h3 align=center>Example</h3> 
-<p>This function:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This function:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo4() {
   if (g) {
@@ -467,36 +485,36 @@ BLOCK 32 byte  24 127 82 142 1 193 218 46 10 34 19 201 130 55 248 122 67 145 230
 }
 </code></pre>
 </center>
-<p>turns into this CFG:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">turns into this CFG:</p></div></div></section>
 <center><img width="400px" src="tigress3-images/OriginalCFG.png"></center>
 
-<p>We then find points where blocks can be encoded and decoded, and
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We then find points where blocks can be encoded and decoded, and
 insert <em>annotations</em> (left arrows for encode, right arrows
-for decode) into the CFG:</p>
+for decode) into the CFG:</p></div></div></section>
    <center><img width="400px" src="tigress3-images/CFGAfterInsertingAnnotations.png"></center>
-<p> In this trivial CFG, the decoders/encoders are inserted at the beginning
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"> In this trivial CFG, the decoders/encoders are inserted at the beginning
 and end of the function but, in general, they are inserted randomly, subject
 to the constraint that when control reaches a block it should be in cleartext,
-and when the function returns every block should be encoded.</p>
+and when the function returns every block should be encoded.</p></div></div></section>
 
-<p>We next translate these annotations into the actual decoders/encoders
-(here, calls to the xtea decipher/encipher functions):</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We next translate these annotations into the actual decoders/encoders
+(here, calls to the xtea decipher/encipher functions):</p></div></div></section>
    <center><img width="400px" src="tigress3-images/CFGAfterTranslatingAnnotations.png"></center>
 
-<p>Finally, we replace cleartext code blocks with the corresponding 
-encoded blocks:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Finally, we replace cleartext code blocks with the corresponding 
+encoded blocks:</p></div></div></section>
    <center><img width="400px" src="tigress3-images/CFGReplaceWithCompiledBlock.png"></center>
 
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3> 
-<p>The Dynamic transformation is built on the Jittransformation and
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The Dynamic transformation is built on the Jittransformation and
 therefore the Jit's usage applies to the Dynamic transformation as
 well. In particular, you have to add the appropriate directives to the
-top of your C source file to include the jitter.</p>
+top of your C source file to include the jitter.</p></div></div></section>
 
-<p>A typical invokation of Tigress would look like this:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">A typical invokation of Tigress would look like this:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
    --Transform=JitDynamic \
@@ -511,28 +529,50 @@ top of your C source file to include the jitter.</p>
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<p>The issues for the Jit transformation apply to the Dynamic transformation as well.</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The issues for the Jit transformation apply to the Dynamic transformation as well.</p></div></div></section>
 
-<p> Recursion is an issue for dynamic obfuscation. In general, whenever you call a 
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"> Recursion is an issue for dynamic obfuscation. In general, whenever you call a 
 function it has to be in its fully encoded form. This presents a problem if a function
 calls itself (directly or through a recursive call chain) from somewhere in the middle
 where some blocks are encoded and some are in cleartext. For simple recursive procedures
-we detect this and</p>
+we detect this and</p></div></div></section>
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> blocks that contain (direct or indirect) recursive calls will not be encoded; </li>
    <li> encoders/decoders are placed such that recursive calls won't leave any blocks in cleartext.</li>
-<p>In certain situations we won't detect the recursion and this will lead to bad code being
-generated:</p>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">In certain situations we won't detect the recursion and this will lead to bad code being
+generated:</p></div></div></section>
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> if a function is part of a recursive callcycle where one of the
         calls is through a function pointer; </li>
    <li> if your program contains multiple mutually recursive functions and
         you try to obfuscate more than one of them.  </li>
-<p>The good news is that an obfuscated program that violates these rules will probably crash 
-quickly since the resulting code will try to execute an encoded block.</p>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The good news is that an obfuscated program that violates these rules will probably crash 
+quickly since the resulting code will try to execute an encoded block.</p></div></div></section>
 
-<p>Performance of Tigress itself can be a problem. The issue is finding the positions 
-in the control flow graph where we can insert codecs. There are two problems:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Performance of Tigress itself can be a problem. The issue is finding the positions 
+in the control flow graph where we can insert codecs. There are two problems:</p></div></div></section>
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> We generate a large number of path queries on the CFG. 
         Try <code>--Verbosity=5</code> to see what's happening, 
@@ -541,6 +581,11 @@ in the control flow graph where we can insert codecs. There are two problems:</p
    <li> Avoid the virtualize transformation with a direct threading dispatch, since
         this results in large graphs with many cliques (each instruction handler can 
         jump to every other instruction handler...) and the path queries become very slow. </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

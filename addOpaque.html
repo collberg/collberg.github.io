@@ -73,11 +73,11 @@
 <center><img width="500px" src="tigress3-images/addOpaque-front-page.png"></center>
 
 <a class="anchor" id="addOpaque">&nbsp;</a>
-<p>Break up code blocks by inserting opaque predicates. Requires that 
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Break up code blocks by inserting opaque predicates. Requires that 
 at least the <a href="opaque.html">InitOpaque</a>
 transform has been previously issued and, preferably, that one or more 
  <a href="opaque.html">UpdateOpaque</a>
-transformations have been given.</p>
+transformations have been given.</p></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -169,7 +169,11 @@ transformations have been given.</p>
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<p>There are two sources of diversity:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">There are two sources of diversity:</p></div></div></section>
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
   <li>The types of opaque predicates used, which is controlled by the InitOpaque
       transformation.
@@ -177,12 +181,21 @@ transformations have been given.</p>
   <li>The location in the target function where the split takes places, which is
       randomized.
    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<p>This is the code generated for the arguments options to <code>--AddOpaqueKinds</code>:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This is the code generated for the arguments options to <code>--AddOpaqueKinds</code>:</p></div></div></section>
 
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> <code>call</code>:
 <center>
@@ -236,12 +249,17 @@ else
 </center>
     </li>
 
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
 
 
 <a class="anchor" id="QuestionMark">&nbsp;</a>
 <br>
 <h3 align=center>Question-mark Predicates</h3>
-<p>Consider the following script:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider the following script:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
    --Inputs="+1:int:42,-1:length:1?10" \
@@ -259,7 +277,7 @@ else
    arith.c --out=arith_out.c
 </code></pre>
 </center>
-<p>The result will look something like this:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The result will look something like this:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">     {
       strcmp_result5 = (int )strlen(*(_4_main__argv + (_4_main__argc - 1)));
@@ -383,8 +401,12 @@ else
 }
 </code></pre>
 </center>
-<p>Notice that we attempt (and sometimes fail) to select opaque predicates 
-<code>expr<sup>1</sup><=expr<sup>2</sup></code> such that</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Notice that we attempt (and sometimes fail) to select opaque predicates 
+<code>expr<sup>1</sup><=expr<sup>2</sup></code> such that</p></div></div></section>
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> all the <code>expr<sup>i</sup></code> are independent of each other (i.e. 
         analyzing a function should require you to break all the predicates
@@ -397,28 +419,37 @@ else
    <li> <code>expr<sup>1</sup></code> and <code>expr<sup>2</sup></code> are computed
         from different sources.
    </li>
-<p>For the question-mark predicate we use the function splitter. You should
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">For the question-mark predicate we use the function splitter. You should
 experiment with different splitting methods to get the effect that you 
 want, by setting <code>--AddOpaqueSplitKinds=...</code> and 
 <code>--AddOpaqueSplitLevel=...</code>. <code>--AddOpaqueObfuscate=true</code> does
 some light obfuscation to the code in one of the branches; you can, of course,
-obfuscate the split out functions yourself.</p>
+obfuscate the split out functions yourself.</p></div></div></section>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
-<li><p><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
-coerce the linker to ignore such errors. With <code>gcc</code> you can use this option:</p>
+<li><section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
+coerce the linker to ignore such errors. With <code>gcc</code> you can use this option:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   -Wl,--unresolved-symbols=ignore-in-object-files 
 </code></pre>
 </center>
-<p>No similar option seems to exist for <code>clang</code>.</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">No similar option seems to exist for <code>clang</code>.</p></div></div></section>
 </li>
-<li><p>The <tt>--AddOpaqueKinds=question</tt> adds the code in outlined functions, for reasons I really
+<li><section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <tt>--AddOpaqueKinds=question</tt> adds the code in outlined functions, for reasons I really
        can't remember at the moment. It should probably be fixed, but in the mean time you can just
-       inline the calls:</p>
+       inline the calls:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      --Transform=AddOpaque \
          --Functions=... \
@@ -428,6 +459,11 @@ coerce the linker to ignore such errors. With <code>gcc</code> you can use this 
 </code></pre>
 </center>
 </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
 
 
 <script src="assets/popper/popper.min.js"></script>

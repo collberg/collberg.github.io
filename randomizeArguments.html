@@ -71,14 +71,14 @@
 <center><h1>Randomize Arguments</h1></center>
 
 <center><img width="500px" src="tigress3-images/randomizeArguments-front-page.png"></center>
-<p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Randomize the order of arguments to a function, and optionally
 add extra bogus arguments. Useful to run after the 
 <code>--Transform=Merge</code> transform (to hide the extra selector argument)
 or the <code>--Transform=EncodeLiterals --EncodeLiteralsKinds=string</code> transform
 (to hide the otherwise obvious signature of the generated
 string encoder function).
-</p>
+</p></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -107,12 +107,21 @@ string encoder function).
 
 <br>
 <h3 align=center>Issues</h3>
+<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Doesn't work with functions with varargs. 
    </li>
    <li> Doesn't work for functions whose address is taken 
         and then called through a function pointer.
    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

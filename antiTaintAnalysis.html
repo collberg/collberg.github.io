@@ -72,25 +72,25 @@
 
 <center><img width="500px" src="tigress3-images/antiTaintAnalysis-front-page.png"></center>
 
-<p>The goal of this transformation is to disrupt analysis tools that
-make use of dynamic taint analysis. </p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The goal of this transformation is to disrupt analysis tools that
+make use of dynamic taint analysis. </p></div></div></section>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<p>We use two basic ways to copy a variable using control-, rather than
-data-flow:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We use two basic ways to copy a variable using control-, rather than
+data-flow:</p></div></div></section>
       <li> counting up to the value of the variable, and </li>
       <li> copying it bit by bit, tested in an if-statement. </li>
-<p>This can be done in a simple loop, an unrolled loop, or by throwing
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This can be done in a simple loop, an unrolled loop, or by throwing
 exceptions caught in a signal handler. This leads to a total of
-five different copy methods.</p>
+five different copy methods.</p></div></div></section>
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<p>If you want to copy using signals you must first generate the signal handlers
-using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you want to copy using signals you must first generate the signal handlers
+using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -152,8 +152,8 @@ using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<p>The code to copy <code>argc</code> using bit-by-bit copy and signals 
-would look something like this:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The code to copy <code>argc</code> using bit-by-bit copy and signals 
+would look something like this:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  argc_origPtr13 = (unsigned char *)(& argc);
   argc_copyPtr15 = (unsigned char *)(& argc_copy14);
@@ -176,7 +176,7 @@ would look something like this:</p>
   }
 </code></pre>
 </center>
-<p>with this signal handler and these global variables:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">with this signal handler and these global variables:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char TempVar;
 int BitVar;
@@ -189,24 +189,24 @@ void handler(int sig ) {
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<p>Currently, we can only un-taint a few variables:</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Currently, we can only un-taint a few variables:</p></div></div></section>
       <li> <code>argc</code> and <code>argv</code> in <code>main</code>, </li>
       <li> the output values of a few system and library calls: <code>getpid</code> and <code>scanf</code>, </li>
       <li> the virtual PC in a virtualized function (using the <code>--VirtualizeImplicitFlowVPC</code>
            option). </li>
       <li> The function handler to a jitted function (using the <code>--JitImplicitFlow</code> option). </li>
-<p>We will add more as requested!</p>
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We will add more as requested!</p></div></div></section>
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<p>The implementation is based on ideas from
+<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The implementation is based on ideas from
 <a href="http://www.isg.rhul.ac.uk/sullivan/pubs/tr/ata07.pdf">
    Anti-Taint-Analysis: Practical Evasion Techniques Against Information Flow Based Malware Defense
 </a> by Lorenzo Cavallaro, Prateek Saxena, and R. Sekar and
 <a href ="http://olivier.mehani.name/publications/2013sarwar_scrubdroid.pdf"> 
    On the Effectiveness of Dynamic Taint Analysis for Protecting Against 
        Private Information Leaks on Android-based Devices
-</a> by Golam Sarwar, Olivier Mehani, Roksana Boreli, and Mohamed-Ali Kaafar.</p>
+</a> by Golam Sarwar, Olivier Mehani, Roksana Boreli, and Mohamed-Ali Kaafar.</p></div></div></section>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
