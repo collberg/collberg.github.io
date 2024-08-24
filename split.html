@@ -75,7 +75,7 @@
 <p>Outline pieces of a function into their own functions. This transformation is
    useful, for example, to break a large, virtualized, function into smaller,
    less conspicuous, pieces. Four different splitting methods are supported. The order in which
-   they are tried can affect the naturalness of the resulting code.</p></div></div></section>
+   they are tried can affect the naturalness of the resulting code.</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -137,7 +137,7 @@
 <p>This command first tries to split function <tt>foo</tt> at most 100 times,
 then applies the <tt>block split</tt> transformation to the resulting
 outlined function. Note the use of a regular expression to specify the
-names of the functions that were generated in the first transformation:</p></div></div></section>
+names of the functions that were generated in the first transformation:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
    --Transform=split \
@@ -155,7 +155,6 @@ names of the functions that were generated in the first transformation:</p></div
 <a class="anchor" id="Issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li>For functions that have many locals, the number of formal parameters may explode.
        This is particularly an issue for WebAssembly, since compilers will put a limit
@@ -163,8 +162,6 @@ names of the functions that were generated in the first transformation:</p></div
        instead just add one formal, a pointer to a <tt>struct</tt> that holds all the
        locals. This option still has a bug in it; you will know, since it causes a
        compile-time error.</li>
-</ul>
-</div></div></div></section>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

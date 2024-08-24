@@ -77,7 +77,7 @@
 code of a secret function. This can be useful to simulate a misbehaving 
 obfuscator. Leaking can be static (simply insert a variable that holds the
 encrypted source code of the secret function) or dynamic (only leak if
-a certain formal parameter has a certain value).</p></div></div></section>
+a certain formal parameter has a certain value).</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -134,7 +134,7 @@ a certain formal parameter has a certain value).</p></div></div></section>
 <br>
 <h3 align=center>Examples</h3>
 <p>The <code>static</code> leaker simply inserts the encrypted source
-code of the secret function as a string. For example, this command</p></div></div></section>
+code of the secret function as a string. For example, this command</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
    --Transform=Leak \
@@ -143,7 +143,7 @@ code of the secret function as a string. For example, this command</p></div></di
       --LeakSecretFunction=main 
 </code></pre>
 </center>
-<p>produces this code</p></div></div></section>
+<p>produces this code</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">char *leak_global_enc  =    0;
 
@@ -160,7 +160,7 @@ int foo(int x) {
 <p>The <code>dynamic</code> leaker will leak the entire
 (encrypted) source code of the secret function, but only when a
 particular formal parameter has a particular value. For example,
-this command</p></div></div></section>
+this command</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
     --Transform=Leak \
@@ -174,7 +174,7 @@ this command</p></div></div></section>
 <p>will transform function <code>foo</code> such that when formal parameter <code>x!=42</code> 
 the function behaves normally, but when <code>x==42</code>, it will leak the source of
 main <code>main</code>. Note that for this transformation, the signature of <code>foo</code>
-changes:</p></div></div></section>
+changes:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">struct leak_object {
    long key ;
@@ -208,7 +208,7 @@ struct result_object foo(int x) {
 
 <p>The <code>dynamic_byte</code> leaker will leak one byte at a time of the 
 (encrypted) secret function. The byte leaked depends on the value
-of the selected formal parameter. For example, this command</p></div></div></section>
+of the selected formal parameter. For example, this command</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
    --Transform=Leak \
@@ -221,7 +221,7 @@ of the selected formal parameter. For example, this command</p></div></div></sec
 </center>
 <p>will transform function <code>foo</code> such that when formal parameter <code>x<=42</code> 
 the function behaves normally, but when <code>x>42</code>, it will leak byte <code>x-42</code> 
-of the encryption of <code>main</code>:</p></div></div></section>
+of the encryption of <code>main</code>:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int foo(int x) { 
   int return_var ;
@@ -241,13 +241,10 @@ of the encryption of <code>main</code>:</p></div></div></section>
 
 <br>
 <h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Doesn't work for functions whose address is taken 
         and then called through a function pointer.</li>
    <li> <code>openssl</code> must be installed.</li>
-</ul>
-</div></div></div></section>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

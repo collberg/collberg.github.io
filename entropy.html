@@ -76,21 +76,21 @@
 Some transformations need a source of randomness during execution. For this
 reason, we can insert statements that collect random values, preferably from
 variables that are input dependent.
-</p></div></div></section>
+</p>
 
 <p>
 We support two basic ways to collect entropy. You can insert statements within your program
 that collect values from (hopefully) input-dependent variables. Or, you can spin up a background 
 thread that intermittently does so automatically. Regardless, the randomness we collect is of low quality, 
 but good enough for our purposes.
-</p></div></div></section>
+</p>
 
 <p>
 At a minimum, you should issue the <code>--Transform=InitEntropy</code> transformation,
 since this creates the variables that hold the entropy.
 You should issue as many <code>--Transform=UpdateEntropy</code> as you
 can, making sure you collect entropy from variables that are truly input dependent.
-</p></div></div></section>
+</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -216,7 +216,7 @@ in function <code>random</code>. It also spins up a background
 thread from the <code>tigress_init</code> function. The thread
 function is called <em>ENTROPYTHREAD</em>, and it sleeps for
 1000000 nanoseconds between updates.
-</p></div></div></section>
+</p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 --Verbosity=1 --Environment=... \
@@ -250,7 +250,7 @@ function is called <em>ENTROPYTHREAD</em>, and it sleeps for
 <br>
 <h3 align=center>Source code annotations</h3>
 <p>Instead of using <tt>--UpdateEntropyVars</tt> you can use annotations in the source code to directly indicate which 
-variables should contribute to entropy calculation:</p></div></div></section>
+variables should contribute to entropy calculation:</p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
@@ -286,7 +286,7 @@ was first introduced by Adrian Colesa, Radu Tudoran, and Sebastian Banescu in
 <a href="https://ieeexplore.ieee.org/document/5204851">Software Random Number Generation Based on Race Conditions</a>.
 Our implementation isn't as advanced at theirs since it only uses X86's <code>rdtsc</code> counter. Unfortunately, other
 counters are not available from user mode.
-</p></div></div></section>
+</p>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

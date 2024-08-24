@@ -93,7 +93,7 @@
 <p>Note that we need to compile the generated code in such a way that the text segment pages are writable
 (See <a href="https://stackoverflow.com/questions/27581279/make-text-segment-writable-elf">here</a>
 for alternatives and <a href="https://stackoverflow.com/questions/60497896/self-modifying-code-on-darwin-10-15-resulting-in-malformed-mach-o-image">here</a>
-for issues with newer versions of Darwin):</p></div></div></section>
+for issues with newer versions of Darwin):</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> gcc -segprot __TEXT rwx rwx obf.c -o obf.exe   # Darwin (early versions)
 
@@ -107,7 +107,7 @@ for issues with newer versions of Darwin):</p></div></div></section>
 <h3 align=center>Binary Arithmetic Expressions and Comparisons</h3> 
 <p>The transformation inserts a binary code template at the top of the function. There's
 one template for each type (int/long) and one for arithmetic, one for comparisons, and
-one for branches. They look roughly like this:</p></div></div></section>
+one for branches. They look roughly like this:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 5);
   *addrPtr10 = (unsigned long )(& A);
@@ -140,7 +140,7 @@ one for branches. They look roughly like this:</p></div></div></section>
 </code></pre>
 </center>
 <p>Then, for each binary operation in the remainder of the function, the following code
-is inserted:</p></div></div></section>
+is inserted:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    A = i;
     B = n;
@@ -157,20 +157,17 @@ is inserted:</p></div></div></section>
     Lab_4: 
 </code></pre>
 </center>
-<p>At runtime, this makes the following changes to the executable code:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>At runtime, this makes the following changes to the executable code:</p>
 <ul>
    <li> the opcode is set to the appropriate one (<tt>setl</tt> in this case),</li>
    <li> the jump instruction is modified with the literal address of the template (<tt>Lab_1</tt>), </li>
    <li> the return jump instruction in the template (the last instruction) is set to the return location (<tt>Lab_4</tt>). </li>
-</ul>
-</div></div></div></section>
 
 <br>
 <h3 align=center>Virtualization/Flattening + Self-Modification</h3> 
 <p>This transformation is particularly useful after transformations that
 introduce indirect branches, such as virtualization and flattening
-with a direct or indirect dispatch. Below is an example:</p></div></div></section>
+with a direct or indirect dispatch. Below is an example:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void add(void) { 
   ...
@@ -196,7 +193,7 @@ with a direct or indirect dispatch. Below is an example:</p></div></div></sectio
 </code></pre>
 </center>
 <p>Here, each indirect branch turns into the following code, where the byte sequence
-corresponds to the X86 8-byte direct jump:</p></div></div></section>
+corresponds to the X86 8-byte direct jump:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addr = (unsigned long *)((unsigned long )(&& Lab) + 6);
   *addr = address-to-jump-to;
@@ -204,7 +201,7 @@ corresponds to the X86 8-byte direct jump:</p></div></div></section>
 </code></pre>
 </center>
 <p>This is interesting, since some de-virtualization transformations look for indirect
-branches, and these are now gone from the code.</p></div></div></section>
+branches, and these are now gone from the code.</p>
 
 
 <br>
@@ -213,12 +210,12 @@ branches, and these are now gone from the code.</p></div></div></section>
 support various forms of inline assembly. Clang didn't support <em>asm goto</em> until recent versions,
 for example, and MSVC doesn't support any of the gcc extensions we rely on. Furthermore, the actual 
 syntax and semantics the compilers implement can vary. For example, Clang accepts <tt>asm volatile goto</tt>
-but not <tt>asm goto volatile</tt> (gcc accepts either). </p></div></div></section>
+but not <tt>asm goto volatile</tt> (gcc accepts either). </p>
 
 <p>Tigress supports a few different "styles" of inline assembly to generate for this transformation. 
 We try to pick the right style based on your plaform (remember to set the <tt>--Environment=</tt> option
 correctly!!!), but you can use the <tt>--SelfModifyStyle</tt> option yourself if your compiler misbehaves and
-want to experiment. </p></div></div></section>
+want to experiment. </p>
 
 <br>
 
@@ -306,7 +303,6 @@ want to experiment. </p></div></div></section>
 
 <br>
 <h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> This transformation currently only works on x86/64 targets.</li>
    <li> If you see an error message "<tt>Simplify: makeThreeAddress for AddrOf</tt>", set <tt>--SelfModifySubExpressions=false</tt> There's a bug in CIL that I don't know how to fix.</li>
@@ -315,8 +311,6 @@ want to experiment. </p></div></div></section>
         set <tt>--SelfModifyBogusInstructions=0?5</tt>. This inserts between 0 and 5 NOP-equivalent bytes 
         between the template instructions.</li>
    <li> Sometimes the generated code crashes when compiled with <tt>gcc</tt>. In that case, switch to <tt>clang</tt>. 
-</ul>
-</div></div></div></section>
 
    
 

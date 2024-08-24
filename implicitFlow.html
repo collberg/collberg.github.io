@@ -79,7 +79,7 @@
    to call the <code>--Transform=InitImplicitFlow</code> and list which of the implicit
    flow variants you are going to use later. Here's an example of what it might 
    look like:
-</p></div></div></section>
+</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 --Verbosity=1 --Environment=x86_64:Darwin:Gcc:4.6 \
    --Transform=InitEntropy --Functions=main \
@@ -112,7 +112,7 @@
     <code>trivial_thread_1,trivial_counter,mem_cache_time,mem_cache_thread_1,file_cache_time,file_cache_thread_1,jit_time</code>.
    We then insert implicit flow using <code>(repeat mem_cache_time 3)</code> after any assignment to the variable <code>b</code> in
    function <code>main</code>. The transformation of the assignment <code>b = a</code> would look something like this:
-</p></div></div></section>
+</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    exp_orig3 = a;
     exp_orig3_origPtr4 = (unsigned char *)(& exp_orig3);
@@ -211,7 +211,7 @@
 <h3 align=center>Algorithms </h3>
 
 <p>Some primitives are based on the timing differences between
-a slow and a fast process:</p></div></div></section>
+a slow and a fast process:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void P'() {
    value=0;   
@@ -231,7 +231,7 @@ a slow and a fast process:</p></div></div></section>
 </center>
 
 <p>A variant of such timing-based flow primitives use threads
-to do the timing. This helps with stealth:</p></div></div></section>
+to do the timing. This helps with stealth:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int result;
 void slow(int v) {
@@ -258,13 +258,12 @@ void P'() {
 </center>
 <p>There are two implementations of these threading-based primitives,
 using either one or two threads. This allows you to embed threading
-code that matches the code that is already in the program.</p></div></div></section>
+code that matches the code that is already in the program.</p>
 
 
 <a class="anchor" id="implicitFlowKinds">&nbsp;</a>
 <br>
 <h3 align=center>Implicit Flow Kinds</h3>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li><code>counter_int</code>:
       Copy a variable by counting up to its value. I.e., the assigment 
@@ -431,8 +430,6 @@ fast process(param);
 </code></pre>
 </center>
    </li>
-</ul>
-</div></div></div></section>
 
 <a class="anchor" id="training">&nbsp;</a>
 <br>
@@ -446,7 +443,7 @@ between them. The <code>resend</code> training is similar, but uses more sophist
 statistical tests (<em>Wilson's Score Rule</em>) to figure out how many times a 
 bit should be sent in order to achieve a particular confidence level and target error
 rate. The commands look like this:
-</p></div></div></section>
+</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
    --Functions=... \
@@ -460,7 +457,7 @@ rate. The commands look like this:
    --InitImplicitFlowTrainingKind=gap \
 </code></pre>
 </center>
-<p>or like this:</p></div></div></section>
+<p>or like this:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
    --Functions=... \
@@ -472,14 +469,14 @@ rate. The commands look like this:
 </code></pre>
 </center>
 
-<p>The output would look like this (for the <code>resend</code> training kind):</p></div></div></section>
+<p>The output would look like this (for the <code>resend</code> training kind):</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">TRAINING_DATA '(mem_cache_time 4496.000000 16 4)'
 </code></pre>
 </center>
 <p>which means that for the <code>mem_cache_time</code> implicit flow primitive, a parameter value of "16" is optimal,
 that each bit needs to be sent "4" times, and that the threshold between slow and fast processes is
-"4496". You can then feed this into another run of tigress:</p></div></div></section>
+"4496". You can then feed this into another run of tigress:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
    --InitImplicitFlowTrain=false \
@@ -489,7 +486,7 @@ that each bit needs to be sent "4" times, and that the threshold between slow an
 </code></pre>
 </center>
 <p>You can also run the training at startup time of your program, i.e., insert your
-training code at the beginning of <code>main</code>:</p></div></div></section>
+training code at the beginning of <code>main</code>:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
    --InitImplicitFlowTrain=true \
@@ -502,7 +499,7 @@ training code at the beginning of <code>main</code>:</p></div></div></section>
 <br>
 <h3 align=center>Implicit Flow Combiners</h3>
 <p>Implicit flow primitives can be combined for improved correctness and higher levels
-of resistance to analysis. Combiners are expressed as S-expressions:</p></div></div></section>
+of resistance to analysis. Combiners are expressed as S-expressions:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">type combiner = 
    | (single primitive)
@@ -513,8 +510,7 @@ of resistance to analysis. Combiners are expressed as S-expressions:</p></div></
    | (until combiner int int)
 </code></pre>
 </center>
-<p>Their behavior as as follows:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>Their behavior as as follows:</p>
 <ul>
    <li> <code>(single a)</code> a single primitive, e.g. <code>(single trivial_counter)</code>.
    </li> 
@@ -529,10 +525,8 @@ input.
    </li> 
    <li> <code>(until a m n)</code> continuously repeats combiner <code>a</code> m times until there is at least n agreements on the resulting value.
    </li> 
-</ul>
-</div></div></div></section>
 <p>You would use these in the <code>AntiTaintAnalysis</code> command's
-<code>--AntiTaintAnalysisImplicitFlow=...</code> option:</p></div></div></section>
+<code>--AntiTaintAnalysisImplicitFlow=...</code> option:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   --Transform=AntiTaintAnalysis \
    --Functions=main \
@@ -541,7 +535,7 @@ input.
    --AntiTaintAnalysisImplicitFlow="(repeat mem_cache_thread_1 3)" \
 </code></pre>
 </center>
-<p>Here are some examples of combiners:</p></div></div></section>
+<p>Here are some examples of combiners:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  (single counter_int)
   (single counter_float)
@@ -706,12 +700,9 @@ input.
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> You may have to add <code>-lm -lphtread</code> to the Tigress command line.
    </li>
-</ul>
-</div></div></div></section>
 
 <a class="anchor" id="references">&nbsp;</a>
 <br>
@@ -722,7 +713,7 @@ input.
 </a>, 
 by Jon Stephens, Babak Yadegari, Christian Collberg, Saumya Debray, and Carlos Scheidegger,
 presented at the 3rd IEEE European Symposium on Security and Privacy.
-</p></div></div></section>
+</p>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

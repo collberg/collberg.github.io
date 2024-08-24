@@ -76,10 +76,10 @@
 a known value, known as <em>opaque predicates and expressions</em>.
 To construct these, data structures with precise invariants are added to
 the code.
-</p></div></div></section>
+</p>
 
 <p>At a minimum, you must create one or more opaque invariant data structures:
-</p></div></div></section>
+</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -143,7 +143,7 @@ the code.
 <p>To frustrate analysis, updates that maintain the invariants should
    be sprinkled throughout the program. This is done by the <code>--Transform=UpdateOpaque</code>
    option:
-</p></div></div></section>
+</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -188,7 +188,7 @@ the code.
 <p> <b>Note:</b> In <code>--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
      must execute before any use of an opaque expression. Easiest is to set 
      <code>--Transform=InitOpaque --Functions=main</code> but this is best avoided since it
-     is very obvious.</p></div></div></section>
+     is very obvious.</p>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
@@ -199,12 +199,11 @@ variables and statements of the form <code>_*__BARRIER_* = 1</code>,
 will be removed by any competent compiler, or by the
 <code>--Transform=CleanUp --CleanUpKinds=annotations</code> 
 transformation.
-</p></div></div></section>
+</p>
 
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Collberg and Nagra, <a href="http://www.amazon.com/Surreptitious-Software-Obfuscation-Watermarking-Tamperproofing/dp/0321549252">
         Surreptitious Software: Obfuscation, Watermarking, and Tamperproofing
@@ -213,8 +212,6 @@ transformation.
    <li> Dalla Preda et al.,
         <a href="http://link.springer.com/chapter/10.1007%2F11784180_9">Opaque Predicates Detection by Abstract Interpretation</a>.
    </li>
-</ul>
-</div></div></div></section>
 
 
 <script src="assets/popper/popper.min.js"></script>

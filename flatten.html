@@ -87,7 +87,7 @@ flattens a function prior to replacing direct branches by calls to a
 branch function since this creates more opportunities for encoding.
 Also, the <a href="merge.html">Merge</a> transformation can optionally
 flatten functions before merging them, thus more thoroughly mixing
-their code.</p></div></div></section>
+their code.</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -138,23 +138,19 @@ their code.</p></div></div></section>
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<p>There are several sources of diversity:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>There are several sources of diversity:</p>
 <ul>
    <li> We support five kinds of "dispatch," i.e. how the next block is selected.</li>
    <li> Basic blocks can be kept intact, or can be split up into individual statements.</li>
    <li> The order of blocks can be randomized.</li>
    <li> The <code>next</code> variable can be obfuscated using different kinds of opaque predicates.</li>
    <li> Conditional branches can be encoded in several different ways. </li>
-</ul>
-</div></div></div></section>
 
 <a class="anchor" id="dispatch">&nbsp;</a>
 <br>
 <h3 align=center>Dispatch</h3>
 <p>These are the four basic kinds of block dispatch we currently support, and 
-what a reursive factorial function looks like after transformation:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+what a reursive factorial function looks like after transformation:</p>
 <ul>
    <li> In a <em>switch dispatch</em>, each block becomes a case in a switch statement,
         and the switch is wrapped inside an infinite loop. This is the traditional
@@ -272,8 +268,6 @@ int fac(int x ){
   }
 }
 </code></pre>
-</ul>
-</div></div></div></section>
 
 <br>
 <h3 align=center>Thread Dispatch <b>From Version 3.3.3</b></h3>
@@ -283,12 +277,12 @@ around the dispatch loop <em>all</em> threads are awakened, and <em>all of them<
 only <em>one</em> thread (the one that owns the next block to be executed) actually does any
 <em>real</em> work. This way there is some randomness in the order in which the block functions
 execute, but there is no potential for race conditions on the <tt>next</tt> variable (only one
-thread will update <tt>next</tt> during each round). </p></div></div></section> 
+thread will update <tt>next</tt> during each round). </p> 
 
 <p>
 This is what the code looks like for the main function that got flattened.
 MacOS does not support barriers, so we roll our own. 
-</p></div></div></section>
+</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void fib(int n ) { 
   struct argStruct arg ;
@@ -339,7 +333,7 @@ MacOS does not support barriers, so we roll our own.
 
 <p>
 And this is what one of the worker threads look like.
-</p></div></div></section>
+</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void fib_0_<n> (struct argStruct *arg ) { 
   while (1) {
@@ -380,12 +374,12 @@ virtualize your function and then flatten it with a threaded dispatch: this resu
 in interpreter where each instruction handler (or piece of instruction handler) will run
 in its own thread. You can even flatten the same function twice, with threaded dispatch
 both times.
-</p></div></div></section>
+</p>
 
 <p>We're currently using <tt>pthreads</tt> which is unfortunate, because the calls to the
 various API functions are obvious in the code (and at runtime). It would be nice to replace
 these functions with some lower-level primitives.
-</p></div></div></section>
+</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -434,7 +428,7 @@ explicit conditional tests in the code. Rather, they will be transformed
 into an assembly code snippet (<code>x86</code> only, at this point) that 
 does the comparison, extracts the flag register, and then the address to
 jump to will be computed based on the individual flags set. Similar
-encodings are available for Merge and Virtualize transformations.</p></div></div></section>
+encodings are available for Merge and Virtualize transformations.</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -466,7 +460,7 @@ encodings are available for Merge and Virtualize transformations.</p></div></div
 <br>
 <h3 align=center>Obfuscating the Next Variable</h3>
 <p>You can use opaque predicates and anti-implicit flow transformations to further obfuscate the <code>next</code>
-variable.</p></div></div></section>
+variable.</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -516,14 +510,14 @@ variable.</p></div></div></section>
 <br>
 <h3 align=center>Function Regions</h3>
 <p>You can virtualize a piece of a function, rather than the whole thing. Simpy put 
-   the name of the region after the function name, like this: </p></div></div></section>
+   the name of the region after the function name, like this: </p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... --Transform=Flatten  --Functions=fac:region2 ...
 </code></pre>
 </center>
 
-<p>The region has to be defined like this in the code: </p></div></div></section>
+<p>The region has to be defined like this in the code: </p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
@@ -542,14 +536,13 @@ void fac(int n) {
 </center>
 
 <p>Note that the region needs to be ``self-contained,'' i.e. you can't jump into it, or out of it.
-   Also, there will be some performance overhead.</p></div></div></section>
+   Also, there will be some performance overhead.</p>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Consider this example taken from gcc's <code>comp-goto-1.c</code> torture test:
 <center>
@@ -571,28 +564,23 @@ void fac(int n) {
    <li> By default, Flatten transforms Variable Length Arrays into calls to <code>alloca</code>. Depending on the 
        platform and the size of the arrays, the generated code can crash. If so, try the option
        <code>--TransformVLA=malloc</code> which converts VLAs to calls to <code>malloc/free</code> instead.</li>
-</ul>
-</div></div></div></section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="acknowledgments">&nbsp;</a>
 <br>
 <h3 align=center>Acknowledgments</h3>
-<p>Saumya Debray and Babak Yadegari suggested the <code>--FlattenConditionalKinds=flag</code> transformation.</p></div></div></section>
+<p>Saumya Debray and Babak Yadegari suggested the <code>--FlattenConditionalKinds=flag</code> transformation.</p>
 
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li> Flattening first appears in Chenxi Wang's <a href="http://dependability.cs.virginia.edu/publications/wangthesis.pdf">thesis.</a>
    <li> The <a href="https://github.com/obfuscator-llvm/obfuscator/wiki/Control-Flow-Flattening">llvm obfuscator</a>
         supports a flattening transformation.
    <li> Laszlo and Kiss, <a href="http://www.inf.u-szeged.hu/~akiss/pub/pdf/laszlo_obfuscating.pdf">Obfuscating C++ Programs via Control Flow Flattening</a>
    <li> Udupa et al, <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.302.7805">Deobfuscation: Reverse engineering obfuscated code</a>.
-</ul>
-</div></div></div></section>
 
 
 <script src="assets/popper/popper.min.js"></script>

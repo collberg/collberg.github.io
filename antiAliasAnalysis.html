@@ -75,9 +75,9 @@
 <p>The goal of this transformation is to disrupt static analysis tools that
 make use of inter-procedural alias analysis. The current implementation
 is simplistic: we simply replace all direct function calls with indirect
-ones.</p></div></div></section>
+ones.</p>
 
-<p>A call to <code>x = foo(n)</code> turns into</p></div></div></section>
+<p>A call to <code>x = foo(n)</code> turns into</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void *arr[]  = {..., &amp; foo, ... };
 
@@ -91,7 +91,7 @@ addresses, and <code>expr<sup>=42</sup></code> is an
 opaque expression computing the index of <code>foo</code>'s address in <code>arr</code>.
 To make analysis a bit harder, we can also insert bogus elements
 in <code>arr</code>, and insert updates to these bogus elements.
-Here, both <code>arr[6]</code> and <code>arr[7]</code> are bogus:</p></div></div></section>
+Here, both <code>arr[6]</code> and <code>arr[7]</code> are bogus:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int main () {
    int x;
@@ -142,7 +142,7 @@ alias analysis difficult, which trips up subsequent
 transformations. This is particularly true for
 the EncodeData transformation which relies on alias analysis.
 The <code>--AntiAliasAnalysisBogusEntries=true</code> option seems to be
-particularly troublesome.</p></div></div></section>
+particularly troublesome.</p>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

@@ -82,7 +82,7 @@ to your application.  Responders are code snippets that will be invoked
 when there has been some sort of integrity violation, such as a 
 checksum failure, and invariants are true facts about your code
 that can be used to create opaque predicates. These are the 
-available options:</p></div></div></section>
+available options:</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -124,23 +124,23 @@ available options:</p></div></div></section>
 arguments passed to <tt>main()</tt>. Any remaining formal parameters (which need to be
 of arithmetic types) will be initialized with random local variables found where the 
 plugin function is inserted. They can be read but should, obviously, not be modified,
-unless you're writing a <em>responder</em> that you want to crash the program.</p></div></div></section>
+unless you're writing a <em>responder</em> that you want to crash the program.</p>
 
 <p>The plugin functions are only used during obfuscation and are removed from the resulting
-program.</p></div></div></section>
+program.</p>
 
 <a class="anchor" id="mba-expressions">&nbsp;</a>
 <br>
 <h3 align=center>MBA Expressions</h3>
 <p> For the <tt>--Transform=EncodeArithmetic</tt> transformation, you can extend the built-in
-MBA expressions with your own. </p></div></div></section>
+MBA expressions with your own. </p>
 
 <p> The plugin functions should be named <tt>prefix_operator</tt> or <tt>prefix_operator_number</tt> (if there
 is need for disambiguation). The <tt>operator<tt> should beone of <tt> PlusA, MinusA, Mult;Div, Mod, Shiftlt, Shiftrt, Lt,
 Gt, Le, Ge, Eq, Ne, BAnd, BXor, BOr, LAnd, LOr</tt> (for binary operators) and one of <tt>Neg, BNot, LNot</tt>
 (for unary operators). For binary operators the functions should have 2 arguments which need to be of the same
 arithmetic types as the return type. The body of the functions should be a single return statement that is
-the MBA expression. Here are a few examples.</p></div></div></section>
+the MBA expression. Here are a few examples.</p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int mba_PlusA_1 (int x, int y) {
@@ -169,26 +169,23 @@ developer to provide properties about the program that Tigress itself
 would not be able to figure out. These properties can then be used in
 Tigress transformations, often causing the program to crash or
 misbehave if an adversary modifies the program such that the
-invariants no longer hold.</p></div></div></section>
+invariants no longer hold.</p>
 
 <p>Invariant plugin functions should always return an int. The name of
 an invariant plugin function should start with the <em>prefix</em>
 (set by the <tt>--InitPluginsInvariantPrefix=<em>prefix</em></tt>
 option) and be followed by an encoding of the value(s) the function
-will return. These are the possible specifications:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+will return. These are the possible specifications:</p>
 <ul>
    <li><tt>ANY</tt> : the function returns an arbitrary value.</li>
    <li><tt>VALUE_<em>value</em></tt> : the function always returns the integer <em>value</em>.</li>
    <li><tt>MIN_<em>value</em></tt> : the function always returns an integer greater than or equal to <em>value</em>.</li>
    <li><tt>MAX_<em>value</em></tt> : the function always returns an integer less than or equal to <em>value</em>.</li>
    <li><tt>RANGE_<em>from</em>_<em>to</em></tt> : the function always returns an integer in the range <tt>[<em>from</em>, <em>to</em>]</tt>, inclusive.</li>
-</ul>
-</div></div></div></section>
-<p>Extra underscore characters can be freely added to the name (for disabiguation) and will be stripped out.</p></div></div></section>
+<p>Extra underscore characters can be freely added to the name (for disabiguation) and will be stripped out.</p>
 
 <p>For example, if you have set <tt>--InitPluginsInvariantPrefix=<em>acme</em></tt> 
-you could add the following function to your application: </p></div></div></section>
+you could add the following function to your application: </p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int highScore = 0;     /* Always less than 100! */
 ...
@@ -200,9 +197,9 @@ int acme_RANGE_0_99 (void) {
 <p>The idea here is that transformations which use opaque predicates will
 introduce code that assumes that <tt>0 &le; highScore &lt; 100</tt>. If
 an attacker modifies the code so that <tt>highScore</tt> is outside of
-this range, the program will start to misbehave.</p></div></div></section>
+this range, the program will start to misbehave.</p>
 
-<p>Here is how you would call Tigress with the <tt>AddOpaque</tt> transform:</p></div></div></section>
+<p>Here is how you would call Tigress with the <tt>AddOpaque</tt> transform:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
            --Transform=InitPlugins  --InitPluginsInvariantPrefix=acme    \
@@ -214,7 +211,7 @@ this range, the program will start to misbehave.</p></div></div></section>
 </code></pre>
 </center>
 
-<p>Here are some examples of invariant plugin functions:</p></div></div></section>
+<p>Here are some examples of invariant plugin functions:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">/* Returns a random value */
 int acme_ANY (void) {
@@ -267,10 +264,10 @@ int acme_RANGE_1_3 (int argc) {
 <p>Tigress has a few simple built-in responders that can be used in the
 <tt>Checksum</tt> transformation. With plugins, you can easily add
 your own responders to your application. Responder plugin
-functions should always return <tt>void</tt>.</p></div></div></section>
+functions should always return <tt>void</tt>.</p>
 
 <p>Here is how you would invoke Tigress to use your own plugin 
-responders with the <tt>Checksum</tt> transform:</p></div></div></section>
+responders with the <tt>Checksum</tt> transform:</p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
@@ -280,7 +277,7 @@ responders with the <tt>Checksum</tt> transform:</p></div></div></section>
 </code></pre>
 </center>
 
-<p>Here are some simple examples of responder plugins:</p></div></div></section>
+<p>Here are some simple examples of responder plugins:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void acme_responder_1 () {
    abort();
@@ -308,7 +305,7 @@ void acme_responder_5 () {
 <br>
 <h3 align=center>Write Your Own Opaque Library!</h3>
 <p>Using plugins you can write your own opaque predicate library. Two more plugin functions are available to
-facilitate this, <em>initialize</em> and <em>update</em>:</p></div></div></section>
+facilitate this, <em>initialize</em> and <em>update</em>:</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -345,7 +342,7 @@ facilitate this, <em>initialize</em> and <em>update</em>:</p></div></div></secti
 </center>
 </br>
 
-<p>Here's a simple example of a library that you would add to the beginning of your application:</p></div></div></section>
+<p>Here's a simple example of a library that you would add to the beginning of your application:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int alwaysEven;
 
@@ -370,7 +367,7 @@ int acme_invariant_even_VALUE_0 (void) {
 The body of the <tt>initialize_even</tt> function will be inserted in the function where you want 
 initializations to take place, and the two update functions will be inserted by the <tt>UpdateOpaque</tt>
 transformation. Here, there is no particular significance to the <tt>_number</tt> in the function names -- each
-function just has to have a unique name. Here is the call to Tigress:</p></div></div></section>
+function just has to have a unique name. Here is the call to Tigress:</p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress  ... \
@@ -460,7 +457,7 @@ int acme_invariant_odd_VALUE_0 (int v) {
 <br>
 <h3 align=center>Abstract Datatype Plugins</h3>
 <p>If your program is using ADTs such as <code>HashMap</code> or <code>Set</code> you can provide
-these to Tigress. The only use at the moment is with the <tt>RandomFuns</tt> transformation.</p></div></div></section>
+these to Tigress. The only use at the moment is with the <tt>RandomFuns</tt> transformation.</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -488,7 +485,7 @@ these to Tigress. The only use at the moment is with the <tt>RandomFuns</tt> tra
 </br>
 
 <p>Below is a simple example of two ADT libraries that you would add to the beginning of your application
-and the corresponding Tigress command line options (you can give multiple ADTs in each option):</p></div></div></section>
+and the corresponding Tigress command line options (you can give multiple ADTs in each option):</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   --Transform=InitPlugins \
        --InitPluginsCollectionPrefix=Set \

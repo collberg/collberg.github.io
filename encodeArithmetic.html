@@ -74,7 +74,7 @@
 
 <p>Replace integer arithmetic with more complex expressions, encoded with
 <em>Mixed Boolean Expressions</em> (MBA). For example, the following identities can be used to encode
-integer addition:</p></div></div></section>
+integer addition:</p>
 <center>                
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">x + y = x - &not; y - 1
       = (x &oplus; y) + 2&middot;(x &and; y) 
@@ -82,12 +82,12 @@ integer addition:</p></div></div></section>
       = 2&middot;(x &or; y) - (x &oplus; y) 
 </code></pre>
 </center>
-<p>For example, Tigress might replace</p></div></div></section>
+<p>For example, Tigress might replace</p>
 <center>                
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">z = x + y + w
 </code></pre>
 </center>                
-<p>with</p></div></div></section>
+<p>with</p>
 <center>                
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">z = (((x ^ y) + ((x & y) << 1)) | w) + 
     (((x ^ y) + ((x & y) << 1)) & w);
@@ -191,21 +191,21 @@ more diffiult to locate in the code (both statically and dynamically).<p>
 <br>
 <h3 align=center>Diversity</h3>
 <p>For each operator, there are many possible encodings, and
-at transformation time, these are selected from randomly.</p></div></div></section>
+at transformation time, these are selected from randomly.</p>
 
 <a class="anchor" id="debugging">&nbsp;</a>
 <br>
 <h3 align=center>Debugging and Attacking (From version <b>3.3.2</b></h3>
 <p>There have been many recent papers on attacking MBA expressions. To facilitate such attacks 
 you can dump all the transformed expressions onto a Json file for further processing.
-Simply set <tt>--EncodeArithmeticDumpFileName=filename.json</tt>.</p></div></div></section>
+Simply set <tt>--EncodeArithmeticDumpFileName=filename.json</tt>.</p>
 
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
 <p>Currently, the identities are taken from the book 
 <a href="http://www.hackersdelight.org">Hacker's Delight</a>.
-</p></div></div></section>
+</p>
 
 
 <script src="assets/popper/popper.min.js"></script>

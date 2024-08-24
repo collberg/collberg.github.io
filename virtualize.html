@@ -82,7 +82,7 @@
    randomization seed. The diversity is both static and dynamic, i.e. each
    interpreter variant differs in the structure of its code as well as
    in its execution pattern.
-</p></div></div></section>
+</p>
 
 <p>
 A generated interpreter consists of a virtual instruction set, 
@@ -100,7 +100,7 @@ an interpreter:
 </center>
 
 <p> Here's an example of an interpreter constructed by Tigress for the program
-<code>main(){int x; x++;}</code>:</p></div></div></section>
+<code>main(){int x; x++;}</code>:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">enum ops {Locals = 116, Plus  = 135, Load   = 60, Goto = 231,
           Const  = 3,   Store = 122, Return = 72};
@@ -130,27 +130,24 @@ control-flow graphs of instruction trees. Tigress then selects a random
 instruction set architecture (ISA) and, using this ISA, generates a
 bytecode program specialized for the input function. Finally, Tigress
 selects a random dispatch method and produces an output program.
-</p></div></div></section>
+</p>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity and Stealth</h3>
 <p><strong>Static diversity.</strong> Tigress supports two mechanisms for generating 
-ISAs with a high degree of static diversity:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+ISAs with a high degree of static diversity:</p>
 <ul>
    <li> instruction opcodes can be randomized,</li>
    <li> the ISA can have duplicate instructions with the same semantics, </li>
    <li> instructions can pass arguments in arbitrary combinations of stack locations and registers, </li>
    <li> instructions can be made arbitrarily long (with highly complex semantics) through the use of superoperators. </li>
-</ul>
-</div></div></div></section>
 
 <p><strong>Dynamic diversity.</strong> We ensure that dynamic execution patterns are 
 diversified by merging randomized bogus functions with the ``real'' 
 function. We can furthermore impede dynamic analysis by making instruction
 traces artificially long.
-</p></div></div></section>
+</p>
 
 <p>
 <strong>Static stealth.</strong>
@@ -158,7 +155,7 @@ Not only diversity but also <em>stealth</em> is important for
 interpreters. For static stealth, the <code>split</code> transformation can break up the
 interpreter loop into smaller pieces, and the <code>AddOpaque</code>
 transformation can make instruction handlers less conspicuous.
-</p></div></div></section>
+</p>
 
 <p>
 <strong>Dynamic stealth.</strong>  For dynamic stealth, Tigress interpreters can
@@ -168,13 +165,13 @@ executed from the interpreter with instructions executed by the rest
 of the program. This is of particular interest when wanting to hide
 the execution pattern from analysts, and when the exact time that the
 function executes is not important, as long as it completes <em>eventually</em>.
-</p></div></div></section>
+</p>
 
 <br>
 <h3 align=center>Usage</h3>
 <p>
 A typical call to Tigress to virtualize a function <code>foo</code> looks like this:
-</p></div></div></section>
+</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
    --Environment=x86_64:Linux:Gcc:4.6 \
@@ -186,7 +183,7 @@ A typical call to Tigress to virtualize a function <code>foo</code> looks like t
 </center>
 <p>
 And here are the options for debugging and optimization:
-</p></div></div></section>
+</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -308,7 +305,7 @@ And here are the options for debugging and optimization:
 <p>For both static and dynamic diversity, Tigress supports nine different
 dispatch methods. The following code is generated for the different methods,
    where &Xi;<sup><code>op1</code></sup>; is the instruction handler for
-   operator <code>op1</code>:</p></div></div></section>
+   operator <code>op1</code>:</p>
 
 <center>
 <table align=center  class="smalltab">
@@ -379,11 +376,11 @@ op2hdl: &Xi;<sup><code>op2</code></sup>; goto top;
 
 <p>
 Tigress also supports concurrent dispatch, which is a variant of <tt>switch</tt> dispatch, where every iteration around the interpreter loop is split between a number of concurrently executing threads. It's specified like this: <tt>--VirtualizeDispatch=concurrent --VirtualizeNumberOfThreads=2</tt>.
-</p></div></div></section>
+</p>
 
 <p>
 To further confuse static analysis, in an direct and indirect threaded dispatch loop you can make every indirect jump go through a branch function. It is specified like this: 
-</p></div></div></section>
+</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitBranchFuns \
    --InitBranchFunsCount=1 \
@@ -445,7 +442,7 @@ To further confuse static analysis, in an direct and indirect threaded dispatch 
 <h3 align=center>Instruction Set Architecture Generation</h3>
 <p>Instruction sets can use stacks, registers, or both to pass values
 between instructions. By default, the following, very simple, instruction
-set is used:</p></div></div></section>
+set is used:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  labels:         l &isin; <it>Labels</code> 
   functions:      f &isin; <it>Funs</it> 
@@ -488,7 +485,7 @@ stack or passed in virtual registers.  Tigress can generate
 instructions that use any combination of registers and stack storage
 for the inputs they read or the output they produce. Here's a video
 to illustrate this:
-</p></div></div></section>
+</p>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/randomize.m4v" type="video/mp4">
@@ -509,13 +506,13 @@ The complex semantics of instructions generated by superoperators make
 manual analysis of generated interpreters, such as discussed by Rolles
 in <a href="http://dl.acm.org/citation.cfm?id=1855877">Unpacking
 virtualization obfuscators</a>, difficult.
-</p></div></div></section>
+</p>
 
 <p>Consider setting <code>--VirtualizeMaxDuplicateOps=2</code> 
 and <code>--VirtualizeOperands=mixed</code> resulting in two <em>store-int</em>
 instructions, one that takes both arguments in registers, and one that takes
 one argument on the stack and the other in a register. Tigress will chose 
-between them randomly. Here are the corresponding instruction handlers:</p></div></div></section>
+between them randomly. Here are the corresponding instruction handlers:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">case _0__store_int$left_REG_0$right_REG_1: 
    (_0__pc[0]) ++;
@@ -535,7 +532,7 @@ case _0__store_int$right_STA_0$left_REG_0:
 <p>Consider next setting <code>--VirtualizeSuperOpsRatio=2.0</code> and <code>--VirtualizeMaxMergeLength=10</code>,
 resulting in virtual instructions with highly complex semantics:
 
-Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:</p></div></div></section>
+Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">case _0__local$result_STA_0$value_LIT_0__\
    convert_void_star2void_star$left_STA_0$result_REG_0__\
@@ -565,7 +562,7 @@ backslashes are here only for display purposes! Also note that the instruction
 itself is 53 bytes long, almost as long as the 
 <a href="https://groups.google.com/forum/#!topic/comp.arch/OJYBg8o7vcQ">longest VAX instruction</a>
 (<code>EMODH</code>, 54 bytes) and much longer than the longest x86 instruction 
-(15 bytes) </p></div></div></section>
+(15 bytes) </p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -620,7 +617,7 @@ itself is 53 bytes long, almost as long as the
 <h3 align=center>Instruction Handler Obfuscation</h3>
 <p>You can split up the generated interpreter by inserting opaque predicates. This is useful to 
 make the instruction handlers and the dispatch logic less conspicuous. Here's one example; the 
-handler can obviously be split in multiple ways: </p></div></div></section>
+handler can obviously be split in multiple ways: </p>
 
 <center><img width="500px" src="tigress3-images/split-handlers.png"></center>
 
@@ -650,12 +647,12 @@ handler can obviously be split in multiple ways: </p></div></div></section>
 <br>
 <h3 align=center>VPC Obfuscation</h3>
 <p>You can add opaque expressions to the virtual PC to make it 
-more difficult to find.</p></div></div></section>
+more difficult to find.</p>
 
 <p>One possible attack on interpreters is to perform a taint analysis
 on input-dependent variables and discard any instructions which are
 not tainted. To frustrate such analyses we can add implicit flow to the VPC.
-</p></div></div></section>
+</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -709,7 +706,7 @@ locate the virtual program counter, by providing multiple VPCs,
 one "real", and one or more that behave as if they were real, 
 but which interpret unused functions:
 <center><img width="500px" src="tigress3-images/bogus-functions-2.png"></center>
-</p></div></div></section>
+</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -760,13 +757,10 @@ but which interpret unused functions:
 <h3 align=center>Bogus Loops</h3>
 
 <p>Add random computations to every iteration of the dispatch loop.  
-Use this to frustrate dynamic analysis by</p></div></div></section>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article><ol>
+Use this to frustrate dynamic analysis by</p>
    <li>inserting bogus instructions between consecutive iterations of the dispatch loop, 
        thereby making the dispatch harder to recognize;</li>
    <li>making traces longer and thereby harder to store and analyze.</li>
-</ol>
-</div></div></div></section>
 <br>
 
 <center>
@@ -813,10 +807,10 @@ until, eventually, they terminate. This is particularly
 useful when it is not important exactly when
 the a piece of code executes, as long as it executes <em>eventually</em>,
 and where the stealthiness of the computations is paramount.
-</p></div></div></section>
+</p>
 
 <p>This video shows how making an interpreter reentrant will mix instructions from
-the interpreter with instructions from the surrounding code:</p></div></div></section>
+the interpreter with instructions from the surrounding code:</p>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/reentrant.m4v" type="video/mp4">
@@ -825,7 +819,6 @@ the interpreter with instructions from the surrounding code:</p></div></div></se
 </center>
 
 <p>You must prepare your code in the following ways:<p>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article><ol>
    <li> The function you want to virtualize must have an argument
         <code>int* operation</code>. It can occur anywhere among the formal parameters:</li>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(int* operation, int n, int* result) {&hellip;}
@@ -885,11 +878,8 @@ foo(&operation,bogus1,&bogus2);
    foo(&operation,n,&result);
 </code></pre>
    </li>
-</ol>
-</div></div></div></section>
 
-<p>To ensure termination you can</p></div></div></section>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article><ol>
+<p>To ensure termination you can</p>
    <li> experiment yourself with how many iterations
         are necessary to finish the computation;</li
    <li> make sure that the last call to foo is passed a
@@ -904,8 +894,6 @@ foo(&operation,bogus1,&bogus2);
    /* result is available here */
 </code></pre>
    </li>
-</ol>
-</div></div></div></section>
 
 <p>It is a good idea to combine reentrant interpreters with
 superoperators. Superoperators produce long instructions
@@ -915,7 +903,7 @@ is reduced. In other words, if you want to frustrate
 dynamic analysis that looks for evidence of the dispatch
 loop in the instruction trace, superoperators combined
 with reentrant interpreters will reduce the presence of 
-such artifacts.</p></div></div></section>
+such artifacts.</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -946,7 +934,7 @@ Setting
 results in each program instruction being xor:ed with
 a constant value, thus ensuring that it is
 not in cleartext until it is run. The generated code 
-looks something like this:</p></div></div></section>
+looks something like this:</p>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char _5_obf3_$array[1][141]  = 
      {{
         (unsigned char)formal$result_STA_0$value_LIT_0 ^ (unsigned char)16,
@@ -963,7 +951,7 @@ looks something like this:</p></div></div></section>
         ...
      }}
 </code></pre>
-<p>This does not work for <code>--VirtualizeDispatch=direct</code>.</p></div></div></section>
+<p>This does not work for <code>--VirtualizeDispatch=direct</code>.</p>
 
 <p>Additionally, setting <code>--VirtualizeObfuscateDecodeByteArray=true</code> and
 <code>--VirtualizeOpaqueStructs=input,env</code> ensures that the decoded 
@@ -977,9 +965,9 @@ bytecode array depends on input. The decoding procedure looks like this:
   }
   $pc[0] = localArrayCopy11[0];
 </code></pre>
-</p></div></div></section>
+</p>
 
-<p>Here's an example script:</p></div></div></section>
+<p>Here's an example script:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Environment=... --Seed=0 \
    --Transform=InitImplicitFlow \
@@ -996,22 +984,19 @@ bytecode array depends on input. The decoding procedure looks like this:
 </code></pre>
 </center>
 <p><code>--Inputs="+1:int:42,-1:length:1?10"</code> is a specfication of invariants over
-the command line. It specifies:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+the command line. It specifies:</p>
 <ul>
    <li> the first argument on the command line should be the integer 42</li>
    <li> the last argument should have a length between 1 and 10 </li>
-</ul>
-</div></div></div></section>
 <p><code>--VirtualizeOpaqueStructs=input,env</code> ensures that the 
 program array will be encoded based on these command line invariants.
 If the program is invoked with a set of command line arguments that
 violate the invariants it is likely to crash.
-</p></div></div></section>
+</p>
 
 Starting with version 3.3.3, setting <tt>--VirtualizeEncodeByteArray=incrementally</tt> results in 
 the bytecode array being decoded as each entry is encountered. The instruction handler
-code now looks like this, where 3472328296227680304UL is the xor encoding constant: </p></div></div></section>
+code now looks like this, where 3472328296227680304UL is the xor encoding constant: </p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  __4_callInd__constant_unsigned_long$result_STA_0$value_LIT_0: ;
   (__4_callInd_$pc[0]) ++;
@@ -1074,7 +1059,7 @@ much in the same way that happens to jitted code in the
 <a href="../jitDynamic/index.html">JitDynamic</a> 
 transformation. In fact, exactly the same mechanisms are used
 for both transformations, and they share all the same options.
-Here's an example script:</p></div></div></section>
+Here's an example script:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
    --Transform=Virtualize \
@@ -1216,14 +1201,14 @@ Here's an example script:</p></div></div></section>
 <br>
 <h3 align=center>Function Regions</h3>
 <p>You can virtualize a piece of a function, rather than the whole thing. Simpy put 
-   the name of the region after the function name, like this: </p></div></div></section>
+   the name of the region after the function name, like this: </p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... --Transform=Virtualize  --Functions=fac:region2 ...
 </code></pre>
 </center>
 
-<p>The region has to be defined like this in the code: </p></div></div></section>
+<p>The region has to be defined like this in the code: </p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
@@ -1242,15 +1227,14 @@ void fac(int n) {
 </center>
 
 <p>Note that the region needs to be ``self-contained,'' i.e. you can't jump into it, or out of it.
-   Also, there will be some performance overhead.</p></div></div></section>
+   Also, there will be some performance overhead.</p>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="notes">&nbsp;</a>
 <br>
 <h3 align=center>Notes</h3>
-<p>As you are reading the code, there are a couple of interesting things to note:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>As you are reading the code, there are a couple of interesting things to note:</p>
 <ul>
    <li> Much of the symbolic information present in the transformed
         source files (such as types, enumerations, and structured
@@ -1273,16 +1257,13 @@ void fac(int n) {
         dispatch, to keep the size of the program down. Future versions
         of Tigress will use more compact encodings for these types of
         dispatch. </li>
-</ul>
-</div></div></div></section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<p>Here are some of the known issues with the Virtualize transformation:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>Here are some of the known issues with the Virtualize transformation:</p>
 <ul>
    <li> Several dispatch methods make use of <code>gcc's</code> and <code>clang</code>
         <em>labels-as-values</em>. For other compilers only
@@ -1307,8 +1288,6 @@ void fac(int n) {
       This kind of arithmetic on the program counter is going to fail for 
       transformations that completely restructure the code, such as
       virtualization.
-</ul>
-</div></div></div></section>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

@@ -73,27 +73,24 @@
 <center><img width="500px" src="tigress3-images/antiTaintAnalysis-front-page.png"></center>
 
 <p>The goal of this transformation is to disrupt analysis tools that
-make use of dynamic taint analysis. </p></div></div></section>
+make use of dynamic taint analysis. </p>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
 <p>We use two basic ways to copy a variable using control-, rather than
-data-flow:</p></div></div></section>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article><ol>
+data-flow:</p>
       <li> counting up to the value of the variable, and </li>
       <li> copying it bit by bit, tested in an if-statement. </li>
-</ol>
-</div></div></div></section>
 <p>This can be done in a simple loop, an unrolled loop, or by throwing
 exceptions caught in a signal handler. This leads to a total of
-five different copy methods.</p></div></div></section>
+five different copy methods.</p>
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
 <p>If you want to copy using signals you must first generate the signal handlers
-using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p></div></div></section>
+using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -156,7 +153,7 @@ using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p
 <br>
 <h3 align=center>Examples</h3>
 <p>The code to copy <code>argc</code> using bit-by-bit copy and signals 
-would look something like this:</p></div></div></section>
+would look something like this:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  argc_origPtr13 = (unsigned char *)(& argc);
   argc_copyPtr15 = (unsigned char *)(& argc_copy14);
@@ -179,7 +176,7 @@ would look something like this:</p></div></div></section>
   }
 </code></pre>
 </center>
-<p>with this signal handler and these global variables:</p></div></div></section>
+<p>with this signal handler and these global variables:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char TempVar;
 int BitVar;
@@ -192,16 +189,13 @@ void handler(int sig ) {
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<p>Currently, we can only un-taint a few variables:</p></div></div></section>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article><ol>
+<p>Currently, we can only un-taint a few variables:</p>
       <li> <code>argc</code> and <code>argv</code> in <code>main</code>, </li>
       <li> the output values of a few system and library calls: <code>getpid</code> and <code>scanf</code>, </li>
       <li> the virtual PC in a virtualized function (using the <code>--VirtualizeImplicitFlowVPC</code>
            option). </li>
       <li> The function handler to a jitted function (using the <code>--JitImplicitFlow</code> option). </li>
-</ol>
-</div></div></div></section>
-<p>We will add more as requested!</p></div></div></section>
+<p>We will add more as requested!</p>
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
@@ -212,7 +206,7 @@ void handler(int sig ) {
 <a href ="http://olivier.mehani.name/publications/2013sarwar_scrubdroid.pdf"> 
    On the Effectiveness of Dynamic Taint Analysis for Protecting Against 
        Private Information Leaks on Android-based Devices
-</a> by Golam Sarwar, Olivier Mehani, Roksana Boreli, and Mohamed-Ali Kaafar.</p></div></div></section>
+</a> by Golam Sarwar, Olivier Mehani, Roksana Boreli, and Mohamed-Ali Kaafar.</p>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

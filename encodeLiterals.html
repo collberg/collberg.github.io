@@ -75,7 +75,7 @@
 <p>Obfuscate integer and/or string literals (such as <tt>42</tt> or <tt>"42"</tt>). 
 Literal integers can be replaced with opaque expressions, which
 requires that the InitOpaque transformation has been previously issued. Literal strings can be
-replaced with a function that generates them at runtime.</p></div></div></section>
+replaced with a function that generates them at runtime.</p>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -136,7 +136,7 @@ replaced with a function that generates them at runtime.</p></div></div></sectio
 <br>
 <h3 align=center>Regions</h3>
 <p>You can apply this transformation to a part of a function. First, include <tt>tigress.h</tt> as usual, then enclose the regions you 
-want to transform using the <tt>ENCODE_INTEGER_BEGIN</tt> and <tt>ENCODE_INTEGER_END</tt> macros: </p></div></div></section>
+want to transform using the <tt>ENCODE_INTEGER_BEGIN</tt> and <tt>ENCODE_INTEGER_END</tt> macros: </p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
@@ -164,7 +164,7 @@ void foo () {
 </center>
 
 <p>The arguments to the macros (<tt>obfuscateThis</tt> and <tt>obfuscateThat</tt>) are tags that you specify in the  <tt>-Regions=...</tt> option
-in your tigress command:</p></div></div></section>
+in your tigress command:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... \
    --Transform=EncodeLiterals \
@@ -185,7 +185,7 @@ To be made less conspicuous, it should itself be transformed, for example using 
 transformation (to hide the string contents) and the 
 <a href="randomizeArguments.html">RndArgs</a>
 transformation (to hide the interface).
-</p></div></div></section>
+</p>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

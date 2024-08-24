@@ -74,8 +74,7 @@
 started using Tigress. See them as a starting point for you to explore
 all of Tigress' features, not as recommendations for particular
 situations. Before using any kind of software protection technique
-you must start with a detailed security analysis:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+you must start with a detailed security analysis:</p>
 <ul>
    <li>What assets are you trying to protect?</li>
    <li>What is the value of those assets?</li>
@@ -84,24 +83,22 @@ you must start with a detailed security analysis:</p></div></div></section>
    <li>How does obfuscation fit into your overall security architecture?</li>
    <li>What are you adversary's goals and motivation?</li>
    <li>What are your adversary's tools and skill sets?</li>
-</ul>
-</div></div></div></section>
 <p>Only when you have answered these questions,
 and have determined that obfuscation needs to be an integral part of
 your architecture, can you start putting together Tigress
 scripts. Over time we will add more recipes here. If you have found a
 particular combination of Tigress transformations useful,
 please <a href="https://tigress.wtf/contact.html">let us know</a>, and
-we will add your recipe to the collection!</p></div></div></section>
+we will add your recipe to the collection!</p>
 
 <p>In the examples below we will be using these programs as input: <a href="test.c.txt">test.c</a>
-and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
+and  <a href="test-jit.c.txt">test-jit.c</a>.</p>
 
 <!-- =============================================================================================== -->
 <br>
 <h3 align=center>Recipe #1: Opaque Predicates, Branch Functions, and Encoded Arithmetic</h3>
 
-<p>Here is a simple recipe that should have a relatively low performance impact:</p></div></div></section>
+<p>Here is a simple recipe that should have a relatively low performance impact:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
      --Transform=InitEntropy \
@@ -126,8 +123,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test.c --out=output1.c 
 </code></pre>
 </center>
-<p>Here is the <a href="output1.c.txt">resulting code.</a> There are a few things to note here:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>Here is the <a href="output1.c.txt">resulting code.</a> There are a few things to note here:</p>
 <ul>
    <li>Most Tigress scripts require you to start off with a sequence of <tt>Init</tt>-transformations.
         In this case we have <tt>InitEntropy</tt>, <tt>InitOpaque</tt>, and <tt>InitBranchFuns</tt>. 
@@ -148,15 +144,13 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
        Tigress is a whole program obfuscator: it starts by including all the .h files (including all
        system files) into one .c file that then becomes the input to the obfuscation process. If your
        program consists of multiple C-files you first need to merge them together using <tt>tigress-merge</tt>.</li>
-</ul>
-</div></div></div></section>
 
 <!-- =============================================================================================== -->
 <br>
 <h3 align=center>Recipe #2: Virtualization and Self-Modification</h3>
 
 <p>This transformation shows off a combination of two more powerful transformation, virtualization and
-   self-modifying code, that together is likely to have serious performance impact:</p></div></div></section>
+   self-modifying code, that together is likely to have serious performance impact:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:9.0  \
      --Transform=InitEntropy \
@@ -177,16 +171,13 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test.c --out=output2.c 
 </code></pre>
 </center>
-<p>Here is the <a href="output2.c.txt">resulting code.</a> Here are a few things to note:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>Here is the <a href="output2.c.txt">resulting code.</a> Here are a few things to note:</p>
 <ul>
    <li>The <tt>--Skip-false</tt> option is handy to turn transformations on-and-off to try out
        the impact of different transformations. </li>
    <li>For more diversity, try different values for <tt>--VirtualizeDispatch</tt>.</li>
    <li>To compile this program you need to use <tt>gcc -segprot __TEXT rwx rwx output2.c -o output2.exe </tt>
        (on Darwin). See the <a href="selfModify.html">SelfModify</a> page for more information.
-</ul>
-</div></div></div></section>
 
 <!-- =============================================================================================== -->
 
@@ -219,8 +210,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test-jit.c --out=output3.c 
 </code></pre>
 </center>
-<p>Here is the <a href="output3.c.txt">resulting code.</a> Here are a few things to note: </p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>Here is the <a href="output3.c.txt">resulting code.</a> Here are a few things to note: </p>
 <ul>
    <li>We use the <tt>Measure</tt> transformation along with differen values of <tt>Skip</tt> to
        measure the performance impact. On my machine virtualization alone takes 0.000192 seconds,
@@ -228,8 +218,6 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
        2.125580 seconds!</li>
    <li>Setting <tt>--JitDynamicBlockFraction=1</tt> (which means only one basic block will be
        encoded) reduces the time to 1.800674 seconds.</li>
-</ul>
-</div></div></div></section>
 
 <!-- =============================================================================================== -->
 
@@ -258,8 +246,7 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test.c --out=output4.c 
 </code></pre>
 </center>
-<p>Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to note: </p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to note: </p>
 <ul>
    <li>There is no need to flatten the code in the merging process since we are going to 
        virtualize the resulting code anyway. So we set <tt>--MergeFlatten=false</tt> to save some on performance.</li>
@@ -270,8 +257,6 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
        to the calls to <tt>MERGED</tt> in <tt>main</tt></li>
    <li>Another possibility is add extra bogus arguments, using <tt>--Transform=RndArgs --Functions=MERGED --RndArgsBogusNo=10</tt>,
        which results in this <a href="output4a.c.txt">code.</a> </li>
-</ul>
-</div></div></div></section>
 <!-- =============================================================================================== -->
 
 <script src="assets/popper/popper.min.js"></script>

@@ -73,14 +73,13 @@
 <center><img width="500px" src="tigress3-images/jitDynamic-front-page.png"></center>
 
 <p>This transformation is similar to the Jit
-transformation, except the jitted code is continuously modified and updated at runtime.</p></div></div></section>
+transformation, except the jitted code is continuously modified and updated at runtime.</p>
 
 <a class="anchor" id="background">&nbsp;</a>
 <br>
 <h3 align=center>Background</h3> 
  
-<p>Our implementation is a generalization of a number of previously published schemes:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<p>Our implementation is a generalization of a number of previously published schemes:</p>
 <ul>
    <li><a href="http://link.springer.com/chapter/10.1007%2F3-540-61996-8_49#page-1">Aucsmith, Tamper Resistant Software: An Implementation, IH'96</a>
    </li>
@@ -93,10 +92,7 @@ transformation, except the jitted code is continuously modified and updated at r
 
    <li><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1245338&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1245338">Kanzaki, Exploiting Self-Modification Mechanism for Program Protection</a>
    </li>
-</ul>
-</div></div></div></section>
-<p>Each of these schemes can be seen as a combination of two properties:</p></div></div></section>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article><ol>
+<p>Each of these schemes can be seen as a combination of two properties:</p>
    <li> the <em>level of granularity</em> at which the program is encoded and decoded
        (function-level, basic block-level, instruction-level, or byte-level), and 
    </li>
@@ -104,11 +100,9 @@ transformation, except the jitted code is continuously modified and updated at r
    <li> the <em>codec</em> that determines how a function/block/etc. should be encoded
         and decoded.
    </li>
-</ol>
-</div></div></div></section>
 
 <p>For example, Aucsmith's scheme works on basic blocks and encodes two
-blocks by xor:ing them with each other:</p></div></div></section>
+blocks by xor:ing them with each other:</p>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/aucksmith.m4v" type="video/mp4">
@@ -123,7 +117,7 @@ appears in cleartext and we can jump to it.<p>
 
 <p>Cappaert's scheme was originally designed to work at the
 granularity of functions and encodes by encrypting using a standard
-encryption algorithm, such as AES:</p></div></div></section>
+encryption algorithm, such as AES:</p>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/cappaert.m4v" type="video/mp4">
@@ -135,11 +129,11 @@ keys directly in the executable where they are easy to find, this
 scheme uses other blocks as the key. Here, the yellow block is
 encrypted using the pink block as the key. Before we execute the
 yellow block, the blue block decrypts it.  Then the yellow block
-appears in cleartext, and we can jump to it.</p></div></div></section>
+appears in cleartext, and we can jump to it.</p>
 
 <p>Kanzaki's scheme works at the
 granularity of the raw bytes of the program and encodes/decodes
-by patching holes left in the code:</p></div></div></section>
+by patching holes left in the code:</p>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/kanzaki.m4v" type="video/mp4">
@@ -148,12 +142,12 @@ by patching holes left in the code:</p></div></div></section>
 </center>
 <p>Here, the blue block has a hole in it which the pink block
 patches. Then control can continue with the blue block, after
-which the yellow block will re-insert the hole.</p></div></div></section>
+which the yellow block will re-insert the hole.</p>
 
 <p>Madou's scheme was originally designed to work at the 
 function level and encodes by letting blocks occupy the same space at 
 runtime. A special PATCH function restores blocks before they are
-needed:</p></div></div></section>
+needed:</p>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/madou.m4v" type="video/mp4">
@@ -163,34 +157,30 @@ needed:</p></div></div></section>
 <p>Here, the yellow and grey blocks both exist in the same memory location. 
 The blue block decodes the yellow block by patching it; then jumps to it, 
 then the brown block needs to execute the gray block, so it patches it, 
-and then jumps to it.</p></div></div></section>
+and then jumps to it.</p>
 
 <p>Our implementation of these schemes works at the granularity of basic
 blocks and can be instantiated with arbitrary codecs (encoding/decoding
-schemes):</p></div></div></section>
+schemes):</p>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
   <source src="tigress3-videos/general.m4v" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </center>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article><ol>
       <li> intially, before a function starts executing, (a subset of) its basic blocks 
            are encoded using one of the available codecs,</li>
       <li> prior to a block being executed it is decoded, and </li>
       <li> after a block has finished executing it is eventually re-encoded. </li>
-</ol>
-</div></div></div></section>
 <p>Note that in our implementation multiple encoding schemes can be used
 within one function: some basic blocks may be encoded using Aucsmith's
-scheme, some with Cappaert's scheme, etc.</p></div></div></section>
+scheme, some with Cappaert's scheme, etc.</p>
 
 <a class="anchor" id="codecs">&nbsp;</a>
 <br>
 <h3 align=center>Dynamic Codecs</h3> 
-<p>We will add new codecs over time. Currently, the following are implemented:</p></div></div></section>
+<p>We will add new codecs over time. Currently, the following are implemented:</p>
 
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
    <li><code>none</code>: No encoding
    </li>
@@ -221,8 +211,6 @@ scheme, some with Cappaert's scheme, etc.</p></div></div></section>
    <li><code>stolen_<em>byte/short/word</em></code>:
       Encodes/decodes by filling in/leaving a hole in the basic block.
    </li>
-</ul>
-</div></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -394,20 +382,16 @@ scheme, some with Cappaert's scheme, etc.</p></div></div></section>
 <a class="anchor" id="implementation">&nbsp;</a>
 <br>
 <h3 align=center>Implementation</h3> 
-<p>The Dynamic transformation follows the following steps to transform a function <code>F</code>:</p></div></div></section>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article><ol>
+<p>The Dynamic transformation follows the following steps to transform a function <code>F</code>:</p>
    <li> Convert <code>F</code> to jitted code, identially to the 
         <a href="../../../transformPage/docs/jitter/index.html#usage">Jit</a>
         transformation;</li>
    <li> Construct a CFG from the jitted code;</li>
    <li> Transform the CFG, making certain instructions into their own blocks which
         will not be encoded:
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article><ol>
            <li> make every branch instruction a separate basic block;
            <li> make every instruction that references in-code data blocks a separate basic block;
            <li> add a level of indirection for indirect branches.
-</ol>
-</div></div></div></section>
    </li>
    <li> Add any necessary cipher functions to the executable;
    </li>
@@ -470,13 +454,11 @@ BLOCK 32 byte  24 127 82 142 1 193 218 46 10 34 19 201 130 55 248 122 67 145 230
    </li>
    <li> Simplify jumps and turn the CFG back into C source.
    </li>
-</ol>
-</div></div></div></section>
 
 <a class="anchor" id="example">&nbsp;</a>
 <br>
 <h3 align=center>Example</h3> 
-<p>This function:</p></div></div></section>
+<p>This function:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo4() {
   if (g) {
@@ -485,24 +467,24 @@ BLOCK 32 byte  24 127 82 142 1 193 218 46 10 34 19 201 130 55 248 122 67 145 230
 }
 </code></pre>
 </center>
-<p>turns into this CFG:</p></div></div></section>
+<p>turns into this CFG:</p>
 <center><img width="400px" src="tigress3-images/OriginalCFG.png"></center>
 
 <p>We then find points where blocks can be encoded and decoded, and
 insert <em>annotations</em> (left arrows for encode, right arrows
-for decode) into the CFG:</p></div></div></section>
+for decode) into the CFG:</p>
    <center><img width="400px" src="tigress3-images/CFGAfterInsertingAnnotations.png"></center>
 <p> In this trivial CFG, the decoders/encoders are inserted at the beginning
 and end of the function but, in general, they are inserted randomly, subject
 to the constraint that when control reaches a block it should be in cleartext,
-and when the function returns every block should be encoded.</p></div></div></section>
+and when the function returns every block should be encoded.</p>
 
 <p>We next translate these annotations into the actual decoders/encoders
-(here, calls to the xtea decipher/encipher functions):</p></div></div></section>
+(here, calls to the xtea decipher/encipher functions):</p>
    <center><img width="400px" src="tigress3-images/CFGAfterTranslatingAnnotations.png"></center>
 
 <p>Finally, we replace cleartext code blocks with the corresponding 
-encoded blocks:</p></div></div></section>
+encoded blocks:</p>
    <center><img width="400px" src="tigress3-images/CFGReplaceWithCompiledBlock.png"></center>
 
 
@@ -512,9 +494,9 @@ encoded blocks:</p></div></div></section>
 <p>The Dynamic transformation is built on the Jittransformation and
 therefore the Jit's usage applies to the Dynamic transformation as
 well. In particular, you have to add the appropriate directives to the
-top of your C source file to include the jitter.</p></div></div></section>
+top of your C source file to include the jitter.</p>
 
-<p>A typical invokation of Tigress would look like this:</p></div></div></section>
+<p>A typical invokation of Tigress would look like this:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
    --Transform=JitDynamic \
@@ -529,35 +511,28 @@ top of your C source file to include the jitter.</p></div></div></section>
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<p>The issues for the Jit transformation apply to the Dynamic transformation as well.</p></div></div></section>
+<p>The issues for the Jit transformation apply to the Dynamic transformation as well.</p>
 
 <p> Recursion is an issue for dynamic obfuscation. In general, whenever you call a 
 function it has to be in its fully encoded form. This presents a problem if a function
 calls itself (directly or through a recursive call chain) from somewhere in the middle
 where some blocks are encoded and some are in cleartext. For simple recursive procedures
-we detect this and</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+we detect this and</p>
 <ul>
    <li> blocks that contain (direct or indirect) recursive calls will not be encoded; </li>
    <li> encoders/decoders are placed such that recursive calls won't leave any blocks in cleartext.</li>
-</ul>
-</div></div></div></section>
 <p>In certain situations we won't detect the recursion and this will lead to bad code being
-generated:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+generated:</p>
 <ul>
    <li> if a function is part of a recursive callcycle where one of the
         calls is through a function pointer; </li>
    <li> if your program contains multiple mutually recursive functions and
         you try to obfuscate more than one of them.  </li>
-</ul>
-</div></div></div></section>
 <p>The good news is that an obfuscated program that violates these rules will probably crash 
-quickly since the resulting code will try to execute an encoded block.</p></div></div></section>
+quickly since the resulting code will try to execute an encoded block.</p>
 
 <p>Performance of Tigress itself can be a problem. The issue is finding the positions 
-in the control flow graph where we can insert codecs. There are two problems:</p></div></div></section>
-<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+in the control flow graph where we can insert codecs. There are two problems:</p>
 <ul>
    <li> We generate a large number of path queries on the CFG. 
         Try <code>--Verbosity=5</code> to see what's happening, 
@@ -566,8 +541,6 @@ in the control flow graph where we can insert codecs. There are two problems:</p
    <li> Avoid the virtualize transformation with a direct threading dispatch, since
         this results in large graphs with many cliques (each instruction handler can 
         jump to every other instruction handler...) and the path queries become very slow. </li>
-</ul>
-</div></div></div></section>
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
