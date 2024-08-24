@@ -72,19 +72,19 @@
 
 <center><img width="500px" src="tigress3-images/encodeBranches-front-page.png"></center>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The goal of these transformations is to make it harder for 
+<section class="header9 cid-c4220" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The goal of these transformations is to make it harder for 
 automatic analysis tools (such as disassemblers) to determine
 the target of branches.</p></div></div></section>
 
 <br>
 <h3 align=center>Branch Functions</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This transformation implements a simplistic version of Linn and Debray's 
+<section class="header9 cid-c4221" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This transformation implements a simplistic version of Linn and Debray's 
 branch functions. We doen't use perfect hash tables, as suggested
 in Linn and Debray's paper, since this is hard to do as a
 source-to-source transformation. Rather, we simply pass the offset to
 jump to as an argument to the branch function.</p></div></div></section>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The generated code looks like this, where the call to the branch function <code>bf</code>
+<section class="header9 cid-c4222" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The generated code looks like this, where the call to the branch function <code>bf</code>
 actually results in a direct jump to <code>lab2</code>:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void bf(unsigned long offset) {
@@ -101,17 +101,17 @@ int main() {
 </code></pre>
 </center>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">By default, a function is flattened prior to direct jumps
+<section class="header9 cid-c4223" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">By default, a function is flattened prior to direct jumps
 being replaced by calls to a branch function. This creates more direct 
 jumps and hence more opportunities to apply the branch function 
 transformation. Turn this off with <code>--BranchFunsFlatten=false</code>. </p></div></div></section>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Before branches can be replaced by calls to a branch
+<section class="header9 cid-c4224" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Before branches can be replaced by calls to a branch
 function, at least one such function needs to be constructed,
 using the <code>--Transform=InitBranchFuns</code> transformation.
 </p></div></div></section>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The branch function is not obfuscated and hence trivial to find. 
+<section class="header9 cid-c4225" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The branch function is not obfuscated and hence trivial to find. 
 It's therefore a good idea to merge it with other functions in the program.</p></div></div></section>
 
 <center>
@@ -159,7 +159,7 @@ It's therefore a good idea to merge it with other functions in the program.</p><
 
 <br>
 <h3 align=center>X86 Branch Obfuscations</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We implement two standard branch obfuscations used by many
+<section class="header9 cid-c4226" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We implement two standard branch obfuscations used by many
 packers:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      push target
@@ -169,7 +169,7 @@ lab:
       ret
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">and</p></div></div></section>
+<section class="header9 cid-c4227" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">and</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      push target
       ret
@@ -178,14 +178,14 @@ lab:
 
 <br>
 <h3 align=center>NOP sleds</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>--AntiBranchAnalysisKinds=goto2nopSled</code> switch turns this code</p></div></div></section>
+<section class="header9 cid-c4228" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>--AntiBranchAnalysisKinds=goto2nopSled</code> switch turns this code</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      goto L
       ...
    L:
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">into this code</p></div></div></section>
+<section class="header9 cid-c4229" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">into this code</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      goto *(R+<em>expression</em>)
       ...
@@ -197,7 +197,7 @@ lab:
     L:
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The expression is opaque such that the branch falls somewhere within the
+<section class="header9 cid-c4230" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The expression is opaque such that the branch falls somewhere within the
 nop sled. The intention is to combine this transformation with input-dependent opaque
 predicates so that the actual jump address will be random and input
 dependent:</p></div></div></section>
@@ -210,7 +210,7 @@ dependent:</p></div></div></section>
             --AntiBranchAnalysisOpaqueStructs=Input 
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The current nop-sled is trivial, consisting of random lists of 
+<section class="header9 cid-c4231" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The current nop-sled is trivial, consisting of random lists of 
 x86 bytes that have no effect:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   cmc
@@ -290,7 +290,7 @@ x86 bytes that have no effect:</p></div></div></section>
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This transformation has many issues, and should only be used with great care:</p></div></div></section>
+<section class="header9 cid-c4232" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This transformation has many issues, and should only be used with great care:</p></div></div></section>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
@@ -300,8 +300,14 @@ x86 bytes that have no effect:</p></div></div></section>
         in helping to port this to other platforms, let me know. </li>
    <li> It appears as <code>goto2push</code> and <code>goto2call</code> will often cause
        <code>clang</code> to generate the wrong code. 
+<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container">   <div class="media-container-row">      <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article>            <ol>
           <li> <code>gcc 4.6</code> appears to do the right thing. 
           <li> <code>gcc 4.8</code> appears to occasionally hang when compiling our generated code.
+            </ol>
+        </div>
+    </div>
+</div>
+</section>
       The issue is that the generated inline assembly code
       contains jumps. Newer versions of <code>gcc</code> have an
       <a href="http://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html#Extended%20asm%20with%20goto">
@@ -326,7 +332,7 @@ x86 bytes that have no effect:</p></div></div></section>
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The Branch Function transformation implements a simplistic version of Linn and Debray's 
+<section class="header9 cid-c4233" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The Branch Function transformation implements a simplistic version of Linn and Debray's 
 <a href="https://www.cs.arizona.edu/~debray/Publications/disasm-resist.pdf">
 Obfuscation of Executable Code to Improve Resistance to Static
 Disassembly</a>, Linn and Debray's algorithm replaces
@@ -334,13 +340,13 @@ direct jumps with calls to a special <em>branch function</em> which
 sets the return address to the target of the original branch, and then
 returns.</p></div></div></section>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">There are many attacks published on branch functions, including
+<section class="header9 cid-c4234" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">There are many attacks published on branch functions, including
 <a href="https://www.usenix.org/legacy/publications/library/proceedings/sec04/tech/full_papers/kruegel/kruegel_html/disassemble.html">
 Static Disassembly of Obfuscated Binaries</a> by Christopher Kruegel, William Robertson, Fredrik Valeur and Giovanni Vigna,
 and <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.302.7805">Deobfuscation: Reverse engineering obfuscated code</a>
 by Sharath Udupah, Saumya Debray, and Matias Madou.</p></div></div></section>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Kevin A. Roundy and Barton P. Miller's survey paper
+<section class="header9 cid-c4235" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Kevin A. Roundy and Barton P. Miller's survey paper
 <a href="http://dl.acm.org/citation.cfm?id=2522972">
 Binary-code obfuscations in prevalent packer tools</a> 
 is a good source of information on techniques used

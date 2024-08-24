@@ -72,24 +72,30 @@
 
 <center><img width="500px" src="tigress3-images/antiTaintAnalysis-front-page.png"></center>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The goal of this transformation is to disrupt analysis tools that
+<section class="header9 cid-c8694" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The goal of this transformation is to disrupt analysis tools that
 make use of dynamic taint analysis. </p></div></div></section>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We use two basic ways to copy a variable using control-, rather than
+<section class="header9 cid-c8695" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We use two basic ways to copy a variable using control-, rather than
 data-flow:</p></div></div></section>
+<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container">   <div class="media-container-row">      <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article>            <ol>
       <li> counting up to the value of the variable, and </li>
       <li> copying it bit by bit, tested in an if-statement. </li>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This can be done in a simple loop, an unrolled loop, or by throwing
+            </ol>
+        </div>
+    </div>
+</div>
+</section>
+<section class="header9 cid-c8696" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This can be done in a simple loop, an unrolled loop, or by throwing
 exceptions caught in a signal handler. This leads to a total of
 five different copy methods.</p></div></div></section>
 
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you want to copy using signals you must first generate the signal handlers
+<section class="header9 cid-c8697" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you want to copy using signals you must first generate the signal handlers
 using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p></div></div></section>
 
 <center>
@@ -152,7 +158,7 @@ using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.</p
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The code to copy <code>argc</code> using bit-by-bit copy and signals 
+<section class="header9 cid-c8698" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The code to copy <code>argc</code> using bit-by-bit copy and signals 
 would look something like this:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  argc_origPtr13 = (unsigned char *)(& argc);
@@ -176,7 +182,7 @@ would look something like this:</p></div></div></section>
   }
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">with this signal handler and these global variables:</p></div></div></section>
+<section class="header9 cid-c8699" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">with this signal handler and these global variables:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char TempVar;
 int BitVar;
@@ -189,17 +195,23 @@ void handler(int sig ) {
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Currently, we can only un-taint a few variables:</p></div></div></section>
+<section class="header9 cid-c8700" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Currently, we can only un-taint a few variables:</p></div></div></section>
+<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container">   <div class="media-container-row">      <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article>            <ol>
       <li> <code>argc</code> and <code>argv</code> in <code>main</code>, </li>
       <li> the output values of a few system and library calls: <code>getpid</code> and <code>scanf</code>, </li>
       <li> the virtual PC in a virtualized function (using the <code>--VirtualizeImplicitFlowVPC</code>
            option). </li>
       <li> The function handler to a jitted function (using the <code>--JitImplicitFlow</code> option). </li>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We will add more as requested!</p></div></div></section>
+            </ol>
+        </div>
+    </div>
+</div>
+</section>
+<section class="header9 cid-c8701" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We will add more as requested!</p></div></div></section>
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The implementation is based on ideas from
+<section class="header9 cid-c8702" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The implementation is based on ideas from
 <a href="http://www.isg.rhul.ac.uk/sullivan/pubs/tr/ata07.pdf">
    Anti-Taint-Analysis: Practical Evasion Techniques Against Information Flow Based Malware Defense
 </a> by Lorenzo Cavallaro, Prateek Saxena, and R. Sekar and

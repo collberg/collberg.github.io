@@ -73,7 +73,7 @@
 <center><img width="500px" src="tigress3-images/leak-front-page.png"></center>
 
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Transform a function such that it leaks a secret, in particular (part of) the
+<section class="header9 cid-c4220" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Transform a function such that it leaks a secret, in particular (part of) the
 code of a secret function. This can be useful to simulate a misbehaving 
 obfuscator. Leaking can be static (simply insert a variable that holds the
 encrypted source code of the secret function) or dynamic (only leak if
@@ -133,7 +133,7 @@ a certain formal parameter has a certain value).</p></div></div></section>
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>static</code> leaker simply inserts the encrypted source
+<section class="header9 cid-c4221" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>static</code> leaker simply inserts the encrypted source
 code of the secret function as a string. For example, this command</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
@@ -143,7 +143,7 @@ code of the secret function as a string. For example, this command</p></div></di
       --LeakSecretFunction=main 
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">produces this code</p></div></div></section>
+<section class="header9 cid-c4222" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">produces this code</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">char *leak_global_enc  =    0;
 
@@ -157,7 +157,7 @@ int foo(int x) {
 </code></pre>
 </center>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>dynamic</code> leaker will leak the entire
+<section class="header9 cid-c4223" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>dynamic</code> leaker will leak the entire
 (encrypted) source code of the secret function, but only when a
 particular formal parameter has a particular value. For example,
 this command</p></div></div></section>
@@ -171,7 +171,7 @@ this command</p></div></div></section>
        --LeakSecretFunction=main 
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">will transform function <code>foo</code> such that when formal parameter <code>x!=42</code> 
+<section class="header9 cid-c4224" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">will transform function <code>foo</code> such that when formal parameter <code>x!=42</code> 
 the function behaves normally, but when <code>x==42</code>, it will leak the source of
 main <code>main</code>. Note that for this transformation, the signature of <code>foo</code>
 changes:</p></div></div></section>
@@ -206,7 +206,7 @@ struct result_object foo(int x) {
 </code></pre>
 </center>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>dynamic_byte</code> leaker will leak one byte at a time of the 
+<section class="header9 cid-c4225" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>dynamic_byte</code> leaker will leak one byte at a time of the 
 (encrypted) secret function. The byte leaked depends on the value
 of the selected formal parameter. For example, this command</p></div></div></section>
 <center>
@@ -219,7 +219,7 @@ of the selected formal parameter. For example, this command</p></div></div></sec
       --LeakSecretFunction=main 
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">will transform function <code>foo</code> such that when formal parameter <code>x<=42</code> 
+<section class="header9 cid-c4226" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">will transform function <code>foo</code> such that when formal parameter <code>x<=42</code> 
 the function behaves normally, but when <code>x>42</code>, it will leak byte <code>x-42</code> 
 of the encryption of <code>main</code>:</p></div></div></section>
 <center>

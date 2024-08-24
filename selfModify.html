@@ -72,7 +72,7 @@
 
 <center><img width="500px" src="tigress3-images/selfModify-front-page.png"></center>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The goal of these transformations is to make functions self-modifying. Here's how Tigress is invoked:
+<section class="header9 cid-c4220" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The goal of these transformations is to make functions self-modifying. Here's how Tigress is invoked:
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> tigress  --Environment=x86_64:Darwin:Clang:5.1 \
@@ -90,7 +90,7 @@
 </code></pre>
 </center>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Note that we need to compile the generated code in such a way that the text segment pages are writable
+<section class="header9 cid-c4221" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Note that we need to compile the generated code in such a way that the text segment pages are writable
 (See <a href="https://stackoverflow.com/questions/27581279/make-text-segment-writable-elf">here</a>
 for alternatives and <a href="https://stackoverflow.com/questions/60497896/self-modifying-code-on-darwin-10-15-resulting-in-malformed-mach-o-image">here</a>
 for issues with newer versions of Darwin):</p></div></div></section>
@@ -105,7 +105,7 @@ for issues with newer versions of Darwin):</p></div></div></section>
 
 <br>
 <h3 align=center>Binary Arithmetic Expressions and Comparisons</h3> 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The transformation inserts a binary code template at the top of the function. There's
+<section class="header9 cid-c4222" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The transformation inserts a binary code template at the top of the function. There's
 one template for each type (int/long) and one for arithmetic, one for comparisons, and
 one for branches. They look roughly like this:</p></div></div></section>
 <center>
@@ -139,7 +139,7 @@ one for branches. They look roughly like this:</p></div></div></section>
   Lab_2: 
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Then, for each binary operation in the remainder of the function, the following code
+<section class="header9 cid-c4223" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Then, for each binary operation in the remainder of the function, the following code
 is inserted:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    A = i;
@@ -157,7 +157,7 @@ is inserted:</p></div></div></section>
     Lab_4: 
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">At runtime, this makes the following changes to the executable code:</p></div></div></section>
+<section class="header9 cid-c4224" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">At runtime, this makes the following changes to the executable code:</p></div></div></section>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
@@ -174,7 +174,7 @@ is inserted:</p></div></div></section>
 
 <br>
 <h3 align=center>Virtualization/Flattening + Self-Modification</h3> 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This transformation is particularly useful after transformations that
+<section class="header9 cid-c4225" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This transformation is particularly useful after transformations that
 introduce indirect branches, such as virtualization and flattening
 with a direct or indirect dispatch. Below is an example:</p></div></div></section>
 <center>
@@ -201,7 +201,7 @@ with a direct or indirect dispatch. Below is an example:</p></div></div></sectio
 }
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here, each indirect branch turns into the following code, where the byte sequence
+<section class="header9 cid-c4226" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here, each indirect branch turns into the following code, where the byte sequence
 corresponds to the X86 8-byte direct jump:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addr = (unsigned long *)((unsigned long )(&& Lab) + 6);
@@ -209,19 +209,19 @@ corresponds to the X86 8-byte direct jump:</p></div></div></section>
   Lab: asm volatile(".byte 0xff, 0x25, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00":);
 </code></pre>
 </center>
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This is interesting, since some de-virtualization transformations look for indirect
+<section class="header9 cid-c4227" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This is interesting, since some de-virtualization transformations look for indirect
 branches, and these are now gone from the code.</p></div></div></section>
 
 
 <br>
 <h3 align=center>Encoding style</h3> 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">For this transformation we generate copious amounts of inline assembly code. Different compilers
+<section class="header9 cid-c4228" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">For this transformation we generate copious amounts of inline assembly code. Different compilers
 support various forms of inline assembly. Clang didn't support <em>asm goto</em> until recent versions,
 for example, and MSVC doesn't support any of the gcc extensions we rely on. Furthermore, the actual 
 syntax and semantics the compilers implement can vary. For example, Clang accepts <tt>asm volatile goto</tt>
 but not <tt>asm goto volatile</tt> (gcc accepts either). </p></div></div></section>
 
-<section class="header9 cid-umogY4dS56" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Tigress supports a few different "styles" of inline assembly to generate for this transformation. 
+<section class="header9 cid-c4229" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Tigress supports a few different "styles" of inline assembly to generate for this transformation. 
 We try to pick the right style based on your plaform (remember to set the <tt>--Environment=</tt> option
 correctly!!!), but you can use the <tt>--SelfModifyStyle</tt> option yourself if your compiler misbehaves and
 want to experiment. </p></div></div></section>
