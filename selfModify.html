@@ -24,7 +24,23 @@
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
   
-  
+ <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
   
 </head>
 <body>
@@ -72,7 +88,7 @@
 
 <center><img width="500px" src="tigress3-images/selfModify-front-page.png"></center>
 
-<section class="header9 cid-c1900" id="header9-dm">
+<section class="header9 cid-c5592" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -94,7 +110,7 @@ The goal of these transformations is to make functions self-modifying. Here's ho
 </code></pre>
 </center>
 
-<section class="header9 cid-c1901" id="header9-dm">
+<section class="header9 cid-c5593" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -117,7 +133,7 @@ for issues with newer versions of Darwin):
 
 <br>
 <h3 align=center>Binary Arithmetic Expressions and Comparisons</h3> 
-<section class="header9 cid-c1902" id="header9-dm">
+<section class="header9 cid-c5594" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -159,7 +175,7 @@ one for branches. They look roughly like this:
   Lab_2: 
 </code></pre>
 </center>
-<section class="header9 cid-c1903" id="header9-dm">
+<section class="header9 cid-c5595" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -185,7 +201,7 @@ is inserted:
     Lab_4: 
 </code></pre>
 </center>
-<section class="header9 cid-c1904" id="header9-dm">
+<section class="header9 cid-c5596" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -206,7 +222,7 @@ At runtime, this makes the following changes to the executable code:</p>
 
 <br>
 <h3 align=center>Virtualization/Flattening + Self-Modification</h3> 
-<section class="header9 cid-c1905" id="header9-dm">
+<section class="header9 cid-c5597" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -241,7 +257,7 @@ with a direct or indirect dispatch. Below is an example:
 }
 </code></pre>
 </center>
-<section class="header9 cid-c1906" id="header9-dm">
+<section class="header9 cid-c5598" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -257,7 +273,7 @@ corresponds to the X86 8-byte direct jump:
   Lab: asm volatile(".byte 0xff, 0x25, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00":);
 </code></pre>
 </center>
-<section class="header9 cid-c1907" id="header9-dm">
+<section class="header9 cid-c5599" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -271,7 +287,7 @@ branches, and these are now gone from the code.
 
 <br>
 <h3 align=center>Encoding style</h3> 
-<section class="header9 cid-c1908" id="header9-dm">
+<section class="header9 cid-c5600" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -285,7 +301,7 @@ but not <tt>asm goto volatile</tt> (gcc accepts either).
    </div>
 </section>
 
-<section class="header9 cid-c1909" id="header9-dm">
+<section class="header9 cid-c5601" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">

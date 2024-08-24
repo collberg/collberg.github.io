@@ -24,7 +24,23 @@
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
   
-  
+ <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
   
 </head>
 <body>
@@ -72,7 +88,7 @@
 
 <center><img width="500px" src="tigress3-images/encodeBranches-front-page.png"></center>
 
-<section class="header9 cid-c1900" id="header9-dm">
+<section class="header9 cid-c3623" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -86,7 +102,7 @@ the target of branches.
 
 <br>
 <h3 align=center>Branch Functions</h3>
-<section class="header9 cid-c1901" id="header9-dm">
+<section class="header9 cid-c3624" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -100,7 +116,7 @@ jump to as an argument to the branch function.
    </div>
 </section>
 
-<section class="header9 cid-c1902" id="header9-dm">
+<section class="header9 cid-c3625" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -125,7 +141,7 @@ int main() {
 </code></pre>
 </center>
 
-<section class="header9 cid-c1903" id="header9-dm">
+<section class="header9 cid-c3626" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -138,7 +154,7 @@ transformation. Turn this off with <code>--BranchFunsFlatten=false</code>.
    </div>
 </section>
 
-<section class="header9 cid-c1904" id="header9-dm">
+<section class="header9 cid-c3627" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -151,7 +167,7 @@ using the <code>--Transform=InitBranchFuns</code> transformation.
    </div>
 </section>
 
-<section class="header9 cid-c1905" id="header9-dm">
+<section class="header9 cid-c3628" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -207,7 +223,7 @@ It's therefore a good idea to merge it with other functions in the program.
 
 <br>
 <h3 align=center>X86 Branch Obfuscations</h3>
-<section class="header9 cid-c1906" id="header9-dm">
+<section class="header9 cid-c3629" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -225,7 +241,7 @@ lab:
       ret
 </code></pre>
 </center>
-<section class="header9 cid-c1907" id="header9-dm">
+<section class="header9 cid-c3630" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -238,7 +254,7 @@ and</p>
 
 <br>
 <h3 align=center>NOP sleds</h3>
-<section class="header9 cid-c1908" id="header9-dm">
+<section class="header9 cid-c3631" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -249,7 +265,7 @@ The <code>--AntiBranchAnalysisKinds=goto2nopSled</code> switch turns this code</
    L:
 </code></pre>
 </center>
-<section class="header9 cid-c1909" id="header9-dm">
+<section class="header9 cid-c3632" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -265,7 +281,7 @@ into this code</p>
     L:
 </code></pre>
 </center>
-<section class="header9 cid-c1910" id="header9-dm">
+<section class="header9 cid-c3633" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -286,7 +302,7 @@ dependent:
             --AntiBranchAnalysisOpaqueStructs=Input 
 </code></pre>
 </center>
-<section class="header9 cid-c1911" id="header9-dm">
+<section class="header9 cid-c3634" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -374,7 +390,7 @@ x86 bytes that have no effect:
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="header9 cid-c1912" id="header9-dm">
+<section class="header9 cid-c3635" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -420,7 +436,7 @@ This transformation has many issues, and should only be used with great care:</p
 <a class="anchor" id="references">&nbsp;</a>
 <br>
 <h3 align=center>References</h3>
-<section class="header9 cid-c1913" id="header9-dm">
+<section class="header9 cid-c3636" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -436,7 +452,7 @@ returns.
    </div>
 </section>
 
-<section class="header9 cid-c1914" id="header9-dm">
+<section class="header9 cid-c3637" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -450,7 +466,7 @@ by Sharath Udupah, Saumya Debray, and Matias Madou.
    </div>
 </section>
 
-<section class="header9 cid-c1915" id="header9-dm">
+<section class="header9 cid-c3638" id="header9-dm">
    <div class="container">
       <div class="media-container-column mbr-white">
          <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
