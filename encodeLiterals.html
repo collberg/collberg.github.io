@@ -72,7 +72,7 @@
 
 <center><img width="500px" src="tigress3-images/encodeLiterals-front-page.png"></center>
 
-<section class="header9 cid-c4220" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Obfuscate integer and/or string literals (such as <tt>42</tt> or <tt>"42"</tt>). 
+<section class="header9 cid-c6164" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Obfuscate integer and/or string literals (such as <tt>42</tt> or <tt>"42"</tt>). 
 Literal integers can be replaced with opaque expressions, which
 requires that the InitOpaque transformation has been previously issued. Literal strings can be
 replaced with a function that generates them at runtime.</p></div></div></section>
@@ -135,7 +135,7 @@ replaced with a function that generates them at runtime.</p></div></div></sectio
 
 <br>
 <h3 align=center>Regions</h3>
-<section class="header9 cid-c4221" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can apply this transformation to a part of a function. First, include <tt>tigress.h</tt> as usual, then enclose the regions you 
+<section class="header9 cid-c6165" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can apply this transformation to a part of a function. First, include <tt>tigress.h</tt> as usual, then enclose the regions you 
 want to transform using the <tt>ENCODE_INTEGER_BEGIN</tt> and <tt>ENCODE_INTEGER_END</tt> macros: </p></div></div></section>
 
 <center>
@@ -163,7 +163,7 @@ void foo () {
 </code></pre>
 </center>
 
-<section class="header9 cid-c4222" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The arguments to the macros (<tt>obfuscateThis</tt> and <tt>obfuscateThat</tt>) are tags that you specify in the  <tt>-Regions=...</tt> option
+<section class="header9 cid-c6166" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The arguments to the macros (<tt>obfuscateThis</tt> and <tt>obfuscateThat</tt>) are tags that you specify in the  <tt>-Regions=...</tt> option
 in your tigress command:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... \
@@ -178,7 +178,7 @@ in your tigress command:</p></div></div></section>
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="header9 cid-c4223" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="header9 cid-c6167" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Note that the generated string encoding function is trivial, by design.
 To be made less conspicuous, it should itself be transformed, for example using the
 <a href="virtualize.html">Virtualize</a>

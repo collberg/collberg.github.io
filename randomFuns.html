@@ -72,16 +72,16 @@
 
 <center><img width="500px" src="tigress3-images/randomFuns-front-page.png"></center>
 
-<section class="header9 cid-c4220" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">One of the uses of Tigress is as an educational tool. The <code>--Transform=RandomFuns</code>
+<section class="header9 cid-c9360" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">One of the uses of Tigress is as an educational tool. The <code>--Transform=RandomFuns</code>
 option will generate a random function that can subsequently be transformed using any
 combination of Tigress obfuscations, and then given to students as a cracking target.</p></div></div></section>
 
-<section class="header9 cid-c4221" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can generate a program for the students to reverse engineer:</p></div></div></section>
+<section class="header9 cid-c9361" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can generate a program for the students to reverse engineer:</p>
    <center><img width="400px" src="tigress3-images/education-deobfuscate-3.png"></center>
-<section class="header9 cid-c4222" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">or you can generate a program for them to crack:</p></div></div></section>
+<section class="header9 cid-c9362" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">or you can generate a program for them to crack:</p>
    <center><img width="400px" src="tigress3-images/education-crack-3.png"></center>
 
-<section class="header9 cid-c4223" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="header9 cid-c9363" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Depending on the sophistication of your students, you can vary the length of the transformation
 sequence, the difficulty of the transformations, the options to the transformations, 
 the complexity of the generated challenge function, and either give them source to untangle
@@ -89,19 +89,19 @@ the complexity of the generated challenge function, and either give them source 
 real-world challenge).
 </p></div></div></section>
 
-<section class="header9 cid-c4224" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We typically give each student 3 programs, of different levels of difficulty,
+<section class="header9 cid-c9364" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We typically give each student 3 programs, of different levels of difficulty,
 to attack. Thanks to the diversity of Tigress-generated programs, each challenge
-is unique, making it harder for students to cheat.</p></div></div></section> 
+is unique, making it harder for students to cheat. </p></div></div></section>
 
 <a class="anchor" id="examples">&nbsp;</a>
 <br>
 <h3 align=center>Examples</h3>
-<section class="header9 cid-c4225" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="header9 cid-c9365" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Below is part of the script we use to generate take-home exams for our students.
 It contains two <em>assets</em>, a password check and an expired time check, 
 and it's the students' job to disable these.
 </p></div></div></section>
-<section class="header9 cid-c4226" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Start by creating this file, <code>empty.c</code>:</p></div></div></section>
+<section class="header9 cid-c9366" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Start by creating this file, <code>empty.c</code>:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
 #include &lt;stdio.h&gt; 
@@ -110,7 +110,7 @@ and it's the students' job to disable these.
 </code></pre>
 </center>
 
-<section class="header9 cid-c4227" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Generate the cleartext challenge program. This is hidden from the students:</p></div></div></section>
+<section class="header9 cid-c9367" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Generate the cleartext challenge program. This is hidden from the students:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 --Environment=x86_64:Darwin:Clang:5.1 \
       --Transform=RandomFuns \
@@ -138,7 +138,7 @@ and it's the students' job to disable these.
 </code></pre>
 </center>
 
-<section class="header9 cid-c4228" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Next, generate an empty program with the same interface as the challenge program
+<section class="header9 cid-c9368" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Next, generate an empty program with the same interface as the challenge program
 for the students to fill out:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 \
@@ -155,7 +155,7 @@ for the students to fill out:</p></div></div></section>
 </code></pre>
 </center>
 
-<section class="header9 cid-c4229" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Finally, obfuscate the challenge program: </p></div></div></section>
+<section class="header9 cid-c9369" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Finally, obfuscate the challenge program: </p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 --FilePrefix=obf \
       --Transform=InitEntropy \
@@ -190,7 +190,7 @@ for the students to fill out:</p></div></div></section>
 <a class="anchor" id="structure">&nbsp;</a>
 <br>
 <h3 align=center>Structure of Random Programs</h3>
-<section class="header9 cid-c4230" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">To fulfill our needs, a random program generator must have certain characteristics:</p></div></div></section>
+<section class="header9 cid-c9370" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">To fulfill our needs, a random program generator must have certain characteristics:</p>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
@@ -219,7 +219,7 @@ for the students to fill out:</p></div></div></section>
     </div>
 </div>
 </section>
-<section class="header9 cid-c4231" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The generated challenge programs all take the following simple form:</p></div></div></section>
+<section class="header9 cid-c9371" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The generated challenge programs all take the following simple form:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include &le;stdio.h&gt; 
 #include &le;stdlib.h&gt;
@@ -250,10 +250,10 @@ int main(int argc, char** argv) {
 } 
 </code></pre>
 </center>
-<section class="header9 cid-c4232" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">That is, a challenge program reads one or more longs from standard in, 
+<section class="header9 cid-c9372" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">That is, a challenge program reads one or more longs from standard in, 
 and produces one or more longs on standard out.</p></div></div></section>
 
-<section class="header9 cid-c4233" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Internally, generated <code>SECRET</code> functions share the same basic structure:
+<section class="header9 cid-c9373" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Internally, generated <code>SECRET</code> functions share the same basic structure:
 an <em>expansion phase</em>, a <em>mixing phase</em>, and a <em>compression phase</em>:</p></div></div></section>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
@@ -274,7 +274,7 @@ an <em>expansion phase</em>, a <em>mixing phase</em>, and a <em>compression phas
     </div>
 </div>
 </section>
-<section class="header9 cid-c4234" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is an example:</p></div></div></section>
+<section class="header9 cid-c9374" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is an example:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void SECRET(unsigned long input[1] , unsigned long output[1] ) { 
   unsigned long state[4] ;
@@ -536,7 +536,7 @@ an <em>expansion phase</em>, a <em>mixing phase</em>, and a <em>compression phas
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Plugin ADTs</h3>
-<section class="header9 cid-c4235" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you set <tt>--RandomFunsPluginADTCount=...</tt>, we will include calls to your own Abstract Data Types (ADTs). 
+<section class="header9 cid-c9375" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you set <tt>--RandomFunsPluginADTCount=...</tt>, we will include calls to your own Abstract Data Types (ADTs). 
 You call Tigress like this: </p></div></div></section>
 
 <center>
@@ -552,7 +552,7 @@ You call Tigress like this: </p></div></div></section>
 </code></pre>
 </center>
 
-<section class="header9 cid-c4236" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">wnere <tt>plugins.c<tt> looks like this:</p></div></div></section>
+<section class="header9 cid-c9376" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">wnere <tt>plugins.c<tt> looks like this:</p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
@@ -592,7 +592,7 @@ Set_ELEMENT Set_GET(Set_TYPE a, Set_ITER n){ ... }
 </code></pre>
 </center>
 
-<section class="header9 cid-c4237" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This will insert random calls to the Set data structure in the generated code.</p></div></div></section>
+<section class="header9 cid-c9377" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This will insert random calls to the Set data structure in the generated code.</p>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>

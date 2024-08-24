@@ -72,7 +72,7 @@
 
 <center><img width="500px" src="tigress3-images/encodeExternal-front-page.png"></center>
 
-<section class="header9 cid-c4220" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The goal of this transformation is to hide calls to external functions, such
+<section class="header9 cid-c6164" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The goal of this transformation is to hide calls to external functions, such
 as system calls or calls to standard library functions. The current implementation 
 is simplistic: we simply replace direct calls with indirect ones, and load the
 address of the functions using <em>dlsym()</em>.</p></div></div></section>
@@ -133,7 +133,7 @@ address of the functions using <em>dlsym()</em>.</p></div></div></section>
 </br>
 
 
-<section class="header9 cid-c4221" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider the following program <code>syscall.c</code> which makes two system calls to <code>getpid</code>
+<section class="header9 cid-c6165" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Consider the following program <code>syscall.c</code> which makes two system calls to <code>getpid</code>
 and <code>gettimeofday</code>:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include&lt;stdio.h&gt;
@@ -153,7 +153,7 @@ int main () {
 </code></pre>
 </center>
 
-<section class="header9 cid-c4222" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We obfuscate using the following script:</p></div></div></section>
+<section class="header9 cid-c6166" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">We obfuscate using the following script:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> tigress -ldl \
         --Environment=x86_64:Darwin:Clang:5.1 \
@@ -173,14 +173,14 @@ int main () {
 > gcc -o syscall_out syscall_out.c -ldl
 </code></pre>
 </center>
-<section class="header9 cid-c4223" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>InitEncodeExternal</code> transformation uses <code>dlsym()</code> to load
+<section class="header9 cid-c6167" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The <code>InitEncodeExternal</code> transformation uses <code>dlsym()</code> to load
 the system calls we want to hide by name, the <code>EncodeLiterals</code> transformation
 hides these names in a function we call <code>STRINGENCODER</code>, the
 <code>Virtualize</code> transformation hides what's going on in the <code>STRINGENCODER</code>
 function, and finally, the <code>EncodeExternal</code> transformation replaces the 
 direct calls to the system calls in <code>main()</code> with indirect ones.</p></div></div></section>
 
-<section class="header9 cid-c4224" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The resulting code will look something like this:</p></div></div></section>
+<section class="header9 cid-c6168" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">The resulting code will look something like this:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void *_externalFunctionPtrArray[2];
 
@@ -218,7 +218,7 @@ int main( ) {
 }
 </code></pre>
 </center>
-<section class="header9 cid-c4225" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Note how this program no longer has any mention of <code>getpid</code>
+<section class="header9 cid-c6169" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Note how this program no longer has any mention of <code>getpid</code>
 and <code>gettimeofday</code>. The transformation is purely static,
 of course; at runtime it is trivial to see that these functions are
 being called.</p></div></div></section>
