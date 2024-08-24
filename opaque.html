@@ -72,14 +72,30 @@
 
 <center><img width="500px" src="tigress3-images/opaque-front-page.png"></center>
 
-<section class="header9 cid-c9360" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Several transformations rely on boolean and integer expressions that have
+<section class="header9 cid-c1900" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Several transformations rely on boolean and integer expressions that have
 a known value, known as <em>opaque predicates and expressions</em>.
 To construct these, data structures with precise invariants are added to
 the code.
-</p></div></div></section>
 
-<section class="header9 cid-c9361" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">At a minimum, you must create one or more opaque invariant data structures:
-</p></div></div></section>
+         </p>
+      </div>
+   </div>
+</section>
+
+<section class="header9 cid-c1901" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+At a minimum, you must create one or more opaque invariant data structures:
+
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -140,10 +156,18 @@ the code.
 </center>
 </br>
 
-<section class="header9 cid-c9362" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">To frustrate analysis, updates that maintain the invariants should
+<section class="header9 cid-c1902" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+To frustrate analysis, updates that maintain the invariants should
    be sprinkled throughout the program. This is done by the <code>--Transform=UpdateOpaque</code>
    option:
-</p></div></div></section>
+
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -185,21 +209,37 @@ the code.
 </center>
 </br>
 
-<section class="header9 cid-c9363" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"> <b>Note:</b> In <code>--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
+<section class="header9 cid-c1903" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+ <b>Note:</b> In <code>--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
      must execute before any use of an opaque expression. Easiest is to set 
      <code>--Transform=InitOpaque --Functions=main</code> but this is best avoided since it
-     is very obvious.</p></div></div></section>
+     is very obvious.
+         </p>
+      </div>
+   </div>
+</section>
 
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="header9 cid-c9364" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Tigress will generate copious numbers of extra local
+<section class="header9 cid-c1904" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Tigress will generate copious numbers of extra local
 variables and statements of the form <code>_*__BARRIER_* = 1</code>,
 <code>_*__BEGIN_* = 1</code>, <code>_*__END_* = 1</code>. They
 will be removed by any competent compiler, or by the
 <code>--Transform=CleanUp --CleanUpKinds=annotations</code> 
 transformation.
-</p></div></div></section>
+
+         </p>
+      </div>
+   </div>
+</section>
 
 <a class="anchor" id="references">&nbsp;</a>
 <br>

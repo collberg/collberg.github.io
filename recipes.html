@@ -70,11 +70,19 @@
 <br><br><br><br>
 
 
-<section class="header9 cid-c4757" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Below are some simple recipes that will make it easy for you to get
+<section class="header9 cid-c9563" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Below are some simple recipes that will make it easy for you to get
 started using Tigress. See them as a starting point for you to explore
 all of Tigress' features, not as recommendations for particular
 situations. Before using any kind of software protection technique
-you must start with a detailed security analysis:</p></div></div></section>
+you must start with a detailed security analysis:
+         </p>
+      </div>
+   </div>
+</section>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
@@ -92,22 +100,42 @@ you must start with a detailed security analysis:</p></div></div></section>
     </div>
 </div>
 </section>
-<section class="header9 cid-c4758" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Only when you have answered these questions,
+<section class="header9 cid-c9564" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Only when you have answered these questions,
 and have determined that obfuscation needs to be an integral part of
 your architecture, can you start putting together Tigress
 scripts. Over time we will add more recipes here. If you have found a
 particular combination of Tigress transformations useful,
 please <a href="https://tigress.wtf/contact.html">let us know</a>, and
-we will add your recipe to the collection!</p></div></div></section>
+we will add your recipe to the collection!
+         </p>
+      </div>
+   </div>
+</section>
 
-<section class="header9 cid-c4759" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">In the examples below we will be using these programs as input: <a href="test.c.txt">test.c</a>
-and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
+<section class="header9 cid-c9565" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+In the examples below we will be using these programs as input: <a href="test.c.txt">test.c</a>
+and  <a href="test-jit.c.txt">test-jit.c</a>.
+         </p>
+      </div>
+   </div>
+</section>
 
 <!-- =============================================================================================== -->
 <br>
 <h3 align=center>Recipe #1: Opaque Predicates, Branch Functions, and Encoded Arithmetic</h3>
 
-<section class="header9 cid-c4760" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is a simple recipe that should have a relatively low performance impact:</p>
+<section class="header9 cid-c9566" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is a simple recipe that should have a relatively low performance impact:</p>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
      --Transform=InitEntropy \
@@ -132,7 +160,11 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test.c --out=output1.c 
 </code></pre>
 </center>
-<section class="header9 cid-c4761" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is the <a href="output1.c.txt">resulting code.</a> There are a few things to note here:</p>
+<section class="header9 cid-c9567" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is the <a href="output1.c.txt">resulting code.</a> There are a few things to note here:</p>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
@@ -167,8 +199,16 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
 <br>
 <h3 align=center>Recipe #2: Virtualization and Self-Modification</h3>
 
-<section class="header9 cid-c4762" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">This transformation shows off a combination of two more powerful transformation, virtualization and
-   self-modifying code, that together is likely to have serious performance impact:</p></div></div></section>
+<section class="header9 cid-c9568" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+This transformation shows off a combination of two more powerful transformation, virtualization and
+   self-modifying code, that together is likely to have serious performance impact:
+         </p>
+      </div>
+   </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:9.0  \
      --Transform=InitEntropy \
@@ -189,7 +229,11 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test.c --out=output2.c 
 </code></pre>
 </center>
-<section class="header9 cid-c4763" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is the <a href="output2.c.txt">resulting code.</a> Here are a few things to note:</p>
+<section class="header9 cid-c9569" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is the <a href="output2.c.txt">resulting code.</a> Here are a few things to note:</p>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
@@ -211,7 +255,11 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
 <br>
 <h3 align=center>Recipe #3: Virtualization and Dynamic Obfuscation</h3>
 
-<section class="header9 cid-c4764" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">In this recipe we first virtualize and then add dynamic obfusction; i.e. the program will
+<section class="header9 cid-c9570" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+In this recipe we first virtualize and then add dynamic obfusction; i.e. the program will
    decode and re-encode itself as it is running. In this particular case we decode/encode 
    using the XTEA cipher:
 <center>
@@ -237,7 +285,11 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test-jit.c --out=output3.c 
 </code></pre>
 </center>
-<section class="header9 cid-c4765" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is the <a href="output3.c.txt">resulting code.</a> Here are a few things to note: </p>
+<section class="header9 cid-c9571" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is the <a href="output3.c.txt">resulting code.</a> Here are a few things to note: </p>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
@@ -260,7 +312,11 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
 <br>
 <h3 align=center>Recipe #4: Merge, Virtualization, and Encode Literals </h3>
 
-<section class="header9 cid-c4766" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">In this recipe we first merge all functions together. This includes <tt>init_tigress</tt> which has important
+<section class="header9 cid-c9572" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+In this recipe we first merge all functions together. This includes <tt>init_tigress</tt> which has important
    secrets in it, in particular the initalization of opaque structures:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=1 --Environment=x86_64:Darwin:Clang:9.0  \
@@ -282,7 +338,11 @@ and  <a href="test-jit.c.txt">test-jit.c</a>.</p></div></div></section>
     test.c --out=output4.c 
 </code></pre>
 </center>
-<section class="header9 cid-c4767" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to note: </p>
+<section class="header9 cid-c9573" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to note: </p>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">

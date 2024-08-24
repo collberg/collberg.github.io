@@ -73,11 +73,19 @@
 
 <center><img width="500px" src="tigress3-images/top-level-front-page.png"></center>
 
-<section class="header9 cid-c6164" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
+<section class="header9 cid-c706" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
 that selects the type of transformation and the <code>--Functions</code> option that
 selects the function(s) to which it should be applied. The Tigress options described here
  apply to <strong>all</strong> transformations. Each transformation additionally has their
-own set of options, all prefixed by the name of the transformation.</p></div></div></section>
+own set of options, all prefixed by the name of the transformation.
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -129,7 +137,11 @@ own set of options, all prefixed by the name of the transformation.</p></div></d
 <a class="anchor" id="targets">&nbsp;</a>
 <br>
 <h3 align=center>Selecting Targets</h3>
-<section class="header9 cid-c6165" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="header9 cid-c707" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
 To avoid name clashes and to allow you to specify the results of a 
 transformation, prefixes can be added to all new identifiers. For
 example, after a <code>Split</code> transformation, you may want to
@@ -139,7 +151,11 @@ for this. Also, if you intend to run Tigress multiple times on the same
 file (rather than applying all transformations in one run), you need
 to make sure that new names don't clash with old ones. Use 
 <code>--FilePrefix</code> for this.
-</p></div></div></section>
+
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -255,12 +271,24 @@ to make sure that new names don't clash with old ones. Use
 <a class="anchor" id="arguments">&nbsp;</a>
 <br>
 <h3 align=center>Argument Specifications</h3>
-<section class="header9 cid-c6166" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="header9 cid-c708" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
 For options that take an integer an argument we provide an <em>INTSPEC</em> 
 notation that allows randomized selection of the value. There's a similar
-<em>BOOLSPEC</em> notation for booleans.</p></div></div></section>
+<em>BOOLSPEC</em> notation for booleans.
+         </p>
+      </div>
+   </div>
+</section>
 
-<section class="header9 cid-c6167" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="header9 cid-c709" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
 All transformations require you to specify the set of functions to
 which they should be applied. <em>IDENTSPEC</em> (identifier
 specifications) allow you to flexibly select all or some of the
@@ -268,7 +296,11 @@ available functions. Some transformations also use identifier
 specifications to specify variables, as
 in <code>--UpdateEntropyVar=*</code> which would select all variables of
 a function.
-</p></div></div></section>
+
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -355,7 +387,11 @@ a function.
 </br>
 
 <br>
-<section class="header9 cid-c6168" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"> Here are some examples:</p>
+<section class="header9 cid-c710" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+ Here are some examples:</p>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
@@ -387,18 +423,34 @@ a function.
     </div>
 </div>
 </section>
-<section class="header9 cid-c6169" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Note that some care needs to be exercised when specifiying
-identifiers, since some renaming can happen during obfuscation.</p></div></div></section>
+<section class="header9 cid-c711" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Note that some care needs to be exercised when specifiying
+identifiers, since some renaming can happen during obfuscation.
+         </p>
+      </div>
+   </div>
+</section>
 
 <!-- =============================================================================================== -->
 
 <a class="anchor" id="regions">&nbsp;</a>
 <br>
 <h3 align=center>Function Regions (<b>From version 3.3</b>) </h3>
-<section class="header9 cid-c6170" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="header9 cid-c712" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
 Some transformations allow you to specify a <em>region</em> of a function to transform. In your 
 source program you use the macro <tt>TIGRESS_REGION(<em>region-name</em>,<em>code</em>)</tt>:
-</p></div></div></section>
+
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
@@ -421,14 +473,22 @@ void fib(int n) {
 </code></pre>
 </center>
 
-<section class="header9 cid-c6171" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Then, in your tigress command, you add <tt>:<em>region-name</em></tt> to the <tt>--Functions</tt> option:</p>
+<section class="header9 cid-c713" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Then, in your tigress command, you add <tt>:<em>region-name</em></tt> to the <tt>--Functions</tt> option:</p>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... --Transform=Virtualize --Functions=fib:region1 ...  
 </code></pre>
 </center>
 
-<section class="header9 cid-c6172" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Caveats:</p>
+<section class="header9 cid-c714" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Caveats:</p>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
@@ -450,12 +510,20 @@ void fib(int n) {
 <a class="anchor" id="regions">&nbsp;</a>
 <br>
 <h3 align=center>Json output (<b>From version 3.3</b>) </h3>
-<section class="header9 cid-c6173" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="header9 cid-c715" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
 Typically, Tigress generates a C file as output, specified by the <tt>--out=<em>filename.c</em></tt> option. 
 If you want to process the output further you can also provide <tt>--outJson=<em>filename.json</em></tt> option
 which will produce the output file as an abstract syntax tree. There is no formal definition of this Json AST
 at this point, but it closely follows the structure of the <a href="http://cil-project.github.io/cil/doc/html/cil/api/Cil.html">CIL AST</a>
-on which it is based. Here's a piece of a function AST: </p></div></div></section>
+on which it is based. Here's a piece of a function AST: 
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">"GFun": {

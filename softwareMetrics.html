@@ -72,10 +72,18 @@
 
 <center><img width="500px" src="tigress3-images/softwareMetrics-front-page.png"></center>
 
-<section class="header9 cid-c9360" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7"> Compute common software complexity metrics. Right now, the Halstead metric
+<section class="header9 cid-c1900" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+ Compute common software complexity metrics. Right now, the Halstead metric
 (see <a href="https://en.wikipedia.org/wiki/Halstead_complexity_measures">here<a/> and
      <a href="https://www.google.se/amp/s/www.geeksforgeeks.org/software-engineering-halsteads-software-metrics/amp">here</a>) 
-and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity metric</a> are available.</p></div></div></section>
+and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity metric</a> are available.
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -120,9 +128,17 @@ and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclo
 
 <br>
 <h3 align=center>Example</h3>
-<section class="header9 cid-c9361" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is an example where we print out the McCabe metric for three functions: the original <tt>fib</tt>,
+<section class="header9 cid-c1901" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is an example where we print out the McCabe metric for three functions: the original <tt>fib</tt>,
 <tt>fib</tt> after flattning, and 
-<tt>fib</tt> after virtualization. Here is the <tt>tigress</tt> command:</p></div></div></section>
+<tt>fib</tt> after virtualization. Here is the <tt>tigress</tt> command:
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
@@ -149,9 +165,17 @@ and McCabe's <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclo
 </code></pre>
 </center>
 
-<section class="header9 cid-c9362" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">And here are the results (the variables are the same as seen 
+<section class="header9 cid-c1902" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+And here are the results (the variables are the same as seen 
    <a href="https://en.wikipedia.org/wiki/Halstead_complexity_measures">here<a/> and
-   <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">here</a>):</p></div></div></section>
+   <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">here</a>):
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> cat original.txt 
@@ -172,12 +196,24 @@ McCabe.fib2.value = 19
 </code></pre>
 </center>
 
-<section class="header9 cid-c9363" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">These metrics can be used to see how much change each transformation incurs.</p>
+<section class="header9 cid-c1903" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+These metrics can be used to see how much change each transformation incurs.</p>
 
 <br>
 <h3 align=center>Example in Json (<b>From version 3.3</b>) </h3>
-<section class="header9 cid-c9364" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">You can also generate the output into a Json file which is useful if you want to process them
-with some other program:</p></div></div></section>
+<section class="header9 cid-c1904" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+You can also generate the output into a Json file which is useful if you want to process them
+with some other program:
+         </p>
+      </div>
+   </div>
+</section>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
@@ -207,8 +243,16 @@ with some other program:</p></div></div></section>
 <a class="anchor" id="issues">&nbsp;</a>
 <br>
 <h3 align=center>Issues</h3>
-<section class="header9 cid-c9365" id="header9-dm"><div class="container"> <div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Don't expect the values computed by this transform to be identical to that produced by other tools. It only makes
-sense to compare the metrics computed by Tigress with other metrics computed by Tigress:</p></div></div></section>
+<section class="header9 cid-c1905" id="header9-dm">
+   <div class="container">
+      <div class="media-container-column mbr-white">
+         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Don't expect the values computed by this transform to be identical to that produced by other tools. It only makes
+sense to compare the metrics computed by Tigress with other metrics computed by Tigress:
+         </p>
+      </div>
+   </div>
+</section>
 <section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
 <div class="container">
     <div class="media-container-row">
