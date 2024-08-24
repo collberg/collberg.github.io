@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.10, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.10, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Site Builder Description">
+  
+  <title>Entropy</title>
+  <link rel="preload" as="style" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+<link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+ 
+<style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
+</head>
+<body>
+
+  <section class="menu cid-rCFaEeaKON" once="menu" id="menu1-v">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/tigress-white-copy-154x122.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="index.html">
+                        
+                        Home</a>
+                </li><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="introduction.html">
+                        
+                        Introduction</a>
+</li><li class="nav-item"><a class="nav-link link text-white display-4" href="usage.html">Usage</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="transformations.html">Transformations</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="recipes.html">Recipes</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="publications.html">Publications</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="FAQ.html">FAQ</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="consulting.html">Training</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html">Contact</a></li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<br><br><br><br>
+<center><h1>Generate Entropy</h1></center>
+
+<center><img width="500px" src="tigress3-images/entropy-front-page.png"></center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2541" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+Some transformations need a source of randomness during execution. For this
+reason, we can insert statements that collect random values, preferably from
+variables that are input dependent.
+</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2542" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+We support two basic ways to collect entropy. You can insert statements within your program
+that collect values from (hopefully) input-dependent variables. Or, you can spin up a background 
+thread that intermittently does so automatically. Regardless, the randomness we collect is of low quality, 
+but good enough for our purposes.
+</p></div></div></section>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2543" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+At a minimum, you should issue the <code>--Transform=InitEntropy</code> transformation,
+since this creates the variables that hold the entropy.
+You should issue as many <code>--Transform=UpdateEntropy</code> as you
+can, making sure you collect entropy from variables that are truly input dependent.
+</p></div></div></section>
+
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>InitEntropy</tt></td>
+<td> Add initialization of the entropy variables. </td>
+</tr>
+<tr>
+<td><tt>--InitEntropyKinds</tt></td>
+<td><tt>thread, vars, *</tt></td>
+<td> Comma-separated list of the kinds of entropy generation to add. Default=thread,var.
+<ul>
+   <li> <tt>thread</tt> = Generate a background thread to update the entropy
+   <li> <tt>vars</tt> = Update the entropy from input-dependent variables found in the program
+   <li> <tt>*</tt> = Same as thread,vars
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--InitEntropyThreadName</tt></td>
+<td><tt>string</tt></td>
+<td> The name of the generated background thread Default=entropyThread.</td>
+</tr>
+<tr>
+<td><tt>--InitEntropyThreadSleep</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> How long the background thread will sleep after having updated the entropy, in nanoseconds Default=1000.</td>
+</tr>
+<tr>
+<td><tt>--InitEntropyTrace</tt></td>
+<td><tt>update, use, check</tt></td>
+<td> Trace entropy values as they are generated during execution. This used to be a boolean, but from version 4.0, it can take on multiple values. Default=NONE.
+<ul>
+   <li> <tt>update</tt> = Print the generated structure
+   <li> <tt>use</tt> = Print every generation of an entropy value
+   <li> <tt>check</tt> = Print only if an entropy value is wrong
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--InitEntropyObfuscate</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Apply some light obfuscation on top of the entropy-generating expression. Default=FALSE.</td>
+</tr>
+</table>
+</div>
+
+</center>
+</br>
+
+<br>
+
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>UpdateEntropy</tt></td>
+<td> Add updates to the entropy variables. </td>
+</tr>
+<tr>
+<td><tt>--UpdateEntropyTrace</tt></td>
+<td><tt>update, use, check</tt></td>
+<td> Trace entropy values as they are updated during execution. This used to be a boolean, but from version 4.0, it can take on multiple values. Default=NONE.
+<ul>
+   <li> <tt>update</tt> = Print the generated structure
+   <li> <tt>use</tt> = Print every generation of an entropy value
+   <li> <tt>check</tt> = Print only if an entropy value is wrong
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--UpdateEntropyObfuscate</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Apply some light obfuscation on top of the entropy-generating expression. Default=FALSE.</td>
+</tr>
+<tr>
+<td><tt>--UpdateEntropyKinds</tt></td>
+<td><tt>thread, vars, annotations, *</tt></td>
+<td> Comma-separated list of the kinds of entropy generation to add. Default=thread,var.
+<ul>
+   <li> <tt>thread</tt> = Generate a background thread to update the entropy.
+   <li> <tt>vars</tt> = Update the entropy from input-dependent variables found in the program.
+   <li> <tt>annotations</tt> = Indicate in the source code which variables should be added to the entropy, such as: <tt>ENTROPY_VARIABLE(x)</tt>.
+   <li> <tt>*</tt> = Same as thread,vars
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--UpdateEntropyVars</tt></td>
+<td><tt><em><a href="top-level.html#IDENTSPEC">IDENTSPEC</a></em></tt></td>
+<td> Add to the entropy variables from these variables. Default=*.</td>
+</tr>
+</table>
+</div>
+
+</center>
+</br>
+
+<a class="anchor" id="examples">&nbsp;</a>
+<br>
+<h3 align=center>Examples</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2544" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+The command below initializes the entropy variables in <code>main</code>,
+and then collects randomness from variables <code>x,y,z</code> 
+in function <code>inputData</code>, from variable <code>packet</code>
+in function <code>acceptNetworkPacket</code>, and from all variables 
+in function <code>random</code>. It also spins up a background 
+thread from the <code>tigress_init</code> function. The thread
+function is called <em>ENTROPYTHREAD</em>, and it sleeps for
+1000000 nanoseconds between updates.
+</p></div></div></section>
+
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 --Verbosity=1 --Environment=... \
+    --Transform=InitEntropy \
+       --InitEntropyThreadName=ENTROPYTHREAD \
+       --InitEntropyThreadSleep=1000000\
+       --InitEntropyKinds=vars,thread \
+       --InitEntropyTrace=true \
+    --Transform=UpdateEntropy \
+       --Functions=inputData \
+       --UpdateEntropyKinds=vars \
+       --UpdateEntropyTrace=true \
+       --UpdateEntropyVars=x,y,z \
+    --Transform=UpdateEntropy \
+       --Functions=acceptNetworkPacket \
+       --UpdateEntropyKinds=vars \
+       --UpdateEntropyTrace=true \
+       --UpdateEntropyVars=packet \
+    --Transform=UpdateEntropy \
+       --Functions=random \
+       --UpdateEntropyKinds=vars \
+       --UpdateEntropyTrace=true \
+       --UpdateEntropyVars=p\* \
+    --Transform=UpdateEntropy \
+       --Functions=tigress_init \
+       --UpdateEntropyKinds=thread \
+</code></pre>
+</center>
+
+<a class="anchor" id="annotations">&nbsp;</a>
+<br>
+<h3 align=center>Source code annotations</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2545" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Instead of using <tt>--UpdateEntropyVars</tt> you can use annotations in the source code to directly indicate which 
+variables should contribute to entropy calculation:</p></div></div></section>
+
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
+
+int foo (int x) {
+  ...
+  ENTROPY_VARIABLE(x);
+  float f = x + 10;
+  ENTROPY_VARIABLE(f);
+  ...
+}
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2546" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You should place these annotations in locations where the variable depends on input. Here's the Tigress command:</tt>
+
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... \
+   --Transform=InitEntropy \
+       --Functions=main \
+       --InitEntropyKinds=annotations \
+    --Transform=UpdateEntropy \
+       --Functions=foo \
+       --UpdateEntropyKinds=annotations \
+</code></pre>
+</center>
+
+
+<a class="anchor" id="references">&nbsp;</a>
+<br>
+<h3 align=center>References</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2547" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The idea of using threads and CPU performance counters to generate random numbers 
+was first introduced by Adrian Colesa, Radu Tudoran, and Sebastian Banescu in
+<a href="https://ieeexplore.ieee.org/document/5204851">Software Random Number Generation Based on Race Conditions</a>.
+Our implementation isn't as advanced at theirs since it only uses X86's <code>rdtsc</code> counter. Unfortunately, other
+counters are not available from user mode.
+</p></div></div></section>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script async src="assets/tether/tether.min.js"></script>
+  <script async src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script async src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script async src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script async src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script async src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script async src="assets/theme/js/script.js"></script>
+  
+  
+  <input name="animation" type="hidden">
+  
+</body>
+</html>

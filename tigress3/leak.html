@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.10, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.10, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Site Builder Description">
+  
+  <title>Leak</title>
+  <link rel="preload" as="style" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+<link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+ 
+<style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
+</head>
+<body>
+
+  <section class="menu cid-rCFaEeaKON" once="menu" id="menu1-v">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/tigress-white-copy-154x122.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="index.html">
+                        
+                        Home</a>
+                </li><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="introduction.html">
+                        
+                        Introduction</a>
+</li><li class="nav-item"><a class="nav-link link text-white display-4" href="usage.html">Usage</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="transformations.html">Transformations</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="recipes.html">Recipes</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="publications.html">Publications</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="FAQ.html">FAQ</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="consulting.html">Training</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html">Contact</a></li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<br><br><br><br>
+<center><h1>Leak</h1></center>
+
+<center><img width="500px" src="tigress3-images/leak-front-page.png"></center>
+
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2541" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Transform a function such that it leaks a secret, in particular (part of) the
+code of a secret function. This can be useful to simulate a misbehaving 
+obfuscator. Leaking can be static (simply insert a variable that holds the
+encrypted source code of the secret function) or dynamic (only leak if
+a certain formal parameter has a certain value).</p></div></div></section>
+
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>Leak</tt></td>
+<td> Simulate a misbehaving obfuscator by inserting code that leak (part of) the secret function. Note that openssl needs to be installed. </td>
+</tr>
+<tr>
+<td><tt>--LeakSecretFunction</tt></td>
+<td><tt><em>string</em></tt></td>
+<td> The name of the secret function whose code will be leaked Default=0.</td>
+</tr>
+<tr>
+<td><tt>--LeakVariable</tt></td>
+<td><tt><em>string</em></tt></td>
+<td> For dynamic leakers, the formal parameter that will be tested Default=0.</td>
+</tr>
+<tr>
+<td><tt>--LeakValue</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> For dynamic leakers, the value that the formal parameter will be tested against Default=0.</td>
+</tr>
+<tr>
+<td><tt>--LeakKind</tt></td>
+<td><tt>static, dynamic, dynamic_byte</tt></td>
+<td> Select the kind of leaking code to be inserted. Default=static.
+<ul>
+   <li> <tt>static</tt> = insert the encrypted code into a variable
+   <li> <tt>dynamic</tt> = return the encrypted code when a particular formal parameter has a particular value
+   <li> <tt>dynamic_byte</tt> = return the i:th byte of the encrypted code depending on the value of the formal parameter
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--LeakDebug</tt></td>
+<td><tt><em>boolean</em></tt></td>
+<td> Turn debugging on or off. Default=false.</td>
+</tr>
+</table>
+</div>
+
+</center>
+</br>
+
+<a class="anchor" id="examples">&nbsp;</a>
+<br>
+<h3 align=center>Examples</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2542" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>static</code> leaker simply inserts the encrypted source
+code of the secret function as a string. For example, this command</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+   --Transform=Leak \
+      --LeakKind=static \
+      --Functions=foo \
+      --LeakSecretFunction=main 
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2543" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">produces this code</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">char *leak_global_enc  =    0;
+
+int foo(int x) { 
+  char *leak_enc ;
+  leak_enc = "U2Fs...Blsvk=\n";
+  leak_global_enc = leak_enc;
+  g = 42;
+  return (g);
+}
+</code></pre>
+</center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2544" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>dynamic</code> leaker will leak the entire
+(encrypted) source code of the secret function, but only when a
+particular formal parameter has a particular value. For example,
+this command</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+    --Transform=Leak \
+       --LeakKind=dynamic \
+       --Functions=foo \
+       --LeakVariable=x \
+       --LeakValue=42 \
+       --LeakSecretFunction=main 
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2545" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">will transform function <code>foo</code> such that when formal parameter <code>x!=42</code> 
+the function behaves normally, but when <code>x==42</code>, it will leak the source of
+main <code>main</code>. Note that for this transformation, the signature of <code>foo</code>
+changes:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">struct leak_object {
+   long key ;
+   char *enc ;
+};
+union return_object {
+   int return_value ;
+   struct leak_object leak_value ;
+};
+struct result_object {
+   unsigned char result_tag ;
+   union return_object result_value ;
+};
+
+struct result_object foo(int x) { 
+  struct result_object return_var ;
+  if (x == 42UL) {
+    return_var.result_tag = 1;
+    return_var.result_value.leak_value.key = 934550629044916202UL;
+    return_var.result_value.leak_value.enc = "U....EW\n";
+    return (return_var);
+  } else {
+    g = 42;
+    return_var.result_tag = 0;
+    return_var.result_value.return_value = g;
+    return (return_var);
+  }
+}
+</code></pre>
+</center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2546" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <code>dynamic_byte</code> leaker will leak one byte at a time of the 
+(encrypted) secret function. The byte leaked depends on the value
+of the selected formal parameter. For example, this command</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+   --Transform=Leak \
+      --LeakKind=dynamic_byte \
+      --Functions=foo \
+      --LeakVariable=x \
+      --LeakValue=42 \
+      --LeakSecretFunction=main 
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2547" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">will transform function <code>foo</code> such that when formal parameter <code>x<=42</code> 
+the function behaves normally, but when <code>x>42</code>, it will leak byte <code>x-42</code> 
+of the encryption of <code>main</code>:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int foo(int x) { 
+  int return_var ;
+  char *leak_enc ;
+  unsigned long leak_key ;
+  if (x > 42UL) {
+    leak_enc = "U2Fs.....=\n";
+    *((char *)(& return_var)) = leak_enc[x - 42UL];
+    return (return_var);
+  } else {
+    g = 42;
+    return (g);
+  }
+}
+</code></pre>
+</center>
+
+<br>
+<h3 align=center>Issues</h3>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> Doesn't work for functions whose address is taken 
+        and then called through a function pointer.</li>
+   <li> <code>openssl</code> must be installed.</li>
+</ul>
+</div></div></div></section>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script async src="assets/tether/tether.min.js"></script>
+  <script async src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script async src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script async src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script async src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script async src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script async src="assets/theme/js/script.js"></script>
+  
+  
+  <input name="animation" type="hidden">
+  
+</body>
+</html>

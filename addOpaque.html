@@ -89,7 +89,7 @@ h3 {
 <center><img width="500px" src="tigress3-images/addOpaque-front-page.png"></center>
 
 <a class="anchor" id="addOpaque">&nbsp;</a>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2541" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Break up code blocks by inserting opaque predicates. Requires that 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1846" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Break up code blocks by inserting opaque predicates. Requires that 
 at least the <a href="opaque.html">InitOpaque</a>
 transform has been previously issued and, preferably, that one or more 
  <a href="opaque.html">UpdateOpaque</a>
@@ -133,6 +133,11 @@ transformations have been given.</p></div></div></section>
 <td><tt>--AddOpaqueObfuscate</tt></td>
 <td><tt><em>BOOL</em></tt></td>
 <td> Perform some light obfuscation of copied code when using the 'question' opaque predicate. Default=true.</td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueSplitBasicBlocks</tt></td>
+<td><tt><em>BOOL</em></tt></td>
+<td> Split up basic blocks (sequences of statements without control flow) so that opaque predicates can be inserted between them. Default=false.</td>
 </tr>
 <tr>
 <td><tt>--AddOpaqueInline</tt></td>
@@ -180,7 +185,7 @@ transformations have been given.</p></div></div></section>
 <a class="anchor" id="diversity">&nbsp;</a>
 <br>
 <h3 align=center>Diversity</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2542" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are two sources of diversity:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1847" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are two sources of diversity:</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
   <li>The types of opaque predicates used, which is controlled by the InitOpaque
@@ -195,7 +200,7 @@ transformations have been given.</p></div></div></section>
 <a class="anchor" id="usage">&nbsp;</a>
 <br>
 <h3 align=center>Usage</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2543" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This is the code generated for the arguments options to <code>--AddOpaqueKinds</code>:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1848" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">This is the code generated for the arguments options to <code>--AddOpaqueKinds</code>:</p></div></div></section>
 
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
@@ -258,7 +263,7 @@ else
 <a class="anchor" id="QuestionMark">&nbsp;</a>
 <br>
 <h3 align=center>Question-mark Predicates</h3>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2544" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Consider the following script:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1849" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Consider the following script:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
    --Inputs="+1:int:42,-1:length:1?10" \
@@ -276,7 +281,7 @@ else
    arith.c --out=arith_out.c
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2545" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The result will look something like this:</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1850" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The result will look something like this:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">     {
       strcmp_result5 = (int )strlen(*(_4_main__argv + (_4_main__argc - 1)));
@@ -400,7 +405,7 @@ else
 }
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2546" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Notice that we attempt (and sometimes fail) to select opaque predicates 
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1851" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Notice that we attempt (and sometimes fail) to select opaque predicates 
 <code>expr<sup>1</sup><=expr<sup>2</sup></code> such that</p></div></div></section>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
@@ -417,7 +422,7 @@ else
    </li>
 </ul>
 </div></div></div></section>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2547" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For the question-mark predicate we use the function splitter. You should
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1852" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">For the question-mark predicate we use the function splitter. You should
 experiment with different splitting methods to get the effect that you 
 want, by setting <code>--AddOpaqueSplitKinds=...</code> and 
 <code>--AddOpaqueSplitLevel=...</code>. <code>--AddOpaqueObfuscate=true</code> does
@@ -429,15 +434,15 @@ obfuscate the split out functions yourself.</p></div></div></section>
 <h3 align=center>Issues</h3>
 <section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
 <ul>
-<li><section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2548" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
+<li><section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1853" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff"><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
 coerce the linker to ignore such errors. With <code>gcc</code> you can use this option:</p></div></div></section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   -Wl,--unresolved-symbols=ignore-in-object-files 
 </code></pre>
 </center>
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2549" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">No similar option seems to exist for <code>clang</code>.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1854" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">No similar option seems to exist for <code>clang</code>.</p></div></div></section>
 </li>
-<li><section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2550" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <tt>--AddOpaqueKinds=question</tt> adds the code in outlined functions, for reasons I really
+<li><section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1855" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The <tt>--AddOpaqueKinds=question</tt> adds the code in outlined functions, for reasons I really
        can't remember at the moment. It should probably be fixed, but in the mean time you can just
        inline the calls:</p></div></div></section>
 <center>

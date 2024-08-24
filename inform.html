@@ -88,7 +88,7 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/info-front-page.png"></center>
 
-<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2541" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Operations for displaying internal data structures.</p></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c1846" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Operations for displaying internal data structures.</p></div></div></section>
 
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -106,21 +106,23 @@ h3 {
 </tr>
 <tr>
 <td><tt>--InfoKind</tt></td>
-<td><tt>cilCfg, tigressCfg, fun, ast, json, src, linear, linearJson, linearSource, alias, globals, universe</tt></td>
+<td><tt>src, cilCfg, tigressCfg, fun, ast, json, linear, linearJson, linearSource, alias, globals, universe, flat_globals, builtins</tt></td>
 <td> Information to print. For <tt>cfg</tt>, <tt>fun</tt>, and <tt>linear</tt> use <tt>--Functions</tt>, as usual, to specify which functions to print. <tt>--Transform=Info --InfoKind=src --Functions=foo</tt> is a good way to examine a function after each transformation. 
 <ul>
-   <li> <tt>cilCfg</tt> = CIL's control Flow Graph
-   <li> <tt>tigressCfg</tt> = Tigress' control Flow Graph in graphviz format. Compile with <code>dot -Tpdf funname.dot > funname.pdf</code>.
-   <li> <tt>fun</tt> = Function in internal format
-   <li> <tt>ast</tt> = Function in graphviz format. Compile with <code>dot -Tpdf funname.dot > funname.pdf</code>.
-   <li> <tt>json</tt> = Function in JSON format. Set <tt>--Verbosity</tt> to adjust the amount of information presented.
-   <li> <tt>src</tt> = Function in source form
+   <li> <tt>src</tt> = Print the functions specified by <tt>--Functions</tt> in source form on standard output.
+   <li> <tt>cilCfg</tt> = Print CIL's Control Flow Graph for the functions specified by <tt>--Functions</tt> on standard output.
+   <li> <tt>tigressCfg</tt> = Output Tigress' Control Flow Graph in graphviz format. If you specify <tt>--Functions=foo</tt>, the dot file will be named <tt>foo.gv</tt>. Compile with <code>dot -Tpdf foo.dot > foo.pdf</code>.
+   <li> <tt>fun</tt> = Print the functions specified by <tt>--Functions</tt> in an internal format
+   <li> <tt>ast</tt> = Output the Abstract Syntax Tree of the functions specified by <tt>--Functions</tt>. If you specify <tt>--Functions=foo</tt>, the dot file will be named <tt>foo.gv</tt>. Compile with <code>dot -Tpdf foo.dot > foo.pdf</code>.
+   <li> <tt>json</tt> = Output the Abstract Syntax Tree of the functions specified by <tt>--Functions</tt> in JSON format on standar output. Set <tt>--Verbosity</tt> to adjust the amount of information presented.
    <li> <tt>linear</tt> = Function in internal linearized block format (used as a starting point for flattening and branch functions)
    <li> <tt>linearJson</tt> = As "linear" but in a Json format.
    <li> <tt>linearSource</tt> = As "linear" but in a more C-like format.
    <li> <tt>alias</tt> = Print the pointer-graphs
-   <li> <tt>globals</tt> = List of global symbols in the original program.
+   <li> <tt>globals</tt> = Print all symbols in the original program in an easy to parse format. This is useful to extract the names of and signatures of functions, local variables and their types, etc from a C program.
    <li> <tt>universe</tt> = Print the current universe of symbols.
+   <li> <tt>flat_globals</tt> = Save the all C objects from the input file into the json file given by <code--InfoGlobalsFileName</code>. This is a simple flat format useful for reading into other programs that need to know the functions, types, local variables etc defined by a program.
+   <li> <tt>builtins</tt> = Print all the builtins (and their signatures) that Tigress knows about.
 </ul>
 </td>
 </tr>

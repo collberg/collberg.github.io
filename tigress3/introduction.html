@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Page Generator Description">
+  
+  
+  <title>Introduction</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <section class="menu cid-rCFaEeaKON" once="menu" id="menu1-11">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/tigress-white-copy-154x122.png" alt="" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="index.html">
+                        
+                        Home</a>
+                </li><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="introduction.html">
+                        
+                        Intro</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="usage.html">Usage</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="news.html">News</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="bugs.html">Bugs</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="transformations.html">Transformations</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="recipes.html">Recipes</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="publications.html">Pubs</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="FAQ.html">FAQ</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="consulting.html">Training</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html">Contact</a></li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<section class="header9 cid-rCSgcTdwYi" id="header9-i">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><br><br><br>Tigress is a diversifying virtualizer/obfuscator for the C language that supports many defenses against both static and dynamic reverse engineering and de-virtualization attacks.&nbsp;Tigress is a source-to-source transformer - it takes a C source program as input and returns a new C program as output. An <em>obfuscation script </em>(actually, a long sequence of command line options)<em>&nbsp;</em>describes the sequences of transformations that should be applied to the functions of the program:<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+
+
+<section class="header9 cid-rCUrHoYHDE" id="header9-f">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">Here is an example of how to transform a function bar in a program foo.c using Tigress. The first transformation flattens the code, the second turns the flattened function into an interpreter:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-e"><!-- Type valid HTML here -->
+<center>
+    <div style="width:800px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>tigress --Verbosity=1 --Environment=x86_64:Linux:Gcc:4.6 --Seed=42 \
+   --Transform=Flatten \
+      --Functions=bar \
+      --FlattenDispatch=switch \
+      --FlattenObfuscateNext=false \
+      --FlattenRandomizeBlocks=true \
+      --FlattenConditionalKinds=branch,compute,flag \
+      --FlattenImplicitFlowNext=true \
+   --Transform=Virtualize \
+      --Functions=bar \
+      --VirtualizeDispatch=direct \
+   --Transform=CleanUp \
+       --CleanUpKinds=annotations,constants,names \
+   --out=foo_out.c foo.c
+</code></pre>
+    </div>
+</center></div>
+
+<section class="header9 cid-rCPcfuLTcb" id="header9-12">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Design</strong>. Tigress is built in OCaml (about 83,000 lines of code) and C (about 9000 lines) on top of two libraries: <a href="http://cil-project.github.io/cil/doc/html/cil/" target="_blank">CIL</a>&nbsp;(a C front end) and <a href="http://myjit.sourceforge.net" target="_blank">MyJit</a>&nbsp;(a run-time code generator):<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+
+
+<section class="header9 cid-rCSf0sTyOq" id="header9-e">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><br>Tigress supports all of the C99 language, including gcc extensions. The source-to-source design means that the transformed code can be easily examined, which is useful in a pedagogical setting. Also, Tigress' output, once compiled and stripped of symbols, is a good target for reverse engineering and de-virtualization exercises. <br><br><strong>Availability</strong>. Tigress has been used both for academic and commercial projects. You can try out Tigress by downloading and installing the binary from our website. If you like what Tigress does and decide to use it in a commercial project, you will need a license from the University of Arizona. We regularly share the source code with academics (because we <a href="https://dl.acm.org/citation.cfm?id=2812803" target="_blank">believe</a> code <a href="https://www.acsac.org/2017/program-files/p19.html" target="_blank">sharing</a> is <a href="http://findresearch.org" target="_blank">good</a>). In both cases, <a href="contact.html">contact us</a>.<br><br><strong>Transformations.</strong>&nbsp;Tigress protects against static de-virtualization by generating virtual instruction sets of arbitrary complexity and diversity, by producing interpreters with multiple types of instruction dispatch, and by inserting code for anti alias analysis. Tigress protects against dynamic de-virtualization by merging the real code with bogus functions, by inserting implicit flow, and by creating slowly-executing reentrant interpreters. Tigress implements its own version of code packing through the use of runtime code generation. Finally, Tigress' dynamic transformation provides a generalized form of continuous runtime code modification.<br><br><strong>Diversity.</strong> Tigress is designed such that, from a single source program, it is possible to generate large numbers of highly diversified variants. This diversity is both static and dynamic, i.e. two variants will differ both in their machine code and in the resulting instruction traces. In essence, every decision Tigress makes is dependent on a randomization seed, controllable by the user. There are two major sources of diversity:<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="mbr-section article content11 cid-rDP6hYcg69" id="content11-p">
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ol>
+                    <li>Tigress goes to great lengths to provide as many variants of each transformation as possible. For example, our virtualization transformation supports eight kinds of dispatch, can generate arbitrarily complex virtual instruction sets, and can generate instructions which arbitrarily mix stack and register operands.</li>
+                    <li>Tigress' transformations can be combined in arbitrary ways, such as virtualizing a virtualized function, jit two merged functions, virtualize a jitted function, etc:</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="header9 cid-rCTXjqOCJS" id="header9-h">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Challenges</strong>.To stimulate reverse engineering research, we are publishing sets of challenge problems generated by Tigress. Prizes will be awarded to those who are first to crack. To participate, please go to <a href="http://revenge.cs.arizona.edu" target="_blank">revenge.cs.arizona.edu</a>.<br><br><strong>Education</strong>. In our classes we use Tigress to generate reverse engineering exercises and take-home exams for the students. We use Tigress' RandomFuns transformation to generate a unique random program for every student in the class and protect it using some appropriate combination of transformations. The difficulty of the exercises can be easily varied by picking different sequences of transformations, and, since diversity guarantees that every program instance is unique, cheating is made more difficult.  To use this in your own classes, please go to <a href="http://revenge.cs.arizona.edu">revenge.cs.arizona.edu</a>.<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<section class="header9 cid-rD1uNZVreT" id="header9-d">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>WebAssembly</strong>: The typical way to protect code running in the browser from attacks by the user is to write the code in Javascript and transform it with a Javascript obfuscator. An alternative approach is to write the code in C, transform it with Tigress, and to compile the resulting code using&nbsp;<a href="https://emscripten.org" target="_blank">Emscripten</a>&nbsp;(a C-to-WASM compiler)&nbsp;to a WebAssembly/html/Javascript package. This package can be loaded by most browsers. The advantage of this approach is that the resulting code can run at near-native speeds and that Tigress supports more powerful obfuscating transformations than most Javascript obfuscators. Here's a depiction of the process;<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+
+
+<section class="mbr-section article content1 cid-rGGTmJ78Q8" id="content1-l">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong>Note to academics. </strong>We see Tigress used in many research projects, and this is very satisfying! We encourage anyone working in reverse engineering to try to attack Tigress-generated code, and anyone working in software protection to compare their techniques against the standard set of techniques provided by Tigress. We are always keen to collaborate, so please get in touch if you have some interesting ideas to work on! That said, we often see papers where researchers have used Tigress and where the analyses they perform are not as accurate as one would like. Here are some common problems we've seen:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 cid-rGGTnbo2KH" id="content12-m">
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+                    <li><strong>"We run Tigress with default options". </strong>There is no such thing. By "default", Tigress does nothing! There are lots of different transformations, lots of different options, and you need to specify which ones you used. Different options to the same transformation can have radically different performance characteristics.</li>
+                    <li><strong>"Tigress does not support transformation X". &nbsp;</strong>There are lots of transformations. Lots of options. To be sure you're not missing something, contact me.&nbsp;</li>
+                    <li><strong>"Tigress-generated code crashed, so we ignored it."</strong> I'm not saying there are no bugs, but Tigress has been used in commercial projects and I believe it mostly "works". If you find a bug, contact me. Often, the problem is system specific and can be taken care of by simply adding another compiler flag or #define.</li><li>&nbsp;<strong>"Tigress-generated code is slow".</strong> Yeah, true, but again, it depends on the particular set of options you're using. Virtualization, for example, has specfic options to generate faster code. Again, if you're unsure you're running the best possible Tigress script, contact me.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+  
+</body>
+</html>

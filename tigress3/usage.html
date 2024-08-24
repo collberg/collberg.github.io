@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Website Generator Description">
+  
+  
+  <title>Usage</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+  
+  
+  <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
+</head>
+<body>
+  
+  <section class="menu cid-rCFaEeaKON" once="menu" id="menu1-g">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/tigress-white-copy-154x122.png" alt="" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="index.html">
+                        
+                        Home</a>
+                </li><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="introduction.html">
+                        
+                        Intro</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="usage.html">Usage</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="news.html">News</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="bugs.html">Bugs</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="transformations.html">Transformations</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="recipes.html">Recipes</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="publications.html">Pubs</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="FAQ.html">FAQ</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="consulting.html">Training</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html">Contact</a></li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<section class="mbr-section article content1 cid-rDQOMX8P31" id="content1-u">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><br></p><p><br></p><p>To obfuscate your program with Tigress first include the tigress.h file supplied in the Tigress distribution directory, and then invoke Tigress specifying at least one transformation applied to at least one function. Here is a trivial example where Tigress is flattening the function bar in the program foo.c:</p></div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-k"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#include "PATH-TO-TIGRESS-INSTALLATION/tigress.h"
+void bar () {
+    ...
+}
+int main () {
+   ...
+}
+</code></pre>
+</div>
+</center>
+</div>
+
+<div id="custom-html-i"><center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>tigress \
+   --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=Flatten \
+      --Functions=bar \
+   --out=foo_out.c foo.c
+</code></pre>
+</center>
+</div>
+
+<section class="mbr-section article content1 cid-rE3ete9d8p" id="content1-h">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>
+                <strong> Command line options.</strong>&nbsp;These are some useful Tigress command line options:</p></div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-f"><!-- Type valid HTML here -->
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>*) tigress --help     : Show this message
+*) tigress --install  : Show how to install Tigress 
+*) tigress --license  : Display the tigress license
+*) tigress --bugs     : How to get past some known issues
+*) tigress --version  : Show the current Tigress version
+</code></pre>
+</center></div>
+
+<section class="mbr-section article content1 cid-rE3ethkTec" id="content1-i">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong>Multiple Input Files.</strong>&nbsp;<span style="font-size: 1rem;">Note that Tigress accepts <em>exactly one</em> C file as input. This is so that Tigress can do whole-program analysis and transformations. If your project has multiple files you must first merge them together into one. Tigress (through the CIL library on which it is built) allows you to merge your source files automatically. For complex scenarios, see the CIL information page about <a href="http://cil-project.github.io/cil/doc/html/cil/merger.html#sec-merger" target="_blank">merging</a>. For simple cases, all you have to do to merge two files file1.c and file2.c into full.c, is to call the tigress-merge program like this:&nbsp;</span></p></div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-k"><!-- Type valid HTML here -->
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>$ tigress-merge file1.c file2.c --out=full.c
+</code></pre></center></div>
+
+<section class="mbr-section article content1 cid-rE3kNoI7NA" id="content1-l">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>
+                <strong> Cross-compilation and 32-vs-64-bit machine models.</strong>&nbsp;<span style="font-size: 1rem;">By default, we assume you're generating code for the machine on which you execute Tigress. If this is not the case, in particular, if your target machine has a different wordsize than the one you compile on, you must run Tigress with the<strong> --envmachine</strong> option and&nbsp;</span><span style="font-size: 1rem;">set the <strong>CIL_MACHINE</strong> environment variable with the relevant C type sizes. For the current version of Tigress, this is really only relevant for the virtualize transformation. See the <a href="https://people.eecs.berkeley.edu/~necula/cil/cil007.html" target="_blank">CIL documentation</a> for more information. </span></p><p><span style="font-size: 1rem;">If you want to use a specific compiler (other than the default gcc) &nbsp;you can use the <strong>--gcc=command</strong> to tell cilly which compiler to use, for example --gcc=arm-elf-gcc.</span></p><p><span style="font-size: 1rem;">Here's an example of how to set CIL_MACHINE for a typical 32-bit target:</span><br></p></div>
+        </div>
+    </div>
+</section>
+
+<div id="custom-html-m"><center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>CIL_MACHINE="short=2,2 int=4,4 long=4,4 long_long=8,8 pointer=4,4 \
+             alignof_enum=4 float=4,4 double=8,8 long_double=12,12 \
+             void=1 bool=1,1 fun=1,1 alignof_string=1 max_alignment=16 \
+             size_t=unsigned_int wchar_t=int char_signed=true \
+             const_string_literals=true big_endian=false \
+             __thread_is_keyword=true __builtin_va_list=true \
+             underscore_name=true"; export CIL_MACHINE;
+</code></pre></center>
+
+
+</div>
+
+<section class="header9 cid-thf80FGFH2" id="header9-y">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Generating CIL_MACHINE.</strong>&nbsp;You can generate <strong>CIL_MACHINE</strong> automatically. Look for the file <strong>machdep-ml.c </strong>in the Tigress distribution directory. &nbsp;Compile and run as shown below. You have to provide the compiler you're using, as well as the types of <strong>size_t</strong> and wide characters as these are not yet auto-detected. You need to run this on your target machine (i.e. the one you're cross-compiling <em>for</em>).<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-x"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; gcc -D_GNUCC \
+       -DTYPE_SIZE_T="\"unsigned long\"" \
+       -DTYPE_WCHAR_T=\"int\" machdep-ml.c -o machdep-ml
+&gt; ./machdep-ml --env | grep -v Generating
+short=2,2 int=4,4 long=8,8 .... underscore_name=true
+</code></pre>
+</div>
+</center>
+</div>
+
+<section class="header9 cid-rGDOlD4yG3" id="header9-e">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>WebAssembly</strong>: Below is an example of how to first obfuscate a C program foo_in.c with Tigress, and then compile the obfuscated file foo_obf.c with <a href="https://emscripten.org" target="_blank">Emscripten</a> to a WebAssembly/html/Javascript package. Note the use of the CIL_MACHINE environment variable and the --envmachine argument to Tigress; these specify that the word size of the target machine (WASM) is different from that of the machine of which Tigress is run. Notice also the --gcc=emcc argument to Tigress. This specifies that the WebAssembly compiler (emcc) should be used, rather than the native C compiler.<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-f"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">export EMSDKPATH=PATH-TO-EMCC-INSTALLATION/emsdk/emscripten/1.38.29/system/include/
+
+export CIL_MACHINE="short=2,2 int=4,4 long=4,4 long_long=8,8 pointer=4,4 alignof_enum=4 float=4,4 \
+             double=8,8 long_double=8,8 void=1 bool=1,1 fun=1,4 alignof_string=1 max_alignment=16 \
+             size_t=unsigned_long wchar_t=int char_signed=true const_string_literals=true \
+             big_endian=false __thread_is_keyword=true __builtin_va_list=true underscore_name=true"
+             
+tigress \
+   --gcc=emcc \
+   --envmachine \
+   -D _Float128=double \
+   -I $EMSDKPATH \
+   --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=Flatten \
+      --Functions=bar \
+   --out=foo_obf.c foo_in.c 
+</code></pre>
+</div>
+</center>
+</div>
+
+<div id="custom-html-g"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">emcc \
+   -I $EMSDKPATH \
+   -O2 \
+   foo_obf.c \
+   -o foo_wasm.html \
+   -s WASM=1 \
+   -s ALLOW_MEMORY_GROWTH=1 \
+   -s AGGRESSIVE_VARIABLE_ELIMINATION=1 \
+   -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
+   -s USE_WEBGL2=1 \
+   -s USE_GLFW=3 \
+   -s FULL_ES3=1 \
+   -fmacro-backtrace-limit=0
+</code></pre>
+</div>
+</center>
+</div>
+
+<section class="header9 cid-sWi4iUUvoE" id="header9-x">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>WebAssembly (From Version 3.3)</strong>: Starting with Tigress version 3.3 and emscripten v. 14, &nbsp;it's easier to obfuscate for webassembly:<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-y"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">
+EMSDKPATH=PATH_TO_EMSDK_INSTALLATION/emsdk/upstream/include/c++/v1
+
+&gt; tigress \
+           --Environment=wasm:Linux:Emcc:4.6 \
+           --Transform=Flatten --Functions=fib \
+           --out=obf.c foo.c 
+&gt; emcc \
+           -I $EMSDKPATH \
+           -O2 \
+           obf.c \
+           --emrun \
+           -o wasm.html \
+           -s WASM=1 \
+           -s ASSERTIONS=1 \
+           -s ALLOW_MEMORY_GROWTH=1 \
+           -s AGGRESSIVE_VARIABLE_ELIMINATION=1 \
+           -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
+           -s USE_WEBGL2=0 \
+           -s USE_GLFW=3 \
+           -s FULL_ES3=0 \
+           -fmacro-backtrace-limit=0
+
+&gt; emrun --browser safari wasm.html
+</code></pre>
+</div>
+</center>
+</div>
+
+<section class="header9 cid-rKmkPnlndO" id="header9-r">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7"><strong>Android</strong>: Tigress has not been extensively tested on Android, but the following commands seem to work. Download the Android NDK from&nbsp;<a href="https://developer.android.com/ndk/downloads" target="_blank">https://developer.android.com/ndk/downloads</a>. Create the following shell script, name it&nbsp;<strong>"compiler", </strong>and<strong>&nbsp;</strong>set the target to the platform for which you want to compile:<br></p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-s"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#!/bin/sh
+
+./toolchains/llvm/prebuilt/darwin-x86_64/bin/clang -target aarch64-none-linux-android21 "$@"
+</code></pre>
+</div>
+</center>
+</div>
+
+<section class="header9 cid-rKmmnUwKkb" id="header9-u">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            
+            
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">If you're not on OSX, you need to replace darwin-x86_64 with the appropriate path. Set CIL_MACHINE to the appropriate value for your target (depending on if it is a 32 or 64 bit architecture). Assuming you have two files foo.c and bar.c, issue these commands to merge them into out.c and obfuscate them into obf.c:</p>
+            
+        </div>
+    </div>
+
+    
+</section>
+
+<div id="custom-html-t"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; cd android-ndk-r20b
+
+&gt; chmod a+rx ./compiler
+
+&gt; CIL_MACHINE="short=2,2 int=4,4 long=4,4 ...; export CIL_MACHINE;
+
+&gt; tigress-merge --Environment=x86_64:Linux:Gcc:4.6 --envmachine --gcc=./compiler foo.c bar.c --out=out.c
+&gt; tigress --Environment=x86_64:Linux:Gcc:4.6 --envmachine --gcc=./compiler --Transform=Flatten --Functions=fib out.c --out=obf.c
+</code></pre>
+</div>
+</center>
+</div>
+
+
+<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+  
+</body>
+</html>

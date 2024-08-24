@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.10, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.10, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Site Builder Description">
+  
+  <title>ImplicitFlow</title>
+  <link rel="preload" as="style" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+<link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="preload" as="style" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+ 
+<style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #767676
+}
+h3 {
+   color: #767676
+}
+</style>
+
+</head>
+<body>
+
+  <section class="menu cid-rCFaEeaKON" once="menu" id="menu1-v">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/tigress-white-copy-154x122.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="index.html">
+                        
+                        Home</a>
+                </li><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="introduction.html">
+                        
+                        Introduction</a>
+</li><li class="nav-item"><a class="nav-link link text-white display-4" href="usage.html">Usage</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="transformations.html">Transformations</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="recipes.html">Recipes</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="publications.html">Publications</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="FAQ.html">FAQ</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="consulting.html">Training</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="about.html">About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html">Contact</a></li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<br><br><br><br>
+<center><h1>Implicit Flow</h1></center>
+
+<center><img width="500px" src="tigress3-images/implicitFlow-front-page.png"></center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2541" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+   Several transformations, in particular
+   AntiTaintAnalysis,
+   use implicit flow as a basic building block. Before you can use these you need
+   to call the <code>--Transform=InitImplicitFlow</code> and list which of the implicit
+   flow variants you are going to use later. Here's an example of what it might 
+   look like:
+</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 --Verbosity=1 --Environment=x86_64:Darwin:Gcc:4.6 \
+   --Transform=InitEntropy --Functions=main \
+   --Transform=InitImplicitFlow --Functions=main \
+      --InitImplicitFlowKinds=trivial_thread_1,trivial_counter,\
+                              mem_cache_time,mem_cache_thread_1,\
+                              file_cache_time,file_cache_thread_1,\
+                              jit_time \
+      --InitImplicitFlowHandlerCount=1 \
+      --InitImplicitFlowJitCount=1 \
+      --InitImplicitFlowJitFunctionBody="(for (if (bb 50) (bb 50)))" \
+      --InitImplicitFlowTrace=false \
+      --InitImplicitFlowTrain=false \
+      --InitImplicitFlowTime=false \
+      --InitImplicitFlowTrainingTimesClock=500 \
+      --InitImplicitFlowTrainingTimesThread=500 \
+      --InitImplicitFlowTrainingMinGap=90 \
+      --InitImplicitFlowTrainingConfidenceLevel=0.99 \
+      --InitImplicitFlowTrainingTargetErrorRate=0.00001 \
+      --InitImplicitFlowTrainingKind=statistics \
+   --Transform=AntiTaintAnalysis --Functions=main \
+      --AntiTaintAnalysisKinds=vars \
+      --LocalVariables=main:b \
+      --AntiTaintAnalysisImplicitFlow="(repeat mem_cache_time 3)" \
+   input.c --out=output.c
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2542" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+   Here, we specify that we might want to use the implicit flow variants
+    <code>trivial_thread_1,trivial_counter,mem_cache_time,mem_cache_thread_1,file_cache_time,file_cache_thread_1,jit_time</code>.
+   We then insert implicit flow using <code>(repeat mem_cache_time 3)</code> after any assignment to the variable <code>b</code> in
+   function <code>main</code>. The transformation of the assignment <code>b = a</code> would look something like this:
+</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    exp_orig3 = a;
+    exp_orig3_origPtr4 = (unsigned char *)(& exp_orig3);
+    exp_orig3_copyPtr6 = (unsigned char *)(& exp_orig3_copy5);
+    size_iter7 = 0;
+    while (size_iter7 &lt; 4) {
+      maxCount34 = 0;
+      while (maxCount34 &lt; 1) {
+        majority_iter9 = 0;
+        while (majority_iter9 &lt; 255) {
+          counters8[majority_iter9] = 0;
+          majority_iter9 ++;
+        }
+        repeat_iter32 = 0;
+        while (repeat_iter32 &lt; 3) {
+          charCopy10 = 0;
+          copy_iter11 = 0;
+          while (copy_iter11 &lt; 8) {
+            if ((*exp_orig3_origPtr4 >> copy_iter11) & 1) {
+              pagesize13 = getpagesize();
+              memalignRet14 = posix_memalign(& __buffer_slow_1, pagesize13, 64);
+              __asm__  volatile   ("cpuid\n"
+                                   "rdtsc\n": "=a" (low16), "=d" (high17));
+              sum20 = _1entropy ^ 1;
+              iter21 = 0;
+              while (iter21 &lt; _2_time_implicitFlow_memCache_numberOfReads) {
+                __asm__  volatile   ("mfence\n"
+                                     "clflush (%0)\n": : "r" (__buffer_slow_1));
+                sum20 += *((long *)__buffer_slow_1);
+                *((long *)__buffer_slow_1) = sum20;
+                iter21 ++;
+              }
+              _1entropy = sum20 - _1entropy;
+              __asm__  volatile   ("cpuid\n"
+                                   "rdtsc\n": "=a" (low18), "=d" (high19));
+              free(__buffer_slow_1);
+              time12 = (((unsigned long )high19 << 32) | (unsigned long )low18) -
+                       (((unsigned long )high17 << 32) | (unsigned long )low16);
+            } else {
+              pagesize22 = getpagesize();
+              memalignRet23 = posix_memalign(& __buffer_fast_1, pagesize22, 64);
+              memalignRet23 = posix_memalign(& __buffer_fast_2, pagesize22, 64);
+              __asm__  volatile   ("cpuid\n"
+                                   "rdtsc\n": "=a" (low26), "=d" (high27));
+              sum30 = _1entropy | 2;
+              iter31 = 0;
+              while (iter31 &lt; _2_time_implicitFlow_memCache_numberOfReads) {
+                __asm__  volatile   ("mfence\n"
+                                     "clflush (%0)\n": : "r" (__buffer_fast_1));
+                sum30 += *((long *)__buffer_fast_2);
+                *((long *)__buffer_fast_2) = sum30;
+                iter31 ++;
+              }
+              _1entropy = sum30 | _1entropy;
+              __asm__  volatile   ("cpuid\n"
+                                   "rdtsc\n": "=a" (low28), "=d" (high29));
+              free(__buffer_fast_1);
+              free(__buffer_fast_2);
+              time12 = (((unsigned long )high29 << 32) | (unsigned long )low28) -
+                        (((unsigned long )high27 << 32) | (unsigned long )low26);
+            }
+            if ((double )time12 > 
+              _2_time_implicitFlowTimerClock_mem_cache_time_timingCounter_middleReferenceTime) {
+              charCopy10 |= 1 << copy_iter11;
+            } else {
+
+            }
+            copy_iter11 ++;
+          }
+          (counters8[charCopy10]) ++;
+          repeat_iter32 ++;
+        }
+        maxCount34 = 0;
+        max_iter35 = 0;
+        while (max_iter35 &lt; 255) {
+          if (counters8[max_iter35] > maxCount34) {
+            maxCount34 = counters8[max_iter35];
+            winner33 = max_iter35;
+          } else {
+
+          }
+          max_iter35 ++;
+        }
+      }
+      *exp_orig3_copyPtr6 = winner33;
+      exp_orig3_origPtr4 ++;
+      exp_orig3_copyPtr6 ++;
+      size_iter7 ++;
+    }
+    b = exp_orig3_copy5;
+</code></pre>
+</center>
+
+<a class="anchor" id="implicitFlowKinds">&nbsp;</a>
+<br>
+<h3 align=center>Algorithms </h3>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2543" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Some primitives are based on the timing differences between
+a slow and a fast process:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void P'() {
+   value=0;   
+   for(i in [0...(bits in b)-1]) {
+      timeT start = time();
+      if ((i:th bit of b)==1) 
+         <b>slow process</b>(<em>param</em>);
+      else 
+         <b>fast process</b>(<em>param</em>);
+      timeT time = time()-start;
+      if (time  &gt; <em>threshold</em>)
+         value |= 1 &lt;&lt; i;
+   }
+   a = value;
+}
+</code></pre>
+</center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2544" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">A variant of such timing-based flow primitives use threads
+to do the timing. This helps with stealth:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int result;
+void slow(int v) {
+   <b>slow process</b>(<em>param</em>);
+   result = v;
+}
+void fast(int v) {
+   <b>fast process</b>(<em>param</em>);
+   result = v;
+}
+void P'() {
+   a=0;   
+   for(i in [0...(bits in b)-1]) {
+      int bit = i:th bit of b;
+      s=thread_create(slow, bit);
+      f=thread_create(fast, !bit);
+      thread_join(s);
+      thread_join(f);
+      if (result)
+         a |= 1 &lt;&lt; i;
+   }
+}
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2545" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">There are two implementations of these threading-based primitives,
+using either one or two threads. This allows you to embed threading
+code that matches the code that is already in the program.</p></div></div></section>
+
+
+<a class="anchor" id="implicitFlowKinds">&nbsp;</a>
+<br>
+<h3 align=center>Implicit Flow Kinds</h3>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li><code>counter_int</code>:
+      Copy a variable by counting up to its value. I.e., the assigment 
+         <code>a=b</code> is transformed into
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int i,a = 0;
+for(i=0;i&lt;b;i++)
+   a++;
+</code></pre>
+</center>
+   </li>
+
+   <li> <code> counter_float</code>: 
+        Same as <code> counter_int</code>, but using a float.
+   </li>
+
+   <li> <code> counter_signal</code>: 
+        Copy a variable bit-by-bit using a signal handler.
+   </li>
+
+   <li> <code> bitcopy_unrolled</code>: 
+        Copy a variable bit-by-bit, each bit tested by an if-statement
+   </li>
+
+   <li><code> bitcopy_loop</code>: 
+         Loop over the bits in a variable and copy each bit by testing in an if-statement.
+   </li>
+
+   <li><code> bitcopy_signal</code>: 
+         Loop over the bits in a variable and copy each bit in a signal handler:
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned int value;
+int bitNo;
+void handler(int sig){
+  value |= 1 << bitNo;
+}
+
+{
+   value=0;   
+   signal(31, handler);
+   for(i in 0..(bits in b)-1]) {
+      if ((i:th bit of b)==1) {
+           bitNo=i;
+           raise(31);
+     } 
+   }
+   signal(31, 1);
+  a = value;
+}
+</code></pre>
+</center>
+   </li>
+
+   <li><code> file_write</code>:
+      Copy a variable byte-by-byte by writing to a file and reading it back again.
+   </li>
+
+   <li><code> trivial_clock</code>:
+      Copy a variable by timing a trivial loop.
+   </li>
+
+   <li><code> trivial_thread_1</code>:
+      Same as <code> trivial_clock</code>, but using threads for timing.
+   </li>
+
+   <li><code> trivial_thread_2</code>:
+       Same as <code> trivial_thread_1</code>, but using two threads instead of one.
+   </li>
+
+   <li><code> file_cache_time </code>:
+        Copy a variable by timing a file being read with caching turned on or off:
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"><b>process</b><(<em>param</em>,<em>nocache</em>):
+   posix_memalign(&buf,pagesize,
+                  pagesize);
+   fd=open("/tmp/file.txt", <em>writing</em>);
+   fcntl(fd, F_NOCACHE, <em>nocache</em>);
+   for(i=0; i<param; i++) {
+     write(fd,buf,pagesize);
+   }
+   close(fd);
+
+   fd=open("/tmp/file.txt", <em>reading</em>);
+   fcntl(fd, F_NOCACHE, <em>nocache</em>);
+   start = time();
+   for(i=0; i<param; i++) {
+     read(fd,buf,pagesize);
+   }
+   time = time()-start;
+   close(fd);
+   unlink("/tmp/file.txt");
+   
+<b>slow process</b>(<em>param</em>):
+   <b>process</b>(<em>param</em>,1):
+<b>fast process</b>(<em>param</em>):
+   <b>process</b>(<em>param</em>,0):
+</code></pre>
+</center>
+   </li>
+
+   <li><code> file_cache_thread_1</code>:
+         Same as <code> file_cache_time </code>, but using threads for timing.
+   </li>
+
+   <li><code> file_cache_thread_2</code>:
+       Same as <code> file_cache_thread_1</code>, but using two threads instead of one.
+   </li>
+
+   <li><code> mem_cache_time</code>:
+       Copy a variable by timing a CPU data cache being read with or without caching:
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">posix_memalign(&buf1,pagesize,64);
+posix_memalign(&buf2,pagesize,64);
+<b>slow process</b>(<em>param</em>):
+   for(i=0; i&lt;  <em>param</em>;i++){
+      asm ("mfence\n"
+      "clflush (%0)\n"::"r"(buf1));
+      sum += *((long *)buf1);
+      *((long *)buf1) = sum;
+   }
+<b>fast process</b>(<em>param</em>):
+   for(i=0;i &lt; <em>param</em>;i++){
+      asm ("mfence\n"
+      "clflush (%0)\n"::"r"(buf1));
+      sum += *((long *)buf2);
+      *((long *)buf2) = sum;
+   }
+</code></pre>
+<center>
+   </li>
+
+   <li><code> mem_cache_thread_1</code>:
+       Same as <code> mem_cache_time</code>, but using threads for timing.
+   </li>
+
+   <li><code> mem_cache_thread_2</code>:
+        Same as <code> mem_cache_thread_1</code>, but using two threads instead of one.
+   </li>
+
+   <li><code> time_jit</code>:
+       Copy a variable by timing a jitted function:
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int freq=0;
+void foo(input,output) {
+   static void (*foop)(...,...);
+   if (freq==0) {
+      foop = JIT(bytecodes)
+      freq++;
+   }
+   (*foop)(input,output);
+}
+slow process(param):
+   freq=0;
+   start=time();
+   foo(...,...);
+   time=time()-start;
+
+fast process(param);
+   freq=0;
+   foo(...,...);
+   start=time();
+   foo(...,...);
+   time=time()-start;
+</code></pre>
+</center>
+   </li>
+</ul>
+</div></div></div></section>
+
+<a class="anchor" id="training">&nbsp;</a>
+<br>
+<h3 align=center>Training</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2546" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">
+All the implicit flow primitives that are based on timing need to be <em>trained</em>,
+i.e. we have to run tests to see what is a good threshold between slow and fast
+primitives. There are two major kinds of training, <code>gap</code> and <code>resend</code>.
+The <code>gap</code> training simply sends lots of "slow" and "fast" tests, and finds a gap
+between them. The <code>resend</code> training is similar, but uses more sophisticated 
+statistical tests (<em>Wilson's Score Rule</em>) to figure out how many times a 
+bit should be sent in order to achieve a particular confidence level and target error
+rate. The commands look like this:
+</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
+   --Functions=... \
+   --InitImplicitFlowKinds=... \
+   --InitImplicitFlowTrain=true \
+   --InitImplicitFlowTrainingTimesClock=50 \
+   --InitImplicitFlowTrainingTimesThread=50 \
+   --InitImplicitFlowTrainingGapMaxFailureRateClock=5 \
+   --InitImplicitFlowTrainingGapMaxFailureRateThread=5 \
+   --InitImplicitFlowTrainingGapMinGap=90 \
+   --InitImplicitFlowTrainingKind=gap \
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2547" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">or like this:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
+   --Functions=... \
+   --InitImplicitFlowKinds=... \
+   --InitImplicitFlowTrain=true \
+   --InitImplicitFlowTrainingResendConfidenceLevel=0.99 \
+   --InitImplicitFlowTrainingResendTargetErrorRate=0.00001 \
+   --InitImplicitFlowTrainingKind=resend \
+</code></pre>
+</center>
+
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2548" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The output would look like this (for the <code>resend</code> training kind):</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">TRAINING_DATA '(mem_cache_time 4496.000000 16 4)'
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2549" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">which means that for the <code>mem_cache_time</code> implicit flow primitive, a parameter value of "16" is optimal,
+that each bit needs to be sent "4" times, and that the threshold between slow and fast processes is
+"4496". You can then feed this into another run of tigress:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
+   --InitImplicitFlowTrain=false \
+   --InitImplicitFlowTrainingData='(mem_cache_time 4496.000000 16 4)' \
+--Transform=AntiTaintAnalysis \
+   --Functions=... \
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2550" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You can also run the training at startup time of your program, i.e., insert your
+training code at the beginning of <code>main</code>:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
+   --InitImplicitFlowTrain=true \
+--Transform=AntiTaintAnalysis \
+   --Functions=... \
+</code></pre>
+</center>
+
+<a class="anchor" id="combiners">&nbsp;</a>
+<br>
+<h3 align=center>Implicit Flow Combiners</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2551" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Implicit flow primitives can be combined for improved correctness and higher levels
+of resistance to analysis. Combiners are expressed as S-expressions:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">type combiner = 
+   | (single primitive)
+   | (compose combiner combiner ...)
+   | (select combiner  combiner ...)
+   | (majority combiner  combiner ...)
+   | (repeat combiner int)
+   | (until combiner int int)
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2552" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Their behavior as as follows:</p></div></div></section>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> <code>(single a)</code> a single primitive, e.g. <code>(single trivial_counter)</code>.
+   </li> 
+   <li> <code>(compose a b c)</code> chains together several combiners, i.e. <code>a(b(c))</code>.
+   </li> 
+   <li> <code>(select a b c)</code> picks one of combiners <code>a,b,c</code> at random, based on
+input.
+   </li> 
+   <li> <code>(majority a b c)</code> chooses the most frequently occurring value computed by <code>a,b,c</code>.
+   </li> 
+   <li> <code>(repeat a n)</code> is equivalent to <code>(majority a a ... a)</code> with n copies of <tt.a</code>.
+   </li> 
+   <li> <code>(until a m n)</code> continuously repeats combiner <code>a</code> m times until there is at least n agreements on the resulting value.
+   </li> 
+</ul>
+</div></div></div></section>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2553" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">You would use these in the <code>AntiTaintAnalysis</code> command's
+<code>--AntiTaintAnalysisImplicitFlow=...</code> option:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   --Transform=AntiTaintAnalysis \
+   --Functions=main \
+   --AntiTaintAnalysisKinds=vars \
+   --LocalVariables=main:b \
+   --AntiTaintAnalysisImplicitFlow="(repeat mem_cache_thread_1 3)" \
+</code></pre>
+</center>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2554" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">Here are some examples of combiners:</p></div></div></section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  (single counter_int)
+  (single counter_float)
+  (single counter_signal)
+  (single bitcopy_unrolled)
+  (single bitcopy_loop)
+  (single bitcopy_signal)
+  (single file_write)
+  (repeat trivial_thread_1 3)
+  (repeat trivial_counter 3)
+  (repeat mem_cache_time 3)
+  (repeat mem_cache_thread_1 3)
+  (repeat file_cache_time 3)
+  (repeat file_cache_thread_1 3)
+  (repeat jit_time 3)
+  (compose counter_int counter_float file_write)
+  (select counter_int counter_float file_write)
+  (majority mem_cache_thread_1 bitcopy_loop counter_signal)
+  (majority mem_cache_thread_1 file_cache_time bitcopy_loop counter_signal counter_float)
+</code></pre>
+</center>
+
+<center>
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>InitImplicitFlow</tt></td>
+<td> Call this before <tt>--Transform=AntiTaintAnalysis</tt>, in case you want to use the implicit flow copy kinds <tt>counter_signal</tt> and <tt>bitcopy_signal</tt>. This transformation inserts the requisite signal handlers and jitted functions. </td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowKinds</tt></td>
+<td><tt>counter_int, counter_float, counter_signal, bitcopy_unrolled, bitcopy_loop, bitcopy_signal, file_write, lookup_byteArray, trivial_clock, trivial_thread_1, trivial_thread_2, trivial_counter, file_cache_time, file_cache_thread_1, file_cache_thread_2, mem_cache_time, mem_cache_thread_1, mem_cache_thread_2, jit_time, branchPrediction_time, *</tt></td>
+<td> Comma-separated list of the kinds of implicit flow that can be inserted. Default=all options.
+<ul>
+   <li> <tt>counter_int</tt> = Copy a variable by counting up to its value.
+   <li> <tt>counter_float</tt> = Copy a variable by counting up to its value.
+   <li> <tt>counter_signal</tt> = Copy a variable by counting up to its value in a signal handler.
+   <li> <tt>bitcopy_unrolled</tt> = Copy a variable bit-by-bit, each bit tested by an if-statement.
+   <li> <tt>bitcopy_loop</tt> = Loop over the bits in a variable and copy each bit by testing in an if-statement.
+   <li> <tt>bitcopy_signal</tt> = Loop over the bits in a variable and copy each bit in a signal handler.
+   <li> <tt>file_write</tt> = Copy a variable byte-by-byte by writing to a file.
+   <li> <tt>lookup_byteArray</tt> = Copy a variable byte-by-byte by looking up each byte in a table.
+   <li> <tt>trivial_clock</tt> = Copy a variable by timing a trivial loop
+   <li> <tt>trivial_thread_1</tt> = Copy a variable by timing a trivial loop, using 1 thread for timing
+   <li> <tt>trivial_thread_2</tt> = Copy a variable by timing a trivial loop, using 2 threads for timing
+   <li> <tt>trivial_counter</tt> = Copy a variable by timing (using performance counters) a trivial loop
+   <li> <tt>file_cache_time</tt> = Copy a variable by timing a file being read with caching turned on or off.
+   <li> <tt>file_cache_thread_1</tt> = Copy a variable by timing a file being read with caching turned on or off, but using 1 thread for timing.
+   <li> <tt>file_cache_thread_2</tt> = Copy a variable by timing a file being read with caching turned on or off, but using 2 threads for timing.
+   <li> <tt>mem_cache_time</tt> = Copy a variable by timing a CPU data cache being read with or without caching
+   <li> <tt>mem_cache_thread_1</tt> = Copy a variable by timing a CPU data cache being read with or without caching, but using 1 thread for timing.
+   <li> <tt>mem_cache_thread_2</tt> = Copy a variable by timing a CPU data cache being read with or without caching, but using 2 threads for timing.
+   <li> <tt>jit_time</tt> = Copy a variable by timing a jitted function.
+   <li> <tt>branchPrediction_time</tt> = Copy a variable by timing the CPU's branch prediction.
+   <li> <tt>*</tt> = Same as all options turned on.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowHandlerCount</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> How many signal handlers to insert. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowJitCount</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> How many jitted functions to insert. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFileCacheSize</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> Size of the file (in 8k blocks) for a file cache implicit flow. Default=100.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowJitFunctionBody</tt></td>
+<td><tt>S-Expression</tt></td>
+<td> S-Expression describing the control structures of the function to be jitted. See the RandomFuns transformation for description of the syntax. Default="(for (for (for (for (if (bb 2) (bb 2))))))".</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingKind</tt></td>
+<td><tt>gap, resend</tt></td>
+<td> How to do the training. Either by simply looking for a gap between slow and fast times, or to do a more sophisticated statistical test. Default=gap.
+<ul>
+   <li> <tt>gap</tt> = Look for a gap between slow and fast times.
+   <li> <tt>resend</tt> = Use a more sophisticated statistical test, resending each bit until a guaranteed confindence level and target error rate has been achieved. Set these with <tt>--InitImplicitFlowTrainingResendConfidenceLevel=...</tt> and <tt>--InitImplicitFlowTrainingResendTargetErrorRate=...</tt>.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingParameterRange</tt></td>
+<td><tt>S-Expression</tt></td>
+<td> An S-Expression consisting of lists of elements of the form <tt>(<em>implicit-flow-kind from to</em>)</tt>, indicating that we will start by training with the parameter set to <em>from</em>, then <em>2*from</em>, <em>4*from</em>, until <em>to</em> is reached. Default=(trivial_clock 1 10000) trivial_thread_1 1 10000) trivial_thread_2 1 10000) trivial_counter 1 10000) file_cache_time 1 1024) file_cache_thread_1 1 1024) file_cache_thread_2 1 1024) mem_cache_time 2 64) mem_cache_thread_1 2 64) mem_cache_thread_2 2 64) jit_time 0 0) jit_thread_1 0 0) jit_thread_2 0 0).</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrace</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Trace the execution of the initialization of implicit flow. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrain</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Generate a program that runs the training pass. The output will look something like this: T  <tt>RAINING_DATA '(trivial_counter 779.000000 2) (trivial_thread 0.000000 8192) (file_cache_time 24618781.250000 512) (file_cache_thread 0.000000 2) (mem_cache_time 26890.750000 128) (mem_cache_thread 0.000000 2048) (jit_time 10020289.000000 0)'</tt>. This can then be input to a subsequent run of tigress, setting <tt>--InitImplicitFlowTrainingData=</tt> to this output. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTime</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Generate a program that runs lots of timing tests. The output looks something like this <tt>TRAINING_MEASURED_TIME,trivial_counter,fast,example.com,1,208.000000</tt>, where the two last entries is the parameter of the implicit flow kind and the time (usually in clock cycles). Default=false.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingTimesClock</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> Number of training measurements to take for timing-based primitives. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingTimesThread</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> Number of training measurements to take for threading-based primitives. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingGapMaxFailureRateClock</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> Maximum acceptable failure rate for timing-based primitives, out of 100, for the <tt>gap</tt> training kind. Default=5.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingGapMaxFailureRateThread</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> Maximum acceptable failure rate for thread-based primitives, out of 100, for the <tt>gap</tt> training kind. Default=5.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingGapMinGap</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> Minimum gap between fast and midpoint and slow and midpoint, as a percentage, for the <tt>gap</tt> training kind. Default=80.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingResendConfidenceLevel</tt></td>
+<td><tt><em>real</em></tt></td>
+<td> Confidence level, a floating point number close to 1.0, for the <tt>resend</tt> training kind. Default=0.95.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingResendTargetErrorRate</tt></td>
+<td><tt><em>real</em></tt></td>
+<td> Acceptable error rate for the <tt>resend</tt> training kind. Should be a floating point number close to 0. Default=0.0001.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowTrainingData</tt></td>
+<td><tt><em>SExpression</em></tt></td>
+<td> Set training data from previous run of <tt>--InitImplicitFlowTrain</tt>. Default=none.</td>
+</tr>
+</table>
+</div>
+
+</center>
+</br>
+
+<a class="anchor" id="issues">&nbsp;</a>
+<br>
+<h3 align=center>Issues</h3>
+<section class="mbr-section article content12 cid-rDNq15ll1q" id="content12-d"><div class="container"><div class="media-container-row"><div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+<ul>
+   <li> You may have to add <code>-lm -lphtread</code> to the Tigress command line.
+   </li>
+</ul>
+</div></div></div></section>
+
+<a class="anchor" id="references">&nbsp;</a>
+<br>
+<h3 align=center>References</h3>
+<section class="engine"><a href="https://mobirise.info/l">free web templates</a></section><section class="header9 cid-c2555" id="header9-h"> <div class="container"><div class="media-container-column mbr-white"><p class="mbr-text align-left pb-3 mbr-fonts-style display-7" style="background-color:#ffffff">The implicit flow library is described in
+<a href="https://www.ieee-security.org/TC/EuroSP2018">
+   Probabilistic Obfuscation through Covert Channels
+</a>, 
+by Jon Stephens, Babak Yadegari, Christian Collberg, Saumya Debray, and Carlos Scheidegger,
+presented at the 3rd IEEE European Symposium on Security and Privacy.
+</p></div></div></section>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script async src="assets/tether/tether.min.js"></script>
+  <script async src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script async src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script async src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script async src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script async src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script async src="assets/theme/js/script.js"></script>
+  
+  
+  <input name="animation" type="hidden">
+  
+</body>
+</html>
