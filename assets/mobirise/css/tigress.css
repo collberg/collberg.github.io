@@ -82,6 +82,16 @@
 }
 
 
+.TIGRESS-TITLE {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #ffffff;
+  font-size: 96px;
+}
+.TIGRESS-TITLE .mbr-section-subtitle {
+  color: #000000;
+}
+
 .TIGRESS-SECTION {
   padding-top: 0px;
   padding-bottom: 0px;
