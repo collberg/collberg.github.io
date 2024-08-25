@@ -119,14 +119,35 @@ A generated interpreter consists of a virtual instruction set,
 specialized for the input function, a bytecode array, a virtual
 program counter (VPC), a virtual stack pointer (VSP), a dispatch
 unit, and a list of instruction handlers, one for each virtual
-instruction. This video shows an example of the inner workings of
-an interpreter:
+instruction. 
 
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is a <a href="https://ligerlabs.org">LigerLabs</a> video that gives a
+good introduction to the virtualization obfuscation:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
-<video  width="630" height="360" controls style="border:5px solid black;">
-  <source src="tigress3-videos/interpreter.m4v" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+   <video preload="none" 
+         controls  
+         style="border:5px solid black;"
+         poster="https://arizona.box.com/shared/static/ltbhj8tqkmm83mi0xnu3y1sd43oj444r.png" 
+          width="500"
+    >
+    <source src="tigress3-videos/https://arizona.box.com/shared/static/sctfxzjnzxpkh5lxzja1tvyraa3biqxz.m4v" 
+                 type="video/mp4">
+   </video>
 </center>
 
 
@@ -287,6 +308,30 @@ function executes is not important, as long as it completes <em>eventually</em>.
         </div>
     </div>
 </section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is a <a href="https://ligerlabs.org">LigerLabs</a> video that presents some of
+protections against attack that can be added to an obfuscated interpreter:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+   <video preload="none" 
+         controls  
+         style="border:5px solid black;"
+         poster="https://arizona.box.com/shared/static/ltbhj8tqkmm83mi0xnu3y1sd43oj444r.png" 
+          width="500"
+    >
+    <source src="tigress3-videos/https://arizona.box.com/shared/static/vsdzmgxrat5g1f64cs8r5ogxigf5bo7l.m4v:
+                 type="video/mp4">
+   </video>
+</center>
 
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -694,19 +739,7 @@ However, a high degree of diversity can be achieved from the way
 instructions communicate with each other, through values stored on the
 stack or passed in virtual registers.  Tigress can generate
 instructions that use any combination of registers and stack storage
-for the inputs they read or the output they produce. Here's a video
-to illustrate this:
-
-            </p>
-        </div>
-    </div>
-</section>
-<center>
-<video  width="630" height="360" controls style="border:5px solid black;">
-  <source src="tigress3-videos/randomize.m4v" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</center>
+for the inputs they read or the output they produce. 
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -1212,24 +1245,6 @@ and where the stealthiness of the computations is paramount.
 </section>
 
 
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This video shows how making an interpreter reentrant will mix instructions from
-the interpreter with instructions from the surrounding code:
-
-            </p>
-        </div>
-    </div>
-</section>
-<center>
-<video  width="630" height="360" controls style="border:5px solid black;">
-  <source src="tigress3-videos/reentrant.m4v" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</center>
-
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -1431,7 +1446,12 @@ To ensure termination you can
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
         experiment yourself with how many iterations
-        are necessary to finish the computation;</li
+        are necessary to finish the computation;
+
+                        </p>
+                    </div>
+                </div>
+            </div>
 
             <div class="card separline pb-4">
                 <div class="step-element d-flex">
@@ -1674,6 +1694,11 @@ violate the invariants it is likely to crash.
     </div>
 </section>
 
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Starting with version 3.3.3, setting <tt>--VirtualizeEncodeByteArray=incrementally</tt> results in 
 the bytecode array being decoded as each entry is encountered. The instruction handler
 code now looks like this, where 3472328296227680304UL is the xor encoding constant: 
