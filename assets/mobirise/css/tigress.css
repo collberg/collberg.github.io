@@ -1,0 +1,92 @@
+.TIGRESS-UL {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.TIGRESS-UL .counter-container {
+  color: #767676;
+}
+.TIGRESS-UL .counter-container ul {
+  margin-bottom: 0;
+}
+.TIGRESS-UL .counter-container ul li {
+  margin-bottom: 1rem;
+  list-style: none;
+}
+.TIGRESS-UL .counter-container ul li:before {
+  position: absolute;
+  left: 0px;
+  margin-top: -10px;
+  padding-top: 3px;
+  content: '';
+  display: inline-block;
+  text-align: center;
+  margin: 0px 10px;
+  line-height: 20px;
+  transition: all .2s;
+  color: #ffffff;
+  background: #149dcc;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  content: '✓';
+}
+
+
+.TIGRESS-P {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.TIGRESS-P h1 {
+  color: #616161;
+}
+.TIGRESS-P h2,
+.TIGRESS-P h3,
+.TIGRESS-P p {
+  color: #767676;
+}
+.TIGRESS-P .mbr-section-subtitle {
+  font-style: italic;
+}
+
+
+.TIGRESS-OL {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.TIGRESS-OL .mbr-section-subtitle {
+  color: #767676;
+  text-align: center;
+  font-weight: 300;
+}
+.TIGRESS-OL .step {
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  border-radius: 50%;
+  border: 2px solid #efefef;
+}
+.TIGRESS-OL .separline {
+  position: relative;
+}
+.TIGRESS-OL .separline:after {
+  top: 40px;
+  left: 16px;
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: calc(100% - (18px + 4px) * 2);
+  background-color: #efefef;
+}
+
+
+.TIGRESS-SECTION {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.TIGRESS-SECTION .mbr-section-subtitle {
+  color: #767676;
+}

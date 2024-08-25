@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -89,18 +91,20 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/top-level-front-page.png"></center>
 
-<section class="header9 cid-c3623" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
 that selects the type of transformation and the <code>--Functions</code> option that
 selects the function(s) to which it should be applied. The Tigress options described here
  apply to <strong>all</strong> transformations. Each transformation additionally has their
 own set of options, all prefixed by the name of the transformation.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -151,13 +155,24 @@ own set of options, all prefixed by the name of the transformation.
 <!-- =============================================================================================== -->
 
 <a class="anchor" id="targets">&nbsp;</a>
-<br>
-<h3 align=center>Selecting Targets</h3>
-<section class="header9 cid-c3624" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Selecting Targets
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 To avoid name clashes and to allow you to specify the results of a 
 transformation, prefixes can be added to all new identifiers. For
 example, after a <code>Split</code> transformation, you may want to
@@ -168,9 +183,9 @@ file (rather than applying all transformations in one run), you need
 to make sure that new names don't clash with old ones. Use 
 <code>--FilePrefix</code> for this.
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -256,55 +271,75 @@ to make sure that new names don't clash with old ones. Use
 </br>
 
 <br>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> Thus, to generate symbols of the form <code>AAA_BBB_opaque_list1</code>, give the options
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        Thus, to generate symbols of the form <code>AAA_BBB_opaque_list1</code>, give the options
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--FilePrefix=AAA_ \
 --Transform=initOpaque \
 --Prefix=BBB
 </code></pre>
 </center>
-   </li>
-   <li> Or, to generate symbols of the form <code>AAA__0__opaque_Node</code>, give the options
+
+</li>
+
+<li>
+        Or, to generate symbols of the form <code>AAA__0__opaque_Node</code>, give the options
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--FilePrefix=AAA_ \
 --Transform=InitOpaque
 </code></pre>
 </center>
-   </li>
-            </ul>
+
+</li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- =============================================================================================== -->
 
 <a class="anchor" id="arguments">&nbsp;</a>
-<br>
-<h3 align=center>Argument Specifications</h3>
-<section class="header9 cid-c3625" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Argument Specifications
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 For options that take an integer an argument we provide an <em>INTSPEC</em> 
 notation that allows randomized selection of the value. There's a similar
 <em>BOOLSPEC</em> notation for booleans.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c3626" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 All transformations require you to specify the set of functions to
 which they should be applied. <em>IDENTSPEC</em> (identifier
 specifications) allow you to flexibly select all or some of the
@@ -313,9 +348,9 @@ specifications to specify variables, as
 in <code>--UpdateEntropyVar=*</code> which would select all variables of
 a function.
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -403,69 +438,99 @@ a function.
 </br>
 
 <br>
-<section class="header9 cid-c3627" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
- Here are some examples:</p>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li>Randomly select 3 functions and "foo":
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+ Here are some examples:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      Randomly select 3 functions and "foo":
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Functions=?3,foo   
 </code></pre>
 </center>
-   </li>
-   <li> Add entropy from all variables in function foo:
+
+</li>
+
+<li>
+        Add entropy from all variables in function foo:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=UpdateEntropy \
 --Functions=foo \
 --UpdateEntropyVar=*
 </code></pre>
 </center>
-   </li>
-   <li>Split 20% of all functions:
+
+</li>
+
+<li>
+      Split 20% of all functions:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=split \
 --Functions=%20 
 </code></pre>
 </center>
-   <li>
-            </ul>
+
+<li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
-<section class="header9 cid-c3628" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Note that some care needs to be exercised when specifiying
 identifiers, since some renaming can happen during obfuscation.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <!-- =============================================================================================== -->
 
 <a class="anchor" id="regions">&nbsp;</a>
-<br>
-<h3 align=center>Function Regions (<b>From version 3.3</b>) </h3>
-<section class="header9 cid-c3629" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Function Regions (<b>From version 3.3</b>)
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Some transformations allow you to specify a <em>region</em> of a function to transform. In your 
 source program you use the macro <tt>TIGRESS_REGION(<em>region-name</em>,<em>code</em>)</tt>:
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -489,56 +554,94 @@ void fib(int n) {
 </code></pre>
 </center>
 
-<section class="header9 cid-c3630" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Then, in your tigress command, you add <tt>:<em>region-name</em></tt> to the <tt>--Functions</tt> option:</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Then, in your tigress command, you add <tt>:<em>region-name</em></tt> to the <tt>--Functions</tt> option:
+
+            </p>
+        </div>
+    </div>
+</section>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... --Transform=Virtualize --Functions=fib:region1 ...  
 </code></pre>
 </center>
 
-<section class="header9 cid-c3631" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Caveats:</p>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> Not all transforms currently support this feature.</li>.
-   <li> Regions need to be self-contained, i.e. you cannot jump into
-        or out of the region, take the address of a label in the 
-        region and use it outside, etc. </li>
-   <li> The current implementation incurs some overhead. </li>
-            </ul>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Caveats:
+
+            </p>
         </div>
     </div>
-</div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+          Not all transforms currently support this feature..
+
+</li>
+
+<li>
+        Regions need to be self-contained, i.e. you cannot jump into
+        or out of the region, take the address of a label in the 
+            region and use it outside, etc. 
+
+</li>
+
+<li>
+          The current implementation incurs some overhead. 
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- =============================================================================================== -->
 
 <a class="anchor" id="regions">&nbsp;</a>
-<br>
-<h3 align=center>Json output (<b>From version 3.3</b>) </h3>
-<section class="header9 cid-c3632" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Json output (<b>From version 3.3</b>)
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Typically, Tigress generates a C file as output, specified by the <tt>--out=<em>filename.c</em></tt> option. 
 If you want to process the output further you can also provide <tt>--outJson=<em>filename.json</em></tt> option
 which will produce the output file as an abstract syntax tree. There is no formal definition of this Json AST
 at this point, but it closely follows the structure of the <a href="http://cil-project.github.io/cil/doc/html/cil/api/Cil.html">CIL AST</a>
 on which it is based. Here's a piece of a function AST: 
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -575,6 +678,7 @@ on which it is based. Here's a piece of a function AST:
               ] }, {
 </code></pre>
 </center>
+
 
 
 <script src="assets/popper/popper.min.js"></script>

@@ -79,14 +79,14 @@
                         FAQ</h2>
                 </div>
                 <div class="clearfix"></div>
-                <div id="bootstrap-accordion_14" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
+                <div id="bootstrap-accordion_6" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
                     <div class="card">
                         <div class="card-header" role="tab" id="headingOne">
-                            <a role="button" class="panel-title collapsed text-black" data-toggle="collapse" data-core="" href="#collapse1_14" aria-expanded="false" aria-controls="collapse1">
+                            <a role="button" class="panel-title collapsed text-black" data-toggle="collapse" data-core="" href="#collapse1_6" aria-expanded="false" aria-controls="collapse1">
                                 <h4 class="mbr-fonts-style display-7">Why is the tool called Tigress?</h4>
                             </a>
                         </div>
-                        <div id="collapse1_14" class="panel-collapse noScroll collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_14">
+                        <div id="collapse1_6" class="panel-collapse noScroll collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_6">
                             <div class="panel-body p-4">
                                 <p class="mbr-fonts-style panel-text display-7">Well, there's the Man-Eating Bengal Tigress of <a href="http://en.wikipedia.org/wiki/Tigress_of_Jowlagiri">Jowlagiri</a> who randomly killed 15 people. And then there's <a href="http://en.wikipedia.org/wiki/List_of_Kung_Fu_Panda_characters#Master_Tigress">Master Tigress</a>, who, when growing up in an orphanage was feared by the other children because of her "destructive temper and strength." And, then there's the <a href="http://en.wikipedia.org/wiki/Paula_Brooks">Tigress/Paula Brooks/the Huntress/Mrs. Menace</a> who was a "skilled hand-to-hand fighter whose nails were once sharpened like talons."<br><br>So, there are some powerful, lethal, destructive, random, kick-ass Tigresses out there.<br><br>But, yeah, we totally just made it up.<br><br><strong>And why is this site <a href="index.html">tigress.</a><em><a href="index.html">WTF</a></em>? Really? A little sophomoric, no? </strong>Sure,<strong>&nbsp;</strong>but WTF is what we're hoping a reverse engineer will say when they look at the Tigress-generated code, so it fits.</p>
                             </div>
@@ -94,12 +94,12 @@
                     </div>
                     <div class="card">
                         <div class="card-header" role="tab" id="headingTwo">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse2_14" aria-expanded="false" aria-controls="collapse2">
+                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse2_6" aria-expanded="false" aria-controls="collapse2">
                                 <h4 class="mbr-fonts-style display-7">Can I be sure this tool will generate correct code?</h4>
                             </a>
                             
                         </div>
-                        <div id="collapse2_14" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_14">
+                        <div id="collapse2_6" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_6">
                             <div class="panel-body p-4">
                                 <p class="mbr-fonts-style panel-text display-7">No.<br><br>Diversity definitely causes a problem with testing. Since Tigress' actions are driven by a seed, just because a test passes once, or 10 times, doesn't mean it will pass the next time. And, just because a test passes with three transformations T1,T2,T3, it doesn't follow that the sequence T1,T3,T2 would pass, or that a slight change to one of the arguments wouldn't make it fail. We currently follow the following testing procedure:<br><br>for T in {all transformations} do<br>&nbsp; &nbsp;for O in {important combinations of options to T} do<br>&nbsp; &nbsp; &nbsp;for C in {806 C test cases (gcc torture tests, etc.)} do<br>&nbsp; &nbsp; &nbsp; &nbsp;for S in 10 random seeds do<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;C' := Tigress[T,O,S](C)<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;execute gcc(C') and compare the output with gcc(C).<br>&nbsp; &nbsp; &nbsp; &nbsp; end<br>&nbsp; &nbsp; &nbsp;end<br>&nbsp; &nbsp;end<br>end<br><br>for T1,T2 in {all pairs of transformations} do<br>&nbsp; &nbsp;let O1,O2 be "worst case" options to T1,T2 in<br>&nbsp; &nbsp;for C in {806 C test cases (gcc torture tests, etc.)} do<br>&nbsp; &nbsp; &nbsp; for S in 10 random seeds do<br>&nbsp; &nbsp; &nbsp; &nbsp; C' := Tigress[T2,O2,S](Tigress[T1,O1,S](C))<br>&nbsp; &nbsp; &nbsp; &nbsp;execute gcc(C') and compare the output with gcc(C).<br>&nbsp; &nbsp; &nbsp; end<br>&nbsp; &nbsp;end<br>end<br><br>The bottom line is that you have to run all your tests before and&nbsp;<em>after</em> obfuscation,</p>
                             </div>
@@ -107,11 +107,11 @@
                     </div>
                     <div class="card">
                         <div class="card-header" role="tab" id="headingThree">
-                            <a role="button" class="collapsed text-black panel-title" data-toggle="collapse" data-core="" href="#collapse3_14" aria-expanded="false" aria-controls="collapse3">
+                            <a role="button" class="collapsed text-black panel-title" data-toggle="collapse" data-core="" href="#collapse3_6" aria-expanded="false" aria-controls="collapse3">
                                 <h4 class="mbr-fonts-style display-7">Does Tigress insert malicious code into the generated code?</h4>
                             </a>
                         </div>
-                        <div id="collapse3_14" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_14">
+                        <div id="collapse3_6" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_6">
                             <div class="panel-body p-4">
                                 <p class="mbr-fonts-style panel-text display-7">Good question. With two levels of virtualization, for example, it would be easy to sneak in something in the bytecode that's pretty difficult to detect. And, since Tigress currently isn't open source, there is no way for users to examine it themselves.<br><br>There is no malware deliberately inserted. You have to take my word for it. <a href="https://si.se/en/sweden-ranks-as-the-most-reputable-country-in-the-world/">And, if you can't trust a Swede, who can you trust?</a></p>
                             </div>
@@ -119,11 +119,11 @@
                     </div>
                     <div class="card">
                         <div class="card-header" role="tab" id="headingFour">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse4_14" aria-expanded="false" aria-controls="collapse4">
+                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse4_6" aria-expanded="false" aria-controls="collapse4">
                                 <h4 class="mbr-fonts-style display-7">Why aren't you sharing source?<br></h4>
                             </a> 
                         </div>
-                        <div id="collapse4_14" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#bootstrap-accordion_14">
+                        <div id="collapse4_6" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#bootstrap-accordion_6">
                             <div class="panel-body p-4">
                                 <p class="mbr-fonts-style panel-text display-7">As noted above, in a system like this it is easy to insert secret malicious code, since the output is, well, obfuscated, and supposed to be hiding things. I therefore want to be in control of the source myself, so that I can make guarantees such as the one above.&nbsp;<br><br><strong>So, given our <a href="http://www.findresearch.org">work</a> on <a href="https://dl.acm.org/citation.cfm?id=2812803">repeatability</a> and <a href="http://repeatability.cs.arizona.edu">sharing</a> in Computer Science, aren't we being hypocritical?</strong> No, we're not. As you can read in our CACM&nbsp;<a href="https://dl.acm.org/citation.cfm?id=2812803">paper</a>, there are plenty of situations when code sharing is not possible, or desirable. Issues of security and privacy come to mind. Also, our proposal is not to require everyone to share all their research artifacts all the time (this would be naive), but rather to require full transparency with respect to the level of sharing a particular project will support.<br><br>Also, we regularly share the Tigress source with colleagues in academia. You just have to ask.<br><br><strong>Then, what is the best way to learn what Tigress can do, now that you can't read the source?&nbsp;</strong>The best way to learn what Tigress can do is not to look at the source (which is pretty complex) but to treat Tigress as a black box, feeding it small input programs, examining the output, changing one of the options, and repeating the process. The fact that Tigress is C source-to-source (rather than, say, binary-to-binary), makes this particularly attractive.&nbsp;</p>
                             </div>
@@ -131,11 +131,11 @@
                     </div>
                     <div class="card">
                         <div class="card-header" role="tab" id="headingFive">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse5_14" aria-expanded="false" aria-controls="collapse5">
+                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse5_6" aria-expanded="false" aria-controls="collapse5">
                                 <h4 class="mbr-fonts-style display-7">Nothing works - What should I do?</h4>
                             </a>
                         </div>
-                        <div id="collapse5_14" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#bootstrap-accordion_14">
+                        <div id="collapse5_6" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#bootstrap-accordion_6">
                             <div class="panel-body p-4">
                                 <p class="mbr-fonts-style panel-text display-7"><strong>I'm getting this error: for loop initial declarations are only allowed in C99 mode. What should I do?</strong><br>Tigress supports the C99 language. Depending on your compiler, you may have to add a switch (such as -std=c99 for gcc) to indicate this.<br><br><strong>Whatever I do, I just get parse errors:<br></strong>/usr/include/sys/stdio.h[39:80-86] : syntax error<br>Parsing error<br>Fatal error: exception Frontc.ParseError("Parse error")<br>Let me guess, you're on a Mac. We thought we fixed all these isses... They stem from Apple adding new syntax to declarations. We might have missed some. Let us know.<br><br><strong>Tigress just gives a weird error and exits!<br></strong>Run uname -a to verify that you're running on a 64-bit platform.<br><br><strong>My program works (albeit compiles with a few warnings) but after I've run it through tigress it crashes!</strong><br>If your program doesn't compile cleanly it may well not work when obfuscated by Tigress. For example, say that you forget to include stdlib.h in your code. gcc may complain with<br><em>&nbsp; &nbsp;foo.c:51:27: warning: implicitly declaring library function 'malloc' with<br>&nbsp; &nbsp;type 'void *(unsigned long)' [-Wimplicit-function-declaration]<br></em>but, your code still works. However, when tigress processes your code, it doesn't know malloc's prototype, and will assume that it returns an int, and not void*. Bad things will happen when a void* gets truncated to an int. Moral of the story: make sure your code compiles cleanly before obfuscating it.</p>
                             </div>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -88,17 +90,19 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/split-front-page.png"></center>
 
-<section class="header9 cid-c5592" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Outline pieces of a function into their own functions. This transformation is
    useful, for example, to break a large, virtualized, function into smaller,
    less conspicuous, pieces. Four different splitting methods are supported. The order in which
    they are tried can affect the naturalness of the resulting code.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -156,19 +160,32 @@ Outline pieces of a function into their own functions. This transformation is
 </br>
 
 <a class="anchor" id="examples">&nbsp;</a>
-<br>
-<h3 align=center>Examples</h3>
-<section class="header9 cid-c5593" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Examples
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 This command first tries to split function <tt>foo</tt> at most 100 times,
 then applies the <tt>block split</tt> transformation to the resulting
 outlined function. Note the use of a regular expression to specify the
 names of the functions that were generated in the first transformation:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
@@ -185,24 +202,42 @@ names of the functions that were generated in the first transformation:
 </center>
 
 <a class="anchor" id="Issues">&nbsp;</a>
-<br>
-<h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li>For functions that have many locals, the number of formal parameters may explode.
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      For functions that have many locals, the number of formal parameters may explode.
        This is particularly an issue for WebAssembly, since compilers will put a limit
        on the number of formal parameters. <tt>--SplitLocalsAsFormals=false</tt> will
        instead just add one formal, a pointer to a <tt>struct</tt> that holds all the
        locals. This option still has a bug in it; you will know, since it causes a
-       compile-time error.</li>
-            </ul>
+          compile-time error.
+
+</li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
+
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

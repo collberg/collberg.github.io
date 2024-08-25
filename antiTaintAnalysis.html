@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -88,62 +90,125 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/antiTaintAnalysis-front-page.png"></center>
 
-<section class="header9 cid-c3623" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The goal of this transformation is to disrupt analysis tools that
 make use of dynamic taint analysis. 
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <a class="anchor" id="diversity">&nbsp;</a>
-<br>
-<h3 align=center>Diversity</h3>
-<section class="header9 cid-c3624" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-We use two basic ways to copy a variable using control-, rather than
-data-flow:
-         </p>
-      </div>
-   </div>
-</section>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container">   <div class="media-container-row">      <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article>            <ol>
-      <li> counting up to the value of the variable, and </li>
-      <li> copying it bit by bit, tested in an if-statement. </li>
-            </ol>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Diversity
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
 </section>
-<section class="header9 cid-c3625" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+We use two basic ways to copy a variable using control-, rather than
+data-flow:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="step1 TIGRESS-OL" id="step1-dy">
+    <div class="container">
+        <div class="step-container">
+
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            1
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                counting up to the value of the variable, and 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            2
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                copying it bit by bit, tested in an if-statement. 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 This can be done in a simple loop, an unrolled loop, or by throwing
 exceptions caught in a signal handler. This leads to a total of
 five different copy methods.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <a class="anchor" id="usage">&nbsp;</a>
-<br>
-<h3 align=center>Usage</h3>
-<section class="header9 cid-c3626" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Usage
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 If you want to copy using signals you must first generate the signal handlers
 using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -204,17 +269,30 @@ using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.
 </br>
 
 <a class="anchor" id="examples">&nbsp;</a>
-<br>
-<h3 align=center>Examples</h3>
-<section class="header9 cid-c3627" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Examples
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The code to copy <code>argc</code> using bit-by-bit copy and signals 
 would look something like this:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  argc_origPtr13 = (unsigned char *)(& argc);
@@ -238,11 +316,17 @@ would look something like this:
   }
 </code></pre>
 </center>
-<section class="header9 cid-c3628" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-with this signal handler and these global variables:</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+with this signal handler and these global variables:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char TempVar;
 int BitVar;
@@ -253,36 +337,134 @@ void handler(int sig ) {
 </center>
 
 <a class="anchor" id="issues">&nbsp;</a>
-<br>
-<h3 align=center>Issues</h3>
-<section class="header9 cid-c3629" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Currently, we can only un-taint a few variables:</p>
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container">   <div class="media-container-row">      <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article>            <ol>
-      <li> <code>argc</code> and <code>argv</code> in <code>main</code>, </li>
-      <li> the output values of a few system and library calls: <code>getpid</code> and <code>scanf</code>, </li>
-      <li> the virtual PC in a virtualized function (using the <code>--VirtualizeImplicitFlowVPC</code>
-           option). </li>
-      <li> The function handler to a jitted function (using the <code>--JitImplicitFlow</code> option). </li>
-            </ol>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
 </section>
-<section class="header9 cid-c3630" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-We will add more as requested!</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Currently, we can only un-taint a few variables:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="step1 TIGRESS-OL" id="step1-dy">
+    <div class="container">
+        <div class="step-container">
+
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            1
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                <code>argc</code> and <code>argv</code> in <code>main</code>, 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            2
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                the output values of a few system and library calls: <code>getpid</code> and <code>scanf</code>, 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            3
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+              the virtual PC in a virtualized function (using the <code>--VirtualizeImplicitFlowVPC</code>
+                  option). 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            4
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                The function handler to a jitted function (using the <code>--JitImplicitFlow</code> option). 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+We will add more as requested!
+
+            </p>
+        </div>
+    </div>
+</section>
 <a class="anchor" id="references">&nbsp;</a>
-<br>
-<h3 align=center>References</h3>
-<section class="header9 cid-c3631" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ References
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The implementation is based on ideas from
 <a href="http://www.isg.rhul.ac.uk/sullivan/pubs/tr/ata07.pdf">
    Anti-Taint-Analysis: Practical Evasion Techniques Against Information Flow Based Malware Defense
@@ -291,10 +473,12 @@ The implementation is based on ideas from
    On the Effectiveness of Dynamic Taint Analysis for Protecting Against 
        Private Information Leaks on Android-based Devices
 </a> by Golam Sarwar, Olivier Mehani, Roksana Boreli, and Mohamed-Ali Kaafar.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
+
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

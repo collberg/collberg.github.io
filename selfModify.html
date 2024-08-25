@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -88,10 +90,11 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/selfModify-front-page.png"></center>
 
-<section class="header9 cid-c5592" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The goal of these transformations is to make functions self-modifying. Here's how Tigress is invoked:
 
 <center>
@@ -110,17 +113,19 @@ The goal of these transformations is to make functions self-modifying. Here's ho
 </code></pre>
 </center>
 
-<section class="header9 cid-c5593" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Note that we need to compile the generated code in such a way that the text segment pages are writable
 (See <a href="https://stackoverflow.com/questions/27581279/make-text-segment-writable-elf">here</a>
 for alternatives and <a href="https://stackoverflow.com/questions/60497896/self-modifying-code-on-darwin-10-15-resulting-in-malformed-mach-o-image">here</a>
 for issues with newer versions of Darwin):
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> gcc -segprot __TEXT rwx rwx obf.c -o obf.exe   # Darwin (early versions)
@@ -131,18 +136,31 @@ for issues with newer versions of Darwin):
 </code></pre>
 </center>
 
-<br>
-<h3 align=center>Binary Arithmetic Expressions and Comparisons</h3> 
-<section class="header9 cid-c5594" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Binary Arithmetic Expressions and Comparisons
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The transformation inserts a binary code template at the top of the function. There's
 one template for each type (int/long) and one for arithmetic, one for comparisons, and
 one for branches. They look roughly like this:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 5);
@@ -175,15 +193,17 @@ one for branches. They look roughly like this:
   Lab_2: 
 </code></pre>
 </center>
-<section class="header9 cid-c5595" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Then, for each binary operation in the remainder of the function, the following code
 is inserted:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    A = i;
@@ -201,37 +221,70 @@ is inserted:
     Lab_4: 
 </code></pre>
 </center>
-<section class="header9 cid-c5596" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-At runtime, this makes the following changes to the executable code:</p>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> the opcode is set to the appropriate one (<tt>setl</tt> in this case),</li>
-   <li> the jump instruction is modified with the literal address of the template (<tt>Lab_1</tt>), </li>
-   <li> the return jump instruction in the template (the last instruction) is set to the return location (<tt>Lab_4</tt>). </li>
-            </ul>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+At runtime, this makes the following changes to the executable code:
+
+            </p>
         </div>
     </div>
-</div>
 </section>
 
-<br>
-<h3 align=center>Virtualization/Flattening + Self-Modification</h3> 
-<section class="header9 cid-c5597" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+          the opcode is set to the appropriate one (<tt>setl</tt> in this case),
+
+</li>
+
+<li>
+          the jump instruction is modified with the literal address of the template (<tt>Lab_1</tt>), 
+
+</li>
+
+<li>
+          the return jump instruction in the template (the last instruction) is set to the return location (<tt>Lab_4</tt>). 
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Virtualization/Flattening + Self-Modification
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 This transformation is particularly useful after transformations that
 introduce indirect branches, such as virtualization and flattening
 with a direct or indirect dispatch. Below is an example:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void add(void) { 
@@ -257,15 +310,17 @@ with a direct or indirect dispatch. Below is an example:
 }
 </code></pre>
 </center>
-<section class="header9 cid-c5598" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Here, each indirect branch turns into the following code, where the byte sequence
 corresponds to the X86 8-byte direct jump:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addr = (unsigned long *)((unsigned long )(&& Lab) + 6);
@@ -273,45 +328,62 @@ corresponds to the X86 8-byte direct jump:
   Lab: asm volatile(".byte 0xff, 0x25, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00":);
 </code></pre>
 </center>
-<section class="header9 cid-c5599" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 This is interesting, since some de-virtualization transformations look for indirect
 branches, and these are now gone from the code.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 
-<br>
-<h3 align=center>Encoding style</h3> 
-<section class="header9 cid-c5600" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Encoding style
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 For this transformation we generate copious amounts of inline assembly code. Different compilers
 support various forms of inline assembly. Clang didn't support <em>asm goto</em> until recent versions,
 for example, and MSVC doesn't support any of the gcc extensions we rely on. Furthermore, the actual 
 syntax and semantics the compilers implement can vary. For example, Clang accepts <tt>asm volatile goto</tt>
 but not <tt>asm goto volatile</tt> (gcc accepts either). 
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c5601" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Tigress supports a few different "styles" of inline assembly to generate for this transformation. 
 We try to pick the right style based on your plaform (remember to set the <tt>--Environment=</tt> option
 correctly!!!), but you can use the <tt>--SelfModifyStyle</tt> option yourself if your compiler misbehaves and
 want to experiment. 
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <br>
@@ -398,27 +470,55 @@ want to experiment.
 <br>
 
 
-<br>
-<h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> This transformation currently only works on x86/64 targets.</li>
-   <li> If you see an error message "<tt>Simplify: makeThreeAddress for AddrOf</tt>", set <tt>--SelfModifySubExpressions=false</tt> There's a bug in CIL that I don't know how to fix.</li>
-   <li> At this time, there is not much diversity in generated code; it's very tamplate-y. This makes
-        it easy to locate the code using simple pattern-matching. To break up the templates somewhat, 
-        set <tt>--SelfModifyBogusInstructions=0?5</tt>. This inserts between 0 and 5 NOP-equivalent bytes 
-        between the template instructions.</li>
-   <li> Sometimes the generated code crashes when compiled with <tt>gcc</tt>. In that case, switch to <tt>clang</tt>. 
-            </ul>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+          This transformation currently only works on x86/64 targets.
+
+</li>
+
+<li>
+          If you see an error message "<tt>Simplify: makeThreeAddress for AddrOf</tt>", set <tt>--SelfModifySubExpressions=false</tt> There's a bug in CIL that I don't know how to fix.
+
+</li>
+
+<li>
+        At this time, there is not much diversity in generated code; it's very tamplate-y. This makes
+        it easy to locate the code using simple pattern-matching. To break up the templates somewhat, 
+        set <tt>--SelfModifyBogusInstructions=0?5</tt>. This inserts between 0 and 5 NOP-equivalent bytes 
+            between the template instructions.
+
+</li>
+
+<li>
+        Sometimes the generated code crashes when compiled with <tt>gcc</tt>. In that case, switch to <tt>clang</tt>. 
+
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
    
+
 
 
 <script src="assets/popper/popper.min.js"></script>

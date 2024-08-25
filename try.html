@@ -23,7 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
   
  <style>
@@ -86,170 +86,22 @@ h3 {
 
 
 <br><br><br><br>
-<center><h1>Encode Arithmetic</h1></center>
+<center><h1>Anti Taint Analysis</h1></center>
 
-<center><img width="500px" src="tigress3-images/encodeArithmetic-front-page.png"></center>
+<center><img width="500px" src="tigress3-images/antiTaintAnalysis-front-page.png"></center>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Replace integer arithmetic with more complex expressions, encoded with
-<em>Mixed Boolean Expressions</em> (MBA). For example, the following identities can be used to encode
-integer addition:
+The goal of this transformation is to disrupt analysis tools that
+make use of dynamic taint analysis. 
 
             </p>
         </div>
     </div>
 </section>
-<center>                
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">x + y = x - &not; y - 1
-      = (x &oplus; y) + 2&middot;(x &and; y) 
-      = (x &or; y) + (x &and; y) 
-      = 2&middot;(x &or; y) - (x &oplus; y) 
-</code></pre>
-</center>
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-For example, Tigress might replace
-
-            </p>
-        </div>
-    </div>
-</section>
-<center>                
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">z = x + y + w
-</code></pre>
-</center>                
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-with
-
-            </p>
-        </div>
-    </div>
-</section>
-<center>                
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">z = (((x ^ y) + ((x & y) << 1)) | w) + 
-    (((x ^ y) + ((x & y) << 1)) & w);
-</code></pre>
-</center>                
-
-<center>
-<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 60%;">
-    </colgroup>
-<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
-<tr>
-<td><tt>--Transform</tt></td>
-<td><tt>EncodeArithmetic</tt></td>
-<td> Replace integer arithmetic with more complex expressions. </td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticKinds</tt></td>
-<td><tt>builtin, plugins</tt></td>
-<td> Specify the types to encode. Currently, only integer is available. <b>From version 3.3.3.</b> Default=builtin.
-<ul>
-   <li> <tt>builtin</tt> = Use Tigress' built-in MBA patterns
-   <li> <tt>plugins</tt> = Use plugin MBA expressions
-</ul>
-</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticMaxLevel</tt></td>
-<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How deep to recurse into expressions. Default=1.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticMaxTransforms</tt></td>
-<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How many transformations to perform on each expression. Default=1.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticRepeatTimes</tt></td>
-<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How many times to repeat the rewriting process. Equivalent to calling <tt>EncodeArithmetic</tt> multiple times. <b>From Version 3.3</b> Default=1.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticDumpFileName</tt></td>
-<td><tt><em>string</em></tt></td>
-<td> Name of Json file onto which we dump transformed expression. The actual file will be <tt><em>function-name</em>_<em>number</em>_<em>fileName.json</em></tt>. <b>From version 3.3.2.</b> Default=100.</td>
-</tr>
-</table>
-</div>
-
-</center>
-</br>
-
-<a class="anchor" id="splitting">&nbsp;</a>
-
-<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">
- Splitting Encoded Expressions
-
-               </h2>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-There are two parts to attacking an MBA expression: first you have to find the expression, and then you have to
-decode it (i.e. turn it back into something resembling it's original form). You can split up expressions to make them
-more diffiult to locate in the code (both statically and dynamically).<p>
-
-<center>
-<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 60%;">
-    </colgroup>
-<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
-<tr>
-<td><tt>--EncodeArithmeticMaxSplit</tt></td>
-<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How many pieces in which to split the transformed expression. <b>From Version 3.3</b> Default=1.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticAddImplicitFlow</tt></td>
-<td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
-<td> Add implicit flow to the pieces split out from an encoded expression. You need to set <tt>--EncodeArithmeticMaxSplit=<em>value greater than zero</em></tt> for this to take effect. <b>From Version 3.3</b> Default=false.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticImplicitFlow</tt></td>
-<td><tt>S-Expression</tt></td>
-<td> The type of implicit flow to insert. See <tt>--AntiTaintAnalysisImplicitFlow</tt> for a description. Default=none.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticAddOpaques</tt></td>
-<td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
-<td> Add opaque predicates to the pieces split out from an encoded expression. You need to set <tt>--EncodeArithmeticMaxSplit=<em>value greater than zero</em></tt> for this to take effect. <b>From Version 3.3</b> Default=false.</td>
-</tr>
-</table>
-</div>
-
-</center>
-</br>
-
 
 <a class="anchor" id="diversity">&nbsp;</a>
 
@@ -270,22 +122,76 @@ more diffiult to locate in the code (both statically and dynamically).<p>
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-For each operator, there are many possible encodings, and
-at transformation time, these are selected from randomly.
+We use two basic ways to copy a variable using control-, rather than
+data-flow:
 
             </p>
         </div>
     </div>
 </section>
 
-<a class="anchor" id="debugging">&nbsp;</a>
+<section class="step1 TIGRESS-OL" id="step1-dy">
+    <div class="container">
+        <div class="step-container">
+
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            1
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                counting up to the value of the variable, and 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            2
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                copying it bit by bit, tested in an if-statement. 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+This can be done in a simple loop, an unrolled loop, or by throwing
+exceptions caught in a signal handler. This leads to a total of
+five different copy methods.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<a class="anchor" id="usage">&nbsp;</a>
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
- Debugging and Attacking (From version <b>3.3.2</b>
+ Usage
 
                </h2>
             </div>
@@ -297,15 +203,196 @@ at transformation time, these are selected from randomly.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-There have been many recent papers on attacking MBA expressions. To facilitate such attacks 
-you can dump all the transformed expressions onto a Json file for further processing.
-Simply set <tt>--EncodeArithmeticDumpFileName=filename.json</tt>.
+If you want to copy using signals you must first generate the signal handlers
+using the <a href="implicitFlow.html"</a>InitImplicitFlow</a> transformation.
 
             </p>
         </div>
     </div>
 </section>
 
+<center>
+</center>
+</br>
+
+<a class="anchor" id="examples">&nbsp;</a>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Examples
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The code to copy <code>argc</code> using bit-by-bit copy and signals 
+would look something like this:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  argc_origPtr13 = (unsigned char *)(& argc);
+  argc_copyPtr15 = (unsigned char *)(& argc_copy14);
+  size_iter16 = 0;
+  while (size_iter16 < 4) {
+    TempVar = 0;
+    signal(31, handler);
+    BitVar = 0;
+    while (BitVar < 8) {
+      if ((*argc_origPtr13 >> BitVar) & 1) {
+        raise(31);
+      } 
+      BitVar ++;
+    }
+    signal(31, (void (*)(void *sig ))1);
+    *argc_copyPtr15 = TempVar;
+    argc_origPtr13 ++;
+    argc_copyPtr15 ++;
+    size_iter16 ++;
+  }
+</code></pre>
+</center>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+with this signal handler and these global variables:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char TempVar;
+int BitVar;
+void handler(int sig ) { 
+  TempVar |= 1 << BitVar;
+}
+</code></pre>
+</center>
+
+<a class="anchor" id="issues">&nbsp;</a>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Currently, we can only un-taint a few variables:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="step1 TIGRESS-OL" id="step1-dy">
+    <div class="container">
+        <div class="step-container">
+
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            1
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                <code>argc</code> and <code>argv</code> in <code>main</code>, 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            2
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                the output values of a few system and library calls: <code>getpid</code> and <code>scanf</code>, 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            3
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+              the virtual PC in a virtualized function (using the <code>--VirtualizeImplicitFlowVPC</code>
+                  option). 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            4
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                The function handler to a jitted function (using the <code>--JitImplicitFlow</code> option). 
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+We will add more as requested!
+
+            </p>
+        </div>
+    </div>
+</section>
 <a class="anchor" id="references">&nbsp;</a>
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -325,14 +412,19 @@ Simply set <tt>--EncodeArithmeticDumpFileName=filename.json</tt>.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Currently, the identities are taken from the book 
-<a href="http://www.hackersdelight.org">Hacker's Delight</a>.
+The implementation is based on ideas from
+<a href="http://www.isg.rhul.ac.uk/sullivan/pubs/tr/ata07.pdf">
+   Anti-Taint-Analysis: Practical Evasion Techniques Against Information Flow Based Malware Defense
+</a> by Lorenzo Cavallaro, Prateek Saxena, and R. Sekar and
+<a href ="http://olivier.mehani.name/publications/2013sarwar_scrubdroid.pdf"> 
+   On the Effectiveness of Dynamic Taint Analysis for Protecting Against 
+       Private Information Leaks on Android-based Devices
+</a> by Golam Sarwar, Olivier Mehani, Roksana Boreli, and Mohamed-Ali Kaafar.
 
             </p>
         </div>
     </div>
 </section>
-
 
 
 <script src="assets/popper/popper.min.js"></script>

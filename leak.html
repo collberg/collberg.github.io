@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -89,18 +91,20 @@ h3 {
 <center><img width="500px" src="tigress3-images/leak-front-page.png"></center>
 
 
-<section class="header9 cid-c5592" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Transform a function such that it leaks a secret, in particular (part of) the
 code of a secret function. This can be useful to simulate a misbehaving 
 obfuscator. Leaking can be static (simply insert a variable that holds the
 encrypted source code of the secret function) or dynamic (only leak if
 a certain formal parameter has a certain value).
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -155,17 +159,30 @@ a certain formal parameter has a certain value).
 </br>
 
 <a class="anchor" id="examples">&nbsp;</a>
-<br>
-<h3 align=center>Examples</h3>
-<section class="header9 cid-c5593" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Examples
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The <code>static</code> leaker simply inserts the encrypted source
 code of the secret function as a string. For example, this command
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
@@ -175,11 +192,17 @@ code of the secret function as a string. For example, this command
       --LeakSecretFunction=main 
 </code></pre>
 </center>
-<section class="header9 cid-c5594" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-produces this code</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+produces this code
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">char *leak_global_enc  =    0;
 
@@ -193,17 +216,19 @@ int foo(int x) {
 </code></pre>
 </center>
 
-<section class="header9 cid-c5595" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The <code>dynamic</code> leaker will leak the entire
 (encrypted) source code of the secret function, but only when a
 particular formal parameter has a particular value. For example,
 this command
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
@@ -215,17 +240,19 @@ this command
        --LeakSecretFunction=main 
 </code></pre>
 </center>
-<section class="header9 cid-c5596" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 will transform function <code>foo</code> such that when formal parameter <code>x!=42</code> 
 the function behaves normally, but when <code>x==42</code>, it will leak the source of
 main <code>main</code>. Note that for this transformation, the signature of <code>foo</code>
 changes:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">struct leak_object {
@@ -258,16 +285,18 @@ struct result_object foo(int x) {
 </code></pre>
 </center>
 
-<section class="header9 cid-c5597" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The <code>dynamic_byte</code> leaker will leak one byte at a time of the 
 (encrypted) secret function. The byte leaked depends on the value
 of the selected formal parameter. For example, this command
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
@@ -279,16 +308,18 @@ of the selected formal parameter. For example, this command
       --LeakSecretFunction=main 
 </code></pre>
 </center>
-<section class="header9 cid-c5598" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 will transform function <code>foo</code> such that when formal parameter <code>x<=42</code> 
 the function behaves normally, but when <code>x>42</code>, it will leak byte <code>x-42</code> 
 of the encryption of <code>main</code>:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int foo(int x) { 
@@ -307,21 +338,43 @@ of the encryption of <code>main</code>:
 </code></pre>
 </center>
 
-<br>
-<h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> Doesn't work for functions whose address is taken 
-        and then called through a function pointer.</li>
-   <li> <code>openssl</code> must be installed.</li>
-            </ul>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
 </section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        Doesn't work for functions whose address is taken 
+            and then called through a function pointer.
+
+</li>
+
+<li>
+          <code>openssl</code> must be installed.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -89,10 +91,11 @@ h3 {
 <center><img width="500px" src="tigress3-images/flatten-front-page.png"></center>
 
 <a class="anchor" id="flatten">&nbsp;</a>
-<section class="header9 cid-c3623" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 This is a classic control-flow transformation that removes structured flow.</a>
 <center>
 <video  width="630" height="360" controls style="border:5px solid black;">
@@ -101,10 +104,11 @@ This is a classic control-flow transformation that removes structured flow.</a>
 </video>
 </center>
 
-<section class="header9 cid-c3624" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Flattening is useful as a precursor to other transformations. For example, our
 <a href="encodeBranches.html">AntiBranchAnalysis</a> transformation
 flattens a function prior to replacing direct branches by calls to a
@@ -112,9 +116,10 @@ branch function since this creates more opportunities for encoding.
 Also, the <a href="merge.html">Merge</a> transformation can optionally
 flatten functions before merging them, thus more thoroughly mixing
 their code.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -164,48 +169,103 @@ their code.
 </br>
 
 <a class="anchor" id="diversity">&nbsp;</a>
-<br>
-<h3 align=center>Diversity</h3>
-<section class="header9 cid-c3625" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-There are several sources of diversity:</p>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> We support five kinds of "dispatch," i.e. how the next block is selected.</li>
-   <li> Basic blocks can be kept intact, or can be split up into individual statements.</li>
-   <li> The order of blocks can be randomized.</li>
-   <li> The <code>next</code> variable can be obfuscated using different kinds of opaque predicates.</li>
-   <li> Conditional branches can be encoded in several different ways. </li>
-            </ul>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Diversity
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+There are several sources of diversity:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+          We support five kinds of "dispatch," i.e. how the next block is selected.
+
+</li>
+
+<li>
+          Basic blocks can be kept intact, or can be split up into individual statements.
+
+</li>
+
+<li>
+          The order of blocks can be randomized.
+
+</li>
+
+<li>
+          The <code>next</code> variable can be obfuscated using different kinds of opaque predicates.
+
+</li>
+
+<li>
+          Conditional branches can be encoded in several different ways. 
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
 <a class="anchor" id="dispatch">&nbsp;</a>
-<br>
-<h3 align=center>Dispatch</h3>
-<section class="header9 cid-c3626" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Dispatch
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 These are the four basic kinds of block dispatch we currently support, and 
 what a reursive factorial function looks like after transformation:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> In a <em>switch dispatch</em>, each block becomes a case in a switch statement,
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        In a <em>switch dispatch</em>, each block becomes a case in a switch statement,
         and the switch is wrapped inside an infinite loop. This is the traditional
         implementation. 
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
@@ -228,7 +288,9 @@ what a reursive factorial function looks like after transformation:
   }
 }
 </code></pre>
-   <li> In a <em>goto dispatch</em>, direct gotos are used to jump between blocks. 
+
+<li>
+        In a <em>goto dispatch</em>, direct gotos are used to jump between blocks. 
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
   int tmp ;
   goto lab4;
@@ -245,7 +307,9 @@ what a reursive factorial function looks like after transformation:
   return (x * tmp);
 }
 </code></pre>
-   <li> In an <em>indirect dispatch</em>, indirect gotos through a jump table are used to switch between blocks. 
+
+<li>
+        In an <em>indirect dispatch</em>, indirect gotos through a jump table are used to switch between blocks. 
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
   int tmp ;
   unsigned long next ;
@@ -271,7 +335,9 @@ what a reursive factorial function looks like after transformation:
   goto *(jumpTab[next - 1]);
 }
 </code></pre>
-   <li> In a <em>call dispatch</em>, each block becomes its own function, and indirect calls through a 
+
+<li>
+        In a <em>call dispatch</em>, each block becomes its own function, and indirect calls through a 
         table of function pointers are used to switch between blocks. 
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">struct argStruct {
    int tmp ;
@@ -321,18 +387,31 @@ int fac(int x ){
   }
 }
 </code></pre>
-            </ul>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
-<br>
-<h3 align=center>Thread Dispatch <b>From Version 3.3.3</b></h3>
-<section class="header9 cid-c3627" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Thread Dispatch <b>From Version 3.3.3</b>
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 These is a fifth block dispatch method which we call <tt>thread</tt>. It is essentially identical to
 the <tt>call</tt> dispatch, except each call runs in its own thread. The idea is that every time
 around the dispatch loop <em>all</em> threads are awakened, and <em>all of them</em> do some work, but
@@ -340,22 +419,23 @@ only <em>one</em> thread (the one that owns the next block to be executed) actua
 <em>real</em> work. This way there is some randomness in the order in which the block functions
 execute, but there is no potential for race conditions on the <tt>next</tt> variable (only one
 thread will update <tt>next</tt> during each round).  
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c3628" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 This is what the code looks like for the main function that got flattened.
 MacOS does not support barriers, so we roll our own. 
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void fib(int n ) { 
@@ -405,16 +485,16 @@ MacOS does not support barriers, so we roll our own.
 </code></pre>
 </center>
 
-<section class="header9 cid-c3629" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 And this is what one of the worker threads look like.
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void fib_0_<n> (struct argStruct *arg ) { 
@@ -450,33 +530,34 @@ And this is what one of the worker threads look like.
 </center>
 </code></pre>
 
-<section class="header9 cid-c3630" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Threaded flattening should work well with other transformations. For example, you can first
 virtualize your function and then flatten it with a threaded dispatch: this results in a 
 in interpreter where each instruction handler (or piece of instruction handler) will run
 in its own thread. You can even flatten the same function twice, with threaded dispatch
 both times.
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c3631" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 We're currently using <tt>pthreads</tt> which is unfortunate, because the calls to the
 various API functions are obvious in the code (and at runtime). It would be nice to replace
 these functions with some lower-level primitives.
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -519,21 +600,34 @@ these functions with some lower-level primitives.
 </br>
 
 <a class="anchor" id="conditionals">&nbsp;</a>
-<br>
-<h3 align=center>Conditional Branches</h3>
-<section class="header9 cid-c3632" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Conditional Branches
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 If the <code>--FlattenConditionalKinds=flag</code> is set, there will be no
 explicit conditional tests in the code. Rather, they will be transformed
 into an assembly code snippet (<code>x86</code> only, at this point) that 
 does the comparison, extracts the flag register, and then the address to
 jump to will be computed based on the individual flags set. Similar
 encodings are available for Merge and Virtualize transformations.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -563,17 +657,30 @@ encodings are available for Merge and Virtualize transformations.
 </br>
 
 <a class="anchor" id="nextobf">&nbsp;</a>
-<br>
-<h3 align=center>Obfuscating the Next Variable</h3>
-<section class="header9 cid-c3633" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Obfuscating the Next Variable
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 You can use opaque predicates and anti-implicit flow transformations to further obfuscate the <code>next</code>
 variable.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -621,17 +728,30 @@ variable.
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="regions">&nbsp;</a>
-<br>
-<h3 align=center>Function Regions</h3>
-<section class="header9 cid-c3634" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Function Regions
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 You can virtualize a piece of a function, rather than the whole thing. Simpy put 
    the name of the region after the function name, like this: 
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -639,11 +759,17 @@ You can virtualize a piece of a function, rather than the whole thing. Simpy put
 </code></pre>
 </center>
 
-<section class="header9 cid-c3635" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The region has to be defined like this in the code: </p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The region has to be defined like this in the code: 
+
+            </p>
+        </div>
+    </div>
+</section>
 
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
@@ -661,28 +787,44 @@ void fac(int n) {
 </code></pre>
 </center>
 
-<section class="header9 cid-c3636" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Note that the region needs to be ``self-contained,'' i.e. you can't jump into it, or out of it.
    Also, there will be some performance overhead.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="issues">&nbsp;</a>
-<br>
-<h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> Consider this example taken from gcc's <code>comp-goto-1.c</code> torture test:
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        Consider this example taken from gcc's <code>comp-goto-1.c</code> torture test:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *(base_addr + insn.f1.offset);
 </code></pre>
@@ -690,53 +832,105 @@ Note that the region needs to be ``self-contained,'' i.e. you can't jump into it
       This kind of arithmetic on the program counter is going to fail for 
       transformations that completely restructure the code, such as
       flattening.
-   <li> The <code>--FlattenConditionalKinds=flag</code> transformation doesn't
+
+<li>
+        The <code>--FlattenConditionalKinds=flag</code> transformation doesn't
       work for floats, for reasons that escape me. I think maybe floats are
       left on the stack and then there's a SEGV when the function returns,
-      but who knows? <code>:(</code>.</li>
-   <li> On MacOS/llvm the <code>--FlattenDispatch=call --FlattenConditionalKinds=flag</code> transformation 
+          but who knows? <code>:(</code>.
+
+</li>
+
+<li>
+        On MacOS/llvm the <code>--FlattenDispatch=call --FlattenConditionalKinds=flag</code> transformation 
       generates a segmentation fault, on Linux/gcc it does not. There are other similar issues that 
       pop up occasionally on this platform. Presumably this is due to some compiler problem related 
       to inline assembly. Update: I think this has been fixed now. Inline assembly with instructions
-      that manipulate the stack pointer can apparently be problematic.</li>
-   <li> By default, Flatten transforms Variable Length Arrays into calls to <code>alloca</code>. Depending on the 
+          that manipulate the stack pointer can apparently be problematic.
+
+</li>
+
+<li>
+        By default, Flatten transforms Variable Length Arrays into calls to <code>alloca</code>. Depending on the 
        platform and the size of the arrays, the generated code can crash. If so, try the option
-       <code>--TransformVLA=malloc</code> which converts VLAs to calls to <code>malloc/free</code> instead.</li>
-            </ul>
+           <code>--TransformVLA=malloc</code> which converts VLAs to calls to <code>malloc/free</code> instead.
+
+</li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
 <a class="anchor" id="acknowledgments">&nbsp;</a>
-<br>
-<h3 align=center>Acknowledgments</h3>
-<section class="header9 cid-c3637" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Saumya Debray and Babak Yadegari suggested the <code>--FlattenConditionalKinds=flag</code> transformation.</p>
 
-<a class="anchor" id="references">&nbsp;</a>
-<br>
-<h3 align=center>References</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> Flattening first appears in Chenxi Wang's <a href="http://dependability.cs.virginia.edu/publications/wangthesis.pdf">thesis.</a>
-   <li> The <a href="https://github.com/obfuscator-llvm/obfuscator/wiki/Control-Flow-Flattening">llvm obfuscator</a>
-        supports a flattening transformation.
-   <li> Laszlo and Kiss, <a href="http://www.inf.u-szeged.hu/~akiss/pub/pdf/laszlo_obfuscating.pdf">Obfuscating C++ Programs via Control Flow Flattening</a>
-   <li> Udupa et al, <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.302.7805">Deobfuscation: Reverse engineering obfuscated code</a>.
-            </ul>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Acknowledgments
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
 </section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Saumya Debray and Babak Yadegari suggested the <code>--FlattenConditionalKinds=flag</code> transformation.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<a class="anchor" id="references">&nbsp;</a>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ References
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        Flattening first appears in Chenxi Wang's <a href="http://dependability.cs.virginia.edu/publications/wangthesis.pdf">thesis.</a>
+
+<li>
+        The <a href="https://github.com/obfuscator-llvm/obfuscator/wiki/Control-Flow-Flattening">llvm obfuscator</a>
+        supports a flattening transformation.
+
+<li>
+        Laszlo and Kiss, <a href="http://www.inf.u-szeged.hu/~akiss/pub/pdf/laszlo_obfuscating.pdf">Obfuscating C++ Programs via Control Flow Flattening</a>
+
+<li>
+        Udupa et al, <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.302.7805">Deobfuscation: Reverse engineering obfuscated code</a>.
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 <script src="assets/popper/popper.min.js"></script>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -88,17 +90,19 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/encodeExternal-front-page.png"></center>
 
-<section class="header9 cid-c5592" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The goal of this transformation is to hide calls to external functions, such
 as system calls or calls to standard library functions. The current implementation 
 is simplistic: we simply replace direct calls with indirect ones, and load the
 address of the functions using <em>dlsym()</em>.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -157,15 +161,17 @@ address of the functions using <em>dlsym()</em>.
 </br>
 
 
-<section class="header9 cid-c5593" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Consider the following program <code>syscall.c</code> which makes two system calls to <code>getpid</code>
 and <code>gettimeofday</code>:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include&lt;stdio.h&gt;
@@ -185,11 +191,17 @@ int main () {
 </code></pre>
 </center>
 
-<section class="header9 cid-c5594" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-We obfuscate using the following script:</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+We obfuscate using the following script:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> tigress -ldl \
         --Environment=x86_64:Darwin:Clang:5.1 \
@@ -209,26 +221,34 @@ We obfuscate using the following script:</p>
 > gcc -o syscall_out syscall_out.c -ldl
 </code></pre>
 </center>
-<section class="header9 cid-c5595" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The <code>InitEncodeExternal</code> transformation uses <code>dlsym()</code> to load
 the system calls we want to hide by name, the <code>EncodeLiterals</code> transformation
 hides these names in a function we call <code>STRINGENCODER</code>, the
 <code>Virtualize</code> transformation hides what's going on in the <code>STRINGENCODER</code>
 function, and finally, the <code>EncodeExternal</code> transformation replaces the 
 direct calls to the system calls in <code>main()</code> with indirect ones.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c5596" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The resulting code will look something like this:</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The resulting code will look something like this:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void *_externalFunctionPtrArray[2];
 
@@ -266,60 +286,103 @@ int main( ) {
 }
 </code></pre>
 </center>
-<section class="header9 cid-c5597" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Note how this program no longer has any mention of <code>getpid</code>
 and <code>gettimeofday</code>. The transformation is purely static,
 of course; at runtime it is trivial to see that these functions are
 being called.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <a class="anchor" id="references">&nbsp;</a>
-<br>
-<h3 align=center>References</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> In their paper <a href="http://s3.eurecom.fr/docs/dimva11_syscalls.pdf">Operating
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ References
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        In their paper <a href="http://s3.eurecom.fr/docs/dimva11_syscalls.pdf">Operating
         System Interface Obfuscation and the Revealing of Hidden
         Operations</a>, Srivastava, Lanzi, Giffin, and Balzarotti
         use a kernel module to replace all system calls with calls
         to <code>ioctl.</code>
-   </li>
 
-  <li> Sean "Frank^2" Taylor presents the <code>dlsym</code> idea in a 
+</li>
+
+
+<li>
+      Sean "Frank^2" Taylor presents the <code>dlsym</code> idea in a 
        <a href="https://www.defcon.org/images/defcon-17/dc-17-presentations/defcon-17-sean_taylor-binary_obfuscation.pdf">DEFCON</a>
        <a href="https://www.youtube.com/watch?v=iva16Bg5imQ">talk</a>.
-  </li>
-            </ul>
+
+</li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <a class="anchor" id="issues">&nbsp;</a>
-<br>
-<h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> On Linux/gcc you need to explicitly add the <code>-ldl</code> option. 
-        On MacOS/clang this is not necessary. </li>
-   <li> If you set the <code>--Environment=</code> wrong, your program will fail.</li>
-            </ul>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
 </section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        On Linux/gcc you need to explicitly add the <code>-ldl</code> option. 
+            On MacOS/clang this is not necessary. 
+
+</li>
+
+<li>
+          If you set the <code>--Environment=</code> wrong, your program will fail.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

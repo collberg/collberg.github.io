@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -88,11 +90,11 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/implicitFlow-front-page.png"></center>
 
-<section class="header9 cid-c5592" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
    Several transformations, in particular
    AntiTaintAnalysis,
    use implicit flow as a basic building block. Before you can use these you need
@@ -100,9 +102,9 @@ h3 {
    flow variants you are going to use later. Here's an example of what it might 
    look like:
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 --Verbosity=1 --Environment=x86_64:Darwin:Gcc:4.6 \
@@ -131,19 +133,19 @@ h3 {
    input.c --out=output.c
 </code></pre>
 </center>
-<section class="header9 cid-c5593" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
    Here, we specify that we might want to use the implicit flow variants
     <code>trivial_thread_1,trivial_counter,mem_cache_time,mem_cache_thread_1,file_cache_time,file_cache_thread_1,jit_time</code>.
    We then insert implicit flow using <code>(repeat mem_cache_time 3)</code> after any assignment to the variable <code>b</code> in
    function <code>main</code>. The transformation of the assignment <code>b = a</code> would look something like this:
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    exp_orig3 = a;
@@ -239,18 +241,31 @@ h3 {
 </center>
 
 <a class="anchor" id="implicitFlowKinds">&nbsp;</a>
-<br>
-<h3 align=center>Algorithms </h3>
 
-<section class="header9 cid-c5594" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Algorithms
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Some primitives are based on the timing differences between
 a slow and a fast process:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void P'() {
@@ -270,15 +285,17 @@ a slow and a fast process:
 </code></pre>
 </center>
 
-<section class="header9 cid-c5595" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 A variant of such timing-based flow primitives use threads
 to do the timing. This helps with stealth:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int result;
@@ -304,28 +321,44 @@ void P'() {
 }
 </code></pre>
 </center>
-<section class="header9 cid-c5596" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 There are two implementations of these threading-based primitives,
 using either one or two threads. This allows you to embed threading
 code that matches the code that is already in the program.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 
 <a class="anchor" id="implicitFlowKinds">&nbsp;</a>
-<br>
-<h3 align=center>Implicit Flow Kinds</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li><code>counter_int</code>:
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Implicit Flow Kinds
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code>counter_int</code>:
       Copy a variable by counting up to its value. I.e., the assigment 
          <code>a=b</code> is transformed into
 <center>
@@ -334,25 +367,40 @@ for(i=0;i&lt;b;i++)
    a++;
 </code></pre>
 </center>
-   </li>
 
-   <li> <code> counter_float</code>: 
+</li>
+
+
+<li>
+        <code> counter_float</code>: 
         Same as <code> counter_int</code>, but using a float.
-   </li>
 
-   <li> <code> counter_signal</code>: 
+</li>
+
+
+<li>
+        <code> counter_signal</code>: 
         Copy a variable bit-by-bit using a signal handler.
-   </li>
 
-   <li> <code> bitcopy_unrolled</code>: 
+</li>
+
+
+<li>
+        <code> bitcopy_unrolled</code>: 
         Copy a variable bit-by-bit, each bit tested by an if-statement
-   </li>
 
-   <li><code> bitcopy_loop</code>: 
+</li>
+
+
+<li>
+      <code> bitcopy_loop</code>: 
          Loop over the bits in a variable and copy each bit by testing in an if-statement.
-   </li>
 
-   <li><code> bitcopy_signal</code>: 
+</li>
+
+
+<li>
+      <code> bitcopy_signal</code>: 
          Loop over the bits in a variable and copy each bit in a signal handler:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned int value;
@@ -375,25 +423,40 @@ void handler(int sig){
 }
 </code></pre>
 </center>
-   </li>
 
-   <li><code> file_write</code>:
+</li>
+
+
+<li>
+      <code> file_write</code>:
       Copy a variable byte-by-byte by writing to a file and reading it back again.
-   </li>
 
-   <li><code> trivial_clock</code>:
+</li>
+
+
+<li>
+      <code> trivial_clock</code>:
       Copy a variable by timing a trivial loop.
-   </li>
 
-   <li><code> trivial_thread_1</code>:
+</li>
+
+
+<li>
+      <code> trivial_thread_1</code>:
       Same as <code> trivial_clock</code>, but using threads for timing.
-   </li>
 
-   <li><code> trivial_thread_2</code>:
+</li>
+
+
+<li>
+      <code> trivial_thread_2</code>:
        Same as <code> trivial_thread_1</code>, but using two threads instead of one.
-   </li>
 
-   <li><code> file_cache_time </code>:
+</li>
+
+
+<li>
+      <code> file_cache_time </code>:
         Copy a variable by timing a file being read with caching turned on or off:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"><b>process</b><(<em>param</em>,<em>nocache</em>):
@@ -422,17 +485,26 @@ void handler(int sig){
    <b>process</b>(<em>param</em>,0):
 </code></pre>
 </center>
-   </li>
 
-   <li><code> file_cache_thread_1</code>:
+</li>
+
+
+<li>
+      <code> file_cache_thread_1</code>:
          Same as <code> file_cache_time </code>, but using threads for timing.
-   </li>
 
-   <li><code> file_cache_thread_2</code>:
+</li>
+
+
+<li>
+      <code> file_cache_thread_2</code>:
        Same as <code> file_cache_thread_1</code>, but using two threads instead of one.
-   </li>
 
-   <li><code> mem_cache_time</code>:
+</li>
+
+
+<li>
+      <code> mem_cache_time</code>:
        Copy a variable by timing a CPU data cache being read with or without caching:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">posix_memalign(&buf1,pagesize,64);
@@ -453,17 +525,26 @@ posix_memalign(&buf2,pagesize,64);
    }
 </code></pre>
 <center>
-   </li>
 
-   <li><code> mem_cache_thread_1</code>:
+</li>
+
+
+<li>
+      <code> mem_cache_thread_1</code>:
        Same as <code> mem_cache_time</code>, but using threads for timing.
-   </li>
 
-   <li><code> mem_cache_thread_2</code>:
+</li>
+
+
+<li>
+      <code> mem_cache_thread_2</code>:
         Same as <code> mem_cache_thread_1</code>, but using two threads instead of one.
-   </li>
 
-   <li><code> time_jit</code>:
+</li>
+
+
+<li>
+      <code> time_jit</code>:
        Copy a variable by timing a jitted function:
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int freq=0;
@@ -489,21 +570,34 @@ fast process(param);
    time=time()-start;
 </code></pre>
 </center>
-   </li>
-            </ul>
+
+</li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <a class="anchor" id="training">&nbsp;</a>
-<br>
-<h3 align=center>Training</h3>
-<section class="header9 cid-c5597" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Training
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 All the implicit flow primitives that are based on timing need to be <em>trained</em>,
 i.e. we have to run tests to see what is a good threshold between slow and fast
 primitives. There are two major kinds of training, <code>gap</code> and <code>resend</code>.
@@ -513,9 +607,9 @@ statistical tests (<em>Wilson's Score Rule</em>) to figure out how many times a
 bit should be sent in order to achieve a particular confidence level and target error
 rate. The commands look like this:
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
@@ -530,11 +624,17 @@ rate. The commands look like this:
    --InitImplicitFlowTrainingKind=gap \
 </code></pre>
 </center>
-<section class="header9 cid-c5598" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-or like this:</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+or like this:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
    --Functions=... \
@@ -546,25 +646,33 @@ or like this:</p>
 </code></pre>
 </center>
 
-<section class="header9 cid-c5599" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The output would look like this (for the <code>resend</code> training kind):</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The output would look like this (for the <code>resend</code> training kind):
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">TRAINING_DATA '(mem_cache_time 4496.000000 16 4)'
 </code></pre>
 </center>
-<section class="header9 cid-c5600" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 which means that for the <code>mem_cache_time</code> implicit flow primitive, a parameter value of "16" is optimal,
 that each bit needs to be sent "4" times, and that the threshold between slow and fast processes is
 "4496". You can then feed this into another run of tigress:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
@@ -574,15 +682,17 @@ that each bit needs to be sent "4" times, and that the threshold between slow an
    --Functions=... \
 </code></pre>
 </center>
-<section class="header9 cid-c5601" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 You can also run the training at startup time of your program, i.e., insert your
 training code at the beginning of <code>main</code>:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitImplicitFlow \
@@ -593,17 +703,30 @@ training code at the beginning of <code>main</code>:
 </center>
 
 <a class="anchor" id="combiners">&nbsp;</a>
-<br>
-<h3 align=center>Implicit Flow Combiners</h3>
-<section class="header9 cid-c5602" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Implicit Flow Combiners
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Implicit flow primitives can be combined for improved correctness and higher levels
 of resistance to analysis. Combiners are expressed as S-expressions:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">type combiner = 
@@ -615,43 +738,71 @@ of resistance to analysis. Combiners are expressed as S-expressions:
    | (until combiner int int)
 </code></pre>
 </center>
-<section class="header9 cid-c5603" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Their behavior as as follows:</p>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> <code>(single a)</code> a single primitive, e.g. <code>(single trivial_counter)</code>.
-   </li> 
-   <li> <code>(compose a b c)</code> chains together several combiners, i.e. <code>a(b(c))</code>.
-   </li> 
-   <li> <code>(select a b c)</code> picks one of combiners <code>a,b,c</code> at random, based on
-input.
-   </li> 
-   <li> <code>(majority a b c)</code> chooses the most frequently occurring value computed by <code>a,b,c</code>.
-   </li> 
-   <li> <code>(repeat a n)</code> is equivalent to <code>(majority a a ... a)</code> with n copies of <tt.a</code>.
-   </li> 
-   <li> <code>(until a m n)</code> continuously repeats combiner <code>a</code> m times until there is at least n agreements on the resulting value.
-   </li> 
-            </ul>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Their behavior as as follows:
+
+            </p>
         </div>
     </div>
-</div>
 </section>
-<section class="header9 cid-c5604" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        <code>(single a)</code> a single primitive, e.g. <code>(single trivial_counter)</code>.
+
+</li>
+
+<li>
+        <code>(compose a b c)</code> chains together several combiners, i.e. <code>a(b(c))</code>.
+
+</li>
+
+<li>
+        <code>(select a b c)</code> picks one of combiners <code>a,b,c</code> at random, based on
+input.
+
+</li>
+
+<li>
+        <code>(majority a b c)</code> chooses the most frequently occurring value computed by <code>a,b,c</code>.
+
+</li>
+
+<li>
+        <code>(repeat a n)</code> is equivalent to <code>(majority a a ... a)</code> with n copies of <tt.a</code>.
+
+</li>
+
+<li>
+        <code>(until a m n)</code> continuously repeats combiner <code>a</code> m times until there is at least n agreements on the resulting value.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 You would use these in the <code>AntiTaintAnalysis</code> command's
 <code>--AntiTaintAnalysisImplicitFlow=...</code> option:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   --Transform=AntiTaintAnalysis \
@@ -661,11 +812,17 @@ You would use these in the <code>AntiTaintAnalysis</code> command's
    --AntiTaintAnalysisImplicitFlow="(repeat mem_cache_thread_1 3)" \
 </code></pre>
 </center>
-<section class="header9 cid-c5605" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Here are some examples of combiners:</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here are some examples of combiners:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  (single counter_int)
   (single counter_float)
@@ -828,28 +985,56 @@ Here are some examples of combiners:</p>
 </br>
 
 <a class="anchor" id="issues">&nbsp;</a>
-<br>
-<h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> You may have to add <code>-lm -lphtread</code> to the Tigress command line.
-   </li>
-            </ul>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        You may have to add <code>-lm -lphtread</code> to the Tigress command line.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
 <a class="anchor" id="references">&nbsp;</a>
-<br>
-<h3 align=center>References</h3>
-<section class="header9 cid-c5606" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ References
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The implicit flow library is described in
 <a href="https://www.ieee-security.org/TC/EuroSP2018">
    Probabilistic Obfuscation through Covert Channels
@@ -857,10 +1042,11 @@ The implicit flow library is described in
 by Jon Stephens, Babak Yadegari, Christian Collberg, Saumya Debray, and Carlos Scheidegger,
 presented at the 3rd IEEE European Symposium on Security and Privacy.
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
+
 
 <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>

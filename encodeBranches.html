@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -88,43 +90,60 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/encodeBranches-front-page.png"></center>
 
-<section class="header9 cid-c3623" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The goal of these transformations is to make it harder for 
 automatic analysis tools (such as disassemblers) to determine
 the target of branches.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<br>
-<h3 align=center>Branch Functions</h3>
-<section class="header9 cid-c3624" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Branch Functions
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 This transformation implements a simplistic version of Linn and Debray's 
 branch functions. We doen't use perfect hash tables, as suggested
 in Linn and Debray's paper, since this is hard to do as a
 source-to-source transformation. Rather, we simply pass the offset to
 jump to as an argument to the branch function.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c3625" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The generated code looks like this, where the call to the branch function <code>bf</code>
 actually results in a direct jump to <code>lab2</code>:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void bf(unsigned long offset) {
@@ -141,41 +160,46 @@ int main() {
 </code></pre>
 </center>
 
-<section class="header9 cid-c3626" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 By default, a function is flattened prior to direct jumps
 being replaced by calls to a branch function. This creates more direct 
 jumps and hence more opportunities to apply the branch function 
 transformation. Turn this off with <code>--BranchFunsFlatten=false</code>. 
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c3627" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Before branches can be replaced by calls to a branch
 function, at least one such function needs to be constructed,
 using the <code>--Transform=InitBranchFuns</code> transformation.
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c3628" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The branch function is not obfuscated and hence trivial to find. 
 It's therefore a good idea to merge it with other functions in the program.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -221,17 +245,30 @@ It's therefore a good idea to merge it with other functions in the program.
 </center>
 </br>
 
-<br>
-<h3 align=center>X86 Branch Obfuscations</h3>
-<section class="header9 cid-c3629" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ X86 Branch Obfuscations
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 We implement two standard branch obfuscations used by many
 packers:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      push target
@@ -241,35 +278,64 @@ lab:
       ret
 </code></pre>
 </center>
-<section class="header9 cid-c3630" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-and</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+and
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      push target
       ret
 </code></pre>
 </center>
 
-<br>
-<h3 align=center>NOP sleds</h3>
-<section class="header9 cid-c3631" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The <code>--AntiBranchAnalysisKinds=goto2nopSled</code> switch turns this code</p>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ NOP sleds
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The <code>--AntiBranchAnalysisKinds=goto2nopSled</code> switch turns this code
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      goto L
       ...
    L:
 </code></pre>
 </center>
-<section class="header9 cid-c3632" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-into this code</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+into this code
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      goto *(R+<em>expression</em>)
       ...
@@ -281,17 +347,19 @@ into this code</p>
     L:
 </code></pre>
 </center>
-<section class="header9 cid-c3633" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The expression is opaque such that the branch falls somewhere within the
 nop sled. The intention is to combine this transformation with input-dependent opaque
 predicates so that the actual jump address will be random and input
 dependent:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Input=... \
@@ -302,15 +370,17 @@ dependent:
             --AntiBranchAnalysisOpaqueStructs=Input 
 </code></pre>
 </center>
-<section class="header9 cid-c3634" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The current nop-sled is trivial, consisting of random lists of 
 x86 bytes that have no effect:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   cmc
@@ -388,58 +458,132 @@ x86 bytes that have no effect:
 </br>
 
 <a class="anchor" id="issues">&nbsp;</a>
-<br>
-<h3 align=center>Issues</h3>
-<section class="header9 cid-c3635" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This transformation has many issues, and should only be used with great care:</p>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> Currently, only x86 assembly code is generated. If someone is interested
-        in helping to port this to other platforms, let me know. </li>
-   <li> It appears as <code>goto2push</code> and <code>goto2call</code> will often cause
-       <code>clang</code> to generate the wrong code. 
-<section class="mbr-section article content11 cid-rDNq210J6O" id="content11-e"><div class="container">   <div class="media-container-row">      <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style" mbr-theme-style="display-7" data-app-selector=".mbr-text" data-multiline mbr-article>            <ol>
-          <li> <code>gcc 4.6</code> appears to do the right thing. 
-          <li> <code>gcc 4.8</code> appears to occasionally hang when compiling our generated code.
-            </ol>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+This transformation has many issues, and should only be used with great care:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        Currently, only x86 assembly code is generated. If someone is interested
+            in helping to port this to other platforms, let me know. 
+
+</li>
+
+<li>
+        It appears as <code>goto2push</code> and <code>goto2call</code> will often cause
+       <code>clang</code> to generate the wrong code. 
+
+<section class="step1 TIGRESS-OL" id="step1-dy">
+    <div class="container">
+        <div class="step-container">
+
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            1
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                      <code>gcc 4.6</code> appears to do the right thing. 
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            2
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+                      <code>gcc 4.8</code> appears to occasionally hang when compiling our generated code.
+
+        </div>
+    </div>
 </section>
       The issue is that the generated inline assembly code
       contains jumps. Newer versions of <code>gcc</code> have an
       <a href="http://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html#Extended%20asm%20with%20goto">
       <code>asm goto</code></a> construct which ought to help with this.
-      <code>Clang</code> lacks this feature. </li>
-  <li> Make sure you set the <code>--Environment=...</code> option appropriately
+            <code>Clang</code> lacks this feature. 
+
+</li>
+
+<li>
+      Make sure you set the <code>--Environment=...</code> option appropriately
        if you are going to use <code>goto2push</code> and <code>goto2call</code> and
        test the generated code thoroughly. <code>goto2push</code> and <code>goto2call</code>
-       are turned off by default. </li>
-   <li> Running this transformation on the same function twice seems to
-        occasionally break. </li>
-   <li> The NOP sled currently uses only trivial instructions that
+          are turned off by default. 
+
+</li>
+
+<li>
+        Running this transformation on the same function twice seems to
+            occasionally break. 
+
+</li>
+
+<li>
+        The NOP sled currently uses only trivial instructions that
         do not modify registers. Eventually, we'll get around to implementing 
         a nop-generator (similar to <a href="https://www.metasploit.com">MetaSploit's</a>) 
-        that also allows more complex instructions. </li>
-            </ul>
+            that also allows more complex instructions. 
+
+</li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <a class="anchor" id="references">&nbsp;</a>
-<br>
-<h3 align=center>References</h3>
-<section class="header9 cid-c3636" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ References
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The Branch Function transformation implements a simplistic version of Linn and Debray's 
 <a href="https://www.cs.arizona.edu/~debray/Publications/disasm-resist.pdf">
 Obfuscation of Executable Code to Improve Resistance to Static
@@ -447,38 +591,44 @@ Disassembly</a>, Linn and Debray's algorithm replaces
 direct jumps with calls to a special <em>branch function</em> which
 sets the return address to the target of the original branch, and then
 returns.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c3637" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 There are many attacks published on branch functions, including
 <a href="https://www.usenix.org/legacy/publications/library/proceedings/sec04/tech/full_papers/kruegel/kruegel_html/disassemble.html">
 Static Disassembly of Obfuscated Binaries</a> by Christopher Kruegel, William Robertson, Fredrik Valeur and Giovanni Vigna,
 and <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.302.7805">Deobfuscation: Reverse engineering obfuscated code</a>
 by Sharath Udupah, Saumya Debray, and Matias Madou.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c3638" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Kevin A. Roundy and Barton P. Miller's survey paper
 <a href="http://dl.acm.org/citation.cfm?id=2522972">
 Binary-code obfuscations in prevalent packer tools</a> 
 is a good source of information on techniques used
 by current obfuscation tools.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
+
 
 
 <script src="assets/popper/popper.min.js"></script>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -88,29 +90,31 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/opaque-front-page.png"></center>
 
-<section class="header9 cid-c5592" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Several transformations rely on boolean and integer expressions that have
 a known value, known as <em>opaque predicates and expressions</em>.
 To construct these, data structures with precise invariants are added to
 the code.
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c5593" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 At a minimum, you must create one or more opaque invariant data structures:
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -172,17 +176,18 @@ At a minimum, you must create one or more opaque invariant data structures:
 </center>
 </br>
 
-<section class="header9 cid-c5594" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 To frustrate analysis, updates that maintain the invariants should
    be sprinkled throughout the program. This is done by the <code>--Transform=UpdateOpaque</code>
    option:
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -225,26 +230,40 @@ To frustrate analysis, updates that maintain the invariants should
 </center>
 </br>
 
-<section class="header9 cid-c5595" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
  <b>Note:</b> In <code>--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
      must execute before any use of an opaque expression. Easiest is to set 
      <code>--Transform=InitOpaque --Functions=main</code> but this is best avoided since it
      is very obvious.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <a class="anchor" id="issues">&nbsp;</a>
-<br>
-<h3 align=center>Issues</h3>
-<section class="header9 cid-c5596" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Tigress will generate copious numbers of extra local
 variables and statements of the form <code>_*__BARRIER_* = 1</code>,
 <code>_*__BEGIN_* = 1</code>, <code>_*__END_* = 1</code>. They
@@ -252,31 +271,51 @@ will be removed by any competent compiler, or by the
 <code>--Transform=CleanUp --CleanUpKinds=annotations</code> 
 transformation.
 
-         </p>
-      </div>
-   </div>
+            </p>
+        </div>
+    </div>
 </section>
 
 <a class="anchor" id="references">&nbsp;</a>
-<br>
-<h3 align=center>References</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> Collberg and Nagra, <a href="http://www.amazon.com/Surreptitious-Software-Obfuscation-Watermarking-Tamperproofing/dp/0321549252">
-        Surreptitious Software: Obfuscation, Watermarking, and Tamperproofing
-        for Software Protection</a>
-   </li>
-   <li> Dalla Preda et al.,
-        <a href="http://link.springer.com/chapter/10.1007%2F11784180_9">Opaque Predicates Detection by Abstract Interpretation</a>.
-   </li>
-            </ul>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ References
+
+               </h2>
+            </div>
         </div>
     </div>
-</div>
 </section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        Collberg and Nagra, <a href="http://www.amazon.com/Surreptitious-Software-Obfuscation-Watermarking-Tamperproofing/dp/0321549252">
+        Surreptitious Software: Obfuscation, Watermarking, and Tamperproofing
+        for Software Protection</a>
+
+</li>
+
+<li>
+        Dalla Preda et al.,
+        <a href="http://link.springer.com/chapter/10.1007%2F11784180_9">Opaque Predicates Detection by Abstract Interpretation</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 <script src="assets/popper/popper.min.js"></script>

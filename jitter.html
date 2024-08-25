@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html  >
 <head>
@@ -22,6 +23,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
 
   
  <style>
@@ -88,26 +90,34 @@ h3 {
 
 <center><img width="500px" src="tigress3-images/jitter-front-page.png"></center>
 
-<section class="header9 cid-c5592" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 This transformation translates a function <code>F</code> into a new function <code>F'</code> consisting
 of a sequence of intermediate code instructions such
 that, when <code>F'</code> is executed, <code>F</code> will be dynamically compiled
 to machine code. I.e., this is an example of
 <em>runtime code generation</em>, or <em>just-in-time compilation</em>,
 or <em>dynamic unpacking</em>.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c5593" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-For example, the first few lines of a jitted function may look like this:</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+For example, the first few lines of a jitted function may look like this:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x ) { 
    ...
@@ -140,66 +150,106 @@ For example, the first few lines of a jitted function may look like this:</p>
 </center>
 
 <a class="anchor" id="diversity">&nbsp;</a>
-<br>
-<h3 align=center>Diversity</h3>
-<section class="header9 cid-c5594" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Diversity
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Intermediate code operators (the <code>JIT_MOV</code>, <code>JIT_EQ</code>, etc. in the
 example above) are randomized every time Tigress is invoked. Thus, the
 statement
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">op11 = jit_add_op(p6, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L);
 </code></pre>
 </center>
-<section class="header9 cid-c5595" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-may be compiled into</p>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+may be compiled into
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">op11 = jit_add_op(p6, 42, 2, 0, 0L, 0L, 0L);
 </code></pre>
 </center>
-<section class="header9 cid-c5596" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-where "42" will be a different literal for every invocation. </p>
-<section class="header9 cid-c5597" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
-<section class="header9 cid-c5598" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+where "42" will be a different literal for every invocation. 
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 There is <em>no</em> diversity in the dynamically generated code at this point;
 i.e., every time the program is run, the same code is generated.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 
 <a class="anchor" id="usage">&nbsp;</a>
-<br>
-<h3 align=center>Usage</h3>
-<section class="header9 cid-c5599" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Usage
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 In order to invoke this feature you must add <b><i>one of</i></b> the following directives to the
 top of your C file, depending on which target you are compiling for:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include jitter-Darwin-Arm-64.c
@@ -215,31 +265,34 @@ top of your C file, depending on which target you are compiling for:
 </center>
 The files can be found in Tigress' distribution directory.
 
-<section class="header9 cid-c5600" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 If you set the option <code>--JitFrequency=n</code> for <code>n>0</code>, the
 function will be jitted every <code>n</code>:th time it is called. This
 means that every <code>n</code>:th time the function is called, its
 address trace (but not its instruction trace) will change. With
 <code>--JitFrequency=0</code>, the function will only be jitted the
 first time it is called.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="header9 cid-c5601" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 To disrupt <a href="#taint">dynamic taint analysis</a>, the option <code>--JitImplicitFlow</code> 
 inserts implicit flow between where the function gets generated, and where it is invoked:
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x ) { 
@@ -250,16 +303,18 @@ inserts implicit flow between where the function gets generated, and where it is
 }
 </code></pre>
 </center>
-<section class="header9 cid-c5602" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 As usual, this transformation needs to be combined with others to break up
 the predictable static structure. The <code>Split</code> and <code>Virtualize</code>
 transformations are particularly appropriate.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
 
 <center>
@@ -382,96 +437,162 @@ transformations are particularly appropriate.
 </br>
 
 <a class="anchor" id="issues">&nbsp;</a>
-<br>
-<h3 align=center>Issues</h3>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> Soft encoding is not yet fully implemented.
-   </li>
-   <li> The jit library contains much extra code. All jitting functions
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Issues
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        Soft encoding is not yet fully implemented.
+
+</li>
+
+<li>
+        The jit library contains much extra code. All jitting functions
         have a <code>jit_</code> prefix. These functions need also to be
         obfuscated in order to protect the jitted function itself.
-   </li>
-   <li> The jitting library contains debug routines that can give
+
+</li>
+
+<li>
+        The jitting library contains debug routines that can give
         away much information. Future versions of Tigress will 
         remove these routines from production code.
-   </li>
-   <li> While opcodes are randomized, the frequency of instructions
+
+</li>
+
+<li>
+        While opcodes are randomized, the frequency of instructions
         can give away much information. For example, if opcode 0x42
         is very common, it's more likely to be an <code>ADD</code> than,
         say, a <code>DIV</code> instruction.
-   </li>
-   <li> Note that once you've included a jitting transformation your
+
+</li>
+
+<li>
+        Note that once you've included a jitting transformation your
         code is no longer portable: your program will generate runtime
         code only for one particular target.
-   </li>
-   <li> There seems to be some loss in floating point accuracy when using
+
+</li>
+
+<li>
+        There seems to be some loss in floating point accuracy when using
         float types. I think this might be because there are extra 
         conversion instruction generated my MyJit. The fix is to use 
        <tt>double</tt> instead.
-   </li>
-            </ul>
+
+</li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <a class="anchor" id="permanent">&nbsp;</a>
-<br>
-<h3 align=center>Permanent Issues</h3>
-<section class="header9 cid-c5603" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Permanent Issues
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 These are issues with jitted code that will probably never be
 resolved: 
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
-<section class="mbr-section article content12 cid-umofyYEMAK" id="content12-dk">
-<div class="container">
-    <div class="media-container-row">
-        <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-<ul>
-   <li> Functions that call <code>__builtin_*</code> functions cannot
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        Functions that call <code>__builtin_*</code> functions cannot
         be jitted since these have to be called directly. This 
         includes functions that call, for example, <code>alloca</code>
         implicitly (this is taken from gcc's torture test <code>920721-2.c</code>):
-   </li>
+
+</li>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">f(){}
 main(){int n=2;double x[n];f();exit(0);}
 </code></pre>
 </center>
-   <li> Functions that pass structures as by value arguments to
+
+<li>
+        Functions that pass structures as by value arguments to
         non-jitted functions cannot themselves be jitted. The reason is 
         that the MyJit library does not support this functionality. Smaller
         structs (those no larger than 2 longs) may work. Sometimes. Maybe.
-   </li>
-            </ul>
+
+</li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <a class="anchor" id="acknowledgments">&nbsp;</a>
-<br>
-<h3 align=center>Acknowledgments</h3>
-<section class="header9 cid-c5604" id="header9-dm">
-   <div class="container">
-      <div class="media-container-column mbr-white">
-         <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Acknowledgments
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 This feature of Tigress is based on the <a href="http://myjit.sourceforge.net">MyJit</a>
 library by Petr Kraj&#269;a. We are indebted to Petr for his hard work modifying
 MyJit to fit our needs.
-         </p>
-      </div>
-   </div>
+
+            </p>
+        </div>
+    </div>
 </section>
+
 
 
 
