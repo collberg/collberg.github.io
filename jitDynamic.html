@@ -246,8 +246,12 @@ blocks by xor:ing them with each other:
 Pink-and-yellow striped block is the XOR of the pink and the yellow
 blocks. Right before we want to execute the yellow block, the blue
 block XORs the striped block with the pink block, and the yellow block
-appears in cleartext and we can jump to it.<p>
+appears in cleartext and we can jump to it.
 
+            </p>
+        </div>
+    </div>
+</section>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -796,6 +800,11 @@ The Dynamic transformation follows the following steps to transform a function <
                         <p class="mbr-step-text mbr-fonts-style display-7">
                         make every branch instruction a separate basic block;
 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <div class="card separline pb-4">
                 <div class="step-element d-flex">
                     <div class="step-wrapper pr-3">
@@ -806,6 +815,11 @@ The Dynamic transformation follows the following steps to transform a function <
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
                         make every instruction that references in-code data blocks a separate basic block;
+
+                        </p>
+                    </div>
+                </div>
+            </div>
 
             <div class="card separline pb-4">
                 <div class="step-element d-flex">
@@ -818,40 +832,98 @@ The Dynamic transformation follows the following steps to transform a function <
                         <p class="mbr-step-text mbr-fonts-style display-7">
                         add a level of indirection for indirect branches.
 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
-</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-<li>
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            4
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
         Add any necessary cipher functions to the executable;
 
-</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-<li>
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            5
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
         Decide, for every basic block, which codec it should use (if any);
 
-</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-<li>
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            6
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
         For each basic block that should be encoded, find allowable
         points within the CFG where decoders/encoders could safely be
         inserted;
 
-</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-<li>
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            7
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
         Insert the decoders/encoders at the chosen points;
 
-</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-<li>
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            8
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
         Generate a file <code>__dump__.c</code> with the jitting code
         for the function, plus instructions to dump the bytes for 
         each of the basic blocks we want to encode:
-
-</li>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(void) { 
     p6 = jit_init();
     jit_add_prolog(p6, & _1_foo8___foo, 0);
@@ -874,7 +946,20 @@ The Dynamic transformation follows the following steps to transform a function <
     ...
 </code></pre>
 
-<li>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            9
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
         Compile and run <code>__dump__.c</code>, generating a file <code>__dump__.blk</code>
         which has the raw bytes for every basic block:
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">BLOCK 1 byte 24 72 141 125 192 72 141 117 192 72 99 22 72 139 202 72 131 193 1 137 15 144 144 144 144  1 4 
@@ -885,9 +970,20 @@ BLOCK 31 byte 72 72 141 125 216 72 141 117 244 72 139 22 72 139 10 72 141 17 72 
 BLOCK 32 byte 24 72 141 125 228 72 139 55 72 141 85 228 72 139 10 76 99 1 77 141 72 2 68 137 14  1 4 
 </code></pre>
 
-</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-<li>
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            10
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
         Generate a file <code>__encode__.c</code> which contains all the raw bytes
         from <code>__dump__.blk</code> and all the codecs (xor, xtea, etc). Compile
         and run <code>__encode__.c</code>, generating a file <code>__encode__.blk</code>
@@ -900,16 +996,43 @@ BLOCK 31 byte  72 65 152 118 67 241 118 153 110 125 101 119 66 161 239 137 109 1
 BLOCK 32 byte  24 127 82 142 1 193 218 46 10 34 19 201 130 55 248 122 67 145 230 144 218 219 35 49 3  0
 </code></pre>
 
-<li>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            11
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
         Replace the cleartext blocks in the CFG with their encoded 
         counterparts from <code>__encode__.blk</code>;
 
-</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-<li>
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            12
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
         Simplify jumps and turn the CFG back into C source.
 
-</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

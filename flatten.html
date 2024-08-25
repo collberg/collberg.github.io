@@ -96,13 +96,36 @@ h3 {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This is a classic control-flow transformation that removes structured flow.</a>
+Control flow flattening is a classic control-flow transformation that removes structured control flow.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is a <a href="https://ligerlabs.org">LigerLabs</a> video that gives a
+good introduction to the flatten obfuscation:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
-<video  width="630" height="360" controls style="border:5px solid black;">
-  <source src="flatten.m4v" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+   <video preload="none" 
+         controls  
+         poster="https://arizona.box.com/shared/static/ltbhj8tqkmm83mi0xnu3y1sd43oj444r.png" 
+          width="500"
+    >
+    <source src="https://arizona.box.com/shared/static/okcamzy5oumzwsrtlmg25wbk4a0ac6kv.m4v" 
+                 type="video/mp4">
+   </video>
 </center>
+
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -289,6 +312,8 @@ what a reursive factorial function looks like after transformation:
 }
 </code></pre>
 
+</li>
+
 <li>
         In a <em>goto dispatch</em>, direct gotos are used to jump between blocks. 
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
@@ -307,6 +332,8 @@ what a reursive factorial function looks like after transformation:
   return (x * tmp);
 }
 </code></pre>
+
+</li>
 
 <li>
         In an <em>indirect dispatch</em>, indirect gotos through a jump table are used to switch between blocks. 
@@ -335,6 +362,8 @@ what a reursive factorial function looks like after transformation:
   goto *(jumpTab[next - 1]);
 }
 </code></pre>
+
+</li>
 
 <li>
         In a <em>call dispatch</em>, each block becomes its own function, and indirect calls through a 
@@ -387,6 +416,8 @@ int fac(int x ){
   }
 }
 </code></pre>
+
+</li>
 
                 </ul>
             </div>
@@ -833,6 +864,8 @@ Note that the region needs to be ``self-contained,'' i.e. you can't jump into it
       transformations that completely restructure the code, such as
       flattening.
 
+</li>
+
 <li>
         The <code>--FlattenConditionalKinds=flag</code> transformation doesn't
       work for floats, for reasons that escape me. I think maybe floats are
@@ -915,15 +948,23 @@ Saumya Debray and Babak Yadegari suggested the <code>--FlattenConditionalKinds=f
 <li>
         Flattening first appears in Chenxi Wang's <a href="http://dependability.cs.virginia.edu/publications/wangthesis.pdf">thesis.</a>
 
+</li>
+
 <li>
         The <a href="https://github.com/obfuscator-llvm/obfuscator/wiki/Control-Flow-Flattening">llvm obfuscator</a>
         supports a flattening transformation.
 
+</li>
+
 <li>
         Laszlo and Kiss, <a href="http://www.inf.u-szeged.hu/~akiss/pub/pdf/laszlo_obfuscating.pdf">Obfuscating C++ Programs via Control Flow Flattening</a>
 
+</li>
+
 <li>
         Udupa et al, <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.302.7805">Deobfuscation: Reverse engineering obfuscated code</a>.
+
+</li>
 
                 </ul>
             </div>

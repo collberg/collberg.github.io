@@ -107,6 +107,29 @@ transformations have been given.
     </div>
 </section>
 
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here's a <a href="https://ligerlabs.org">LigerLabs</a> video that discusses
+this transformation:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+   <video preload="none" 
+         controls  
+         poster="https://arizona.box.com/shared/static/ltbhj8tqkmm83mi0xnu3y1sd43oj444r.png" 
+          width="500"
+    >
+    <source src="https://arizona.box.com/shared/static/r87kdgxg0birilkdah0e8tagqoyf83t9.m4v"
+                 type="video/mp4">
+   </video>
+</center>
+
 <center>
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
@@ -613,23 +636,28 @@ obfuscate the split out functions yourself.
                 <ul>
 
 <li>
-<p><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
-coerce the linker to ignore such errors. With <code>gcc</code> you can use this option:
-
-            </p>
-        </div>
-    </div>
-</section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   -Wl,--unresolved-symbols=ignore-in-object-files 
-</code></pre>
-</center>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-No similar option seems to exist for <code>clang</code>.
+      <p><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
+      coerce the linker to ignore such errors. With <code>gcc</code> you can use this option:
+
+            </p>
+        </div>
+    </div>
+</section>
+      <center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">         -Wl,--unresolved-symbols=ignore-in-object-files 
+</code></pre>
+      </center>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      No similar option seems to exist for <code>clang</code>.
 
             </p>
         </div>
@@ -638,10 +666,16 @@ No similar option seems to exist for <code>clang</code>.
 
 </li>
 
+
 <li>
-<p>The <tt>--AddOpaqueKinds=question</tt> adds the code in outlined functions, for reasons I really
-       can't remember at the moment. It should probably be fixed, but in the mean time you can just
-       inline the calls:
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+       The <tt>--AddOpaqueKinds=question</tt> adds the code in outlined functions, for reasons I really
+           can't remember at the moment. It should probably be fixed, but in the mean time you can just
+          inline the calls:
 
             </p>
         </div>

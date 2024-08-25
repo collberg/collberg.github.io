@@ -124,6 +124,53 @@ h3 {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is a <a href="https://ligerlabs.org">LigerLabs</a> video that gives a
+good introduction to the checksum transformation:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+   <video preload="none" 
+         controls  
+         poster="https://arizona.box.com/shared/static/ltbhj8tqkmm83mi0xnu3y1sd43oj444r.png" 
+          width="500"
+    >
+    <source src="https://arizona.box.com/shared/static/chhkmijui8yowfiqu3ys0s6kg8z6adm1.m4v"
+                 type="video/mp4">
+   </video>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+And here's another <a href="https://ligerlabs.org">LigerLabs</a> video that describes
+attacks against checksums:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+   <video preload="none" 
+         controls  
+         poster="https://arizona.box.com/shared/static/ltbhj8tqkmm83mi0xnu3y1sd43oj444r.png" 
+          width="500"
+    >
+    <source src="https://arizona.box.com/shared/static/chhkmijui8yowfiqu3ys0s6kg8z6adm1.m4v"
+                 type="video/mp4">
+   </video>
+</center>
+
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
  Checkers can be invoked over a function prior to it being called,
 ensuring that the function hasn't been tampered with before it is 
 executed. This is illustrated in this figure, where <tt>foo</tt> 
@@ -180,6 +227,11 @@ The <tt>tigress_post</tt> post-processor
 reads the compiled obfuscated file (<tt>P<sup>1</sup>.exe</tt>) and
 <tt>hashes.so</tt> and generates a patched
 executable file (here <tt>P<sup>2</sup>.exe</tt>).
+
+            </p>
+        </div>
+    </div>
+</section>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -428,6 +480,11 @@ check each region of the text segment.
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <tt>tigress_post</tt> has the following options:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Action=checksum 
     Patch the checkers after the 'tigress --Transform=Checksum' transformation.
@@ -502,6 +559,11 @@ should cause the responses to trigger.
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 These are the relevant <tt>tigress_post</tt> options:
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Action=kill       
    Destroy a function to test that the checkers trigger a response.
@@ -643,6 +705,11 @@ does not make use of the <tt>--Functions=...</tt> option. Instead, for call chec
 you should use <tt>--ChecksumFunctionsToBeCheckedAtCallSitess=...</tt> to indicate which functions
 should be checked before they are called, and <tt>--ChecksumCallCheckersToBeInsertedWhere=..</tt> to
 specify a more exact location (such as after the call, randomly, etc.):
+
+            </p>
+        </div>
+    </div>
+</section>
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> tigress ... \
           --ChecksumFunctionsToBeCheckedAtCallSites=f1,f2 \
@@ -1110,8 +1177,12 @@ and increase the overlap rate in <tt>tigress_post</tt> (<code>tigress_post --Ove
         The first part of the checkers (containing the address ranges to be checked and the expected hash value)
         is currently not diversified and are easy to locate.
 
+</li>
+
 <li>
         The response should be separated from the check in time and space. It is currently not.
+
+</li>
 
 <li>
         On recent versions of gcc/x86 the compiler inserts the instruction <a href="https://stackoverflow.com/questions/56905811/what-does-endbr64-instruction-actually-do"><tt>endbr64</tt></a> after branches. In what appears to be a <tt>gcc</tt> bug, in the code below the compiler inserts the <tt>endbr64</tt> instruction <em>after</em> the label, when, presumably, it should go between the test and the label. As a result, we can't correctly calculate the address of the <tt>asm</tt> instruction:
@@ -1124,6 +1195,8 @@ and increase the overlap rate in <tt>tigress_post</tt> (<code>tigress_post --Ove
 }
 </code></pre>
 This typically causes a crash. If you notice this issue turn off branch checking by adding <tt>-fcf-protection=none</tt> to your <tt>gcc</tt> command line. 
+
+</li>
 
                 </ul>
             </div>
@@ -1160,29 +1233,43 @@ This typically causes a crash. If you notice this issue turn off branch checking
         Mariusz H. Jakubowski and Prasad Naldurg and Vijay Patankar and Ramarathnam Venkatesan,
        <a href="https://www.microsoft.com/en-us/research/publication/software-integrity-checking-expressions-ices-for-robust-tamper-detection/">Software integrity checking expressions (ICEs) for robust tamper detection.</a>
 
+</li>
+
 <li>
         Jonathon T. Giffin and Mihai Christodorescu and Louis Kruger,
         <a href="http://pages.cs.wisc.edu/~giffin/papers/acsac05/GCK05-acsac.pdf">Strengthening Software Self-Checksumming via Self-Modifying Code.</a>
+
+</li>
 
 <li>
       Glen Wurster and P.C. van Oorschot and Anil Somayaji,
        <a href="https://ieeexplore.ieee.org/document/1425063">A Generic Attack on Checksumming-Based Software Tamper Resistance.</a>
 
+</li>
+
 <li>
       Gang Tan and Yuqun Chen and Mariusz H. Jakubowski,
        <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tan06delayed.pdf>Delayed and Controlled Failures in Tamper-Resistant Software.</>
+
+</li>
 
 <li>
       Hoi Chang and Mikhail J. Atallah,
        <a href="https://www.cerias.purdue.edu/tools_and_resources/bibtex_archive/archive/2001-49.pdf">Protecting Software Code by Guards</a>
 
+</li>
+
 <li>
         Bill Horne and Lesley Matheson and Casey Sheehan and Robert E. Tarjan,
         <a href="http://profs.sci.univr.it/~giaco/download/Watermarking-Obfuscation/intertrust.pdf">Dynamic Self-Checking Techniques for Improved Tamper Resistance.</a>
 
+</li>
+
 <li>
       P.C. van Oorschot and A. Somayaji and G. Wurster,
        <a href="https://ieeexplore.ieee.org/document/1453528">Hardware-assisted circumvention of self-hashing software tamper resistance.</a>
+
+</li>
 
                 </ul>
             </div>
