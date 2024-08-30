@@ -847,7 +847,7 @@ section.lazy-placeholder:after {
   width: 30px;
   height: 2px;
   border-right: 5px;
-  background-color: #576da4;
+  background-color: #55b4d4;
 }
 .cid-um5eFJALJY button.navbar-toggler .hamburger span:nth-child(1) {
   top: 0;
@@ -21845,12 +21845,12 @@ section.lazy-placeholder:after {
 }
 .cid-umrAJV8ISC .navbar {
   padding: .5rem 0;
-  background: #2d7387;
+  background: #576da4;
   transition: none;
   min-height: 77px;
 }
 .cid-umrAJV8ISC .navbar-dropdown.bg-color.transparent.opened {
-  background: #2d7387;
+  background: #576da4;
 }
 .cid-umrAJV8ISC a {
   font-style: normal;
@@ -21941,7 +21941,7 @@ section.lazy-placeholder:after {
   padding-bottom: 0;
 }
 .cid-umrAJV8ISC .dropdown .dropdown-menu {
-  background: #2d7387;
+  background: #576da4;
   display: none;
   position: absolute;
   min-width: 5rem;
@@ -22417,12 +22417,12 @@ section.lazy-placeholder:after {
 }
 .cid-umV59vaMat .navbar {
   padding: .5rem 0;
-  background: #2d7387;
+  background: #576da4;
   transition: none;
   min-height: 77px;
 }
 .cid-umV59vaMat .navbar-dropdown.bg-color.transparent.opened {
-  background: #2d7387;
+  background: #576da4;
 }
 .cid-umV59vaMat a {
   font-style: normal;
@@ -22513,7 +22513,7 @@ section.lazy-placeholder:after {
   padding-bottom: 0;
 }
 .cid-umV59vaMat .dropdown .dropdown-menu {
-  background: #2d7387;
+  background: #576da4;
   display: none;
   position: absolute;
   min-width: 5rem;
