@@ -138,6 +138,16 @@ own set of options, all prefixed by the name of the transformation.
 <td> Tigress' chattiness level. <code>--Verbosity=0</code> makes Tigress quiet. <code>--Verbosity=1</code> prints each transformation as it is being applied. Higher levels also print out all the versions of functions and variables being constructed. If <code>--LogDir=dirName</code> is set, generated log files will go in <code>dirName</code>. Default=0.</td>
 </tr>
 <tr>
+<td><tt>--Version</tt></td>
+<td><tt></tt></td>
+<td> Print the current Tigress version and exit. </td>
+</tr>
+<tr>
+<td><tt>--License</tt></td>
+<td><tt></tt></td>
+<td> Print the current Tigress license and exit. </td>
+</tr>
+<tr>
 <td><tt>--Skip</tt></td>
 <td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
 <td> Skip a particular transformation. Typically, use like this to skip transformation <code>T1</code>: <code>tigress --Transform=T1 --Skip=true ... --Transform=T2 --Skip=false ...</code>. This can be useful when you have a long sequence  of transformations and want to experiment with turning certain ones on or off. Default=false.</td>
