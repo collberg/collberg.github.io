@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html  >
 <head>
-  <!-- Site made with Mobirise Website Builder v5.9.4, https://mobirise.com -->
+  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v5.9.4, mobirise.com">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" type="image/x-icon">
   <meta name="description" content="Web Page Generator Description">
@@ -20,10 +20,9 @@
   <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=RUN060"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=RUN060" type="text/css">
 
   
   
@@ -48,7 +47,7 @@
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="index.html">
-                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="Mobirise" title="" style="height: 4.1rem;">
+                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="" title="" style="height: 4.1rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
@@ -126,7 +125,7 @@
 
     <figure class="mbr-figure container">
         <div class="image-block" style="width: 47%;">
-            <img src="assets/images/tigress-filetree-1-687x995.png" alt="Mobirise" title="">
+            <img src="assets/images/tigress-filetree-1-687x995.png" alt="" title="">
             
         </div>
     </figure>
@@ -187,7 +186,51 @@
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-al" custom-code="true" data-rv-view="1127"></section>
+<div id="custom-html-al"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">class virtual transformVariables :
+  Universe.t -&gt;
+  Transform.transformationKind -&gt;
+  Options.t -&gt;
+  object
+    (* Check that this transformation was called properly. *)
+    method functionMustNotHaveBeenPreviouslyTransformedBy :
+       (transformationKind * string) list
+    method mustHaveBeenPrecededByTransformations          : 
+       (transformationKind * string) list
+    method noTransformationMayFollowThisOne : string option
+    method notSupportedOnThesePlatforms : platform list
+
+    method deprecated : string option
+
+    (* Check for reasons this transformation can't be applied. *)
+    method checkTransformable : unit
+
+    (* Get variables/functions/etc that need to be transformed. *)
+    method private allFunctions :  
+       Cil.fundec list
+    method private allReferencedFunctions :  
+       Cil.fundec list
+    method private getCallers :  
+       Cil.fundec list
+    method private globalTargets :  
+       (string * string option) list
+    method private localTargets :  
+       (Cil.fundec * string * string option) list
+    method private pseudoReturnTargets :  
+       (string * string * string option) list
+    method private targetNames :  
+       string list
+    method private targets :  
+       Cil.fundec list
+
+    (* Perform the transformation. *)
+    method virtual transform : unit
+end
+</code></pre>
+</div>
+</center>
+</div>
 
 <section class="cid-ume8X0JIPB" id="image2-ah">
 
@@ -195,7 +238,7 @@
 
     <figure class="mbr-figure container">
         <div class="image-block" style="width: 65%;">
-            <img src="assets/images/encodedata-filetree-784x455.png" alt="Mobirise" title="">
+            <img src="assets/images/encodedata-filetree-784x455.png" alt="" title="">
             
         </div>
     </figure>
@@ -219,7 +262,28 @@
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-ai" custom-code="true" data-rv-view="1133"></section>
+<div id="custom-html-ai"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">class virtual transformer = object (self)
+   method virtual newTypes : 
+      typ list
+
+   method virtual encode   : 
+      fundec -&gt; exp -&gt; exp list  * stmt list
+   method virtual decode   : 
+      fundec -&gt; exp list-&gt; exp  * stmt list
+
+   method virtual unaryOp  : 
+      fundec -&gt; unop -&gt; exp list -&gt; exp list  * stmt list
+   method virtual binaryOp : 
+      fundec -&gt; binop -&gt; exp list -&gt; exp list -&gt; exp list  * stmt list
+   method virtual question : 
+      fundec -&gt; exp -&gt; exp list -&gt; exp list -&gt; exp list * stmt list
+end
+</code></pre>
+</div>
+</center>
+</div>
 
 <section class="header9 cid-umgJElfUw6" id="header9-am">
 
@@ -306,7 +370,13 @@
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-an" custom-code="true" data-rv-view="1146"></section>
+<div id="custom-html-an"><!-- Type valid HTML here -->
+<center>
+    <div style="width:800px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>tigress --Verbosity=3 --LogDir=log --GraphvizBuild=pdf ...
+</code></pre>
+    </div>
+</center></div>
 
 <section class="header9 cid-umgRIVxBnh" id="header9-at">
 
@@ -326,7 +396,26 @@
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-as" custom-code="true" data-rv-view="1150"></section>
+<div id="custom-html-as"><!-- Type valid HTML here -->
+<center>
+    <div style="width:800px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>void ENCODE() {
+  int x = 41;
+  int* z = &amp;x;
+  int** w = &amp;z;
+  **w += 1;
+
+  printf("RESULT=%i\n",x);
+}
+
+int main() {
+  ENCODE();
+  return 0;
+}
+
+</code></pre>
+    </div>
+</center></div>
 
 <section class="header9 cid-umgSQleJmm" id="header9-av">
 
@@ -346,7 +435,21 @@
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-au" custom-code="true" data-rv-view="1154"></section>
+<div id="custom-html-au"><!-- Type valid HTML here -->
+<center>
+    <div style="width:800px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>&gt; tigress \
+   --LogDir=log --Verbosity=3  --GraphvizBuild=pdf \
+   --Environment=x86_64:Darwin:Clang:12.0  --Seed=0 \
+   --Transform=InitEntropy \
+   --Transform=EncodeData \
+      --EncodeDataDebug=traceUpdates \
+      --EncodeDataCodecs=poly1 \
+      --LocalVariables='ENCODE:x' \
+   encode3.c --out=encode3_poly1_obf.c
+</code></pre>
+    </div>
+</center></div>
 
 <section class="header9 cid-umgT50DHhr" id="header9-aw">
 
@@ -366,7 +469,40 @@
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-ax" custom-code="true" data-rv-view="1158"></section>
+<div id="custom-html-ax"><!-- Type valid HTML here -->
+<center>
+    <div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>BEGIN TRANSFORM ()
+      STEP Alias graph after connected components have been computed:
+        'log/aliasGraphWithComponents_17.pdf
+      STEP Connected components computed from alias graph: 
+         {0: [ENCODE:z/2987,ENCODE:x/2986, ENCODE:w/2988]}
+   TASK Compute affected variables.
+      STEP After computing affected function pointers: 
+           target variables=[ENCODE:x/2986];
+           reachable variables=[]; 
+           encoded variables=[ENCODE:x/2986]; 
+           points to encoded variables= [ENCODE:
+           z/2987]; signature changed functions= []; 
+           implementation changed functions= [ENCODE/2985];
+           init changed functions= []; 
+           pseudo return variables=[]; 
+           components= {0: [ENCODE:z/2987,ENCODE:x/2986,ENCODE:w/2988]};
+   TASK Select data transformation for affected variables.
+      STEP Variables mapped to their encoder: 
+           [ENCODE:x/2986-&gt;poly1:f(x:int)=1682595229*x+1015937501]
+   TASK Transform affected variables.
+      STEP Updating functions whose implementation has changed: 
+          [ENCODE/2985]
+      STEP Function 'ENCODE' before variable transformations:
+          'ENCODE/2985' saved to log/ENCODE_25.pdf
+      STEP Function 'ENCODE' after variable transformations:
+          'ENCODE/2985' saved to log/ENCODE_27.pdf
+END TRANSFORM ()
+
+</code></pre>
+    </div>
+</center></div>
 
 <section class="mbr-section content6 cid-umgWpgxjbR" id="content6-b4">
     
@@ -377,7 +513,7 @@
             <div class="col-12 col-md-8">
                 <div class="media-container-row">
                     <div class="mbr-figure" style="width: 25%;">
-                      <img src="assets/images/aliasgraphwithcomponents-17-116x329.png" alt="Mobirise">  
+                      <img src="assets/images/aliasgraphwithcomponents-17-116x329.png" alt="">  
                     </div>
                     <div class="media-content">
                         <div class="mbr-section-text">
@@ -414,7 +550,7 @@
 
     <figure class="mbr-figure container">
         <div class="image-block" style="width: 90%;">
-            <img src="assets/images/encode-25-1443x930.png" alt="Mobirise" title="">
+            <img src="assets/images/encode-25-1443x930.png" alt="" title="">
             
         </div>
     </figure>
@@ -444,7 +580,7 @@
 
     <figure class="mbr-figure container">
         <div class="image-block" style="width: 95%;">
-            <img src="assets/images/encode-27-1443x907.png" alt="Mobirise" title="">
+            <img src="assets/images/encode-27-1443x907.png" alt="" title="">
             
         </div>
     </figure>

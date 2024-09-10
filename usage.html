@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html  >
 <head>
-  <!-- Site made with Mobirise Website Builder v5.9.4, https://mobirise.com -->
+  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v5.9.4, mobirise.com">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" type="image/x-icon">
   <meta name="description" content="Website Generator Description">
@@ -20,10 +20,9 @@
   <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=2jUW2u"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=2jUW2u" type="text/css">
 
   
   
@@ -64,7 +63,7 @@ h3 {
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="index.html">
-                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="Mobirise" title="" style="height: 4.1rem;">
+                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="" title="" style="height: 4.1rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
@@ -91,9 +90,29 @@ h3 {
     </div>
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-k" custom-code="true" data-rv-view="642"></section>
+<div id="custom-html-k"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#include "PATH-TO-TIGRESS-INSTALLATION/tigress.h"
+void bar () {
+    ...
+}
+int main () {
+   ...
+}
+</code></pre>
+</div>
+</center>
+</div>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-i" custom-code="true" data-rv-view="643"></section>
+<div id="custom-html-i"><center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>tigress \
+   --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=Flatten \
+      --Functions=bar \
+   --out=foo_out.c foo.c
+</code></pre>
+</center>
+</div>
 
 <section class="mbr-section article content1 cid-rE3ete9d8p" id="content1-h">
     
@@ -107,7 +126,15 @@ h3 {
     </div>
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-f" custom-code="true" data-rv-view="646"></section>
+<div id="custom-html-f"><!-- Type valid HTML here -->
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>*) tigress --help     : Show this message
+*) tigress --install  : Show how to install Tigress 
+*) tigress --license  : Display the tigress license
+*) tigress --bugs     : How to get past some known issues
+*) tigress --version  : Show the current Tigress version
+</code></pre>
+</center></div>
 
 <section class="mbr-section article content1 cid-rE3ethkTec" id="content1-i">
     
@@ -120,7 +147,10 @@ h3 {
     </div>
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-k" custom-code="true" data-rv-view="649"></section>
+<div id="custom-html-k"><!-- Type valid HTML here -->
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>$ tigress-merge file1.c file2.c --out=full.c
+</code></pre></center></div>
 
 <section class="mbr-section article content1 cid-rE3kNoI7NA" id="content1-l">
     
@@ -134,7 +164,18 @@ h3 {
     </div>
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-m" custom-code="true" data-rv-view="652"></section>
+<div id="custom-html-m"><center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black"><code>CIL_MACHINE="short=2,2 int=4,4 long=4,4 long_long=8,8 pointer=4,4 \
+             alignof_enum=4 float=4,4 double=8,8 long_double=12,12 \
+             void=1 bool=1,1 fun=1,1 alignof_string=1 max_alignment=16 \
+             size_t=unsigned_int wchar_t=int char_signed=true \
+             const_string_literals=true big_endian=false \
+             __thread_is_keyword=true __builtin_va_list=true \
+             underscore_name=true"; export CIL_MACHINE;
+</code></pre></center>
+
+
+</div>
 
 <section class="header9 cid-thf80FGFH2" id="header9-y">
 
@@ -154,7 +195,17 @@ h3 {
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-x" custom-code="true" data-rv-view="656"></section>
+<div id="custom-html-x"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; gcc -D_GNUCC \
+       -DTYPE_SIZE_T="\"unsigned long\"" \
+       -DTYPE_WCHAR_T=\"int\" machdep-ml.c -o machdep-ml
+&gt; ./machdep-ml --env | grep -v Generating
+short=2,2 int=4,4 long=8,8 .... underscore_name=true
+</code></pre>
+</div>
+</center>
+</div>
 
 <section class="header9 cid-rGDOlD4yG3" id="header9-e">
 
@@ -174,9 +225,48 @@ h3 {
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-f" custom-code="true" data-rv-view="660"></section>
+<div id="custom-html-f"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">export EMSDKPATH=PATH-TO-EMCC-INSTALLATION/emsdk/emscripten/1.38.29/system/include/
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-g" custom-code="true" data-rv-view="661"></section>
+export CIL_MACHINE="short=2,2 int=4,4 long=4,4 long_long=8,8 pointer=4,4 alignof_enum=4 float=4,4 \
+             double=8,8 long_double=8,8 void=1 bool=1,1 fun=1,4 alignof_string=1 max_alignment=16 \
+             size_t=unsigned_long wchar_t=int char_signed=true const_string_literals=true \
+             big_endian=false __thread_is_keyword=true __builtin_va_list=true underscore_name=true"
+             
+tigress \
+   --gcc=emcc \
+   --envmachine \
+   -D _Float128=double \
+   -I $EMSDKPATH \
+   --Environment=x86_64:Linux:Gcc:4.6 \
+   --Transform=Flatten \
+      --Functions=bar \
+   --out=foo_obf.c foo_in.c 
+</code></pre>
+</div>
+</center>
+</div>
+
+<div id="custom-html-g"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">emcc \
+   -I $EMSDKPATH \
+   -O2 \
+   foo_obf.c \
+   -o foo_wasm.html \
+   -s WASM=1 \
+   -s ALLOW_MEMORY_GROWTH=1 \
+   -s AGGRESSIVE_VARIABLE_ELIMINATION=1 \
+   -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
+   -s USE_WEBGL2=1 \
+   -s USE_GLFW=3 \
+   -s FULL_ES3=1 \
+   -fmacro-backtrace-limit=0
+</code></pre>
+</div>
+</center>
+</div>
 
 <section class="header9 cid-sWi4iUUvoE" id="header9-x">
 
@@ -196,7 +286,36 @@ h3 {
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-y" custom-code="true" data-rv-view="665"></section>
+<div id="custom-html-y"><center>
+    <div style="width:600px;overflow:auto">
+    <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">
+EMSDKPATH=PATH_TO_EMSDK_INSTALLATION/emsdk/upstream/include/c++/v1
+
+&gt; tigress \
+           --Environment=wasm:Linux:Emcc:4.6 \
+           --Transform=Flatten --Functions=fib \
+           --out=obf.c foo.c 
+&gt; emcc \
+           -I $EMSDKPATH \
+           -O2 \
+           obf.c \
+           --emrun \
+           -o wasm.html \
+           -s WASM=1 \
+           -s ASSERTIONS=1 \
+           -s ALLOW_MEMORY_GROWTH=1 \
+           -s AGGRESSIVE_VARIABLE_ELIMINATION=1 \
+           -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
+           -s USE_WEBGL2=0 \
+           -s USE_GLFW=3 \
+           -s FULL_ES3=0 \
+           -fmacro-backtrace-limit=0
+
+&gt; emrun --browser safari wasm.html
+</code></pre>
+</div>
+</center>
+</div>
 
 <section class="header9 cid-rKmkPnlndO" id="header9-r">
 
@@ -216,7 +335,15 @@ h3 {
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-s" custom-code="true" data-rv-view="669"></section>
+<div id="custom-html-s"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">#!/bin/sh
+
+./toolchains/llvm/prebuilt/darwin-x86_64/bin/clang -target aarch64-none-linux-android21 "$@"
+</code></pre>
+</div>
+</center>
+</div>
 
 <section class="header9 cid-rKmmnUwKkb" id="header9-u">
 
@@ -236,7 +363,20 @@ h3 {
     
 </section>
 
-<section class="mbr-section mbr-section--no-padding" id="custom-html-t" custom-code="true" data-rv-view="673"></section>
+<div id="custom-html-t"><center>
+<div style="width:1000px;overflow:auto">
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable="" spellcheck="false">&gt; cd android-ndk-r20b
+
+&gt; chmod a+rx ./compiler
+
+&gt; CIL_MACHINE="short=2,2 int=4,4 long=4,4 ...; export CIL_MACHINE;
+
+&gt; tigress-merge --Environment=x86_64:Linux:Gcc:4.6 --envmachine --gcc=./compiler foo.c bar.c --out=out.c
+&gt; tigress --Environment=x86_64:Linux:Gcc:4.6 --envmachine --gcc=./compiler --Transform=Flatten --Functions=fib out.c --out=obf.c
+</code></pre>
+</div>
+</center>
+</div>
 
 
 <script src="assets/popper/popper.min.js"></script>
