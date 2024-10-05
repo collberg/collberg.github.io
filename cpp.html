@@ -120,7 +120,7 @@ integrate the LLVM C backend with Tigress to automate this process.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The tool flow consists of a couple of steps:
+We need five steps to transform the C++ code into C, and then obfuscate with Tigress:
 
             </p>
         </div>
@@ -136,7 +136,7 @@ The tool flow consists of a couple of steps:
                 <div class="step-element d-flex">
                     <div class="step-wrapper pr-3">
                         <h3 class="step d-flex align-items-center justify-content-center">
-                            
+                            1
                         </h3>
                     </div>          
                     <div class="step-text-content">
@@ -152,7 +152,7 @@ The tool flow consists of a couple of steps:
                 <div class="step-element d-flex">
                     <div class="step-wrapper pr-3">
                         <h3 class="step d-flex align-items-center justify-content-center">
-                            
+                            2
                         </h3>
                     </div>          
                     <div class="step-text-content">
@@ -168,7 +168,7 @@ The tool flow consists of a couple of steps:
                 <div class="step-element d-flex">
                     <div class="step-wrapper pr-3">
                         <h3 class="step d-flex align-items-center justify-content-center">
-                            
+                            3
                         </h3>
                     </div>          
                     <div class="step-text-content">
@@ -184,7 +184,7 @@ The tool flow consists of a couple of steps:
                 <div class="step-element d-flex">
                     <div class="step-wrapper pr-3">
                         <h3 class="step d-flex align-items-center justify-content-center">
-                            
+                            4
                         </h3>
                     </div>          
                     <div class="step-text-content">
@@ -200,7 +200,7 @@ The tool flow consists of a couple of steps:
                 <div class="step-element d-flex">
                     <div class="step-wrapper pr-3">
                         <h3 class="step d-flex align-items-center justify-content-center">
-                            
+                            5
                         </h3>
                     </div>          
                     <div class="step-text-content">
@@ -285,7 +285,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 If you ever need to debug things, add <code>-DMAKE_BUILD_TYPE=Debug</code> or 
-<code>-DMAKE_BUILD_TYPE=RelWithDebInfo</code>.
+<code>-DMAKE_BUILD_TYPE=RelWithDebInfo</code>. Then, build:
 
             </p>
         </div>
@@ -293,7 +293,7 @@ If you ever need to debug things, add <code>-DMAKE_BUILD_TYPE=Debug</code> or
 </section>
 
 <center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">make -j<number of CPU cores>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">make -j<em>number of CPU cores</em>
 </code></pre>
 </center>
 
@@ -770,19 +770,7 @@ This link statement is basically adapted from what you would get when linking th
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Now you should be able to start <code>./supertux2_cbe>/code>> and it should run
-
-            </p>
-        </div>
-    </div>
-</section>
-
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Then apply Tigress:
+Now you should be able to start <code>./supertux2_cbe</code> and it should run. Now, you can finally apply Tigress:
 
             </p>
         </div>
