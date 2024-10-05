@@ -293,7 +293,7 @@ If you ever need to debug things, add <code>-DMAKE_BUILD_TYPE=Debug</code> or
 </section>
 
 <center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">make -j number-of-CPU-cores
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">make -j<em>number of CPU cores</em>
 </code></pre>
 </center>
 
@@ -450,7 +450,7 @@ based on those from Debian), and then build it:
            -DENABLE_BOOST_STATIC_LIBS=OFF \
            -DUSE_SYSTEM_PHYSFS=ON \
            -DIS_SUPERTUX_RELEASE=ON ..
-make -j<number of CPU cores>
+make -j <em>number of CPU cores</em>
 </code></pre>
 </center>
 
