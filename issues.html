@@ -125,7 +125,7 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
- Known Issues
+ Known Bugs
 
                </h2>
             </div>
@@ -165,30 +165,6 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
                 <div class="step-element d-flex">
                     <div class="step-wrapper pr-3">
                         <h3 class="step d-flex align-items-center justify-content-center">
-                            44
-                        </h3>
-                    </div>          
-                    <div class="step-text-content">
-                        <p class="mbr-step-text mbr-fonts-style display-7">
-    Variable length arrays in structures are supported by gcc but are rejected by Clang.
-    Tigress currently fails on this code and we are unlikely to support it in the future:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(int n) {
-   struct S {int i[n];}
-}
-</code></pre>
-</center>
-
-                        </p>
-                    </div>
-                </div>
-            </div>
-   <!-- ----------------------------------------------------------------------------------- -->
-
-            <div class="card separline pb-4">
-                <div class="step-element d-flex">
-                    <div class="step-wrapper pr-3">
-                        <h3 class="step d-flex align-items-center justify-content-center">
                             52
                         </h3>
                     </div>          
@@ -207,6 +183,23 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
                     <div class="step-wrapper pr-3">
                         <h3 class="step d-flex align-items-center justify-content-center">
                             55
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+     Tigress is slow on huge programs.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+   <!-- ----------------------------------------------------------------------------------- -->
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            56
                         </h3>
                     </div>          
                     <div class="step-text-content">
@@ -233,6 +226,55 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
 <center>
 <pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include&lt;stdio.h&gt;
 typedef int __attribute__ ((mode (__pointer__))) intptr_t;
+</code></pre>
+</center>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- =============================================================================================== -->
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Limitations
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="step1 TIGRESS-OL" id="step1-dy">
+    <div class="container">
+        <div class="step-container">
+
+   <!-- ----------------------------------------------------------------------------------- -->
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            44
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+    Variable length arrays in structures are supported by gcc but are rejected by Clang.
+    Tigress currently fails on this code and we are unlikely to support it in the future:
+<center>
+<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(int n) {
+   struct S {int i[n];}
+}
 </code></pre>
 </center>
 
