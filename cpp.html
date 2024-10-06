@@ -255,20 +255,17 @@ If you're using Docker, do the following:
         </div>
     </div>
 </section>
-<center>
-<pre>
-docker pull debian:12 ; 
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">docker pull debian:12 ; 
 docker run -v ${PWD}/projects:/projects -ti debian:12 bash 
 sed -i 's/deb$/deb deb-src/' /etc/apt/sources.list.d/debian.sources 
 apt-get update 
 apt-get build-dep supertux 
 apt-get install vim python3.11-venv
-</pre>
-</center>
+</code></pre></div>
 
-<center>
-<pre>
-cd /projects 
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">cd /projects 
 git clone https://url.usb.m.mimecastprotect.com/s/MexdCoAWMofr6Q610i1fgCYOGkE?domain=github.com
 cd llvm-project
 git switch release/17.x
@@ -279,8 +276,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DLLVM_BUILD_LLVM_DYLIB=ON \
       -DLLVM_ENABLE_PROJECTS=clang \
       -DLLVM_ENABLE_ASSERTIONS=ON ..
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -295,11 +291,9 @@ If you ever need to debug things, add <code class="language-c">-DMAKE_BUILD_TYPE
     </div>
 </section>
 
-<center>
-<pre>
-make -j<em>number of CPU cores</em>
-</pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">make -j<em>number of CPU cores</em>
+</code></pre></div>
 
 <!-- =============================================================================================== -->
 
@@ -316,9 +310,8 @@ make -j<em>number of CPU cores</em>
     </div>
 </section>
 
-<center>
-<pre>
-cd /projects
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">cd /projects
 git clone https://url.usb.m.mimecastprotect.com/s/h9m8Cp9WNpfnp7pJBSDh7CXcChH?domain=github.com
 cd llvm-cbe
 git switch development
@@ -330,8 +323,7 @@ export PATH=/projects/llvm-project/llvm/build/bin/:$PATH
 cmake ..
 
 make
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -346,14 +338,12 @@ add the following at the end of <code class="language-c">../tools/llvm-cbe/CMake
     </div>
 </section>
 
-<center>
-<pre>
-if (NOT ${LLVM_ENABLE_RTTI})
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">if (NOT ${LLVM_ENABLE_RTTI})
    target_compile_options(llvm-cbe PRIVATE "-fno-rtti")
    target_link_options(llvm-cbe PRIVATE "-fno-rtti")
 endif()
-</pre>
-</center>
+</code></pre></div>
 
 <!-- =============================================================================================== -->
 
@@ -383,14 +373,12 @@ LLVM IR embedded inside them. This can be used for link-time optimization but al
     </div>
 </section>
 
-<center>
-<pre>
-cd /projects
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">cd /projects
 python3 -m venv venv-wllvm 
 . venv-wllvm/bin/activate
 pip3 install wllvm
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -405,13 +393,11 @@ PATH being set correctly from earlier:
     </div>
 </section>
 
-<center>
-<pre>
-export LLVM_COMPILER=clang
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">export LLVM_COMPILER=clang
 export LLVM_COMPILER_PATH=/projects/llvm-project/llvm/build/bin/
 alias wllvm="wllvm -g"
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -426,9 +412,8 @@ which at the time had supertux-0.6.3. Get the dependencies to build it:
     </div>
 </section>
 
-<center>
-<pre>
-sudo apt-get build-dep supertux
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">sudo apt-get build-dep supertux
 
 cd /projects
 apt-get source supertux
@@ -436,8 +421,7 @@ cd supertux-0.6.3/
 
 mkdir build
 cd build
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -452,17 +436,15 @@ based on those from Debian), and then build it:
     </div>
 </section>
 
-<center>
-<pre>
-CC=wllvm CXX=wllvm++ CFLAGS=-g CXXFLAGS=-g \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">CC=wllvm CXX=wllvm++ CFLAGS=-g CXXFLAGS=-g \
      cmake -DBUILD_SHARED_LIBS=OFF \
            -DCMAKE_BUILD_RPATH_USE_ORIGIN=ON \
            -DENABLE_BOOST_STATIC_LIBS=OFF \
            -DUSE_SYSTEM_PHYSFS=ON \
            -DIS_SUPERTUX_RELEASE=ON ..
 make -j <em>number of CPU cores</em>
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -477,11 +459,9 @@ This binary will also contain info to get our LLVM IR file from, which we extrac
     </div>
 </section>
 
-<center>
-<pre>
-extract-bc --manifest supertux2 
-</pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">extract-bc --manifest supertux2 
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -496,11 +476,9 @@ As the C backend starts from textual disassembly of that IR, we first disassembl
     </div>
 </section>
 
-<center>
-<pre>
-llvm-dis supertux2.bc 
-</pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">llvm-dis supertux2.bc 
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -514,11 +492,9 @@ This  results in <code class="language-c">supertux2.ll</code>. Finally, we prepa
     </div>
 </section>
 
-<center>
-<pre>
-make install
-</pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">make install
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -535,13 +511,11 @@ of cmake where it installs, but instead we just do the following:
     </div>
 </section>
 
-<center>
-<pre>
-make install
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">make install
 mkdir -p /projects/supertux-0.6.3/build/share/games
 cp -a /usr/local/share/games/supertux2 /projects/supertux-0.6.3/build/share/games/
-</pre>
-</center>
+</code></pre></div>
 
 <!-- =============================================================================================== -->
 
@@ -570,11 +544,9 @@ Do the following:
     </div>
 </section>
 
-<center>
-<pre>
-/projects/llvm-cbe/build/tools/llvm-cbe/llvm-cbe supertux2.ll
-</pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">/projects/llvm-cbe/build/tools/llvm-cbe/llvm-cbe supertux2.ll
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -619,11 +591,9 @@ the line statements:
     </div>
 </section>
 
-<center>
-<pre>
-grep -v '#line' supertux2.cbe.c > supertux2.cbe_noline.c
-</pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">grep -v '#line' supertux2.cbe.c > supertux2.cbe_noline.c
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -637,11 +607,9 @@ Create an object file:
     </div>
 </section>
 
-<center>
-<pre>
-gcc -g -Wno-discarded-qualifiers -std=c99 -o supertux2_cbe.o -c supertux2.cbe_noline.c
-</pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">gcc -g -Wno-discarded-qualifiers -std=c99 -o supertux2_cbe.o -c supertux2.cbe_noline.c
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -657,9 +625,8 @@ compile due to errors related to <code class="language-c">'cbe_get_landingpad'</
     </div>
 </section>
 
-<center>
-<pre>
-struct cbe_landingpad cbe_get_landingpad() {
+<div class="container">
+<pre><code class="language-c">struct cbe_landingpad cbe_get_landingpad() {
     struct cbe_landingpad r; 
     r.field1 = 1; 
     r.field0 = cbe_exception.o; 
@@ -669,8 +636,7 @@ void __attribute__((noreturn))
    __cbe_resume(struct cbe_landingpad l) __attribute__((noreturn)) {
     longjmp(ExceptionStates[--jmp_idx].buf, 1); 
 }
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -684,9 +650,8 @@ into
     </div>
 </section>
 
-<center>
-<pre>
-struct l_unnamed_1 cbe_get_landingpad() { 
+<div class="container">
+<pre><code class="language-c">struct l_unnamed_1 cbe_get_landingpad() { 
    struct l_unnamed_1 r; 
    r.field1 = 1; 
    r.field0 = cbe_exception.o; 
@@ -696,8 +661,7 @@ void __attribute__((noreturn))
    __cbe_resume(struct l_unnamed_1 l) { 
    longjmp(ExceptionStates[--jmp_idx].buf, 1); 
 }
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -715,14 +679,12 @@ Search for and delete the following 4 lines:
     </div>
 </section>
 
-<center>
-<pre>
-#define longjmp _longjmp
+<div class="container">
+<pre><code class="language-c">#define longjmp _longjmp
 #define setjmp _setjmp
 uint32_t _setjmp(void* _147370) __ATTRIBUTELIST__((nothrow, returns_twice));
 __noreturn void longjmp(void* _147371, uint32_t _147372) __ATTRIBUTELIST__((nothrow));
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -748,9 +710,8 @@ Finally, link the file:
     </div>
 </section>
 
-<center>
-<pre>
-g++ -o supertux2_cbe supertux2_cbe.o \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">g++ -o supertux2_cbe supertux2_cbe.o \
     -L/projects/supertux-0.6.3/build-wllvm-14.x/SDL_ttf/lib  \
    -Wl,-rpath,"\$ORIGIN/SDL_ttf/lib:" libsupertux2_lib.a \
    /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.74.0 \
@@ -771,8 +732,7 @@ g++ -o supertux2_cbe supertux2_cbe.o \
    -lphysfs -lGL -lGLU \
    /usr/lib/x86_64-linux-gnu/libGLEW.so \
    -lcurl -latomic
-</pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -798,9 +758,8 @@ Now you should be able to start <code class="language-c">./supertux2_cbe</code> 
     </div>
 </section>
 
-<center>
-<pre>
-tigress \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
    --Verbosity=1 \
    --Environment=x86_64:Linux:Gcc:12.2 \
    --Transform=Virtualize \
@@ -812,8 +771,7 @@ tigress \
       --Functions=main,_ZN4Main3runEiPPc \
    --out=supertux2.cbe_noline_tigress_3_3_1_actuallyobfuscated.c \
    supertux2.cbe_noline_atomicandmorehacks.c
-</pre>
-</center>
+</code></pre></div>
 
 
 
