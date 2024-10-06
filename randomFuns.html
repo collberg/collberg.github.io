@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -108,7 +109,7 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-One of the uses of Tigress is as an educational tool. The <code>--Transform=RandomFuns</code>
+One of the uses of Tigress is as an educational tool. The <code class="language-c">--Transform=RandomFuns</code>
 option will generate a random function that can subsequently be transformed using any
 combination of Tigress obfuscations, and then given to students as a cracking target.
 
@@ -204,19 +205,18 @@ and it's the students' job to disable these.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Start by creating this file, <code>empty.c</code>:
+Start by creating this file, <code class="language-c">empty.c</code>:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
+<div class="container">
+<pre><code class="language-c">#include "tigress.h"
 #include &lt;stdio.h&gt; 
 #include &lt;time.h&gt;
 #include &lt;pthread.h&gt;
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -229,8 +229,8 @@ Generate the cleartext challenge program. This is hidden from the students:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 --Environment=x86_64:Darwin:Clang:5.1 \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Verbosity=1 --Seed=$seed6 --Environment=x86_64:Darwin:Clang:5.1 \
       --Transform=RandomFuns \
          --RandomFunsName=SECRET \
          --Verbosity=5 \
@@ -253,8 +253,7 @@ Generate the cleartext challenge program. This is hidden from the students:
          --RandomFunsPassword=secret \
          --RandomFunsFailureKind=segv \
       --out=6-input.c empty.c
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -268,8 +267,8 @@ for the students to fill out:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Verbosity=1 --Seed=$seed6 \
       --Transform=RandomFuns --RandomFunsName=SECRET \
          --RandomFunsType=long \
          --RandomFunsInputSize=1 \
@@ -280,8 +279,7 @@ for the students to fill out:
          --RandomFunsOutputSize=1 \
          --RandomFunsCodeSize=0 \
       --out=6-answer.c empty.c
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -294,8 +292,8 @@ Finally, obfuscate the challenge program:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 --FilePrefix=obf \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Verbosity=1 --Seed=$seed6 --FilePrefix=obf \
       --Transform=InitEntropy \
          --Functions=main\
       --Transform=InitOpaque \
@@ -322,8 +320,7 @@ Finally, obfuscate the challenge program:
       --Transform=CleanUp \
          --CleanUpKinds=annotations,constants,names \
       --out=6-challenge.c 6-input.c
-</code></pre>
-</center>
+</code></pre></div>
 
 <a class="anchor" id="structure">&nbsp;</a>
 
@@ -413,8 +410,8 @@ The generated challenge programs all take the following simple form:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include &le;stdio.h&gt; 
+<div class="container">
+<pre><code class="language-c">#include &le;stdio.h&gt; 
 #include &le;stdlib.h&gt;
 
 void SECRET(unsigned long input[1] , unsigned long output[1] ) 
@@ -441,8 +438,7 @@ int main(int argc, char** argv) {
     i7 ++;
   }
 } 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -461,7 +457,7 @@ and produces one or more longs on standard out.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Internally, generated <code>SECRET</code> functions share the same basic structure:
+Internally, generated <code class="language-c">SECRET</code> functions share the same basic structure:
 an <em>expansion phase</em>, a <em>mixing phase</em>, and a <em>compression phase</em>:
 
             </p>
@@ -509,8 +505,8 @@ Here is an example:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void SECRET(unsigned long input[1] , unsigned long output[1] ) { 
+<div class="container">
+<pre><code class="language-c">void SECRET(unsigned long input[1] , unsigned long output[1] ) { 
   unsigned long state[4] ;
   unsigned long local1 ;
 
@@ -538,12 +534,14 @@ Here is an example:
   /* Compression phase */  
   output[0UL] = (state[0UL] << (state[1UL] % 8UL | 1UL)) << ((((state[2UL] << (state[3UL] % 8UL | 1UL)) >> 1UL) & 7UL) | 1UL);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -760,11 +758,13 @@ Here is an example:
 <td><tt>BOOL</tt></td>
 <td> Add <tt>if (output[0] == 4242424242U) printf("You win!\n");</tt> after the call to the generated function. The idea is to replace (by hand) 4242424242U with one actual output of the function. This can be used as another reverse engineering challenge: "<em>Find an input for which the program prints <tt>"You win!</tt>.</em> Default=false.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <a class="anchor" id="issues">&nbsp;</a>
@@ -786,7 +786,7 @@ Here is an example:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-If you set <tt>--RandomFunsPluginADTCount=...</tt>, we will include calls to your own Abstract Data Types (ADTs). 
+If you set <code class="language-c">--RandomFunsPluginADTCount=...</code>, we will include calls to your own Abstract Data Types (ADTs). 
 You call Tigress like this: 
 
             </p>
@@ -794,8 +794,8 @@ You call Tigress like this:
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Verbosity=1 --Seed=$seed6 --FilePrefix=obf \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Verbosity=1 --Seed=$seed6 --FilePrefix=obf \
       --Transform=InitPlugins \
           --InitPluginsContainerPrefix=Set \
           --InitPluginsDictionaryPrefix=HashMap \
@@ -804,23 +804,22 @@ You call Tigress like this:
             ... \
      --out=result.c plugins.c
 
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-wnere <tt>plugins.c<tt> looks like this:
+wnere <code class="language-c">plugins.c<code class="language-c"> looks like this:
 
             </p>
         </div>
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
+<div class="container">
+<pre><code class="language-c">#include "tigress.h"
 #include <stdio.h> 
 #include <time.h>
 #include <pthread.h>
@@ -854,8 +853,7 @@ Set_ITER Set_FIRST(Set_TYPE a){ ... }
 Set_ITER Set_NEXT(Set_TYPE a, Set_ITER n){ ... }
 int Set_DONE(Set_TYPE a, Set_ITER n){ ... }
 Set_ELEMENT Set_GET(Set_TYPE a, Set_ITER n){ ... }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -900,7 +898,7 @@ This will insert random calls to the Set data structure in the generated code.
 
 <li>
         A good solution to this problem should be worthy of at least a master's thesis, for sure! 
-        Email me! <code>(:</code>
+        Email me! <code class="language-c">(:</code>
 
 </li>
 
@@ -911,18 +909,18 @@ This will insert random calls to the Set data structure in the generated code.
 </li>
 
 <li>
-        Various options can be used to tweak the runtime, in particular <code>--RandomFunsLoopSize=1000</code>
+        Various options can be used to tweak the runtime, in particular <code class="language-c">--RandomFunsLoopSize=1000</code>
         which bounds the number of loop iterations.
 
 </li>
 
 <li>
         If you're willing to set the control structures yourself using 
-        <code>--RandomFunsControlStructures="(if (bb 5) (bb 2))"</code>, then the problem goes away.
+        <code class="language-c">--RandomFunsControlStructures="(if (bb 5) (bb 2))"</code>, then the problem goes away.
         When these are generated automatically, however, there's always some risk that you'll
-        wind up with <code>--RandomFunsControlStructures="(for (for (for (for (bb 4)))))"</code> which is
+        wind up with <code class="language-c">--RandomFunsControlStructures="(for (for (for (for (bb 4)))))"</code> which is
         likely to run forever. I try to mitigate this by reducing the
-        loop size (set by <code>--RandomFunsLoopSize=1000</code>) by a factor of 10 for every 
+        loop size (set by <code class="language-c">--RandomFunsLoopSize=1000</code>) by a factor of 10 for every 
         nesting level, but this doesn't help if looping is interprocedural (I don't currently
         check for this).
 
@@ -981,7 +979,7 @@ This will insert random calls to the Set data structure in the generated code.
 </section>
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -990,8 +988,7 @@ This will insert random calls to the Set data structure in the generated code.
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

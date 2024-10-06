@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -130,9 +131,12 @@ At a minimum, you must create one or more opaque invariant data structures:
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -183,11 +187,13 @@ At a minimum, you must create one or more opaque invariant data structures:
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> Size of opaque arrays. Default=30.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -195,7 +201,7 @@ At a minimum, you must create one or more opaque invariant data structures:
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 To frustrate analysis, updates that maintain the invariants should
-   be sprinkled throughout the program. This is done by the <code>--Transform=UpdateOpaque</code>
+   be sprinkled throughout the program. This is done by the <code class="language-c">--Transform=UpdateOpaque</code>
    option:
 
             </p>
@@ -203,9 +209,12 @@ To frustrate analysis, updates that maintain the invariants should
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -237,20 +246,22 @@ To frustrate analysis, updates that maintain the invariants should
 <td><tt>bool</tt></td>
 <td> Is it safe to malloc new nodes for the opaque data structure in this function? Only set to true if the function is called sparingly. Default=false.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
- <b>Note:</b> In <code>--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
+ <b>Note:</b> In <code class="language-c">--Transform=InitOpaque --Functions=<em>foo</em></code>, the function <em>foo</em>
      must execute before any use of an opaque expression. Easiest is to set 
-     <code>--Transform=InitOpaque --Functions=main</code> but this is best avoided since it
+     <code class="language-c">--Transform=InitOpaque --Functions=main</code> but this is best avoided since it
      is very obvious.
 
             </p>
@@ -278,10 +289,10 @@ To frustrate analysis, updates that maintain the invariants should
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Tigress will generate copious numbers of extra local
-variables and statements of the form <code>_*__BARRIER_* = 1</code>,
-<code>_*__BEGIN_* = 1</code>, <code>_*__END_* = 1</code>. They
+variables and statements of the form <code class="language-c">_*__BARRIER_* = 1</code>,
+<code class="language-c">_*__BEGIN_* = 1</code>, <code class="language-c">_*__END_* = 1</code>. They
 will be removed by any competent compiler, or by the
-<code>--Transform=CleanUp --CleanUpKinds=annotations</code> 
+<code class="language-c">--Transform=CleanUp --CleanUpKinds=annotations</code> 
 transformation.
 
             </p>
@@ -331,7 +342,7 @@ transformation.
 
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -340,8 +351,7 @@ transformation.
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

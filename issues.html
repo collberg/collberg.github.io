@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -150,10 +151,44 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
     On some platforms there is a parsing error for some complex numbers. Example:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">_Complex v = 3.0 + 1.0iF;
+<pre><code class="language-c">_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
+_Complex v = 3.0 + 1.0iF;
 </code></pre>
-</center>
 
                         </p>
                     </div>
@@ -170,7 +205,7 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
                     </div>          
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
-     There is a parsing error when loading <code>stdatomic.h</code>.
+     There is a parsing error when loading <code class="language-c">stdatomic.h</code>.
 
                         </p>
                     </div>
@@ -204,7 +239,7 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
                     </div>          
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
-     <code>_thread</code> is incorrectly put after the identifier in declarations instead of before. 
+     <code class="language-c">_thread</code> is incorrectly put after the identifier in declarations instead of before. 
      This is a regression: it works in Tigress 3.3.3 but fails in 4.x.
 
                         </p>
@@ -223,11 +258,9 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
      Tigress fails on this code:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include&lt;stdio.h&gt;
+<pre><code class="language-c">#include&lt;stdio.h&gt;
 typedef int __attribute__ ((mode (__pointer__))) intptr_t;
 </code></pre>
-</center>
 
                         </p>
                     </div>
@@ -271,12 +304,10 @@ typedef int __attribute__ ((mode (__pointer__))) intptr_t;
                         <p class="mbr-step-text mbr-fonts-style display-7">
     Variable length arrays in structures are supported by gcc but are rejected by Clang.
     Tigress currently fails on this code and we are unlikely to support it in the future:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(int n) {
+<pre><code class="language-c">void foo(int n) {
    struct S {int i[n];}
 }
 </code></pre>
-</center>
 
                         </p>
                     </div>
@@ -319,11 +350,9 @@ typedef int __attribute__ ((mode (__pointer__))) intptr_t;
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
      If you see syntax errors while loading standard include files,
-     make sure you've included <code>tigress.h</code> at the top of <em>every</em> file. Example:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">/usr/include/bits/mathcalls-helper-functions.h[21:12-28] : syntax error
+     make sure you've included <code class="language-c">tigress.h</code> at the top of <em>every</em> file. Example:
+<pre><code class="language-bash">/usr/include/bits/mathcalls-helper-functions.h[21:12-28] : syntax error
 </code></pre>
-</center>
 
                         </p>
                     </div>
@@ -341,7 +370,7 @@ typedef int __attribute__ ((mode (__pointer__))) intptr_t;
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
       Tigress supports the C99 language. Depending on your compiler, you may have to add a switch 
-       (such as <code>-std=c99</code> for gcc) to indicate this.
+       (such as <code class="language-c">-std=c99</code> for gcc) to indicate this.
 
                         </p>
                     </div>
@@ -353,7 +382,7 @@ typedef int __attribute__ ((mode (__pointer__))) intptr_t;
 </section>
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -362,8 +391,7 @@ typedef int __attribute__ ((mode (__pointer__))) intptr_t;
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -118,7 +119,7 @@ To be able to test Tigress thorough across platforms, we have built a testing fr
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The program <code>tigress_test2.exe</code> runs tests of Tigress transformations that are described in a test cases JSON file and outputs results to a results JSON file and brief results to the console.
+The program <code class="language-c">tigress_test2.exe</code> runs tests of Tigress transformations that are described in a test cases JSON file and outputs results to a results JSON file and brief results to the console.
 
             </p>
         </div>
@@ -130,7 +131,7 @@ The program <code>tigress_test2.exe</code> runs tests of Tigress transformations
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This page aims to be a comprehensive guide of configuring & running <code>tigress-test</code> on Linux and macOS, and any non platform-specific steps on Windows and Android.
+This page aims to be a comprehensive guide of configuring & running <code class="language-c">tigress-test</code> on Linux and macOS, and any non platform-specific steps on Windows and Android.
 
             </p>
         </div>
@@ -163,65 +164,59 @@ This page aims to be a comprehensive guide of configuring & running <code>tigres
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"># to install OCaml and dune
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash"># to install OCaml and dune
 sudo apt install -y ocaml ocaml-dune opam
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<b> Installing dependencies</b> on <em>MacOS using <code>homebrew:</em> 
+<b> Installing dependencies</b> on MacOS using <code class="language-c">homebrew:</code> 
 
             </p>
         </div>
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">brew install ocaml dune opam
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">brew install ocaml dune opam
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Note that <code>tigress-test</code> requires <code>ocaml >= 4.14<code>. <b>Before you proceed</b> , make sure to check your OCaml version with
+Note that <code class="language-c">tigress-test</code> requires <code class="language-c">ocaml >= 4.14</code>. <b>Before you proceed</b> , make sure to check your OCaml version with
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">ocaml --version
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">ocaml --version
+</code></pre></div>
+
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Once you have the correct OCaml version, you may proceed.
+Once you have the correct OCaml version, you may proceed to initialize the opam package manager. 
+Optionally, add -c &lt;switch-version&gt; to initialize opam with the ocaml version you want. 
+As of the time of writing, the latest OCaml stable version is 5.2.0. Also, install dependencies:
 
             </p>
         </div>
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"># Initialize the opam package manager
-# Optionally, add -c <switch-version> to initiate opam with the ocaml version you want
-# As of the time of writing, the latest OCaml stable version is 5.2.0
-opam init 
-
-# install dependencies
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">opam init 
 opam install -y yojson atdgen re logs sha ppx_deriving ppx_enumerate
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -241,16 +236,15 @@ opam install -y yojson atdgen re logs sha ppx_deriving ppx_enumerate
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Change your working directory to <code>$TIGRESS_TEST_HOME/src</code>, and run
+Change your working directory to <code class="language-c">$TIGRESS_TEST_HOME/src</code>, and run
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">dune build
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">dune build
+</code></pre></div>
 
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -272,16 +266,15 @@ Change your working directory to <code>$TIGRESS_TEST_HOME/src</code>, and run
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <b> Environment variables: </b>
-Add the following line to your <code>~/.bashrc</code> file, with the appropriate path to your <code>tigress-test</code> directory:
+Add the following line to your <code class="language-c">~/.bashrc</code> file, with the appropriate path to your <code class="language-c">tigress-test</code> directory:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">export TIGRESS_TEST_HOME=/path/to/your/tigress/test/directory
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">export TIGRESS_TEST_HOME=/path/to/your/tigress/test/directory
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -293,26 +286,24 @@ Then, restart your terminal or update your current shell environment with:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">source ~/.bashrc
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">source ~/.bashrc
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<b> <code>.tigress-test-config</code>. </b> It should look like so:
+<b> <code class="language-c">.tigress-test-config</code>. </b> It should look like so:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">"tigress_home": "/usr/local/bin/tigresspkg/<tigress_version>"
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">"tigress_home": "/usr/local/bin/tigresspkg/<tigress_version>"
+</code></pre></div>
 
 
 
@@ -333,7 +324,7 @@ Then, restart your terminal or update your current shell environment with:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Once <code>tigress-test</code> has been built, its executable should be placed under <code>$TIGRESS_TEST_HOME/src/_build/default/tigress_test2/tigress_test2.exe</code>.
+Once <code class="language-c">tigress-test</code> has been built, its executable should be placed under <code class="language-c">$TIGRESS_TEST_HOME/src/_build/default/tigress_test2/tigress_test2.exe</code>.
 
             </p>
         </div>
@@ -345,16 +336,15 @@ Once <code>tigress-test</code> has been built, its executable should be placed u
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-We suggest creating a link to the <code>tigress-test</code> executable in your <code>TIGRESS_TEST_HOME</code> directory. Cd to <code>TIGRESS_TEST_HOME</code>, then run the following:
+We suggest creating a link to the <code class="language-c">tigress-test</code> executable in your <code class="language-c">TIGRESS_TEST_HOME</code> directory. Cd to <code class="language-c">TIGRESS_TEST_HOME</code>, then run the following:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">ln -s src/_build/default/tigress_test2/tigress_test2.exe .
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">ln -s src/_build/default/tigress_test2/tigress_test2.exe .
+</code></pre></div>
 
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -374,7 +364,7 @@ We suggest creating a link to the <code>tigress-test</code> executable in your <
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<code>tigress-test</code> supports two different testing modes: <em>script</em>  mode and <em>ad-hoc</em>  mode.
+<code class="language-c">tigress-test</code> supports two different testing modes: <em>script</em>  mode and <em>ad-hoc</em>  mode.
 
             </p>
         </div>
@@ -392,10 +382,9 @@ We suggest creating a link to the <code>tigress-test</code> executable in your <
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">./tigress_test2.exe run script_01.json
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">./tigress_test2.exe run script_01.json
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -413,7 +402,7 @@ Replace the script file argument as necessary.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The results are output to a file named: <code>results_<script_file_name>_<seconds_since_epoch>.json</code>. It contains the result and a duplicate of the test case information, which would be used in a future version to reproduce the test.
+The results are output to a file named: <code class="language-c">results_<script_file_name>_<seconds_since_epoch>.json</code>. It contains the result and a duplicate of the test case information, which would be used in a future version to reproduce the test.
 
             </p>
         </div>
@@ -426,7 +415,7 @@ The results are output to a file named: <code>results_<script_file_name>_<second
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <b> Ad-hoc mode: </b>
-In this mode, <code>tigress-test</code> receives transformation options directly on the command line, in a somewhat similar fashion to running Tigress manually. Some notable flags include:
+In this mode, <code class="language-c">tigress-test</code> receives transformation options directly on the command line, in a somewhat similar fashion to running Tigress manually. Some notable flags include:
 
             </p>
         </div>
@@ -467,8 +456,8 @@ In this mode, <code>tigress-test</code> receives transformation options directly
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress_test2.exe 
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress_test2.exe 
            run <script-file> [options] |
            rerun [results-file] |
            continue [results-file] |
@@ -479,8 +468,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
            status [options] |
            stop [options] |
            help [topic]
-</code></pre>
-</center>
+</code></pre></div>
 
 <br>
 
@@ -498,17 +486,16 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </section>
 
 
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <center>
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 80%;">
-    </colgroup>
-<tr><th>Option</th><th>Description</th></tr>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+   <col span="1" style="width: 30%;">
+   <col span="1" style="width: 70%;">
 <tr>
 <td>
-      <code>--path-to-c-compiler</code>
+      <code class="language-c">--path-to-c-compiler</code>
 </td>
 <td>
       Location of C compiler to use; Either this must be provided or the path must be provided in the configuration file found in a conventional location: ~/.tigress-test/config or ~/.tigress-test-config or .tigress-test-config
@@ -516,7 +503,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--No-Config-File  </code>
+      <code class="language-c">--No-Config-File  </code>
 </td>
 <td>
       Don't use a config file.
@@ -524,7 +511,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--config-file  </code>
+      <code class="language-c">--config-file  </code>
 </td>
 <td>
       Name of the configuration file to use, overriding the default
@@ -532,7 +519,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--parallel-processes  </code>
+      <code class="language-c">--parallel-processes  </code>
 </td>
 <td>
       Number of parallel processes for testing on the local machine; if this is set, the program will also try to run tests in parallel on remote machines if they are configured.
@@ -540,7 +527,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--parallel-run  </code>
+      <code class="language-c">--parallel-run  </code>
 </td>
 <td>
       The program will try to run tests in parallel on remote machines if they are configured and on the local machine depending on the setting of "--remote-hosts" and "--remote-only".
@@ -548,7 +535,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--generate-only </code>
+      <code class="language-c">--generate-only </code>
 </td>
 <td>
       Generate test cases but do not run the tests.
@@ -556,7 +543,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--remote-only </code>
+      <code class="language-c">--remote-only </code>
 </td>
 <td>
       Run test cases only on remote machines, not on the local machine.
@@ -564,7 +551,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--remote-hosts </code>
+      <code class="language-c">--remote-hosts </code>
 </td>
 <td>
       Run test cases for the hosts with the host names/addresses given in a comma separated list.
@@ -572,7 +559,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--verbosity  </code>
+      <code class="language-c">--verbosity  </code>
 </td>
 <td>
       A verbosity level between 0 and 5 for log and console output: 0 - no log or console output; 1 - output in brief; 2 - include error messages as well; 3 - include warning messages as well; 4 - include verbose information; 5 - include verbose debugging information
@@ -580,7 +567,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>  -help  </code>
+      <code class="language-c">  -help  </code>
 </td>
 <td>
        Display this list of options </code>
@@ -588,7 +575,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--help   </code>
+      <code class="language-c">--help   </code>
 </td>
 <td>
       Display this list of options
@@ -598,6 +585,8 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </table>
 </center>
 </div>
+</div>
+</section>
 
 <br>
 
@@ -615,17 +604,16 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </section>
 
 
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <center>
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 80%;">
-    </colgroup>
-<tr><th>Option</th><th>Description</th></tr>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+   <col span="1" style="width: 30%;">
+   <col span="1" style="width: 70%;">
 <tr>
 <td>
-      <code>--test-numbers  </code>
+      <code class="language-c">--test-numbers  </code>
 </td>
 <td>
       A comma separated list of test numbers or test number ranges to rerun; ranges are separated with hyphens, e.g., 0 - 10.
@@ -633,7 +621,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--failed  </code>
+      <code class="language-c">--failed  </code>
 </td>
 <td>
       Re-run only all failed tests and any tests specified using the --Test-Numbers option
@@ -641,7 +629,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--enqueue  </code>
+      <code class="language-c">--enqueue  </code>
 </td>
 <td>
       Put test-cases to rerun in the queue, so that they can be monitored with "status" subcommand or restarted with "continue-queue"
@@ -649,7 +637,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--all-remotes  </code>
+      <code class="language-c">--all-remotes  </code>
 </td>
 <td>
       Rerun the most recent tests on all remote hosts listed in the remote hosts file configured in the configuration file.
@@ -657,7 +645,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--remote-hosts  </code>
+      <code class="language-c">--remote-hosts  </code>
 </td>
 <td>
       Rerun the most recent tests on the hosts with the host names/addresses given in a comma separated list.
@@ -665,7 +653,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--verbosity  </code>
+      <code class="language-c">--verbosity  </code>
 </td>
 <td>
       A verbosity level between 0 and 5 for log and console output: 0 - no log or console output; 1 - output in brief; 2 - include error messages as well; 3 - include warning messages as well; 4 - include verbose information; 5 - include verbose debugging information
@@ -673,7 +661,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code> -help </code>
+      <code class="language-c"> -help </code>
 </td>
 <td>
        Display this list of options
@@ -681,7 +669,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--help   </code>
+      <code class="language-c">--help   </code>
 </td>
 <td>
       Display this list of options
@@ -691,6 +679,8 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </table>
 </center>
 </div>
+</div>
+</section>
 
 <br>
 
@@ -708,17 +698,16 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </section>
 
 
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <center>
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 80%;">
-    </colgroup>
-<tr><th>Option</th><th>Description</th></tr>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+   <col span="1" style="width: 30%;">
+   <col span="1" style="width: 70%;">
 <tr>
 <td>
-      <code>--verbosity </code>
+      <code class="language-c">--verbosity </code>
 </td>
 <td>
       A verbosity level between 0 and 5 for log and console output: 0 - no log or console output; 1 - output in brief; 2 - include error messages as well; 3 - include warning messages as well; 4 - include verbose information; 5 - include verbose debugging information
@@ -726,7 +715,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>-help   </code>
+      <code class="language-c">-help   </code>
 </td>
 <td>
       Display this list of options
@@ -734,7 +723,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--help </code>
+      <code class="language-c">--help </code>
 </td>
 <td>
        Display this list of options
@@ -744,6 +733,8 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </table>
 </center>
 </div>
+</div>
+</section>
 
 <br>
 
@@ -761,17 +752,16 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </section>
 
 
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <center>
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 80%;">
-    </colgroup>
-<tr><th>Option</th><th>Description</th></tr>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+   <col span="1" style="width: 30%;">
+   <col span="1" style="width: 70%;">
 <tr>
 <td>
-      <code>--path-to-c-compiler   </code>
+      <code class="language-c">--path-to-c-compiler   </code>
 </td>
 <td>
       Location of C compiler to use; Either this must be provided or the path must be provided in the configuration file found in a conventional location: ~/.tigress-test/config or ~/.tigress-test-config or .tigress-test-config
@@ -779,7 +769,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--no-config-file   </code>
+      <code class="language-c">--no-config-file   </code>
 </td>
 <td>
       Don't use a config file.
@@ -787,7 +777,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--config-file   </code>
+      <code class="language-c">--config-file   </code>
 </td>
 <td>
       Name of the configuration file to use, overriding the default
@@ -795,7 +785,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--transform   </code>
+      <code class="language-c">--transform   </code>
 </td>
 <td>
       Name of a transformation to be performed in the transformation pipeline. This option may be provided more than once, and the transformations will be performed in the order in which they are provided.
@@ -803,7 +793,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--transform-option =&lt;name,value&gt;   </code>
+      <code class="language-c">--transform-option =&lt;name,value&gt;   </code>
 </td>
 <td>
       An option to the last transformation that was specified with a --Transform option. This may appear multiple times.
@@ -811,7 +801,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--source-file   </code>
+      <code class="language-c">--source-file   </code>
 </td>
 <td>
       Path to a file to transform. Wildcards may be included to specify that multiple files should be transformed.
@@ -819,7 +809,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--seeds   </code>
+      <code class="language-c">--seeds   </code>
 </td>
 <td>
       A comma separated list of seeds to pass to Tigress.
@@ -827,7 +817,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--input </code>
+      <code class="language-c">--input </code>
 </td>
 <td>
       Input to pass to the C program.
@@ -835,7 +825,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--  </code>
+      <code class="language-c">--  </code>
 </td>
 <td>
       Arguments to pass to the C program.
@@ -843,7 +833,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--save  </code>
+      <code class="language-c">--save  </code>
 </td>
 <td>
       Filename to use to save the test_cases as a script to run again later.
@@ -851,7 +841,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--verbosity  </code>
+      <code class="language-c">--verbosity  </code>
 </td>
 <td>
       A verbosity level between 0 and 5 for log and console output: 0 - no log or console output; 1 - output in brief; 2 - include error messages as well; 3 - include warning messages as well; 4 - include verbose information; 5 - include verbose debugging information
@@ -859,7 +849,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>  -help  </code>
+      <code class="language-c">  -help  </code>
 </td>
 <td>
       Display this list of options
@@ -867,7 +857,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--help    </code>
+      <code class="language-c">--help    </code>
 </td>
 <td>
       Display this list of options
@@ -877,6 +867,8 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </table>
 </center>
 </div>
+</div>
+</section>
 
 <br>
 
@@ -894,17 +886,16 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </section>
 
 
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <center>
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 80%;">
-    </colgroup>
-<tr><th>Option</th><th>Description</th></tr>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+   <col span="1" style="width: 30%;">
+   <col span="1" style="width: 70%;">
 <tr>
 <td>
-      <code>--path-to-c-compiler  </code>
+      <code class="language-c">--path-to-c-compiler  </code>
 </td>
 <td>
       Location of C compiler to use; Either this must be provided or the path must be provided in the configuration file found in a conventional location: ~/.tigress-test/config or ~/.tigress-test-config or .tigress-test-config
@@ -912,7 +903,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--No-Config-File   </code>
+      <code class="language-c">--No-Config-File   </code>
 </td>
 <td>
       Don't use a config file.
@@ -920,7 +911,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--config-file   </code>
+      <code class="language-c">--config-file   </code>
 </td>
 <td>
       Name of the configuration file to use, overriding the default
@@ -928,7 +919,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--parallel-processes  </code>
+      <code class="language-c">--parallel-processes  </code>
 </td>
 <td>
       Number of parallel processes for testing on the local machine; if this is set, the program will also try to run tests in parallel on remote machines if they are configured.
@@ -936,15 +927,15 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--parallel-run   </code>
+      <code class="language-c">--parallel-run   </code>
 </td>
 <td>
-      The program will try to run tests in parallel on remote machines if they are configured and on the local machine depending on the setting of <code>"--remote-hosts"</code> and <code>"--remote-only"</code>.
+      The program will try to run tests in parallel on remote machines if they are configured and on the local machine depending on the setting of <code class="language-c">"--remote-hosts"</code> and <code class="language-c">"--remote-only"</code>.
 </td>
 </tr>
 <tr>
 <td>
-      <code>--generate-only   </code>
+      <code class="language-c">--generate-only   </code>
 </td>
 <td>
       Generate test cases but do not run the tests.
@@ -952,7 +943,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--remote-only  </code>
+      <code class="language-c">--remote-only  </code>
 </td>
 <td>
       Run test cases only on remote machines, not on the local machine.
@@ -960,7 +951,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--remote-hosts  </code>
+      <code class="language-c">--remote-hosts  </code>
 </td>
 <td>
       Run test cases for the hosts with the host names/addresses given in a comma separated list.
@@ -968,7 +959,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--verbosity   </code>
+      <code class="language-c">--verbosity   </code>
 </td>
 <td>
       A verbosity level between 0 and 5 for log and console output: 0 - no log or console output; 1 - output in brief; 2 - include error messages as well; 3 - include warning messages as well; 4 - include verbose information; 5 - include verbose debugging information
@@ -976,7 +967,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--test-number-start   </code>
+      <code class="language-c">--test-number-start   </code>
 </td>
 <td>
       Test number to start running tests from.
@@ -984,7 +975,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--gen-spec-index   </code>
+      <code class="language-c">--gen-spec-index   </code>
 </td>
 <td>
       Index of transformations generator specification within test_cases (generator) file to use (for running parallel test from a single test cases generator file).
@@ -992,7 +983,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>  -help    </code>
+      <code class="language-c">  -help    </code>
 </td>
 <td>
       Display this list of options
@@ -1000,7 +991,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--help  </code>
+      <code class="language-c">--help  </code>
 </td>
 <td>
       Display this list of options
@@ -1010,6 +1001,8 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </table>
 </center>
 </div>
+</div>
+</section>
 
 <br>
 
@@ -1027,17 +1020,16 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </section>
 
 
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <center>
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 80%;">
-    </colgroup>
-<tr><th>Option</th><th>Description</th></tr>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+   <col span="1" style="width: 30%;">
+   <col span="1" style="width: 70%;">
 <tr>
 <td>
-      <code>--test-number-start  </code>
+      <code class="language-c">--test-number-start  </code>
 </td>
 <td>
       Test number to start running tests from.
@@ -1045,7 +1037,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--path-to-c-compiler   </code>
+      <code class="language-c">--path-to-c-compiler   </code>
 </td>
 <td>
       Location of C compiler to use; Either this must be provided or the path must be provided in the configuration file found in a conventional location: ~/.tigress-test/config or ~/.tigress-test-config or .tigress-test-config
@@ -1053,7 +1045,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--No-Config-File   </code>
+      <code class="language-c">--No-Config-File   </code>
 </td>
 <td>
       Don't use a config file.
@@ -1061,7 +1053,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--continue-queue  </code>
+      <code class="language-c">--continue-queue  </code>
 </td>
 <td>
       Interpret any filenames given as files to continue from, and also continue running files found in the queue directory.
@@ -1069,7 +1061,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--gen-spec-index  </code>
+      <code class="language-c">--gen-spec-index  </code>
 </td>
 <td>
       Index of transformations generator specification within test_cases (generator) file to use (for running parallel test from a single test cases generator file).
@@ -1077,7 +1069,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--verbosity   </code>
+      <code class="language-c">--verbosity   </code>
 </td>
 <td>
       A verbosity level between 0 and 5 for log and console output: 0 - no log or console output; 1 - output in brief; 2 - include error messages as well; 3 - include warning messages as well; 4 - include verbose information; 5 - include verbose debugging information
@@ -1085,7 +1077,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>  -help   </code>
+      <code class="language-c">  -help   </code>
 </td>
 <td>
       Display this list of options
@@ -1093,7 +1085,7 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </tr>
 <tr>
 <td>
-      <code>--help    </code>
+      <code class="language-c">--help    </code>
 </td>
 <td>
       Display this list of options
@@ -1103,6 +1095,8 @@ In this mode, <code>tigress-test</code> receives transformation options directly
 </table>
 </center>
 </div>
+</div>
+</section>
 
 <br>
 
@@ -1197,7 +1191,8 @@ Coming Soon
     </div>
 </section>
 
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">Title: test results file
+<pre>
+Title: test results file
 Type: object
 Description: file containing information about each test run, especially the result of testing each test case
 Properties: 
@@ -1455,7 +1450,7 @@ Properties:
           Type: object
           Description: all of the same result fields containing the data from one (most recent) previous run
           Properties: 
-</code></pre>
+</pre>
 
 <br>
 
@@ -1485,7 +1480,7 @@ Coming Soon
 
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -1494,8 +1489,7 @@ Coming Soon
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

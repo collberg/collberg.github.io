@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -137,9 +138,9 @@ but good enough for our purposes.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-At a minimum, you should issue the <code>--Transform=InitEntropy</code> transformation,
+At a minimum, you should issue the <code class="language-c">--Transform=InitEntropy</code> transformation,
 since this creates the variables that hold the entropy.
-You should issue as many <code>--Transform=UpdateEntropy</code> as you
+You should issue as many <code class="language-c">--Transform=UpdateEntropy</code> as you
 can, making sure you collect entropy from variables that are truly input dependent.
 
             </p>
@@ -147,9 +148,12 @@ can, making sure you collect entropy from variables that are truly input depende
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -198,17 +202,22 @@ can, making sure you collect entropy from variables that are truly input depende
 <td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
 <td> Apply some light obfuscation on top of the entropy-generating expression. Default=FALSE.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <br>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -253,11 +262,13 @@ can, making sure you collect entropy from variables that are truly input depende
 <td><tt><em><a href="top-level.html#IDENTSPEC">IDENTSPEC</a></em></tt></td>
 <td> Add to the entropy variables from these variables. Default=*.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="examples">&nbsp;</a>
 
@@ -278,12 +289,12 @@ can, making sure you collect entropy from variables that are truly input depende
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The command below initializes the entropy variables in <code>main</code>,
-and then collects randomness from variables <code>x,y,z</code> 
-in function <code>inputData</code>, from variable <code>packet</code>
-in function <code>acceptNetworkPacket</code>, and from all variables 
-in function <code>random</code>. It also spins up a background 
-thread from the <code>tigress_init</code> function. The thread
+The command below initializes the entropy variables in <code class="language-c">main</code>,
+and then collects randomness from variables <code class="language-c">x,y,z</code> 
+in function <code class="language-c">inputData</code>, from variable <code class="language-c">packet</code>
+in function <code class="language-c">acceptNetworkPacket</code>, and from all variables 
+in function <code class="language-c">random</code>. It also spins up a background 
+thread from the <code class="language-c">tigress_init</code> function. The thread
 function is called <em>ENTROPYTHREAD</em>, and it sleeps for
 1000000 nanoseconds between updates.
 
@@ -292,8 +303,8 @@ function is called <em>ENTROPYTHREAD</em>, and it sleeps for
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 --Verbosity=1 --Environment=... \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=0 --Verbosity=1 --Environment=... \
     --Transform=InitEntropy \
        --InitEntropyThreadName=ENTROPYTHREAD \
        --InitEntropyThreadSleep=1000000\
@@ -317,8 +328,7 @@ function is called <em>ENTROPYTHREAD</em>, and it sleeps for
     --Transform=UpdateEntropy \
        --Functions=tigress_init \
        --UpdateEntropyKinds=thread \
-</code></pre>
-</center>
+</code></pre></div>
 
 <a class="anchor" id="annotations">&nbsp;</a>
 
@@ -339,7 +349,7 @@ function is called <em>ENTROPYTHREAD</em>, and it sleeps for
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Instead of using <tt>--UpdateEntropyVars</tt> you can use annotations in the source code to directly indicate which 
+Instead of using <code class="language-c">--UpdateEntropyVars</code> you can use annotations in the source code to directly indicate which 
 variables should contribute to entropy calculation:
 
             </p>
@@ -347,8 +357,8 @@ variables should contribute to entropy calculation:
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
+<div class="container">
+<pre><code class="language-c">#include "tigress.h"
 
 int foo (int x) {
   ...
@@ -357,8 +367,7 @@ int foo (int x) {
   ENTROPY_VARIABLE(f);
   ...
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -371,16 +380,15 @@ You should place these annotations in locations where the variable depends on in
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress ... \
    --Transform=InitEntropy \
        --Functions=main \
        --InitEntropyKinds=annotations \
     --Transform=UpdateEntropy \
        --Functions=foo \
        --UpdateEntropyKinds=annotations \
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <a class="anchor" id="references">&nbsp;</a>
@@ -405,7 +413,7 @@ You should place these annotations in locations where the variable depends on in
 The idea of using threads and CPU performance counters to generate random numbers 
 was first introduced by Adrian Colesa, Radu Tudoran, and Sebastian Banescu in
 <a href="https://ieeexplore.ieee.org/document/5204851">Software Random Number Generation Based on Race Conditions</a>.
-Our implementation isn't as advanced at theirs since it only uses X86's <code>rdtsc</code> counter. Unfortunately, other
+Our implementation isn't as advanced at theirs since it only uses X86's <code class="language-c">rdtsc</code> counter. Unfortunately, other
 counters are not available from user mode.
 
             </p>
@@ -414,7 +422,7 @@ counters are not available from user mode.
 </section>
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -423,8 +431,7 @@ counters are not available from user mode.
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

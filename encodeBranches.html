@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -151,15 +152,15 @@ jump to as an argument to the branch function.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The generated code looks like this, where the call to the branch function <code>bf</code>
-actually results in a direct jump to <code>lab2</code>:
+The generated code looks like this, where the call to the branch function <code class="language-c">bf</code>
+actually results in a direct jump to <code class="language-c">lab2</code>:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void bf(unsigned long offset) {
+<div class="container">
+<pre><code class="language-c">void bf(unsigned long offset) {
   __asm__  volatile   ("addq  %0, 8(%%rbp)": : "r" (offset));
 }
 
@@ -170,8 +171,7 @@ int main() {
    ...
    lab2: ...;
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -181,7 +181,7 @@ int main() {
 By default, a function is flattened prior to direct jumps
 being replaced by calls to a branch function. This creates more direct 
 jumps and hence more opportunities to apply the branch function 
-transformation. Turn this off with <code>--BranchFunsFlatten=false</code>. 
+transformation. Turn this off with <code class="language-c">--BranchFunsFlatten=false</code>. 
 
             </p>
         </div>
@@ -195,7 +195,7 @@ transformation. Turn this off with <code>--BranchFunsFlatten=false</code>.
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Before branches can be replaced by calls to a branch
 function, at least one such function needs to be constructed,
-using the <code>--Transform=InitBranchFuns</code> transformation.
+using the <code class="language-c">--Transform=InitBranchFuns</code> transformation.
 
             </p>
         </div>
@@ -215,9 +215,12 @@ It's therefore a good idea to merge it with other functions in the program.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -252,11 +255,13 @@ It's therefore a good idea to merge it with other functions in the program.
 <td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
 <td> Whether to obfuscate the branch function. Default=false.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -283,14 +288,13 @@ packers:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      push target
+<div class="container">
+<pre><code class="language-c">      push target
       call lab
       ret
 lab:
       ret
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -302,11 +306,10 @@ and
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      push target
+<div class="container">
+<pre><code class="language-c">      push target
       ret
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -326,18 +329,17 @@ and
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The <code>--AntiBranchAnalysisKinds=goto2nopSled</code> switch turns this code
+The <code class="language-c">--AntiBranchAnalysisKinds=goto2nopSled</code> switch turns this code
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      goto L
+<div class="container">
+<pre><code class="language-c">      goto L
       ...
    L:
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -349,8 +351,8 @@ into this code
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      goto *(R+<em>expression</em>)
+<div class="container">
+<pre><code class="language-c">      goto *(R+<em>expression</em>)
       ...
     R: 
       nop
@@ -358,8 +360,7 @@ into this code
       ...
       nop
     L:
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -374,15 +375,14 @@ dependent:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Input=... \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Input=... \
         --Transform=InitOpaque 
            --InitOpaqueKind=Input \
         --Transform=AntiBranchAnalysis \
             --AntiBranchAnalysisKinds=goto2nopSled \
             --AntiBranchAnalysisOpaqueStructs=Input 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -395,8 +395,8 @@ x86 bytes that have no effect:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   cmc
+<div class="container">
+<pre><code class="language-c">   cmc
    std
    cld
    nop
@@ -406,12 +406,14 @@ x86 bytes that have no effect:
    stc
    wait
    ...
-</code></pre>
-</center>
+</code></pre></div>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -464,11 +466,13 @@ x86 bytes that have no effect:
 <td><tt><em>integer</em></tt></td>
 <td> The offset (in bytes) of the return address on the stack, for branch functions. May differ based on operating system, word size, and compiler. Default=8 on x86_64, 0 on Arm.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="issues">&nbsp;</a>
 
@@ -509,8 +513,8 @@ This transformation has many issues, and should only be used with great care:
 </li>
 
 <li>
-        It appears as <code>goto2push</code> and <code>goto2call</code> will often cause
-       <code>clang</code> to generate the wrong code. 
+        It appears as <code class="language-c">goto2push</code> and <code class="language-c">goto2call</code> will often cause
+       <code class="language-c">clang</code> to generate the wrong code. 
 
 <section class="step1 TIGRESS-OL" id="step1-dy">
     <div class="container">
@@ -526,7 +530,7 @@ This transformation has many issues, and should only be used with great care:
                     </div>          
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
-                      <code>gcc 4.6</code> appears to do the right thing. 
+                      <code class="language-c">gcc 4.6</code> appears to do the right thing. 
 
             <div class="card separline pb-4">
                 <div class="step-element d-flex">
@@ -537,23 +541,23 @@ This transformation has many issues, and should only be used with great care:
                     </div>          
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
-                      <code>gcc 4.8</code> appears to occasionally hang when compiling our generated code.
+                      <code class="language-c">gcc 4.8</code> appears to occasionally hang when compiling our generated code.
 
         </div>
     </div>
 </section>
       The issue is that the generated inline assembly code
-      contains jumps. Newer versions of <code>gcc</code> have an
+      contains jumps. Newer versions of <code class="language-c">gcc</code> have an
       <a href="http://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html#Extended%20asm%20with%20goto">
-      <code>asm goto</code></a> construct which ought to help with this.
-            <code>Clang</code> lacks this feature. 
+      <code class="language-c">asm goto</code></a> construct which ought to help with this.
+            <code class="language-c">Clang</code> lacks this feature. 
 
 </li>
 
 <li>
-      Make sure you set the <code>--Environment=...</code> option appropriately
-       if you are going to use <code>goto2push</code> and <code>goto2call</code> and
-       test the generated code thoroughly. <code>goto2push</code> and <code>goto2call</code>
+      Make sure you set the <code class="language-c">--Environment=...</code> option appropriately
+       if you are going to use <code class="language-c">goto2push</code> and <code class="language-c">goto2call</code> and
+       test the generated code thoroughly. <code class="language-c">goto2push</code> and <code class="language-c">goto2call</code>
           are turned off by default. 
 
 </li>
@@ -644,7 +648,7 @@ by current obfuscation tools.
 
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -653,8 +657,7 @@ by current obfuscation tools.
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

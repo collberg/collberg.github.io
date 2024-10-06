@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -120,7 +121,7 @@ code {
    crashing the program. A hash function can be simple (such as 
    computing the xor over the code region) or a highly complex
    randomly generated function. Responders can be simple
-   (such as exiting the program with an <tt>abort()</tt> or
+   (such as exiting the program with an <code class="language-c">abort()</code> or
    modifying a global variable) or can be user-specified 
    plugins of arbitrary complexity. Checkers can, of course, be
    obfuscated with Tigress' other transformations (such as
@@ -187,10 +188,10 @@ attacks against checksums:
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
  Checkers can be invoked over a function prior to it being called,
 ensuring that the function hasn't been tampered with before it is 
-executed. This is illustrated in this figure, where <tt>foo</tt> 
+executed. This is illustrated in this figure, where <code class="language-c">foo</code> 
 is checked by the pink checker, prior to being called. 
-The <tt>e<sup>1</sup></tt> value is the expected  hash value computed 
-over <tt>foo</tt>. 
+The <code class="language-c">e<sup>1</sup></code> value is the expected  hash value computed 
+over <code class="language-c">foo</code>. 
 
             </p>
         </div>
@@ -204,8 +205,8 @@ over <tt>foo</tt>.
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Checkers can also cover arbitrary levels of overlapping,
 randomly chosen, code regions. This is the case for the
-orange and blue checkers. Here, <tt>f<sup>2</sup></tt>
-and <tt>t<sup>2</sup></tt> represent the range of addresses
+orange and blue checkers. Here, <code class="language-c">f<sup>2</sup></code>
+and <code class="language-c">t<sup>2</sup></code> represent the range of addresses
 covered by the orange checker.
 
             </p>
@@ -218,9 +219,9 @@ covered by the orange checker.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Unlike other Tigress transformations, the <tt>Checksum</tt> 
+Unlike other Tigress transformations, the <code class="language-c">Checksum</code> 
 transform requires a post-processing step. This is performed
-by the <tt>tigress_post</tt> program:
+by the <code class="language-c">tigress_post</code> program:
 
             </p>
         </div>
@@ -232,15 +233,15 @@ by the <tt>tigress_post</tt> program:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The <tt>Checksum</tt> transformation generates two
-files: the Tigress-obfuscated output file (here <tt>P<sup>1</sup>.c</tt>) into
-which checkers have been inserted and a file (here <tt>hashes.c</tt>) 
+The <code class="language-c">Checksum</code> transformation generates two
+files: the Tigress-obfuscated output file (here <code class="language-c">P<sup>1</sup>.c</code>) into
+which checkers have been inserted and a file (here <code class="language-c">hashes.c</code>) 
 that contains information about the generated hash functions.
-This file needs to be compiled into a dynamically linked <tt>.so</tt> file.
-The <tt>tigress_post</tt> post-processor
-reads the compiled obfuscated file (<tt>P<sup>1</sup>.exe</tt>) and
-<tt>hashes.so</tt> and generates a patched
-executable file (here <tt>P<sup>2</sup>.exe</tt>).
+This file needs to be compiled into a dynamically linked <code class="language-c">.so</code> file.
+The <code class="language-c">tigress_post</code> post-processor
+reads the compiled obfuscated file (<code class="language-c">P<sup>1</sup>.exe</code>) and
+<code class="language-c">hashes.so</code> and generates a patched
+executable file (here <code class="language-c">P<sup>2</sup>.exe</code>).
 
             </p>
         </div>
@@ -252,14 +253,14 @@ executable file (here <tt>P<sup>2</sup>.exe</tt>).
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
- Here's an example of how to call Tigress and <tt>tigress_post</tt>:
+ Here's an example of how to call Tigress and <code class="language-c">tigress_post</code>:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false"># Run Tigress, generating 2 files: hashes.c and obf.c.
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash"># Run Tigress, generating 2 files: hashes.c and obf.c.
 > tigress --Seed=0 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
        --Verbosity=0 \
        --Transform=InitEntropy --Functions=main --InitEntropyKinds=vars \
@@ -293,8 +294,7 @@ executable file (here <tt>P<sup>2</sup>.exe</tt>).
            --Action=checksum \
               --HashFunctionsFile=hashes.so \
            obf.exe
-</code></pre>
-</center>
+</code></pre></div>
 
 <!-- ================================================================================================= -->
 <!-- Hash Functions                                                                                    -->
@@ -324,8 +324,8 @@ A randomly generated checker looks like this:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">/*******************************************************************************/
+<div class="container">
+<pre><code class="language-c">/*******************************************************************************/
 /* Inline template to be patched by tigress_post.                              */
 if (opaque-false) {
     __asm__  volatile   (".align 8,0xf5;\n":);
@@ -356,16 +356,15 @@ if (hashVar != expectedHashVar) {
   abort();
 }
 /*******************************************************************************/
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The word at <tt>L4</tt> will (after patching by <tt>tigress_post</tt>) hold
-the address of the region that the hash function will check, <tt>L5</tt>
-will hold the address of the end of that region, and <tt>L6</tt> will hold
+The word at <code class="language-c">L4</code> will (after patching by <code class="language-c">tigress_post</code>) hold
+the address of the region that the hash function will check, <code class="language-c">L5</code>
+will hold the address of the end of that region, and <code class="language-c">L6</code> will hold
 the expected hash value.
 
             </p>
@@ -373,9 +372,12 @@ the expected hash value.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -433,11 +435,13 @@ the expected hash value.
 <td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
 <td> Obfuscate the body of the hash function. Default=false.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <!-- ================================================================================================= -->
@@ -462,7 +466,7 @@ the expected hash value.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The purpose of <code>tigress_post --Action=checksum</code> is to patch the checker
+The purpose of <code class="language-c">tigress_post --Action=checksum</code> is to patch the checker
 ``templates'' that were inserted by Tigress:
 
             </p>
@@ -480,7 +484,7 @@ The purpose of <code>tigress_post --Action=checksum</code> is to patch the check
  There are three main steps: first the executable is parsed and the 
 templates are located, then each checker is assigned to a region of the text 
 segment, and finally the hash value is computed and the templates are patched. 
-An option <code>tigress_post ... --OverlapRate=int ...</code> can be set to adjust the number checkers will 
+An option <code class="language-c">tigress_post ... --OverlapRate=int ...</code> can be set to adjust the number checkers will 
 check each region of the text segment.
 
             </p>
@@ -493,14 +497,14 @@ check each region of the text segment.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<tt>tigress_post</tt> has the following options:
+<code class="language-c">tigress_post</code> has the following options:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Action=checksum 
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">--Action=checksum 
     Patch the checkers after the 'tigress --Transform=Checksum' transformation.
 --Action=parse 
     Parse and print the information collected from the executable input file.
@@ -532,8 +536,7 @@ check each region of the text segment.
    Trace the execution of tigress_post.
 
 --Help
-</code></pre>
-</center>
+</code></pre></div>
 
 <!-- ================================================================================================= -->
 <!-- Kill                                                                                              -->
@@ -558,7 +561,7 @@ check each region of the text segment.
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 To check that the checkers inserted by Tigress actually trigger when 
-the executable is modified, you can use the <code>tigress_post --Action=kill</code> 
+the executable is modified, you can use the <code class="language-c">tigress_post --Action=kill</code> 
 command. It will randomly modify one or more bits in the executable which
 should cause the responses to trigger.
 
@@ -572,14 +575,14 @@ should cause the responses to trigger.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-These are the relevant <tt>tigress_post</tt> options:
+These are the relevant <code class="language-c">tigress_post</code> options:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Action=kill       
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">--Action=kill       
    Destroy a function to test that the checkers trigger a response.
 
 --KillFunctions=f1,f2,...
@@ -590,8 +593,7 @@ These are the relevant <tt>tigress_post</tt> options:
 
 --KillCount=<integer> 
    Number of times to kill a function.
-</code></pre>
-</center>
+</code></pre></div>
 
 <!-- ================================================================================================= -->
 <!-- Plugin Responders                                                                                 -->
@@ -622,15 +624,14 @@ a plugin function to your input program:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void responder_1 () {
+<div class="container">
+<pre><code class="language-c">void responder_1 () {
    for(int i=0; i<10; i++) {
       printf("Hacked %i!\n", i);
    }
    exit(-1);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -643,15 +644,14 @@ The body of these functions will be inserted in the checkers. These are the rele
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress ... \
          --Transform=InitPlugins  \
             --InitPluginsResponderPrefix=responder    \
          --Transform=Checksum \
             --ChecksumResponseKinds=plugin \
          ...
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -664,9 +664,12 @@ You can read more about plugins <a href="plugins.html">here.</a>
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -685,11 +688,13 @@ You can read more about plugins <a href="plugins.html">here.</a>
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- ================================================================================================= -->
 <!-- Call Checkers                                                                                     -->
@@ -714,49 +719,47 @@ You can read more about plugins <a href="plugins.html">here.</a>
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Tigress has a few options that control where checkers are inserted, and which functions are being checked.
-Unlike all other Tigress transformations, <tt>--Transform=Checksum</tt>
-does not make use of the <tt>--Functions=...</tt> option. Instead, for call checkers 
-you should use <tt>--ChecksumFunctionsToBeCheckedAtCallSitess=...</tt> to indicate which functions
-should be checked before they are called, and <tt>--ChecksumCallCheckersToBeInsertedWhere=..</tt> to
+Unlike all other Tigress transformations, <code class="language-c">--Transform=Checksum</code>
+does not make use of the <code class="language-c">--Functions=...</code> option. Instead, for call checkers 
+you should use <code class="language-c">--ChecksumFunctionsToBeCheckedAtCallSitess=...</code> to indicate which functions
+should be checked before they are called, and <code class="language-c">--ChecksumCallCheckersToBeInsertedWhere=..</code> to
 specify a more exact location (such as after the call, randomly, etc.):
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> tigress ... \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress ... \
           --ChecksumFunctionsToBeCheckedAtCallSites=f1,f2 \
           --ChecksumCallCheckersToBeInsertedWhere='((f1 beforeCall) (f2 beforeCall))' \
           ...
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The option <tt>--ChecksumCallCheckersToBeInsertedWhere=...</tt> describes where in the function the 
-checkers can be inserted. Here, function <tt>f6</tt>, for example, will be checked by a function that calls it,
+The option <code class="language-c">--ChecksumCallCheckersToBeInsertedWhere=...</code> describes where in the function the 
+checkers can be inserted. Here, function <code class="language-c">f6</code>, for example, will be checked by a function that calls it,
 and the checker will be inserted anywhere in the caller, except within loops (this helps with performance): 
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ...
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress ...
           --ChecksumCallCheckersToBeInsertedWhere='((f1 beforeCall) (f2 afterCall) (f3 randomly) (f4 first) (f5 topLevel) (f6 randomlyNoLoops))'
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The option <tt>--ChecksumFunctionPriority=...</tt> can give a priority value for each function, where 0.0 means "never check this function",
+The option <code class="language-c">--ChecksumFunctionPriority=...</code> can give a priority value for each function, where 0.0 means "never check this function",
 and 1.0 means "always check this function." This allows you to control how many of the available checkers are assigned to check
 a particular function: 
 
@@ -764,15 +767,17 @@ a particular function:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ...
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress ...
           --ChecksumFunctionPriority='((fac 1.0) (fib 0.7) (zap 0.2))' \
-</code></pre>
-</center>
+</code></pre></div>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -804,11 +809,13 @@ a particular function:
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- ================================================================================================= -->
 <!-- Segment Checkers                                                                                  -->
@@ -832,35 +839,34 @@ a particular function:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-For segment checkers, <tt>--ChecksumRequiredNumberOfSegmentCheckers=...</tt> specifies how many checkers to insert, and
-<tt>--ChecksumInsertCheckersWhere=...</tt> describe where in the function to insert them. Here, checkers will be inserted anywhere 
-in the function, except within control structures, or anywhere where the user has added a <tt>CHECKSUM_INSERT</tt> annotation: 
+For segment checkers, <code class="language-c">--ChecksumRequiredNumberOfSegmentCheckers=...</code> specifies how many checkers to insert, and
+<code class="language-c">--ChecksumInsertCheckersWhere=...</code> describe where in the function to insert them. Here, checkers will be inserted anywhere 
+in the function, except within control structures, or anywhere where the user has added a <code class="language-c">CHECKSUM_INSERT</code> annotation: 
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ...
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress ...
           --ChecksumInsertSegmentCheckersInTheseFunctions='/foo*/' \
           --ChecksumProtectSegments=text \
           --ChecksumRequiredNumberOfSegmentCheckers=10 \
           --ChecksumSegmentCheckersToBeInsertedWhere=topLevel,annotations \
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Here's an example of a function with annotations (don't forget to include <tt>tigress.h</tt>!):
+Here's an example of a function with annotations (don't forget to include <code class="language-c">tigress.h</code>!):
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
+<div class="container">
+<pre><code class="language-c">#include "tigress.h"
 
 void foo(void) { 
   int x = 10;
@@ -874,12 +880,14 @@ void foo(void) {
   }
   y++;
 }
-</code></pre>
-</center>
+</code></pre></div>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -926,11 +934,13 @@ void foo(void) {
 <td><tt><em>String,String,...</em></tt></td>
 <td> Comma-separated list of functions in which <em>not</em> to insert checkers. Default=NONE.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <!-- ================================================================================================= -->
@@ -955,14 +965,14 @@ void foo(void) {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Calling <code>tigress_post --ShowResults</code> will generate a table like this:
+Calling <code class="language-c">tigress_post --ShowResults</code> will generate a table like this:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">+========+===========================================+===============+=====================================+========+========+========+========+========+========+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">+========+===========================================+===============+=====================================+========+========+========+========+========+========+
 | region |    section, priority, address range, size |      function |             template, checker, size |      A |      B |      C |      D |      E |      F |
 +========+===========================================+===============+=====================================+========+========+========+========+========+========+
 |      0 |    text,0.5,[0x100002d40, 0x100002d4f],16 |     _megaInit |                                     |        |        |        |        |        |        |
@@ -1025,22 +1035,21 @@ Calling <code>tigress_post --ShowResults</code> will generate a table like this:
 +--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
 |     47 | cstring,1.0,[0x100003f56, 0x100003fb7],98 |               |                                     |        |        |        |        |        |        |
 +--------+-------------------------------------------+---------------+-------------------------------------+--------+--------+--------+--------+--------+--------+
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The first three columns show that the <tt>.text</tt>-segment has been broken up into 
-47 <em>regions</em>. The <tt>main</tt> function, for example, has been broken up into
-37 regions. The fourth column shows that there are 9 checkers, named <tt>hash_0</tt> through
-<tt>hash_8</tt>. You can learn more about these checkers by inspecting the 
-file generated by Tigress (the <tt>--ChecksumHashFunctionsFile=hashes.c</tt> options provide the names of
-the files).  The <tt>size</tt> field shows how many bytes each hash function is
-checking. The function <tt>hash_7</tt>, for example, computes a hash over 
-the <tt>sum</tt> function. Columns A-F, finally, show which regions each hash
-function is covering. The function <tt>hash_7</tt>, again, computes a hash
+The first three columns show that the <code class="language-c">.text</code>-segment has been broken up into 
+47 <em>regions</em>. The <code class="language-c">main</code> function, for example, has been broken up into
+37 regions. The fourth column shows that there are 9 checkers, named <code class="language-c">hash_0</code> through
+<code class="language-c">hash_8</code>. You can learn more about these checkers by inspecting the 
+file generated by Tigress (the <code class="language-c">--ChecksumHashFunctionsFile=hashes.c</code> options provide the names of
+the files).  The <code class="language-c">size</code> field shows how many bytes each hash function is
+checking. The function <code class="language-c">hash_7</code>, for example, computes a hash over 
+the <code class="language-c">sum</code> function. Columns A-F, finally, show which regions each hash
+function is covering. The function <code class="language-c">hash_7</code>, again, computes a hash
 over region 44. 
 
             </p>
@@ -1053,14 +1062,14 @@ over region 44.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Calling <code>tigress_post --ShowResults</code> will also generate tables that provide some statistical information:
+Calling <code class="language-c">tigress_post --ShowResults</code> will also generate tables that provide some statistical information:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">Number of bytes checked by each hash function
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">Number of bytes checked by each hash function
 =============================================
 Hash function 'hash_0' checks 96 bytes
 Hash function 'hash_1' checks 96 bytes
@@ -1079,8 +1088,7 @@ Number of hash function checking each byte
 288 bytes are checked by 1 checkers
 96 bytes are checked by 6 checkers
 The average byte is checked by 0.2 hash functions
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -1088,10 +1096,10 @@ The average byte is checked by 0.2 hash functions
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Note that the amount of overlap needs to be controlled with options to
-both Tigress and <tt>tigress_post</tt>: for more overlap you need to
+both Tigress and <code class="language-c">tigress_post</code>: for more overlap you need to
 introduce more checkers (using
-<code>tigress --ChecksumRequiredNumberOfSegmentCheckers=...</code>)
-and increase the overlap rate in <tt>tigress_post</tt> (<code>tigress_post --OverlapRate=...</code>).
+<code class="language-c">tigress --ChecksumRequiredNumberOfSegmentCheckers=...</code>)
+and increase the overlap rate in <code class="language-c">tigress_post</code> (<code class="language-c">tigress_post --OverlapRate=...</code>).
 
             </p>
         </div>
@@ -1115,9 +1123,12 @@ and increase the overlap rate in <tt>tigress_post</tt> (<code>tigress_post --Ove
         </div>
     </div>
 </section>
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -1156,11 +1167,13 @@ and increase the overlap rate in <tt>tigress_post</tt> (<code>tigress_post --Ove
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- ================================================================================================= -->
 <!-- Issues                                                                                            -->
@@ -1199,16 +1212,17 @@ and increase the overlap rate in <tt>tigress_post</tt> (<code>tigress_post --Ove
 </li>
 
 <li>
-        On recent versions of gcc/x86 the compiler inserts the instruction <a href="https://stackoverflow.com/questions/56905811/what-does-endbr64-instruction-actually-do"><tt>endbr64</tt></a> after branches. In what appears to be a <tt>gcc</tt> bug, in the code below the compiler inserts the <tt>endbr64</tt> instruction <em>after</em> the label, when, presumably, it should go between the test and the label. As a result, we can't correctly calculate the address of the <tt>asm</tt> instruction:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if (_2_main_1_opaque_ptr_1 == _2_main_1_opaque_ptr_2) {
+        On recent versions of gcc/x86 the compiler inserts the instruction <a href="https://stackoverflow.com/questions/56905811/what-does-endbr64-instruction-actually-do"><code class="language-c">endbr64</code></a> after branches. In what appears to be a <code class="language-c">gcc</code> bug, in the code below the compiler inserts the <code class="language-c">endbr64</code> instruction <em>after</em> the label, when, presumably, it should go between the test and the label. As a result, we can't correctly calculate the address of the <code class="language-c">asm</code> instruction:
+<div class="container">
+<pre><code class="language-c">if (_2_main_1_opaque_ptr_1 == _2_main_1_opaque_ptr_2) {
    Lab_2000002: 
     __asm__ volatile (".balign 8,0xf9;\n"
                       ".long 0xAAAAA001;\n"
                       ".long 0xBBBBB001;\n"
                       ".quad 0xCCCCCCCCCCCCC001;\n":);
 }
-</code></pre>
-This typically causes a crash. If you notice this issue turn off branch checking by adding <tt>-fcf-protection=none</tt> to your <tt>gcc</tt> command line. 
+</code></pre></div>
+This typically causes a crash. If you notice this issue turn off branch checking by adding <code class="language-c">-fcf-protection=none</code> to your <code class="language-c">gcc</code> command line. 
 
 </li>
 
@@ -1292,7 +1306,7 @@ This typically causes a crash. If you notice this issue turn off branch checking
 </section>
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -1301,8 +1315,7 @@ This typically causes a crash. If you notice this issue turn off branch checking
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

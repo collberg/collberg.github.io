@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -108,9 +109,9 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This transformation translates a function <code>F</code> into a new function <code>F'</code> consisting
+This transformation translates a function <code class="language-c">F</code> into a new function <code class="language-c">F'</code> consisting
 of a sequence of intermediate code instructions such
-that, when <code>F'</code> is executed, <code>F</code> will be dynamically compiled
+that, when <code class="language-c">F'</code> is executed, <code class="language-c">F</code> will be dynamically compiled
 to machine code. I.e., this is an example of
 <em>runtime code generation</em>, or <em>just-in-time compilation</em>,
 or <em>dynamic unpacking</em>.
@@ -131,8 +132,8 @@ For example, the first few lines of a jitted function may look like this:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x ) { 
+<div class="container">
+<pre><code class="language-c">int fac(int x ) { 
    ...
     p3 = jit_init();
     jit_enable_optimization(p3, 3L);
@@ -159,8 +160,7 @@ For example, the first few lines of a jitted function may look like this:
    result58 = (*fac_foo)(x);
    return (result58);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 
@@ -181,7 +181,7 @@ For example, the first few lines of a jitted function may look like this:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Intermediate code operators (the <code>JIT_MOV</code>, <code>JIT_EQ</code>, etc. in the
+Intermediate code operators (the <code class="language-c">JIT_MOV</code>, <code class="language-c">JIT_EQ</code>, etc. in the
 example above) are randomized every time Tigress is invoked. Thus, the
 statement
 
@@ -189,10 +189,9 @@ statement
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">op11 = jit_add_op(p6, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L);
-</code></pre>
-</center>
+<div class="container">
+<pre><code class="language-c">op11 = jit_add_op(p6, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L);
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -204,10 +203,9 @@ may be compiled into
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">op11 = jit_add_op(p6, 42, 2, 0, 0L, 0L, 0L);
-</code></pre>
-</center>
+<div class="container">
+<pre><code class="language-c">op11 = jit_add_op(p6, 42, 2, 0, 0L, 0L, 0L);
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -259,8 +257,8 @@ top of your C file, depending on which target you are compiling for:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include jitter-Darwin-Arm-64.c
+<div class="container">
+<pre><code class="language-c">#include jitter-Darwin-Arm-64.c
 #include jitter-Darwin-X86-64.c
 #include jitter-Linux-Arm-32.c 
 #include jitter-Linux-Arm-64.c 
@@ -269,8 +267,7 @@ top of your C file, depending on which target you are compiling for:
 #include jitter-SunOS-sparc-32.c
 #include jitter-SunOS-sparc-64.c
 #include jitter-Windows-X86-32.c
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -289,11 +286,11 @@ The files can be found in Tigress' distribution directory.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-If you set the option <code>--JitFrequency=n</code> for <code>n>0</code>, the
-function will be jitted every <code>n</code>:th time it is called. This
-means that every <code>n</code>:th time the function is called, its
+If you set the option <code class="language-c">--JitFrequency=n</code> for <code class="language-c">n>0</code>, the
+function will be jitted every <code class="language-c">n</code>:th time it is called. This
+means that every <code class="language-c">n</code>:th time the function is called, its
 address trace (but not its instruction trace) will change. With
-<code>--JitFrequency=0</code>, the function will only be jitted the
+<code class="language-c">--JitFrequency=0</code>, the function will only be jitted the
 first time it is called.
 
             </p>
@@ -306,29 +303,28 @@ first time it is called.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-To disrupt <a href="#taint">dynamic taint analysis</a>, the option <code>--JitImplicitFlow</code> 
+To disrupt <a href="#taint">dynamic taint analysis</a>, the option <code class="language-c">--JitImplicitFlow</code> 
 inserts implicit flow between where the function gets generated, and where it is invoked:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x ) { 
+<div class="container">
+<pre><code class="language-c">int fac(int x ) { 
   ...
   fac_foo1 = IMPLICIT_FLOW(fac_foo);
   result58 = (*fac_foo1)(x);
   return (result58);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 As usual, this transformation needs to be combined with others to break up
-the predictable static structure. The <code>Split</code> and <code>Virtualize</code>
+the predictable static structure. The <code class="language-c">Split</code> and <code class="language-c">Virtualize</code>
 transformations are particularly appropriate.
 
             </p>
@@ -336,9 +332,12 @@ transformations are particularly appropriate.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -449,11 +448,13 @@ transformations are particularly appropriate.
 <td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
 <td> Randomize the order of basic blocks Default=true.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="issues">&nbsp;</a>
 
@@ -483,7 +484,7 @@ transformations are particularly appropriate.
 
 <li>
         The jit library contains much extra code. All jitting functions
-        have a <code>jit_</code> prefix. These functions need also to be
+        have a <code class="language-c">jit_</code> prefix. These functions need also to be
         obfuscated in order to protect the jitted function itself.
 
 </li>
@@ -498,8 +499,8 @@ transformations are particularly appropriate.
 <li>
         While opcodes are randomized, the frequency of instructions
         can give away much information. For example, if opcode 0x42
-        is very common, it's more likely to be an <code>ADD</code> than,
-        say, a <code>DIV</code> instruction.
+        is very common, it's more likely to be an <code class="language-c">ADD</code> than,
+        say, a <code class="language-c">DIV</code> instruction.
 
 </li>
 
@@ -514,7 +515,7 @@ transformations are particularly appropriate.
         There seems to be some loss in floating point accuracy when using
         float types. I think this might be because there are extra 
         conversion instruction generated my MyJit. The fix is to use 
-       <tt>double</tt> instead.
+       <code class="language-c">double</code> instead.
 
 </li>
 
@@ -558,17 +559,16 @@ resolved:
                 <ul>
 
 <li>
-        Functions that call <code>__builtin_*</code> functions cannot
+        Functions that call <code class="language-c">__builtin_*</code> functions cannot
         be jitted since these have to be called directly. This 
-        includes functions that call, for example, <code>alloca</code>
-        implicitly (this is taken from gcc's torture test <code>920721-2.c</code>):
+        includes functions that call, for example, <code class="language-c">alloca</code>
+        implicitly (this is taken from gcc's torture test <code class="language-c">920721-2.c</code>):
 
 </li>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">f(){}
+<div class="container">
+<pre><code class="language-c">f(){}
 main(){int n=2;double x[n];f();exit(0);}
-</code></pre>
-</center>
+</code></pre></div>
 
 <li>
         Functions that pass structures as by value arguments to
@@ -615,7 +615,7 @@ MyJit to fit our needs.
 
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -624,8 +624,7 @@ MyJit to fit our needs.
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

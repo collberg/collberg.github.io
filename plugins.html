@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -125,9 +126,12 @@ available options:
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -154,20 +158,22 @@ available options:
 <td><tt><em>String</em></tt></td>
 <td> The prefix for the name of responder plugin functions. Default=NONE.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
- Plugin functions can take parameters. Two special parameters <tt>argc</tt> and <tt>argv</tt>
-(of type <tt>int</tt> and <tt>char**</tt>, respectively) will be initialized with the 
-arguments passed to <tt>main()</tt>. Any remaining formal parameters (which need to be
+ Plugin functions can take parameters. Two special parameters <code class="language-c">argc</code> and <code class="language-c">argv</code>
+(of type <code class="language-c">int</code> and <code class="language-c">char**</code>, respectively) will be initialized with the 
+arguments passed to <code class="language-c">main()</code>. Any remaining formal parameters (which need to be
 of arithmetic types) will be initialized with random local variables found where the 
 plugin function is inserted. They can be read but should, obviously, not be modified,
 unless you're writing a <em>responder</em> that you want to crash the program.
@@ -209,7 +215,7 @@ program.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
- For the <tt>--Transform=EncodeArithmetic</tt> transformation, you can extend the built-in
+ For the <code class="language-c">--Transform=EncodeArithmetic</code> transformation, you can extend the built-in
 MBA expressions with your own. 
 
             </p>
@@ -222,9 +228,9 @@ MBA expressions with your own.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
- The plugin functions should be named <tt>prefix_operator</tt> or <tt>prefix_operator_number</tt> (if there
-is need for disambiguation). The <tt>operator<tt> should beone of <tt> PlusA, MinusA, Mult;Div, Mod, Shiftlt, Shiftrt, Lt,
-Gt, Le, Ge, Eq, Ne, BAnd, BXor, BOr, LAnd, LOr</tt> (for binary operators) and one of <tt>Neg, BNot, LNot</tt>
+ The plugin functions should be named <code class="language-c">prefix_operator</code> or <code class="language-c">prefix_operator_number</code> (if there
+is need for disambiguation). The <code class="language-c">operator</code> should be one of <code class="language-c">PlusA, MinusA, Mult;Div, Mod, Shiftlt, Shiftrt, Lt,
+Gt, Le, Ge, Eq, Ne, BAnd, BXor, BOr, LAnd, LOr</code> (for binary operators) and one of <code class="language-c">Neg, BNot, LNot</code>
 (for unary operators). For binary operators the functions should have 2 arguments which need to be of the same
 arithmetic types as the return type. The body of the functions should be a single return statement that is
 the MBA expression. Here are a few examples.
@@ -234,8 +240,8 @@ the MBA expression. Here are a few examples.
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int mba_PlusA_1 (int x, int y) {
+<div class="container">
+<pre><code class="language-c">int mba_PlusA_1 (int x, int y) {
   return (x|y)+(x&y);
 }
 
@@ -250,8 +256,7 @@ long mba_PlusA_3 (long x, long y) {
 int mba_BXor (int x, int y) {
    return (x|y)–(x&y);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <a class="anchor" id="invariants">&nbsp;</a>
 
@@ -291,7 +296,7 @@ invariants no longer hold.
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Invariant plugin functions should always return an int. The name of
 an invariant plugin function should start with the <em>prefix</em>
-(set by the <tt>--InitPluginsInvariantPrefix=<em>prefix</em></tt>
+(set by the <code class="language-c">--InitPluginsInvariantPrefix=<em>prefix</em></code>
 option) and be followed by an encoding of the value(s) the function
 will return. These are the possible specifications:
 
@@ -307,27 +312,27 @@ will return. These are the possible specifications:
                 <ul>
 
 <li>
-         <tt>ANY</tt> : the function returns an arbitrary value.
+         <code class="language-c">ANY</code> : the function returns an arbitrary value.
 
 </li>
 
 <li>
-         <tt>VALUE_<em>value</em></tt> : the function always returns the integer <em>value</em>.
+         <code class="language-c">VALUE_<em>value</em></code> : the function always returns the integer <em>value</em>.
 
 </li>
 
 <li>
-         <tt>MIN_<em>value</em></tt> : the function always returns an integer greater than or equal to <em>value</em>.
+         <code class="language-c">MIN_<em>value</em></code> : the function always returns an integer greater than or equal to <em>value</em>.
 
 </li>
 
 <li>
-         <tt>MAX_<em>value</em></tt> : the function always returns an integer less than or equal to <em>value</em>.
+         <code class="language-c">MAX_<em>value</em></code> : the function always returns an integer less than or equal to <em>value</em>.
 
 </li>
 
 <li>
-         <tt>RANGE_<em>from</em>_<em>to</em></tt> : the function always returns an integer in the range <tt>[<em>from</em>, <em>to</em>]</tt>, inclusive.
+         <code class="language-c">RANGE_<em>from</em>_<em>to</em></code> : the function always returns an integer in the range <code class="language-c">[<em>from</em>, <em>to</em>]</code>, inclusive.
 
 </li>
 
@@ -353,29 +358,28 @@ Extra underscore characters can be freely added to the name (for disabiguation) 
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-For example, if you have set <tt>--InitPluginsInvariantPrefix=<em>acme</em></tt> 
+For example, if you have set <code class="language-c">--InitPluginsInvariantPrefix=<em>acme</em></code> 
 you could add the following function to your application: 
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int highScore = 0;     /* Always less than 100! */
+<div class="container">
+<pre><code class="language-c">int highScore = 0;     /* Always less than 100! */
 ...
 int acme_RANGE_0_99 (void) {
    return highScore;
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The idea here is that transformations which use opaque predicates will
-introduce code that assumes that <tt>0 &le; highScore &lt; 100</tt>. If
-an attacker modifies the code so that <tt>highScore</tt> is outside of
+introduce code that assumes that <code class="language-c">0 &le; highScore &lt; 100</code>. If
+an attacker modifies the code so that <code class="language-c">highScore</code> is outside of
 this range, the program will start to misbehave.
 
             </p>
@@ -388,22 +392,21 @@ this range, the program will start to misbehave.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Here is how you would call Tigress with the <tt>AddOpaque</tt> transform:
+Here is how you would call Tigress with the <code class="language-c">AddOpaque</code> transform:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
            --Transform=InitPlugins  --InitPluginsInvariantPrefix=acme    \
            --Transform=InitOpaque --Functions=main --InitOpaqueStructs=plugin    \
            --Transform=AddOpaque \
               --Functions=* \
               --AddOpaqueKinds=true \
               --AddOpaqueStructs=plugin	\
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -416,8 +419,8 @@ Here are some examples of invariant plugin functions:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">/* Returns a random value */
+<div class="container">
+<pre><code class="language-c">/* Returns a random value */
 int acme_ANY (void) {
    return list_length(myList);
 }
@@ -458,8 +461,7 @@ int acme_RANGE_10_20 () {
 int acme_RANGE_1_3 (int argc) {
    return argc;
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <a class="anchor" id="responders">&nbsp;</a>
@@ -482,9 +484,9 @@ int acme_RANGE_1_3 (int argc) {
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Tigress has a few simple built-in responders that can be used in the
-<tt>Checksum</tt> transformation. With plugins, you can easily add
+<code class="language-c">Checksum</code> transformation. With plugins, you can easily add
 your own responders to your application. Responder plugin
-functions should always return <tt>void</tt>.
+functions should always return <code class="language-c">void</code>.
 
             </p>
         </div>
@@ -497,20 +499,19 @@ functions should always return <tt>void</tt>.
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Here is how you would invoke Tigress to use your own plugin 
-responders with the <tt>Checksum</tt> transform:
+responders with the <code class="language-c">Checksum</code> transform:
 
             </p>
         </div>
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
          --Transform=InitPlugins  --InitPluginsResponderPrefix=acme_responder    \
          --Transform=Checksum ... --ChecksumResponseKinds=plugin ... \
          ...
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -523,8 +524,8 @@ Here are some simple examples of responder plugins:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void acme_responder_1 () {
+<div class="container">
+<pre><code class="language-c">void acme_responder_1 () {
    abort();
 }
 void acme_responder_2 (int argc, char** argv) {
@@ -543,8 +544,7 @@ void acme_responder_4 () {
 void acme_responder_5 () {
    memset(aes_key, 0, 16);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <a class="anchor" id="opaque">&nbsp;</a>
 
@@ -573,9 +573,12 @@ facilitate this, <em>initialize</em> and <em>update</em>:
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -602,11 +605,13 @@ facilitate this, <em>initialize</em> and <em>update</em>:
 <td><tt><em>String</em></tt></td>
 <td> The prefix for the name of update plugin functions. Default=NONE.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -619,8 +624,8 @@ Here's a simple example of a library that you would add to the beginning of your
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int alwaysEven;
+<div class="container">
+<pre><code class="language-c">int alwaysEven;
 
 void acme_initialize_even (int argc) {
    alwaysEven = (argc+1) * 2;
@@ -637,17 +642,16 @@ void acme_update_even_2 (int f) {
 int acme_invariant_even_VALUE_0 (void) {
    return alwaysEven%2;
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This library adds a global variable <tt>alwaysEven</tt> which, as the name implies, is alwyas even.
-The body of the <tt>initialize_even</tt> function will be inserted in the function where you want 
-initializations to take place, and the two update functions will be inserted by the <tt>UpdateOpaque</tt>
-transformation. Here, there is no particular significance to the <tt>_number</tt> in the function names -- each
+This library adds a global variable <code class="language-c">alwaysEven</code> which, as the name implies, is alwyas even.
+The body of the <code class="language-c">initialize_even</code> function will be inserted in the function where you want 
+initializations to take place, and the two update functions will be inserted by the <code class="language-c">UpdateOpaque</code>
+transformation. Here, there is no particular significance to the <code class="language-c">_number</code> in the function names -- each
 function just has to have a unique name. Here is the call to Tigress:
 
             </p>
@@ -655,8 +659,8 @@ function just has to have a unique name. Here is the call to Tigress:
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress  ... \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress  ... \
      --Transform=InitPlugins  \
         --InitPluginsInvariantPrefix=acme_invariant    \
         --InitPluginsInitializePrefix=acme_initialize    \
@@ -671,8 +675,7 @@ function just has to have a unique name. Here is the call to Tigress:
      --Transform=UpdateOpaque \
         --Functions=* \
         --UpdateOpaqueCount=10 
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -687,8 +690,8 @@ and the elements of the list are always odd:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">typedef struct intList {
+<div class="container">
+<pre><code class="language-c">typedef struct intList {
    struct intListNode* first;
 } *INTLIST;
 
@@ -745,8 +748,7 @@ int acme_invariant_odd_VALUE_0 (int v) {
    };
    return value % 2 - 1;
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <a class="anchor" id="opaque">&nbsp;</a>
@@ -768,17 +770,20 @@ int acme_invariant_odd_VALUE_0 (int v) {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-If your program is using ADTs such as <code>HashMap</code> or <code>Set</code> you can provide
-these to Tigress. The only use at the moment is with the <tt>RandomFuns</tt> transformation.
+If your program is using ADTs such as <code class="language-c">HashMap</code> or <code class="language-c">Set</code> you can provide
+these to Tigress. The only use at the moment is with the <code class="language-c">RandomFuns</code> transformation.
 
             </p>
         </div>
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -795,11 +800,13 @@ these to Tigress. The only use at the moment is with the <tt>RandomFuns</tt> tra
 <td><tt><em>String, String, ...</em></tt></td>
 <td> Comma-separated list of names of dictionary abstract datatypes that have been included in the program. Otherwise similar to <tt>--InitPluginsCollectionPrefix</tt>. Default=NONE.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -813,21 +820,20 @@ and the corresponding Tigress command line options (you can give multiple ADTs i
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   --Transform=InitPlugins \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">   --Transform=InitPlugins \
        --InitPluginsCollectionPrefix=Set \
        --InitPluginsDictionaryPrefix=HashMap
-</code></pre>
-</center>
+</code></pre></div>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
-#include <stdio.h> 
-#include <time.h>
-#include <pthread.h>
-#include <stdlib.h>
-#include <time.h>
-#include <sys/time.h>
+<div class="container">
+<pre><code class="language-c">#include "tigress.h"
+#include &lt;stdio.h&gt; 
+#include &lt;time.h&gt;
+#include &lt;pthread.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include &lt;sys/time.h&gt;
 
 // Types for Sets.
 typedef ... Set_TYPE;
@@ -880,11 +886,10 @@ HashMap_ITER HashMap_FIRST(HashMap_TYPE a){ ... }
 HashMap_ITER HashMap_NEXT(HashMap_TYPE a, HashMap_ITER n){ ... }
 int HashMap_DONE(HashMap_TYPE a, HashMap_ITER n){ ... }
 HashMap_ELEMENT HashMap_GET(HashMap_TYPE a, HashMap_ITER n){ ... }
-</code></pre>
-</center>
+</code></pre></div>
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -893,8 +898,7 @@ HashMap_ELEMENT HashMap_GET(HashMap_TYPE a, HashMap_ITER n){ ... }
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

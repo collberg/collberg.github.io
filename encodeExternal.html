@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -109,8 +110,88 @@ code {
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The goal of this transformation is to hide calls to external functions, such
-as system calls or calls to standard library functions. The current implementation 
-is simplistic: we simply replace direct calls with indirect ones, and load the
+as system calls or calls to standard library functions. Our current implementation 
+has two variants: 
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+          Use dynamic loading ("<em>dlsym()</em>") to load the libary at
+          runtime and make the function call indirect through a pointer.
+
+</li>
+
+<li>
+          Embed the source of the external library in your program making
+          it amenable to further Tigress obfuscations.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>InitEncodeExternal</tt></td>
+<td> Replace direct system calls with indirect ones through dlsym. </td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+<a class="anchor" id="dynamic">&nbsp;</a>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Dynamic Encoding
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here, we simply replace direct calls with indirect ones, and load the
 address of the functions using <em>dlsym()</em>.
 
             </p>
@@ -118,9 +199,12 @@ address of the functions using <em>dlsym()</em>.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -137,15 +221,20 @@ address of the functions using <em>dlsym()</em>.
 <td><tt>Comma-separated list of strings</tt></td>
 <td> List of of external functions to be encoded. </td>
 </tr>
+
+
 </table>
-</div>
-
 </center>
-</br>
+</div>
+</div>
+</section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -162,32 +251,28 @@ address of the functions using <em>dlsym()</em>.
 <td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
 <td> Use opaque expressions to compute function addresses. Default=true.</td>
 </tr>
-<tr>
-<td><tt>--EncodeExternalSymbols</tt></td>
-<td><tt>comma-separated list of strings</tt></td>
-<td> Set of external functions to be encoded in this function Default=true.</td>
-</tr>
+
+
 </table>
-</div>
-
 </center>
-</br>
-
+</div>
+</div>
+</section>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Consider the following program <code>syscall.c</code> which makes two system calls to <code>getpid</code>
-and <code>gettimeofday</code>:
+Consider the following program <code class="language-c">syscall.c</code> which makes two system calls to <code class="language-c">getpid</code>
+and <code class="language-c">gettimeofday</code>:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include&lt;stdio.h&gt;
+<div class="container">
+<pre><code class="language-c">#include&lt;stdio.h&gt;
 #include&lt;unistd.h&gt;
 #include&lt;sys/time.h&gt;
 
@@ -201,8 +286,7 @@ int main () {
    int y = gettimeofday(&tv, NULL); 
    printf ("%ld.%06ld\n", tv.tv_sec, tv.tv_usec); 
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -215,8 +299,8 @@ We obfuscate using the following script:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> tigress -ldl \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress -ldl \
         --Environment=x86_64:Darwin:Clang:5.1 \
         --Transform=InitEncodeExternal \
            --Functions=tigress_init \
@@ -229,22 +313,22 @@ We obfuscate using the following script:
            --Functions=STRINGENCODER \
         --Transform=EncodeExternal \
            --Functions=main \
+           --EncodeExternalKind=dynamic  \
            --EncodeExternalSymbols=getpid,gettimeofday  \
         --out=syscall_out.c syscall.c
 > gcc -o syscall_out syscall_out.c -ldl
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The <code>InitEncodeExternal</code> transformation uses <code>dlsym()</code> to load
-the system calls we want to hide by name, the <code>EncodeLiterals</code> transformation
-hides these names in a function we call <code>STRINGENCODER</code>, the
-<code>Virtualize</code> transformation hides what's going on in the <code>STRINGENCODER</code>
-function, and finally, the <code>EncodeExternal</code> transformation replaces the 
-direct calls to the system calls in <code>main()</code> with indirect ones.
+The <code class="language-c">InitEncodeExternal</code> transformation uses <code class="language-c">dlsym()</code> to load
+the system calls we want to hide by name, the <code class="language-c">EncodeLiterals</code> transformation
+hides these names in a function we call <code class="language-c">STRINGENCODER</code>, the
+<code class="language-c">Virtualize</code> transformation hides what's going on in the <code class="language-c">STRINGENCODER</code>
+function, and finally, the <code class="language-c">EncodeExternal</code> transformation replaces the 
+direct calls to the system calls in <code class="language-c">main()</code> with indirect ones.
 
             </p>
         </div>
@@ -262,8 +346,8 @@ The resulting code will look something like this:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void *_externalFunctionPtrArray[2];
+<div class="container">
+<pre><code class="language-c">void *_externalFunctionPtrArray[2];
 
 void tigress_init(void) { 
   STRINGENCODER(0, encodeStrings_litStr0);
@@ -297,15 +381,14 @@ int main( ) {
                 (void *)((void *)0));
   printf((char const *)"%ld.%06ld\n", tv.tv_sec, tv.tv_usec);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Note how this program no longer has any mention of <code>getpid</code>
-and <code>gettimeofday</code>. The transformation is purely static,
+Note how this program no longer has any mention of <code class="language-c">getpid</code>
+and <code class="language-c">gettimeofday</code>. The transformation is purely static,
 of course; at runtime it is trivial to see that these functions are
 being called.
 
@@ -313,6 +396,118 @@ being called.
         </div>
     </div>
 </section>
+
+<a class="anchor" id="embed">&nbsp;</a>
+
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Function Embedding (<b>From 4.0.7</b>)
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<a href="https://hex-rays.com/products/ida/tech/flirt/in_depth/"> IDA Pro's F.L.I.R.T.</a> 
+attempts to identify common library functions by creating a signature from the first
+32 bytes of each function. It also provides a tool to identify signatures for
+third party libraries called <a href="https://plugins.hex-rays.com/idenlib">idenlib</a>.
+To thwart such attacks you can embed libraries into your program and then obfuscate them.
+You can of course do this manually, but Tigress provides functionality to make this simple.
+Currently we only support the <code class="language-c">string</code> library.
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+We obfuscate using the following script:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress -ldl \
+        --Environment=x86_64:Darwin:Clang:5.1 \
+        --Transform=EncodeExternal \
+           --Functions=main \
+           --EncodeExternalKind=embed  \
+           --EncodeExternalSymbols=strcmp  \
+        --Transform=Inline \
+           --Functions=string_strcmp \
+        --out=embed.c embed.c
+</code></pre></div>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Note that, after embedding the <code class="language-c">string</code> library functions they get prefixed by
+<code class="language-c">string__</code>. This is, after embedding, the <code class="language-c">strcmp</code> function is now called 
+<code class="language-c">string__strcmp</code>. By further obfuscating the embedded functions (here we're
+inlining <code class="language-c">strcmp</code>), you can bypass the F.L.I.R.T. identification.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+We currently support embedding the following functions:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">memccpy &rarr; string___memccpy
+memchr &rarr; string___memchr
+memcmp &rarr; string___memcmp
+memcpy &rarr; string___memcpy
+memmem &rarr; string___memmem
+memmove &rarr; string___memmove
+memrchr &rarr; string___memrchr
+stpcpy &rarr; string___stpcpy
+stpncpy &rarr; string___stpncpy
+strcasecmp &rarr; string___strcasecmp
+strncasecmp &rarr; string___strncasecmp
+strcasestr &rarr; string___strcasestr
+strcat &rarr; string___strcat
+strchr &rarr; string___strchr
+strcmp &rarr; string___strcmp
+strcoll &rarr; string___strcoll
+strcspn &rarr; string___strcspn
+strdup &rarr; string___strdup
+strlcat &rarr; string___strlcat
+strlcpy &rarr; string___strlcpy
+strlen &rarr; string___strlen
+strncat &rarr; string___strncat
+strncmp &rarr; string___strncmp
+strncpy &rarr; string___strncpy
+strndup &rarr; string___strndup
+strnlen &rarr; string___strnlen
+strpbrk &rarr; string___strpbrk
+strsep &rarr; string___strsep
+strspn &rarr; string___strspn
+strstr &rarr; string___strstr
+strtok &rarr; string___strtok
+strtok_r &rarr; string___strtok_r
+strxfrm &rarr; string___strxfrm
+wcslcpy &rarr; string___wcslcpy
+</code></pre></div>
 
 <a class="anchor" id="references">&nbsp;</a>
 
@@ -340,13 +535,13 @@ being called.
         System Interface Obfuscation and the Revealing of Hidden
         Operations</a>, Srivastava, Lanzi, Giffin, and Balzarotti
         use a kernel module to replace all system calls with calls
-        to <code>ioctl.</code>
+        to <code class="language-c">ioctl.</code>
 
 </li>
 
 
 <li>
-      Sean "Frank^2" Taylor presents the <code>dlsym</code> idea in a 
+      Sean "Frank^2" Taylor presents the <code class="language-c">dlsym</code> idea in a 
        <a href="https://www.defcon.org/images/defcon-17/dc-17-presentations/defcon-17-sean_taylor-binary_obfuscation.pdf">DEFCON</a>
        <a href="https://www.youtube.com/watch?v=iva16Bg5imQ">talk</a>.
 
@@ -380,13 +575,21 @@ being called.
                 <ul>
 
 <li>
-        On Linux/gcc you need to explicitly add the <code>-ldl</code> option. 
+        On Linux/gcc you need to explicitly add the <code class="language-c">-ldl</code> option. 
             On MacOS/clang this is not necessary. 
 
 </li>
 
 <li>
-          If you set the <code>--Environment=</code> wrong, your program will fail.
+          If you set the <code class="language-c">--Environment=</code> wrong, your program will fail.
+
+</li>
+
+<li>
+          We currently only support embedding of the <code class="language-c">LibC</code> <code class="language-c">string</code> library. We have, however,
+          developed a tool that makes embedding new libraries into Tigress more-or-less trivial. If you
+          have a library you would like to add to Tigress, let us know: we just require the
+          source to be published under a permissive license.
 
 </li>
 
@@ -397,7 +600,8 @@ being called.
 </section>
 
 
-<script src="assets/popper/popper.min.js"></script>
+
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -406,8 +610,7 @@ being called.
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -111,7 +112,7 @@ code {
  Merge multiple functions into one. An extra formal argument is added 
 to allow call sites to call any of the functions.
 This transformation is useful as a precursor to virtualization or jitting:
-if you want to virtualize both <code>foo</code> and <code>bar</code>,
+if you want to virtualize both <code class="language-c">foo</code> and <code class="language-c">bar</code>,
 first merge them together, then virtualize the result.
 
             </p>
@@ -180,10 +181,10 @@ Merging relies on the Flatten transformation, and has the same sources of divers
 There are several ways to merge. In a simple merge, the function bodies
 are simply put in an if-nest. This is simplistic, of course, but sufficient
 if you are going to, say, virtualize or jit the merged function. If you set 
-<code>--MergeFlatten=true</code> then constituent functions are first
+<code class="language-c">--MergeFlatten=true</code> then constituent functions are first
 flattened, then the resulting blocks are merged together, and finally 
 a dispatch method is added (switch, goto, or indirect, selected by
-<code>--MergeFlattenDispatch</code>).
+<code class="language-c">--MergeFlattenDispatch</code>).
 
             </p>
         </div>
@@ -201,17 +202,16 @@ The merged function is named
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">prefix ^ fun1 ^ "_" ^ fun2  ^ "_" ^ ...
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">prefix ^ fun1 ^ "_" ^ fun2  ^ "_" ^ ...
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-where <code>^</code> is concatenation.
+where <code class="language-c">^</code> is concatenation.
 
             </p>
         </div>
@@ -223,7 +223,7 @@ where <code>^</code> is concatenation.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-It is a good idea to run a <code>--Trandform=RndArgs</code> transformation after
+It is a good idea to run a <code class="language-c">--Trandform=RndArgs</code> transformation after
 this one to hide the obvious extra argument that's been added to
 the function.
 
@@ -232,9 +232,12 @@ the function.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -305,11 +308,13 @@ the function.
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- -------------------------------------------------------------------------------- -->
 <a class="anchor" id="issues">&nbsp;</a>
@@ -334,19 +339,18 @@ the function.
                 <ul>
 
 <li>
-        Consider this example taken from gcc's <code>comp-goto-1.c</code> torture test:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *(base_addr + insn.f1.offset);
-</code></pre>
-</center>
+        Consider this example taken from gcc's <code class="language-c">comp-goto-1.c</code> torture test:
+<div class="container">
+<pre><code class="language-c">goto *(base_addr + insn.f1.offset);
+</code></pre></div>
       This kind of arithmetic on the program counter is going to fail for 
       transformations that completely restructure the code, such as
-      <code>--Transform=Merge --MergeFlatten=true</code>.
+      <code class="language-c">--Transform=Merge --MergeFlatten=true</code>.
 
 </li>
 
 <li>
-        The <code>--MergeConditionalKinds=flag</code> option seems to have
+        The <code class="language-c">--MergeConditionalKinds=flag</code> option seems to have
       multiple issues on MacOS/clang. Presumably this is due to some compiler 
       problem related to inline assembly.
 
@@ -393,7 +397,7 @@ the function.
 
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -402,8 +406,7 @@ the function.
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

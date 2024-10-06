@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -158,9 +159,12 @@ their code.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -198,11 +202,13 @@ their code.
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 
@@ -252,7 +258,7 @@ There are several sources of diversity:
 </li>
 
 <li>
-          The <code>next</code> variable can be obfuscated using different kinds of opaque predicates.
+          The <code class="language-c">next</code> variable can be obfuscated using different kinds of opaque predicates.
 
 </li>
 
@@ -304,7 +310,8 @@ what a reursive factorial function looks like after transformation:
         In a <em>switch dispatch</em>, each block becomes a case in a switch statement,
         and the switch is wrapped inside an infinite loop. This is the traditional
         implementation. 
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
+<div class="container">
+<pre><code class="language-c">int fac(int x) { 
   int tmp ;
   unsigned long next ;
   next = 4;
@@ -323,13 +330,14 @@ what a reursive factorial function looks like after transformation:
     }
   }
 }
-</code></pre>
+</code></pre></div>
 
 </li>
 
 <li>
         In a <em>goto dispatch</em>, direct gotos are used to jump between blocks. 
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
+<div class="container">
+<pre><code class="language-c">int fac(int x) { 
   int tmp ;
   goto lab4;
   lab4: 
@@ -344,13 +352,14 @@ what a reursive factorial function looks like after transformation:
   lab1: 
   return (x * tmp);
 }
-</code></pre>
+</code></pre></div>
 
 </li>
 
 <li>
         In an <em>indirect dispatch</em>, indirect gotos through a jump table are used to switch between blocks. 
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int fac(int x) { 
+<div class="container">
+<pre><code class="language-c">int fac(int x) { 
   int tmp ;
   unsigned long next ;
   static void *jumpTab[4]  = {&& lab1, && lab2, && lab3, && lab4};
@@ -374,14 +383,15 @@ what a reursive factorial function looks like after transformation:
   return (x * tmp);
   goto *(jumpTab[next - 1]);
 }
-</code></pre>
+</code></pre></div>
 
 </li>
 
 <li>
         In a <em>call dispatch</em>, each block becomes its own function, and indirect calls through a 
         table of function pointers are used to switch between blocks. 
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">struct argStruct {
+<div class="container">
+<pre><code class="language-c">struct argStruct {
    int tmp ;
    int *x ;
    int returnv ;
@@ -428,7 +438,7 @@ int fac(int x ){
     }
   }
 }
-</code></pre>
+</code></pre></div>
 
 </li>
 
@@ -456,13 +466,13 @@ int fac(int x ){
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-These is a fifth block dispatch method which we call <tt>thread</tt>. It is essentially identical to
-the <tt>call</tt> dispatch, except each call runs in its own thread. The idea is that every time
+These is a fifth block dispatch method which we call <code class="language-c">thread</code>. It is essentially identical to
+the <code class="language-c">call</code> dispatch, except each call runs in its own thread. The idea is that every time
 around the dispatch loop <em>all</em> threads are awakened, and <em>all of them</em> do some work, but
 only <em>one</em> thread (the one that owns the next block to be executed) actually does any
 <em>real</em> work. This way there is some randomness in the order in which the block functions
-execute, but there is no potential for race conditions on the <tt>next</tt> variable (only one
-thread will update <tt>next</tt> during each round).  
+execute, but there is no potential for race conditions on the <code class="language-c">next</code> variable (only one
+thread will update <code class="language-c">next</code> during each round).  
 
             </p>
         </div>
@@ -481,8 +491,8 @@ MacOS does not support barriers, so we roll our own.
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void fib(int n ) { 
+<div class="container">
+<pre><code class="language-c">void fib(int n ) { 
   struct argStruct arg ;
   pthread_t thrds[3];
   pthread_mutex_init(&arg.mtx, NULL);
@@ -526,8 +536,7 @@ MacOS does not support barriers, so we roll our own.
       }
    }
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -540,8 +549,8 @@ And this is what one of the worker threads look like.
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void fib_0_<n> (struct argStruct *arg ) { 
+<div class="container">
+<pre><code class="language-c">void fib_0_<n> (struct argStruct *arg ) { 
   while (1) {
      /* Wait for work to arrive. */
      pthread_mutex_lock(&arg->mtx);
@@ -571,8 +580,7 @@ And this is what one of the worker threads look like.
      pthread_mutex_unlock(&arg->mtx);
    }
 }
-</center>
-</code></pre>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -595,7 +603,7 @@ both times.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-We're currently using <tt>pthreads</tt> which is unfortunate, because the calls to the
+We're currently using <code class="language-c">pthreads</code> which is unfortunate, because the calls to the
 various API functions are obvious in the code (and at runtime). It would be nice to replace
 these functions with some lower-level primitives.
 
@@ -604,9 +612,12 @@ these functions with some lower-level primitives.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -637,11 +648,13 @@ these functions with some lower-level primitives.
 <td><tt>string</tt></td>
 <td> The name of the functions generated for call dispatch. Default=SPLIT.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="conditionals">&nbsp;</a>
 
@@ -662,9 +675,9 @@ these functions with some lower-level primitives.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-If the <code>--FlattenConditionalKinds=flag</code> is set, there will be no
+If the <code class="language-c">--FlattenConditionalKinds=flag</code> is set, there will be no
 explicit conditional tests in the code. Rather, they will be transformed
-into an assembly code snippet (<code>x86</code> only, at this point) that 
+into an assembly code snippet (<code class="language-c">x86</code> only, at this point) that 
 does the comparison, extracts the flag register, and then the address to
 jump to will be computed based on the individual flags set. Similar
 encodings are available for Merge and Virtualize transformations.
@@ -674,9 +687,12 @@ encodings are available for Merge and Virtualize transformations.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -694,11 +710,13 @@ encodings are available for Merge and Virtualize transformations.
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="nextobf">&nbsp;</a>
 
@@ -719,7 +737,7 @@ encodings are available for Merge and Virtualize transformations.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-You can use opaque predicates and anti-implicit flow transformations to further obfuscate the <code>next</code>
+You can use opaque predicates and anti-implicit flow transformations to further obfuscate the <code class="language-c">next</code>
 variable.
 
             </p>
@@ -727,9 +745,12 @@ variable.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -762,11 +783,13 @@ variable.
 <td><tt>S-Expression</tt></td>
 <td> The type of implicit flow to insert. See <tt>--AntiTaintAnalysisImplicitFlow</tt> for a description. Default=none.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 
 <!-- -------------------------------------------------------------------------------- -->
@@ -798,10 +821,9 @@ You can virtualize a piece of a function, rather than the whole thing. Simpy put
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... --Transform=Flatten  --Functions=fac:region2 ...
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress ... --Transform=Flatten  --Functions=fac:region2 ...
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -815,8 +837,8 @@ The region has to be defined like this in the code:
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
+<div class="container">
+<pre><code class="language-c">#include "tigress.h"
 
 void fac(int n) {
   int s=1;
@@ -828,8 +850,7 @@ void fac(int n) {
   }
   printf("fac(%i)=%i\n",n,s);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -868,11 +889,10 @@ Note that the region needs to be ``self-contained,'' i.e. you can't jump into it
                 <ul>
 
 <li>
-        Consider this example taken from gcc's <code>comp-goto-1.c</code> torture test:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *(base_addr + insn.f1.offset);
-</code></pre>
-</center>
+        Consider this example taken from gcc's <code class="language-c">comp-goto-1.c</code> torture test:
+<div class="container">
+<pre><code class="language-c">goto *(base_addr + insn.f1.offset);
+</code></pre></div>
       This kind of arithmetic on the program counter is going to fail for 
       transformations that completely restructure the code, such as
       flattening.
@@ -880,15 +900,15 @@ Note that the region needs to be ``self-contained,'' i.e. you can't jump into it
 </li>
 
 <li>
-        The <code>--FlattenConditionalKinds=flag</code> transformation doesn't
+        The <code class="language-c">--FlattenConditionalKinds=flag</code> transformation doesn't
       work for floats, for reasons that escape me. I think maybe floats are
       left on the stack and then there's a SEGV when the function returns,
-          but who knows? <code>:(</code>.
+          but who knows? <code class="language-c">:(</code>.
 
 </li>
 
 <li>
-        On MacOS/llvm the <code>--FlattenDispatch=call --FlattenConditionalKinds=flag</code> transformation 
+        On MacOS/llvm the <code class="language-c">--FlattenDispatch=call --FlattenConditionalKinds=flag</code> transformation 
       generates a segmentation fault, on Linux/gcc it does not. There are other similar issues that 
       pop up occasionally on this platform. Presumably this is due to some compiler problem related 
       to inline assembly. Update: I think this has been fixed now. Inline assembly with instructions
@@ -897,9 +917,9 @@ Note that the region needs to be ``self-contained,'' i.e. you can't jump into it
 </li>
 
 <li>
-        By default, Flatten transforms Variable Length Arrays into calls to <code>alloca</code>. Depending on the 
+        By default, Flatten transforms Variable Length Arrays into calls to <code class="language-c">alloca</code>. Depending on the 
        platform and the size of the arrays, the generated code can crash. If so, try the option
-           <code>--TransformVLA=malloc</code> which converts VLAs to calls to <code>malloc/free</code> instead.
+           <code class="language-c">--TransformVLA=malloc</code> which converts VLAs to calls to <code class="language-c">malloc/free</code> instead.
 
 </li>
 
@@ -930,7 +950,7 @@ Note that the region needs to be ``self-contained,'' i.e. you can't jump into it
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Saumya Debray and Babak Yadegari suggested the <code>--FlattenConditionalKinds=flag</code> transformation.
+Saumya Debray and Babak Yadegari suggested the <code class="language-c">--FlattenConditionalKinds=flag</code> transformation.
 
             </p>
         </div>
@@ -987,7 +1007,7 @@ Saumya Debray and Babak Yadegari suggested the <code>--FlattenConditionalKinds=f
 
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -996,8 +1016,7 @@ Saumya Debray and Babak Yadegari suggested the <code>--FlattenConditionalKinds=f
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

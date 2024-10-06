@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -118,9 +119,12 @@ Outline pieces of a function into their own functions. This transformation is
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -166,11 +170,13 @@ Outline pieces of a function into their own functions. This transformation is
 <td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
 <td> Pass local variables as formals to split out functions. Can cause functions to have many arguments which can be a problem for languages like WebAssembly that puts a limit on the number of function arguments. Default=true.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="examples">&nbsp;</a>
 
@@ -191,8 +197,8 @@ Outline pieces of a function into their own functions. This transformation is
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This command first tries to split function <tt>foo</tt> at most 100 times,
-then applies the <tt>block split</tt> transformation to the resulting
+This command first tries to split function <code class="language-c">foo</code> at most 100 times,
+then applies the <code class="language-c">block split</code> transformation to the resulting
 outlined function. Note the use of a regular expression to specify the
 names of the functions that were generated in the first transformation:
 
@@ -200,8 +206,8 @@ names of the functions that were generated in the first transformation:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=0 \
    --Transform=split \
        --SplitKinds=deep,block,top \
        --SplitCount=100 \
@@ -211,8 +217,7 @@ names of the functions that were generated in the first transformation:
        --SplitCount=100 \
        --Functions=/.\*foo_split.\*/ \
    --out=foo prog.c
-</code></pre>
-</center>
+</code></pre></div>
 
 <a class="anchor" id="Issues">&nbsp;</a>
 
@@ -238,8 +243,8 @@ names of the functions that were generated in the first transformation:
 <li>
       For functions that have many locals, the number of formal parameters may explode.
        This is particularly an issue for WebAssembly, since compilers will put a limit
-       on the number of formal parameters. <tt>--SplitLocalsAsFormals=false</tt> will
-       instead just add one formal, a pointer to a <tt>struct</tt> that holds all the
+       on the number of formal parameters. <code class="language-c">--SplitLocalsAsFormals=false</code> will
+       instead just add one formal, a pointer to a <code class="language-c">struct</code> that holds all the
        locals. This option still has a bug in it; you will know, since it causes a
           compile-time error.
 
@@ -252,7 +257,7 @@ names of the functions that were generated in the first transformation:
 </section>
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -261,8 +266,7 @@ names of the functions that were generated in the first transformation:
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

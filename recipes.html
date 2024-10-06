@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -220,8 +221,8 @@ Here is a simple recipe that should have a relatively low performance impact:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
      --Transform=InitEntropy \
         --Functions=init_tigress \
         --InitEntropyKinds=vars \
@@ -242,8 +243,7 @@ Here is a simple recipe that should have a relatively low performance impact:
      --Transform=EncodeArithmetic \
         --Functions=fac,fib  \
     test.c --out=output1.c 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -263,23 +263,23 @@ Here is the <a href="output1.c.txt">resulting code.</a> There are a few things t
                 <ul>
 
 <li>
-      Most Tigress scripts require you to start off with a sequence of <tt>Init</tt>-transformations.
-        In this case we have <tt>InitEntropy</tt>, <tt>InitOpaque</tt>, and <tt>InitBranchFuns</tt>. 
+      Most Tigress scripts require you to start off with a sequence of <code class="language-c">Init</code>-transformations.
+        In this case we have <code class="language-c">InitEntropy</code>, <code class="language-c">InitOpaque</code>, and <code class="language-c">InitBranchFuns</code>. 
         This is admittedly annoying, but necessary, so that Tigress can create the types, variables, and functions
-        necessary to transform the program. For example, <tt>InitBranchFuns</tt> creates one or more
-           branch functions that the <tt>AntiBranchAnalysis</tt> transformation can use later on. 
+        necessary to transform the program. For example, <code class="language-c">InitBranchFuns</code> creates one or more
+           branch functions that the <code class="language-c">AntiBranchAnalysis</code> transformation can use later on. 
 
 </li>
 
 <li>
-      It is convenient, but not necessary, to create a special <tt>init_tigress</tt> function into
-       which the <tt>Init</tt>-transformations can put initialization code. This function can then
+      It is convenient, but not necessary, to create a special <code class="language-c">init_tigress</code> function into
+       which the <code class="language-c">Init</code>-transformations can put initialization code. This function can then
           also be obfuscated to hide the initializations!
 
 </li>
 
 <li>
-      <tt>--AntiBranchAnalysisBranchFunFlatten=true</tt> will flatten the code prior to inserting
+      <code class="language-c">--AntiBranchAnalysisBranchFunFlatten=true</code> will flatten the code prior to inserting
        calls to branch functions. This is because branch functions operate on direct jumps (gotos), and
        most codes don't have many of those. After the flattening transformation, however, there are 
           many jumps to encode.
@@ -287,7 +287,7 @@ Here is the <a href="output1.c.txt">resulting code.</a> There are a few things t
 </li>
 
 <li>
-      If we instead set <tt>--Seed=0</tt> (which means the internal random number generator
+      If we instead set <code class="language-c">--Seed=0</code> (which means the internal random number generator
        will be seeded with a new value every time Tigress is run), every time you run this script you
           will get a differently obfuscated program.
 
@@ -297,7 +297,7 @@ Here is the <a href="output1.c.txt">resulting code.</a> There are a few things t
       The generated code starts off with a lot of seemingly random declarations. This is because
        Tigress is a whole program obfuscator: it starts by including all the .h files (including all
        system files) into one .c file that then becomes the input to the obfuscation process. If your
-          program consists of multiple C-files you first need to merge them together using <tt>tigress-merge</tt>.
+          program consists of multiple C-files you first need to merge them together using <code class="language-c">tigress-merge</code>.
 
 </li>
 
@@ -334,8 +334,8 @@ This transformation shows off a combination of two more powerful transformation,
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:9.0  \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:9.0  \
      --Transform=InitEntropy \
         --Functions=init_tigress \
         --InitEntropyKinds=vars \
@@ -352,8 +352,7 @@ This transformation shows off a combination of two more powerful transformation,
        --SelfModifySubExpressions=false \
        --SelfModifyBogusInstructions=10 \
     test.c --out=output2.c 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -373,18 +372,18 @@ Here is the <a href="output2.c.txt">resulting code.</a> Here are a few things to
                 <ul>
 
 <li>
-      The <tt>--Skip-false</tt> option is handy to turn transformations on-and-off to try out
+      The <code class="language-c">--Skip-false</code> option is handy to turn transformations on-and-off to try out
           the impact of different transformations. 
 
 </li>
 
 <li>
-         For more diversity, try different values for <tt>--VirtualizeDispatch</tt>.
+         For more diversity, try different values for <code class="language-c">--VirtualizeDispatch</code>.
 
 </li>
 
 <li>
-      To compile this program you need to use <tt>gcc -segprot __TEXT rwx rwx output2.c -o output2.exe </tt>
+      To compile this program you need to use <code class="language-c">gcc -segprot __TEXT rwx rwx output2.c -o output2.exe </code>
        (on Darwin). See the <a href="selfModify.html">SelfModify</a> page for more information.
 
                 </ul>
@@ -417,8 +416,8 @@ Here is the <a href="output2.c.txt">resulting code.</a> Here are a few things to
 In this recipe we first virtualize and then add dynamic obfusction; i.e. the program will
    decode and re-encode itself as it is running. In this particular case we decode/encode 
    using the XTEA cipher:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
      --Transform=InitEntropy \
         --Functions=init_tigress \
         --InitEntropyKinds=vars \
@@ -438,8 +437,7 @@ In this recipe we first virtualize and then add dynamic obfusction; i.e. the pro
         --Functions=fib \
         --MeasureTimes=100 \
     test-jit.c --out=output3.c 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -459,7 +457,7 @@ Here is the <a href="output3.c.txt">resulting code.</a> Here are a few things to
                 <ul>
 
 <li>
-      We use the <tt>Measure</tt> transformation along with differen values of <tt>Skip</tt> to
+      We use the <code class="language-c">Measure</code> transformation along with differen values of <code class="language-c">Skip</code> to
        measure the performance impact. On my machine virtualization alone takes 0.000192 seconds,
        dynamic obfuscation alone takes 0.077977 seconds, and together, the program slows down to
           2.125580 seconds!
@@ -467,7 +465,7 @@ Here is the <a href="output3.c.txt">resulting code.</a> Here are a few things to
 </li>
 
 <li>
-      Setting <tt>--JitDynamicBlockFraction=1</tt> (which means only one basic block will be
+      Setting <code class="language-c">--JitDynamicBlockFraction=1</code> (which means only one basic block will be
           encoded) reduces the time to 1.800674 seconds.
 
 </li>
@@ -499,10 +497,10 @@ Here is the <a href="output3.c.txt">resulting code.</a> Here are a few things to
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-In this recipe we first merge all functions together. This includes <tt>init_tigress</tt> which has important
+In this recipe we first merge all functions together. This includes <code class="language-c">init_tigress</code> which has important
    secrets in it, in particular the initalization of opaque structures:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=42 --Statistics=0 --Verbosity=1 --Environment=x86_64:Darwin:Clang:9.0  \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=1 --Environment=x86_64:Darwin:Clang:9.0  \
      --Transform=InitEntropy \
         --Functions=init_tigress \
         --InitEntropyKinds=vars \
@@ -519,8 +517,7 @@ In this recipe we first merge all functions together. This includes <tt>init_tig
      --Transform=EncodeLiterals \
         --Functions=main \
     test.c --out=output4.c 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -541,23 +538,23 @@ Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to
 
 <li>
       There is no need to flatten the code in the merging process since we are going to 
-          virtualize the resulting code anyway. So we set <tt>--MergeFlatten=false</tt> to save some on performance.
+          virtualize the resulting code anyway. So we set <code class="language-c">--MergeFlatten=false</code> to save some on performance.
 
 </li>
 
 <li>
-      Have a look at <tt>main</tt>: it now consists of 3 calls to <tt>MERGED</tt> rather than calls to
-       the individual functions.</tt>
+      Have a look at <code class="language-c">main</code>: it now consists of 3 calls to <code class="language-c">MERGED</code> rather than calls to
+       the individual functions.</code>
 
 <li>
       Merging adds an extra argument so that we can know which function we're calling. This is a dead
-       giveaway so we use the <tt>EncodeLiterals</tt> transformation to add some opaque expressions
-          to the calls to <tt>MERGED</tt> in <tt>main</tt>
+       giveaway so we use the <code class="language-c">EncodeLiterals</code> transformation to add some opaque expressions
+          to the calls to <code class="language-c">MERGED</code> in <code class="language-c">main</code>
 
 </li>
 
 <li>
-      Another possibility is add extra bogus arguments, using <tt>--Transform=RndArgs --Functions=MERGED --RndArgsBogusNo=10</tt>,
+      Another possibility is add extra bogus arguments, using <code class="language-c">--Transform=RndArgs --Functions=MERGED --RndArgsBogusNo=10</code>,
           which results in this <a href="output4a.c.txt">code.</a> 
 
 </li>
@@ -570,7 +567,7 @@ Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to
 <!-- =============================================================================================== -->
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -579,8 +576,7 @@ Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

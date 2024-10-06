@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -169,14 +170,14 @@ good introduction to the virtualization obfuscation:
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
  Here's an example of an interpreter constructed by Tigress for the program
-<code>main(){int x; x++;}</code>:
+<code class="language-c">main(){int x; x++;}</code>:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">enum ops {Locals = 116, Plus  = 135, Load   = 60, Goto = 231,
+<div class="container">
+<pre><code class="language-c">enum ops {Locals = 116, Plus  = 135, Load   = 60, Goto = 231,
           Const  = 3,   Store = 122, Return = 72};
 
 unsigned char bytecode[41]  = {
@@ -195,8 +196,7 @@ int main() {
     case Locals: pc++; (sp+1)->_vs=(void *)(vars+*((int *)pc)); 
                  sp++; pc+=4; break;
 }}
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -295,8 +295,8 @@ traces artificially long.
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <strong>Static stealth.</strong>
 Not only diversity but also <em>stealth</em> is important for
-interpreters. For static stealth, the <code>split</code> transformation can break up the
-interpreter loop into smaller pieces, and the <code>AddOpaque</code>
+interpreters. For static stealth, the <code class="language-c">split</code> transformation can break up the
+interpreter loop into smaller pieces, and the <code class="language-c">AddOpaque</code>
 transformation can make instruction handlers less conspicuous.
 
             </p>
@@ -364,21 +364,20 @@ protections against attack that can be added to an obfuscated interpreter:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-A typical call to Tigress to virtualize a function <code>foo</code> looks like this:
+A typical call to Tigress to virtualize a function <code class="language-c">foo</code> looks like this:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
    --Environment=x86_64:Linux:Gcc:4.6 \
    --Transform=Virtualize \
       --Functions=foo \
       --VirtualizeDispatch=direct \
    --out=out.c in.c
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -391,9 +390,12 @@ And here are the options for debugging and optimization:
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -499,11 +501,13 @@ And here are the options for debugging and optimization:
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="dispatch">&nbsp;</a>
 
@@ -526,87 +530,109 @@ And here are the options for debugging and optimization:
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 For both static and dynamic diversity, Tigress supports nine different
 dispatch methods. The following code is generated for the different methods,
-   where &Xi;<sup><code>op1</code></sup>; is the instruction handler for
-   operator <code>op1</code>:
+   where &Xi;<sup><code class="language-c">op1</code></sup>; is the instruction handler for
+   operator <code class="language-c">op1</code>:
 
             </p>
         </div>
     </div>
 </section>
 
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <center>
-<table align=center  class="smalltab">
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 10%;">
+       <col span="1" style="width: 90%;">
+    </colgroup>
+
    <tr><th>Dispatch</th><th>Generated code</th></tr>
 
    <tr>
-   <td><code>switch</code></td>
+   <td><code class="language-c">switch</code></td>
    <td>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">switch(prog[pc]) {
-   op1: &Xi;<sup><code>op1</code></sup>; break;
-   op2: &Xi;<sup><code>op2</code></sup>; break;
+<div class="container">
+<pre style="max-width:initial";><code class="language-c">switch(prog[pc]) {
+   op1: &Xi;<sup><code class="language-c">op1</code></sup>; break;
+   op2: &Xi;<sup><code class="language-c">op2</code></sup>; break;
 }
-</code></pre>
+</code></pre></div>
    </td>
    </tr>
 
    <tr>
-   <td><code>direct</code></td>
+   <td><code class="language-c">direct</code></td>
    <td>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *prog[pc];
-op1hdl: &Xi;<sup><code>op1</code></sup>; goto *prog[pc];
-op2hdl: &Xi;<sup><code>op2</code></sup>; goto *prog[pc];
-</code></pre>
+<div class="container">
+<pre style="max-width:initial";><code class="language-c">goto *prog[pc];
+op1hdl: &Xi;<sup><code class="language-c">op1</code></sup>; goto *prog[pc];
+op2hdl: &Xi;<sup><code class="language-c">op2</code></sup>; goto *prog[pc];
+</code></pre></div>
    </td>
    </tr>
 
    <tr>
-   <td><code>indirect</code></td>
+   <td><code class="language-c">indirect</code></td>
    <td>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *jtab[prog[pc]];
-op1hdl: &Xi;<sup><code>op1</code></sup>; goto *jtab[prog[pc]];
-op2hdl: &Xi;<sup><code>op2</code></sup>; goto *jtab[prog[pc]];
-</code></pre>
+<div class="container">
+<pre style="max-width:initial";><code class="language-c">goto *jtab[prog[pc]];
+op1hdl: &Xi;<sup><code class="language-c">op1</code></sup>; goto *jtab[prog[pc]];
+op2hdl: &Xi;<sup><code class="language-c">op2</code></sup>; goto *jtab[prog[pc]];
+</code></pre></div>
    </td>
    </tr>
 
    <tr>
-   <td><code>call</code></td>
+   <td><code class="language-c">call</code></td>
    <td>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void op1fun(){&Xi;<sup><code>op1</code></sup>}
-void op2fun(){&Xi;<sup><code>op2</code></sup>}
+<div class="container">
+<pre style="max-width:initial";><code class="language-c">void op1fun(){&Xi;<sup><code class="language-c">op1</code></sup>}
+void op2fun(){&Xi;<sup><code class="language-c">op2</code></sup>}
 &hellip;
 call *prog[pc]();
-</code></pre>
+</code></pre></div>
    </td>
 
    <tr>
-   <td><code>ifnest</code></td>
+   <td><code class="language-c">ifnest</code></td>
    <td>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if (prog[pc]==op1) &Xi;<sup><code>op1</code></sup>
-else if (prog[pc]==op2) &Xi;<sup><code>op2</code></sup>
+<div class="container">
+<pre style="max-width:initial";><code class="language-c">if (prog[pc]==op1) &Xi;<sup><code class="language-c">op1</code></sup>
+else if (prog[pc]==op2) &Xi;<sup><code class="language-c">op2</code></sup>
 else if &hellip;
-</code></pre>
+</code></pre></div>
    </td>
 
    <tr>
-   <td><code>linear, binary, interpolation</code></td>
+   <td><code class="language-c">linear, binary, interpolation</code></td>
    <td>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">alg = linear|binary|interpolation|&hellip;
+<div class="container">
+<pre style="max-width:initial";><code class="language-c">alg = linear|binary|interpolation|&hellip;
 top: 
    goto *(<b>search</b><sup>alg</sup>(map,prog[pc]));
-op1hdl: &Xi;<sup><code>op1</code></sup>; goto top;
-op2hdl: &Xi;<sup><code>op2</code></sup>; goto top;
-</code></pre>
+op1hdl: &Xi;<sup><code class="language-c">op1</code></sup>; goto top;
+op2hdl: &Xi;<sup><code class="language-c">op2</code></sup>; goto top;
+</code></pre></div>
    </td>
    </tr>
+
+</table>
 </center>
+</div>
+</div>
+</section>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Tigress also supports concurrent dispatch, which is a variant of <tt>switch</tt> dispatch, where every iteration around the interpreter loop is split between a number of concurrently executing threads. It's specified like this: <tt>--VirtualizeDispatch=concurrent --VirtualizeNumberOfThreads=2</tt>.
+Tigress also supports concurrent dispatch, which is a variant of <code class="language-c">switch</code> dispatch, where every iteration 
+around the interpreter loop is split between a number of concurrently executing threads. It's specified like this: 
+<code class="language-c">--VirtualizeDispatch=concurrent --VirtualizeNumberOfThreads=2</code>.
 
             </p>
         </div>
@@ -624,19 +650,21 @@ To further confuse static analysis, in an direct and indirect threaded dispatch 
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=InitBranchFuns \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">--Transform=InitBranchFuns \
    --InitBranchFunsCount=1 \
     ...  \
 --Transform-Virtualize \
    --VirtualizeDispatch=direct \
    --VirtualizeBranchFunctions=true
-</code></pre>
-</center>
+</code></pre></div>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -672,11 +700,13 @@ To further confuse static analysis, in an direct and indirect threaded dispatch 
 <td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
 <td> Make every dispatch jump go through a branch function. This only applies to  direct and indirect threaded dispatch. Requires <tt>--Transform=InitBranchFuns --InitBranchFunsCount=1</tt>. Default=false.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -707,41 +737,40 @@ set is used:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  labels:         l &isin; <it>Labels</code> 
+<div class="container">
+<pre><code class="language-c">  labels:         l &isin; <it>Labels</code> 
   functions:      f &isin; <it>Funs</it> 
   variables:      x &isin; <it>Vars</it> 
   strings:        s &isin; <it>Strings</it> 
-  temporaries:     t ::= <code>reg</code><sup><it>int</it></sup> | <code>stack</code><sup><it>int</it></supt>  
-  binary operators: <it>binop</it> ::= <code>add</code> | <code>sub</code> | &hellip;
-  unary operators:  <it>unop</it> ::= <code>uminus</code> | <code>neg</code> | &hellip;
-  types:           &tau; ::= <code>int</code> | <code>float</code> | &hellip; | <code>void *</code>
-  literals:        &lambda; ::= <code>intlit</code> | <code>floatlit</code> | &hellip;
+  temporaries:     t ::= <code class="language-c">reg</code><sup><it>int</it></sup> | <code class="language-c">stack</code><sup><it>int</it></supt>  
+  binary operators: <it>binop</it> ::= <code class="language-c">add</code> | <code class="language-c">sub</code> | &hellip;
+  unary operators:  <it>unop</it> ::= <code class="language-c">uminus</code> | <code class="language-c">neg</code> | &hellip;
+  types:           &tau; ::= <code class="language-c">int</code> | <code class="language-c">float</code> | &hellip; | <code class="language-c">void *</code>
+  literals:        &lambda; ::= <code class="language-c">intlit</code> | <code class="language-c">floatlit</code> | &hellip;
   instructions: e ::=  
-       t &larr; <code>constant</code> &tau; &lambda;
-     | t &larr; <code>local</code>  x
-     | t &larr; <code>global</code>  x
-     | t &larr; <code>formal</code>  x
-     | t &larr; <code>string</code>  s
-     | t &larr; <code>binary</code>  &tau;  <it>binop</it> t t
-     | t &larr; <code>unary</code>  &tau;  <it>unop</it> t
-     | t &larr; <code>convert</code>  &tau; &tau; t
-     | t &larr; <code>ternary</code>  &tau; t t t
-     | t &larr; <code>load</code>  &tau; t
-     | <code>store</code> &tau; t t
-     | t &larr; <code>memcpy</code>  t t <it>int</it>
-     | <code>call</code>  f
-     | x, x, &larr; <code>asm</code>  s  t, t, &hellip;
-     | <code>indirectCall</code>  t
-     | <code>return</code>  &tau; t
-     | <code>goto</code>  l
-     | t &larr; <code>addrOfLabel</code>  l
-     | <code>indirectGoto</code>  t
-     | <code>branchIfTrue</code>  t  l 
-     | <code>switch</code>  &tau; t  &lambda;  &lambda;  l &lang;l, l, &hellip;&rang; 
-     | <code>merged</code>  &lang; e, e, \ldots&rang; 
-</code></pre>
-</center>
+       t &larr; <code class="language-c">constant</code> &tau; &lambda;
+     | t &larr; <code class="language-c">local</code>  x
+     | t &larr; <code class="language-c">global</code>  x
+     | t &larr; <code class="language-c">formal</code>  x
+     | t &larr; <code class="language-c">string</code>  s
+     | t &larr; <code class="language-c">binary</code>  &tau;  <it>binop</it> t t
+     | t &larr; <code class="language-c">unary</code>  &tau;  <it>unop</it> t
+     | t &larr; <code class="language-c">convert</code>  &tau; &tau; t
+     | t &larr; <code class="language-c">ternary</code>  &tau; t t t
+     | t &larr; <code class="language-c">load</code>  &tau; t
+     | <code class="language-c">store</code> &tau; t t
+     | t &larr; <code class="language-c">memcpy</code>  t t <it>int</it>
+     | <code class="language-c">call</code>  f
+     | x, x, &larr; <code class="language-c">asm</code>  s  t, t, &hellip;
+     | <code class="language-c">indirectCall</code>  t
+     | <code class="language-c">return</code>  &tau; t
+     | <code class="language-c">goto</code>  l
+     | t &larr; <code class="language-c">addrOfLabel</code>  l
+     | <code class="language-c">indirectGoto</code>  t
+     | <code class="language-c">branchIfTrue</code>  t  l 
+     | <code class="language-c">switch</code>  &tau; t  &lambda;  &lambda;  l &lang;l, l, &hellip;&rang; 
+     | <code class="language-c">merged</code>  &lang; e, e, \ldots&rang; 
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -787,8 +816,8 @@ virtualization obfuscators</a>, difficult.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Consider setting <code>--VirtualizeMaxDuplicateOps=2</code> 
-and <code>--VirtualizeOperands=mixed</code> resulting in two <em>store-int</em>
+Consider setting <code class="language-c">--VirtualizeMaxDuplicateOps=2</code> 
+and <code class="language-c">--VirtualizeOperands=mixed</code> resulting in two <em>store-int</em>
 instructions, one that takes both arguments in registers, and one that takes
 one argument on the stack and the other in a register. Tigress will chose 
 between them randomly. Here are the corresponding instruction handlers:
@@ -797,8 +826,8 @@ between them randomly. Here are the corresponding instruction handlers:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">case _0__store_int$left_REG_0$right_REG_1: 
+<div class="container">
+<pre><code class="language-c">case _0__store_int$left_REG_0$right_REG_1: 
    (_0__pc[0]) ++;
    *((int *)_0__regs[0][*((int *)_0__pc[0])]._void_star) = _0__regs[0][*((int *)(_0__pc[0] + 4))]._int;
    _0__pc[0] += 8;
@@ -810,15 +839,14 @@ case _0__store_int$right_STA_0$left_REG_0:
    (_0__sp[0]) --;
    _0__pc[0] += 4;
    break;
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Consider next setting <code>--VirtualizeSuperOpsRatio=2.0</code> and <code>--VirtualizeMaxMergeLength=10</code>,
+Consider next setting <code class="language-c">--VirtualizeSuperOpsRatio=2.0</code> and <code class="language-c">--VirtualizeMaxMergeLength=10</code>,
 resulting in virtual instructions with highly complex semantics:
 
 Here is the instruction handler for one such instruction, made up by merging 10 primitive instructions:
@@ -827,8 +855,8 @@ Here is the instruction handler for one such instruction, made up by merging 10 
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">case _0__local$result_STA_0$value_LIT_0__\
+<div class="container">
+<pre><code class="language-c">case _0__local$result_STA_0$value_LIT_0__\
    convert_void_star2void_star$left_STA_0$result_REG_0__\
    load_int$result_REG_0$left_REG_1__\
    local$result_STA_0$value_LIT_0__\
@@ -849,8 +877,7 @@ Here is the instruction handler for one such instruction, made up by merging 10 
     (_0__sp[0]) ++;
     _0__pc[0] += 52;
     break;
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -860,7 +887,7 @@ Note that the instruction name really is almost 400 characters long; the
 backslashes are here only for display purposes! Also note that the instruction
 itself is 53 bytes long, almost as long as the 
 <a href="https://groups.google.com/forum/#!topic/comp.arch/OJYBg8o7vcQ">longest VAX instruction</a>
-(<code>EMODH</code>, 54 bytes) and much longer than the longest x86 instruction 
+(<code class="language-c">EMODH</code>, 54 bytes) and much longer than the longest x86 instruction 
 (15 bytes) 
 
             </p>
@@ -868,9 +895,12 @@ itself is 53 bytes long, almost as long as the
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -908,11 +938,13 @@ itself is 53 bytes long, almost as long as the
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> Longest sequence of instructions to be merged into one. Default=0.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -946,9 +978,12 @@ handler can obviously be split in multiple ways:
 
 <center><img width="500px" src="tigress3-images/split-handlers.png"></center>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -960,11 +995,13 @@ handler can obviously be split in multiple ways:
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> Number of opaques to add to each instruction handler. Default=0.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -1009,9 +1046,12 @@ not tainted. To frustrate such analyses we can add implicit flow to the VPC.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -1039,11 +1079,13 @@ not tainted. To frustrate such analyses we can add implicit flow to the VPC.
 <td><tt>S-Expression</tt></td>
 <td> The type of implicit flow to insert. See <tt>--AntiTaintAnalysisImplicitFlow</tt> for a description. Default=none.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -1082,9 +1124,12 @@ but which interpret unused functions:
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -1118,11 +1163,13 @@ but which interpret unused functions:
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -1197,9 +1244,12 @@ Use this to frustrate dynamic analysis by
 </section>
 <br>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -1223,11 +1273,13 @@ Use this to frustrate dynamic analysis by
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> Adjust this value to balance performance and trace length. Default=0.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -1290,9 +1342,10 @@ You must prepare your code in the following ways:
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
         The function you want to virtualize must have an argument
-        <code>int* operation</code>. It can occur anywhere among the formal parameters:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(int* operation, int n, int* result) {&hellip;}
-</code></pre>
+        <code class="language-c">int* operation</code>. It can occur anywhere among the formal parameters:
+<div class="container">
+<pre><code class="language-c">void foo(int* operation, int n, int* result) {&hellip;}
+</code></pre></div>
 
                         </p>
                     </div>
@@ -1312,9 +1365,10 @@ You must prepare your code in the following ways:
         The first time foo gets called, operation must be
         <0, and you must pass actual arguments to foo that
         it will use throughout the computation:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int operation = -10; 
+<div class="container">
+<pre><code class="language-c">int operation = -10; 
 foo(&operation,n,&result);
-</code></pre>
+</code></pre></div>
        <br> 
        "-10" here means to initialize foo and execute 10
         instructions.
@@ -1336,9 +1390,10 @@ foo(&operation,n,&result);
                         <p class="mbr-step-text mbr-fonts-style display-7">
           Sprinkle calls to foo throughout your program,
          making sure that operation>0:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 10;
+<div class="container">
+<pre><code class="language-c">operation = 10;
 foo(&operation,bogus1,&bogus2);  
-</code></pre>
+</code></pre></div>
          <br>
          Here you can pass whatever arguments you want to foo, 
          they won't be used. Rather, the ones that were passed 
@@ -1363,13 +1418,14 @@ foo(&operation,bogus1,&bogus2);
         You can check if foo has terminated by testing the
         value of operation after the call:
         <br>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 10;
+<div class="container">
+<pre><code class="language-c">operation = 10;
 foo(&operation,bogus1,&bogus2);  
 if (operation > 0)
    /* we're done! */
 else if (operation < 0)
    /* more work to do! */
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -1389,9 +1445,10 @@ else if (operation < 0)
         If you want to make sure that foo has terminated
         --- because you really want its result at a particular
           point --- set operation to a large enough value:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">operation = 1000;
+<div class="container">
+<pre><code class="language-c">operation = 1000;
 foo(&operation,bogus1,&bogus2);  
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -1429,9 +1486,10 @@ foo(&operation,bogus1,&bogus2);
                         <p class="mbr-step-text mbr-fonts-style display-7">
         If you want to call foo to compute a new value, 
         call it again with operation<0:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   int operation = -10; 
+<div class="container">
+<pre><code class="language-c">   int operation = -10; 
    foo(&operation,n,&result);
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -1503,14 +1561,15 @@ To ensure termination you can
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
         put the last call to foo in a loop 
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">   foo(&operation);   
+<div class="container">
+<pre><code class="language-c">   foo(&operation);   
    while (operation < 0) {
       /* some other computation here */
       operation = 10;
       foo(&operation);   
    } 
    /* result is available here */
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -1541,9 +1600,12 @@ such artifacts.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -1555,11 +1617,13 @@ such artifacts.
 <td><tt></tt></td>
 <td> Make the function reentrant. Default=false.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="EncodingProgram">&nbsp;</a>
 
@@ -1581,7 +1645,7 @@ such artifacts.
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Setting
-<code>--VirtualizeEncodeByteArray=allAtOnce</code>
+<code class="language-c">--VirtualizeEncodeByteArray=allAtOnce</code>
 results in each program instruction being xor:ed with
 a constant value, thus ensuring that it is
 not in cleartext until it is run. The generated code 
@@ -1591,8 +1655,8 @@ looks something like this:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">unsigned char _5_obf3_$array[1][141]  = 
+<div class="container">
+<pre><code class="language-c">unsigned char _5_obf3_$array[1][141]  = 
      {{
         (unsigned char)formal$result_STA_0$value_LIT_0 ^ (unsigned char)16,
         (unsigned char)1 ^ (unsigned char)16,
@@ -1607,14 +1671,13 @@ looks something like this:
         (unsigned char)0 ^ (unsigned char)16,
         ...
      }}
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This does not work for <code>--VirtualizeDispatch=direct</code>.
+This does not work for <code class="language-c">--VirtualizeDispatch=direct</code>.
 
             </p>
         </div>
@@ -1626,10 +1689,11 @@ This does not work for <code>--VirtualizeDispatch=direct</code>.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Additionally, setting <code>--VirtualizeObfuscateDecodeByteArray=true</code> and
-<code>--VirtualizeOpaqueStructs=input,env</code> ensures that the decoded 
+Additionally, setting <code class="language-c">--VirtualizeObfuscateDecodeByteArray=true</code> and
+<code class="language-c">--VirtualizeOpaqueStructs=input,env</code> ensures that the decoded 
 bytecode array depends on input. The decoding procedure looks like this:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  strcmp_result17 = (int)strlen(*(argv + (argc - 1)));
+<div class="container">
+<pre><code class="language-c">  strcmp_result17 = (int)strlen(*(argv + (argc - 1)));
   decodeVar16 = (strcmp_result17 - 1 < 0) + (strcmp_result17 - 10 > 0) ? currentOp : (unsigned char)16;
   copyIndex15 = 0;
   while (copyIndex15 < 141) {
@@ -1637,7 +1701,7 @@ bytecode array depends on input. The decoding procedure looks like this:
     copyIndex15 ++;
   }
   $pc[0] = localArrayCopy11[0];
-</code></pre>
+</code></pre></div>
 
             </p>
         </div>
@@ -1655,8 +1719,8 @@ Here's an example script:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Environment=... --Seed=0 \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Environment=... --Seed=0 \
    --Transform=InitImplicitFlow \
    --Transform=InitEntropy \
    --Transform=InitOpaque --Functions=main --InitOpaqueStructs=input \
@@ -1668,14 +1732,13 @@ Here's an example script:
    --VirtualizeObfuscateDecodeByteArray=true \
    --VirtualizeOpaqueStructs=input,env \
       arith.c --out=arith_out.c
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<code>--Inputs="+1:int:42,-1:length:1?10"</code> is a specfication of invariants over
+<code class="language-c">--Inputs="+1:int:42,-1:length:1?10"</code> is a specfication of invariants over
 the command line. It specifies:
 
             </p>
@@ -1709,7 +1772,7 @@ the command line. It specifies:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<code>--VirtualizeOpaqueStructs=input,env</code> ensures that the 
+<code class="language-c">--VirtualizeOpaqueStructs=input,env</code> ensures that the 
 program array will be encoded based on these command line invariants.
 If the program is invoked with a set of command line arguments that
 violate the invariants it is likely to crash.
@@ -1724,7 +1787,7 @@ violate the invariants it is likely to crash.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Starting with version 3.3.3, setting <tt>--VirtualizeEncodeByteArray=incrementally</tt> results in 
+Starting with version 3.3.3, setting <code class="language-c">--VirtualizeEncodeByteArray=incrementally</code> results in 
 the bytecode array being decoded as each entry is encountered. The instruction handler
 code now looks like this, where 3472328296227680304UL is the xor encoding constant: 
 
@@ -1732,18 +1795,20 @@ code now looks like this, where 3472328296227680304UL is the xor encoding consta
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  __4_callInd__constant_unsigned_long$result_STA_0$value_LIT_0: ;
+<div class="container">
+<pre><code class="language-c">  __4_callInd__constant_unsigned_long$result_STA_0$value_LIT_0: ;
   (__4_callInd_$pc[0]) ++;
   (__4_callInd_$sp[0] + 1)->_unsigned_long = *((unsigned long *)__4_callInd_$pc[0]) ^ 3472328296227680304UL;
   (__4_callInd_$sp[0]) ++;
   __4_callInd_$pc[0] += 8;
-</code></pre>
-</center>
+</code></pre></div>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -1778,11 +1843,13 @@ code now looks like this, where 3472328296227680304UL is the xor encoding consta
 <td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
 <td> Obfuscates the program array decoded with opaque expressions. <tt>--VirtualizeOpaqueStructs=input,env</tt> are the preferable opaque kinds, since it means that the bytecode array depends on input. Default=false.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="DynamicProgram">&nbsp;</a>
 
@@ -1803,7 +1870,7 @@ code now looks like this, where 3472328296227680304UL is the xor encoding consta
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Setting <code>--VirtualizeDynamicBytecode=true</code>
+Setting <code class="language-c">--VirtualizeDynamicBytecode=true</code>
 results in the program array being constantly modified at runtime,
 much in the same way that happens to jitted code in the 
 <a href="../jitDynamic/index.html">JitDynamic</a> 
@@ -1815,8 +1882,8 @@ Here's an example script:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=0 \
    --Transform=Virtualize \
       --Functions=foo \
       --VirtualizeDispatch=switch \
@@ -1835,12 +1902,14 @@ Here's an example script:
       --VirtualizeDynamicTraceBlock=false \
       --VirtualizeDynamicCompileCommand="gcc -o %o %i -lm" \
       arith.c --out=arith_out.c
-</code></pre>
-</center>
+</code></pre></div>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -1944,11 +2013,13 @@ Here's an example script:
 <td><tt>STRING</tt></td>
 <td> A string of the form "gcc -std=c99 -o %o %i", where "%i" will be replaced with the name of the input file and "%o" with the name of the output file. For example, if your program uses the math library, you should set <tt>--VirtualizeDynamicCompileCommand="gcc -std=c99 -o %o %i -lm". Default="gcc -std=c99 -o %o %i".</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- -------------------------------------------------------------------------------- -->
 
@@ -1979,10 +2050,9 @@ You can virtualize a piece of a function, rather than the whole thing. Simpy put
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... --Transform=Virtualize  --Functions=fac:region2 ...
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress ... --Transform=Virtualize  --Functions=fac:region2 ...
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -1996,8 +2066,8 @@ The region has to be defined like this in the code:
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
+<div class="container">
+<pre><code class="language-c">#include "tigress.h"
 
 void fac(int n) {
   int s=1;
@@ -2009,8 +2079,7 @@ void fac(int n) {
   }
   printf("fac(%i)=%i\n",n,s);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -2079,13 +2148,13 @@ As you are reading the code, there are a couple of interesting things to note:
 </li>
 
 <li>
-        The <code>direct</code> and <code>call</code> dispatch methods result
+        The <code class="language-c">direct</code> and <code class="language-c">call</code> dispatch methods result
         in much larger bytecode programs than the other methods. This
         is particularly evident on 64-bit machines where every opcode
         gets encoded in 8 bytes, in contrast with a single byte for
         the other methods. For this reason, if you are contemplating
         using two levels of interpretation, it's a good idea to make
-        the second level <em>not</em> use <code>direct</code> or <code>call</code>
+        the second level <em>not</em> use <code class="language-c">direct</code> or <code class="language-c">call</code>
         dispatch, to keep the size of the program down. Future versions
         of Tigress will use more compact encodings for these types of
             dispatch. 
@@ -2133,15 +2202,15 @@ Here are some of the known issues with the Virtualize transformation:
                 <ul>
 
 <li>
-        Several dispatch methods make use of <code>gcc's</code> and <code>clang</code>
+        Several dispatch methods make use of <code class="language-c">gcc's</code> and <code class="language-c">clang</code>
         <em>labels-as-values</em>. For other compilers only
-        the <code>switch</code> and <code>ifnest</code> dispatch methods should be
+        the <code class="language-c">switch</code> and <code class="language-c">ifnest</code> dispatch methods should be
             used.
 
 </li>
 
 <li>
-        <code>--VirtualizeEncodeByteArray=true</code> does not work for the <em>direct</em>
+        <code class="language-c">--VirtualizeEncodeByteArray=true</code> does not work for the <em>direct</em>
             dispatch method. 
 
 </li>
@@ -2154,30 +2223,30 @@ Here are some of the known issues with the Virtualize transformation:
 </li>
 
 <li>
-        The <code>--VirtualizeConditionalKinds=flag</code> option seems to have
+        The <code class="language-c">--VirtualizeConditionalKinds=flag</code> option seems to have
         multiple issues on MacOS/llvm. Presumably this is due to some compiler 
             problem related to inline assembly.
 
 </li>
 
 <li>
-          Consider this example taken from gcc's <code>comp-goto-1.c</code> torture test: 
+          Consider this example taken from gcc's <code class="language-c">comp-goto-1.c</code> torture test: 
+<div class="container">
+<pre><code class="language-c">goto *(base_addr + insn.f1.offset);
+</code></pre></div>
+      This kind of arithmetic on the program counter is going to fail for 
+      transformations that completely restructure the code, such as
+      virtualization.
 
 </li>
 
 <li>
-        By default, Virtualize transforms Variable Length Arrays into calls to <code>alloca</code>. Depending on the 
-       platform and the size of the arrays, the generated code can crash. If so, try the option
-           <code>--TransformVLA=malloc</code> which converts VLAs to calls to <code>malloc/free</code> instead.
+        By default, Virtualize transforms Variable Length Arrays into calls to <code class="language-c">alloca</code>. Depending on the 
+       platform and the size of the arrays, the generated code can blow out the stack, and the program willcrash. 
+       If so, try the option
+           <code class="language-c">--TransformVLA=malloc</code> which converts VLAs to calls to <code class="language-c">malloc/free</code> instead.
 
 </li>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">goto *(base_addr + insn.f1.offset);
-</code></pre>
-</center>
-      This kind of arithmetic on the program counter is going to fail for 
-      transformations that completely restructure the code, such as
-      virtualization.
 
                 </ul>
             </div>
@@ -2186,7 +2255,7 @@ Here are some of the known issues with the Virtualize transformation:
 </section>
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -2195,8 +2264,7 @@ Here are some of the known issues with the Virtualize transformation:
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

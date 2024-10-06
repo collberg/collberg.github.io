@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -120,9 +121,12 @@ a certain formal parameter has a certain value).
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -165,11 +169,13 @@ a certain formal parameter has a certain value).
 <td><tt><em>boolean</em></tt></td>
 <td> Turn debugging on or off. Default=false.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="examples">&nbsp;</a>
 
@@ -190,21 +196,20 @@ a certain formal parameter has a certain value).
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The <code>static</code> leaker simply inserts the encrypted source
+The <code class="language-c">static</code> leaker simply inserts the encrypted source
 code of the secret function as a string. For example, this command
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
    --Transform=Leak \
       --LeakKind=static \
       --Functions=foo \
       --LeakSecretFunction=main 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -216,8 +221,8 @@ produces this code
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">char *leak_global_enc  =    0;
+<div class="container">
+<pre><code class="language-c">char *leak_global_enc  =    0;
 
 int foo(int x) { 
   char *leak_enc ;
@@ -226,15 +231,14 @@ int foo(int x) {
   g = 42;
   return (g);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The <code>dynamic</code> leaker will leak the entire
+The <code class="language-c">dynamic</code> leaker will leak the entire
 (encrypted) source code of the secret function, but only when a
 particular formal parameter has a particular value. For example,
 this command
@@ -243,32 +247,31 @@ this command
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
     --Transform=Leak \
        --LeakKind=dynamic \
        --Functions=foo \
        --LeakVariable=x \
        --LeakValue=42 \
        --LeakSecretFunction=main 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-will transform function <code>foo</code> such that when formal parameter <code>x!=42</code> 
-the function behaves normally, but when <code>x==42</code>, it will leak the source of
-main <code>main</code>. Note that for this transformation, the signature of <code>foo</code>
+will transform function <code class="language-c">foo</code> such that when formal parameter <code class="language-c">x!=42</code> 
+the function behaves normally, but when <code class="language-c">x==42</code>, it will leak the source of
+main <code class="language-c">main</code>. Note that for this transformation, the signature of <code class="language-c">foo</code>
 changes:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">struct leak_object {
+<div class="container">
+<pre><code class="language-c">struct leak_object {
    long key ;
    char *enc ;
 };
@@ -295,15 +298,14 @@ struct result_object foo(int x) {
     return (return_var);
   }
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The <code>dynamic_byte</code> leaker will leak one byte at a time of the 
+The <code class="language-c">dynamic_byte</code> leaker will leak one byte at a time of the 
 (encrypted) secret function. The byte leaked depends on the value
 of the selected formal parameter. For example, this command
 
@@ -311,31 +313,30 @@ of the selected formal parameter. For example, this command
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
    --Transform=Leak \
       --LeakKind=dynamic_byte \
       --Functions=foo \
       --LeakVariable=x \
       --LeakValue=42 \
       --LeakSecretFunction=main 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-will transform function <code>foo</code> such that when formal parameter <code>x<=42</code> 
-the function behaves normally, but when <code>x>42</code>, it will leak byte <code>x-42</code> 
-of the encryption of <code>main</code>:
+will transform function <code class="language-c">foo</code> such that when formal parameter <code class="language-c">x<=42</code> 
+the function behaves normally, but when <code class="language-c">x>42</code>, it will leak byte <code class="language-c">x-42</code> 
+of the encryption of <code class="language-c">main</code>:
 
             </p>
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">int foo(int x) { 
+<div class="container">
+<pre><code class="language-c">int foo(int x) { 
   int return_var ;
   char *leak_enc ;
   unsigned long leak_key ;
@@ -348,8 +349,7 @@ of the encryption of <code>main</code>:
     return (g);
   }
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -378,7 +378,7 @@ of the encryption of <code>main</code>:
 </li>
 
 <li>
-          <code>openssl</code> must be installed.
+          <code class="language-c">openssl</code> must be installed.
 
 </li>
 
@@ -389,7 +389,7 @@ of the encryption of <code>main</code>:
 </section>
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -398,8 +398,7 @@ of the encryption of <code>main</code>:
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

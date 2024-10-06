@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -495,39 +496,39 @@ We will add new codecs over time. Currently, the following are implemented:
                 <ul>
 
 <li>
-      <code>none</code>: No encoding
+      <code class="language-c">none</code>: No encoding
 
 </li>
 
 
 <li>
-      <code>ident</code>: No encoding
+      <code class="language-c">ident</code>: No encoding
 
 </li>
 
 
 <li>
-      <code>ident_loop</code>:
+      <code class="language-c">ident_loop</code>:
       The identity encoding using a copy loop of primitive JIT instructions.
 
 </li>
 
 
 <li>
-      <code>xor_transfer</code>: An xor encoding using a single xor JIT instruction.
+      <code class="language-c">xor_transfer</code>: An xor encoding using a single xor JIT instruction.
 
 </li>
 
 
 <li>
-      <code>xor_<em>byte/word/qword</em>_loop</code>:
+      <code class="language-c">xor_<em>byte/word/qword</em>_loop</code>:
      An xor encoding using a copy loop of byte/word/qwoard-size primitive JIT instructions.
 
 </li>
 
 
 <li>
-      <code>xor_call</code>:
+      <code class="language-c">xor_call</code>:
       Another xor encoding, but this one is outlined, calling a function which iterates over the 
           encoded block.
 
@@ -535,14 +536,14 @@ We will add new codecs over time. Currently, the following are implemented:
 
 
 <li>
-      <code>xtea</code>:
+      <code class="language-c">xtea</code>:
       Encrypts/decrypts a block using the <a href="https://en.wikipedia.org/wiki/XTEA">xtea</a> cipher.
 
 </li>
 
 
 <li>
-      <code>stolen_<em>byte/short/word</em></code>:
+      <code class="language-c">stolen_<em>byte/short/word</em></code>:
       Encodes/decodes by filling in/leaving a hole in the basic block.
 
 </li>
@@ -553,9 +554,12 @@ We will add new codecs over time. Currently, the following are implemented:
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -714,11 +718,13 @@ We will add new codecs over time. Currently, the following are implemented:
 <td><tt>STRING</tt></td>
 <td> A string of the form "gcc -std=c99 -o %o %i", where "%i" will be replaced with the name of the input file and "%o" with the name of the output file. For example, if your program uses the math library, you should set <tt>--JitDynamicCompileCommand="gcc -std=c99 -o %o %i -lm". Default="gcc -std=c99 -o %o %i".</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="implementation">&nbsp;</a>
 
@@ -739,7 +745,7 @@ We will add new codecs over time. Currently, the following are implemented:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The Dynamic transformation follows the following steps to transform a function <code>F</code>:
+The Dynamic transformation follows the following steps to transform a function <code class="language-c">F</code>:
 
             </p>
         </div>
@@ -760,7 +766,7 @@ The Dynamic transformation follows the following steps to transform a function <
                     </div>          
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
-        Convert <code>F</code> to jitted code, identically to the 
+        Convert <code class="language-c">F</code> to jitted code, identically to the 
         <a href="../../../transformPage/docs/jitter/index.html#usage">Jit</a>
             transformation;
 
@@ -934,10 +940,11 @@ The Dynamic transformation follows the following steps to transform a function <
                     </div>          
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
-        Generate a file <code>__dump__.c</code> with the jitting code
+        Generate a file <code class="language-c">__dump__.c</code> with the jitting code
         for the function, plus instructions to dump the bytes for 
         each of the basic blocks we want to encode:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo(void) { 
+<div class="container">
+<pre><code class="language-c">void foo(void) { 
     p6 = jit_init();
     jit_add_prolog(p6, & _1_foo8___foo, 0);
     localSize9 = jit_allocai(p6, 64L);
@@ -957,7 +964,7 @@ The Dynamic transformation follows the following steps to transform a function <
     DUMP_byte(31, p6, block_31_BEGIN19, block_31_END20);
     DUMP_byte(32, p6, block_32_BEGIN21, block_32_END22);
     ...
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -973,15 +980,16 @@ The Dynamic transformation follows the following steps to transform a function <
                     </div>          
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
-        Compile and run <code>__dump__.c</code>, generating a file <code>__dump__.blk</code>
+        Compile and run <code class="language-c">__dump__.c</code>, generating a file <code class="language-c">__dump__.blk</code>
         which has the raw bytes for every basic block:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">BLOCK 1 byte 24 72 141 125 192 72 141 117 192 72 99 22 72 139 202 72 131 193 1 137 15 144 144 144 144  1 4 
+<div class="container">
+<pre><code class="language-c">BLOCK 1 byte 24 72 141 125 192 72 141 117 192 72 99 22 72 139 202 72 131 193 1 137 15 144 144 144 144  1 4 
 BLOCK 16 byte 32 72 141 125 192 72 99 55 72 131 254 50 72 186 0 0 0 0 0 0 0 0 64 15 156 194 72 141 77 252 137 17 144  1 4 
 BLOCK 18 byte 16 72 141 125 192 199 7 0 0 0 0 144 144 144 144 144 144  1 4 
 BLOCK 30 byte 72 72 141 125 200 72 141 117 244 72 139 22 72 139 10 72 141 17 72 137 23 72 141 125 208 72 141 117 192 72 99 22 137 23 72 141 125 236 72 139 55 72 141 85 208 72 99 10 76 141 69 200 77 139 8 72 137 117 168 72 139 241 73 139 249 51 192 255 85 168 144 144 144  1 4 
 BLOCK 31 byte 72 72 141 125 216 72 141 117 244 72 139 22 72 139 10 72 141 17 72 137 23 72 141 125 224 72 141 117 192 72 99 22 137 23 72 141 125 236 72 139 55 72 141 85 224 72 99 10 76 141 69 216 77 139 8 72 137 117 168 72 139 241 73 139 249 51 192 255 85 168 144 144 144  1 4 
 BLOCK 32 byte 24 72 141 125 228 72 139 55 72 141 85 228 72 139 10 76 99 1 77 141 72 2 68 137 14  1 4 
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -997,17 +1005,18 @@ BLOCK 32 byte 24 72 141 125 228 72 139 55 72 141 85 228 72 139 10 76 99 1 77 141
                     </div>          
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
-        Generate a file <code>__encode__.c</code> which contains all the raw bytes
-        from <code>__dump__.blk</code> and all the codecs (xor, xtea, etc). Compile
-        and run <code>__encode__.c</code>, generating a file <code>__encode__.blk</code>
+        Generate a file <code class="language-c">__encode__.c</code> which contains all the raw bytes
+        from <code class="language-c">__dump__.blk</code> and all the codecs (xor, xtea, etc). Compile
+        and run <code class="language-c">__encode__.c</code>, generating a file <code class="language-c">__encode__.blk</code>
         which contains all the encoded basic blocks:
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">BLOCK 1 byte  24 0 150 40 158 183 11 243 58 110 209 29 153 124 46 18 14 10 27 97 227 92 19 80 246  0
+<div class="container">
+<pre><code class="language-c">BLOCK 1 byte  24 0 150 40 158 183 11 243 58 110 209 29 153 124 46 18 14 10 27 97 227 92 19 80 246  0
 BLOCK 16 byte  32 76 189 227 92 247 77 242 199 113 84 187 65 8 176 115 94 49 181 11 5 154 173 46 183 141 132 129 145 165 99 158 217  0
 BLOCK 18 byte  16 183 246 223 30 130 212 211 84 33 153 30 177 219 142 103 219  0
 BLOCK 30 byte  72 213 130 51 242 153 48 73 211 125 101 119 66 161 239 137 109 50 235 72 137 167 130 85 136 0 185 44 108 170 111 249 215 63 46 224 91 112 130 253 192 83 135 162 17 240 216 183 168 214 131 163 112 239 26 149 190 81 126 175 148 107 71 116 148 119 92 26 141 131 168 174 5  0
 BLOCK 31 byte  72 65 152 118 67 241 118 153 110 125 101 119 66 161 239 137 109 134 95 82 37 197 146 236 96 0 185 44 108 170 111 249 215 63 46 224 91 112 130 253 192 30 208 93 201 186 163 9 173 170 211 3 162 223 85 230 104 81 126 175 148 107 71 116 148 119 92 26 141 131 168 174 5  0
 BLOCK 32 byte  24 127 82 142 1 193 218 46 10 34 19 201 130 55 248 122 67 145 230 144 218 219 35 49 3  0
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -1024,7 +1033,7 @@ BLOCK 32 byte  24 127 82 142 1 193 218 46 10 34 19 201 130 55 248 122 67 145 230
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
         Replace the cleartext blocks in the CFG with their encoded 
-        counterparts from <code>__encode__.blk</code>;
+        counterparts from <code class="language-c">__encode__.blk</code>;
 
                         </p>
                     </div>
@@ -1076,14 +1085,13 @@ This function:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void foo4() {
+<div class="container">
+<pre><code class="language-c">void foo4() {
   if (g) {
      g+=2;
   };
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -1195,16 +1203,15 @@ A typical invokation of Tigress would look like this:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
    --Transform=JitDynamic \
       --Functions=foo \
       --JitDynamicCodecs=xtea \
       --JitDynamicDumpCFG=true \
       --JitDynamicBlockFraction=%50 \
       --out=f_out.c f.c
-</code></pre>
-</center>
+</code></pre></div>
 
 <a class="anchor" id="issues">&nbsp;</a>
 
@@ -1339,8 +1346,8 @@ in the control flow graph where we can insert codecs. There are two problems:
 
 <li>
         We generate a large number of path queries on the CFG. 
-        Try <code>--Verbosity=5</code> to see what's happening, 
-        and then set <code>--JitDynamicBlockFraction=%10</code>, for example, to cut down on
+        Try <code class="language-c">--Verbosity=5</code> to see what's happening, 
+        and then set <code class="language-c">--JitDynamicBlockFraction=%10</code>, for example, to cut down on
             the number of blocks that get encoded.  
 
 </li>
@@ -1359,7 +1366,7 @@ in the control flow graph where we can insert codecs. There are two problems:
 </section>
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -1368,8 +1375,7 @@ in the control flow graph where we can insert codecs. There are two problems:
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

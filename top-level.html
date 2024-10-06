@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -97,8 +98,8 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Each Tigress transformation is specified, at a minimum, by the <code>--Transform</code> option
-that selects the type of transformation and the <code>--Functions</code> option that
+Each Tigress transformation is specified, at a minimum, by the <code class="language-c">--Transform</code> option
+that selects the type of transformation and the <code class="language-c">--Functions</code> option that
 selects the function(s) to which it should be applied. The Tigress options described here
  apply to <strong>all</strong> transformations. Each transformation additionally has their
 own set of options, all prefixed by the name of the transformation.
@@ -108,9 +109,12 @@ own set of options, all prefixed by the name of the transformation.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -157,11 +161,13 @@ own set of options, all prefixed by the name of the transformation.
 <td><tt><a href="top-level.html#INPUTSPEC">INPUTSPEC</a></tt></td>
 <td> Specify invariants over the command line arguments, such the range of integer values a particular argument may take, the range of lengths of an argument, or the string value of an argument. These are used by the <em>input</em> opaque predicate, which is created by <code>--InitOpaqueStructs=input</code>. Default=0.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <!-- =============================================================================================== -->
 
@@ -186,22 +192,25 @@ own set of options, all prefixed by the name of the transformation.
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 To avoid name clashes and to allow you to specify the results of a 
 transformation, prefixes can be added to all new identifiers. For
-example, after a <code>Split</code> transformation, you may want to
+example, after a <code class="language-c">Split</code> transformation, you may want to
 perform additional transformations to the newly formed functions,
-and thus need to know their new names. You can use the <code>--Prefix</code>
+and thus need to know their new names. You can use the <code class="language-c">--Prefix</code>
 for this. Also, if you intend to run Tigress multiple times on the same 
 file (rather than applying all transformations in one run), you need
 to make sure that new names don't clash with old ones. Use 
-<code>--FilePrefix</code> for this.
+<code class="language-c">--FilePrefix</code> for this.
 
             </p>
         </div>
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -275,11 +284,13 @@ to make sure that new names don't clash with old ones. Use
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <br>
 
@@ -290,23 +301,21 @@ to make sure that new names don't clash with old ones. Use
                 <ul>
 
 <li>
-        Thus, to generate symbols of the form <code>AAA_BBB_opaque_list1</code>, give the options
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--FilePrefix=AAA_ \
+        Thus, to generate symbols of the form <code class="language-c">AAA_BBB_opaque_list1</code>, give the options
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">--FilePrefix=AAA_ \
 --Transform=initOpaque \
 --Prefix=BBB
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
 <li>
-        Or, to generate symbols of the form <code>AAA__0__opaque_Node</code>, give the options
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--FilePrefix=AAA_ \
+        Or, to generate symbols of the form <code class="language-c">AAA__0__opaque_Node</code>, give the options
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">--FilePrefix=AAA_ \
 --Transform=InitOpaque
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
@@ -356,7 +365,7 @@ which they should be applied. <em>IDENTSPEC</em> (identifier
 specifications) allow you to flexibly select all or some of the
 available functions. Some transformations also use identifier
 specifications to specify variables, as
-in <code>--UpdateEntropyVar=*</code> which would select all variables of
+in <code class="language-c">--UpdateEntropyVar=*</code> which would select all variables of
 a function.
 
             </p>
@@ -364,9 +373,12 @@ a function.
     </div>
 </section>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -442,11 +454,13 @@ a function.
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <br>
 
@@ -469,31 +483,28 @@ a function.
 
 <li>
       Randomly select 3 functions and "foo":
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Functions=?3,foo   
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">--Functions=?3,foo   
+</code></pre></div>
 
 </li>
 
 <li>
         Add entropy from all variables in function foo:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=UpdateEntropy \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">--Transform=UpdateEntropy \
 --Functions=foo \
 --UpdateEntropyVar=*
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
 <li>
       Split 20% of all functions:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">--Transform=split \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">--Transform=split \
 --Functions=%20 
-</code></pre>
-</center>
+</code></pre></div>
 
 <li>
 
@@ -537,15 +548,15 @@ identifiers, since some renaming can happen during obfuscation.
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Some transformations allow you to specify a <em>region</em> of a function to transform. In your 
-source program you use the macro <tt>TIGRESS_REGION(<em>region-name</em>,<em>code</em>)</tt>:
+source program you use the macro <code class="language-c">TIGRESS_REGION(<em>region-name</em>,<em>code</em>)</code>:
 
             </p>
         </div>
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">#include "tigress.h"
+<div class="container">
+<pre><code class="language-c">#include "tigress.h"
 
 void fib(int n) {
   int a=0;
@@ -562,25 +573,23 @@ void fib(int n) {
   );
   printf("fib(%i)=%i\n",n,s);
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Then, in your tigress command, you add <tt>:<em>region-name</em></tt> to the <tt>--Functions</tt> option:
+Then, in your tigress command, you add <code class="language-c">:<em>region-name</em></code> to the <code class="language-c">--Functions</code> option:
 
             </p>
         </div>
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress ... --Transform=Virtualize --Functions=fib:region1 ...  
-</code></pre>
-</center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress ... --Transform=Virtualize --Functions=fib:region1 ...  
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -644,8 +653,8 @@ Caveats:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Typically, Tigress generates a C file as output, specified by the <tt>--out=<em>filename.c</em></tt> option. 
-If you want to process the output further you can also provide <tt>--outJson=<em>filename.json</em></tt> option
+Typically, Tigress generates a C file as output, specified by the <code class="language-c">--out=<em>filename.c</em></code> option. 
+If you want to process the output further you can also provide <code class="language-c">--outJson=<em>filename.json</em></code> option
 which will produce the output file as an abstract syntax tree. There is no formal definition of this Json AST
 at this point, but it closely follows the structure of the <a href="http://cil-project.github.io/cil/doc/html/cil/api/Cil.html">CIL AST</a>
 on which it is based. Here's a piece of a function AST: 
@@ -655,8 +664,8 @@ on which it is based. Here's a piece of a function AST:
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">"GFun": {
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">"GFun": {
     "vname": "TEST",
     "sformals": [],
     "slocals": [
@@ -687,12 +696,11 @@ on which it is based. Here's a piece of a function AST:
                 { "TPtr": { "TInt": "char" } }, {
                 "Const": { "CStr": "g=%i\n" } }
               ] }, {
-</code></pre>
-</center>
+</code></pre></div>
 
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -701,8 +709,7 @@ on which it is based. Here's a piece of a function AST:
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -144,9 +145,12 @@ this transformation:
    </video>
 </center>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -225,11 +229,13 @@ this transformation:
 </ul>
 </td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <a class="anchor" id="diversity">&nbsp;</a>
 
@@ -300,7 +306,7 @@ There are two sources of diversity:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This is the code generated for the arguments options to <code>--AddOpaqueKinds</code>:
+This is the code generated for the arguments options to <code class="language-c">--AddOpaqueKinds</code>:
 
             </p>
         </div>
@@ -315,71 +321,65 @@ This is the code generated for the arguments options to <code>--AddOpaqueKinds</
                 <ul>
 
 <li>
-        <code>call</code>:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=false</sup> then
+        <code class="language-c">call</code>:
+<div class="container">
+<pre><code class="language-c">if expr<sup>=false</sup> then
    call to random existing function
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
 
 <li>
-      <code>fake</code>:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=false</sup> then
+      <code class="language-c">fake</code>:
+<div class="container">
+<pre><code class="language-c">if expr<sup>=false</sup> then
    call to non-existing function
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
 
 <li>
-        <code>true</code>:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=true</sup> then
+        <code class="language-c">true</code>:
+<div class="container">
+<pre><code class="language-c">if expr<sup>=true</sup> then
    existing statement
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
 
 <li>
-        <code>bug</code>:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=true</sup> then
+        <code class="language-c">bug</code>:
+<div class="container">
+<pre><code class="language-c">if expr<sup>=true</sup> then
    existing statement
 else
    buggified version of the statement
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
 
 <li>
-      <code>question</code>:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=true || false</sup> then
+      <code class="language-c">question</code>:
+<div class="container">
+<pre><code class="language-c">if expr<sup>=true || false</sup> then
    existing statement
 else
    obfuscated version of the statement
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
 
 <li>
-      <code>junk</code>:
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">if expr<sup>=false</sup> then
+      <code class="language-c">junk</code>:
+<div class="container">
+<pre><code class="language-c">if expr<sup>=false</sup> then
    asm(".byte RandomBytes")
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
@@ -416,8 +416,8 @@ Consider the following script:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">tigress --Seed=0 \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=0 \
    --Inputs="+1:int:42,-1:length:1?10" \
    --Transform=InitImplicitFlow \
    --Transform=InitEntropy \
@@ -431,8 +431,7 @@ Consider the following script:
       --AddOpaqueSplitKinds=inside \
       --AddOpaqueCount=10 \
    arith.c --out=arith_out.c
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -444,8 +443,8 @@ The result will look something like this:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">     {
+<div class="container">
+<pre><code class="language-c">     {
       strcmp_result5 = (int )strlen(*(_4_main__argv + (_4_main__argc - 1)));
       }
       if (x >= strcmp_result5 + y) {
@@ -565,15 +564,14 @@ The result will look something like this:
       }
     }
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Notice that we attempt (and sometimes fail) to select opaque predicates 
-<code>expr<sup>1</sup><=expr<sup>2</sup></code> such that
+<code class="language-c">expr<sup>1</sup><=expr<sup>2</sup></code> such that
 
             </p>
         </div>
@@ -587,21 +585,21 @@ Notice that we attempt (and sometimes fail) to select opaque predicates
                 <ul>
 
 <li>
-        all the <code>expr<sup>i</sup></code> are independent of each other (i.e. 
+        all the <code class="language-c">expr<sup>i</sup></code> are independent of each other (i.e. 
         analyzing a function should require you to break all the predicates
         in it); 
 
 </li>
 
 <li>
-        the <code>expr<sup>i</sup></code> depend on input (either because they 
+        the <code class="language-c">expr<sup>i</sup></code> depend on input (either because they 
         are created from an entropy source or from invariants over the command 
         line arguments); and 
 
 </li>
 
 <li>
-        <code>expr<sup>1</sup></code> and <code>expr<sup>2</sup></code> are computed
+        <code class="language-c">expr<sup>1</sup></code> and <code class="language-c">expr<sup>2</sup></code> are computed
         from different sources.
 
 </li>
@@ -618,8 +616,8 @@ Notice that we attempt (and sometimes fail) to select opaque predicates
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 For the question-mark predicate we use the function splitter. You should
 experiment with different splitting methods to get the effect that you 
-want, by setting <code>--AddOpaqueSplitKinds=...</code> and 
-<code>--AddOpaqueSplitLevel=...</code>. <code>--AddOpaqueObfuscate=true</code> does
+want, by setting <code class="language-c">--AddOpaqueSplitKinds=...</code> and 
+<code class="language-c">--AddOpaqueSplitLevel=...</code>. <code class="language-c">--AddOpaqueObfuscate=true</code> does
 some light obfuscation to the code in one of the branches; you can, of course,
 obfuscate the split out functions yourself.
 
@@ -655,23 +653,22 @@ obfuscate the split out functions yourself.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-      <p><code>--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
-      coerce the linker to ignore such errors. With <code>gcc</code> you can use this option:
+      <p><code class="language-c">--AddOpaqueKinds=fake</code> will result in undefined symbols being generated. You need to
+      coerce the linker to ignore such errors. With <code class="language-c">gcc</code> you can use this option:
 
             </p>
         </div>
     </div>
 </section>
-      <center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">         -Wl,--unresolved-symbols=ignore-in-object-files 
-</code></pre>
-      </center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">-Wl,--unresolved-symbols=ignore-in-object-files 
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-      No similar option seems to exist for <code>clang</code>.
+      No similar option seems to exist for <code class="language-c">clang</code>.
 
             </p>
         </div>
@@ -687,7 +684,7 @@ obfuscate the split out functions yourself.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-       The <tt>--AddOpaqueKinds=question</tt> adds the code in outlined functions, for reasons I really
+       The <code class="language-c">--AddOpaqueKinds=question</code> adds the code in outlined functions, for reasons I really
            can't remember at the moment. It should probably be fixed, but in the mean time you can just
           inline the calls:
 
@@ -695,14 +692,13 @@ obfuscate the split out functions yourself.
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">      --Transform=AddOpaque \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">      --Transform=AddOpaque \
          --Functions=... \
          --AddOpaqueKinds=question \
       --Transform=Inline \
          --Functions=/.*QUESTION.*/ \
-</code></pre>
-</center>
+</code></pre></div>
 
 </li>
 
@@ -714,7 +710,7 @@ obfuscate the split out functions yourself.
 
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -723,8 +719,7 @@ obfuscate the split out functions yourself.
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>

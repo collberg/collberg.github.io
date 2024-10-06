@@ -23,8 +23,9 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css">       <link rel="stylesheet" href="assets/mobirise/css/tigress.css"        type="text/css">
-  
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
   
  <style>
 body {
@@ -115,8 +116,8 @@ The goal of these transformations is to make functions self-modifying. Here's ho
     </div>
 </section>
 
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> tigress  --Environment=x86_64:Darwin:Clang:5.1 \
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress  --Environment=x86_64:Darwin:Clang:5.1 \
          --Transform=Virtualize\
             --Functions=add \
             --VirtualizeDispatch=direct \
@@ -128,8 +129,7 @@ The goal of these transformations is to make functions self-modifying. Here's ho
             --SelfModifyKinds=\* \
             --SelfModifyBogusInstructions=0 \
    inc.c --out=obf.c
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -145,14 +145,13 @@ for issues with newer versions of Darwin):
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">> gcc -segprot __TEXT rwx rwx obf.c -o obf.exe   # Darwin (early versions)
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> gcc -segprot __TEXT rwx rwx obf.c -o obf.exe   # Darwin (early versions)
 
 > tigress_post --Action=writable obf.exe         # Darwin (newer versions)
 
 > gcc --static -Wl,--omagic obf.c -o obf.exe     # Linux
-</code></pre>
-</center>
+</code></pre></div>
 
 
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -180,8 +179,8 @@ one for branches. They look roughly like this:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 5);
+<div class="container">
+<pre><code class="language-c">  addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 5);
   *addrPtr10 = (unsigned long )(& A);
   addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_1) + 18);
   *addrPtr10 = (unsigned long )(& B);
@@ -209,8 +208,7 @@ one for branches. They look roughly like this:
       ".byte 0xff, 0x25, 00, 00, 00, 00, 0xba,0xee,0x19,0x51,0x13,0x4b,0x12,0xdb;\n" // jmp (%rip)
   :);
   Lab_2: 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -223,8 +221,8 @@ is inserted:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">    A = i;
+<div class="container">
+<pre><code class="language-c">    A = i;
     B = n;
     addrPtr10 = (unsigned long *)((unsigned long )(&& Lab_3) + 6);
     *addrPtr10 = (unsigned long )(&& Lab_1);
@@ -237,8 +235,7 @@ is inserted:
       ".byte 0xff, 0x25, 00, 00, 00, 00, 0x3b,0x21,0x2e,0xd7,0xc5,0x44,0xf0,0xdd;\n" //jmp (%rip)
     :); 
     Lab_4: 
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -258,17 +255,17 @@ At runtime, this makes the following changes to the executable code:
                 <ul>
 
 <li>
-          the opcode is set to the appropriate one (<tt>setl</tt> in this case),
+          the opcode is set to the appropriate one (<code class="language-c">setl</code> in this case),
 
 </li>
 
 <li>
-          the jump instruction is modified with the literal address of the template (<tt>Lab_1</tt>), 
+          the jump instruction is modified with the literal address of the template (<code class="language-c">Lab_1</code>), 
 
 </li>
 
 <li>
-          the return jump instruction in the template (the last instruction) is set to the return location (<tt>Lab_4</tt>). 
+          the return jump instruction in the template (the last instruction) is set to the return location (<code class="language-c">Lab_4</code>). 
 
 </li>
 
@@ -304,8 +301,8 @@ with a direct or indirect dispatch. Below is an example:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">void add(void) { 
+<div class="container">
+<pre><code class="language-c">void add(void) { 
   ...
 
   //----------------- Instruction Handler ----------------------
@@ -326,8 +323,7 @@ with a direct or indirect dispatch. Below is an example:
   return;
   ...
 }
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -340,12 +336,11 @@ corresponds to the X86 8-byte direct jump:
         </div>
     </div>
 </section>
-<center>
-<pre style="text-align:left;background-color:#f0f0f0;display:inline-block;padding:20px;border:1px solid black;"><code contenteditable spellcheck="false">  addr = (unsigned long *)((unsigned long )(&& Lab) + 6);
+<div class="container">
+<pre><code class="language-c">  addr = (unsigned long *)((unsigned long )(&& Lab) + 6);
   *addr = address-to-jump-to;
   Lab: asm volatile(".byte 0xff, 0x25, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00":);
-</code></pre>
-</center>
+</code></pre></div>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -381,8 +376,8 @@ branches, and these are now gone from the code.
 For this transformation we generate copious amounts of inline assembly code. Different compilers
 support various forms of inline assembly. Clang didn't support <em>asm goto</em> until recent versions,
 for example, and MSVC doesn't support any of the gcc extensions we rely on. Furthermore, the actual 
-syntax and semantics the compilers implement can vary. For example, Clang accepts <tt>asm volatile goto</tt>
-but not <tt>asm goto volatile</tt> (gcc accepts either). 
+syntax and semantics the compilers implement can vary. For example, Clang accepts <code class="language-c">asm volatile goto</code>
+but not <code class="language-c">asm goto volatile</code> (gcc accepts either). 
 
             </p>
         </div>
@@ -395,8 +390,8 @@ but not <tt>asm goto volatile</tt> (gcc accepts either).
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Tigress supports a few different "styles" of inline assembly to generate for this transformation. 
-We try to pick the right style based on your plaform (remember to set the <tt>--Environment=</tt> option
-correctly!!!), but you can use the <tt>--SelfModifyStyle</tt> option yourself if your compiler misbehaves and
+We try to pick the right style based on your plaform (remember to set the <code class="language-c">--Environment=</code> option
+correctly!!!), but you can use the <code class="language-c">--SelfModifyStyle</code> option yourself if your compiler misbehaves and
 want to experiment. 
 
             </p>
@@ -406,9 +401,12 @@ want to experiment.
 
 <br>
 
-<center>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<table border style="background-color:#f5f5f5;overflow-x:auto;color:black;width:80%;">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
     <colgroup>
        <col span="1" style="width: 20%;">
        <col span="1" style="width: 20%;">
@@ -479,11 +477,13 @@ want to experiment.
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> How many bogus instructions to insert inside the self-modify template to avoid pattern-matching attacks. Right now, the inserted instructions are simple 1-byte x86 instructions that are equivalent to NOPs. Default=0.</td>
 </tr>
-</table>
-</div>
 
+
+</table>
 </center>
-</br>
+</div>
+</div>
+</section>
 
 <br>
 
@@ -514,20 +514,20 @@ want to experiment.
 </li>
 
 <li>
-          If you see an error message "<tt>Simplify: makeThreeAddress for AddrOf</tt>", set <tt>--SelfModifySubExpressions=false</tt> There's a bug in CIL that I don't know how to fix.
+          If you see an error message "<code class="language-c">Simplify: makeThreeAddress for AddrOf</code>", set <code class="language-c">--SelfModifySubExpressions=false</code> There's a bug in CIL that I don't know how to fix.
 
 </li>
 
 <li>
         At this time, there is not much diversity in generated code; it's very tamplate-y. This makes
         it easy to locate the code using simple pattern-matching. To break up the templates somewhat, 
-        set <tt>--SelfModifyBogusInstructions=0?5</tt>. This inserts between 0 and 5 NOP-equivalent bytes 
+        set <code class="language-c">--SelfModifyBogusInstructions=0?5</code>. This inserts between 0 and 5 NOP-equivalent bytes 
             between the template instructions.
 
 </li>
 
 <li>
-        Sometimes the generated code crashes when compiled with <tt>gcc</tt>. In that case, switch to <tt>clang</tt>. 
+        Sometimes the generated code crashes when compiled with <code class="language-c">gcc</code>. In that case, switch to <code class="language-c">clang</code>. 
 
 </li>
 
@@ -541,7 +541,7 @@ want to experiment.
 
 
 
-<script src="assets/popper/popper.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -550,8 +550,7 @@ want to experiment.
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+  <script src="assets/prism/prism.js"></script>
   
 </body>
 </html>
