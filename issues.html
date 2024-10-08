@@ -151,44 +151,9 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
     On some platforms there is a parsing error for some complex numbers. Example:
+<div class="container">
 <pre><code class="language-c">_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-_Complex v = 3.0 + 1.0iF;
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -258,9 +223,10 @@ _Complex v = 3.0 + 1.0iF;
                     <div class="step-text-content">
                         <p class="mbr-step-text mbr-fonts-style display-7">
      Tigress fails on this code:
+<div class="container">
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 typedef int __attribute__ ((mode (__pointer__))) intptr_t;
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -304,10 +270,11 @@ typedef int __attribute__ ((mode (__pointer__))) intptr_t;
                         <p class="mbr-step-text mbr-fonts-style display-7">
     Variable length arrays in structures are supported by gcc but are rejected by Clang.
     Tigress currently fails on this code and we are unlikely to support it in the future:
+<div class="container">
 <pre><code class="language-c">void foo(int n) {
    struct S {int i[n];}
 }
-</code></pre>
+</code></pre></div>
 
                         </p>
                     </div>
@@ -351,8 +318,9 @@ typedef int __attribute__ ((mode (__pointer__))) intptr_t;
                         <p class="mbr-step-text mbr-fonts-style display-7">
      If you see syntax errors while loading standard include files,
      make sure you've included <code class="language-c">tigress.h</code> at the top of <em>every</em> file. Example:
-<pre><code class="language-bash">/usr/include/bits/mathcalls-helper-functions.h[21:12-28] : syntax error
-</code></pre>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">/usr/include/bits/mathcalls-helper-functions.h[21:12-28] : syntax error
+</code></pre></div>
 
                         </p>
                     </div>
