@@ -62344,6 +62344,30 @@ body {
 .cid-umhQhOb1Nu .mbr-section-btn {
   color: #232323;
 }
+.cid-ut9TJTIVvf {
+  background: #ffffff;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.cid-ut9TJTIVvf .image-block {
+  margin: auto;
+}
+.cid-ut9TJTIVvf .mbr-figure {
+  margin: 0 auto;
+}
+.cid-ut9TJTIVvf figcaption {
+  position: relative;
+}
+.cid-ut9TJTIVvf figcaption div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .cid-ut9TJTIVvf .image-block {
+    width: 100% !important;
+  }
+}
 .cid-umhQtD68Po {
   padding-top: 45px;
   padding-bottom: 45px;
