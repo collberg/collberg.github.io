@@ -93,7 +93,7 @@ code {
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
- Encode Arithmetic
+ Quickstart
 
                </h2>
             </div>
@@ -101,64 +101,14 @@ code {
     </div>
 </section>
 
-<center><img width="500px" src="tigress3-images//encodeArithmetic-front-page.png"></center>
-
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Replace integer arithmetic with more complex expressions, encoded with
-<em>Mixed Boolean Expressions</em> (MBA). For example, the following identities can be used to encode
-integer addition:
-
-            </p>
-        </div>
-    </div>
-</section>
-<div class="container">
-<pre><code class="language-c">x + y = x - &not; y - 1
-      = (x &oplus; y) + 2&middot;(x &and; y) 
-      = (x &or; y) + (x &and; y) 
-      = 2&middot;(x &or; y) - (x &oplus; y) 
-</code></pre></div>
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-For example, Tigress might replace
-
-            </p>
-        </div>
-    </div>
-</section>
-<div class="container">
-<pre><code class="language-c">z = x + y + w
-</code></pre></div>
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-with
-
-            </p>
-        </div>
-    </div>
-</section>
-<div class="container">
-<pre><code class="language-c">z = (((x ^ y) + ((x & y) << 1)) | w) + 
-    (((x ^ y) + ((x & y) << 1)) & w);
-</code></pre></div>
-
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Here's a <a href="https://ligerlabs.org">LigerLabs</a> video that discusses
-this transformation:
+   Tigress is a diversifying obfuscator for the C language that supports many defenses against both 
+static and dynamic reverse engineering attacks. To get started, download a version for your platform, 
+and check that the installation was successful:
 
             </p>
         </div>
@@ -166,222 +116,200 @@ this transformation:
 </section>
 
 <center>
-   <video preload="none"
-         controls
-         poster="https://arizona.box.com/shared/static/ltbhj8tqkmm83mi0xnu3y1sd43oj444r.png" 
-         width="500"
-    >
-    <source src="https://arizona.box.com/shared/static/nk6np8bwawh0ctxkkcdtzo6hw25gwloj.m4v"
-                 type="video/mp4">
-   </video>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/quickstart-version-2-1443x812.png" alt="" title="">
+        </div>
+    </figure>
+</section>
 </center>
+<br>
+           
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+   Tigress is a source-to-source transformer - it takes a C source program as input and returns a new 
+C program as output. An <em>obfuscation script</em> (actually, a long sequence of command line options)
+describes the sequences of transformations that should be applied to the functions of the program. 
+Now you can try out Tigress on a simple example:
 
-<section class="table2 TIGRESS-TABLE2" id="table2-dy">
-<div class="container">
-<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+            </p>
+        </div>
+    </div>
+</section>
+ 
 <center>
-<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 60%;">
-    </colgroup>
-<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
-<tr>
-<td><tt>--Transform</tt></td>
-<td><tt>EncodeArithmetic</tt></td>
-<td> Replace integer arithmetic with more complex expressions. </td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticKinds</tt></td>
-<td><tt>builtin, plugins</tt></td>
-<td> Specify the types to encode. Currently, only integer is available. <b>From version 3.3.3.</b> Default=builtin.
-<ul>
-   <li> <tt>builtin</tt> = Use Tigress' built-in MBA patterns
-   <li> <tt>plugins</tt> = Use plugin MBA expressions
-</ul>
-</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticMaxLevel</tt></td>
-<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How deep to recurse into expressions. Default=1.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticMaxTransforms</tt></td>
-<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How many transformations to perform on each expression. Default=1.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticRepeatTimes</tt></td>
-<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How many times to repeat the rewriting process. Equivalent to calling <tt>EncodeArithmetic</tt> multiple times. <b>From Version 3.3</b> Default=1.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticDumpFileName</tt></td>
-<td><tt><em>string</em></tt></td>
-<td> Name of Json file onto which we dump transformed expression. The actual file will be <tt><em>function-name</em>_<em>number</em>_<em>fileName.json</em></tt>. <b>From version 3.3.2.</b> Default=100.</td>
-</tr>
 
-
-</table>
-</center>
-</div>
-</div>
-</section>
-
-<a class="anchor" id="splitting">&nbsp;</a>
-
-<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">
- Splitting Encoded Expressions
-
-               </h2>
-            </div>
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/quickstart-transform-1-1443x812.png" alt="" title="">
         </div>
-    </div>
+    </figure>
 </section>
+</center>
+<br>
+         
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-There are two parts to attacking an MBA expression: first you have to find the expression, and then you have to
-decode it (i.e. turn it back into something resembling it's original form). You can split up expressions to make them
-more diffiult to locate in the code (both statically and dynamically).
+   You must include the file <code class="language-c">"tigress.h"</code> at the top of every one of your input files. You can 
+find this file in the Tigress distribution directory (the location depends on your platform):
 
             </p>
         </div>
     </div>
 </section>
 
-
-<section class="table2 TIGRESS-TABLE2" id="table2-dy">
-<div class="container">
-<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <center>
-<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 60%;">
-    </colgroup>
-<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
-<tr>
-<td><tt>--EncodeArithmeticMaxSplit</tt></td>
-<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How many pieces in which to split the transformed expression. <b>From Version 3.3</b> Default=1.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticAddImplicitFlow</tt></td>
-<td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
-<td> Add implicit flow to the pieces split out from an encoded expression. You need to set <tt>--EncodeArithmeticMaxSplit=<em>value greater than zero</em></tt> for this to take effect. <b>From Version 3.3</b> Default=false.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticImplicitFlow</tt></td>
-<td><tt>S-Expression</tt></td>
-<td> The type of implicit flow to insert. See <tt>--AntiTaintAnalysisImplicitFlow</tt> for a description. Default=none.</td>
-</tr>
-<tr>
-<td><tt>--EncodeArithmeticAddOpaques</tt></td>
-<td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
-<td> Add opaque predicates to the pieces split out from an encoded expression. You need to set <tt>--EncodeArithmeticMaxSplit=<em>value greater than zero</em></tt> for this to take effect. <b>From Version 3.3</b> Default=false.</td>
-</tr>
 
-
-</table>
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/quickstart-include-1443x812.png" alt="" title="">
+        </div>
+    </figure>
+</section>
 </center>
-</div>
-</div>
-</section>
+<br>
 
-
-<a class="anchor" id="diversity">&nbsp;</a>
-
-<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">
- Diversity
-
-               </h2>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-For each operator, there are many possible encodings, and
-at transformation time, these are selected from randomly.
+   Tigress is a <em>diversifying transformer</em> which means that from a single input program 
+   we can generate multiple different output programs:
 
             </p>
         </div>
     </div>
 </section>
 
-<a class="anchor" id="debugging">&nbsp;</a>
+<center>
 
-<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">
- Debugging and Attacking (From version <b>3.3.2</b>
-
-               </h2>
-            </div>
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/quickstart-seed-1-1443x812.png" alt="" title="">
         </div>
-    </div>
+    </figure>
 </section>
+</center>
+<br>
+        
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-There have been many recent papers on attacking MBA expressions. To facilitate such attacks 
-you can dump all the transformed expressions onto a Json file for further processing.
-Simply set <code class="language-c">--EncodeArithmeticDumpFileName=filename.json</code>.
+   The obfuscation script will typically contain not just one but a sequence of code transformations. This 
+   is necessary to obtain the right level of obfuscation, and to protect your code against different types of 
+   attack:
+
+            </p>
+        </div>
+    </div>
+</section>
+        
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/quickstart-multiple-1443x812.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+<br>
+            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+   For every transformation there is an (often large) number of options which modify the behavior 
+   of the transformation. Choosing a particular list of transforms, and a particular set of options 
+   modifying these transforms, is yet another way to diversify the obfuscated code:
 
             </p>
         </div>
     </div>
 </section>
 
-<a class="anchor" id="references">&nbsp;</a>
+<center>
 
-<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">
- References
-
-               </h2>
-            </div>
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/quickstart-options-1443x812.png" alt="" title="">
         </div>
-    </div>
+    </figure>
 </section>
+</center>
+<br>
+               
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Currently, the identities are taken from the book 
-<a href="https://web.archive.org/web/20180829214142/http://www.hackersdelight.org/)">Hacker's Delight</a>.
+   A typical Tigress script contains 1) a list of initialization transformations, 2) the obfuscating 
+   transformations themselves, and 3) a final <strong>CleanUp</strong> transformation. Don't worry about the 
+   initialization - when they are necessary, Tigress will let you know! In this example, the CleanUpKind "names" 
+   will perform an obfuscation of all the identifiers in the program. This transformation has to be performed 
+   last in order not to interfere with other transformations:
+
+            </p>
+        </div>
+    </div>
+</section>
+   
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/quickstart-initpng-1443x812.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+<br>
+           
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+   For some transformations, most notably <a href="jitter.html" class="text-primary">Jitting</a>, 
+   <a href="jitDynamic.html" class="text-primary">JitDynamic</a>, and <a href="selfModify.html" class="text-primary">Self Modify</a>, 
+   a source-2-source transformation is not enough. You will have to do some post-processing of the binary file, 
+   using the program <strong>tigress_post</strong>:
 
             </p>
         </div>
     </div>
 </section>
 
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/quickstart-post-1443x812.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+<br>
 
 <br>
 

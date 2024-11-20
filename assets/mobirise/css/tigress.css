@@ -275,3 +275,28 @@ table.smalltab {
 .TIGRESS-DOWNLOAD .head-item {
   color: #212529;
 }
+
+.cid-TIGRESS-IMAGE {
+  background: #ffffff;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.cid-TIGRESS-IMAGE .image-block {
+  margin: auto;
+}
+.cid-TIGRESS-IMAGE .mbr-figure {
+  margin: 0 auto;
+}
+.cid-TIGRESS-IMAGE figcaption {
+  position: relative;
+}
+.cid-TIGRESS-IMAGE figcaption div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .cid-TIGRESS-IMAGE .image-block {
+    width: 100% !important;
+  }
+}
