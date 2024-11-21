@@ -100,6 +100,9 @@ code {
 .TIGRESS-TITLE .mbr-section-subtitle {
   color: #000000;
 }
+.TIGRESS-TITLE .mbr-section-title {
+  color: #1111111;
+}
 
 .TIGRESS-SECTION {
   padding-top: 0px;
