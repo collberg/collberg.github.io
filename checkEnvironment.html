@@ -149,7 +149,7 @@ code {
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
-<center><h1 style="font-size: 60px; font-weight:400"> Check Environment</h1></center>
+<center><h1 style="font-size: 60px; font-weight:400"> Check Environment<br>(Experimental)</h1></center>
 
                </h2>
             </div>
@@ -165,7 +165,7 @@ code {
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The goal of this transformation is to ensure that -- during execution -- the program
-is running ina "safe" environment. By "safe" we mean that we are not being monitored
+is running in a "safe" environment. By "safe" we mean that we are not being monitored
 in any way. More specifically, that program will check that it is not being debugged,
 not being emulated, not being run inside a virtual machine, etc.
 
@@ -173,6 +173,35 @@ not being emulated, not being run inside a virtual machine, etc.
         </div>
     </div>
 </section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+You can read about the InitCheckers transformation <a href="checkers.html">here</a>.
+It sets up Tigress so that you can later invoke the CheckEnvironment and Checksum
+transformations. Use <code class="language-c">--CheckEnvironmentSandboxes</code> to list the 
+sandboxes/debuggers you want to test for, and <code class="language-c">--CheckEnvironmentCheckerCount</code>
+to indicate how many checkers you want to insert. As usual, <code class="language-c">--Functions</code> 
+lists the functions where we can insert the checkers:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Environment=x86_64:Linux:Clang:5.1 \
+    --Transform=InitChecker \
+       ... \
+   --Transform=CheckEnvironment \
+       --Functions=fac \
+       --CheckEnvironmentSandboxes=valgrind \
+       --CheckEnvironmentCheckerCount=2 \
+   foo.c --out=obf.c
+</code></pre></div><br>
+
+
 
 
 <section class="table2 TIGRESS-TABLE2" id="table2-dy">
@@ -228,6 +257,7 @@ not being emulated, not being run inside a virtual machine, etc.
 </div>
 </div>
 </section>
+
 
 <br>
 

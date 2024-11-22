@@ -464,10 +464,10 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "fib" ],
         "New Global Variables": {
-          "_TIG_VZ_fzud_3_fib_$array": "INIT",
-          "_TIG_VZ_fzud_3_fib_$strings": "INIT"
+          "_TIG_VZ_q7TM_3_fib_$array": "INIT",
+          "_TIG_VZ_q7TM_3_fib_$strings": "INIT"
         },
-        "New Types": [ "_TIG_VZ_fzud_3_fib_$op", "_TIG_VZ_fzud_3_fib_$node" ]
+        "New Types": [ "_TIG_VZ_q7TM_3_fib_$op", "_TIG_VZ_q7TM_3_fib_$node" ]
       }
     },
     {
@@ -476,10 +476,10 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "fac" ],
         "New Global Variables": {
-          "_TIG_VZ_fzud_3_fac_$array": "INIT",
-          "_TIG_VZ_fzud_3_fac_$strings": "INIT"
+          "_TIG_VZ_q7TM_3_fac_$array": "INIT",
+          "_TIG_VZ_q7TM_3_fac_$strings": "INIT"
         },
-        "New Types": [ "_TIG_VZ_fzud_3_fac_$op", "_TIG_VZ_fzud_3_fac_$node" ]
+        "New Types": [ "_TIG_VZ_q7TM_3_fac_$op", "_TIG_VZ_q7TM_3_fac_$node" ]
       }
     },
     {
@@ -488,15 +488,15 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "init_tigress" ],
         "New Global Variables": {
-          "_TIG_iO_fzud_2_init_tigress_1__opaque_array": "INIT",
-          "_TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2": "INIT",
-          "_TIG_iO_fzud_2_init_tigress_1_opaque_list_2": "INIT",
-          "_TIG_iO_fzud_2_init_tigress_1_opaque_ptr_1": "INIT",
-          "_TIG_iO_fzud_2_init_tigress_1_opaque_list_1": "INIT"
+          "_TIG_iO_q7TM_2_init_tigress_1__opaque_array": "INIT",
+          "_TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2": "INIT",
+          "_TIG_iO_q7TM_2_init_tigress_1_opaque_list_2": "INIT",
+          "_TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_1": "INIT",
+          "_TIG_iO_q7TM_2_init_tigress_1_opaque_list_1": "INIT"
         },
         "New Types": [
-          "_TIG_iO_fzud_2_init_tigress_1_opaqueStructureType",
-          "_TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct"
+          "_TIG_iO_q7TM_2_init_tigress_1_opaqueStructureType",
+          "_TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct"
         ]
       }
     },
@@ -505,8 +505,8 @@ BEGIN-UNIVERSE
       "TransformationKind": "InitEntropy",
       "TransformationUpdates": {
         "New Global Variables": {
-          "_TIG_iE_fzud_1_alwaysZero": "INIT",
-          "_TIG_iE_fzud_1_entropy": "INIT"
+          "_TIG_iE_q7TM_1_alwaysZero": "INIT",
+          "_TIG_iE_q7TM_1_entropy": "INIT"
         }
       }
     },
@@ -516,9 +516,9 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "main" ],
         "New Global Variables": {
-          "_TIG_IZ_fzud_envp": "FUN: '_TIG_IZ_fzud_envp__INIT'",
-          "_TIG_IZ_fzud_argv": "FUN: '_TIG_IZ_fzud_argv__INIT'",
-          "_TIG_IZ_fzud_argc": "FUN: '_TIG_IZ_fzud_argc__INIT'"
+          "_TIG_IZ_q7TM_envp": "FUN: '_TIG_IZ_q7TM_envp__INIT'",
+          "_TIG_IZ_q7TM_argv": "FUN: '_TIG_IZ_q7TM_argv__INIT'",
+          "_TIG_IZ_q7TM_argc": "FUN: '_TIG_IZ_q7TM_argc__INIT'"
         }
       }
     },
@@ -1176,9 +1176,9 @@ struct __darwin_i386_exception_state ;
 struct timeval ;
 /* END STRUCT-DECL timeval LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval.h:34 */
 
-/* BEGIN UNION-DECL _TIG_VZ_fzud_3_fib_$node LOC=UNKNOWN */
-union _TIG_VZ_fzud_3_fib_$node ;
-/* END UNION-DECL _TIG_VZ_fzud_3_fib_$node LOC=UNKNOWN */
+/* BEGIN UNION-DECL _TIG_VZ_q7TM_3_fib_$node LOC=UNKNOWN */
+union _TIG_VZ_q7TM_3_fib_$node ;
+/* END UNION-DECL _TIG_VZ_q7TM_3_fib_$node LOC=UNKNOWN */
 
 /* BEGIN STRUCT-DECL rusage_info_v3 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h:251 */
 #line 251 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h"
@@ -1245,9 +1245,9 @@ struct tm ;
 union __sigaction_u ;
 /* END UNION-DECL __sigaction_u LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h:269 */
 
-/* BEGIN ENUM-DECL _TIG_VZ_fzud_3_fac_$op LOC=UNKNOWN */
-enum _TIG_VZ_fzud_3_fac_$op ;
-/* END ENUM-DECL _TIG_VZ_fzud_3_fac_$op LOC=UNKNOWN */
+/* BEGIN ENUM-DECL _TIG_VZ_q7TM_3_fac_$op LOC=UNKNOWN */
+enum _TIG_VZ_q7TM_3_fac_$op ;
+/* END ENUM-DECL _TIG_VZ_q7TM_3_fac_$op LOC=UNKNOWN */
 
 /* BEGIN STRUCT-DECL __x86_pagein_state LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h:622 */
 #line 622 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h"
@@ -1294,9 +1294,9 @@ struct _opaque_pthread_attr_t ;
 enum __anonenum_clockid_t_447627989 ;
 /* END ENUM-DECL __anonenum_clockid_t_447627989 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:153 */
 
-/* BEGIN ENUM-DECL _TIG_VZ_fzud_3_fib_$op LOC=UNKNOWN */
-enum _TIG_VZ_fzud_3_fib_$op ;
-/* END ENUM-DECL _TIG_VZ_fzud_3_fib_$op LOC=UNKNOWN */
+/* BEGIN ENUM-DECL _TIG_VZ_q7TM_3_fib_$op LOC=UNKNOWN */
+enum _TIG_VZ_q7TM_3_fib_$op ;
+/* END ENUM-DECL _TIG_VZ_q7TM_3_fib_$op LOC=UNKNOWN */
 
 /* BEGIN STRUCT-DECL proc_rlimit_control_wakeupmon LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h:400 */
 #line 400 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h"
@@ -1433,9 +1433,9 @@ struct __darwin_mcontext_avx512_64 ;
 struct __darwin_mcontext_avx512_64_full ;
 /* END STRUCT-DECL __darwin_mcontext_avx512_64_full LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h:138 */
 
-/* BEGIN STRUCT-DECL _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct ;
-/* END STRUCT-DECL _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+/* BEGIN STRUCT-DECL _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct ;
+/* END STRUCT-DECL _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
 
 /* BEGIN STRUCT-DECL __siginfo LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h:177 */
 #line 177 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h"
@@ -1537,9 +1537,9 @@ struct rusage_info_v2 ;
 struct __darwin_opmask_reg ;
 /* END STRUCT-DECL __darwin_opmask_reg LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h:259 */
 
-/* BEGIN UNION-DECL _TIG_VZ_fzud_3_fac_$node LOC=UNKNOWN */
-union _TIG_VZ_fzud_3_fac_$node ;
-/* END UNION-DECL _TIG_VZ_fzud_3_fac_$node LOC=UNKNOWN */
+/* BEGIN UNION-DECL _TIG_VZ_q7TM_3_fac_$node LOC=UNKNOWN */
+union _TIG_VZ_q7TM_3_fac_$node ;
+/* END UNION-DECL _TIG_VZ_q7TM_3_fac_$node LOC=UNKNOWN */
 
 /* BEGIN STRUCT-DECL __darwin_x86_float_state64 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h:714 */
 #line 714
@@ -1565,6 +1565,10 @@ struct __darwin_x86_float_state64 ;
 #line 218 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 extern long mrand48(void)  __attribute__((__availability__(swift,unavailable,message="Use arc4random instead."))) ;
 /* END FUNCTION-DECL-EXTERN mrand48 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:218 */
+
+/* BEGIN VARIABLE-DECL _TIG_iE_q7TM_1_entropy LOC=UNKNOWN */
+unsigned long _TIG_iE_q7TM_1_entropy ;
+/* END VARIABLE-DECL _TIG_iE_q7TM_1_entropy LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_strncasecmp LOC=BUILTIN */
 /* compiler builtin: 
@@ -1708,6 +1712,25 @@ extern char *ctermid(char * ) ;
 /* compiler builtin: 
    void __builtin_va_arg(__builtin_va_list  , unsigned long long  , void * ) ;  */
 /* END FUNCTION-DECL __builtin_va_arg LOC=BUILTIN */
+
+/* BEGIN ENUM _TIG_VZ_q7TM_3_fib_$op LOC=UNKNOWN */
+enum _TIG_VZ_q7TM_3_fib_$op {
+    _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1 = 144,
+    _TIG_VZ_q7TM_3_fib_goto$label_LAB_0 = 204,
+    _TIG_VZ_q7TM_3_fib_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1 = 9,
+    _TIG_VZ_q7TM_3_fib_store_void_star$right_STA_0$left_STA_1 = 167,
+    _TIG_VZ_q7TM_3_fib_branchIfTrue$expr_STA_0$label_LAB_0 = 21,
+    _TIG_VZ_q7TM_3_fib_convert_void_star2void_star$left_STA_0$result_STA_0 = 104,
+    _TIG_VZ_q7TM_3_fib_returnVoid$ = 123,
+    _TIG_VZ_q7TM_3_fib_string$result_STA_0$value_LIT_0 = 162,
+    _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0 = 32,
+    _TIG_VZ_q7TM_3_fib_formal$result_STA_0$value_LIT_0 = 0,
+    _TIG_VZ_q7TM_3_fib_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1 = 89,
+    _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0 = 4,
+    _TIG_VZ_q7TM_3_fib_constant_int$result_STA_0$value_LIT_0 = 51,
+    _TIG_VZ_q7TM_3_fib_call$func_LIT_0 = 186
+} ;
+/* END ENUM _TIG_VZ_q7TM_3_fib_$op LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_fmodf16 LOC=BUILTIN */
 /* compiler builtin: 
@@ -2211,6 +2234,18 @@ extern int getw(FILE * ) ;
 extern char *realpath(char const   * __restrict   , char * __restrict   )  __asm__("_realpath$DARWIN_EXTSN")  ;
 /* END FUNCTION-DECL-EXTERN realpath LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:231 */
 
+/* BEGIN STRUCT _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct {
+   struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *prev ;
+   struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *next ;
+   int data ;
+};
+/* END STRUCT _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+
+/* BEGIN VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2  =    (struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL fib LOC=UNKNOWN */
 void fib(int n ) ;
 /* END FUNCTION-DECL fib LOC=UNKNOWN */
@@ -2457,10 +2492,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 extern  __attribute__((__noreturn__)) void exit(int  ) ;
 /* END FUNCTION-DECL-EXTERN exit LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:145 */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_fzud_2_init_tigress_1_opaque_list_1 ;
-/* END VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_strncmp LOC=BUILTIN */
 /* compiler builtin: 
    int __builtin_strncmp(char const   * , char const   * , unsigned long long  ) ;  */
@@ -2540,26 +2571,6 @@ struct __anonstruct_w_T_529377834 {
    double __builtin_ldexp(double  , int  ) ;  */
 /* END FUNCTION-DECL __builtin_ldexp LOC=BUILTIN */
 
-/* BEGIN UNION _TIG_VZ_fzud_3_fac_$node LOC=UNKNOWN */
-union _TIG_VZ_fzud_3_fac_$node {
-   unsigned long long _unsigned_long_long ;
-   void *_void_star ;
-   int _int ;
-   float _float ;
-   short _short ;
-   long _long ;
-   char _char ;
-   double _double ;
-   unsigned char _unsigned_char ;
-   unsigned long _unsigned_long ;
-   unsigned short _unsigned_short ;
-   long long _long_long ;
-   signed char _signed_char ;
-   unsigned int _unsigned_int ;
-   long double _long_double ;
-};
-/* END UNION _TIG_VZ_fzud_3_fac_$node LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin___vsnprintf_chk LOC=BUILTIN */
 /* compiler builtin: 
    int __builtin___vsnprintf_chk(char * , unsigned long long  , int  , unsigned long long  ,
@@ -2581,6 +2592,10 @@ union _TIG_VZ_fzud_3_fac_$node {
 /* compiler builtin: 
    double __builtin_cimag(_Complex double  ) ;  */
 /* END FUNCTION-DECL __builtin_cimag LOC=BUILTIN */
+
+/* BEGIN TYPEDEF _TIG_iO_q7TM_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
+typedef struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_q7TM_2_init_tigress_1_opaqueStructureType;
+/* END TYPEDEF _TIG_iO_q7TM_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_csinl LOC=BUILTIN */
 /* compiler builtin: 
@@ -2845,18 +2860,6 @@ typedef __darwin_mode_t mode_t;
 extern char *devname(dev_t  , mode_t  ) ;
 /* END FUNCTION-DECL-EXTERN devname LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:293 */
 
-/* BEGIN STRUCT _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct {
-   struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *prev ;
-   struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *next ;
-   int data ;
-};
-/* END STRUCT _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
-
-/* BEGIN VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_fzud_2_init_tigress_1_opaque_list_1  =    (struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN strtoll LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:172 */
 #line 172
 extern long long strtoll(char const   *__str , char **__endptr , int __base ) ;
@@ -3059,10 +3062,6 @@ __availability__(ios,introduced=8.0)))  pthread_override_qos_class_start_np(pthr
 #line 205 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 extern int getsubopt(char ** , char ** , char ** ) ;
 /* END FUNCTION-DECL-EXTERN getsubopt LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:205 */
-
-/* BEGIN VARIABLE-DECL _TIG_VZ_fzud_3_fac_$strings LOC=UNKNOWN */
-char const   *_TIG_VZ_fzud_3_fac_$strings ;
-/* END VARIABLE-DECL _TIG_VZ_fzud_3_fac_$strings LOC=UNKNOWN */
 
 /* BEGIN STRUCT timeval64 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h:34 */
 #line 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h"
@@ -3337,10 +3336,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
    double __builtin_fdim(double  , double  ) ;  */
 /* END FUNCTION-DECL __builtin_fdim LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-unsigned int _TIG_iO_fzud_2_init_tigress_1__opaque_array[30] ;
-/* END VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-
 /* BEGIN TYPEDEF suseconds_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_suseconds_t.h:31 */
 #line 31 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_suseconds_t.h"
 typedef __darwin_suseconds_t suseconds_t;
@@ -3589,10 +3584,6 @@ extern int __attribute__((__availability__(ios,introduced=8.0), __availability__
                                                                                                                                           int __relative_priority ) ;
 /* END FUNCTION-DECL-EXTERN pthread_set_qos_class_self_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/qos.h:155 */
 
-/* BEGIN VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_fzud_2_init_tigress_1_opaque_ptr_1  =    (struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_rotateright64 LOC=BUILTIN */
 /* compiler builtin: 
    unsigned long __builtin_rotateright64(unsigned long  , unsigned long  ) ;  */
@@ -3714,6 +3705,26 @@ extern int renamex_np(char const   * , char const   * , unsigned int  )  __attri
 __availability__(tvos,introduced=10.0), __availability__(ios,introduced=10.0), __availability__(macosx,introduced=10.12))) ;
 /* END FUNCTION-DECL-EXTERN renamex_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h:46 */
 
+/* BEGIN ENUM _TIG_VZ_q7TM_3_fac_$op LOC=UNKNOWN */
+enum _TIG_VZ_q7TM_3_fac_$op {
+    _TIG_VZ_q7TM_3_fac_Mult_int_int2int$right_STA_0$result_STA_0$left_STA_1 = 3,
+    _TIG_VZ_q7TM_3_fac_branchIfTrue$expr_STA_0$label_LAB_0 = 207,
+    _TIG_VZ_q7TM_3_fac_convert_void_star2void_star$left_STA_0$result_STA_0 = 184,
+    _TIG_VZ_q7TM_3_fac_returnVoid$ = 172,
+    _TIG_VZ_q7TM_3_fac_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1 = 128,
+    _TIG_VZ_q7TM_3_fac_call$func_LIT_0 = 200,
+    _TIG_VZ_q7TM_3_fac_load_int$left_STA_0$result_STA_0 = 40,
+    _TIG_VZ_q7TM_3_fac_constant_int$result_STA_0$value_LIT_0 = 162,
+    _TIG_VZ_q7TM_3_fac_formal$result_STA_0$value_LIT_0 = 129,
+    _TIG_VZ_q7TM_3_fac_store_void_star$left_STA_0$right_STA_1 = 72,
+    _TIG_VZ_q7TM_3_fac_string$result_STA_0$value_LIT_0 = 86,
+    _TIG_VZ_q7TM_3_fac_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1 = 237,
+    _TIG_VZ_q7TM_3_fac_store_int$left_STA_0$right_STA_1 = 166,
+    _TIG_VZ_q7TM_3_fac_goto$label_LAB_0 = 202,
+    _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0 = 31
+} ;
+/* END ENUM _TIG_VZ_q7TM_3_fac_$op LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_logf LOC=BUILTIN */
 /* compiler builtin: 
    float __builtin_logf(float  ) ;  */
@@ -3743,30 +3754,6 @@ extern off_t ftello(FILE *__stream ) ;
 /* compiler builtin: 
    _Float16 __builtin_fmaf16(_Float16  , _Float16  , _Float16  ) ;  */
 /* END FUNCTION-DECL __builtin_fmaf16 LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DEF _TIG_VZ_fzud_3_fac_$strings LOC=UNKNOWN */
-char const   *_TIG_VZ_fzud_3_fac_$strings  =    "fac(%i)=%i\n\000";
-/* END VARIABLE-DEF _TIG_VZ_fzud_3_fac_$strings LOC=UNKNOWN */
-
-/* BEGIN ENUM _TIG_VZ_fzud_3_fac_$op LOC=UNKNOWN */
-enum _TIG_VZ_fzud_3_fac_$op {
-    _TIG_VZ_fzud_3_fac_Mult_int_int2int$right_STA_0$result_STA_0$left_STA_1 = 3,
-    _TIG_VZ_fzud_3_fac_branchIfTrue$expr_STA_0$label_LAB_0 = 207,
-    _TIG_VZ_fzud_3_fac_convert_void_star2void_star$left_STA_0$result_STA_0 = 184,
-    _TIG_VZ_fzud_3_fac_returnVoid$ = 172,
-    _TIG_VZ_fzud_3_fac_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1 = 128,
-    _TIG_VZ_fzud_3_fac_call$func_LIT_0 = 200,
-    _TIG_VZ_fzud_3_fac_load_int$left_STA_0$result_STA_0 = 40,
-    _TIG_VZ_fzud_3_fac_constant_int$result_STA_0$value_LIT_0 = 162,
-    _TIG_VZ_fzud_3_fac_formal$result_STA_0$value_LIT_0 = 129,
-    _TIG_VZ_fzud_3_fac_store_void_star$left_STA_0$right_STA_1 = 72,
-    _TIG_VZ_fzud_3_fac_string$result_STA_0$value_LIT_0 = 86,
-    _TIG_VZ_fzud_3_fac_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1 = 237,
-    _TIG_VZ_fzud_3_fac_store_int$left_STA_0$right_STA_1 = 166,
-    _TIG_VZ_fzud_3_fac_goto$label_LAB_0 = 202,
-    _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0 = 31
-} ;
-/* END ENUM _TIG_VZ_fzud_3_fac_$op LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_nan LOC=BUILTIN */
 /* compiler builtin: 
@@ -3816,6 +3803,59 @@ struct __sFILE {
 #line 135 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 extern int atoi(char const   * ) ;
 /* END FUNCTION-DECL-EXTERN atoi LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:135 */
+
+/* BEGIN VARIABLE-DEF _TIG_VZ_q7TM_3_fib_$array LOC=UNKNOWN */
+unsigned char _TIG_VZ_q7TM_3_fib_$array[1][200]  = { {        _TIG_VZ_q7TM_3_fib_constant_int$result_STA_0$value_LIT_0,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)8,        (unsigned char)2, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fib_constant_int$result_STA_0$value_LIT_0, 
+            (unsigned char)1,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fib_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0, 
+            (unsigned char)16,        (unsigned char)2,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fib_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1,        (unsigned char)0, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)20, 
+            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1, 
+            _TIG_VZ_q7TM_3_fib_goto$label_LAB_0,        (unsigned char)4,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)20,        (unsigned char)2, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_formal$result_STA_0$value_LIT_0, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1,        _TIG_VZ_q7TM_3_fib_branchIfTrue$expr_STA_0$label_LAB_0,        (unsigned char)14, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_goto$label_LAB_0, 
+            (unsigned char)4,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fib_goto$label_LAB_0,        (unsigned char)75,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0, 
+            (unsigned char)8,        (unsigned char)2,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)16, 
+            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1, 
+            _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)8, 
+            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1, 
+            _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)16,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)12, 
+            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1, 
+            _TIG_VZ_q7TM_3_fib_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)20,        (unsigned char)2, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1, 
+            _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)20,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fib_goto$label_LAB_0,        (unsigned char)166, 
+            (unsigned char)255,        (unsigned char)255,        (unsigned char)255,        _TIG_VZ_q7TM_3_fib_goto$label_LAB_0, 
+            (unsigned char)161,        (unsigned char)255,        (unsigned char)255,        (unsigned char)255, 
+            _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)24,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_string$result_STA_0$value_LIT_0,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_convert_void_star2void_star$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_store_void_star$right_STA_0$left_STA_1, 
+            _TIG_VZ_q7TM_3_fib_formal$result_STA_0$value_LIT_0,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)32, 
+            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1, 
+            _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)16,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)36, 
+            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1, 
+            _TIG_VZ_q7TM_3_fib_call$func_LIT_0,        (unsigned char)1,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fib_goto$label_LAB_0,        (unsigned char)4,        (unsigned char)0, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_goto$label_LAB_0,        (unsigned char)4, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fib_returnVoid$}};
+/* END VARIABLE-DEF _TIG_VZ_q7TM_3_fib_$array LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN pthread_mutexattr_getprotocol LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:403 */
 #line 403 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
@@ -3915,10 +3955,6 @@ extern int mkstemp(char * ) ;
 #line 321 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_condattr_init(pthread_condattr_t * ) ;
 /* END FUNCTION-DECL-EXTERN pthread_condattr_init LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:321 */
-
-/* BEGIN VARIABLE-DECL _TIG_IZ_fzud_envp LOC=UNKNOWN */
-char **_TIG_IZ_fzud_envp ;
-/* END VARIABLE-DECL _TIG_IZ_fzud_envp LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin___vprintf_chk LOC=BUILTIN */
 /* compiler builtin: 
@@ -4048,10 +4084,6 @@ extern void setprogname(char const   * ) ;
    double __builtin_rint(double  ) ;  */
 /* END FUNCTION-DECL __builtin_rint LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DEF _TIG_VZ_fzud_3_fib_$strings LOC=UNKNOWN */
-char const   *_TIG_VZ_fzud_3_fib_$strings  =    "fib(%i)=%i\n\000";
-/* END VARIABLE-DEF _TIG_VZ_fzud_3_fib_$strings LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_umul_overflow LOC=BUILTIN */
 /* compiler builtin: 
    _Bool __builtin_umul_overflow(unsigned int const    , unsigned int const    , unsigned int * ) ;  */
@@ -4102,6 +4134,10 @@ extern int getchar(void) ;
 /* compiler builtin: 
    _Float128 __builtin_fminf128(_Float128  , _Float128  ) ;  */
 /* END FUNCTION-DECL __builtin_fminf128 LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DECL _TIG_VZ_q7TM_3_fac_$strings LOC=UNKNOWN */
+char const   *_TIG_VZ_q7TM_3_fac_$strings ;
+/* END VARIABLE-DECL _TIG_VZ_q7TM_3_fac_$strings LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN pthread_mutexattr_setprotocol LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:425 */
 #line 425 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
@@ -4156,10 +4192,6 @@ extern int fseeko(FILE *__stream , off_t __offset , int __whence ) ;
                                       unsigned long long const    , unsigned long long * ) ;  */
 /* END FUNCTION-DECL __builtin_subcll LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_fzud_2_init_tigress_1_opaque_ptr_1 ;
-/* END VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_acosh LOC=BUILTIN */
 /* compiler builtin: 
    double __builtin_acosh(double  ) ;  */
@@ -4190,10 +4222,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
    long double __builtin_nearbyintl(long double  ) ;  */
 /* END FUNCTION-DECL __builtin_nearbyintl LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_VZ_fzud_3_fib_$array LOC=UNKNOWN */
-unsigned char _TIG_VZ_fzud_3_fib_$array[1][200] ;
-/* END VARIABLE-DECL _TIG_VZ_fzud_3_fib_$array LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_roundl LOC=BUILTIN */
 /* compiler builtin: 
    long double __builtin_roundl(long double  ) ;  */
@@ -4214,6 +4242,10 @@ unsigned char _TIG_VZ_fzud_3_fib_$array[1][200] ;
 #line 201 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 extern char *ecvt(double  , int  , int * __restrict   , int * __restrict   ) ;
 /* END FUNCTION-DECL-EXTERN ecvt LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:201 */
+
+/* BEGIN VARIABLE-DECL _TIG_IZ_q7TM_argc LOC=UNKNOWN */
+int _TIG_IZ_q7TM_argc ;
+/* END VARIABLE-DECL _TIG_IZ_q7TM_argc LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN realloc LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h:43 */
 #line 43 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h"
@@ -4282,6 +4314,10 @@ struct __darwin_x86_float_state64 {
 };
 /* END STRUCT __darwin_x86_float_state64 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h:714 */
 
+/* BEGIN VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+unsigned int _TIG_iO_q7TM_2_init_tigress_1__opaque_array[30] ;
+/* END VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_strspn LOC=BUILTIN */
 /* compiler builtin: 
    unsigned long long __builtin_strspn(char const   * , char const   * ) ;  */
@@ -4301,10 +4337,6 @@ extern int futimes(int  , struct timeval  const  * ) ;
 #line 298 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 extern char const   *getprogname(void) ;
 /* END FUNCTION-DECL-EXTERN getprogname LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:298 */
-
-/* BEGIN VARIABLE-DECL _TIG_VZ_fzud_3_fib_$strings LOC=UNKNOWN */
-char const   *_TIG_VZ_fzud_3_fib_$strings ;
-/* END VARIABLE-DECL _TIG_VZ_fzud_3_fib_$strings LOC=UNKNOWN */
 
 /* BEGIN VARIABLE-DECL-EXTERN tzname LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:98 */
 #line 98 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h"
@@ -4376,25 +4408,6 @@ struct proc_rlimit_control_wakeupmon {
 #line 133 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 extern int atexit(void (* _Nonnull  )(void) ) ;
 /* END FUNCTION-DECL-EXTERN atexit LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:133 */
-
-/* BEGIN ENUM _TIG_VZ_fzud_3_fib_$op LOC=UNKNOWN */
-enum _TIG_VZ_fzud_3_fib_$op {
-    _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1 = 144,
-    _TIG_VZ_fzud_3_fib_goto$label_LAB_0 = 204,
-    _TIG_VZ_fzud_3_fib_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1 = 9,
-    _TIG_VZ_fzud_3_fib_store_void_star$right_STA_0$left_STA_1 = 167,
-    _TIG_VZ_fzud_3_fib_branchIfTrue$expr_STA_0$label_LAB_0 = 21,
-    _TIG_VZ_fzud_3_fib_convert_void_star2void_star$left_STA_0$result_STA_0 = 104,
-    _TIG_VZ_fzud_3_fib_returnVoid$ = 123,
-    _TIG_VZ_fzud_3_fib_string$result_STA_0$value_LIT_0 = 162,
-    _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0 = 32,
-    _TIG_VZ_fzud_3_fib_formal$result_STA_0$value_LIT_0 = 0,
-    _TIG_VZ_fzud_3_fib_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1 = 89,
-    _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0 = 4,
-    _TIG_VZ_fzud_3_fib_constant_int$result_STA_0$value_LIT_0 = 51,
-    _TIG_VZ_fzud_3_fib_call$func_LIT_0 = 186
-} ;
-/* END ENUM _TIG_VZ_fzud_3_fib_$op LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_cpowl LOC=BUILTIN */
 /* compiler builtin: 
@@ -4498,6 +4511,10 @@ extern FILE *fopen(char const   * __restrict  __filename , char const   * __rest
 /* compiler builtin: 
    int __builtin_snprintf(char * , unsigned long long  , char const   *  , ...) ;  */
 /* END FUNCTION-DECL __builtin_snprintf LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_1 ;
+/* END VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_fabs LOC=BUILTIN */
 /* compiler builtin: 
@@ -4699,6 +4716,10 @@ extern int __attribute__((__availability__(ios,introduced=8.0), __availability__
    _Complex long double __builtin_csqrtl(_Complex long double  ) ;  */
 /* END FUNCTION-DECL __builtin_csqrtl LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DEF _TIG_iE_q7TM_1_entropy LOC=UNKNOWN */
+unsigned long _TIG_iE_q7TM_1_entropy  =    9042506488591766566UL;
+/* END VARIABLE-DEF _TIG_iE_q7TM_1_entropy LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_parityl LOC=BUILTIN */
 /* compiler builtin: 
    int __builtin_parityl(unsigned long  ) ;  */
@@ -4769,6 +4790,10 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
    float __builtin_sqrtf(float  ) ;  */
 /* END FUNCTION-DECL __builtin_sqrtf LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_1  =    (struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+
 /* BEGIN STRUCT __darwin_opmask_reg LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h:259 */
 #line 259 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h"
 struct __darwin_opmask_reg {
@@ -4788,10 +4813,6 @@ struct itimerval {
 /* compiler builtin: 
    int __builtin_ctzs(short  ) ;  */
 /* END FUNCTION-DECL __builtin_ctzs LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DEF _TIG_IZ_fzud_envp LOC=UNKNOWN */
-char **_TIG_IZ_fzud_envp  ;
-/* END VARIABLE-DEF _TIG_IZ_fzud_envp LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_ccosh LOC=BUILTIN */
 /* compiler builtin: 
@@ -4852,10 +4873,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 /* compiler builtin: 
    long double __builtin_truncl(long double  ) ;  */
 /* END FUNCTION-DECL __builtin_truncl LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DEF _TIG_IZ_fzud_argc LOC=UNKNOWN */
-int _TIG_IZ_fzud_argc  ;
-/* END VARIABLE-DEF _TIG_IZ_fzud_argc LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_lgammal LOC=BUILTIN */
 /* compiler builtin: 
@@ -4948,10 +4965,6 @@ extern int remove(char const   * ) ;
 extern char *gcvt(double  , int  , char * ) ;
 /* END FUNCTION-DECL-EXTERN gcvt LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:204 */
 
-/* BEGIN VARIABLE-DEF _TIG_iE_fzud_1_entropy LOC=UNKNOWN */
-unsigned long _TIG_iE_fzud_1_entropy  =    9042506488591766566UL;
-/* END VARIABLE-DEF _TIG_iE_fzud_1_entropy LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_expl LOC=BUILTIN */
 /* compiler builtin: 
    long double __builtin_expl(long double  ) ;  */
@@ -4992,6 +5005,10 @@ extern clock_t clock(void)  __asm__("_clock")  ;
 extern int sradixsort(unsigned char const   **__base , int __nel , unsigned char const   *__table ,
                       unsigned int __endbyte ) ;
 /* END FUNCTION-DECL-EXTERN sradixsort LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:345 */
+
+/* BEGIN VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_q7TM_2_init_tigress_1_opaque_list_2 ;
+/* END VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_erfl LOC=BUILTIN */
 /* compiler builtin: 
@@ -5144,18 +5161,6 @@ __availability__(tvos,introduced=13.0), __availability__(ios,introduced=13.0), _
 extern void *( __attribute__((__warn_unused_result__)) calloc)(size_t __count , size_t __size )  __attribute__((__alloc_size__(1,2))) ;
 /* END FUNCTION-DECL-EXTERN calloc LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h:41 */
 
-/* BEGIN VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-unsigned int _TIG_iO_fzud_2_init_tigress_1__opaque_array[30]  = 
-  {      8,      362,      3,      493, 
-        432,      5,      303,      390, 
-        5,      383,      5,      7, 
-        133,      47,      1,      288, 
-        502,      95,      218,      628, 
-        22,      428,      656,      41, 
-        68,      201,      34,      403, 
-        698};
-/* END VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN pthread_mutexattr_init LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:419 */
 #line 419 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_init(pthread_mutexattr_t * ) ;
@@ -5226,7 +5231,7 @@ extern void *alloca(size_t  ) ;
 /* END FUNCTION-DECL __builtin_va_start LOC=BUILTIN */
 
 /* BEGIN FUNCTION-DECL main LOC=UNKNOWN */
-int main(int argc , char **argv , char **_TIG_IZ_fzud_formal_envp ) ;
+int main(int argc , char **argv , char **_TIG_IZ_q7TM_formal_envp ) ;
 /* END FUNCTION-DECL main LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_sqrt LOC=BUILTIN */
@@ -5265,6 +5270,10 @@ extern int unlockpt(int  ) ;
 /* compiler builtin: 
    _Float128 __builtin_tgammaf128(_Float128  ) ;  */
 /* END FUNCTION-DECL __builtin_tgammaf128 LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DECL _TIG_iE_q7TM_1_alwaysZero LOC=UNKNOWN */
+unsigned long _TIG_iE_q7TM_1_alwaysZero ;
+/* END VARIABLE-DECL _TIG_iE_q7TM_1_alwaysZero LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_strstr LOC=BUILTIN */
 /* compiler builtin: 
@@ -5308,6 +5317,10 @@ extern int ( /* format attribute */  vsscanf)(char const   * __restrict  __str ,
 /* compiler builtin: 
    float __builtin_cosf(float  ) ;  */
 /* END FUNCTION-DECL __builtin_cosf LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DEF _TIG_IZ_q7TM_argv LOC=UNKNOWN */
+char **_TIG_IZ_q7TM_argv  ;
+/* END VARIABLE-DEF _TIG_IZ_q7TM_argv LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_rotateright8 LOC=BUILTIN */
 /* compiler builtin: 
@@ -5353,6 +5366,10 @@ typedef enum __anonenum_clockid_t_447627989 clockid_t;
 extern __uint64_t __attribute__((__availability__(macosx,introduced=10.12), __availability__(ios,introduced=10.0),
 __availability__(tvos,introduced=10.0), __availability__(watchos,introduced=3.0)))  clock_gettime_nsec_np(clockid_t __clock_id ) ;
 /* END FUNCTION-DECL-EXTERN clock_gettime_nsec_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:182 */
+
+/* BEGIN VARIABLE-DEF _TIG_IZ_q7TM_envp LOC=UNKNOWN */
+char **_TIG_IZ_q7TM_envp  ;
+/* END VARIABLE-DEF _TIG_IZ_q7TM_envp LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_log2f128 LOC=BUILTIN */
 /* compiler builtin: 
@@ -5618,26 +5635,6 @@ typedef int8_t int_least8_t;
 extern size_t fread(void * __restrict  __ptr , size_t __size , size_t __nitems , FILE * __restrict  __stream ) ;
 /* END FUNCTION-DECL-EXTERN fread LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:158 */
 
-/* BEGIN UNION _TIG_VZ_fzud_3_fib_$node LOC=UNKNOWN */
-union _TIG_VZ_fzud_3_fib_$node {
-   long double _long_double ;
-   char _char ;
-   unsigned char _unsigned_char ;
-   signed char _signed_char ;
-   short _short ;
-   unsigned int _unsigned_int ;
-   unsigned long long _unsigned_long_long ;
-   void *_void_star ;
-   long _long ;
-   double _double ;
-   long long _long_long ;
-   float _float ;
-   unsigned short _unsigned_short ;
-   unsigned long _unsigned_long ;
-   int _int ;
-};
-/* END UNION _TIG_VZ_fzud_3_fib_$node LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_shufflevector LOC=BUILTIN */
 /* compiler builtin: 
    void __builtin_shufflevector(...) ;  */
@@ -5657,10 +5654,6 @@ extern  __attribute__((__noreturn__)) void abort(void)  __attribute__((__cold__)
 #line 255 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h"
 extern pid_t wait4(pid_t  , int * , int  , struct rusage * ) ;
 /* END FUNCTION-DECL-EXTERN wait4 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/wait.h:255 */
-
-/* BEGIN VARIABLE-DECL _TIG_iE_fzud_1_entropy LOC=UNKNOWN */
-unsigned long _TIG_iE_fzud_1_entropy ;
-/* END VARIABLE-DECL _TIG_iE_fzud_1_entropy LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_asinf128 LOC=BUILTIN */
 /* compiler builtin: 
@@ -5718,6 +5711,10 @@ extern ssize_t getline(char ** __restrict  __linep , size_t * __restrict  __line
 /* compiler builtin: 
    _Float128 __builtin_modff128(_Float128  , _Float128 * ) ;  */
 /* END FUNCTION-DECL __builtin_modff128 LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DECL _TIG_IZ_q7TM_envp LOC=UNKNOWN */
+char **_TIG_IZ_q7TM_envp ;
+/* END VARIABLE-DECL _TIG_IZ_q7TM_envp LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF user_ulong_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/types.h:101 */
 #line 101 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/types.h"
@@ -5830,6 +5827,10 @@ struct pthread_override_s ;
 /* compiler builtin: 
    _Complex long double __builtin_casinl(_Complex long double  ) ;  */
 /* END FUNCTION-DECL __builtin_casinl LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2 ;
+/* END VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN atoll LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:139 */
 #line 139 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
@@ -6030,10 +6031,6 @@ extern int ( /* format attribute */  sprintf)(char * __restrict   , char const  
    _Float128 __builtin_frexpf128(_Float128  , int * ) ;  */
 /* END FUNCTION-DECL __builtin_frexpf128 LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_fzud_2_init_tigress_1_opaque_list_2  =    (struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN renameatx_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h:47 */
 #line 47 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h"
 extern int renameatx_np(int  , char const   * , int  , char const   * , unsigned int  )  __attribute__((__availability__(watchos,introduced=3.0),
@@ -6122,10 +6119,6 @@ extern int __vsprintf_chk(char * __restrict   , int  , size_t  , char const   * 
 extern int __attribute__((__availability__(tvos,unavailable), __availability__(watchos,unavailable),
 __availability__(ios,unavailable), __availability__(macos,introduced=10.0), __availability__(swift,unavailable,message="Use posix_spawn APIs or NSTask instead.")))  system(char const   * )  __asm__("_system")  ;
 /* END FUNCTION-DECL-EXTERN system LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:190 */
-
-/* BEGIN VARIABLE-DEF _TIG_iE_fzud_1_alwaysZero LOC=UNKNOWN */
-unsigned long _TIG_iE_fzud_1_alwaysZero  =    0UL;
-/* END VARIABLE-DEF _TIG_iE_fzud_1_alwaysZero LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_rotateleft32 LOC=BUILTIN */
 /* compiler builtin: 
@@ -6373,6 +6366,10 @@ extern ssize_t getdelim(char ** __restrict  __linep , size_t * __restrict  __lin
                         int __delimiter , FILE * __restrict  __stream )  __attribute__((__availability__(macosx,introduced=10.7))) ;
 /* END FUNCTION-DECL-EXTERN getdelim LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:354 */
 
+/* BEGIN VARIABLE-DEF _TIG_iE_q7TM_1_alwaysZero LOC=UNKNOWN */
+unsigned long _TIG_iE_q7TM_1_alwaysZero  =    0UL;
+/* END VARIABLE-DEF _TIG_iE_q7TM_1_alwaysZero LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN ftrylockfile LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:287 */
 #line 287
 extern int ftrylockfile(FILE * ) ;
@@ -6397,59 +6394,6 @@ extern int ftrylockfile(FILE * ) ;
 /* compiler builtin: 
    _Bool __builtin_ssubl_overflow(long const    , long const    , long * ) ;  */
 /* END FUNCTION-DECL __builtin_ssubl_overflow LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DEF _TIG_VZ_fzud_3_fib_$array LOC=UNKNOWN */
-unsigned char _TIG_VZ_fzud_3_fib_$array[1][200]  = { {        _TIG_VZ_fzud_3_fib_constant_int$result_STA_0$value_LIT_0,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)8,        (unsigned char)2, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fib_constant_int$result_STA_0$value_LIT_0, 
-            (unsigned char)1,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fib_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0, 
-            (unsigned char)16,        (unsigned char)2,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fib_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1,        (unsigned char)0, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)20, 
-            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1, 
-            _TIG_VZ_fzud_3_fib_goto$label_LAB_0,        (unsigned char)4,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)20,        (unsigned char)2, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_formal$result_STA_0$value_LIT_0, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1,        _TIG_VZ_fzud_3_fib_branchIfTrue$expr_STA_0$label_LAB_0,        (unsigned char)14, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_goto$label_LAB_0, 
-            (unsigned char)4,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fib_goto$label_LAB_0,        (unsigned char)75,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0, 
-            (unsigned char)8,        (unsigned char)2,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)16, 
-            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1, 
-            _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)8, 
-            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1, 
-            _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)16,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)12, 
-            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1, 
-            _TIG_VZ_fzud_3_fib_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)20,        (unsigned char)2, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1, 
-            _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)20,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fib_goto$label_LAB_0,        (unsigned char)166, 
-            (unsigned char)255,        (unsigned char)255,        (unsigned char)255,        _TIG_VZ_fzud_3_fib_goto$label_LAB_0, 
-            (unsigned char)161,        (unsigned char)255,        (unsigned char)255,        (unsigned char)255, 
-            _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)24,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_string$result_STA_0$value_LIT_0,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_convert_void_star2void_star$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_store_void_star$right_STA_0$left_STA_1, 
-            _TIG_VZ_fzud_3_fib_formal$result_STA_0$value_LIT_0,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)32, 
-            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1, 
-            _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)16,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0,        (unsigned char)36, 
-            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1, 
-            _TIG_VZ_fzud_3_fib_call$func_LIT_0,        (unsigned char)1,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fib_goto$label_LAB_0,        (unsigned char)4,        (unsigned char)0, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_goto$label_LAB_0,        (unsigned char)4, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fib_returnVoid$}};
-/* END VARIABLE-DEF _TIG_VZ_fzud_3_fib_$array LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF __darwin_rune_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_types.h:109 */
 #line 109 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_types.h"
@@ -6505,10 +6449,6 @@ extern int feof(FILE * ) ;
 #line 348 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 extern void srandomdev(void) ;
 /* END FUNCTION-DECL-EXTERN srandomdev LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:348 */
-
-/* BEGIN TYPEDEF _TIG_iO_fzud_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
-typedef struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_fzud_2_init_tigress_1_opaqueStructureType;
-/* END TYPEDEF _TIG_iO_fzud_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_catanf LOC=BUILTIN */
 /* compiler builtin: 
@@ -6706,10 +6646,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 extern long long llabs(long long  ) ;
 /* END FUNCTION-DECL-EXTERN llabs LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:152 */
 
-/* BEGIN VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2  =    (struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
-
 /* BEGIN TYPEDEF __darwin_uid_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h:75 */
 #line 75 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h"
 typedef __uint32_t __darwin_uid_t;
@@ -6745,10 +6681,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 /* compiler builtin: 
    long double __builtin_floorl(long double  ) ;  */
 /* END FUNCTION-DECL __builtin_floorl LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_fzud_2_init_tigress_1_opaque_list_2 ;
-/* END VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN pthread_getname_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:510 */
 #line 510
@@ -6788,9 +6720,17 @@ extern lldiv_t lldiv(long long  , long long  ) ;
    float __builtin_powf(float  , float  ) ;  */
 /* END FUNCTION-DECL __builtin_powf LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
-struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2 ;
-/* END VARIABLE-DECL _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
+/* BEGIN VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+unsigned int _TIG_iO_q7TM_2_init_tigress_1__opaque_array[30]  = 
+  {      8,      362,      3,      493, 
+        432,      5,      303,      390, 
+        5,      383,      5,      7, 
+        133,      47,      1,      288, 
+        502,      95,      218,      628, 
+        22,      428,      656,      41, 
+        68,      201,      34,      403, 
+        698};
+/* END VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1__opaque_array LOC=UNKNOWN */
 
 /* BEGIN STRUCT __darwin_mcontext64_full LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h:105 */
 #line 105 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h"
@@ -6810,6 +6750,10 @@ struct __darwin_mcontext64_full {
 /* compiler builtin: 
    double __builtin_nexttoward(double  , long double  ) ;  */
 /* END FUNCTION-DECL __builtin_nexttoward LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_q7TM_2_init_tigress_1_opaque_list_1 ;
+/* END VARIABLE-DECL _TIG_iO_q7TM_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_fmaf LOC=BUILTIN */
 /* compiler builtin: 
@@ -6872,10 +6816,6 @@ extern int gettimeofday(struct timeval * __restrict   , void * __restrict   ) ;
 extern char *devname_r(dev_t  , mode_t  , char *buf , int len ) ;
 /* END FUNCTION-DECL-EXTERN devname_r LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:294 */
 
-/* BEGIN VARIABLE-DECL _TIG_IZ_fzud_argv LOC=UNKNOWN */
-char **_TIG_IZ_fzud_argv ;
-/* END VARIABLE-DECL _TIG_IZ_fzud_argv LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN pthread_key_delete LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:369 */
 #line 369 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_key_delete(pthread_key_t  ) ;
@@ -6889,10 +6829,6 @@ extern FILE *funopen(void const   * , int (* _Nullable  )(void * , char * , int 
                                                                                                    int  ) ,
                      int (* _Nullable  )(void * ) ) ;
 /* END FUNCTION-DECL-EXTERN funopen LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:384 */
-
-/* BEGIN VARIABLE-DECL _TIG_iE_fzud_1_alwaysZero LOC=UNKNOWN */
-unsigned long _TIG_iE_fzud_1_alwaysZero ;
-/* END VARIABLE-DECL _TIG_iE_fzud_1_alwaysZero LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_hypot LOC=BUILTIN */
 /* compiler builtin: 
@@ -7041,6 +6977,10 @@ extern long nrand48(unsigned short * )  __attribute__((__availability__(swift,un
 typedef __uint32_t __darwin_socklen_t;
 /* END TYPEDEF __darwin_socklen_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_types.h:118 */
 
+/* BEGIN VARIABLE-DECL _TIG_VZ_q7TM_3_fib_$strings LOC=UNKNOWN */
+char const   *_TIG_VZ_q7TM_3_fib_$strings ;
+/* END VARIABLE-DECL _TIG_VZ_q7TM_3_fib_$strings LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_signbitl LOC=BUILTIN */
 /* compiler builtin: 
    int __builtin_signbitl(long double  ) ;  */
@@ -7137,6 +7077,10 @@ extern void srand48(long  ) ;
 #line 367 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h"
 extern int const   sys_nerr ;
 /* END VARIABLE-DECL-EXTERN sys_nerr LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:367 */
+
+/* BEGIN VARIABLE-DECL _TIG_VZ_q7TM_3_fac_$array LOC=UNKNOWN */
+unsigned char _TIG_VZ_q7TM_3_fac_$array[1][154] ;
+/* END VARIABLE-DECL _TIG_VZ_q7TM_3_fac_$array LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF uintmax_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h:32 */
 #line 32 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h"
@@ -7394,6 +7338,10 @@ extern int putw(int  , FILE * ) ;
 __inline void ( __attribute__((__always_inline__)) __darwin_fd_set)(int _fd , struct fd_set *_p ) ;
 /* END FUNCTION-DECL __darwin_fd_set LOC=UNKNOWN */
 
+/* BEGIN VARIABLE-DEF _TIG_VZ_q7TM_3_fac_$strings LOC=UNKNOWN */
+char const   *_TIG_VZ_q7TM_3_fac_$strings  =    "fac(%i)=%i\n\000";
+/* END VARIABLE-DEF _TIG_VZ_q7TM_3_fac_$strings LOC=UNKNOWN */
+
 /* BEGIN STRUCT __darwin_mcontext_avx512_64 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h:130 */
 #line 130 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h"
 struct __darwin_mcontext_avx512_64 {
@@ -7429,6 +7377,10 @@ extern int ( /* format attribute */  fprintf)(FILE * __restrict   , char const  
 /* compiler builtin: 
    float __builtin_logbf(float  ) ;  */
 /* END FUNCTION-DECL __builtin_logbf LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_q7TM_2_init_tigress_1_opaque_list_1  =    (struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_parity LOC=BUILTIN */
 /* compiler builtin: 
@@ -7702,6 +7654,30 @@ struct __anonstruct_lldiv_t_86583852 {
    long double __builtin_tgammal(long double  ) ;  */
 /* END FUNCTION-DECL __builtin_tgammal LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DEF _TIG_IZ_q7TM_argc LOC=UNKNOWN */
+int _TIG_IZ_q7TM_argc  ;
+/* END VARIABLE-DEF _TIG_IZ_q7TM_argc LOC=UNKNOWN */
+
+/* BEGIN UNION _TIG_VZ_q7TM_3_fib_$node LOC=UNKNOWN */
+union _TIG_VZ_q7TM_3_fib_$node {
+   long double _long_double ;
+   char _char ;
+   unsigned char _unsigned_char ;
+   signed char _signed_char ;
+   short _short ;
+   unsigned int _unsigned_int ;
+   unsigned long long _unsigned_long_long ;
+   void *_void_star ;
+   long _long ;
+   double _double ;
+   long long _long_long ;
+   float _float ;
+   unsigned short _unsigned_short ;
+   unsigned long _unsigned_long ;
+   int _int ;
+};
+/* END UNION _TIG_VZ_q7TM_3_fib_$node LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_clogl LOC=BUILTIN */
 /* compiler builtin: 
    _Complex long double __builtin_clogl(_Complex long double  ) ;  */
@@ -7897,6 +7873,10 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 extern void __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  *pthread_get_stackaddr_np(pthread_t  ) ;
 /* END FUNCTION-DECL-EXTERN pthread_get_stackaddr_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:527 */
 
+/* BEGIN VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
+struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_q7TM_2_init_tigress_1_opaque_list_2  =    (struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_q7TM_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN open_memstream LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:357 */
 #line 357 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h"
 extern FILE *open_memstream(char **__bufp , size_t *__sizep )  __attribute__((__availability__(watchos,introduced=4.0),
@@ -7994,48 +7974,6 @@ typedef struct __darwin_mcontext64 *mcontext_t;
    long __builtin_unpredictable(long  ) ;  */
 /* END FUNCTION-DECL __builtin_unpredictable LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DEF _TIG_VZ_fzud_3_fac_$array LOC=UNKNOWN */
-unsigned char _TIG_VZ_fzud_3_fac_$array[1][154]  = { {        _TIG_VZ_fzud_3_fac_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)8,        (unsigned char)2, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fac_constant_int$result_STA_0$value_LIT_0, 
-            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fac_goto$label_LAB_0,        (unsigned char)4, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_formal$result_STA_0$value_LIT_0, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fac_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1, 
-            _TIG_VZ_fzud_3_fac_branchIfTrue$expr_STA_0$label_LAB_0,        (unsigned char)14,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fac_goto$label_LAB_0,        (unsigned char)4,        (unsigned char)0, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_goto$label_LAB_0,        (unsigned char)51, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0, 
-            (unsigned char)8,        (unsigned char)2,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2, 
-            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fac_Mult_int_int2int$right_STA_0$result_STA_0$left_STA_1, 
-            _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)8,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fac_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0, 
-            (unsigned char)12,        (unsigned char)2,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_fzud_3_fac_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)12, 
-            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_store_int$left_STA_0$right_STA_1, 
-            _TIG_VZ_fzud_3_fac_goto$label_LAB_0,        (unsigned char)190,        (unsigned char)255,        (unsigned char)255, 
-            (unsigned char)255,        _TIG_VZ_fzud_3_fac_goto$label_LAB_0,        (unsigned char)185,        (unsigned char)255, 
-            (unsigned char)255,        (unsigned char)255,        _TIG_VZ_fzud_3_fac_string$result_STA_0$value_LIT_0,        (unsigned char)0, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_convert_void_star2void_star$left_STA_0$result_STA_0, 
-            _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)16,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fac_store_void_star$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fac_formal$result_STA_0$value_LIT_0,        (unsigned char)0, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_load_int$left_STA_0$result_STA_0, 
-            _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)24,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)8, 
-            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_load_int$left_STA_0$result_STA_0, 
-            _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)28,        (unsigned char)2,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_fzud_3_fac_call$func_LIT_0,        (unsigned char)1, 
-            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_fzud_3_fac_goto$label_LAB_0, 
-            (unsigned char)4,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
-            _TIG_VZ_fzud_3_fac_goto$label_LAB_0,        (unsigned char)4,        (unsigned char)0,        (unsigned char)0, 
-            (unsigned char)0,        _TIG_VZ_fzud_3_fac_returnVoid$}};
-/* END VARIABLE-DEF _TIG_VZ_fzud_3_fac_$array LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_creal LOC=BUILTIN */
 /* compiler builtin: 
    double __builtin_creal(_Complex double  ) ;  */
@@ -8085,6 +8023,48 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 /* compiler builtin: 
    void *__builtin_align_up(void const   * , unsigned long long  ) ;  */
 /* END FUNCTION-DECL __builtin_align_up LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DEF _TIG_VZ_q7TM_3_fac_$array LOC=UNKNOWN */
+unsigned char _TIG_VZ_q7TM_3_fac_$array[1][154]  = { {        _TIG_VZ_q7TM_3_fac_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)8,        (unsigned char)2, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fac_constant_int$result_STA_0$value_LIT_0, 
+            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fac_goto$label_LAB_0,        (unsigned char)4, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_formal$result_STA_0$value_LIT_0, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fac_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1, 
+            _TIG_VZ_q7TM_3_fac_branchIfTrue$expr_STA_0$label_LAB_0,        (unsigned char)14,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fac_goto$label_LAB_0,        (unsigned char)4,        (unsigned char)0, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_goto$label_LAB_0,        (unsigned char)51, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0, 
+            (unsigned char)8,        (unsigned char)2,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)12,        (unsigned char)2, 
+            (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fac_Mult_int_int2int$right_STA_0$result_STA_0$left_STA_1, 
+            _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)8,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fac_constant_int$result_STA_0$value_LIT_0,        (unsigned char)1, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0, 
+            (unsigned char)12,        (unsigned char)2,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fac_load_int$left_STA_0$result_STA_0,        _TIG_VZ_q7TM_3_fac_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)12, 
+            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_store_int$left_STA_0$right_STA_1, 
+            _TIG_VZ_q7TM_3_fac_goto$label_LAB_0,        (unsigned char)190,        (unsigned char)255,        (unsigned char)255, 
+            (unsigned char)255,        _TIG_VZ_q7TM_3_fac_goto$label_LAB_0,        (unsigned char)185,        (unsigned char)255, 
+            (unsigned char)255,        (unsigned char)255,        _TIG_VZ_q7TM_3_fac_string$result_STA_0$value_LIT_0,        (unsigned char)0, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_convert_void_star2void_star$left_STA_0$result_STA_0, 
+            _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)16,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fac_store_void_star$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fac_formal$result_STA_0$value_LIT_0,        (unsigned char)0, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_load_int$left_STA_0$result_STA_0, 
+            _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)24,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)8, 
+            (unsigned char)2,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_load_int$left_STA_0$result_STA_0, 
+            _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0,        (unsigned char)28,        (unsigned char)2,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fac_store_int$left_STA_0$right_STA_1,        _TIG_VZ_q7TM_3_fac_call$func_LIT_0,        (unsigned char)1, 
+            (unsigned char)0,        (unsigned char)0,        (unsigned char)0,        _TIG_VZ_q7TM_3_fac_goto$label_LAB_0, 
+            (unsigned char)4,        (unsigned char)0,        (unsigned char)0,        (unsigned char)0, 
+            _TIG_VZ_q7TM_3_fac_goto$label_LAB_0,        (unsigned char)4,        (unsigned char)0,        (unsigned char)0, 
+            (unsigned char)0,        _TIG_VZ_q7TM_3_fac_returnVoid$}};
+/* END VARIABLE-DEF _TIG_VZ_q7TM_3_fac_$array LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN ftell LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:164 */
 #line 164 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h"
@@ -8171,6 +8151,10 @@ typedef int64_t user_long_t;
 /* compiler builtin: 
    long double __builtin_nextafterl(long double  , long double  ) ;  */
 /* END FUNCTION-DECL __builtin_nextafterl LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DECL _TIG_IZ_q7TM_argv LOC=UNKNOWN */
+char **_TIG_IZ_q7TM_argv ;
+/* END VARIABLE-DECL _TIG_IZ_q7TM_argv LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_atanl LOC=BUILTIN */
 /* compiler builtin: 
@@ -8304,6 +8288,26 @@ extern int ( /* format attribute */  snprintf)(char * __restrict  __str , size_t
                                                , ...) ;
 /* END FUNCTION-DECL-EXTERN snprintf LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:334 */
 
+/* BEGIN UNION _TIG_VZ_q7TM_3_fac_$node LOC=UNKNOWN */
+union _TIG_VZ_q7TM_3_fac_$node {
+   unsigned long long _unsigned_long_long ;
+   void *_void_star ;
+   int _int ;
+   float _float ;
+   short _short ;
+   long _long ;
+   char _char ;
+   double _double ;
+   unsigned char _unsigned_char ;
+   unsigned long _unsigned_long ;
+   unsigned short _unsigned_short ;
+   long long _long_long ;
+   signed char _signed_char ;
+   unsigned int _unsigned_int ;
+   long double _long_double ;
+};
+/* END UNION _TIG_VZ_q7TM_3_fac_$node LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_clz LOC=BUILTIN */
 /* compiler builtin: 
    int __builtin_clz(unsigned int  ) ;  */
@@ -8377,6 +8381,10 @@ __alloc_size__(2))) ;
    void __builtin_return(void const   * ) ;  */
 /* END FUNCTION-DECL __builtin_return LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DEF _TIG_VZ_q7TM_3_fib_$strings LOC=UNKNOWN */
+char const   *_TIG_VZ_q7TM_3_fib_$strings  =    "fib(%i)=%i\n\000";
+/* END VARIABLE-DEF _TIG_VZ_q7TM_3_fib_$strings LOC=UNKNOWN */
+
 /* BEGIN TYPEDEF uint_fast32_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h:46 */
 #line 46 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h"
 typedef uint32_t uint_fast32_t;
@@ -8419,10 +8427,6 @@ extern void psort_r(void *__base , size_t __nel , size_t __width , void * , int 
 /* compiler builtin: 
    unsigned short *__builtin_wcschr(unsigned short * const   , unsigned short  ) ;  */
 /* END FUNCTION-DECL __builtin_wcschr LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DEF _TIG_IZ_fzud_argv LOC=UNKNOWN */
-char **_TIG_IZ_fzud_argv  ;
-/* END VARIABLE-DEF _TIG_IZ_fzud_argv LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_logf16 LOC=BUILTIN */
 /* compiler builtin: 
@@ -8546,10 +8550,6 @@ extern void perror(char const   * )  __attribute__((__cold__)) ;
    int __builtin___vfprintf_chk(void * , int  , char const   * , __builtin_va_list  ) ;  */
 /* END FUNCTION-DECL __builtin___vfprintf_chk LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_VZ_fzud_3_fac_$array LOC=UNKNOWN */
-unsigned char _TIG_VZ_fzud_3_fac_$array[1][154] ;
-/* END VARIABLE-DECL _TIG_VZ_fzud_3_fac_$array LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_apply LOC=BUILTIN */
 /* compiler builtin: 
    void *__builtin_apply(void (*)() , void * , unsigned long long  ) ;  */
@@ -8564,10 +8564,6 @@ unsigned char _TIG_VZ_fzud_3_fac_$array[1][154] ;
 /* compiler builtin: 
    void *__builtin_os_log_format(void * , char const   *  , ...) ;  */
 /* END FUNCTION-DECL __builtin_os_log_format LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DECL _TIG_IZ_fzud_argc LOC=UNKNOWN */
-int _TIG_IZ_fzud_argc ;
-/* END VARIABLE-DECL _TIG_IZ_fzud_argc LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_rintf LOC=BUILTIN */
 /* compiler builtin: 
@@ -8600,6 +8596,10 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 /* compiler builtin: 
    long double __builtin_atanhl(long double  ) ;  */
 /* END FUNCTION-DECL __builtin_atanhl LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DECL _TIG_VZ_q7TM_3_fib_$array LOC=UNKNOWN */
+unsigned char _TIG_VZ_q7TM_3_fib_$array[1][200] ;
+/* END VARIABLE-DECL _TIG_VZ_q7TM_3_fib_$array LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_exp2f128 LOC=BUILTIN */
 /* compiler builtin: 
@@ -8657,7 +8657,7 @@ struct __anonstruct_div_t_773697287 {
 /* END STRUCT __anonstruct_div_t_773697287 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:83 */
 
 /* BEGIN FUNCTION-DEF main LOC=UNKNOWN */
-int main(int argc , char **argv , char **_TIG_IZ_fzud_formal_envp ) 
+int main(int argc , char **argv , char **_TIG_IZ_q7TM_formal_envp ) 
 { 
 
 
@@ -8666,34 +8666,34 @@ int main(int argc , char **argv , char **_TIG_IZ_fzud_formal_envp )
   {
   {
   {
-  _TIG_IZ_fzud_envp = (char **)0;
-  goto _TIG_IZ_fzud_envp__INITINLINE__TIG_IZ_fzud_envp__INIT;
+  _TIG_IZ_q7TM_envp = (char **)0;
+  goto _TIG_IZ_q7TM_envp__INITINLINE__TIG_IZ_q7TM_envp__INIT;
   }
-  _TIG_IZ_fzud_envp__INITINLINE__TIG_IZ_fzud_envp__INIT: /* CIL Label */ ;
-  }
-  {
-  {
-  _TIG_IZ_fzud_argv = (char **)0;
-  goto _TIG_IZ_fzud_argv__INITINLINE__TIG_IZ_fzud_argv__INIT;
-  }
-  _TIG_IZ_fzud_argv__INITINLINE__TIG_IZ_fzud_argv__INIT: /* CIL Label */ ;
+  _TIG_IZ_q7TM_envp__INITINLINE__TIG_IZ_q7TM_envp__INIT: /* CIL Label */ ;
   }
   {
   {
-  _TIG_IZ_fzud_argc = 0;
-  goto _TIG_IZ_fzud_argc__INITINLINE__TIG_IZ_fzud_argc__INIT;
+  _TIG_IZ_q7TM_argv = (char **)0;
+  goto _TIG_IZ_q7TM_argv__INITINLINE__TIG_IZ_q7TM_argv__INIT;
   }
-  _TIG_IZ_fzud_argc__INITINLINE__TIG_IZ_fzud_argc__INIT: /* CIL Label */ ;
+  _TIG_IZ_q7TM_argv__INITINLINE__TIG_IZ_q7TM_argv__INIT: /* CIL Label */ ;
+  }
+  {
+  {
+  _TIG_IZ_q7TM_argc = 0;
+  goto _TIG_IZ_q7TM_argc__INITINLINE__TIG_IZ_q7TM_argc__INIT;
+  }
+  _TIG_IZ_q7TM_argc__INITINLINE__TIG_IZ_q7TM_argc__INIT: /* CIL Label */ ;
   }
   goto megaInitINLINE_megaInit;
   }
   megaInitINLINE_megaInit: /* CIL Label */ ;
   }
   while (1) {
-    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-IZ-fzud--0":);
-    _TIG_IZ_fzud_argc = argc;
-    _TIG_IZ_fzud_argv = argv;
-    _TIG_IZ_fzud_envp = _TIG_IZ_fzud_formal_envp;
+    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-IZ-q7TM--0":);
+    _TIG_IZ_q7TM_argc = argc;
+    _TIG_IZ_q7TM_argv = argv;
+    _TIG_IZ_q7TM_envp = _TIG_IZ_q7TM_formal_envp;
     break;
   }
 #line 34 "test.c"
@@ -8813,34 +8813,34 @@ __inline int ( __attribute__((__always_inline__)) __darwin_check_fd_set)(int _a 
 /* BEGIN FUNCTION-DEF init_tigress LOC=UNKNOWN */
 void init_tigress(void) 
 { 
-  struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *p1 ;
+  struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *p1 ;
   int i2 ;
-  struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *p3 ;
+  struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *p3 ;
 
   {
   while (1) {
-    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-iO-fzud-2-init-tigress--2":);
+    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-iO-q7TM-2-init-tigress--2":);
     {
     {
     while (1) {
-      __asm__ volatile ("##_ANNOTATION_ATOMICREGION_-TIG-iO-fzud-2-init-tigress--1":);
-      p1 = (struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *)malloc(sizeof(struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct ));
+      __asm__ volatile ("##_ANNOTATION_ATOMICREGION_-TIG-iO-q7TM-2-init-tigress--1":);
+      p1 = (struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *)malloc(sizeof(struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct ));
       p1->next = p1;
       p1->prev = p1;
-      _TIG_iO_fzud_2_init_tigress_1_opaque_list_1 = p1;
+      _TIG_iO_q7TM_2_init_tigress_1_opaque_list_1 = p1;
       i2 = 0;
       while (i2 < 2) {
-        p3 = (struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct *)malloc(sizeof(struct _TIG_iO_fzud_2_init_tigress_1_opaqueNodeStruct ));
-        p3->data = i2 * (_TIG_iE_fzud_1_entropy | 10);
-        p3->next = _TIG_iO_fzud_2_init_tigress_1_opaque_list_1->next;
-        p3->prev = _TIG_iO_fzud_2_init_tigress_1_opaque_list_1;
-        (_TIG_iO_fzud_2_init_tigress_1_opaque_list_1->next)->prev = p3;
-        _TIG_iO_fzud_2_init_tigress_1_opaque_list_1->next = p3;
+        p3 = (struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct *)malloc(sizeof(struct _TIG_iO_q7TM_2_init_tigress_1_opaqueNodeStruct ));
+        p3->data = i2 * (_TIG_iE_q7TM_1_entropy | 10);
+        p3->next = _TIG_iO_q7TM_2_init_tigress_1_opaque_list_1->next;
+        p3->prev = _TIG_iO_q7TM_2_init_tigress_1_opaque_list_1;
+        (_TIG_iO_q7TM_2_init_tigress_1_opaque_list_1->next)->prev = p3;
+        _TIG_iO_q7TM_2_init_tigress_1_opaque_list_1->next = p3;
         i2 ++;
       }
-      _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_1 = _TIG_iO_fzud_2_init_tigress_1_opaque_list_1->next;
-      _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2 = _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_1;
-      _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2 = _TIG_iO_fzud_2_init_tigress_1_opaque_ptr_2->next;
+      _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_1 = _TIG_iO_q7TM_2_init_tigress_1_opaque_list_1->next;
+      _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2 = _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_1;
+      _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2 = _TIG_iO_q7TM_2_init_tigress_1_opaque_ptr_2->next;
       break;
     }
     }
@@ -8856,10 +8856,10 @@ void init_tigress(void)
 /* BEGIN FUNCTION-DEF fib LOC=UNKNOWN */
 void fib(int n ) 
 { 
-  char _TIG_VZ_fzud_3_fib_$locals[552] ;
-  unsigned char *_TIG_VZ_fzud_3_fib_$pc[1] ;
-  union _TIG_VZ_fzud_3_fib_$node *_TIG_VZ_fzud_3_fib_$sp[1] ;
-  unsigned char _TIG_VZ_fzud_3_fib_$currentOp ;
+  char _TIG_VZ_q7TM_3_fib_$locals[552] ;
+  unsigned char *_TIG_VZ_q7TM_3_fib_$pc[1] ;
+  union _TIG_VZ_q7TM_3_fib_$node *_TIG_VZ_q7TM_3_fib_$sp[1] ;
+  unsigned char _TIG_VZ_q7TM_3_fib_$currentOp ;
   unsigned long *formalGlobalInit16 ;
   int left23 ;
   int right24 ;
@@ -8873,8 +8873,8 @@ void fib(int n )
   unsigned int *opPtr59 ;
 
   {
-  if (_TIG_iO_fzud_2_init_tigress_1__opaque_array[((unsigned int )((_TIG_iE_fzud_1_entropy + 10) - (((_TIG_iE_fzud_1_entropy + 10) + (_TIG_iE_fzud_1_entropy + 10)) & ((long )(_TIG_iE_fzud_1_entropy + 10) >> 63L))) % 10) * 3 + 1] % _TIG_iO_fzud_2_init_tigress_1__opaque_array[11] != _TIG_iO_fzud_2_init_tigress_1__opaque_array[5]) {
-    goto *((void *)(_TIG_iE_fzud_1_entropy | 10));
+  if (_TIG_iO_q7TM_2_init_tigress_1__opaque_array[((unsigned int )((_TIG_iE_q7TM_1_entropy + 10) - (((_TIG_iE_q7TM_1_entropy + 10) + (_TIG_iE_q7TM_1_entropy + 10)) & ((long )(_TIG_iE_q7TM_1_entropy + 10) >> 63L))) % 10) * 3 + 1] % _TIG_iO_q7TM_2_init_tigress_1__opaque_array[11] != _TIG_iO_q7TM_2_init_tigress_1__opaque_array[5]) {
+    goto *((void *)(_TIG_iE_q7TM_1_entropy | 10));
   } else {
 
   }
@@ -8954,22 +8954,22 @@ void fib(int n )
     break;
   }
   }
-  _TIG_VZ_fzud_3_fib_$sp[0] = (*((union _TIG_VZ_fzud_3_fib_$node (*)[1][32])(_TIG_VZ_fzud_3_fib_$locals + 8)))[0];
-  _TIG_VZ_fzud_3_fib_$pc[0] = _TIG_VZ_fzud_3_fib_$array[0];
-  formalGlobalInit16 = (unsigned long *)((void *)(_TIG_VZ_fzud_3_fib_$locals) + 0);
+  _TIG_VZ_q7TM_3_fib_$sp[0] = (*((union _TIG_VZ_q7TM_3_fib_$node (*)[1][32])(_TIG_VZ_q7TM_3_fib_$locals + 8)))[0];
+  _TIG_VZ_q7TM_3_fib_$pc[0] = _TIG_VZ_q7TM_3_fib_$array[0];
+  formalGlobalInit16 = (unsigned long *)((void *)(_TIG_VZ_q7TM_3_fib_$locals) + 0);
   *formalGlobalInit16 = (unsigned long )(& n);
   while (1) {
-    _TIG_VZ_fzud_3_fib_$currentOp = *(_TIG_VZ_fzud_3_fib_$pc[0]);
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_formal$result_STA_0$value_LIT_0) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fib_$sp[0] + 1)->_void_star = (void *)*((unsigned long *)(_TIG_VZ_fzud_3_fib_$locals + *((int *)_TIG_VZ_fzud_3_fib_$pc[0])));
-      (_TIG_VZ_fzud_3_fib_$sp[0]) ++;
-      _TIG_VZ_fzud_3_fib_$pc[0] += 4;
+    _TIG_VZ_q7TM_3_fib_$currentOp = *(_TIG_VZ_q7TM_3_fib_$pc[0]);
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_formal$result_STA_0$value_LIT_0) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fib_$sp[0] + 1)->_void_star = (void *)*((unsigned long *)(_TIG_VZ_q7TM_3_fib_$locals + *((int *)_TIG_VZ_q7TM_3_fib_$pc[0])));
+      (_TIG_VZ_q7TM_3_fib_$sp[0]) ++;
+      _TIG_VZ_q7TM_3_fib_$pc[0] += 4;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_branchIfTrue$expr_STA_0$label_LAB_0) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_branchIfTrue$expr_STA_0$label_LAB_0) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
       {
-      left23 = (_TIG_VZ_fzud_3_fib_$sp[0] + 0)->_int;
+      left23 = (_TIG_VZ_q7TM_3_fib_$sp[0] + 0)->_int;
       right24 = 0;
       addrPtr26 = (unsigned long *)((unsigned long )(&& Lab_2000015) + 6);
       *addrPtr26 = (unsigned long )(&& Lab_2000013);
@@ -8988,62 +8988,62 @@ void fib(int n )
       }
       }
       if (result25) {
-        _TIG_VZ_fzud_3_fib_$pc[0] += *((int *)_TIG_VZ_fzud_3_fib_$pc[0]);
+        _TIG_VZ_q7TM_3_fib_$pc[0] += *((int *)_TIG_VZ_q7TM_3_fib_$pc[0]);
       } else {
-        _TIG_VZ_fzud_3_fib_$pc[0] += 4;
+        _TIG_VZ_q7TM_3_fib_$pc[0] += 4;
       }
       }
-      (_TIG_VZ_fzud_3_fib_$sp[0]) --;
+      (_TIG_VZ_q7TM_3_fib_$sp[0]) --;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_goto$label_LAB_0) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      _TIG_VZ_fzud_3_fib_$pc[0] += *((int *)_TIG_VZ_fzud_3_fib_$pc[0]);
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_goto$label_LAB_0) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      _TIG_VZ_q7TM_3_fib_$pc[0] += *((int *)_TIG_VZ_q7TM_3_fib_$pc[0]);
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_returnVoid$) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_returnVoid$) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
       return;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_convert_void_star2void_star$left_STA_0$result_STA_0) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fib_$sp[0] + 0)->_void_star = (_TIG_VZ_fzud_3_fib_$sp[0] + 0)->_void_star;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_convert_void_star2void_star$left_STA_0$result_STA_0) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fib_$sp[0] + 0)->_void_star = (_TIG_VZ_q7TM_3_fib_$sp[0] + 0)->_void_star;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_string$result_STA_0$value_LIT_0) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fib_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_fzud_3_fib_$strings + *((int *)_TIG_VZ_fzud_3_fib_$pc[0]));
-      (_TIG_VZ_fzud_3_fib_$sp[0]) ++;
-      _TIG_VZ_fzud_3_fib_$pc[0] += 4;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_string$result_STA_0$value_LIT_0) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fib_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_q7TM_3_fib_$strings + *((int *)_TIG_VZ_q7TM_3_fib_$pc[0]));
+      (_TIG_VZ_q7TM_3_fib_$sp[0]) ++;
+      _TIG_VZ_q7TM_3_fib_$pc[0] += 4;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_load_int$left_STA_0$result_STA_0) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fib_$sp[0] + 0)->_int = *((int *)(_TIG_VZ_fzud_3_fib_$sp[0] + 0)->_void_star);
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_load_int$left_STA_0$result_STA_0) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fib_$sp[0] + 0)->_int = *((int *)(_TIG_VZ_q7TM_3_fib_$sp[0] + 0)->_void_star);
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_call$func_LIT_0) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      switch (*((int *)_TIG_VZ_fzud_3_fib_$pc[0])) {
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_call$func_LIT_0) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      switch (*((int *)_TIG_VZ_q7TM_3_fib_$pc[0])) {
       case 1: 
-      printf(*((char const   * __restrict  *)((void *)(_TIG_VZ_fzud_3_fib_$locals) + 536)),
-             *((int *)((void *)(_TIG_VZ_fzud_3_fib_$locals) + 544)), *((int *)((void *)(_TIG_VZ_fzud_3_fib_$locals) + 548)));
+      printf(*((char const   * __restrict  *)((void *)(_TIG_VZ_q7TM_3_fib_$locals) + 536)),
+             *((int *)((void *)(_TIG_VZ_q7TM_3_fib_$locals) + 544)), *((int *)((void *)(_TIG_VZ_q7TM_3_fib_$locals) + 548)));
       break;
       }
-      _TIG_VZ_fzud_3_fib_$pc[0] += 4;
+      _TIG_VZ_q7TM_3_fib_$pc[0] += 4;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_local$result_STA_0$value_LIT_0) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fib_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_fzud_3_fib_$locals) + *((int *)_TIG_VZ_fzud_3_fib_$pc[0]);
-      (_TIG_VZ_fzud_3_fib_$sp[0]) ++;
-      _TIG_VZ_fzud_3_fib_$pc[0] += 4;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_local$result_STA_0$value_LIT_0) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fib_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_q7TM_3_fib_$locals) + *((int *)_TIG_VZ_q7TM_3_fib_$pc[0]);
+      (_TIG_VZ_q7TM_3_fib_$sp[0]) ++;
+      _TIG_VZ_q7TM_3_fib_$pc[0] += 4;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_constant_int$result_STA_0$value_LIT_0) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fib_$sp[0] + 1)->_int = *((int *)_TIG_VZ_fzud_3_fib_$pc[0]);
-      (_TIG_VZ_fzud_3_fib_$sp[0]) ++;
-      _TIG_VZ_fzud_3_fib_$pc[0] += 4;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_constant_int$result_STA_0$value_LIT_0) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fib_$sp[0] + 1)->_int = *((int *)_TIG_VZ_q7TM_3_fib_$pc[0]);
+      (_TIG_VZ_q7TM_3_fib_$sp[0]) ++;
+      _TIG_VZ_q7TM_3_fib_$pc[0] += 4;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
       {
-      left55 = (_TIG_VZ_fzud_3_fib_$sp[0] + 0)->_int;
-      right56 = (_TIG_VZ_fzud_3_fib_$sp[0] + -1)->_int;
+      left55 = (_TIG_VZ_q7TM_3_fib_$sp[0] + 0)->_int;
+      right56 = (_TIG_VZ_q7TM_3_fib_$sp[0] + -1)->_int;
       addrPtr58 = (unsigned long *)((unsigned long )(&& Lab_2000019) + 6);
       *addrPtr58 = (unsigned long )(&& Lab_2000017);
       addrPtr58 = (unsigned long *)((unsigned long )(&& Lab_2000017) + 126);
@@ -9060,20 +9060,20 @@ void fib(int n )
         break;
       }
       }
-      (_TIG_VZ_fzud_3_fib_$sp[0] + -1)->_int = result57;
+      (_TIG_VZ_q7TM_3_fib_$sp[0] + -1)->_int = result57;
       }
-      (_TIG_VZ_fzud_3_fib_$sp[0]) --;
+      (_TIG_VZ_q7TM_3_fib_$sp[0]) --;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_store_int$left_STA_0$right_STA_1) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      *((int *)(_TIG_VZ_fzud_3_fib_$sp[0] + 0)->_void_star) = (_TIG_VZ_fzud_3_fib_$sp[0] + -1)->_int;
-      _TIG_VZ_fzud_3_fib_$sp[0] += -2;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_store_int$left_STA_0$right_STA_1) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      *((int *)(_TIG_VZ_q7TM_3_fib_$sp[0] + 0)->_void_star) = (_TIG_VZ_q7TM_3_fib_$sp[0] + -1)->_int;
+      _TIG_VZ_q7TM_3_fib_$sp[0] += -2;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
       {
-      left23 = (_TIG_VZ_fzud_3_fib_$sp[0] + -1)->_int;
-      right24 = (_TIG_VZ_fzud_3_fib_$sp[0] + 0)->_int;
+      left23 = (_TIG_VZ_q7TM_3_fib_$sp[0] + -1)->_int;
+      right24 = (_TIG_VZ_q7TM_3_fib_$sp[0] + 0)->_int;
       addrPtr26 = (unsigned long *)((unsigned long )(&& Lab_2000021) + 6);
       *addrPtr26 = (unsigned long )(&& Lab_2000013);
       addrPtr26 = (unsigned long *)((unsigned long )(&& Lab_2000013) + 150);
@@ -9090,14 +9090,14 @@ void fib(int n )
         break;
       }
       }
-      (_TIG_VZ_fzud_3_fib_$sp[0] + -1)->_int = result25;
+      (_TIG_VZ_q7TM_3_fib_$sp[0] + -1)->_int = result25;
       }
-      (_TIG_VZ_fzud_3_fib_$sp[0]) --;
+      (_TIG_VZ_q7TM_3_fib_$sp[0]) --;
     } else
-    if (_TIG_VZ_fzud_3_fib_$currentOp == _TIG_VZ_fzud_3_fib_store_void_star$right_STA_0$left_STA_1) {
-      (_TIG_VZ_fzud_3_fib_$pc[0]) ++;
-      *((void **)(_TIG_VZ_fzud_3_fib_$sp[0] + -1)->_void_star) = (_TIG_VZ_fzud_3_fib_$sp[0] + 0)->_void_star;
-      _TIG_VZ_fzud_3_fib_$sp[0] += -2;
+    if (_TIG_VZ_q7TM_3_fib_$currentOp == _TIG_VZ_q7TM_3_fib_store_void_star$right_STA_0$left_STA_1) {
+      (_TIG_VZ_q7TM_3_fib_$pc[0]) ++;
+      *((void **)(_TIG_VZ_q7TM_3_fib_$sp[0] + -1)->_void_star) = (_TIG_VZ_q7TM_3_fib_$sp[0] + 0)->_void_star;
+      _TIG_VZ_q7TM_3_fib_$sp[0] += -2;
     } else {
 
     }
@@ -9128,10 +9128,10 @@ __inline void ( __attribute__((__always_inline__)) __darwin_fd_set)(int _fd , st
 /* BEGIN FUNCTION-DEF fac LOC=UNKNOWN */
 void fac(int n ) 
 { 
-  char _TIG_VZ_fzud_3_fac_$locals[544] ;
-  unsigned char *_TIG_VZ_fzud_3_fac_$pc[1] ;
-  union _TIG_VZ_fzud_3_fac_$node *_TIG_VZ_fzud_3_fac_$sp[1] ;
-  unsigned char _TIG_VZ_fzud_3_fac_$currentOp ;
+  char _TIG_VZ_q7TM_3_fac_$locals[544] ;
+  unsigned char *_TIG_VZ_q7TM_3_fac_$pc[1] ;
+  union _TIG_VZ_q7TM_3_fac_$node *_TIG_VZ_q7TM_3_fac_$sp[1] ;
+  unsigned char _TIG_VZ_q7TM_3_fac_$currentOp ;
   unsigned long *formalGlobalInit14 ;
   int left30 ;
   int right31 ;
@@ -9145,8 +9145,8 @@ void fac(int n )
   unsigned int *opPtr45 ;
 
   {
-  if (_TIG_iO_fzud_2_init_tigress_1__opaque_array[((unsigned int )((_TIG_iE_fzud_1_entropy - 10) - (((_TIG_iE_fzud_1_entropy - 10) + (_TIG_iE_fzud_1_entropy - 10)) & ((long )(_TIG_iE_fzud_1_entropy - 10) >> 63L))) % 10) * 3 + 1] % _TIG_iO_fzud_2_init_tigress_1__opaque_array[11] != _TIG_iO_fzud_2_init_tigress_1__opaque_array[5]) {
-    goto *((void *)(_TIG_iE_fzud_1_entropy + 5));
+  if (_TIG_iO_q7TM_2_init_tigress_1__opaque_array[((unsigned int )((_TIG_iE_q7TM_1_entropy - 10) - (((_TIG_iE_q7TM_1_entropy - 10) + (_TIG_iE_q7TM_1_entropy - 10)) & ((long )(_TIG_iE_q7TM_1_entropy - 10) >> 63L))) % 10) * 3 + 1] % _TIG_iO_q7TM_2_init_tigress_1__opaque_array[11] != _TIG_iO_q7TM_2_init_tigress_1__opaque_array[5]) {
+    goto *((void *)(_TIG_iE_q7TM_1_entropy + 5));
   } else {
 
   }
@@ -9226,34 +9226,34 @@ void fac(int n )
     break;
   }
   }
-  _TIG_VZ_fzud_3_fac_$sp[0] = (*((union _TIG_VZ_fzud_3_fac_$node (*)[1][32])(_TIG_VZ_fzud_3_fac_$locals + 8)))[0];
-  _TIG_VZ_fzud_3_fac_$pc[0] = _TIG_VZ_fzud_3_fac_$array[0];
-  formalGlobalInit14 = (unsigned long *)((void *)(_TIG_VZ_fzud_3_fac_$locals) + 0);
+  _TIG_VZ_q7TM_3_fac_$sp[0] = (*((union _TIG_VZ_q7TM_3_fac_$node (*)[1][32])(_TIG_VZ_q7TM_3_fac_$locals + 8)))[0];
+  _TIG_VZ_q7TM_3_fac_$pc[0] = _TIG_VZ_q7TM_3_fac_$array[0];
+  formalGlobalInit14 = (unsigned long *)((void *)(_TIG_VZ_q7TM_3_fac_$locals) + 0);
   *formalGlobalInit14 = (unsigned long )(& n);
   while (1) {
-    _TIG_VZ_fzud_3_fac_$currentOp = *(_TIG_VZ_fzud_3_fac_$pc[0]);
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_returnVoid$) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
+    _TIG_VZ_q7TM_3_fac_$currentOp = *(_TIG_VZ_q7TM_3_fac_$pc[0]);
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_returnVoid$) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
       return;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_load_int$left_STA_0$result_STA_0) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_int = *((int *)(_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_void_star);
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_load_int$left_STA_0$result_STA_0) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_int = *((int *)(_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_void_star);
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_store_int$left_STA_0$right_STA_1) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      *((int *)(_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_void_star) = (_TIG_VZ_fzud_3_fac_$sp[0] + -1)->_int;
-      _TIG_VZ_fzud_3_fac_$sp[0] += -2;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_store_int$left_STA_0$right_STA_1) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      *((int *)(_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_void_star) = (_TIG_VZ_q7TM_3_fac_$sp[0] + -1)->_int;
+      _TIG_VZ_q7TM_3_fac_$sp[0] += -2;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_goto$label_LAB_0) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      _TIG_VZ_fzud_3_fac_$pc[0] += *((int *)_TIG_VZ_fzud_3_fac_$pc[0]);
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_goto$label_LAB_0) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      _TIG_VZ_q7TM_3_fac_$pc[0] += *((int *)_TIG_VZ_q7TM_3_fac_$pc[0]);
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
       {
-      left30 = (_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_int;
-      right31 = (_TIG_VZ_fzud_3_fac_$sp[0] + -1)->_int;
+      left30 = (_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_int;
+      right31 = (_TIG_VZ_q7TM_3_fac_$sp[0] + -1)->_int;
       addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000003) + 6);
       *addrPtr33 = (unsigned long )(&& Lab_2000001);
       addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000001) + 150);
@@ -9270,21 +9270,21 @@ void fac(int n )
         break;
       }
       }
-      (_TIG_VZ_fzud_3_fac_$sp[0] + -1)->_int = result32;
+      (_TIG_VZ_q7TM_3_fac_$sp[0] + -1)->_int = result32;
       }
-      (_TIG_VZ_fzud_3_fac_$sp[0]) --;
+      (_TIG_VZ_q7TM_3_fac_$sp[0]) --;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_formal$result_STA_0$value_LIT_0) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fac_$sp[0] + 1)->_void_star = (void *)*((unsigned long *)(_TIG_VZ_fzud_3_fac_$locals + *((int *)_TIG_VZ_fzud_3_fac_$pc[0])));
-      (_TIG_VZ_fzud_3_fac_$sp[0]) ++;
-      _TIG_VZ_fzud_3_fac_$pc[0] += 4;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_formal$result_STA_0$value_LIT_0) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fac_$sp[0] + 1)->_void_star = (void *)*((unsigned long *)(_TIG_VZ_q7TM_3_fac_$locals + *((int *)_TIG_VZ_q7TM_3_fac_$pc[0])));
+      (_TIG_VZ_q7TM_3_fac_$sp[0]) ++;
+      _TIG_VZ_q7TM_3_fac_$pc[0] += 4;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
       {
-      left41 = (_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_int;
-      right42 = (_TIG_VZ_fzud_3_fac_$sp[0] + -1)->_int;
+      left41 = (_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_int;
+      right42 = (_TIG_VZ_q7TM_3_fac_$sp[0] + -1)->_int;
       addrPtr44 = (unsigned long *)((unsigned long )(&& Lab_2000007) + 6);
       *addrPtr44 = (unsigned long )(&& Lab_2000005);
       addrPtr44 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 126);
@@ -9301,19 +9301,19 @@ void fac(int n )
         break;
       }
       }
-      (_TIG_VZ_fzud_3_fac_$sp[0] + -1)->_int = result43;
+      (_TIG_VZ_q7TM_3_fac_$sp[0] + -1)->_int = result43;
       }
-      (_TIG_VZ_fzud_3_fac_$sp[0]) --;
+      (_TIG_VZ_q7TM_3_fac_$sp[0]) --;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_store_void_star$left_STA_0$right_STA_1) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      *((void **)(_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_void_star) = (_TIG_VZ_fzud_3_fac_$sp[0] + -1)->_void_star;
-      _TIG_VZ_fzud_3_fac_$sp[0] += -2;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_store_void_star$left_STA_0$right_STA_1) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      *((void **)(_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_void_star) = (_TIG_VZ_q7TM_3_fac_$sp[0] + -1)->_void_star;
+      _TIG_VZ_q7TM_3_fac_$sp[0] += -2;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_branchIfTrue$expr_STA_0$label_LAB_0) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_branchIfTrue$expr_STA_0$label_LAB_0) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
       {
-      left30 = (_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_int;
+      left30 = (_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_int;
       right31 = 0;
       addrPtr33 = (unsigned long *)((unsigned long )(&& Lab_2000009) + 6);
       *addrPtr33 = (unsigned long )(&& Lab_2000001);
@@ -9332,18 +9332,18 @@ void fac(int n )
       }
       }
       if (result32) {
-        _TIG_VZ_fzud_3_fac_$pc[0] += *((int *)_TIG_VZ_fzud_3_fac_$pc[0]);
+        _TIG_VZ_q7TM_3_fac_$pc[0] += *((int *)_TIG_VZ_q7TM_3_fac_$pc[0]);
       } else {
-        _TIG_VZ_fzud_3_fac_$pc[0] += 4;
+        _TIG_VZ_q7TM_3_fac_$pc[0] += 4;
       }
       }
-      (_TIG_VZ_fzud_3_fac_$sp[0]) --;
+      (_TIG_VZ_q7TM_3_fac_$sp[0]) --;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_Mult_int_int2int$right_STA_0$result_STA_0$left_STA_1) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_Mult_int_int2int$right_STA_0$result_STA_0$left_STA_1) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
       {
-      left41 = (_TIG_VZ_fzud_3_fac_$sp[0] + -1)->_int;
-      right42 = (_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_int;
+      left41 = (_TIG_VZ_q7TM_3_fac_$sp[0] + -1)->_int;
+      right42 = (_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_int;
       addrPtr44 = (unsigned long *)((unsigned long )(&& Lab_2000011) + 6);
       *addrPtr44 = (unsigned long )(&& Lab_2000005);
       addrPtr44 = (unsigned long *)((unsigned long )(&& Lab_2000005) + 126);
@@ -9360,41 +9360,41 @@ void fac(int n )
         break;
       }
       }
-      (_TIG_VZ_fzud_3_fac_$sp[0] + -1)->_int = result43;
+      (_TIG_VZ_q7TM_3_fac_$sp[0] + -1)->_int = result43;
       }
-      (_TIG_VZ_fzud_3_fac_$sp[0]) --;
+      (_TIG_VZ_q7TM_3_fac_$sp[0]) --;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_string$result_STA_0$value_LIT_0) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fac_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_fzud_3_fac_$strings + *((int *)_TIG_VZ_fzud_3_fac_$pc[0]));
-      (_TIG_VZ_fzud_3_fac_$sp[0]) ++;
-      _TIG_VZ_fzud_3_fac_$pc[0] += 4;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_string$result_STA_0$value_LIT_0) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fac_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_q7TM_3_fac_$strings + *((int *)_TIG_VZ_q7TM_3_fac_$pc[0]));
+      (_TIG_VZ_q7TM_3_fac_$sp[0]) ++;
+      _TIG_VZ_q7TM_3_fac_$pc[0] += 4;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_call$func_LIT_0) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      switch (*((int *)_TIG_VZ_fzud_3_fac_$pc[0])) {
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_call$func_LIT_0) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      switch (*((int *)_TIG_VZ_q7TM_3_fac_$pc[0])) {
       case 1: 
-      printf(*((char const   * __restrict  *)((void *)(_TIG_VZ_fzud_3_fac_$locals) + 528)),
-             *((int *)((void *)(_TIG_VZ_fzud_3_fac_$locals) + 536)), *((int *)((void *)(_TIG_VZ_fzud_3_fac_$locals) + 540)));
+      printf(*((char const   * __restrict  *)((void *)(_TIG_VZ_q7TM_3_fac_$locals) + 528)),
+             *((int *)((void *)(_TIG_VZ_q7TM_3_fac_$locals) + 536)), *((int *)((void *)(_TIG_VZ_q7TM_3_fac_$locals) + 540)));
       break;
       }
-      _TIG_VZ_fzud_3_fac_$pc[0] += 4;
+      _TIG_VZ_q7TM_3_fac_$pc[0] += 4;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_convert_void_star2void_star$left_STA_0$result_STA_0) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_void_star = (_TIG_VZ_fzud_3_fac_$sp[0] + 0)->_void_star;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_convert_void_star2void_star$left_STA_0$result_STA_0) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_void_star = (_TIG_VZ_q7TM_3_fac_$sp[0] + 0)->_void_star;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_constant_int$result_STA_0$value_LIT_0) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fac_$sp[0] + 1)->_int = *((int *)_TIG_VZ_fzud_3_fac_$pc[0]);
-      (_TIG_VZ_fzud_3_fac_$sp[0]) ++;
-      _TIG_VZ_fzud_3_fac_$pc[0] += 4;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_constant_int$result_STA_0$value_LIT_0) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fac_$sp[0] + 1)->_int = *((int *)_TIG_VZ_q7TM_3_fac_$pc[0]);
+      (_TIG_VZ_q7TM_3_fac_$sp[0]) ++;
+      _TIG_VZ_q7TM_3_fac_$pc[0] += 4;
     } else
-    if (_TIG_VZ_fzud_3_fac_$currentOp == _TIG_VZ_fzud_3_fac_local$result_STA_0$value_LIT_0) {
-      (_TIG_VZ_fzud_3_fac_$pc[0]) ++;
-      (_TIG_VZ_fzud_3_fac_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_fzud_3_fac_$locals) + *((int *)_TIG_VZ_fzud_3_fac_$pc[0]);
-      (_TIG_VZ_fzud_3_fac_$sp[0]) ++;
-      _TIG_VZ_fzud_3_fac_$pc[0] += 4;
+    if (_TIG_VZ_q7TM_3_fac_$currentOp == _TIG_VZ_q7TM_3_fac_local$result_STA_0$value_LIT_0) {
+      (_TIG_VZ_q7TM_3_fac_$pc[0]) ++;
+      (_TIG_VZ_q7TM_3_fac_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_q7TM_3_fac_$locals) + *((int *)_TIG_VZ_q7TM_3_fac_$pc[0]);
+      (_TIG_VZ_q7TM_3_fac_$sp[0]) ++;
+      _TIG_VZ_q7TM_3_fac_$pc[0] += 4;
     } else {
 
     }

@@ -149,7 +149,7 @@ code {
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
-<center><h1 style="font-size: 60px; font-weight:400"> InitCheckers</h1></center>
+<center><h1 style="font-size: 60px; font-weight:400"> InitCheckers<br>(Experimental)</h1></center>
 
                </h2>
             </div>
@@ -157,17 +157,19 @@ code {
     </div>
 </section>
 
-<center><img width="500px" src="tigress3-images//checker-front-page.png"></center>
+<center><img width="500px" src="tigress3-images//checkers-front-page.png"></center>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This is the initialization transformation that should precede the Checksum and CheckEnvironment transformations. 
-This transformation will create a set of global variables that checkers will increment whenever a check fails. 
-It will also create a set of responders which will trigger a response whenever the number of 
-failed checks exceed a threshold.
+This is the initialization transformation that should precede
+the <a href="checksum.html">Checksum</a> and <a href="checkEnvironment.html">CheckEnvironment</a>
+transformations. This transformation will create a set of global variables that checkers
+will increment whenever a check fails.  It will also create a set of
+responders which will trigger a response whenever the number of failed
+checks exceed a threshold.  
 
             </p>
         </div>
@@ -231,7 +233,7 @@ int fake_2 = 0;
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 In practice, we don't want these values in cleartext. The <code class="language-c">--InitCheckersStateEncodings</code> option decides
-how the state variables should be encoded. Here's what the initialization looks like when you choose Residue Number Coding:
+how the state variables should be encoded. Here's what the initialization looks like when you choose <em>Residue Number Coding<em>:
 
             </p>
         </div>
@@ -343,6 +345,16 @@ it looks like this:
 </td>
 </tr>
 <tr>
+<td><tt>--InitCheckersRespondWhen</tt></td>
+<td><tt>immediately, delay</tt></td>
+<td> Comma-separated list of when the response to a failed test should be issued. 
+<ul>
+   <li> <tt>immediately</tt> = Invoke the response action as soon as a check fails (will always trigger).
+   <li> <tt>delay</tt> = Delay the response action until some later time (may or may not trigger, depending on subsequent control flow).
+</ul>
+</td>
+</tr>
+<tr>
 <td><tt>--InitCheckersResponderCount</tt></td>
 <td><tt><a href="top-level.html#INTSPEC">INTSPEC</a></tt></td>
 <td> Number of responders to insert in the program. Default=1.</td>
@@ -370,7 +382,7 @@ it looks like this:
    <li> <tt>rnc</tt> = Use Residue Number Coding
    <li> <tt>xor</tt> = Use XOR coding
    <li> <tt>list</tt> = Use list encoding (not yet implemented)
-   <li> <tt>plugin</tt> = Use plugins (not uet implemented)
+   <li> <tt>plugin</tt> = Use plugins (not yet implemented)
    <li> <tt>none</tt> = Don't encode the state variables
 </ul>
 </td>
