@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Maker Description">
+  
+   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
+  
+ <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #000000
+}
+h3 {
+   color: #000000
+}
+code {
+  font-family:     "Courier New"
+                    Courier
+                    monospace;
+  color: black;
+}
+
+</style>
+  
+</head>
+<body>
+  
+  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+
+        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="" title="" style="height: 4.1rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Usage</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-quickstart.html">Quickstart<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-mergeFiles.html">File merge<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-crossCompile.html">Cross compile</a>
+      <a class="text-white dropdown-item text-primary display-4" href="recipes.html">Recipes</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-libraries.html">Libraries</a>
+      <a class="text-white dropdown-item text-primary display-4" href="top-level.html">Top-Level Options</a>
+      <a class="text-white dropdown-item text-primary display-4" href="plugins.html">Plugins</a>
+      <a class="text-white dropdown-item text-primary display-4" href="issues.html">Issues</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-test.html">Testing</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Platforms</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-linux.html">Linux<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-macos.html">MacOS<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-windows.html">Windows<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-android.html">Android<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-wasm.html">WASM<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="cpp.html">C++<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Users</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-academics.html">For academics<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-students.html">For students<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-practitioners.html">For practitioners<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-developers.html">For developers<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="false" data-toggle="dropdown-submenu">News</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Transformations</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="control-transforms.html">Control</a>
+      <a class="text-white dropdown-item text-primary display-4" href="data-transforms.html">Data</a>
+      <a class="text-white dropdown-item text-primary display-4" href="functions-transforms.html">Functions</a>
+      <a class="text-white dropdown-item text-primary display-4" href="integrity-transforms.html">Integrity</a>
+      <a class="text-white dropdown-item text-primary display-4" href="antiAnalysis-transforms.html">Anti analysis</a>
+      <a class="text-white dropdown-item text-primary display-4" href="other-transforms.html">Other</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">About</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-about.html">History<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-FAQ.html">FAQ<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-consulting.html">Training<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-publications.html">Pubs</a></div>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="tigress-contact.html" aria-expanded="false"><span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="tigress-download.html" aria-expanded="false"><span class="mbrib-download mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+</ul>
+            
+        </div>
+    </nav>
+
+</section>
+
+<br><br><br><br>
+
+<section class="mbr-section content4 TIGRESS-TITLE" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+<center><h1 style="font-size: 60px; font-weight:400"> FAQ</h1></center>
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Why is the tool called Tigress?
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+                            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Well, there's the Man-Eating Bengal Tigress of <a
+href="http://en.wikipedia.org/wiki/Tigress_of_Jowlagiri">Jowlagiri</a>
+who randomly killed 15 people. And then there's <a
+href="http://en.wikipedia.org/wiki/List_of_Kung_Fu_Panda_characters#Master_Tigress">Master
+Tigress</a>, who, when growing up in an orphanage was feared by the
+other children because of her "destructive temper and strength." And,
+then there's the <a href="http://en.wikipedia.org/wiki/Paula_Brooks">Tigress/Paula
+Brooks/the Huntress/Mrs. Menace</a> who was a "skilled hand-to-hand
+fighter whose nails were once sharpened like talons."
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+So, there are some powerful, lethal, destructive, random, kick-ass Tigresses out
+there.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+But, yeah, we totally just made it up.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Why is the website called <tt>tigress.WTF</tt>?
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+A little sophomoric, no? Sure, but WTF is what we're hoping a
+reverse engineer will say when they look at the Tigress-generated
+code, so it fits.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Can I be sure this tool will generate correct code?
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+No. 
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Diversity definitely causes a problem with testing. Since Tigress'
+actions are driven by a seed, just because a test passes once, or 10
+times, doesn't mean it will pass the next time. And, just because a
+test passes with three transformations T1,T2,T3, it doesn't follow
+that the sequence T1,T3,T2 would pass, or that a slight change to one
+of the arguments wouldn't make it fail. We currently follow the
+following testing procedure:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre><code class="language-c">for T in all transformations do
+   for O in important combinations of options to T do
+      for C in 806 C test cases (gcc torture tests, etc.) do
+         for S in 10 random seeds do
+            C' := Tigress[T,O,S](C)
+            execute gcc(C') and compare the output with gcc(C).
+         end
+      end
+   end
+end
+for T1,T2 in all pairs of transformations do
+    let O1,O2 be "worst case" options to T1,T2 in
+       for C in 806 C test cases (gcc torture tests, etc.) do
+          for S in 10 random seeds do
+             C' := Tigress[T2,O2,S](Tigress[T1,O1,S](C))
+             execute gcc(C') and compare the output with gcc(C).
+          end
+       end
+   end
+end
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The bottom line is
+that you have to run all your tests <em>before</em> and <em>after</em>
+obfuscation.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Does Tigress insert malicious code into the generated code?
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Good question. With two levels of virtualization, for example, it
+would be easy to sneak in something in the bytecode that's pretty
+difficult to detect. And, since Tigress currently isn't open source,
+there is no way for users to examine it themselves.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+There is no malware deliberately inserted. You have to take my word for it. <a
+href="https://si.se/en/sweden-ranks-as-the-most-reputable-country-in-the-world/">And,
+if you can't trust a Swede, who can you trust?
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Why aren't you sharing source?
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+As noted above, in a system like this it is easy to insert secret
+malicious code, since the output is, well, obfuscated, and supposed to
+be hiding things. I therefore want to be in control of the source
+myself, so that I can make guarantees such as the one
+above.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<strong>So, given our <a
+href="http://www.findresearch.org">work</a> on <a
+href="https://dl.acm.org/citation.cfm?id=2812803">repeatability</a>
+and <a href="http://repeatability.cs.arizona.edu">sharing</a> in
+Computer Science, aren't we being hypocritical?</strong> No, we're
+not. As you can read in our CACM <a href="https://dl.acm.org/citation.cfm?id=2812803">paper</a>, there are
+plenty of situations when code sharing is not possible, or
+desirable. Issues of security and privacy come to mind. Also, our
+proposal is not to require everyone to share all their research
+artifacts all the time (this would be naive), but rather to require
+full transparency with respect to the level of sharing a particular
+project will support.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Also, we regularly share the Tigress
+source with colleagues in academia. You just have to
+ask.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<strong>Then, what is the best way to learn what Tigress
+can do, now that you can't read the source?</strong>The best way
+to learn what Tigress can do is not to look at the source (which is
+pretty complex) but to treat Tigress as a black box, feeding it small
+input programs, examining the output, changing one of the options, and
+repeating the process. The fact that Tigress is C source-to-source
+(rather than, say, binary-to-binary), makes this particularly
+attractive.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Nothing works - What should I do?
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+First check our <a href="tigress-issues.html">issues</a> page.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+       <strong>Whatever I do, I just get parse errors:</strong>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">/usr/include/sys/stdio.h[39:80-86] : syntax error
+</code></pre></div><br>
+       First of all, make sure you've included <code class="language-c">#include "tigress.h"</code> at
+       the top of your file. If that doesn't help, experiment with the 
+       flag <code class="language-c">-std=c99</code>. Tigress supports the C99 language. Depending 
+       on your compiler, you may have to add a switch to indicate this. 
+       If it still doesn't work, let us know.
+
+</li>
+
+
+<li>
+      <strong>Tigress just gives a weird error and exits!</strong>
+      Run <code class="language-c">uname -a</code> to verify that you're running on a 64-bit platform.
+
+</li>
+
+
+<li>
+      <strong>My program works (albeit compiles with a few warnings) but after I've run it through Tigress it
+      crashes!</strong>
+
+      <br>If your program doesn't compile cleanly it may well not work when obfuscated 
+      by Tigress. For example, say that you forget to include <code class="language-c">stdlib.h</code>
+      in your code, gcc may complain with
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">foo.c:51:27: warning: implicitly declaring library function 'malloc' with
+    type 'void *(unsigned long)' [-Wimplicit-function-declaration]
+</code></pre></div><br>
+      but, your code still works. However, when Tigress processes your code, it doesn't know
+      <code class="language-c">malloc</code>'s prototype, and will assume that it returns an <code class="language-c">int</code>, 
+      and not <code class="language-c">void*</code>. Bad things will happen when a <code class="language-c">void*</code> gets truncated to an
+      <code class="language-c">int</code>. Moral of the story: make sure your code compiles cleanly before
+      obfuscating it.
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/prism/prism.js"></script>
+  
+</body>
+</html>

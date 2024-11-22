@@ -1,3 +1,32 @@
+.TIGRESS-CONTACT {
+  padding-top: 120px;
+  padding-bottom: 30px;
+  background-color: #ffffff;
+}
+.TIGRESS-CONTACT .title {
+  margin-bottom: 2rem;
+}
+.TIGRESS-CONTACT .mbr-section-subtitle {
+  color: #767676;
+}
+.TIGRESS-CONTACT a:not([href]):not([tabindex]) {
+  color: #fff;
+  border-radius: 3px;
+}
+.TIGRESS-CONTACT a.btn-white:not([href]):not([tabindex]) {
+  color: #333;
+}
+.TIGRESS-CONTACT textarea.form-control {
+  min-height: 188px;
+}
+
+.TIGRESS-FRONT {
+  background-image: url("../../../assets/images/p1020235-1024x76802.jpg");
+}
+
+.cid-rCP1PBWZNm {
+  background-image: url("../../../assets/images/p1020235-1024x76802.jpg");
+}
 
 code {
   font-family:     "Courier New"
@@ -301,5 +330,41 @@ table.smalltab {
 @media (max-width: 768px) {
   .cid-TIGRESS-IMAGE .image-block {
     width: 100% !important;
+  }
+}
+
+.TIGRESS-QUOTE {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+.TIGRESS-QUOTE .mbr-text,
+.TIGRESS-QUOTE blockquote {
+  color: #232323;
+}
+
+.TIGRESS-TESTIMONIAL {
+  padding-top: 105px;
+  padding-bottom: 15px;
+  background-color: #ffffff;
+}
+.TIGRESS-TESTIMONIAL .testimonial-text {
+  font-style: italic;
+  color: #676767;
+  font-weight: 300;
+}
+.TIGRESS-TESTIMONIAL .mbr-author-name {
+  font-weight: bold;
+  color: #232;
+}
+.TIGRESS-TESTIMONIAL .mbr-author-desc {
+  color: #232;
+}
+@media (max-width: 991px) {
+  .TIGRESS-TESTIMONIAL .mbr-figure,
+  .TIGRESS-TESTIMONIAL img {
+    max-height: 300px;
+    width: auto;
+    margin: auto;
   }
 }

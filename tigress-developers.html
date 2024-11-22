@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Maker Description">
+  
+   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
+  
+ <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #000000
+}
+h3 {
+   color: #000000
+}
+code {
+  font-family:     "Courier New"
+                    Courier
+                    monospace;
+  color: black;
+}
+
+</style>
+  
+</head>
+<body>
+  
+  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+
+        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="" title="" style="height: 4.1rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Usage</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-quickstart.html">Quickstart<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-mergeFiles.html">File merge<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-crossCompile.html">Cross compile</a>
+      <a class="text-white dropdown-item text-primary display-4" href="recipes.html">Recipes</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-libraries.html">Libraries</a>
+      <a class="text-white dropdown-item text-primary display-4" href="top-level.html">Top-Level Options</a>
+      <a class="text-white dropdown-item text-primary display-4" href="plugins.html">Plugins</a>
+      <a class="text-white dropdown-item text-primary display-4" href="issues.html">Issues</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-test.html">Testing</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Platforms</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-linux.html">Linux<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-macos.html">MacOS<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-windows.html">Windows<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-android.html">Android<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-wasm.html">WASM<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="cpp.html">C++<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Users</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-academics.html">For academics<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-students.html">For students<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-practitioners.html">For practitioners<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-developers.html">For developers<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="false" data-toggle="dropdown-submenu">News</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Transformations</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="control-transforms.html">Control</a>
+      <a class="text-white dropdown-item text-primary display-4" href="data-transforms.html">Data</a>
+      <a class="text-white dropdown-item text-primary display-4" href="functions-transforms.html">Functions</a>
+      <a class="text-white dropdown-item text-primary display-4" href="integrity-transforms.html">Integrity</a>
+      <a class="text-white dropdown-item text-primary display-4" href="antiAnalysis-transforms.html">Anti analysis</a>
+      <a class="text-white dropdown-item text-primary display-4" href="other-transforms.html">Other</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">About</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-about.html">History<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-FAQ.html">FAQ<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-consulting.html">Training<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-publications.html">Pubs</a></div>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="tigress-contact.html" aria-expanded="false"><span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="tigress-download.html" aria-expanded="false"><span class="mbrib-download mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+</ul>
+            
+        </div>
+    </nav>
+
+</section>
+
+<br><br><br><br>
+
+<section class="mbr-section content4 TIGRESS-TITLE" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+<center><h1 style="font-size: 60px; font-weight:400"> For Developers</h1></center>
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Tigress is built in OCaml (about 100,000 lines of code) and C (about 9000 lines) on top of two libraries: <a href="http://cil-project.github.io/cil/doc/html/cil/" target="_blank">CIL</a>&nbsp;(a C front end) and <a href="http://myjit.sourceforge.net" target="_blank">MyJit</a>&nbsp;(a run-time code generator). For those who want to do Tigress development, or are merely curious of what an obfuscator looks like, I'm going to give a quick overview of the system. Here's an excerpt of the Tigress source file-tree:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 47%;">
+            <img src="assets/images/tigress-filetree-1-687x995.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The main directory is <strong>obf, </strong>which has a sub-directory for every transformation.&nbsp; The <strong>obf/utils</strong> directory contains libraries used by one or more transformations.&nbsp;
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ The EncodeData Transformation
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+                
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+As an example, let's consider the <code class="language-c">EncodeData</code> transformation. The infrastructure code that supports this transformation&nbsp; is in the directory&nbsp;<strong>obf/encodeData</strong>. This code is responsible for taking the input from the user (for this transformation a list of variables to be encoded),&nbsp; deciding which variables have to be encoded (the user may have asked for <code class="language-c">x</code> to be encoded, but because of pointers, we may have to encode additional variables), selecting the encoding module to use, and performing the actual code transformation (such as <code class="language-c">x+y </code>being transformed into<code class="language-c"> 42^((x^42)+(y^42)) </code>if <code class="language-c">x</code> and <code class="language-c">y </code> are encoded with the <code class="language-c">ValueCodecXor</code> module).&nbsp;
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Every transformation has to implement an interface like the one below. There are a few different variants, depending on what should be transformed. <code class="language-c">EncodeData</code> transforms variables, so it implements the <code class="language-c">transformVariables</code> interface:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 green, 0 0 0 1px #dfdfdf"><code class="language-ocaml">class virtual transformVariables :
+  Universe.t ->
+  Transform.transformationKind ->
+  Options.t ->
+  object
+    (* Check that this transformation was called properly. *)
+    method functionMustNotHaveBeenPreviouslyTransformedBy :
+       (transformationKind * string) list
+    method mustHaveBeenPrecededByTransformations          : 
+       (transformationKind * string) list
+    method noTransformationMayFollowThisOne : string option
+    method notSupportedOnThesePlatforms : platform list
+
+    method deprecated : string option
+
+    (* Check for reasons this transformation can't be applied. *)
+    method checkTransformable : unit
+
+    (* Get variables/functions/etc that need to be transformed. *)
+    method private allFunctions :  
+       Cil.fundec list
+    method private allReferencedFunctions :  
+       Cil.fundec list
+    method private getCallers :  
+       Cil.fundec list
+    method private globalTargets :  
+       (string * string option) list
+    method private localTargets :  
+       (Cil.fundec * string * string option) list
+    method private pseudoReturnTargets :  
+       (string * string * string option) list
+    method private targetNames :  
+       string list
+    method private targets :  
+       Cil.fundec list
+
+    (* Perform the transformation. *)
+    method virtual transform : unit
+end
+</code></pre></div><br>
+
+
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/encodedata-filetree-784x455.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+      
+            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The directory <strong>obf/utils/valueCodecs</strong> holds the actual encoders. As you see, there are a number of them, since they are separated from the infrastructure component, and it is easy to add new and interesting encoders. Every encoder simply has to implement the interface below, with functions that encode and decode and perform arithmetic. Note that the <code class="language-c">encode</code> function takes an expression as input, and produced a list of expressions as output. This is to support encoders that <strong>Residue Value Numbering</strong> that splits one value into multiple values. For the same reason, binary arithmetic operates on lists of expressions:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 green, 0 0 0 1px #dfdfdf"><code class="language-ocaml">class virtual transformer = object (self)
+   method virtual newTypes : 
+      typ list
+
+   method virtual encode   : 
+      fundec -> exp -> exp list  * stmt list
+   method virtual decode   : 
+      fundec -> exp list-> exp  * stmt list
+
+   method virtual unaryOp  : 
+      fundec -> unop -> exp list -> exp list  * stmt list
+   method virtual binaryOp : 
+      fundec -> binop -> exp list -> exp list -> exp list  * stmt list
+   method virtual question : 
+      fundec -> exp -> exp list -> exp list -> exp list * stmt list
+end
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Most of Tigress' transformations are designed in this way: there is an infrastructure component that is in charge of performing the actual transformation, and a set of "library" units which are separate from the infrastructure, and which can easily be expanded on; opaque predicates work this way, implicit flow works this way, and so on.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Debugging
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+            
+            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Debugging a diversifying obfuscator is insanely difficult. There are many sources of complexity:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+                    
+
+<li>
+      For every transformation you add, the generated code gets longer, and more complex. Some issues will only appear only after several levels of transformation when the code - by definition! - is impenetrable.
+
+</li>
+
+
+<li>
+      <span style="font-size: 1rem;">Every time Tigress can make a decision, it rolls a die and picks one of the possible options randomly. In fact, there are 333 locations in the Tigress source code that make a random selection!&nbsp; You can use the '<code class="language-c">--Seed=</code>' options to initialize the random number generator and thereby generate multiple differently obfuscated versions of the same code. However, this nondeterminancy makes debugging extremely difficult: a particular issue may only show itself for a very specific combination of input program, transformation sequence, and seed.</span>
+
+</li>
+
+
+<li>
+      <span style="font-size: 1rem;">The output of&nbsp; Tigress will, of course, be compiled. And the compiler - which was tested mostly on code written by humans - may never have seen the type of convoluted code that Tigress produces! And this can trigger bugs in the compiler.</span>
+
+</li>
+
+
+<li>
+      <span style="font-size: 1rem;">Every compiler is different, and we try to support as many platforms as possible.&nbsp;</span>
+
+</li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+              
+            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The list goes on. To make debugging relatively sane, we make extensive use of logging. You can turn it on like this:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress --Verbosity=3 --LogDir=log --GraphvizBuild=pdf ...
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Let's look at an example, again using the <code class="language-c">EncodeData</code> transformation. Here is the input program, <code class="language-c">encode3.c</code>:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre><code class="language-c">  int x = 41;
+  int* z = &amp;x;
+  int** w = &amp;z;
+  **w += 1;
+
+  printf("RESULT=%i\n",x);
+}
+
+int main() {
+  ENCODE();
+  return 0;
+}
+</code></pre></div><br>
+           
+            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+And here is the Tigress transformation script:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress \
+   --LogDir=log --Verbosity=3  --GraphvizBuild=pdf \
+   --Environment=x86_64:Darwin:Clang:12.0  --Seed=0 \
+   --Transform=InitEntropy \
+   --Transform=EncodeData \
+      --EncodeDataDebug=traceUpdates \
+      --EncodeDataCodecs=poly1 \
+      --LocalVariables='ENCODE:x' \
+   encode3.c --out=encode3_poly1_obf.c
+</code></pre></div><br>
+            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Notice that we've turned on logging and added additional EncodeData tracing, to help with debugging. Here's a small piece of the tracing output:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">BEGIN TRANSFORM ()
+      STEP Alias graph after connected components have been computed:
+        'log/aliasGraphWithComponents_17.pdf
+      STEP Connected components computed from alias graph: 
+         {0: [ENCODE:z/2987,ENCODE:x/2986, ENCODE:w/2988]}
+   TASK Compute affected variables.
+      STEP After computing affected function pointers: 
+           target variables=[ENCODE:x/2986];
+           reachable variables=[]; 
+           encoded variables=[ENCODE:x/2986]; 
+           points to encoded variables= [ENCODE:
+           z/2987]; signature changed functions= []; 
+           implementation changed functions= [ENCODE/2985];
+           init changed functions= []; 
+           pseudo return variables=[]; 
+           components= {0: [ENCODE:z/2987,ENCODE:x/2986,ENCODE:w/2988]};
+   TASK Select data transformation for affected variables.
+      STEP Variables mapped to their encoder: 
+           [ENCODE:x/2986->poly1:f(x:int)=1682595229*x+1015937501]
+   TASK Transform affected variables.
+      STEP Updating functions whose implementation has changed: 
+          [ENCODE/2985]
+      STEP Function 'ENCODE' before variable transformations:
+          'ENCODE/2985' saved to log/ENCODE_25.pdf
+      STEP Function 'ENCODE' after variable transformations:
+          'ENCODE/2985' saved to log/ENCODE_27.pdf
+END TRANSFORM ()
+</code></pre></div><br>
+    
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is the very simple alias graph that gets computed from the input program:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 10%;">
+            <img src="assets/images/aliasgraphwithcomponents-17-116x329.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here is the Abstract Syntax Tree for the input program that got produced as part of the tracing:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 90%;">
+            <img src="assets/images/encode-25-1443x930.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+And the corresponding AST after the <code class="language-c">EncodeData</code> transformation:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 95%;">
+            <img src="assets/images/encode-27-1443x907.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+            
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+When logging is turned on, we dump the internal data structures (AST, CFG, alias graph, etc.) after each operation. When a bug is discovered, it is sometimes possible to quickly track it down by comparing subsequent data structures. If you're curious about how Tigress works internally, watching the transformation logging information can be also be very interesting.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<br>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/prism/prism.js"></script>
+  
+</body>
+</html>
