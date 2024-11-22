@@ -554,8 +554,8 @@ BEGIN-UNIVERSE
           "_cipher$_xtea_decipherBlock", "_cipher$_xtea_decipher"
         ],
         "New Global Variables": {
-          "_TIG_JD_vnG9_4_fib___t": "INIT",
-          "_TIG_JD_vnG9_4_fib_freq": "INIT"
+          "_TIG_JD_myl1_4_fib___t": "INIT",
+          "_TIG_JD_myl1_4_fib_freq": "INIT"
         }
       }
     },
@@ -564,8 +564,8 @@ BEGIN-UNIVERSE
       "TransformationKind": "Virtualize",
       "TransformationUpdates": {
         "Modified Function Implementations": [ "fib" ],
-        "New Global Variables": { "_TIG_VZ_vnG9_3_fib_$strings": "INIT" },
-        "New Types": [ "_TIG_VZ_vnG9_3_fib_$node" ]
+        "New Global Variables": { "_TIG_VZ_myl1_3_fib_$strings": "INIT" },
+        "New Types": [ "_TIG_VZ_myl1_3_fib_$node" ]
       }
     },
     {
@@ -574,15 +574,15 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "init_tigress" ],
         "New Global Variables": {
-          "_TIG_iO_vnG9_2_init_tigress_1__opaque_array": "INIT",
-          "_TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2": "INIT",
-          "_TIG_iO_vnG9_2_init_tigress_1_opaque_list_2": "INIT",
-          "_TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_1": "INIT",
-          "_TIG_iO_vnG9_2_init_tigress_1_opaque_list_1": "INIT"
+          "_TIG_iO_myl1_2_init_tigress_1__opaque_array": "INIT",
+          "_TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2": "INIT",
+          "_TIG_iO_myl1_2_init_tigress_1_opaque_list_2": "INIT",
+          "_TIG_iO_myl1_2_init_tigress_1_opaque_ptr_1": "INIT",
+          "_TIG_iO_myl1_2_init_tigress_1_opaque_list_1": "INIT"
         },
         "New Types": [
-          "_TIG_iO_vnG9_2_init_tigress_1_opaqueStructureType",
-          "_TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct"
+          "_TIG_iO_myl1_2_init_tigress_1_opaqueStructureType",
+          "_TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct"
         ]
       }
     },
@@ -591,8 +591,8 @@ BEGIN-UNIVERSE
       "TransformationKind": "InitEntropy",
       "TransformationUpdates": {
         "New Global Variables": {
-          "_TIG_iE_vnG9_1_alwaysZero": "INIT",
-          "_TIG_iE_vnG9_1_entropy": "INIT"
+          "_TIG_iE_myl1_1_alwaysZero": "INIT",
+          "_TIG_iE_myl1_1_entropy": "INIT"
         }
       }
     },
@@ -602,9 +602,9 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "main" ],
         "New Global Variables": {
-          "_TIG_IZ_vnG9_envp": "FUN: '_TIG_IZ_vnG9_envp__INIT'",
-          "_TIG_IZ_vnG9_argv": "FUN: '_TIG_IZ_vnG9_argv__INIT'",
-          "_TIG_IZ_vnG9_argc": "FUN: '_TIG_IZ_vnG9_argc__INIT'"
+          "_TIG_IZ_myl1_envp": "FUN: '_TIG_IZ_myl1_envp__INIT'",
+          "_TIG_IZ_myl1_argv": "FUN: '_TIG_IZ_myl1_argv__INIT'",
+          "_TIG_IZ_myl1_argc": "FUN: '_TIG_IZ_myl1_argc__INIT'"
         }
       }
     },
@@ -1694,9 +1694,9 @@ struct __darwin_fp_control ;
 enum jit_x86_fp_regs ;
 /* END ENUM-DECL jit_x86_fp_regs LOC=./jitter-Darwin-X86-64.c:1078 */
 
-/* BEGIN UNION-DECL _TIG_VZ_vnG9_3_fib_$node LOC=UNKNOWN */
-union _TIG_VZ_vnG9_3_fib_$node ;
-/* END UNION-DECL _TIG_VZ_vnG9_3_fib_$node LOC=UNKNOWN */
+/* BEGIN UNION-DECL _TIG_VZ_myl1_3_fib_$node LOC=UNKNOWN */
+union _TIG_VZ_myl1_3_fib_$node ;
+/* END UNION-DECL _TIG_VZ_myl1_3_fib_$node LOC=UNKNOWN */
 
 /* BEGIN ENUM-DECL jit_amd64_gp_regs LOC=./jitter-Darwin-X86-64.c:1012 */
 enum jit_amd64_gp_regs ;
@@ -1722,9 +1722,9 @@ struct timeval64 ;
 struct __darwin_x86_thread_state64 ;
 /* END STRUCT-DECL __darwin_x86_thread_state64 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h:633 */
 
-/* BEGIN STRUCT-DECL _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct ;
-/* END STRUCT-DECL _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+/* BEGIN STRUCT-DECL _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct ;
+/* END STRUCT-DECL _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
 
 /* BEGIN ENUM-DECL jit_inp_type LOC=./jitter-Darwin-X86-64.c:250 */
 enum jit_inp_type ;
@@ -2068,6 +2068,14 @@ extern  __attribute__((__deprecated__)) void __attribute__((__availability__(wat
 __availability__(tvos,unavailable)))  *brk(void const   * ) ;
 /* END FUNCTION-DECL-EXTERN brk LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:540 */
 
+/* BEGIN STRUCT _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct {
+   struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *prev ;
+   struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *next ;
+   int data ;
+};
+/* END STRUCT _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL ob_new LOC=UNKNOWN */
 static struct output_buf *ob_new(void) ;
 /* END FUNCTION-DECL ob_new LOC=UNKNOWN */
@@ -2152,10 +2160,6 @@ enum __anonenum_AMD64_REX_Bits_69261688 {
 __inline int isphonogram(int _c ) ;
 /* END FUNCTION-DECL isphonogram LOC=UNKNOWN */
 
-/* BEGIN VARIABLE-DECL _TIG_IZ_vnG9_envp LOC=UNKNOWN */
-char **_TIG_IZ_vnG9_envp ;
-/* END VARIABLE-DECL _TIG_IZ_vnG9_envp LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_va_arg_pack LOC=BUILTIN */
 /* compiler builtin: 
    int __builtin_va_arg_pack(void) ;  */
@@ -2169,10 +2173,6 @@ typedef unsigned char __uint8_t;
 /* compiler builtin: 
    _Complex double __builtin_casinh(_Complex double  ) ;  */
 /* END FUNCTION-DECL __builtin_casinh LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DEF _TIG_JD_vnG9_4_fib___t LOC=UNKNOWN */
-char const   *_TIG_JD_vnG9_4_fib___t  =    "";
-/* END VARIABLE-DEF _TIG_JD_vnG9_4_fib___t LOC=UNKNOWN */
 
 /* BEGIN STRUCT jit_rmap LOC=./jitter-Darwin-X86-64.c:683 */
 struct jit_rmap {
@@ -2407,10 +2407,6 @@ __availability__(tvos,introduced=11.0), __availability__(ios,introduced=11.0), _
 /* compiler builtin: 
    int __builtin_ilogbf(float  ) ;  */
 /* END FUNCTION-DECL __builtin_ilogbf LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DECL _TIG_VZ_vnG9_3_fib_$strings LOC=UNKNOWN */
-char const   *_TIG_VZ_vnG9_3_fib_$strings ;
-/* END VARIABLE-DECL _TIG_VZ_vnG9_3_fib_$strings LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin___get_unsafe_stack_bottom LOC=BUILTIN */
 /* compiler builtin: 
@@ -2739,10 +2735,6 @@ struct jit_disasm jit_disasm_compilable ;
    int __builtin_popcountll(unsigned long long  ) ;  */
 /* END FUNCTION-DECL __builtin_popcountll LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DEF _TIG_IZ_vnG9_argc LOC=UNKNOWN */
-int _TIG_IZ_vnG9_argc  ;
-/* END VARIABLE-DEF _TIG_IZ_vnG9_argc LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_isless LOC=BUILTIN */
 /* compiler builtin: 
    int __builtin_isless(...) ;  */
@@ -2870,10 +2862,6 @@ typedef signed char __int8_t;
 /* BEGIN STRUCT-DECL __sFILEX LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:98 */
 struct __sFILEX ;
 /* END STRUCT-DECL __sFILEX LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:98 */
-
-/* BEGIN VARIABLE-DEF _TIG_iE_vnG9_1_alwaysZero LOC=UNKNOWN */
-unsigned long _TIG_iE_vnG9_1_alwaysZero  =    0UL;
-/* END VARIABLE-DEF _TIG_iE_vnG9_1_alwaysZero LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN vsnprintf LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:337 */
 extern int ( /* format attribute */  vsnprintf)(char * __restrict  __str , size_t __size ,
@@ -3316,6 +3304,26 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
                                                                                                                                        int * __restrict   ) ;
 /* END FUNCTION-DECL-EXTERN pthread_attr_getschedpolicy LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:242 */
 
+/* BEGIN UNION _TIG_VZ_myl1_3_fib_$node LOC=UNKNOWN */
+union _TIG_VZ_myl1_3_fib_$node {
+   unsigned int _unsigned_int ;
+   void *_void_star ;
+   signed char _signed_char ;
+   unsigned long long _unsigned_long_long ;
+   int _int ;
+   short _short ;
+   long long _long_long ;
+   unsigned char _unsigned_char ;
+   unsigned short _unsigned_short ;
+   float _float ;
+   unsigned long _unsigned_long ;
+   long _long ;
+   long double _long_double ;
+   char _char ;
+   double _double ;
+};
+/* END UNION _TIG_VZ_myl1_3_fib_$node LOC=UNKNOWN */
+
 /* BEGIN STRUCT __darwin_x86_avx_state64 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h:765 */
 struct __darwin_x86_avx_state64 {
    int __fpu_reserved[2] ;
@@ -3580,18 +3588,6 @@ extern long random(void)  __attribute__((__availability__(swift,unavailable,mess
 typedef unsigned short u_int16_t;
 /* END TYPEDEF u_int16_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int16_t.h:30 */
 
-/* BEGIN STRUCT _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct {
-   struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *prev ;
-   struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *next ;
-   int data ;
-};
-/* END STRUCT _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
-
-/* BEGIN VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_1  =    (struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_cosf16 LOC=BUILTIN */
 /* compiler builtin: 
    _Float16 __builtin_cosf16(_Float16  ) ;  */
@@ -3749,6 +3745,10 @@ extern pid_t waitpid(pid_t  , int * , int  )  __asm__("_waitpid")  ;
 /* BEGIN FUNCTION-DECL-EXTERN strpbrk LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:86 */
 extern char *strpbrk(char const   *__s , char const   *__charset ) ;
 /* END FUNCTION-DECL-EXTERN strpbrk LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:86 */
+
+/* BEGIN VARIABLE-DECL _TIG_VZ_myl1_3_fib_$strings LOC=UNKNOWN */
+char const   *_TIG_VZ_myl1_3_fib_$strings ;
+/* END VARIABLE-DECL _TIG_VZ_myl1_3_fib_$strings LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_extract_return_addr LOC=BUILTIN */
 /* compiler builtin: 
@@ -3964,6 +3964,10 @@ struct __darwin_mcontext32 {
 __inline int digittoint(int _c ) ;
 /* END FUNCTION-DECL digittoint LOC=UNKNOWN */
 
+/* BEGIN VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_myl1_2_init_tigress_1_opaque_list_2 ;
+/* END VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
+
 /* BEGIN STRUCT code_refs_cache LOC=./jitter-Darwin-X86-64.c:3860 */
 struct code_refs_cache {
    int size ;
@@ -4113,6 +4117,10 @@ static void associate_register_alias(struct jit_reg_allocator *al , jit_op *op ,
 /* BEGIN FUNCTION-DECL iscntrl LOC=UNKNOWN */
 __inline int iscntrl(int _c ) ;
 /* END FUNCTION-DECL iscntrl LOC=UNKNOWN */
+
+/* BEGIN VARIABLE-DEF _TIG_IZ_myl1_argv LOC=UNKNOWN */
+char **_TIG_IZ_myl1_argv  ;
+/* END VARIABLE-DEF _TIG_IZ_myl1_argv LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF __darwin_uuid_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h:77 */
 typedef unsigned char __darwin_uuid_t[16];
@@ -4341,10 +4349,6 @@ __inline static jit_tree *move_red_right(jit_tree *h ) ;
 static int valid_fsize(int size ) ;
 /* END FUNCTION-DECL valid_fsize LOC=UNKNOWN */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2 ;
-/* END VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
-
 /* BEGIN VARIABLE-DECL-EXTERN daylight LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:105 */
 extern int daylight ;
 /* END VARIABLE-DECL-EXTERN daylight LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:105 */
@@ -4465,6 +4469,10 @@ extern void sranddev(void) ;
 extern void __attribute__((__availability__(macos,introduced=10.4), __availability__(ios,introduced=2.0)))  pthread_yield_np(void) ;
 /* END FUNCTION-DECL-EXTERN pthread_yield_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:560 */
 
+/* BEGIN VARIABLE-DECL _TIG_iE_myl1_1_entropy LOC=UNKNOWN */
+unsigned long _TIG_iE_myl1_1_entropy ;
+/* END VARIABLE-DECL _TIG_iE_myl1_1_entropy LOC=UNKNOWN */
+
 /* BEGIN TYPEDEF jit_float LOC=./jitter-Darwin-X86-64.c:54 */
 typedef double jit_float;
 /* END TYPEDEF jit_float LOC=./jitter-Darwin-X86-64.c:54 */
@@ -4477,10 +4485,6 @@ extern char *initstate(unsigned int  , char * , size_t  ) ;
 /* compiler builtin: 
    _Float128 __builtin_nexttowardf128(_Float128  , _Float128  ) ;  */
 /* END FUNCTION-DECL __builtin_nexttowardf128 LOC=BUILTIN */
-
-/* BEGIN TYPEDEF _TIG_iO_vnG9_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
-typedef struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_vnG9_2_init_tigress_1_opaqueStructureType;
-/* END TYPEDEF _TIG_iO_vnG9_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_ssub_overflow LOC=BUILTIN */
 /* compiler builtin: 
@@ -4735,6 +4739,10 @@ typedef __darwin_wint_t wint_t;
 /* compiler builtin: 
    _Float128 __builtin_nearbyintf128(_Float128  ) ;  */
 /* END FUNCTION-DECL __builtin_nearbyintf128 LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DEF _TIG_VZ_myl1_3_fib_$strings LOC=UNKNOWN */
+char const   *_TIG_VZ_myl1_3_fib_$strings  =    "fib(%i)=%i\n\000";
+/* END VARIABLE-DEF _TIG_VZ_myl1_3_fib_$strings LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_free LOC=BUILTIN */
 /* compiler builtin: 
@@ -5032,14 +5040,6 @@ extern int ( /* format attribute */  sscanf)(char const   * __restrict   , char 
 void jit_patch_local_addrs(struct jit *jit ) ;
 /* END FUNCTION-DECL jit_patch_local_addrs LOC=UNKNOWN */
 
-/* BEGIN VARIABLE-DEF _TIG_IZ_vnG9_envp LOC=UNKNOWN */
-char **_TIG_IZ_vnG9_envp  ;
-/* END VARIABLE-DEF _TIG_IZ_vnG9_envp LOC=UNKNOWN */
-
-/* BEGIN VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_1 ;
-/* END VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_truncf LOC=BUILTIN */
 /* compiler builtin: 
    float __builtin_truncf(float  ) ;  */
@@ -5090,6 +5090,10 @@ extern int getchar(void) ;
    int __builtin_clrsbl(long  ) ;  */
 /* END FUNCTION-DECL __builtin_clrsbl LOC=BUILTIN */
 
+/* BEGIN TYPEDEF _TIG_iO_myl1_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
+typedef struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_myl1_2_init_tigress_1_opaqueStructureType;
+/* END TYPEDEF _TIG_iO_myl1_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL move_red_left LOC=UNKNOWN */
 __inline static jit_tree *move_red_left(jit_tree *h ) ;
 /* END FUNCTION-DECL move_red_left LOC=UNKNOWN */
@@ -5102,10 +5106,6 @@ __inline static jit_tree *move_red_left(jit_tree *h ) ;
 /* BEGIN FUNCTION-DECL-EXTERN isatty LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:463 */
 extern int isatty(int  ) ;
 /* END FUNCTION-DECL-EXTERN isatty LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:463 */
-
-/* BEGIN VARIABLE-DECL _TIG_IZ_vnG9_argv LOC=UNKNOWN */
-char **_TIG_IZ_vnG9_argv ;
-/* END VARIABLE-DECL _TIG_IZ_vnG9_argv LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN pthread_mutexattr_setprotocol LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:425 */
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_setprotocol(pthread_mutexattr_t * ,
@@ -5155,14 +5155,14 @@ extern int mkstemps(char * , int  ) ;
 static void emit_msg_op(struct jit *jit , jit_op *op ) ;
 /* END FUNCTION-DECL emit_msg_op LOC=UNKNOWN */
 
+/* BEGIN VARIABLE-DEF _TIG_JD_myl1_4_fib___t LOC=UNKNOWN */
+char const   *_TIG_JD_myl1_4_fib___t  =    "";
+/* END VARIABLE-DEF _TIG_JD_myl1_4_fib___t LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN pthread_from_mach_thread_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:553 */
 extern pthread_t __attribute__((__nullable__, __availability__(macos,introduced=10.5),
 __availability__(ios,introduced=2.0)))  pthread_from_mach_thread_np(mach_port_t  ) ;
 /* END FUNCTION-DECL-EXTERN pthread_from_mach_thread_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:553 */
-
-/* BEGIN VARIABLE-DECL _TIG_iE_vnG9_1_alwaysZero LOC=UNKNOWN */
-unsigned long _TIG_iE_vnG9_1_alwaysZero ;
-/* END VARIABLE-DECL _TIG_iE_vnG9_1_alwaysZero LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN ftruncate LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:607 */
 extern int ftruncate(int  , off_t  ) ;
@@ -5716,10 +5716,6 @@ struct rusage_info_v4 {
 };
 /* END STRUCT rusage_info_v4 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h:282 */
 
-/* BEGIN VARIABLE-DEF _TIG_JD_vnG9_4_fib_freq LOC=UNKNOWN */
-int _TIG_JD_vnG9_4_fib_freq  =    0;
-/* END VARIABLE-DEF _TIG_JD_vnG9_4_fib_freq LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL jit_op_delete LOC=UNKNOWN */
 __inline static void jit_op_delete(jit_op *op ) ;
 /* END FUNCTION-DECL jit_op_delete LOC=UNKNOWN */
@@ -5797,10 +5793,6 @@ typedef enum __anonenum_X86_CC_467256102 X86_CC;
    long double __builtin_sinl(long double  ) ;  */
 /* END FUNCTION-DECL __builtin_sinl LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_vnG9_2_init_tigress_1_opaque_list_2 ;
-/* END VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL isalnum LOC=UNKNOWN */
 __inline int isalnum(int _c ) ;
 /* END FUNCTION-DECL isalnum LOC=UNKNOWN */
@@ -5819,17 +5811,9 @@ extern char *strptime(char const   * __restrict   , char const   * __restrict   
    float __builtin_scalbnf(float  , int  ) ;  */
 /* END FUNCTION-DECL __builtin_scalbnf LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2  =    (struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN getchar_unlocked LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:290 */
 extern int getchar_unlocked(void) ;
 /* END FUNCTION-DECL-EXTERN getchar_unlocked LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:290 */
-
-/* BEGIN VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_vnG9_2_init_tigress_1_opaque_list_1 ;
-/* END VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN setlinebuf LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:376 */
 extern int setlinebuf(FILE * ) ;
@@ -6074,6 +6058,10 @@ extern int fsync(int  )  __asm__("_fsync")  ;
    float __builtin_remainderf(float  , float  ) ;  */
 /* END FUNCTION-DECL __builtin_remainderf LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DECL _TIG_IZ_myl1_argc LOC=UNKNOWN */
+int _TIG_IZ_myl1_argc ;
+/* END VARIABLE-DECL _TIG_IZ_myl1_argc LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN pthread_threadid_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:506 */
 extern int __attribute__((__availability__(ios,introduced=3.2), __availability__(macos,introduced=10.6)))  pthread_threadid_np(pthread_t __attribute__((__nullable__))   ,
                                                                                                                                __uint64_t * _Nullable   ) ;
@@ -6166,10 +6154,6 @@ extern char *strtok(char *__str , char const   *__sep ) ;
 /* BEGIN FUNCTION-DECL-EXTERN gmtime_r LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:127 */
 extern struct tm *gmtime_r(time_t const   * __restrict   , struct tm * __restrict   ) ;
 /* END FUNCTION-DECL-EXTERN gmtime_r LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:127 */
-
-/* BEGIN VARIABLE-DECL _TIG_IZ_vnG9_argc LOC=UNKNOWN */
-int _TIG_IZ_vnG9_argc ;
-/* END VARIABLE-DECL _TIG_IZ_vnG9_argc LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF user_ssize_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/types.h:99 */
 typedef int64_t user_ssize_t;
@@ -6666,7 +6650,7 @@ extern void free(void *ptr ) ;
 /* END FUNCTION-DECL __builtin_va_start LOC=BUILTIN */
 
 /* BEGIN FUNCTION-DECL main LOC=UNKNOWN */
-int main(int argc , char **argv , char **_TIG_IZ_vnG9_formal_envp ) ;
+int main(int argc , char **argv , char **_TIG_IZ_myl1_formal_envp ) ;
 /* END FUNCTION-DECL main LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_sqrt LOC=BUILTIN */
@@ -6693,6 +6677,10 @@ extern int undelete(char const   * ) ;
 /* BEGIN FUNCTION-DECL-EXTERN wctomb LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:195 */
 extern int wctomb(char * , wchar_t  ) ;
 /* END FUNCTION-DECL-EXTERN wctomb LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:195 */
+
+/* BEGIN VARIABLE-DEF _TIG_IZ_myl1_argc LOC=UNKNOWN */
+int _TIG_IZ_myl1_argc  ;
+/* END VARIABLE-DEF _TIG_IZ_myl1_argc LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN pthread_attr_getstack LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:248 */
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getstack(pthread_attr_t const   * __restrict   ,
@@ -6787,6 +6775,10 @@ static void ob_append(struct output_buf *ob , char *str ) ;
    unsigned char __builtin_rotateright8(unsigned char  , unsigned char  ) ;  */
 /* END FUNCTION-DECL __builtin_rotateright8 LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DECL _TIG_IZ_myl1_envp LOC=UNKNOWN */
+char **_TIG_IZ_myl1_envp ;
+/* END VARIABLE-DECL _TIG_IZ_myl1_envp LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN srandom LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:246 */
 extern void srandom(unsigned int  ) ;
 /* END FUNCTION-DECL-EXTERN srandom LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:246 */
@@ -6830,6 +6822,10 @@ typedef enum __anonenum_clockid_t_447627989 clockid_t;
 extern __uint64_t __attribute__((__availability__(macosx,introduced=10.12), __availability__(ios,introduced=10.0),
 __availability__(tvos,introduced=10.0), __availability__(watchos,introduced=3.0)))  clock_gettime_nsec_np(clockid_t __clock_id ) ;
 /* END FUNCTION-DECL-EXTERN clock_gettime_nsec_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:182 */
+
+/* BEGIN VARIABLE-DEF _TIG_IZ_myl1_envp LOC=UNKNOWN */
+char **_TIG_IZ_myl1_envp  ;
+/* END VARIABLE-DEF _TIG_IZ_myl1_envp LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN read LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:472 */
 extern ssize_t read(int  , void * , size_t  )  __asm__("_read")  ;
@@ -6901,6 +6897,10 @@ extern int ferror(FILE * ) ;
 static void copy_reg_to_array(jit_tree_key key , jit_tree_value value , void *target ) ;
 /* END FUNCTION-DECL copy_reg_to_array LOC=UNKNOWN */
 
+/* BEGIN VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_myl1_2_init_tigress_1_opaque_ptr_1  =    (struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+
 /* BEGIN STRUCT rusage_info_v3 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h:251 */
 struct rusage_info_v3 {
    uint8_t ri_uuid[16] ;
@@ -6956,10 +6956,6 @@ extern void setbuffer(FILE * , char * , int  ) ;
 /* BEGIN FUNCTION-DECL-EXTERN fsctl LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:773 */
 extern int fsctl(char const   * , unsigned long  , void * , unsigned int  ) ;
 /* END FUNCTION-DECL-EXTERN fsctl LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:773 */
-
-/* BEGIN VARIABLE-DECL _TIG_JD_vnG9_4_fib___t LOC=UNKNOWN */
-char const   *_TIG_JD_vnG9_4_fib___t ;
-/* END VARIABLE-DECL _TIG_JD_vnG9_4_fib___t LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_fmal LOC=BUILTIN */
 /* compiler builtin: 
@@ -7573,10 +7569,6 @@ typedef struct __anonstruct_ldiv_t_748949161 ldiv_t;
    _Float128 __builtin_fdimf128(_Float128  , _Float128  ) ;  */
 /* END FUNCTION-DECL __builtin_fdimf128 LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iE_vnG9_1_entropy LOC=UNKNOWN */
-unsigned long _TIG_iE_vnG9_1_entropy ;
-/* END VARIABLE-DECL _TIG_iE_vnG9_1_entropy LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin___stpcpy_chk LOC=BUILTIN */
 /* compiler builtin: 
    char *__builtin___stpcpy_chk(char * , char const   * , unsigned long long  ) ;  */
@@ -7629,6 +7621,10 @@ __inline static jit_op *jit_op_last(jit_op *op ) ;
    float __builtin_canonicalizef(float  ) ;  */
 /* END FUNCTION-DECL __builtin_canonicalizef LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_myl1_2_init_tigress_1_opaque_list_1  =    (struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN sched_get_priority_max LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/sched.h:40 */
 extern int sched_get_priority_max(int  ) ;
 /* END FUNCTION-DECL-EXTERN sched_get_priority_max LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/sched.h:40 */
@@ -7640,6 +7636,10 @@ extern int __darwin_check_fd_set_overflow(int  , void const   * , int  )  __attr
 /* BEGIN FUNCTION-DECL emit_push_reg LOC=UNKNOWN */
 static int emit_push_reg(struct jit *jit , jit_hw_reg *r , int stack_offset ) ;
 /* END FUNCTION-DECL emit_push_reg LOC=UNKNOWN */
+
+/* BEGIN VARIABLE-DECL _TIG_iE_myl1_1_alwaysZero LOC=UNKNOWN */
+unsigned long _TIG_iE_myl1_1_alwaysZero ;
+/* END VARIABLE-DECL _TIG_iE_myl1_1_alwaysZero LOC=UNKNOWN */
 
 /* BEGIN ENUM __anonenum_jit_opcode_193533032 LOC=./jitter-Darwin-X86-64.c:112 */
 enum __anonenum_jit_opcode_193533032 {
@@ -7987,6 +7987,10 @@ extern void encrypt(char * , int  )  __asm__("_encrypt")  ;
 extern long labs(long  )  __attribute__((__const__)) ;
 /* END FUNCTION-DECL-EXTERN labs LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:148 */
 
+/* BEGIN VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_myl1_2_init_tigress_1_opaque_list_1 ;
+/* END VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN pthread_attr_setstacksize LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:287 */
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setstacksize(pthread_attr_t * ,
                                                                                                                                      size_t  ) ;
@@ -8033,6 +8037,10 @@ extern char *rindex(char const   * , int  ) ;
 /* BEGIN FUNCTION-DECL-EXTERN memset_pattern4 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:156 */
 extern void memset_pattern4(void *__b , void const   *__pattern4 , size_t __len )  __attribute__((__availability__(macosx,introduced=10.5))) ;
 /* END FUNCTION-DECL-EXTERN memset_pattern4 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:156 */
+
+/* BEGIN VARIABLE-DEF _TIG_iE_myl1_1_alwaysZero LOC=UNKNOWN */
+unsigned long _TIG_iE_myl1_1_alwaysZero  =    0UL;
+/* END VARIABLE-DEF _TIG_iE_myl1_1_alwaysZero LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF syscall_arg_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/types.h:111 */
 typedef u_int64_t syscall_arg_t;
@@ -8260,9 +8268,9 @@ extern unsigned int alarm(unsigned int  ) ;
                                                                            float __attribute__((____vector_size____(16)))   ) ;  */
 /* END FUNCTION-DECL __builtin_ia32_unpckhps LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_vnG9_2_init_tigress_1_opaque_list_2  =    (struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
+/* BEGIN VARIABLE-DECL _TIG_IZ_myl1_argv LOC=UNKNOWN */
+char **_TIG_IZ_myl1_argv ;
+/* END VARIABLE-DECL _TIG_IZ_myl1_argv LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN strmode LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:164 */
 extern void strmode(int __mode , char *__bp ) ;
@@ -8276,6 +8284,10 @@ extern void strmode(int __mode , char *__bp ) ;
 /* BEGIN FUNCTION-DECL-EXTERN cgetustr LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:290 */
 extern int cgetustr(char * , char const   * , char ** ) ;
 /* END FUNCTION-DECL-EXTERN cgetustr LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:290 */
+
+/* BEGIN VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2 ;
+/* END VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN __sprintf_chk LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:42 */
 extern int __sprintf_chk(char * __restrict   , int  , size_t  , char const   * __restrict   
@@ -8399,11 +8411,19 @@ typedef __darwin_rune_t rune_t;
    float __builtin_atanhf(float  ) ;  */
 /* END FUNCTION-DECL __builtin_atanhf LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+unsigned int _TIG_iO_myl1_2_init_tigress_1__opaque_array[30] ;
+/* END VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN __assert_rtn LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h:76 */
 extern  __attribute__((__noreturn__)) void __assert_rtn(char const   * , char const   * ,
                                                         int  , char const   * )  __attribute__((__disable_tail_calls__,
 __cold__)) ;
 /* END FUNCTION-DECL-EXTERN __assert_rtn LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h:76 */
+
+/* BEGIN VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_myl1_2_init_tigress_1_opaque_ptr_1 ;
+/* END VARIABLE-DECL _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN getgrouplist LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:650 */
 extern int getgrouplist(char const   * , int  , int * , int * ) ;
@@ -8605,10 +8625,6 @@ struct __darwin_mcontext_avx512_64_full {
    struct __darwin_x86_avx512_state64 __fs ;
 };
 /* END STRUCT __darwin_mcontext_avx512_64_full LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h:138 */
-
-/* BEGIN VARIABLE-DEF _TIG_VZ_vnG9_3_fib_$strings LOC=UNKNOWN */
-char const   *_TIG_VZ_vnG9_3_fib_$strings  =    "fib(%i)=%i\n\000";
-/* END VARIABLE-DEF _TIG_VZ_vnG9_3_fib_$strings LOC=UNKNOWN */
 
 /* BEGIN VARIABLE-DECL x0 LOC=UNKNOWN */
 static double x0 ;
@@ -8845,6 +8861,10 @@ union __anonunion_value_137411616 {
 /* compiler builtin: 
    void *__builtin_memset(void * , int  , int  ) ;  */
 /* END FUNCTION-DECL __builtin_memset LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_myl1_2_init_tigress_1_opaque_list_2  =    (struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_casinhl LOC=BUILTIN */
 /* compiler builtin: 
@@ -9104,10 +9124,6 @@ extern int mkstemp_dprotected_np(char *path , int dpclass , int dpflags )  __att
 __availability__(tvos,introduced=10.0), __availability__(ios,introduced=10.0), __availability__(macosx,unavailable))) ;
 /* END FUNCTION-DECL-EXTERN mkstemp_dprotected_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:683 */
 
-/* BEGIN VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
-struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_vnG9_2_init_tigress_1_opaque_list_1  =    (struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_cprojl LOC=BUILTIN */
 /* compiler builtin: 
    _Complex long double __builtin_cprojl(_Complex long double  ) ;  */
@@ -9213,6 +9229,10 @@ static void emit_restore_all_regs(struct jit *jit , jit_op *op ) ;
 /* BEGIN VARIABLE-DECL-EXTERN __stdoutp LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:68 */
 extern FILE *__stdoutp ;
 /* END VARIABLE-DECL-EXTERN __stdoutp LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:68 */
+
+/* BEGIN VARIABLE-DEF _TIG_iE_myl1_1_entropy LOC=UNKNOWN */
+unsigned long _TIG_iE_myl1_1_entropy  =    9042506488591766566UL;
+/* END VARIABLE-DEF _TIG_iE_myl1_1_entropy LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF sig_atomic_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/signal.h:39 */
 typedef int sig_atomic_t;
@@ -9753,18 +9773,6 @@ struct __sigaction {
 __inline int isgraph(int _c ) ;
 /* END FUNCTION-DECL isgraph LOC=UNKNOWN */
 
-/* BEGIN VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-unsigned int _TIG_iO_vnG9_2_init_tigress_1__opaque_array[30]  = 
-  {      8,      362,      3,      493, 
-        432,      5,      303,      390, 
-        5,      383,      5,      7, 
-        133,      47,      1,      288, 
-        502,      95,      218,      628, 
-        22,      428,      656,      41, 
-        68,      201,      34,      403, 
-        698};
-/* END VARIABLE-DEF _TIG_iO_vnG9_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN putw LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:297 */
 extern int putw(int  , FILE * ) ;
 /* END FUNCTION-DECL-EXTERN putw LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:297 */
@@ -9778,26 +9786,6 @@ extern int putw(int  , FILE * ) ;
 /* compiler builtin: 
    _Complex float __builtin_cprojf(_Complex float  ) ;  */
 /* END FUNCTION-DECL __builtin_cprojf LOC=BUILTIN */
-
-/* BEGIN UNION _TIG_VZ_vnG9_3_fib_$node LOC=UNKNOWN */
-union _TIG_VZ_vnG9_3_fib_$node {
-   unsigned int _unsigned_int ;
-   void *_void_star ;
-   signed char _signed_char ;
-   unsigned long long _unsigned_long_long ;
-   int _int ;
-   short _short ;
-   long long _long_long ;
-   unsigned char _unsigned_char ;
-   unsigned short _unsigned_short ;
-   float _float ;
-   unsigned long _unsigned_long ;
-   long _long ;
-   long double _long_double ;
-   char _char ;
-   double _double ;
-};
-/* END UNION _TIG_VZ_vnG9_3_fib_$node LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __darwin_fd_set LOC=UNKNOWN */
 __inline void ( __attribute__((__always_inline__)) __darwin_fd_set)(int _fd , struct fd_set *_p ) ;
@@ -9814,6 +9802,18 @@ __inline static int pow2(int arg ) ;
 /* BEGIN FUNCTION-DECL is_red LOC=UNKNOWN */
 __inline static int is_red(jit_tree *n ) ;
 /* END FUNCTION-DECL is_red LOC=UNKNOWN */
+
+/* BEGIN VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+unsigned int _TIG_iO_myl1_2_init_tigress_1__opaque_array[30]  = 
+  {      8,      362,      3,      493, 
+        432,      5,      303,      390, 
+        5,      383,      5,      7, 
+        133,      47,      1,      288, 
+        502,      95,      218,      628, 
+        22,      428,      656,      41, 
+        68,      201,      34,      403, 
+        698};
+/* END VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1__opaque_array LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN mkostemps LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:679 */
 extern int mkostemps(char *path , int slen , int oflags )  __attribute__((__availability__(watchos,introduced=3.0),
@@ -9920,10 +9920,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 /* BEGIN FUNCTION-DECL-EXTERN unwhiteout LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:734 */
 extern int unwhiteout(char const   * ) ;
 /* END FUNCTION-DECL-EXTERN unwhiteout LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:734 */
-
-/* BEGIN VARIABLE-DEF _TIG_iE_vnG9_1_entropy LOC=UNKNOWN */
-unsigned long _TIG_iE_vnG9_1_entropy  =    9042506488591766566UL;
-/* END VARIABLE-DEF _TIG_iE_vnG9_1_entropy LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN timingsafe_bcmp LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:172 */
 extern int __attribute__((__availability__(watchos,introduced=3.1), __availability__(tvos,introduced=10.0.1),
@@ -10091,10 +10087,6 @@ extern FILE *zopen(char const   * , char const   * , int  ) ;
 /* compiler builtin: 
    _Complex float __builtin_csinhf(_Complex float  ) ;  */
 /* END FUNCTION-DECL __builtin_csinhf LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DECL _TIG_JD_vnG9_4_fib_freq LOC=UNKNOWN */
-int _TIG_JD_vnG9_4_fib_freq ;
-/* END VARIABLE-DECL _TIG_JD_vnG9_4_fib_freq LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin___strncpy_chk LOC=BUILTIN */
 /* compiler builtin: 
@@ -10434,6 +10426,10 @@ extern void srand(unsigned int  )  __attribute__((__availability__(swift,unavail
 static void mark_calleesaved_regs(jit_tree *hint , jit_op *op ) ;
 /* END FUNCTION-DECL mark_calleesaved_regs LOC=UNKNOWN */
 
+/* BEGIN VARIABLE-DECL _TIG_JD_myl1_4_fib_freq LOC=UNKNOWN */
+int _TIG_JD_myl1_4_fib_freq ;
+/* END VARIABLE-DECL _TIG_JD_myl1_4_fib_freq LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN cgetnext LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:286 */
 extern int cgetnext(char ** , char ** ) ;
 /* END FUNCTION-DECL-EXTERN cgetnext LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:286 */
@@ -10581,6 +10577,10 @@ struct __darwin_mcontext_avx512_32 {
 };
 /* END STRUCT __darwin_mcontext_avx512_32 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h:56 */
 
+/* BEGIN VARIABLE-DECL _TIG_JD_myl1_4_fib___t LOC=UNKNOWN */
+char const   *_TIG_JD_myl1_4_fib___t ;
+/* END VARIABLE-DECL _TIG_JD_myl1_4_fib___t LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN getpgrp LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:459 */
 extern pid_t getpgrp(void) ;
 /* END FUNCTION-DECL-EXTERN getpgrp LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:459 */
@@ -10588,6 +10588,10 @@ extern pid_t getpgrp(void) ;
 /* BEGIN FUNCTION-DECL-EXTERN strtol LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:167 */
 extern long strtol(char const   *__str , char **__endptr , int __base ) ;
 /* END FUNCTION-DECL-EXTERN strtol LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:167 */
+
+/* BEGIN VARIABLE-DEF _TIG_JD_myl1_4_fib_freq LOC=UNKNOWN */
+int _TIG_JD_myl1_4_fib_freq  =    0;
+/* END VARIABLE-DEF _TIG_JD_myl1_4_fib_freq LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_fmaxf16 LOC=BUILTIN */
 /* compiler builtin: 
@@ -10626,10 +10630,6 @@ typedef struct __darwin_mcontext64 *mcontext_t;
 /* BEGIN FUNCTION-DECL-EXTERN strerror LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:81 */
 extern char *strerror(int __errnum )  __asm__("_strerror")  ;
 /* END FUNCTION-DECL-EXTERN strerror LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:81 */
-
-/* BEGIN VARIABLE-DEF _TIG_IZ_vnG9_argv LOC=UNKNOWN */
-char **_TIG_IZ_vnG9_argv  ;
-/* END VARIABLE-DEF _TIG_IZ_vnG9_argv LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN pthread_getugid_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:700 */
 extern int pthread_getugid_np(uid_t * , gid_t * ) ;
@@ -11012,10 +11012,6 @@ extern char *strnstr(char const   *__big , char const   *__little , size_t __len
    _Complex double __builtin_cacosh(_Complex double  ) ;  */
 /* END FUNCTION-DECL __builtin_cacosh LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-unsigned int _TIG_iO_vnG9_2_init_tigress_1__opaque_array[30] ;
-/* END VARIABLE-DECL _TIG_iO_vnG9_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN ctime LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:110 */
 extern char *ctime(time_t const   * ) ;
 /* END FUNCTION-DECL-EXTERN ctime LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:110 */
@@ -11024,6 +11020,10 @@ extern char *ctime(time_t const   * ) ;
 /* compiler builtin: 
    void __builtin_preserve_access_index(...) ;  */
 /* END FUNCTION-DECL __builtin_preserve_access_index LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
+struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2  =    (struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_log10l LOC=BUILTIN */
 /* compiler builtin: 
@@ -12690,34 +12690,34 @@ void jit_collect_statistics(struct jit *jit )
 /* BEGIN FUNCTION-DEF init_tigress LOC=UNKNOWN */
 void init_tigress(void) 
 { 
-  struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *p1 ;
+  struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *p1 ;
   int i2 ;
-  struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *p3 ;
+  struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *p3 ;
 
   {
   while (1) {
-    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-iO-vnG9-2-init-tigress--2":);
+    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-iO-myl1-2-init-tigress--2":);
     {
     {
     while (1) {
-      __asm__ volatile ("##_ANNOTATION_ATOMICREGION_-TIG-iO-vnG9-2-init-tigress--1":);
-      p1 = (struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *)malloc(sizeof(struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct ));
+      __asm__ volatile ("##_ANNOTATION_ATOMICREGION_-TIG-iO-myl1-2-init-tigress--1":);
+      p1 = (struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *)malloc(sizeof(struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct ));
       p1->next = p1;
       p1->prev = p1;
-      _TIG_iO_vnG9_2_init_tigress_1_opaque_list_1 = p1;
+      _TIG_iO_myl1_2_init_tigress_1_opaque_list_1 = p1;
       i2 = 0;
       while (i2 < 2) {
-        p3 = (struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct *)malloc(sizeof(struct _TIG_iO_vnG9_2_init_tigress_1_opaqueNodeStruct ));
-        p3->data = i2 * (_TIG_iE_vnG9_1_entropy | 10);
-        p3->next = _TIG_iO_vnG9_2_init_tigress_1_opaque_list_1->next;
-        p3->prev = _TIG_iO_vnG9_2_init_tigress_1_opaque_list_1;
-        (_TIG_iO_vnG9_2_init_tigress_1_opaque_list_1->next)->prev = p3;
-        _TIG_iO_vnG9_2_init_tigress_1_opaque_list_1->next = p3;
+        p3 = (struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct *)malloc(sizeof(struct _TIG_iO_myl1_2_init_tigress_1_opaqueNodeStruct ));
+        p3->data = i2 * (_TIG_iE_myl1_1_entropy | 10);
+        p3->next = _TIG_iO_myl1_2_init_tigress_1_opaque_list_1->next;
+        p3->prev = _TIG_iO_myl1_2_init_tigress_1_opaque_list_1;
+        (_TIG_iO_myl1_2_init_tigress_1_opaque_list_1->next)->prev = p3;
+        _TIG_iO_myl1_2_init_tigress_1_opaque_list_1->next = p3;
         i2 ++;
       }
-      _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_1 = _TIG_iO_vnG9_2_init_tigress_1_opaque_list_1->next;
-      _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2 = _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_1;
-      _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2 = _TIG_iO_vnG9_2_init_tigress_1_opaque_ptr_2->next;
+      _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_1 = _TIG_iO_myl1_2_init_tigress_1_opaque_list_1->next;
+      _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2 = _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_1;
+      _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2 = _TIG_iO_myl1_2_init_tigress_1_opaque_ptr_2->next;
       break;
     }
     }
@@ -19298,14 +19298,14 @@ static void emit_branch_op(struct jit *jit , struct jit_op *op , int cond , int 
 void fib(int n ) 
 { 
   static struct jit *p20  = (struct jit *)0;
-  static void (*_TIG_JD_vnG9_4_fib___foo)(int n ) ;
+  static void (*_TIG_JD_myl1_4_fib___foo)(int n ) ;
   int localSize22 ;
   unsigned int KEY_1494878675_538327513_1893549042_1808446567[4]  = {1494878675U,
                                                                      538327513U, 1893549042U,
                                                                      1808446567U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_50_362[4]  = {1444080428U, 1810969561U, 1487389103U,
+  unsigned int _TIG_JD_myl1_4_fib_block_50_362[4]  = {1444080428U, 1810969561U, 1487389103U,
                                                       2989609030U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_15_363[54]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_15_363[54]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1526277045U, 1882151377U,
                                                        3457709525U, 3107598410U, 1465759862U,
                                                        1029219087U, 1858616483U, 81869482U,
@@ -19323,7 +19323,7 @@ void fib(int n )
                                                        1240040863U, 185950207U, 3880805153U,
                                                        2337757917U, 832498083U, 3651700240U,
                                                        3673228229U, 2895187267U, 691264721U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_8_364[62]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_8_364[62]  = {3865797297U, 3760891365U, 761558494U,
                                                       522395450U, 1526277045U, 1882151377U,
                                                       3457709525U, 3107598410U, 1465759862U,
                                                       1029219087U, 1858616483U, 81869482U,
@@ -19344,7 +19344,7 @@ void fib(int n )
                                                       1765112844U, 2993033847U, 3023753826U,
                                                       2739226783U, 406849208U, 276185752U,
                                                       2935676902U, 1502408300U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_3_365[22]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_3_365[22]  = {3865797297U, 3760891365U, 761558494U,
                                                       522395450U, 1526277045U, 1882151377U,
                                                       3457709525U, 3107598410U, 1465759862U,
                                                       1029219087U, 1858616483U, 81869482U,
@@ -19352,7 +19352,7 @@ void fib(int n )
                                                       3227713196U, 14687428U, 1150780574U,
                                                       3649725867U, 1098209001U, 3052689886U,
                                                       1853679747U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_16_366[32]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_16_366[32]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1526277045U, 1882151377U,
                                                        3457709525U, 3107598410U, 1465759862U,
                                                        1029219087U, 1858616483U, 81869482U,
@@ -19363,13 +19363,13 @@ void fib(int n )
                                                        2343519458U, 242645394U, 14687428U,
                                                        1150780574U, 2553242030U, 789900243U,
                                                        1168109153U, 3645623787U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_36_367[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_36_367[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_26_368[10]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_26_368[10]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1526277045U, 1882151377U,
                                                        3457709525U, 3107598410U, 1784858941U,
                                                        668240381U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_19_369[44]  = {2089457311U, 2981884288U, 957859296U,
+  unsigned int _TIG_JD_myl1_4_fib_block_19_369[44]  = {2089457311U, 2981884288U, 957859296U,
                                                        889449031U, 3306186640U, 1280531807U,
                                                        2214459479U, 2822463662U, 2114374844U,
                                                        4215843651U, 3128631854U, 69032297U,
@@ -19384,7 +19384,7 @@ void fib(int n )
                                                        2282796092U, 1676309847U, 2813450783U,
                                                        3504434609U, 31602387U, 3504531306U,
                                                        1494600203U, 3184256714U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_17_370[32]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_17_370[32]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1526277045U, 1882151377U,
                                                        3457709525U, 3107598410U, 1465759862U,
                                                        1029219087U, 1858616483U, 81869482U,
@@ -19395,7 +19395,7 @@ void fib(int n )
                                                        1412371038U, 3227713196U, 14687428U,
                                                        1150780574U, 2553242030U, 789900243U,
                                                        3615615965U, 747923792U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_27_371[52]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_27_371[52]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1480491644U, 2891198548U,
                                                        1519005496U, 1530496939U, 2403941728U,
                                                        1442483633U, 1858616483U, 81869482U,
@@ -19413,9 +19413,9 @@ void fib(int n )
                                                        1579259482U, 2543888468U, 1215684332U,
                                                        1814671273U, 109164422U, 3284762216U,
                                                        348721987U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_34_372[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_34_372[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_28_373[48]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_28_373[48]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1480491644U, 2891198548U,
                                                        1519005496U, 1530496939U, 2403941728U,
                                                        1442483633U, 1858616483U, 81869482U,
@@ -19431,11 +19431,11 @@ void fib(int n )
                                                        3760891365U, 761558494U, 522395450U,
                                                        1480491644U, 2891198548U, 1519005496U,
                                                        1530496939U, 2717629007U, 1143989579U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_5_374[10]  = {3865797297U, 3760891365U, 2173171270U,
+  unsigned int _TIG_JD_myl1_4_fib_block_5_374[10]  = {3865797297U, 3760891365U, 2173171270U,
                                                       2018706490U, 3006385897U, 2682043074U,
                                                       2591059234U, 562243003U, 1965739915U,
                                                       3286638776U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_10_375[48]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_10_375[48]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1480491644U, 2891198548U,
                                                        1519005496U, 1530496939U, 2403941728U,
                                                        1442483633U, 1858616483U, 81869482U,
@@ -19451,23 +19451,23 @@ void fib(int n )
                                                        957222925U, 2860284462U, 1175157140U,
                                                        2480511193U, 508811278U, 3914638065U,
                                                        1986211332U, 3992696035U, 832714832U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_39_376[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_39_376[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_7_377[14]  = {2858941721U, 1289223576U, 567593275U,
+  unsigned int _TIG_JD_myl1_4_fib_block_7_377[14]  = {2858941721U, 1289223576U, 567593275U,
                                                       866621778U, 2872122042U, 3596291017U,
                                                       629949489U, 2725296509U, 2370440710U,
                                                       2339357110U, 2447140425U, 1606200693U,
                                                       1706025681U, 1154092196U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_12_378[20]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_12_378[20]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1480491644U, 2891198548U,
                                                        1519005496U, 1530496939U, 2403941728U,
                                                        1442483633U, 2065122346U, 2811423260U,
                                                        493693162U, 3790098226U, 1390699531U,
                                                        757701913U, 3852417292U, 3793516835U,
                                                        4244255285U, 1168273524U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_45_379[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_45_379[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_11_380[64]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_11_380[64]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1480491644U, 2891198548U,
                                                        1519005496U, 1530496939U, 2403941728U,
                                                        1442483633U, 1858616483U, 81869482U,
@@ -19489,7 +19489,7 @@ void fib(int n )
                                                        2818684551U, 1505435969U, 231646484U,
                                                        2293674092U, 3011685368U, 2717629007U,
                                                        1143989579U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_9_381[52]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_9_381[52]  = {3865797297U, 3760891365U, 761558494U,
                                                       522395450U, 1480491644U, 2891198548U,
                                                       1519005496U, 1530496939U, 2403941728U,
                                                       1442483633U, 1858616483U, 81869482U,
@@ -19507,31 +19507,31 @@ void fib(int n )
                                                       830458887U, 463361367U, 3769071849U,
                                                       1692392660U, 2129805510U, 392103132U,
                                                       173460717U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_13_382[10]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_13_382[10]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1480491644U, 2891198548U,
                                                        1519005496U, 1530496939U, 2717629007U,
                                                        1143989579U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_51_383[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_51_383[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_40_384[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_40_384[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_6_385[10]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_6_385[10]  = {3865797297U, 3760891365U, 761558494U,
                                                       522395450U, 1480491644U, 2891198548U,
                                                       1519005496U, 1530496939U, 2717629007U,
                                                       1143989579U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_38_386[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_38_386[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_48_387[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_48_387[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_47_388[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_47_388[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_37_389[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_37_389[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_46_390[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_46_390[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_35_391[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_35_391[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_29_392[48]  = {3865797297U, 3760891365U, 761558494U,
+  unsigned int _TIG_JD_myl1_4_fib_block_29_392[48]  = {3865797297U, 3760891365U, 761558494U,
                                                        522395450U, 1480491644U, 2891198548U,
                                                        1519005496U, 1530496939U, 2403941728U,
                                                        1442483633U, 1858616483U, 81869482U,
@@ -19547,7 +19547,7 @@ void fib(int n )
                                                        2161825555U, 2686584926U, 3283896859U,
                                                        3101847575U, 756771728U, 3827806865U,
                                                        2818977076U, 3284762216U, 348721987U};
-  unsigned int _TIG_JD_vnG9_4_fib_block_43_393[4]  = {3015308295U, 2456679650U, 382995624U,
+  unsigned int _TIG_JD_myl1_4_fib_block_43_393[4]  = {3015308295U, 2456679650U, 382995624U,
                                                       3991129455U};
   jit_label *self394 ;
   struct jit_op *op395 ;
@@ -19837,7 +19837,7 @@ void fib(int n )
     jit_enable_optimization(p20, 4L);
     jit_enable_optimization(p20, 8L);
     self394 = jit_get_label(p20);
-    jit_add_prolog(p20, & _TIG_JD_vnG9_4_fib___foo, 0);
+    jit_add_prolog(p20, & _TIG_JD_myl1_4_fib___foo, 0);
     localSize22 = jit_allocai(p20, 1396L);
     jit_add_op(p20, JIT_DECL_ARG, ((0 << 4) | (2 << 2)) | 2, 0, 4, 0L, 0L, 0);
     jit_add_op(p20, JIT_ADD | 2, ((2 << 4) | (1 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((1 & 268435455) << 4)),
@@ -19848,24 +19848,24 @@ void fib(int n )
     jit_add_op(p20, JIT_ST | 1, ((0 << 4) | (1 << 2)) | 1, (0 & 1) | (((0 & 3) << 1) | ((1 & 268435455) << 4)),
                (0 & 1) | (((0 & 3) << 1) | ((2 & 268435455) << 4)), 0L, 4, 0);
     jit_add_op(p20, JIT_ADD | 2, ((2 << 4) | (1 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((3 & 268435455) << 4)),
-               (0 & 1) | (((2 & 3) << 1) | ((0 & 268435455) << 4)), (jit_value )(localSize22 + 1360),
+               (0 & 1) | (((2 & 3) << 1) | ((0 & 268435455) << 4)), (jit_value )(localSize22 + 1376),
                0L, 0);
     jit_add_op(p20, JIT_MOV | 2, ((0 << 4) | (2 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((4 & 268435455) << 4)),
-               (jit_value )(& _TIG_VZ_vnG9_3_fib_$strings), 0L, 0L, 0);
+               (jit_value )(& printf), 0L, 0L, 0);
     jit_add_op(p20, JIT_ST | 1, ((0 << 4) | (1 << 2)) | 1, (0 & 1) | (((0 & 3) << 1) | ((3 & 268435455) << 4)),
                (0 & 1) | (((0 & 3) << 1) | ((4 & 268435455) << 4)), 0L, 8, 0);
     jit_add_op(p20, JIT_ADD | 2, ((2 << 4) | (1 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((5 & 268435455) << 4)),
-               (0 & 1) | (((2 & 3) << 1) | ((0 & 268435455) << 4)), (jit_value )(localSize22 + 1376),
+               (0 & 1) | (((2 & 3) << 1) | ((0 & 268435455) << 4)), (jit_value )(localSize22 + 1384),
                0L, 0);
     jit_add_op(p20, JIT_MOV | 2, ((0 << 4) | (2 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((6 & 268435455) << 4)),
-               (jit_value )(& printf), 0L, 0L, 0);
+               (jit_value )(& _TIG_JD_myl1_4_fib___t), 0L, 0L, 0);
     jit_add_op(p20, JIT_ST | 1, ((0 << 4) | (1 << 2)) | 1, (0 & 1) | (((0 & 3) << 1) | ((5 & 268435455) << 4)),
                (0 & 1) | (((0 & 3) << 1) | ((6 & 268435455) << 4)), 0L, 8, 0);
     jit_add_op(p20, JIT_ADD | 2, ((2 << 4) | (1 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((7 & 268435455) << 4)),
-               (0 & 1) | (((2 & 3) << 1) | ((0 & 268435455) << 4)), (jit_value )(localSize22 + 1384),
+               (0 & 1) | (((2 & 3) << 1) | ((0 & 268435455) << 4)), (jit_value )(localSize22 + 1360),
                0L, 0);
     jit_add_op(p20, JIT_MOV | 2, ((0 << 4) | (2 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((8 & 268435455) << 4)),
-               (jit_value )(& _TIG_JD_vnG9_4_fib___t), 0L, 0L, 0);
+               (jit_value )(& _TIG_VZ_myl1_3_fib_$strings), 0L, 0L, 0);
     jit_add_op(p20, JIT_ST | 1, ((0 << 4) | (1 << 2)) | 1, (0 & 1) | (((0 & 3) << 1) | ((7 & 268435455) << 4)),
                (0 & 1) | (((0 & 3) << 1) | ((8 & 268435455) << 4)), 0L, 8, 0);
     op395 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
@@ -19895,7 +19895,7 @@ void fib(int n )
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label398 = jit_get_label(p20);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_50_362));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_50_362));
     label399 = jit_get_label(p20);
     op400 = jit_add_op(p20, JIT_REF_CODE, ((0 << 4) | (2 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((22 & 268435455) << 4)),
                        0, 0L, 0L, 0);
@@ -19971,7 +19971,7 @@ void fib(int n )
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label409 = jit_get_label(p20);
-    jit_data_bytes(p20, 216L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_15_363));
+    jit_data_bytes(p20, 216L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_15_363));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op410 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
@@ -19996,7 +19996,7 @@ void fib(int n )
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label414 = jit_get_label(p20);
-    jit_data_bytes(p20, 248L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_8_364));
+    jit_data_bytes(p20, 248L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_8_364));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op415 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
@@ -21020,21 +21020,21 @@ void fib(int n )
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label477 = jit_get_label(p20);
-    jit_data_bytes(p20, 88L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_3_365));
+    jit_data_bytes(p20, 88L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_3_365));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op478 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label479 = jit_get_label(p20);
-    jit_data_bytes(p20, 128L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_16_366));
+    jit_data_bytes(p20, 128L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_16_366));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op480 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label481 = jit_get_label(p20);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_36_367));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_36_367));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label482 = jit_get_label(p20);
     op483 = jit_add_op(p20, JIT_REF_CODE, ((0 << 4) | (2 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((22 & 268435455) << 4)),
@@ -21113,7 +21113,7 @@ void fib(int n )
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label493 = jit_get_label(p20);
-    jit_data_bytes(p20, 40L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_26_368));
+    jit_data_bytes(p20, 40L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_26_368));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op494 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
@@ -21160,7 +21160,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op403, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 176L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_19_369));
+    jit_data_bytes(p20, 176L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_19_369));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )label493,
                0L, 0L, 0L, 0);
@@ -21171,7 +21171,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op475, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 128L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_17_370));
+    jit_data_bytes(p20, 128L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_17_370));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op503 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
@@ -21203,7 +21203,7 @@ void fib(int n )
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label508 = jit_get_label(p20);
-    jit_data_bytes(p20, 208L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_27_371));
+    jit_data_bytes(p20, 208L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_27_371));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )label481,
                0L, 0L, 0L, 0);
@@ -21246,7 +21246,7 @@ void fib(int n )
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label513 = jit_get_label(p20);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_34_372));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_34_372));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label514 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op500, 0L,
@@ -21276,7 +21276,7 @@ void fib(int n )
     label518 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op483, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 192L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_28_373));
+    jit_data_bytes(p20, 192L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_28_373));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op519 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
@@ -21290,7 +21290,7 @@ void fib(int n )
     label522 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op496, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 40L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_5_374));
+    jit_data_bytes(p20, 40L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_5_374));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op523 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
@@ -21416,7 +21416,7 @@ void fib(int n )
     label538 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op491, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 192L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_10_375));
+    jit_data_bytes(p20, 192L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_10_375));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )label490,
                0L, 0L, 0L, 0);
@@ -21425,14 +21425,14 @@ void fib(int n )
     label539 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op473, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_39_376));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_39_376));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
     label540 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op523, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 56L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_7_377));
+    jit_data_bytes(p20, 56L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_7_377));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op541 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
@@ -21698,7 +21698,7 @@ void fib(int n )
     label564 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op527, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 80L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_12_378));
+    jit_data_bytes(p20, 80L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_12_378));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )label526,
                0L, 0L, 0L, 0);
@@ -21750,7 +21750,7 @@ void fib(int n )
     label571 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op494, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_45_379));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_45_379));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label572 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op503, 0L,
@@ -21980,7 +21980,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op521, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 256L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_11_380));
+    jit_data_bytes(p20, 256L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_11_380));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op600 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
@@ -21991,7 +21991,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op557, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 208L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_9_381));
+    jit_data_bytes(p20, 208L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_9_381));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     op602 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
@@ -22000,7 +22000,7 @@ void fib(int n )
     label603 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op511, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 40L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_13_382));
+    jit_data_bytes(p20, 40L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_13_382));
     op604 = jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, 0, 0L, 0L, 0L,
                        0);
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
@@ -22010,7 +22010,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op400, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_51_383));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_51_383));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label606 = jit_get_label(p20);
     jit_add_op(p20, JIT_REF_CODE, ((0 << 4) | (2 << 2)) | 3, (0 & 1) | (((0 & 3) << 1) | ((22 & 268435455) << 4)),
@@ -22057,7 +22057,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op419, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_40_384));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_40_384));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label609 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op422, 0L,
@@ -22129,7 +22129,7 @@ void fib(int n )
     label614 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op593, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 40L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_6_385));
+    jit_data_bytes(p20, 40L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_6_385));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )label540,
                0L, 0L, 0L, 0);
@@ -22162,7 +22162,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op499, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_38_386));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_38_386));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label617 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op434, 0L,
@@ -22285,7 +22285,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op515, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_48_387));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_48_387));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label628 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op596, 0L,
@@ -22319,7 +22319,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op488, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_47_388));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_47_388));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label631 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op489, 0L,
@@ -22428,7 +22428,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op528, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_37_389));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_37_389));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label639 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op566, 0L,
@@ -22491,7 +22491,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op492, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_46_390));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_46_390));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     label643 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op435, 0L,
@@ -22527,7 +22527,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op410, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_35_391));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_35_391));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     jit_add_op(p20, JIT_CODE_ALIGN | 2, ((0 << 4) | (0 << 2)) | 2, 8L, 0L, 0L, 0L,
                0);
@@ -22538,7 +22538,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op568, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 192L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_29_392));
+    jit_data_bytes(p20, 192L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_29_392));
     jit_add_op(p20, JIT_TOUCH, ((0 << 4) | (0 << 2)) | 3, 4L, 0L, 0L, 0L, 0);
     jit_add_op(p20, JIT_JMP | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )label605,
                0L, 0L, 0L, 0);
@@ -22551,7 +22551,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op412, 0L,
                0L, 0L, 0);
-    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_vnG9_4_fib_block_43_393));
+    jit_data_bytes(p20, 16L, (unsigned char *)(_TIG_JD_myl1_4_fib_block_43_393));
     label648 = jit_get_label(p20);
     jit_add_op(p20, JIT_PATCH | 2, ((0 << 4) | (0 << 2)) | 2, (jit_value )op589, 0L,
                0L, 0L, 0);
@@ -22577,7 +22577,7 @@ void fib(int n )
                0L, 0L, 0);
     jit_add_op(p20, JIT_RET | 2, ((0 << 4) | (0 << 2)) | 2, 0L, 0L, 0L, 0L, 0);
     jit_generate_code(p20);
-    (*_TIG_JD_vnG9_4_fib___foo)(n);
+    (*_TIG_JD_myl1_4_fib___foo)(n);
 
 
     measure_iter650 ++;
@@ -33946,7 +33946,7 @@ static jit_hw_reg *rmap_is_associated(jit_rmap *rmap , int reg_id , int fp , jit
 /* END FUNCTION-DEF rmap_is_associated LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DEF main LOC=UNKNOWN */
-int main(int argc , char **argv , char **_TIG_IZ_vnG9_formal_envp ) 
+int main(int argc , char **argv , char **_TIG_IZ_myl1_formal_envp ) 
 { 
   int init_elems1_inline_2_inline_3 ;
 
@@ -34076,34 +34076,34 @@ int main(int argc , char **argv , char **_TIG_IZ_vnG9_formal_envp )
   }
   {
   {
-  _TIG_IZ_vnG9_envp = (char **)0;
-  goto _TIG_IZ_vnG9_envp__INITINLINE__TIG_IZ_vnG9_envp__INIT;
+  _TIG_IZ_myl1_envp = (char **)0;
+  goto _TIG_IZ_myl1_envp__INITINLINE__TIG_IZ_myl1_envp__INIT;
   }
-  _TIG_IZ_vnG9_envp__INITINLINE__TIG_IZ_vnG9_envp__INIT: /* CIL Label */ ;
-  }
-  {
-  {
-  _TIG_IZ_vnG9_argv = (char **)0;
-  goto _TIG_IZ_vnG9_argv__INITINLINE__TIG_IZ_vnG9_argv__INIT;
-  }
-  _TIG_IZ_vnG9_argv__INITINLINE__TIG_IZ_vnG9_argv__INIT: /* CIL Label */ ;
+  _TIG_IZ_myl1_envp__INITINLINE__TIG_IZ_myl1_envp__INIT: /* CIL Label */ ;
   }
   {
   {
-  _TIG_IZ_vnG9_argc = 0;
-  goto _TIG_IZ_vnG9_argc__INITINLINE__TIG_IZ_vnG9_argc__INIT;
+  _TIG_IZ_myl1_argv = (char **)0;
+  goto _TIG_IZ_myl1_argv__INITINLINE__TIG_IZ_myl1_argv__INIT;
   }
-  _TIG_IZ_vnG9_argc__INITINLINE__TIG_IZ_vnG9_argc__INIT: /* CIL Label */ ;
+  _TIG_IZ_myl1_argv__INITINLINE__TIG_IZ_myl1_argv__INIT: /* CIL Label */ ;
+  }
+  {
+  {
+  _TIG_IZ_myl1_argc = 0;
+  goto _TIG_IZ_myl1_argc__INITINLINE__TIG_IZ_myl1_argc__INIT;
+  }
+  _TIG_IZ_myl1_argc__INITINLINE__TIG_IZ_myl1_argc__INIT: /* CIL Label */ ;
   }
   goto megaInitINLINE_megaInit;
   }
   megaInitINLINE_megaInit: /* CIL Label */ ;
   }
   while (1) {
-    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-IZ-vnG9--0":);
-    _TIG_IZ_vnG9_argc = argc;
-    _TIG_IZ_vnG9_argv = argv;
-    _TIG_IZ_vnG9_envp = _TIG_IZ_vnG9_formal_envp;
+    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-IZ-myl1--0":);
+    _TIG_IZ_myl1_argc = argc;
+    _TIG_IZ_myl1_argv = argv;
+    _TIG_IZ_myl1_envp = _TIG_IZ_myl1_formal_envp;
     break;
   }
 #line 45 "test-jit.c"

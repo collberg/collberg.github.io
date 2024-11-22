@@ -124,8 +124,8 @@ code {
    </li>
    <li class="nav-item dropdown">
       <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">About</a><div class="dropdown-menu">
-      <a class="text-white dropdown-item text-primary display-4" href="tigress-about.html">History<br></a>
-      <a class="text-white dropdown-item text-primary display-4" href="tigress-FAQ.html">FAQ<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-history.html">History<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-faq.html">FAQ<br></a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-consulting.html">Training<br></a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-publications.html">Pubs</a></div>
    </li>
@@ -177,7 +177,59 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>February 19, 2021. </strong><em>Opaque&nbsp;Predicate</em>&nbsp;is maybe the best known code obfuscation primitive. It's an easy concept to explain, it makes perfect sense as "something that makes code hard to understand," and it is supported by most code obfuscation tools (including Tigress). In practice opaque predicates may be mostly useless in thwarting real attacks but, at least to academics, they have instant appeal: they're easy to formalize, they have a mathematical flavor, and you can first write a paper on how to construct them and then another one on how to defeat them!<br>But, where does the term "opaque predicate" come from?<br>Well, for my PhD thesis (<em>Flexible Encapsulation</em>,<a href="https://www.amazon.com/Flexible-Encapsulation-Christian-S-Collberg/dp/B000BYOI9O/ref=sr_1_1?dchild=1&keywords=flexible+encapsulation+collberg&qid=1613754924&s=books&sr=1-1" target="_blank">&nbsp;</a>get your copy now - only $95 on <a href="https://www.amazon.com/Flexible-Encapsulation-Christian-S-Collberg/dp/B000BYOI9O/ref=sr_1_1?dchild=1&keywords=flexible+encapsulation+collberg&qid=1613754924&s=books&sr=1-1">Amazon</a>!) &nbsp;I designed&nbsp;a language I called <em>Zuse</em>, in which I examined the concept of <em>Opaque Types</em>. (Side note: I wrote to&nbsp;<a href="https://en.wikipedia.org/wiki/Konrad_Zuse" target="_blank">Konrad Zuse</a>&nbsp;in my best hish school German and asked permission to use his name for my language. But, by the time he responded with a "<em>No, because I don't want people to confuse this language with the <a href="https://en.wikipedia.org/wiki/Plankalkül" target="_blank">Plankalkül</a></em>!" the thesis was already in print. &nbsp;Ooops... Unfortunately, I lost the letter in one of the many intercontinental moves.) I had learned about opaque types from Niklaus Wirth's Modula-2, my favorite imperative language at the time. But, where did Wirth get the term? Well, during his <em><a href="https://amturing.acm.org/pdf/WirthTuringTranscript.pdf" target="_blank">sabbatical at Xerox Park</a></em> he had learned about the&nbsp;<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf" target="_blank">Mesa</a>&nbsp;language and brought the opaque type concept back home with him. The joke at the time was that Modula-2 was what Wirth remembered of Mesa after his transatlantic flight home to Switzerland, with too much turbulence and one too many cocktails. Yes, those were simpler times, with lamer jokes.<br>Anyway, when I started thinking about code obfuscation (this was back at my first job at the University of Auckland, New Zealand), I needed a term for an "expression that always evaluates to the same value, is easy for a defender to construct, but hard for an attacker to (statically) determine." I'm not entirely sure that, at the time, I properly understood the litteral meaning of "opaque" (I was still working on my English), but it somehow seemed to fit the bill - hence, <em>Opaque Predicates</em>! This led first to <a href="https://researchspace.auckland.ac.nz/bitstream/handle/2292/3491/TR148.pdf?sequence=2&isAllowed=y" target="_blank">TR148</a>&nbsp;and eventually to the first published paper on the topic,&nbsp;<a href="https://dl.acm.org/doi/abs/10.1145/268946.268962" target="_blank">Manufacturing cheap, resilient, and stealthy opaque constructs</a>.<br>So, from Mesa, to Modula-2, to Zuse, to the fundamental term of code obfuscation! But, maybe the term Opaque Type predates Mesa? Was it used in the C community prior to the Mesa design? Does anyone know?
+<strong>February 19,
+2021. </strong><em>Opaque&nbsp;Predicate</em>&nbsp;is maybe the best
+known code obfuscation primitive. It's an easy concept to explain, it
+makes perfect sense as "something that makes code hard to understand,"
+and it is supported by most code obfuscation tools (including
+Tigress). In practice opaque predicates may be mostly useless in
+thwarting real attacks but, at least to academics, they have instant
+appeal: they're easy to formalize, they have a mathematical flavor,
+and you can first write a paper on how to construct them and then
+another one on how to defeat them!<br>But, where does the term "opaque
+predicate" come from?<br>Well, for my PhD thesis (<em>Flexible
+Encapsulation</em>,<a
+href="https://www.amazon.com/Flexible-Encapsulation-Christian-S-Collberg/dp/B000BYOI9O/ref=sr_1_1?dchild=1&keywords=flexible+encapsulation+collberg&qid=1613754924&s=books&sr=1-1"
+target="_blank">&nbsp;</a>get your copy now - only $95 on <a
+href="https://www.amazon.com/Flexible-Encapsulation-Christian-S-Collberg/dp/B000BYOI9O/ref=sr_1_1?dchild=1&keywords=flexible+encapsulation+collberg&qid=1613754924&s=books&sr=1-1">Amazon</a>!)
+&nbsp;I designed&nbsp;a language I called <em>Zuse</em>, in which I
+examined the concept of <em>Opaque Types</em>. (Side note: I wrote
+to&nbsp;<a href="https://en.wikipedia.org/wiki/Konrad_Zuse"
+target="_blank">Konrad Zuse</a>&nbsp;in my best hish school German and
+asked permission to use his name for my language. But, by the time he
+responded with a "<em>No, because I don't want people to confuse this
+language with the <a href="https://en.wikipedia.org/wiki/Plankalkül"
+target="_blank">Plankalkül</a></em>!" the thesis was already in
+print. &nbsp;Ooops... Unfortunately, I lost the letter in one of the
+many intercontinental moves.) I had learned about opaque types from
+Niklaus Wirth's Modula-2, my favorite imperative language at the
+time. But, where did Wirth get the term? Well, during his <em><a
+href="https://amturing.acm.org/pdf/WirthTuringTranscript.pdf"
+target="_blank">sabbatical at Xerox Park</a></em> he had learned about
+the&nbsp;<a
+href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf"
+target="_blank">Mesa</a>&nbsp;language and brought the opaque type
+concept back home with him. The joke at the time was that Modula-2 was
+what Wirth remembered of Mesa after his transatlantic flight home to
+Switzerland, with too much turbulence and one too many cocktails. Yes,
+those were simpler times, with lamer jokes.<br>Anyway, when I started
+thinking about code obfuscation (this was back at my first job at the
+University of Auckland, New Zealand), I needed a term for an
+"expression that always evaluates to the same value, is easy for a
+defender to construct, but hard for an attacker to (statically)
+determine." I'm not entirely sure that, at the time, I properly
+understood the litteral meaning of "opaque" (I was still working on my
+English), but it somehow seemed to fit the bill - hence, <em>Opaque
+Predicates</em>! This led first to <a
+href="https://researchspace.auckland.ac.nz/bitstream/handle/2292/3491/TR148.pdf?sequence=2&isAllowed=y"
+target="_blank">TR148</a>&nbsp;and eventually to the first published
+paper on the topic,&nbsp;<a
+href="https://dl.acm.org/doi/abs/10.1145/268946.268962"
+target="_blank">Manufacturing cheap, resilient, and stealthy opaque
+constructs</a>.<br>So, from Mesa, to Modula-2, to Zuse, to the
+fundamental term of code obfuscation! But, maybe the term Opaque Type
+predates Mesa? Was it used in the C community prior to the Mesa
+design? Does anyone know?  
 
             </p>
         </div>
@@ -231,7 +283,25 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>December 28, 2019.&nbsp;</strong>I sometimes get asked <em>"which software protection tool/algorithm/product should I be using?" </em>That is the wrong question to ask, or, at least, the wrong end in which to start asking the question. Software protection isn't a <em>thing</em>, it's a <em>process</em>. This process starts with a detailed attack model: what are your attackers after, how good are they, what tools are they likely to use, etc. Then you need to think about what overhead you are willing to absorb; the more protection you add, the more slowdown/space increase you can expect. And, even when you have settled on a particular set of protection tools, the process doesn't end there; you have to put a plan in place for when the attackers <em>still</em> break through your protections. A vendor who tells you to <em>"set it and forget it,&nbsp;just apply our tool and you're done,"</em> is simply lying. A serious and trustworthy vendor is one who instead tells you that <em>"all our techniques will eventially succumb to a serious adversary, but we monitor hacker groups to learn what techniques are about to become obsolete, and when they do, we have new tricks in our back pocket to roll out."</em>
+<strong>December 28, 2019.&nbsp;</strong>I sometimes get asked
+<em>"which software protection tool/algorithm/product should I be
+using?" </em>That is the wrong question to ask, or, at least, the
+wrong end in which to start asking the question. Software protection
+isn't a <em>thing</em>, it's a <em>process</em>. This process starts
+with a detailed attack model: what are your attackers after, how good
+are they, what tools are they likely to use, etc. Then you need to
+think about what overhead you are willing to absorb; the more
+protection you add, the more slowdown/space increase you can
+expect. And, even when you have settled on a particular set of
+protection tools, the process doesn't end there; you have to put a
+plan in place for when the attackers <em>still</em> break through your
+protections. A vendor who tells you to <em>"set it and forget
+it,&nbsp;just apply our tool and you're done,"</em> is simply lying. A
+serious and trustworthy vendor is one who instead tells you that
+<em>"all our techniques will eventially succumb to a serious
+adversary, but we monitor hacker groups to learn what techniques are
+about to become obsolete, and when they do, we have new tricks in our
+back pocket to roll out."</em> 
 
             </p>
         </div>
@@ -258,7 +328,10 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>December 28, 2019. </strong>I would like to maintain an up-to-date list of all companies in the software protection space. <strong>This list has been moved <a href="vendors.html" class="text-primary">here</a>.</strong>
+<strong>December 28, 2019. </strong>I would like to maintain
+an up-to-date list of all companies in the software protection
+space. <strong>This list has been moved <a href="tigress-vendors.html"
+class="text-primary">here</a>.</strong> 
 
             </p>
         </div>
@@ -285,7 +358,13 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>December 27, 2019</strong>. Getting started with Tigress can seem like a daunting task, given that there are some 250 different options to choose from! I added a page with&nbsp;"recipes" <a href="recipes.html">here</a>. Hopefully this should give you some ideas on how to get started. If you use Tigress for something useful and would like to share your experiences, please send me your script and I will add it to the recipes page!
+<strong>December 27, 2019</strong>. Getting started with
+Tigress can seem like a daunting task, given that there are some 250
+different options to choose from! I added a page with&nbsp;"recipes"
+<a href="recipes.html">here</a>. Hopefully this should give you some
+ideas on how to get started. If you use Tigress for something useful
+and would like to share your experiences, please send me your script
+and I will add it to the recipes page!  
 
             </p>
         </div>
@@ -312,7 +391,15 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>December 14, 2019. </strong>Because software protection in industry is mostly clouded in secrecy, it is hard for those of us in academia to get a grip on what are acceptable overheads and typical levels of protection afforded by industrial-strength tools. Here are two pieces of information, one from a <a href="https://wikileaks.org/sony/docs/05/docs/4k/Phase%201/Sony%20Irdeto%20Discussion%202011%20Fall.pdf">Wikileaked document</a>&nbsp;(a memo from Cloakware to Sony), and one from a <a href="https://cs.anu.edu.au/cybersec/issisp2018/assets/slides/Industrial%20Challenges%20in%20Software%20Security%20and%20Protection%20-%20Yuan%20Gu.pdf">presentation</a> by my good friend Gu Yuan, formerly of Cloakware/IRDTO:
+ <strong>December 14, 2019. </strong>Because software
+protection in industry is mostly clouded in secrecy, it is hard for
+those of us in academia to get a grip on what are acceptable overheads
+and typical levels of protection afforded by industrial-strength
+tools. Here are two pieces of information, one from a <a
+href="https://wikileaks.org/sony/docs/05/docs/4k/Phase%201/Sony%20Irdeto%20Discussion%202011%20Fall.pdf">Wikileaked
+document</a>&nbsp;(a memo from Cloakware to Sony), and one from a <a
+href="https://cs.anu.edu.au/cybersec/issisp2018/assets/slides/Industrial%20Challenges%20in%20Software%20Security%20and%20Protection%20-%20Yuan%20Gu.pdf">presentation</a>
+by my good friend Gu Yuan, formerly of Cloakware/IRDTO: 
 
             </p>
         </div>
@@ -391,7 +478,44 @@ more details.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>December 2, 2019. </strong>In<strong>&nbsp;</strong> <a href="https://vitalik.ca/general/2019/11/22/progress.html" target="_blank">Problems in Cryptocurrency: Five Years Later</a>, Vitalik Buterin writes: ".<em>.. we want to come up with a way to 'encrypt' a program so that the encrypted program would still give the same outputs for the same inputs, but the 'internals' of the program would be hidden. ... A&nbsp;solution to code obfuscation would be very useful to blockchain protocols. ... Unfortunately this continues to be a hard problem. ... these paths are still quite far from creating something viable and known to be secure.</em>" <br><br>It is interesting to compare the goals of <em>cryptographically secure obfuscation</em> with those of <em>language-based obfuscation. </em>Those of us who work In the latter are plagued by ridiculous security requirements paired with ridiculous performance requirements. For example, in <a href="https://dl.acm.org/citation.cfm?id=1375702" target="_blank">A compiler-based infrastructure for software-protection,</a>&nbsp;my friends&nbsp; Liem, Gu, and Johnson at <strong><a href="https://irdeto.com/cloakware-software-protection/" target="_blank">IRDETO/Cloakware</a></strong>&nbsp;state that in one typical case, their performance budget (CPU and memory) was <strong>50% over baseline</strong>. Now, we get a lot of flack from the crypto community (in the paper&nbsp;<a href="https://eprint.iacr.org/2019/463.pdf" target="_blank">In Pursuit of Clarity In Obfuscation</a>&nbsp;cited by Buterin, for example, the author writes: "<em>Well, maybe those commercial products for program obfuscation work in practice. Let me try to break one. ...&nbsp;ten minutes later...&nbsp;Oh, nevermind.</em>"), but in practice it is hard to protect a program for more than 10 minutes when you're only allowed a miniscule reduction in performance.&nbsp;<br><br>I'm not aware of any work in language-based obfuscation that examines what happens when you substantially loosen the performance requirements. This makes sense since most of the applications have been in areas where performance matters, such as DRM. So, this is the question: if you were allowed not 50% overhead, but, say, <strong>5 orders of magnitude</strong> overhead, what could you accomplish? Would you be able to supply useful levels of security for high-value assets, such as smart contracts?
+<strong>December 2, 2019. </strong>In<strong>&nbsp;</strong> <a
+href="https://vitalik.ca/general/2019/11/22/progress.html"
+target="_blank">Problems in Cryptocurrency: Five Years Later</a>,
+Vitalik Buterin writes: ".<em>.. we want to come up with a way to
+'encrypt' a program so that the encrypted program would still give the
+same outputs for the same inputs, but the 'internals' of the program
+would be hidden. ... A&nbsp;solution to code obfuscation would be very
+useful to blockchain protocols. ... Unfortunately this continues to be
+a hard problem. ... these paths are still quite far from creating
+something viable and known to be secure.</em>" <br><br>It is
+interesting to compare the goals of <em>cryptographically secure
+obfuscation</em> with those of <em>language-based
+obfuscation. </em>Those of us who work In the latter are plagued by
+ridiculous security requirements paired with ridiculous performance
+requirements. For example, in <a
+href="https://dl.acm.org/citation.cfm?id=1375702" target="_blank">A
+compiler-based infrastructure for software-protection,</a>&nbsp;my
+friends&nbsp; Liem, Gu, and Johnson at <strong><a
+href="https://irdeto.com/cloakware-software-protection/"
+target="_blank">IRDETO/Cloakware</a></strong>&nbsp;state that in one
+typical case, their performance budget (CPU and memory) was
+<strong>50% over baseline</strong>. Now, we get a lot of flack from
+the crypto community (in the paper&nbsp;<a
+href="https://eprint.iacr.org/2019/463.pdf" target="_blank">In Pursuit
+of Clarity In Obfuscation</a>&nbsp;cited by Buterin, for example, the
+author writes: "<em>Well, maybe those commercial products for program
+obfuscation work in practice. Let me try to break one. ...&nbsp;ten
+minutes later...&nbsp;Oh, nevermind.</em>"), but in practice it is
+hard to protect a program for more than 10 minutes when you're only
+allowed a miniscule reduction in performance.&nbsp;<br><br>I'm not
+aware of any work in language-based obfuscation that examines what
+happens when you substantially loosen the performance
+requirements. This makes sense since most of the applications have
+been in areas where performance matters, such as DRM. So, this is the
+question: if you were allowed not 50% overhead, but, say, <strong>5
+orders of magnitude</strong> overhead, what could you accomplish?
+Would you be able to supply useful levels of security for high-value
+assets, such as smart contracts?
 
             </p>
         </div>
@@ -418,7 +542,17 @@ more details.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>November 28, 2019.&nbsp;</strong>The old site <a href="http://tigress.cs.arizona.edu" target="_blank">tigress.cs.arizona.edu</a> has now been deprecated in favor of our new site, <a href="index.html">tigress.wtf</a>. At the same time, we have completely reorganized the code and fixed numerous problems. Tigress is now built on top of the latest version of CIL,&nbsp;<a href="https://opam.ocaml.org/packages/goblint-cil/goblint-cil.1.7.3/" target="_blank">CIL 1.7.3 goblint</a>,&nbsp;by Gabriel Kerneis. Tigress should now be easier to install - there is now just one (fat) package to download, containing binaries for all platforms.
+<strong>November 28, 2019.&nbsp;</strong>The old site <a
+href="http://tigress.cs.arizona.edu"
+target="_blank">tigress.cs.arizona.edu</a> has now been deprecated in
+favor of our new site, <a href="index.html">tigress.wtf</a>. At the
+same time, we have completely reorganized the code and fixed numerous
+problems. Tigress is now built on top of the latest version of
+CIL,&nbsp;<a
+href="https://opam.ocaml.org/packages/goblint-cil/goblint-cil.1.7.3/"
+target="_blank">CIL 1.7.3 goblint</a>,&nbsp;by Gabriel
+Kerneis. Tigress should now be easier to install - there is now just
+one (fat) package to download, containing binaries for all platforms.
 
             </p>
         </div>
@@ -445,7 +579,22 @@ more details.
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>November 20, 2019. </strong>&nbsp;We have added a transformation,&nbsp;<strong>SelfModify,&nbsp;</strong>which transforms a function into one that modifies itself at runtime. This transformation is currently only available for X86/64 targets. It can, of course, be combined with other transformations, but it is probably best run at the very end of the transformation chain. One interesting aspect of this transformation is that when combined with virtualization with a direct or indirect threaded dispatch, the indirect jumps to the instruction handlers are replaced with (self-modified) direct jumps! This should confuse analyses that rely on indirect branches to locate the instruction handlers. For dynamic analyses, this transformation shouldn't do very much; the instructions that are executed will be the same, except for the ones that modify the code. Analyses that assume that instruction addresses uniquely identify unique code will, of course, also be confused when a code location is reused for different instructions.
+<strong>November 20, 2019. </strong>&nbsp;We have added a
+transformation,&nbsp;<strong>SelfModify,&nbsp;</strong>which
+transforms a function into one that modifies itself at runtime. This
+transformation is currently only available for X86/64 targets. It can,
+of course, be combined with other transformations, but it is probably
+best run at the very end of the transformation chain. One interesting
+aspect of this transformation is that when combined with
+virtualization with a direct or indirect threaded dispatch, the
+indirect jumps to the instruction handlers are replaced with
+(self-modified) direct jumps! This should confuse analyses that rely
+on indirect branches to locate the instruction handlers. For dynamic
+analyses, this transformation shouldn't do very much; the instructions
+that are executed will be the same, except for the ones that modify
+the code. Analyses that assume that instruction addresses uniquely
+identify unique code will, of course, also be confused when a code
+location is reused for different instructions.  
 
             </p>
         </div>
@@ -459,19 +608,22 @@ more details.
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
- New Platform: WebAssembly
+
 
                </h2>
             </div>
         </div>
     </div>
 </section>
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>November 13, 2019.&nbsp;</strong>Tigress can now obfuscate C code that can then be compiled to WebAssaembly using the Emscripten compiler. This means that if you want to protect the confidentiality or integrity of code running in your clients' browser, you can write it in C, obfuscate it with Tigress, providing much higher levels of protection than obfuscated Javascript, and with (sometimes), lower overhead. With my student Yang Yang Lu and colleague Jasvir Nagra we're working on a paper on applications and performance aspects of this technology.
+New Platform: WebAssembly P-BEGIN <strong>November 13,
+2019.&nbsp;</strong>Tigress can now obfuscate C code that can then be
+compiled to WebAssaembly using the Emscripten compiler. This means
+that if you want to protect the confidentiality or integrity of code
+running in your clients' browser, you can write it in C, obfuscate it
+with Tigress, providing much higher levels of protection than
+obfuscated Javascript, and with (sometimes), lower overhead. With my
+student Yang Yang Lu and colleague Jasvir Nagra we're working on a
+paper on applications and performance aspects of this technology.
 
             </p>
         </div>
@@ -485,19 +637,20 @@ more details.
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
- Paper on RevEngE at MALCON
+
 
                </h2>
             </div>
         </div>
     </div>
 </section>
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<strong>October 4, 2019. </strong>My PhD student Claire Taylor presented her paper <strong>Getting RevEngE: A System for Analyzing Reverse Engineering Behavior</strong>&nbsp;at MALCON 2019. She also received an <strong>Outstanding Paper Award</strong>, Congratulations, Claire! <a href="http://revenge.cs.arizona.edu" target="_blank">RevEngE</a> uses Tigress to generate Reverse Engineering challenges.
+Paper on RevEngE at MALCON P-BEGIN <strong>October 4,
+2019. </strong>My PhD student Claire Taylor presented her paper
+<strong>Getting RevEngE: A System for Analyzing Reverse Engineering
+Behavior</strong>&nbsp;at MALCON 2019. She also received an
+<strong>Outstanding Paper Award</strong>, Congratulations, Claire! <a
+href="http://revenge.cs.arizona.edu" target="_blank">RevEngE</a> uses
+Tigress to generate Reverse Engineering challenges.  
 
             </p>
         </div>
