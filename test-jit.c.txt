@@ -4,10 +4,14 @@
 #include <time.h>
 #include <pthread.h>
 #include<sys/time.h>
+#include<sys/mman.h>
+#include<assert.h>
+#include<string.h>
+#include<unistd.h>
 
 // Include one of these files from the Tigress distribution directory:
 // #include "jitter-Darwin-Arm-64.c
-#include "jitter-Darwin-X86-64.c"
+// #include "jitter-Darwin-X86-64.c"
 // #include "jitter-Linux-Arm-32.c" 
 // #include "jitter-Linux-Arm-64.c" 
 // #include "jitter-Linux-X86-32.c" 
