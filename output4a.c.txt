@@ -477,8 +477,8 @@ BEGIN-UNIVERSE
       "TransformationKind": "Virtualize",
       "TransformationUpdates": {
         "Modified Function Implementations": [ "MERGED" ],
-        "New Global Variables": { "_TIG_VZ_USEF_4_MERGED_$strings": "INIT" },
-        "New Types": [ "_TIG_VZ_USEF_4_MERGED_$node" ]
+        "New Global Variables": { "_TIG_VZ_gywh_4_MERGED_$strings": "INIT" },
+        "New Types": [ "_TIG_VZ_gywh_4_MERGED_$node" ]
       }
     },
     {
@@ -496,15 +496,15 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "init_tigress" ],
         "New Global Variables": {
-          "_TIG_iO_USEF_2_init_tigress_1__opaque_array": "INIT",
-          "_TIG_iO_USEF_2_init_tigress_1_opaque_ptr_2": "INIT",
-          "_TIG_iO_USEF_2_init_tigress_1_opaque_list_2": "INIT",
-          "_TIG_iO_USEF_2_init_tigress_1_opaque_ptr_1": "INIT",
-          "_TIG_iO_USEF_2_init_tigress_1_opaque_list_1": "INIT"
+          "_TIG_iO_gywh_2_init_tigress_1__opaque_array": "INIT",
+          "_TIG_iO_gywh_2_init_tigress_1_opaque_ptr_2": "INIT",
+          "_TIG_iO_gywh_2_init_tigress_1_opaque_list_2": "INIT",
+          "_TIG_iO_gywh_2_init_tigress_1_opaque_ptr_1": "INIT",
+          "_TIG_iO_gywh_2_init_tigress_1_opaque_list_1": "INIT"
         },
         "New Types": [
-          "_TIG_iO_USEF_2_init_tigress_1_opaqueStructureType",
-          "_TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct"
+          "_TIG_iO_gywh_2_init_tigress_1_opaqueStructureType",
+          "_TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct"
         ]
       }
     },
@@ -513,8 +513,8 @@ BEGIN-UNIVERSE
       "TransformationKind": "InitEntropy",
       "TransformationUpdates": {
         "New Global Variables": {
-          "_TIG_iE_USEF_1_alwaysZero": "INIT",
-          "_TIG_iE_USEF_1_entropy": "INIT"
+          "_TIG_iE_gywh_1_alwaysZero": "INIT",
+          "_TIG_iE_gywh_1_entropy": "INIT"
         }
       }
     },
@@ -524,9 +524,9 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "main" ],
         "New Global Variables": {
-          "_TIG_IZ_USEF_envp": "FUN: '_TIG_IZ_USEF_envp__INIT'",
-          "_TIG_IZ_USEF_argv": "FUN: '_TIG_IZ_USEF_argv__INIT'",
-          "_TIG_IZ_USEF_argc": "FUN: '_TIG_IZ_USEF_argc__INIT'"
+          "_TIG_IZ_gywh_envp": "FUN: '_TIG_IZ_gywh_envp__INIT'",
+          "_TIG_IZ_gywh_argv": "FUN: '_TIG_IZ_gywh_argv__INIT'",
+          "_TIG_IZ_gywh_argc": "FUN: '_TIG_IZ_gywh_argc__INIT'"
         }
       }
     },
@@ -1095,9 +1095,9 @@ union wait ;
 struct __sbuf ;
 /* END STRUCT-DECL __sbuf LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:92 */
 
-/* BEGIN STRUCT-DECL _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct ;
-/* END STRUCT-DECL _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+/* BEGIN STRUCT-DECL _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct ;
+/* END STRUCT-DECL _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
 
 /* BEGIN STRUCT-DECL tm LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:75 */
 #line 75 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h"
@@ -1344,9 +1344,9 @@ struct __darwin_mcontext_avx512_64 ;
 struct __darwin_fp_control ;
 /* END STRUCT-DECL __darwin_fp_control LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h:92 */
 
-/* BEGIN UNION-DECL _TIG_VZ_USEF_4_MERGED_$node LOC=UNKNOWN */
-union _TIG_VZ_USEF_4_MERGED_$node ;
-/* END UNION-DECL _TIG_VZ_USEF_4_MERGED_$node LOC=UNKNOWN */
+/* BEGIN UNION-DECL _TIG_VZ_gywh_4_MERGED_$node LOC=UNKNOWN */
+union _TIG_VZ_gywh_4_MERGED_$node ;
+/* END UNION-DECL _TIG_VZ_gywh_4_MERGED_$node LOC=UNKNOWN */
 
 /* BEGIN STRUCT-DECL sigevent LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h:168 */
 #line 168 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/signal.h"
@@ -1402,6 +1402,10 @@ typedef long __darwin_ssize_t;
 /* compiler builtin: 
    float __builtin_acosf(float  ) ;  */
 /* END FUNCTION-DECL __builtin_acosf LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DEF _TIG_IZ_gywh_envp LOC=UNKNOWN */
+char **_TIG_IZ_gywh_envp  ;
+/* END VARIABLE-DEF _TIG_IZ_gywh_envp LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF FILE LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:126 */
 #line 126 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h"
@@ -1506,10 +1510,6 @@ extern  __attribute__((__noreturn__)) void __attribute__((__availability__(macos
 __availability__(ios,introduced=2.0)))  pthread_exit(void * _Nullable   ) ;
 /* END FUNCTION-DECL-EXTERN pthread_exit LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:349 */
 
-/* BEGIN VARIABLE-DEF _TIG_iE_USEF_1_alwaysZero LOC=UNKNOWN */
-unsigned long _TIG_iE_USEF_1_alwaysZero  =    0UL;
-/* END VARIABLE-DEF _TIG_iE_USEF_1_alwaysZero LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN ctermid LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctermid.h:26 */
 #line 26 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctermid.h"
 extern char *ctermid(char * ) ;
@@ -1524,6 +1524,10 @@ extern char *ctermid(char * ) ;
 /* compiler builtin: 
    int __builtin_clrsb(int  ) ;  */
 /* END FUNCTION-DECL __builtin_clrsb LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DEF _TIG_IZ_gywh_argv LOC=UNKNOWN */
+char **_TIG_IZ_gywh_argv  ;
+/* END VARIABLE-DEF _TIG_IZ_gywh_argv LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_va_arg LOC=BUILTIN */
 /* compiler builtin: 
@@ -2012,6 +2016,26 @@ typedef long long int64_t;
 typedef int64_t register_t;
 /* END TYPEDEF register_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/types.h:87 */
 
+/* BEGIN UNION _TIG_VZ_gywh_4_MERGED_$node LOC=UNKNOWN */
+union _TIG_VZ_gywh_4_MERGED_$node {
+   signed char _signed_char ;
+   unsigned long long _unsigned_long_long ;
+   unsigned int _unsigned_int ;
+   unsigned char _unsigned_char ;
+   void *_void_star ;
+   long _long ;
+   float _float ;
+   unsigned short _unsigned_short ;
+   int _int ;
+   long double _long_double ;
+   double _double ;
+   long long _long_long ;
+   unsigned long _unsigned_long ;
+   char _char ;
+   short _short ;
+};
+/* END UNION _TIG_VZ_gywh_4_MERGED_$node LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN adjtime LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/time.h:190 */
 #line 190 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/time.h"
 extern int adjtime(struct timeval  const  * , struct timeval * ) ;
@@ -2037,9 +2061,9 @@ extern int getw(FILE * ) ;
 extern char *realpath(char const   * __restrict   , char * __restrict   )  __asm__("_realpath$DARWIN_EXTSN")  ;
 /* END FUNCTION-DECL-EXTERN realpath LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:231 */
 
-/* BEGIN VARIABLE-DECL _TIG_VZ_USEF_4_MERGED_$strings LOC=UNKNOWN */
-char const   *_TIG_VZ_USEF_4_MERGED_$strings ;
-/* END VARIABLE-DECL _TIG_VZ_USEF_4_MERGED_$strings LOC=UNKNOWN */
+/* BEGIN VARIABLE-DEF _TIG_IZ_gywh_argc LOC=UNKNOWN */
+int _TIG_IZ_gywh_argc  ;
+/* END VARIABLE-DEF _TIG_IZ_gywh_argc LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin___get_unsafe_stack_ptr LOC=BUILTIN */
 /* compiler builtin: 
@@ -2323,6 +2347,10 @@ extern int ( /* format attribute */  vscanf)(char const   * __restrict  __format
    _Float128 __builtin_nanf128(char const   * ) ;  */
 /* END FUNCTION-DECL __builtin_nanf128 LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+unsigned int _TIG_iO_gywh_2_init_tigress_1__opaque_array[30] ;
+/* END VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+
 /* BEGIN STRUCT _opaque_pthread_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h:103 */
 #line 103 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h"
 struct _opaque_pthread_t {
@@ -2459,6 +2487,10 @@ typedef long intmax_t;
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_setscope(pthread_attr_t * ,
                                                                                                                                  int  ) ;
 /* END FUNCTION-DECL-EXTERN pthread_attr_setscope LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:278 */
+
+/* BEGIN VARIABLE-DECL _TIG_IZ_gywh_argv LOC=UNKNOWN */
+char **_TIG_IZ_gywh_argv ;
+/* END VARIABLE-DECL _TIG_IZ_gywh_argv LOC=UNKNOWN */
 
 /* BEGIN ENUM __anonenum_788482901 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/qos.h:130 */
 #line 130 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/qos.h"
@@ -2662,6 +2694,10 @@ extern long long strtoll(char const   *__str , char **__endptr , int __base ) ;
    float __builtin_roundf(float  ) ;  */
 /* END FUNCTION-DECL __builtin_roundf LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DECL _TIG_iE_gywh_1_entropy LOC=UNKNOWN */
+unsigned long _TIG_iE_gywh_1_entropy ;
+/* END VARIABLE-DECL _TIG_iE_gywh_1_entropy LOC=UNKNOWN */
+
 /* BEGIN STRUCT __anonstruct_ldiv_t_748949161 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:88 */
 #line 88 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 struct __anonstruct_ldiv_t_748949161 {
@@ -2685,9 +2721,9 @@ extern qos_class_t __attribute__((__availability__(macos,introduced=10.10), __av
 extern int posix_memalign(void **__memptr , size_t __alignment , size_t __size )  __attribute__((__availability__(macosx,introduced=10.6))) ;
 /* END FUNCTION-DECL-EXTERN posix_memalign LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h:52 */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-unsigned int _TIG_iO_USEF_2_init_tigress_1__opaque_array[30] ;
-/* END VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+/* BEGIN VARIABLE-DEF _TIG_VZ_gywh_4_MERGED_$strings LOC=UNKNOWN */
+char const   *_TIG_VZ_gywh_4_MERGED_$strings  =    "fac(%i)=%i\n\000fib(%i)=%i\n\000";
+/* END VARIABLE-DEF _TIG_VZ_gywh_4_MERGED_$strings LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_mul_overflow LOC=BUILTIN */
 /* compiler builtin: 
@@ -2788,10 +2824,6 @@ struct sigvec {
 /* compiler builtin: 
    long __builtin_lround(double  ) ;  */
 /* END FUNCTION-DECL __builtin_lround LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DECL _TIG_IZ_USEF_argv LOC=UNKNOWN */
-char **_TIG_IZ_USEF_argv ;
-/* END VARIABLE-DECL _TIG_IZ_USEF_argv LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_addcl LOC=BUILTIN */
 /* compiler builtin: 
@@ -3343,10 +3375,6 @@ extern long lrand48(void)  __attribute__((__availability__(swift,unavailable,mes
    int __builtin_clzll(unsigned long long  ) ;  */
 /* END FUNCTION-DECL __builtin_clzll LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_IZ_USEF_envp LOC=UNKNOWN */
-char **_TIG_IZ_USEF_envp ;
-/* END VARIABLE-DECL _TIG_IZ_USEF_envp LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_va_end LOC=BUILTIN */
 /* compiler builtin: 
    void __builtin_va_end(__builtin_va_list  ) ;  */
@@ -3656,18 +3684,6 @@ struct timespec {
    double __builtin_cosh(double  ) ;  */
 /* END FUNCTION-DECL __builtin_cosh LOC=BUILTIN */
 
-/* BEGIN STRUCT _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct {
-   struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *prev ;
-   struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *next ;
-   int data ;
-};
-/* END STRUCT _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
-
-/* BEGIN VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigress_1_opaque_ptr_1  =    (struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_sinhl LOC=BUILTIN */
 /* compiler builtin: 
    long double __builtin_sinhl(long double  ) ;  */
@@ -3873,6 +3889,18 @@ extern int getchar(void) ;
    _Float128 __builtin_fminf128(_Float128  , _Float128  ) ;  */
 /* END FUNCTION-DECL __builtin_fminf128 LOC=BUILTIN */
 
+/* BEGIN STRUCT _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct {
+   struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *prev ;
+   struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *next ;
+   int data ;
+};
+/* END STRUCT _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct LOC=UNKNOWN */
+
+/* BEGIN VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_gywh_2_init_tigress_1_opaque_ptr_1  =    (struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN pthread_mutexattr_setprotocol LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:425 */
 #line 425 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutexattr_setprotocol(pthread_mutexattr_t * ,
@@ -3914,6 +3942,10 @@ __availability__(ios,introduced=2.0)))  pthread_from_mach_thread_np(mach_port_t 
 #line 327 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h"
 extern int fseeko(FILE *__stream , off_t __offset , int __whence ) ;
 /* END FUNCTION-DECL-EXTERN fseeko LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:327 */
+
+/* BEGIN VARIABLE-DECL _TIG_iE_gywh_1_alwaysZero LOC=UNKNOWN */
+unsigned long _TIG_iE_gywh_1_alwaysZero ;
+/* END VARIABLE-DECL _TIG_iE_gywh_1_alwaysZero LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_realloc LOC=BUILTIN */
 /* compiler builtin: 
@@ -3971,18 +4003,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
    float __attribute__((____vector_size____(16)))  __builtin_ia32_addps(float __attribute__((____vector_size____(16)))   ,
                                                                         float __attribute__((____vector_size____(16)))   ) ;  */
 /* END FUNCTION-DECL __builtin_ia32_addps LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1__opaque_array LOC=UNKNOWN */
-unsigned int _TIG_iO_USEF_2_init_tigress_1__opaque_array[30]  = 
-  {      8,      362,      3,      493, 
-        432,      5,      303,      390, 
-        5,      383,      5,      7, 
-        133,      47,      1,      288, 
-        502,      95,      218,      628, 
-        22,      428,      656,      41, 
-        68,      201,      34,      403, 
-        698};
-/* END VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1__opaque_array LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN ecvt LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:201 */
 #line 201 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
@@ -4379,10 +4399,6 @@ extern char *strptime(char const   * __restrict   , char const   * __restrict   
                       struct tm * __restrict   )  __asm__("_strptime")  ;
 /* END FUNCTION-DECL-EXTERN strptime LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:117 */
 
-/* BEGIN VARIABLE-DEF _TIG_iE_USEF_1_entropy LOC=UNKNOWN */
-unsigned long _TIG_iE_USEF_1_entropy  =    9042506488591766566UL;
-/* END VARIABLE-DEF _TIG_iE_USEF_1_entropy LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN getchar_unlocked LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:290 */
 #line 290 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h"
 extern int getchar_unlocked(void) ;
@@ -4736,26 +4752,6 @@ extern int sradixsort(unsigned char const   **__base , int __nel , unsigned char
                       unsigned int __endbyte ) ;
 /* END FUNCTION-DECL-EXTERN sradixsort LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:345 */
 
-/* BEGIN UNION _TIG_VZ_USEF_4_MERGED_$node LOC=UNKNOWN */
-union _TIG_VZ_USEF_4_MERGED_$node {
-   signed char _signed_char ;
-   unsigned long long _unsigned_long_long ;
-   unsigned int _unsigned_int ;
-   unsigned char _unsigned_char ;
-   void *_void_star ;
-   long _long ;
-   float _float ;
-   unsigned short _unsigned_short ;
-   int _int ;
-   long double _long_double ;
-   double _double ;
-   long long _long_long ;
-   unsigned long _unsigned_long ;
-   char _char ;
-   short _short ;
-};
-/* END UNION _TIG_VZ_USEF_4_MERGED_$node LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_erfl LOC=BUILTIN */
 /* compiler builtin: 
    long double __builtin_erfl(long double  ) ;  */
@@ -4765,10 +4761,6 @@ union _TIG_VZ_USEF_4_MERGED_$node {
 /* compiler builtin: 
    char *__builtin___stpncpy_chk(char * , char const   * , unsigned long long  , unsigned long long  ) ;  */
 /* END FUNCTION-DECL __builtin___stpncpy_chk LOC=BUILTIN */
-
-/* BEGIN VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigress_1_opaque_list_1  =    (struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_nans LOC=BUILTIN */
 /* compiler builtin: 
@@ -4943,9 +4935,9 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
                                                                                                                                         int * __restrict   ) ;
 /* END FUNCTION-DECL-EXTERN pthread_attr_getinheritsched LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:235 */
 
-/* BEGIN VARIABLE-DEF _TIG_IZ_USEF_argc LOC=UNKNOWN */
-int _TIG_IZ_USEF_argc  ;
-/* END VARIABLE-DEF _TIG_IZ_USEF_argc LOC=UNKNOWN */
+/* BEGIN VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_gywh_2_init_tigress_1_opaque_ptr_2 ;
+/* END VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN sched_get_priority_min LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/sched.h:39 */
 #line 39 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/sched.h"
@@ -4985,7 +4977,7 @@ extern void *alloca(size_t  ) ;
 /* END FUNCTION-DECL __builtin_va_start LOC=BUILTIN */
 
 /* BEGIN FUNCTION-DECL main LOC=UNKNOWN */
-int main(int argc , char **argv , char **_TIG_IZ_USEF_formal_envp ) ;
+int main(int argc , char **argv , char **_TIG_IZ_gywh_formal_envp ) ;
 /* END FUNCTION-DECL main LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_sqrt LOC=BUILTIN */
@@ -5024,10 +5016,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 #line 250 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 extern int unlockpt(int  ) ;
 /* END FUNCTION-DECL-EXTERN unlockpt LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:250 */
-
-/* BEGIN VARIABLE-DECL _TIG_IZ_USEF_argc LOC=UNKNOWN */
-int _TIG_IZ_USEF_argc ;
-/* END VARIABLE-DECL _TIG_IZ_USEF_argc LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_strstr LOC=BUILTIN */
 /* compiler builtin: 
@@ -5152,10 +5140,6 @@ extern unsigned long long strtouq(char const   *__str , char **__endptr , int __
    double __builtin_atan2(double  , double  ) ;  */
 /* END FUNCTION-DECL __builtin_atan2 LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iE_USEF_1_alwaysZero LOC=UNKNOWN */
-unsigned long _TIG_iE_USEF_1_alwaysZero ;
-/* END VARIABLE-DECL _TIG_iE_USEF_1_alwaysZero LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN ferror LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:145 */
 #line 145 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h"
 extern int ferror(FILE * ) ;
@@ -5199,10 +5183,6 @@ struct rusage_info_v3 {
 #line 375 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h"
 extern void setbuffer(FILE * , char * , int  ) ;
 /* END FUNCTION-DECL-EXTERN setbuffer LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:375 */
-
-/* BEGIN VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigress_1_opaque_ptr_2  =    (struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_trunc LOC=BUILTIN */
 /* compiler builtin: 
@@ -5503,6 +5483,18 @@ extern int cgetent(char ** , char ** , char const   * ) ;
 extern void tzset(void) ;
 /* END FUNCTION-DECL-EXTERN tzset LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/time.h:121 */
 
+/* BEGIN VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+unsigned int _TIG_iO_gywh_2_init_tigress_1__opaque_array[30]  = 
+  {      8,      362,      3,      493, 
+        432,      5,      303,      390, 
+        5,      383,      5,      7, 
+        133,      47,      1,      288, 
+        502,      95,      218,      628, 
+        22,      428,      656,      41, 
+        68,      201,      34,      403, 
+        698};
+/* END VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1__opaque_array LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_asinhf LOC=BUILTIN */
 /* compiler builtin: 
    float __builtin_asinhf(float  ) ;  */
@@ -5578,6 +5570,10 @@ struct pthread_override_s ;
 #line 139 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
 extern long long atoll(char const   * ) ;
 /* END FUNCTION-DECL-EXTERN atoll LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:139 */
+
+/* BEGIN VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_gywh_2_init_tigress_1_opaque_list_2 ;
+/* END VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF ldiv_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:88 */
 #line 88 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h"
@@ -5735,10 +5731,6 @@ typedef uint32_t uint_least32_t;
    float __builtin_sinf(float  ) ;  */
 /* END FUNCTION-DECL __builtin_sinf LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DEF _TIG_VZ_USEF_4_MERGED_$strings LOC=UNKNOWN */
-char const   *_TIG_VZ_USEF_4_MERGED_$strings  =    "fac(%i)=%i\n\000fib(%i)=%i\n\000";
-/* END VARIABLE-DEF _TIG_VZ_USEF_4_MERGED_$strings LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN pthread_atfork LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:222 */
 #line 222 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_atfork(void (* _Nullable  )(void) ,
@@ -5808,10 +5800,6 @@ extern int abs(int  )  __attribute__((__const__)) ;
 extern int mbtowc(wchar_t * __restrict   , char const   * __restrict   , size_t  ) ;
 /* END FUNCTION-DECL-EXTERN mbtowc LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:158 */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigress_1_opaque_list_2 ;
-/* END VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN pthread_mutex_trylock LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:390 */
 #line 390 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_trylock(pthread_mutex_t * ) ;
@@ -5869,10 +5857,6 @@ extern char *cgetcap(char * , char const   * , int  ) ;
 extern int __attribute__((__availability__(tvos,unavailable), __availability__(watchos,unavailable),
 __availability__(ios,unavailable), __availability__(macos,introduced=10.0), __availability__(swift,unavailable,message="Use posix_spawn APIs or NSTask instead.")))  system(char const   * )  __asm__("_system")  ;
 /* END FUNCTION-DECL-EXTERN system LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:190 */
-
-/* BEGIN VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigress_1_opaque_list_2  =    (struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *)0;
-/* END VARIABLE-DEF _TIG_iO_USEF_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_strdup LOC=BUILTIN */
 /* compiler builtin: 
@@ -6330,6 +6314,10 @@ struct __darwin_mcontext_avx512_64_full {
    _Float128 __builtin_powf128(_Float128  , _Float128  ) ;  */
 /* END FUNCTION-DECL __builtin_powf128 LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DECL _TIG_VZ_gywh_4_MERGED_$strings LOC=UNKNOWN */
+char const   *_TIG_VZ_gywh_4_MERGED_$strings ;
+/* END VARIABLE-DECL _TIG_VZ_gywh_4_MERGED_$strings LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_parityll LOC=BUILTIN */
 /* compiler builtin: 
    int __builtin_parityll(unsigned long long  ) ;  */
@@ -6427,6 +6415,10 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 /* compiler builtin: 
    long double __builtin_floorl(long double  ) ;  */
 /* END FUNCTION-DECL __builtin_floorl LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_gywh_2_init_tigress_1_opaque_list_1 ;
+/* END VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN pthread_getname_np LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:510 */
 #line 510
@@ -6630,10 +6622,6 @@ extern int renameat(int  , char const   * , int  , char const   * )  __attribute
    short __builtin_bitreverse16(short  ) ;  */
 /* END FUNCTION-DECL __builtin_bitreverse16 LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigress_1_opaque_ptr_1 ;
-/* END VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_sqrtf128 LOC=BUILTIN */
 /* compiler builtin: 
    _Float128 __builtin_sqrtf128(_Float128  ) ;  */
@@ -6653,6 +6641,10 @@ struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigre
 /* compiler builtin: 
    char *__builtin_rindex(char const   * , int  ) ;  */
 /* END FUNCTION-DECL __builtin_rindex LOC=BUILTIN */
+
+/* BEGIN TYPEDEF _TIG_iO_gywh_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
+typedef struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_gywh_2_init_tigress_1_opaqueStructureType;
+/* END TYPEDEF _TIG_iO_gywh_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN pthread_rwlockattr_getpshared LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:467 */
 #line 467 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
@@ -6778,10 +6770,6 @@ __availability__(swift,unavailable,message="Use lazily initialized globals inste
 extern void srand48(long  ) ;
 /* END FUNCTION-DECL-EXTERN srand48 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:244 */
 
-/* BEGIN VARIABLE-DEF _TIG_IZ_USEF_argv LOC=UNKNOWN */
-char **_TIG_IZ_USEF_argv  ;
-/* END VARIABLE-DEF _TIG_IZ_USEF_argv LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL __builtin_llroundf128 LOC=BUILTIN */
 /* compiler builtin: 
    long long __builtin_llroundf128(_Float128  ) ;  */
@@ -6796,6 +6784,10 @@ char **_TIG_IZ_USEF_argv  ;
 /* compiler builtin: 
    long double __builtin_log2l(long double  ) ;  */
 /* END FUNCTION-DECL __builtin_log2l LOC=BUILTIN */
+
+/* BEGIN VARIABLE-DEF _TIG_iE_gywh_1_entropy LOC=UNKNOWN */
+unsigned long _TIG_iE_gywh_1_entropy  =    9042506488591766566UL;
+/* END VARIABLE-DEF _TIG_iE_gywh_1_entropy LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_expect LOC=BUILTIN */
 /* compiler builtin: 
@@ -6862,10 +6854,6 @@ typedef struct __darwin_fp_control __darwin_fp_control_t;
 #line 156 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h"
 extern int fputc(int  , FILE * ) ;
 /* END FUNCTION-DECL-EXTERN fputc LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:156 */
-
-/* BEGIN VARIABLE-DEF _TIG_IZ_USEF_envp LOC=UNKNOWN */
-char **_TIG_IZ_USEF_envp  ;
-/* END VARIABLE-DEF _TIG_IZ_USEF_envp LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_assume LOC=BUILTIN */
 /* compiler builtin: 
@@ -7211,6 +7199,10 @@ extern size_t wcstombs(char * __restrict   , wchar_t const   * __restrict   , si
 typedef __uint64_t rlim_t;
 /* END TYPEDEF rlim_t LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h:89 */
 
+/* BEGIN VARIABLE-DEF _TIG_iE_gywh_1_alwaysZero LOC=UNKNOWN */
+unsigned long _TIG_iE_gywh_1_alwaysZero  =    0UL;
+/* END VARIABLE-DEF _TIG_iE_gywh_1_alwaysZero LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_copysignf LOC=BUILTIN */
 /* compiler builtin: 
    float __builtin_copysignf(float  , float  ) ;  */
@@ -7316,6 +7308,10 @@ struct rusage_info_v2 {
    uint64_t ri_diskio_byteswritten ;
 };
 /* END STRUCT rusage_info_v2 LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h:229 */
+
+/* BEGIN VARIABLE-DECL _TIG_IZ_gywh_envp LOC=UNKNOWN */
+char **_TIG_IZ_gywh_envp ;
+/* END VARIABLE-DECL _TIG_IZ_gywh_envp LOC=UNKNOWN */
 
 /* BEGIN STRUCT fd_set LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_def.h:50 */
 #line 50 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_def.h"
@@ -7467,6 +7463,10 @@ extern long jrand48(unsigned short * )  __attribute__((__availability__(swift,un
    _Complex double __builtin_cproj(_Complex double  ) ;  */
 /* END FUNCTION-DECL __builtin_cproj LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_gywh_2_init_tigress_1_opaque_ptr_1 ;
+/* END VARIABLE-DECL _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_1 LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL __builtin_nanl LOC=BUILTIN */
 /* compiler builtin: 
    long double __builtin_nanl(char const   * ) ;  */
@@ -7565,10 +7565,6 @@ extern int fclose(FILE * ) ;
 #line 372 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_mutex_destroy(pthread_mutex_t * ) ;
 /* END FUNCTION-DECL-EXTERN pthread_mutex_destroy LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:372 */
-
-/* BEGIN TYPEDEF _TIG_iO_USEF_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
-typedef struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigress_1_opaqueStructureType;
-/* END TYPEDEF _TIG_iO_USEF_2_init_tigress_1_opaqueStructureType LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_strcasecmp LOC=BUILTIN */
 /* compiler builtin: 
@@ -7715,10 +7711,6 @@ union __anonunion___mbstate_t_250061491 {
    float __builtin_atanf(float  ) ;  */
 /* END FUNCTION-DECL __builtin_atanf LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iE_USEF_1_entropy LOC=UNKNOWN */
-unsigned long _TIG_iE_USEF_1_entropy ;
-/* END VARIABLE-DECL _TIG_iE_USEF_1_entropy LOC=UNKNOWN */
-
 /* BEGIN FUNCTION-DECL-EXTERN pthread_attr_getdetachstate LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:229 */
 #line 229 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h"
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_getdetachstate(pthread_attr_t const   * ,
@@ -7740,10 +7732,6 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 #line 164 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h"
 extern long ftell(FILE * ) ;
 /* END FUNCTION-DECL-EXTERN ftell LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:164 */
-
-/* BEGIN VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigress_1_opaque_ptr_2 ;
-/* END VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_calloc LOC=BUILTIN */
 /* compiler builtin: 
@@ -8013,6 +8001,10 @@ extern  __attribute__((__deprecated__("This function is provided for compatibili
    void __attribute__((__overloaded__))  __builtin_tgmath(...) ;  */
 /* END FUNCTION-DECL __builtin_tgmath LOC=BUILTIN */
 
+/* BEGIN VARIABLE-DECL _TIG_IZ_gywh_argc LOC=UNKNOWN */
+int _TIG_IZ_gywh_argc ;
+/* END VARIABLE-DECL _TIG_IZ_gywh_argc LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN aligned_alloc LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h:50 */
 #line 50 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h"
 extern void *( __attribute__((__warn_unused_result__)) aligned_alloc)(size_t __alignment ,
@@ -8056,6 +8048,10 @@ extern ldiv_t ldiv(long  , long  )  __attribute__((__const__)) ;
 #line 270
 extern void arc4random_buf(void *__buf , size_t __nbytes )  __attribute__((__availability__(macosx,introduced=10.7))) ;
 /* END FUNCTION-DECL-EXTERN arc4random_buf LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:270 */
+
+/* BEGIN VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_gywh_2_init_tigress_1_opaque_list_2  =    (struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1_opaque_list_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL-EXTERN psort_r LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdlib.h:331 */
 #line 331
@@ -8171,6 +8167,10 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
 extern int __attribute__((__availability__(ios,introduced=2.0), __availability__(macos,introduced=10.4)))  pthread_attr_destroy(pthread_attr_t * ) ;
 /* END FUNCTION-DECL-EXTERN pthread_attr_destroy LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:226 */
 
+/* BEGIN VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_gywh_2_init_tigress_1_opaque_list_1  =    (struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN setrlimit LOC=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h:455 */
 #line 455 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h"
 extern int setrlimit(int  , struct rlimit  const  * )  __asm__("_setrlimit")  ;
@@ -8280,9 +8280,9 @@ extern int __attribute__((__availability__(ios,introduced=2.0), __availability__
    double __builtin_log10(double  ) ;  */
 /* END FUNCTION-DECL __builtin_log10 LOC=BUILTIN */
 
-/* BEGIN VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
-struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_USEF_2_init_tigress_1_opaque_list_1 ;
-/* END VARIABLE-DECL _TIG_iO_USEF_2_init_tigress_1_opaque_list_1 LOC=UNKNOWN */
+/* BEGIN VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
+struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *_TIG_iO_gywh_2_init_tigress_1_opaque_ptr_2  =    (struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct *)0;
+/* END VARIABLE-DEF _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_2 LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DECL __builtin_wcslen LOC=BUILTIN */
 /* compiler builtin: 
@@ -8307,452 +8307,452 @@ void MERGED(long bogus___1 , void *tigressRetVal , void *bogus___5 , long bogus_
             int whichBlock__7 , double bogus___2 , int n__0 , void *bogus___3 , void *bogus___7 ,
             int bogus___8 , long bogus___6 , double bogus___10 , double bogus___4 ) 
 { 
-  char _TIG_VZ_USEF_4_MERGED_$locals[648] ;
-  void **_TIG_VZ_USEF_4_MERGED_$pc[1] ;
-  void *_TIG_VZ_USEF_4_MERGED_$array[1][425]  = {{&& _TIG_VZ_USEF_4_MERGED_formal$result_STA_0$value_LIT_0,
-                                                  (void *)16UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_Eq_int_int2int$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
-                                                  (void *)3UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)75UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)568UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)2UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_formal$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
-                                                  (void *)5UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)24UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)568UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_Mult_int_int2int$left_STA_0$result_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)568UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)4294967263UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)4294967261UL, && _TIG_VZ_USEF_4_MERGED_string$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_convert_void_star2void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)576UL, && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_formal$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)584UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)568UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)588UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_call$func_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)341UL, && _TIG_VZ_USEF_4_MERGED_formal$result_STA_0$value_LIT_0,
-                                                  (void *)16UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_Eq_int_int2int$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
-                                                  (void *)3UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)97UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)568UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)592UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)596UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)596UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_formal$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
-                                                  (void *)5UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)36UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)568UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)592UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)568UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)592UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)568UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)596UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)596UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)4294967251UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)4294967249UL, && _TIG_VZ_USEF_4_MERGED_string$result_STA_0$value_LIT_0,
-                                                  (void *)12UL, && _TIG_VZ_USEF_4_MERGED_convert_void_star2void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)600UL, && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_formal$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)608UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)592UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)612UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_call$func_LIT_0,
-                                                  (void *)2UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)235UL, && _TIG_VZ_USEF_4_MERGED_formal$result_STA_0$value_LIT_0,
-                                                  (void *)16UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)2UL, && _TIG_VZ_USEF_4_MERGED_Eq_int_int2int$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
-                                                  (void *)3UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)221UL, && _TIG_VZ_USEF_4_MERGED_asm$func_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_asm$func_LIT_0,
-                                                  (void *)2UL, && _TIG_VZ_USEF_4_MERGED_call$func_LIT_0,
-                                                  (void *)3UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)624UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)616UL, && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)616UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)616UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)616UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)616UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)616UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)24UL, && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)2UL, && _TIG_VZ_USEF_4_MERGED_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
-                                                  (void *)3UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)3UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)3UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)108UL, && _TIG_VZ_USEF_4_MERGED_call$func_LIT_0,
-                                                  (void *)4UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)640UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)632UL, && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)10UL, && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)32UL, && _TIG_VZ_USEF_4_MERGED_load_unsigned_long$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_BOr_unsigned_long_int2unsigned_long$left_STA_0$result_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_Mult_int_unsigned_long2int$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)632UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)16UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)24UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)632UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)24UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)632UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)632UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)24UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)632UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)24UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0,
-                                                  (void *)572UL, && _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)4294967178UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)4294967176UL, && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)24UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)40UL, && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)40UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)48UL, && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)48UL, && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
-                                                  (void *)0UL, && _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0,
-                                                  (void *)8UL, && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0,
-                                                  && _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0,
-                                                  (void *)48UL, && _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1,
-                                                  && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)3UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)4294967089UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)3UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)4294967081UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)5UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0,
-                                                  (void *)1UL, && _TIG_VZ_USEF_4_MERGED_returnVoid$}};
-  union _TIG_VZ_USEF_4_MERGED_$node *_TIG_VZ_USEF_4_MERGED_$sp[1] ;
+  char _TIG_VZ_gywh_4_MERGED_$locals[648] ;
+  void **_TIG_VZ_gywh_4_MERGED_$pc[1] ;
+  void *_TIG_VZ_gywh_4_MERGED_$array[1][425]  = {{&& _TIG_VZ_gywh_4_MERGED_formal$result_STA_0$value_LIT_0,
+                                                  (void *)16UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_Eq_int_int2int$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
+                                                  (void *)3UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)75UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)568UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)2UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_formal$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
+                                                  (void *)5UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)24UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)568UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_Mult_int_int2int$left_STA_0$result_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)568UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)4294967263UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)4294967261UL, && _TIG_VZ_gywh_4_MERGED_string$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_convert_void_star2void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)576UL, && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_formal$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)584UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)568UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)588UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_call$func_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)341UL, && _TIG_VZ_gywh_4_MERGED_formal$result_STA_0$value_LIT_0,
+                                                  (void *)16UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_Eq_int_int2int$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
+                                                  (void *)3UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)97UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)568UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)592UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)596UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)596UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_formal$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
+                                                  (void *)5UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)36UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)568UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)592UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)568UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)592UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)568UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)596UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)596UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)4294967251UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)4294967249UL, && _TIG_VZ_gywh_4_MERGED_string$result_STA_0$value_LIT_0,
+                                                  (void *)12UL, && _TIG_VZ_gywh_4_MERGED_convert_void_star2void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)600UL, && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_formal$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)608UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)592UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)612UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_call$func_LIT_0,
+                                                  (void *)2UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)235UL, && _TIG_VZ_gywh_4_MERGED_formal$result_STA_0$value_LIT_0,
+                                                  (void *)16UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)2UL, && _TIG_VZ_gywh_4_MERGED_Eq_int_int2int$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
+                                                  (void *)3UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)221UL, && _TIG_VZ_gywh_4_MERGED_asm$func_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_asm$func_LIT_0,
+                                                  (void *)2UL, && _TIG_VZ_gywh_4_MERGED_call$func_LIT_0,
+                                                  (void *)3UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)624UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)616UL, && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)616UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)616UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)616UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)616UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)616UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)24UL, && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)2UL, && _TIG_VZ_gywh_4_MERGED_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0,
+                                                  (void *)3UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)3UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)3UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)108UL, && _TIG_VZ_gywh_4_MERGED_call$func_LIT_0,
+                                                  (void *)4UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)640UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)632UL, && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)10UL, && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)32UL, && _TIG_VZ_gywh_4_MERGED_load_unsigned_long$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_BOr_unsigned_long_int2unsigned_long$left_STA_0$result_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_Mult_int_unsigned_long2int$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)632UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)16UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)24UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)632UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)24UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)632UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)632UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)24UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)632UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)24UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0,
+                                                  (void *)572UL, && _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)4294967178UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)4294967176UL, && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)24UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)40UL, && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)40UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)48UL, && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)48UL, && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0,
+                                                  (void *)0UL, && _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0,
+                                                  (void *)8UL, && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0,
+                                                  && _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0,
+                                                  (void *)48UL, && _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1,
+                                                  && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)3UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)4294967089UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)3UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)4294967081UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)5UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0,
+                                                  (void *)1UL, && _TIG_VZ_gywh_4_MERGED_returnVoid$}};
+  union _TIG_VZ_gywh_4_MERGED_$node *_TIG_VZ_gywh_4_MERGED_$sp[1] ;
   unsigned long *formalGlobalInit25 ;
 
   {
-  _TIG_VZ_USEF_4_MERGED_$sp[0] = (*((union _TIG_VZ_USEF_4_MERGED_$node (*)[1][32])(_TIG_VZ_USEF_4_MERGED_$locals + 56)))[0];
-  _TIG_VZ_USEF_4_MERGED_$pc[0] = _TIG_VZ_USEF_4_MERGED_$array[0];
-  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 0);
+  _TIG_VZ_gywh_4_MERGED_$sp[0] = (*((union _TIG_VZ_gywh_4_MERGED_$node (*)[1][32])(_TIG_VZ_gywh_4_MERGED_$locals + 56)))[0];
+  _TIG_VZ_gywh_4_MERGED_$pc[0] = _TIG_VZ_gywh_4_MERGED_$array[0];
+  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 0);
   *formalGlobalInit25 = (unsigned long )(& tigressRetVal);
-  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 8);
+  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 8);
   *formalGlobalInit25 = (unsigned long )(& n__0);
-  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 16);
+  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 16);
   *formalGlobalInit25 = (unsigned long )(& whichBlock__7);
-  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 24);
-  *formalGlobalInit25 = (unsigned long )(& _TIG_iO_USEF_2_init_tigress_1_opaque_list_1);
-  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 32);
-  *formalGlobalInit25 = (unsigned long )(& _TIG_iE_USEF_1_entropy);
-  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 40);
-  *formalGlobalInit25 = (unsigned long )(& _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_1);
-  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 48);
-  *formalGlobalInit25 = (unsigned long )(& _TIG_iO_USEF_2_init_tigress_1_opaque_ptr_2);
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
+  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 32);
+  *formalGlobalInit25 = (unsigned long )(& _TIG_iE_gywh_1_entropy);
+  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 24);
+  *formalGlobalInit25 = (unsigned long )(& _TIG_iO_gywh_2_init_tigress_1_opaque_list_1);
+  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 40);
+  *formalGlobalInit25 = (unsigned long )(& _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_1);
+  formalGlobalInit25 = (unsigned long *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 48);
+  *formalGlobalInit25 = (unsigned long )(& _TIG_iO_gywh_2_init_tigress_1_opaque_ptr_2);
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
   Lab_2000003: /* CIL Label */ ;
-  _TIG_VZ_USEF_4_MERGED_load_unsigned_long$left_STA_0$result_STA_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_unsigned_long = *((unsigned long *)(_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_void_star);
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_int + (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) --;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_Mult_int_unsigned_long2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int *= (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_unsigned_long;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) --;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_void_star += (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_int;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) --;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_load_int$left_STA_0$result_STA_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_int = *((int *)(_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_void_star);
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_goto$label_LAB_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  _TIG_VZ_USEF_4_MERGED_$pc[0] += *((int *)_TIG_VZ_USEF_4_MERGED_$pc[0]);
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int < (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_int;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) --;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_returnVoid$: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
+  _TIG_VZ_gywh_4_MERGED_load_unsigned_long$left_STA_0$result_STA_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_unsigned_long = *((unsigned long *)(_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_void_star);
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_PlusA_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_int + (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) --;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_Mult_int_unsigned_long2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int *= (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_unsigned_long;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) --;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_PlusPI_void_star_int2void_star$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_void_star += (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_int;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) --;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_load_int$left_STA_0$result_STA_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_int = *((int *)(_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_void_star);
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_goto$label_LAB_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  _TIG_VZ_gywh_4_MERGED_$pc[0] += *((int *)_TIG_VZ_gywh_4_MERGED_$pc[0]);
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_Lt_int_int2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int < (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_int;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) --;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_returnVoid$: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
   return;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_global$result_STA_0$value_LIT_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 1)->_void_star = (void *)*((unsigned long *)(_TIG_VZ_USEF_4_MERGED_$locals + *((int *)_TIG_VZ_USEF_4_MERGED_$pc[0])));
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  if ((_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_int) {
-    _TIG_VZ_USEF_4_MERGED_$pc[0] += *((int *)_TIG_VZ_USEF_4_MERGED_$pc[0]);
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_global$result_STA_0$value_LIT_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 1)->_void_star = (void *)*((unsigned long *)(_TIG_VZ_gywh_4_MERGED_$locals + *((int *)_TIG_VZ_gywh_4_MERGED_$pc[0])));
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_branchIfTrue$expr_STA_0$label_LAB_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  if ((_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_int) {
+    _TIG_VZ_gywh_4_MERGED_$pc[0] += *((int *)_TIG_VZ_gywh_4_MERGED_$pc[0]);
   } else {
-    (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
+    (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
   }
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) --;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_int <= (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) --;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_local$result_STA_0$value_LIT_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_USEF_4_MERGED_$locals) + *((int *)_TIG_VZ_USEF_4_MERGED_$pc[0]);
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_BOr_unsigned_long_int2unsigned_long$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_unsigned_long = (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_unsigned_long | (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) --;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_asm$func_LIT_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  switch (*((int *)_TIG_VZ_USEF_4_MERGED_$pc[0])) {
-  case 1: 
-  __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-iO-USEF-2-init-tigress--2":);
-  break;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) --;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_Le_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_int <= (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) --;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_local$result_STA_0$value_LIT_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_gywh_4_MERGED_$locals) + *((int *)_TIG_VZ_gywh_4_MERGED_$pc[0]);
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_BOr_unsigned_long_int2unsigned_long$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_unsigned_long = (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_unsigned_long | (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) --;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_asm$func_LIT_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  switch (*((int *)_TIG_VZ_gywh_4_MERGED_$pc[0])) {
   case 2: 
-  __asm__ volatile ("##_ANNOTATION_ATOMICREGION_-TIG-iO-USEF-2-init-tigress--1":);
+  __asm__ volatile ("##_ANNOTATION_ATOMICREGION_-TIG-iO-gywh-2-init-tigress--1":);
+  break;
+  case 1: 
+  __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-iO-gywh-2-init-tigress--2":);
   break;
   }
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_store_void_star$left_STA_0$right_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  *((void **)(_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_void_star) = (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_void_star;
-  _TIG_VZ_USEF_4_MERGED_$sp[0] += -2;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_constant_int$result_STA_0$value_LIT_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 1)->_int = *((int *)_TIG_VZ_USEF_4_MERGED_$pc[0]);
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_constant_void_star$result_STA_0$value_LIT_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 1)->_void_star = *(_TIG_VZ_USEF_4_MERGED_$pc[0]);
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_call$func_LIT_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  switch (*((int *)_TIG_VZ_USEF_4_MERGED_$pc[0])) {
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_store_void_star$left_STA_0$right_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  *((void **)(_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_void_star) = (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_void_star;
+  _TIG_VZ_gywh_4_MERGED_$sp[0] += -2;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_constant_int$result_STA_0$value_LIT_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 1)->_int = *((int *)_TIG_VZ_gywh_4_MERGED_$pc[0]);
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_constant_void_star$result_STA_0$value_LIT_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 1)->_void_star = *(_TIG_VZ_gywh_4_MERGED_$pc[0]);
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_call$func_LIT_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  switch (*((int *)_TIG_VZ_gywh_4_MERGED_$pc[0])) {
   case 1: 
-  printf(*((char const   * __restrict  *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 576)),
-         *((int *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 584)), *((int *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 588)));
+  printf(*((char const   * __restrict  *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 576)),
+         *((int *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 584)), *((int *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 588)));
   break;
   case 3: 
-  *((void **)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 624)) = malloc(sizeof(struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct ));
+  *((void **)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 624)) = malloc(sizeof(struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct ));
   break;
   case 2: 
-  printf(*((char const   * __restrict  *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 600)),
-         *((int *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 608)), *((int *)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 612)));
+  printf(*((char const   * __restrict  *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 600)),
+         *((int *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 608)), *((int *)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 612)));
   break;
   case 4: 
-  *((void **)((void *)(_TIG_VZ_USEF_4_MERGED_$locals) + 640)) = malloc(sizeof(struct _TIG_iO_USEF_2_init_tigress_1_opaqueNodeStruct ));
+  *((void **)((void *)(_TIG_VZ_gywh_4_MERGED_$locals) + 640)) = malloc(sizeof(struct _TIG_iO_gywh_2_init_tigress_1_opaqueNodeStruct ));
   break;
   }
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_convert_void_star2void_star$left_STA_0$result_STA_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_void_star = (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_void_star;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_store_int$left_STA_0$right_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  *((int *)(_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_void_star) = (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int;
-  _TIG_VZ_USEF_4_MERGED_$sp[0] += -2;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_Eq_int_int2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int == (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_int;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) --;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_formal$result_STA_0$value_LIT_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 1)->_void_star = (void *)*((unsigned long *)(_TIG_VZ_USEF_4_MERGED_$locals + *((int *)_TIG_VZ_USEF_4_MERGED_$pc[0])));
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_string$result_STA_0$value_LIT_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_USEF_4_MERGED_$strings + *((int *)_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_load_void_star$left_STA_0$result_STA_0: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_void_star = *((void **)(_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_void_star);
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
-  _TIG_VZ_USEF_4_MERGED_Mult_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ ;
-  (_TIG_VZ_USEF_4_MERGED_$pc[0]) ++;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_USEF_4_MERGED_$sp[0] + 0)->_int * (_TIG_VZ_USEF_4_MERGED_$sp[0] + -1)->_int;
-  (_TIG_VZ_USEF_4_MERGED_$sp[0]) --;
-  goto *(*(_TIG_VZ_USEF_4_MERGED_$pc[0]));
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_convert_void_star2void_star$left_STA_0$result_STA_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_void_star = (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_void_star;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_store_int$left_STA_0$right_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  *((int *)(_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_void_star) = (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int;
+  _TIG_VZ_gywh_4_MERGED_$sp[0] += -2;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_Eq_int_int2int$right_STA_0$result_STA_0$left_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int == (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_int;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) --;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_formal$result_STA_0$value_LIT_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 1)->_void_star = (void *)*((unsigned long *)(_TIG_VZ_gywh_4_MERGED_$locals + *((int *)_TIG_VZ_gywh_4_MERGED_$pc[0])));
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_string$result_STA_0$value_LIT_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 1)->_void_star = (void *)(_TIG_VZ_gywh_4_MERGED_$strings + *((int *)_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_load_void_star$left_STA_0$result_STA_0: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_void_star = *((void **)(_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_void_star);
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
+  _TIG_VZ_gywh_4_MERGED_Mult_int_int2int$left_STA_0$result_STA_0$right_STA_1: /* CIL Label */ ;
+  (_TIG_VZ_gywh_4_MERGED_$pc[0]) ++;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int = (_TIG_VZ_gywh_4_MERGED_$sp[0] + 0)->_int * (_TIG_VZ_gywh_4_MERGED_$sp[0] + -1)->_int;
+  (_TIG_VZ_gywh_4_MERGED_$sp[0]) --;
+  goto *(*(_TIG_VZ_gywh_4_MERGED_$pc[0]));
 }
 }
 /* END FUNCTION-DEF MERGED LOC=UNKNOWN */
@@ -8856,7 +8856,7 @@ __inline int ( __attribute__((__always_inline__)) __sputc)(int _c , FILE *_p )
 /* END FUNCTION-DEF __sputc LOC=UNKNOWN */
 
 /* BEGIN FUNCTION-DEF main LOC=UNKNOWN */
-int main(int argc , char **argv , char **_TIG_IZ_USEF_formal_envp ) 
+int main(int argc , char **argv , char **_TIG_IZ_gywh_formal_envp ) 
 { 
 
 
@@ -8865,34 +8865,34 @@ int main(int argc , char **argv , char **_TIG_IZ_USEF_formal_envp )
   {
   {
   {
-  _TIG_IZ_USEF_envp = (char **)0;
-  goto _TIG_IZ_USEF_envp__INITINLINE__TIG_IZ_USEF_envp__INIT;
+  _TIG_IZ_gywh_envp = (char **)0;
+  goto _TIG_IZ_gywh_envp__INITINLINE__TIG_IZ_gywh_envp__INIT;
   }
-  _TIG_IZ_USEF_envp__INITINLINE__TIG_IZ_USEF_envp__INIT: /* CIL Label */ ;
-  }
-  {
-  {
-  _TIG_IZ_USEF_argv = (char **)0;
-  goto _TIG_IZ_USEF_argv__INITINLINE__TIG_IZ_USEF_argv__INIT;
-  }
-  _TIG_IZ_USEF_argv__INITINLINE__TIG_IZ_USEF_argv__INIT: /* CIL Label */ ;
+  _TIG_IZ_gywh_envp__INITINLINE__TIG_IZ_gywh_envp__INIT: /* CIL Label */ ;
   }
   {
   {
-  _TIG_IZ_USEF_argc = 0;
-  goto _TIG_IZ_USEF_argc__INITINLINE__TIG_IZ_USEF_argc__INIT;
+  _TIG_IZ_gywh_argv = (char **)0;
+  goto _TIG_IZ_gywh_argv__INITINLINE__TIG_IZ_gywh_argv__INIT;
   }
-  _TIG_IZ_USEF_argc__INITINLINE__TIG_IZ_USEF_argc__INIT: /* CIL Label */ ;
+  _TIG_IZ_gywh_argv__INITINLINE__TIG_IZ_gywh_argv__INIT: /* CIL Label */ ;
+  }
+  {
+  {
+  _TIG_IZ_gywh_argc = 0;
+  goto _TIG_IZ_gywh_argc__INITINLINE__TIG_IZ_gywh_argc__INIT;
+  }
+  _TIG_IZ_gywh_argc__INITINLINE__TIG_IZ_gywh_argc__INIT: /* CIL Label */ ;
   }
   goto megaInitINLINE_megaInit;
   }
   megaInitINLINE_megaInit: /* CIL Label */ ;
   }
   while (1) {
-    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-IZ-USEF--0":);
-    _TIG_IZ_USEF_argc = argc;
-    _TIG_IZ_USEF_argv = argv;
-    _TIG_IZ_USEF_envp = _TIG_IZ_USEF_formal_envp;
+    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-IZ-gywh--0":);
+    _TIG_IZ_gywh_argc = argc;
+    _TIG_IZ_gywh_argv = argv;
+    _TIG_IZ_gywh_envp = _TIG_IZ_gywh_formal_envp;
     break;
   }
   MERGED(7L, 0, 0, 6L, 2, 5., argc, 0, 0, argc, 6L, 5., 6.);
