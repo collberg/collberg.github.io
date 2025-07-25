@@ -679,6 +679,7 @@ rate. The commands look like this:
    --Functions=... \
    --InitImplicitFlowKinds=... \
    --InitImplicitFlowTrain=true \
+   --InitImplicitFlowTrace=true \
    --InitImplicitFlowTrainingTimesClock=50 \
    --InitImplicitFlowTrainingTimesThread=50 \
    --InitImplicitFlowTrainingGapMaxFailureRateClock=5 \
@@ -702,6 +703,9 @@ or like this:
    --Functions=... \
    --InitImplicitFlowKinds=... \
    --InitImplicitFlowTrain=true \
+   --InitImplicitFlowTrace=true \
+   --InitImplicitFlowTrainingTimesClock=50 \
+   --InitImplicitFlowTrainingTimesThread=50 \
    --InitImplicitFlowTrainingResendConfidenceLevel=0.99 \
    --InitImplicitFlowTrainingResendTargetErrorRate=0.00001 \
    --InitImplicitFlowTrainingKind=resend \
@@ -756,6 +760,7 @@ training code at the beginning of <code class="language-c">main</code>:
 <div class="container">
 <pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">--Transform=InitImplicitFlow \
    --InitImplicitFlowTrain=true \
+   --InitImplicitFlowTrace=false \
 --Transform=AntiTaintAnalysis \
    --Functions=... \
 </code></pre></div><br>
@@ -1036,6 +1041,11 @@ Here are some examples of combiners:
 <td><tt>--InitImplicitFlowTrainingData</tt></td>
 <td><tt><em>SExpression</em></tt></td>
 <td> Set training data from previous run of <tt>--InitImplicitFlowTrain</tt>. Default=none.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowSignalHandlerName</tt></td>
+<td><tt><em>STRING</em></tt></td>
+<td> "Name of generated signal handler functions. The implicit flow kind and a number is appended: <em>"kind_number</em>." Default=implicitFlow_signalHandler_<em>kind_number</em>.</td>
 </tr>
 
 

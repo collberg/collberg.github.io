@@ -1197,13 +1197,15 @@ and increase the overlap rate in <code class="language-c">tigress_post</code> (<
 </tr>
 <tr>
 <td><tt>--ChecksumTraceKinds</tt></td>
-<td><tt>start, stop, step, check</tt></td>
+<td><tt>start, stop, step, check, dump10, dump16</tt></td>
 <td> List of the information that should be printed at runtime when a checker is executed. Default=NONE.
 <ul>
    <li> <tt>start</tt> = Trace the beginning of checksum computation
    <li> <tt>stop</tt> = Trace the end of checksum computation
    <li> <tt>step</tt> = Trace each intermediate step of the checksum computation
    <li> <tt>check</tt> = Trace the correctness check of the checksum computation
+   <li> <tt>dump10</tt> = Print the checked region prior to computing the checksum, 10 bytes per line
+   <li> <tt>dump16</tt> = Print the checked region prior to computing the checksum, 16 bytes per line
 </ul>
 </td>
 </tr>

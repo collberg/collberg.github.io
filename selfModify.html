@@ -450,7 +450,7 @@ but not <code class="language-c">asm goto volatile</code> (gcc accepts either).
 Tigress supports a few different "styles" of inline assembly to generate for this transformation. 
 We try to pick the right style based on your plaform (remember to set the <code class="language-c">--Environment=</code> option
 correctly!!!), but you can use the <code class="language-c">--SelfModifyStyle</code> option yourself if your compiler misbehaves and
-want to experiment. 
+you want to experiment. 
 
             </p>
         </div>
@@ -510,28 +510,6 @@ want to experiment.
 </tr>
 <tr>
 <td><tt>--SelfModifyBogusInstructions</tt></td>
-<td><tt>PlusA, MinusA, Mult, Div, Mod, Shiftlt, Shiftrt, Lt, Gt, Le, Ge, Eq, Ne, *</tt></td>
-<td> Which binary operators to modify. Default=*.
-<ul>
-   <li> <tt>PlusA</tt> = +
-   <li> <tt>MinusA</tt> = -
-   <li> <tt>Mult</tt> = *
-   <li> <tt>Div</tt> = /
-   <li> <tt>Mod</tt> = %
-   <li> <tt>Shiftlt</tt> = <<
-   <li> <tt>Shiftrt</tt> = >>
-   <li> <tt>Lt</tt> = <
-   <li> <tt>Gt</tt> = >
-   <li> <tt>Le</tt> = =<
-   <li> <tt>Ge</tt> = >=
-   <li> <tt>Eq</tt> = ==
-   <li> <tt>Ne</tt> = !=
-   <li> <tt>*</tt> = all operators
-</ul>
-</td>
-</tr>
-<tr>
-<td><tt>--SelfModifyBogusInstructions</tt></td>
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> How many bogus instructions to insert inside the self-modify template to avoid pattern-matching attacks. Right now, the inserted instructions are simple 1-byte x86 instructions that are equivalent to NOPs. Default=0.</td>
 </tr>
@@ -568,17 +546,17 @@ want to experiment.
                 <ul>
 
 <li>
-          This transformation currently only works on x86/64 targets.
+          This transformation currently only works on x86/64 and Arm7/Arm8 targets.
 
 </li>
 
 <li>
-          If you see an error message "<code class="language-c">Simplify: makeThreeAddress for AddrOf</code>", set <code class="language-c">--SelfModifySubExpressions=false</code> There's a bug in CIL that I don't know how to fix.
+          Div and Mod are not currently supported on X86.
 
 </li>
 
 <li>
-        At this time, there is not much diversity in generated code; it's very tamplate-y. This makes
+        At this time, there is not much diversity in generated code; it's very template-y. This makes
         it easy to locate the code using simple pattern-matching. To break up the templates somewhat, 
         set <code class="language-c">--SelfModifyBogusInstructions=0?5</code>. This inserts between 0 and 5 NOP-equivalent bytes 
             between the template instructions.

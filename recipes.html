@@ -278,7 +278,7 @@ Here is a simple recipe that should have a relatively low performance impact:
     </div>
 </section>
 <div class="container">
-<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0 y\
      --Transform=InitEntropy \
         --Functions=init_tigress \
         --InitEntropyKinds=vars \
@@ -392,7 +392,7 @@ This transformation shows off a combination of two more powerful transformation,
     </div>
 </section>
 <div class="container">
-<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:9.0  \
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=armv8:Darwin:Clang:9.0  \
      --Transform=InitEntropy \
         --Functions=init_tigress \
         --InitEntropyKinds=vars \
@@ -475,7 +475,7 @@ In this recipe we first virtualize and then add dynamic obfusction; i.e. the pro
    decode and re-encode itself as it is running. In this particular case we decode/encode 
    using the XTEA cipher:
 <div class="container">
-<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0 --Environment=x86_64:Darwin:Clang:5.1  \
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0  \
      --Transform=InitEntropy \
         --Functions=init_tigress \
         --InitEntropyKinds=vars \

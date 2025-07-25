@@ -202,8 +202,6 @@ lists the functions where we can insert the checkers:
 </code></pre></div><br>
 
 
-
-
 <section class="table2 TIGRESS-TABLE2" id="table2-dy">
 <div class="container">
 <div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
@@ -258,6 +256,35 @@ lists the functions where we can insert the checkers:
 </div>
 </section>
 
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+If you have a source code license you can list the available pills:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --GodMode=... --Transform=Info --InfoKind=pills empty.c --out=out.c
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+And then you can pnsert a particular pill named foo_pill in main:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --GodMode=... --Transform=UnitTest --Functions=main --UnitTestKind=pills --UnitTestPill=foo_ill empty.c --out=out.c
+</code></pre></div><br>
 
 <br>
 

@@ -302,6 +302,11 @@ to make sure that new names don't clash with old ones. Use
 </td>
 </tr>
 <tr>
+<td><tt>--EventsFile</tt></td>
+<td><tt>string</tt></td>
+<td> If <tt>--EventsFile=stats.json</tt> is set, a file <tt>stats.json</tt> is created with a list of all the transdformation events that occured. This can be used for debugging and to see how many objects were actually transformed by Tigress. Default=0.</td>
+</tr>
+<tr>
 <td><tt>--Prefix</tt></td>
 <td><tt>string</tt></td>
 <td> Add this prefix to each new generated symbol. This is in addition to the --filePrefix. Default is "_<em>number</em>_" where <em>number</em> is the order number of the transformation given on the command line. You can set this for every transformation. Default=_number_.</td>

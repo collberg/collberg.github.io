@@ -287,6 +287,47 @@ or by sending us a message on our <a href="https://tigress.wtf/contact.html">con
                     </div>
                 </div>
             </div>
+   <!-- ----------------------------------------------------------------------------------- -->
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            58
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      On some versions of Darwin x86 (e.g., "x86_64-apple-darwin19.6.0") one may receive a
+      parsing error from Tigress when including sys/event.h. The preprocessed version of the code
+      where the error occurs looks like:
+<code class="language-c">
+ struct klist { struct knote *slh_first; }
+;
+int main(){}
+</code>
+     
+     The known issue is Tigress' handling of the case in which a pragma appears between the struct
+     definition and its terminating semi-colon. The original code appears at line 372 in sys/event.h
+     where a macro is applied. The macro definition is in sys/queue.h, line 236:
+<code class="language-c">
+__MISMATCH_TAGS_PUSH                                                    \
+__NULLABILITY_COMPLETENESS_PUSH                                         \
+struct name {                                                           \
+	struct type *slh_first; /* first element */                     \
+}                                                                       \
+__NULLABILITY_COMPLETENESS_POP                                          \
+__MISMATCH_TAGS_POP
+</code>
+
+     To work around the problem, add a semicolon to the end of the struct definition. Clang, GCC, and
+     Tigress can all handle the presence of an extra semicolon, so the semicolons at the ends of the
+     macro applications do not need to be removed.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
