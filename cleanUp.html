@@ -225,6 +225,21 @@ This transformations should always be the last one to be invoked.
 </td>
 </tr>
 <tr>
+<td><tt>--CleanUpRenameKinds</tt></td>
+<td><tt>short, english, exebench, english2, exebench2, englishAbbr, exebenchAbbr</tt></td>
+<td> Specify types of identifier naming to perform Default=short.
+<ul>
+   <li> <tt>short</tt> = Replace identifiers with short names
+   <li> <tt>english</tt> = Replace identifiers with English words
+   <li> <tt>exebench</tt> = Replace identifiers with identifiers taken from the Exebench benchmark suite
+   <li> <tt>english2</tt> = Replace identifiers with two English words in camel case
+   <li> <tt>exebench2</tt> = Replace identifiers with two Exebench words in camel case
+   <li> <tt>englishAbbr</tt> = Replace identifiers with an English word followed by a programming abbreviation in camel case
+   <li> <tt>exebenchAbbr</tt> = Replace identifiers with an Exebench word followed by a programming abbreviation in camel case
+</ul>
+</td>
+</tr>
+<tr>
 <td><tt>--CleanUpDoNotRename</tt></td>
 <td><tt><em>String,String,...</em></tt></td>
 <td> Do not rename these identifiers. Default=NONE.</td>

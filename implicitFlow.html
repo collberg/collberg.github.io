@@ -925,7 +925,7 @@ Here are some examples of combiners:
 </tr>
 <tr>
 <td><tt>--InitImplicitFlowKinds</tt></td>
-<td><tt>counter_int, counter_float, counter_signal, bitcopy_unrolled, bitcopy_loop, bitcopy_signal, file_write, lookup_byteArray, trivial_clock, trivial_thread_1, trivial_thread_2, trivial_counter, file_cache_time, file_cache_thread_1, file_cache_thread_2, mem_cache_time, mem_cache_thread_1, mem_cache_thread_2, jit_time, branchPrediction_time, *</tt></td>
+<td><tt>counter_int, counter_float, counter_signal, bitcopy_unrolled, bitcopy_loop, bitcopy_signal, file_write, lookup_byteArray, trivial_clock, trivial_thread_1, trivial_thread_2, trivial_counter, file_cache_time, file_cache_thread_1, file_cache_thread_2, mem_cache_time, mem_cache_thread_1, mem_cache_thread_2, jit_time, branchPrediction_time, callChain, *</tt></td>
 <td> Comma-separated list of the kinds of implicit flow that can be inserted. Default=all options.
 <ul>
    <li> <tt>counter_int</tt> = Copy a variable by counting up to its value.
@@ -948,6 +948,7 @@ Here are some examples of combiners:
    <li> <tt>mem_cache_thread_2</tt> = Copy a variable by timing a CPU data cache being read with or without caching, but using 2 threads for timing.
    <li> <tt>jit_time</tt> = Copy a variable by timing a jitted function.
    <li> <tt>branchPrediction_time</tt> = Copy a variable by timing the CPU's branch prediction.
+   <li> <tt>callChain</tt> = Copy a variable passing it along a call chain.
    <li> <tt>*</tt> = Same as all options turned on.
 </ul>
 </td>
@@ -961,6 +962,16 @@ Here are some examples of combiners:
 <td><tt>--InitImplicitFlowJitCount</tt></td>
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> How many jitted functions to insert. Default=0.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitCallChainLength</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> Length of generated call chain Default=800.</td>
+</tr>
+<tr>
+<td><tt>--InitImplicitFlowCallChainName</tt></td>
+<td><tt><em>STRING</em></tt></td>
+<td> Name of generated call chain functions. The number is appended. Default=<em>callChain</em>.</td>
 </tr>
 <tr>
 <td><tt>--InitImplicitFileCacheSize</tt></td>
@@ -1045,7 +1056,7 @@ Here are some examples of combiners:
 <tr>
 <td><tt>--InitImplicitFlowSignalHandlerName</tt></td>
 <td><tt><em>STRING</em></tt></td>
-<td> "Name of generated signal handler functions. The implicit flow kind and a number is appended: <em>"kind_number</em>." Default=implicitFlow_signalHandler_<em>kind_number</em>.</td>
+<td> Name of generated signal handler functions. The implicit flow kind and a number is appended: <em>"kind_number</em>. Default=implicitFlow_signalHandler_<em>kind_number</em>.</td>
 </tr>
 
 

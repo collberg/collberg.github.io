@@ -156,13 +156,394 @@ code {
         </div>
     </div>
 </section>
-                
+      
+The Tigress Windows system consists of two parts, the Tigress
+obfuscator itself, and a Visual Studio plugin. This allows you to run
+Tigress either from the command line or from within Visual Studio.
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Download and Install Tigress
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+          
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Coming soon.
+Download the Windows install file from the <a href="tigress-download.html">download page</a> and
+follow the steps below.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Let's assume you've downloaded the install file in the <b>Downloads</b> folder:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/download_1.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Double click on the install file: 
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/wizard_1.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+If you already have Perl install you can uncheck this box>
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/wizard_2.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Otherwise, install Perl:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/wizard_3.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Click <b>Next</b>:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/wizard_4.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Tigress is normally installed in the location
+<code class="language-c">C:&bsol;Program Files&bsol;University of Arizona&bsol;Tigress C Source Code Obfuscator&bsol;Tigress</code>.
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/wizard_5.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+It's best to keep the default install location, but if you do decide to select
+another location, you will need to update the Tigress BAT script, <code class="language-c">YOUR_INSTALL_LOCATION&bsol;tigress.bat</code>. 
+Change the permissions of the <code class="language-c">tigress.bat</code> file so that you can edit it,
+open it up in an editor, and set the <code class="language-c">TIGRESS_HOME</code> variable to the
+directory where you installed Tigress.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Click <b>Install</b>:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/wizard_6.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Click <b>Finish</b>:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/wizard_7.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Click <b>Install</b> to install the Visual Studio plugin:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/wizard_8.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Click <b>Close</b> to finish the installation:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/wizard_9.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Running Tigress from the command line
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here's an example of how you run Tigress from the command line.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="step1 TIGRESS-OL" id="step1-dy">
+    <div class="container">
+        <div class="step-container">
+
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            1
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Run the <code class="language-c">vcvars64.bat</code> script.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            2
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Create a C program <code class="language-c">foo.c</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            3
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Compile <code class="language-c">foo.c</code> with <b>cl</b> and run it to make sure it's a valid C file 
+      (Tigress will not work on incorrect C programs).
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<center>
+
+<section class="TIGRESS-IMAGE" id="image2-f9">
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 65%;">
+            <img src="assets/images/commandLine_1.png" alt="" title="">
+        </div>
+    </figure>
+</section>
+</center>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Running Tigress in Visual Studio
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Here's how you run Tigress from Visual Studio.
 
             </p>
         </div>

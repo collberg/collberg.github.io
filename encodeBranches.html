@@ -234,10 +234,10 @@ int main() {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-By default, a function is flattened prior to direct jumps
-being replaced by calls to a branch function. This creates more direct 
-jumps and hence more opportunities to apply the branch function 
-transformation. Turn this off with <code class="language-c">--BranchFunsFlatten=false</code>. 
+A function can be flattened prior to direct jumps being
+encoded. This creates more direct jumps and hence more opportunities
+to apply the transformation. Prior to version <b>4.0.12</b> this
+only applied to branch functions, and not the other encoding variants. 
 
             </p>
         </div>
@@ -522,12 +522,22 @@ x86 bytes that have no effect:
 <tr>
 <td><tt>--AntiBranchAnalysisBranchFunFlatten</tt></td>
 <td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Flatten before replacing jumps. This opens up more opportunities for replacing unconditional branches. From <b>version 4.0.12</b> this is obsolete. Use <tt>--AntiBranchAnalysisFlatten</tt> instead. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisFlatten</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
 <td> Flatten before replacing jumps. This opens up more opportunities for replacing unconditional branches. Default=false.</td>
 </tr>
 <tr>
 <td><tt>--AntiBranchAnalysisBranchFunAddressOffset</tt></td>
 <td><tt><em>integer</em></tt></td>
 <td> The offset (in bytes) of the return address on the stack, for branch functions. May differ based on operating system, word size, and compiler. Default=8 on x86_64, 0 on Arm.</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisFraction</tt></td>
+<td><tt><em><a href="top-level.html#FRACSPEC">FRACSPEC</a></em></tt></td>
+<td> How many unconditional branches should be encoded. Default=%100.</td>
 </tr>
 
 
