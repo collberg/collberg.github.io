@@ -235,7 +235,7 @@ Double click on the install file:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-If you already have Perl install you can uncheck this box:
+If you already have Perl installed you can uncheck this box:
 
             </p>
         </div>
@@ -288,11 +288,23 @@ Tigress is normally installed in the location
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-It's best to keep the default install location, but if you do decide to select
-another location, you will need to update the Tigress BAT script, <code class="language-c">YOUR_INSTALL_LOCATION&bsol;tigress.bat</code>. 
-Change the permissions of the <code class="language-c">tigress.bat</code> file so that you can edit it,
-open it up in an editor, and set the <code class="language-c">TIGRESS_HOME</code> variable to the
-directory where you installed Tigress.
+To use Tigress from the command line, you must first set the <code class="language-c">TIGRESS_HOME</code> environment variable, with a command like:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">set TIGRESS_HOME=C:&bsol;Program Files&bsol;University of Arizona&bsol;Tigress C Source Code Obfuscator&bsol;Tigress
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+If you used a location different from the default install location, set the <code class="language-c">TIGRESS_HOME</code> variable accordingly.
 
             </p>
         </div>
@@ -498,12 +510,154 @@ Hello World!
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Here's how you run Tigress from Visual Studio.
+Start by opening up your project in Visual Studio. Here our program consists of a single
+C file, <code class="language-c">foo.c</code>. Remember that Tigress only works on plain C programs, not C++.
 
             </p>
         </div>
     </div>
 </section>
+
+<center><img width="500px" src="tigress3-images///visual_studio_1.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Select <code class="language-c">Tools&rarr;Enable Obfuscation with Tigress</code>:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///visual_studio_10.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Notice that a new file, <code class="language-c">obf.c</code>, has been created. This is where the
+obfuscated program will be created.
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///visual_studio_3.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Now switch from <b>Debug</b> mode to <b>Release</b> mode.
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///visual_studio_4.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Before we can run the obfuscator we need to tell Tigress which transformations
+to use. First select <code class="language-c">Tools&rarr;Tigress Configuration Window</code> to
+open up a window where you can configure which transformations should be run
+on which functions:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///visual_studio_5.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+You can click <code class="language-c">Add transformation</code> multiple times to add new transformations:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///tigress_config_1.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The same transformation and transformation options that exist in the Linux and 
+MacOS versions are available in the Windows version. Here, however, instead of
+command-line options like <code class="language-c">--Transform=Flatten --FlattenDispatch=switch</code>, you select
+the relevant buttons. Here, we've selected to obfuscate the <code class="language-c">main</code> function using 
+the <code class="language-c">Flatten</code> transformation with <code class="language-c">switch</code> dispatch:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///tigress_config_2.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The save the project:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///visual_studio_6.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+And build it:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///visual_studio_7.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Click on <code class="language-c">obf.c</code> to view the obfuscated source code:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///visual_studio_8.png"></center>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Scroll down to see the obfuscated <code class="language-c">main</code> function:
+
+            </p>
+        </div>
+    </div>
+</section>
+<center><img width="500px" src="tigress3-images///visual_studio_9.png"></center>
+
 
 <br>
 
