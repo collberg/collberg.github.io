@@ -1,0 +1,1823 @@
+
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Maker Description">
+  
+   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
+  
+ <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #000000
+}
+h3 {
+   color: #000000
+}
+code {
+  font-family:     "Courier New"
+                    Courier
+                    monospace;
+  color: black;
+}
+
+</style>
+  
+</head>
+<body>
+  
+  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+
+        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="" title="" style="height: 4.1rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Usage</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-quickstart.html">Quickstart<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-mergeFiles.html">File merge<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-crossCompile.html">Cross compile</a>
+      <a class="text-white dropdown-item text-primary display-4" href="recipes.html">Recipes</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-libraries.html">Libraries</a>
+      <a class="text-white dropdown-item text-primary display-4" href="top-level.html">Top-Level Options</a>
+      <a class="text-white dropdown-item text-primary display-4" href="plugins.html">Plugins</a>
+      <a class="text-white dropdown-item text-primary display-4" href="issues.html">Issues</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-test.html">Testing</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Platforms</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-linux.html">Linux<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-macos.html">MacOS<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-windows.html">Windows<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-android.html">Android<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-wasm.html">WASM<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="cpp.html">C++<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Users</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-academics.html">For academics<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-students.html">For students<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-practitioners.html">For practitioners<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-developers.html">For developers<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="false" data-toggle="dropdown-submenu">News</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Transformations</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="control-transforms.html">Control</a>
+      <a class="text-white dropdown-item text-primary display-4" href="data-transforms.html">Data</a>
+      <a class="text-white dropdown-item text-primary display-4" href="functions-transforms.html">Functions</a>
+      <a class="text-white dropdown-item text-primary display-4" href="integrity-transforms.html">Integrity</a>
+      <a class="text-white dropdown-item text-primary display-4" href="antiAnalysis-transforms.html">Anti analysis</a>
+      <a class="text-white dropdown-item text-primary display-4" href="other-transforms.html">Other</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">About</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-history.html">History<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-faq.html">FAQ<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-consulting.html">Training<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-publications.html">Pubs</a></div>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="contact.html" aria-expanded="false"><span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="tigress-download.html" aria-expanded="false"><span class="mbrib-download mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+</ul>
+            
+        </div>
+    </nav>
+
+</section>
+
+<br><br><br><br>
+
+<section class="mbr-section content4 TIGRESS-TITLE" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+<center><h1 style="font-size: 60px; font-weight:400"> Updates v4.0.11 &#10142; v4.1</h1></center>
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Language changes
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+These are the syntax/semantic updates which may break current programs. 
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">bool</code> is a keyword (C23 6.7.2). 
+
+</li>
+
+<li>
+     <code class="language-c">nullptr</code> is a keyword (C23 6.4.4.6). 
+
+</li>
+
+<li>
+      <code class="language-c">enum : <type> { … }</code> — C23/clang fixed-underlying-type enums. Only the anonymous form (colon straight after enum)
+
+</li>
+
+<li>
+      GCC statement and label attributes — 
+         <code class="language-c">__attribute__((...)) stmt;</code> 
+      and attributes on labels now keep their attributes instead of being dropped.
+
+</li>
+
+<li>
+     An attribute between a type specifier and a typedef name — 
+      <code class="language-c">typedef int __attribute__((mode(__pointer__))) intptr_t;</code> 
+      now parses as a redefinition rather than a bogus specifier list.
+
+</li>
+
+<li>
+     Unary + performs the integer promotion (C11 6.5.3.3). 
+     <code class="language-c">sizeof(+c)</code> on a char is now 4, was 1. 
+
+</li>
+
+<li>
+      <code class="language-c">_Complex</code> actually works. 
+
+</li>
+
+<li>
+    <code class="language-c">_Noreturn</code> is parsed for real.
+
+</li>
+
+<li>
+      <code class="language-c">__builtin_bswap&lt;N&gt;</code> is declared unsigned, as gcc and clang declare it.
+
+</li>
+
+<li>
+       <code class="language-c">__int128</code> is refused where the target has none — i386, armv7 and MSVC, per the new sizeof_int128 
+       in the machine model.
+
+</li>
+
+<li>
+       128-bit constants print correctly. Emitted as 
+       <code class="language-c">(unsigned __int128)(0xHI ULL << 64 | 0xLO ULL)</code> 
+       rather than a bare decimal literal, which C silently truncates.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Opaques
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Opaque values can now be constructed along three independent axes. 
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      First the hardness family (the <em>kind</em>):
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+               <code class="language-c">identity</code>
+
+</li>
+
+<li>
+               <code class="language-c">modular</code>
+
+</li>
+
+<li>
+               <code class="language-c">mba</code>
+
+</li>
+
+<li>
+               <code class="language-c">structure_state</code>
+
+</li>
+
+<li>
+               <code class="language-c">scalar_state</code>
+
+</li>
+
+<li>
+               <code class="language-c">environment</code>
+
+</li>
+
+<li>
+               <code class="language-c">plugin</code> 
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+</li>
+
+<li>
+      Second, the scope of analysis needed to defeat them (the <em>resilience</em>): 
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+               <code class="language-c">trivial</code>
+
+</li>
+
+<li>
+               <code class="language-c">local</code>
+
+</li>
+
+<li>
+               <code class="language-c">global</code>
+
+</li>
+
+<li>
+               <code class="language-c">interprocedural</code>. 
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+</li>
+
+<li>
+      Third, the <em>size</em> of the opaque expression.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The default for <em>resilience</em> is every level <em>except</em> <code class="language-c">trivial</code>. 
+Trival contains invariants a C compiler may fold to a constant at <code class="language-c">-O2</code>; these
+are kept only for educational purposes. 
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+See <a href="https://tigress.wtf/opaque.html" class="text-primary">InitOpaque</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      The default set of opaque invariants are set with the <code class="language-c">--Transform=InitOpaque</code>) transform
+      using the two options: 
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+                <code class="language-c">--InitOpaqueInvariantKinds</code>
+
+</li>
+
+<li>
+                <code class="language-c">--InitOpaqueInvariantResilience</code>
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+</li>
+
+<li>
+        The new <code class="language-c">--InitOpaqueMaxSize</code> option sets the default composition size 
+        for transformations that do not set their own. Defaults to <code class="language-c">1</code>.
+
+</li>
+
+<li>
+      The <code class="language-c">--InitOpaqueStructs</code> option is a <b>deprecated</b> spelling of 
+         <code class="language-c">--InitOpaqueInvariantKinds</code>, kept for compatibility; 
+         it maps the old kind names onto the new ones. The <code class="language-c">input</code> kind was removed.
+         Default <code class="language-c">none</code>.
+
+</li>
+
+<li>
+        The kind, resilience, and size can be set for
+        all transformations <code class="language-c">&lt;T&gt;</code> that need them (<code class="language-c">AddOpaque</code>, <code class="language-c">Flatten</code>, 
+         <code class="language-c">Merge</code>, <code class="language-c">Virtualize</code>, <code class="language-c">InitBranchFuns</code> and 
+         <code class="language-c">AntiBranchAnalysis</code>): 
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+               <code class="language-c">--&lt;T&gt;OpaqueInvariantKinds</code>  
+
+</li>
+
+<li>
+               <code class="language-c">--&lt;T&gt;OpaqueInvariantResilience</code>  
+
+</li>
+
+<li>
+               <code class="language-c">--&lt;T&gt;OpaqueMaxSize</code>  
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+      For example, for <code class="language-c">AddOpaque</code> we get the three options 
+         <code class="language-c">--AddOpaqueInvariantKinds</code>,
+         <code class="language-c">--AddOpaqueInvariantResilience</code>, and
+         <code class="language-c">--AddOpaqueMaxSize</code>.
+
+        Each default to what  <code class="language-c">InitOpaque</code> set up.
+
+</li>
+
+<li>
+      The option <code class="language-c">--AddOpaqueStructs</code> is now <em>deprecated.</em> 
+      It maps onto the new kinds: 
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+               <code class="language-c">list</code>/<code class="language-c">array</code>&rarr; <code class="language-c">structure_state</code>
+
+</li>
+
+<li>
+               <code class="language-c">env</code>&rarr; <code class="language-c">environment</code>
+
+</li>
+
+<li>
+               <code class="language-c">input</code> was removed. 
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+      Its default is the kinds given to <code class="language-c">InitOpaque.</code>
+      This option will be removed in a future version.
+
+</li>
+
+<li>
+        The new 
+         <code class="language-c">--Transform=InitOpaque --InitOpaqueList=true</code> 
+       option prints the whole opaque-invariant database.
+       This requires the <code class="language-c">--DeityMode=</code><em>password</em> to be set.  
+       This allows the exact name of an opaque predicate to be passed to 
+         <code class="language-c">--&lt;T&gt;Select</code>.
+
+</li>
+
+<li>
+      A new per-transform <code class="language-c">--&lt;Transform&gt;Select</code> option 
+      (e.g. <code class="language-c">--AddOpaqueSelect=<em>name</em></code>) draws opaque invariants by exact name, 
+      bypassing the kind and resilience selection.
+      This requires the <code class="language-c">--DeityMode=</code><em>password</em> to be set.  
+
+</li>
+
+<li>
+        The new 
+         <code class="language-c">--InitOpaqueObfuscate</code> option, on by default, applies light obfuscation to the 
+         initialization of the opaque state variables.
+
+</li>
+
+<li>
+         The new 
+         <code class="language-c">--UpdateOpaqueObfuscate</code> option, on by default, applies light obfuscation 
+         to the opaque state updates.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ DeityMode
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      The new <code class="language-c">--DeityMode=</code><em>password</em> option gives
+      access to additional Tigress features.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ AntiBranchAnalysis
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      See <a href="https://tigress.wtf/encodeBranches.html" class="text-primary">AntiBranchAnalysis</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+       The option 
+         <code class="language-c">--AntiBranchAnalysisBranchFunFlatten</code> has been renamed 
+         <code class="language-c">--AntiBranchAnalysisFlatten</code>.
+
+</li>
+
+<li>
+        The new 
+         <code class="language-c">--AntiBranchAnalysisFraction</code> option controls how many of the 
+         unconditional branches are encoded, defaulting to  <code class="language-c">%100</code>.
+
+</li>
+
+<li>
+      In  <code class="language-c">--AntiBranchAnalysisKinds,</code> 
+       the new kind 
+         <code class="language-c">goto2push2</code> replaces 
+         <code class="language-c">goto L</code> with 
+         <code class="language-c">push L; leal; jmp</code>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ CleanUp
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      See <a href="https://tigress.wtf/cleanUp.html" class="text-primary">CleanUp</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+         The new 
+         <code class="language-c">--CleanUpRenameKinds</code> option chooses the style of the new identifiers: 
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+                <code class="language-c">short</code> names (the default)
+
+</li>
+
+<li>
+               English words (<code class="language-c">english</code>, <code class="language-c">english2</code>)
+
+</li>
+
+<li>
+               identifiers drawn from the Exebench benchmark suite (<code class="language-c">exebench</code>, <code class="language-c">exebench2</code>)
+
+</li>
+
+<li>
+               a word followed by a programming abbreviation in camel case (<code class="language-c">englishAbbr</code>, <code class="language-c">exebenchAbbr</code>).
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+</li>
+
+<li>
+      <code class="language-c">--CleanUpKinds</code> has two new kinds: 
+
+<li>
+               <code class="language-c">noLineNumbers</code> drops the <code class="language-c">#line</code> directives we emit before globals 
+
+</li>
+
+<li>
+              <code class="language-c">noNestedBlocks</code> flattens blocks-within-blocks.
+
+</li>
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ ImplicitFlow
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      See <a href="https://tigress.wtf/implicitFlow.html" class="text-primary">InitImplicitFlow</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+         A new implicit-flow kind 
+         <code class="language-c">callChain</code> for 
+         <code class="language-c">--InitImplicitFlowKinds</code> copies a variable by passing it along a chain of calls.
+
+</li>
+
+<li>
+         The new 
+         <code class="language-c">--InitImplicitCallChainLength</code> option sets the length of the call chain generated for 
+         <code class="language-c">--InitImplicitFlowKinds=callChain</code>, defaulting to 
+         <code class="language-c">800</code>.
+
+</li>
+
+<li>
+      The new 
+         <code class="language-c">--InitImplicitFlowCallChainName</code> option sets the base name of the generated call-chain 
+         functions, with the number appended, defaulting to 
+         <code class="language-c">callChain</code>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ LowerType
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      See <a href="https://tigress.wtf/lowerType.html" class="text-primary">LowerType</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--Transform=LowerType</code> is a new transformation. Its <code class="language-c">float2fixed</code> converter 
+         rewrites a function's <code class="language-c">float</code> and <code class="language-c">double</code> computation as 
+         fixed-point integer arithmetic. This allows integer obfuscators like 
+         <code class="language-c">EncodeArithmetic</code> and <code class="language-c">EncodeData</code> to transform code they 
+         previously could not see at all. 
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ EncodeExternal
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      See <a href="https://tigress.wtf/encodeExternal.html" class="text-primary">EncodeExternal</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+         <code class="language-c">--EncodeExternalKind=embed</code> can now include source code from more common libraries: 
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+               <code class="language-c">random</code> (PRNG)
+
+</li>
+
+<li>
+               <code class="language-c">checksum</code>
+
+</li>
+
+<li>
+               <code class="language-c">parse</code>
+
+</li>
+
+<li>
+               <code class="language-c">bignum</code>
+
+</li>
+
+<li>
+               crude bit-trick approximations of the math functions
+
+</li>
+
+<li>
+               <code class="language-c">crypto</code>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ 128-bit integers
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--Allow128BitInts</code> is a new top-level option saying whether the 
+         <em>target</em> has 128-bit integers ( <code class="language-c">__int128</code>). You normally do not set 
+         it: it is read from the machine model that <code class="language-c">--Environment</code> selects.
+
+</li>
+
+<li>
+         A function carrying a 128-bit integer 
+         constant cannot be jitted, since MyJit has no 128-bit register, and Tigress now 
+         reports this instead of truncating the constant to 64 bits and silently changing what 
+         the function computes. When the constant comes from a value codec rather than from 
+         your own source, <code class="language-c">--Allow128BitInts=false</code> makes the codec pick a 
+         formulation that stays in 64 bits.
+      See <a href="https://tigress.wtf/jitter.html" class="text-primary">Jit</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Virtualize
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      See <a href="https://tigress.wtf/virtualize.html" class="text-primary">Virtualize</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+         The default for 
+         <code class="language-c">--VirtualizeDynamicBytecode</code>, which makes the virtualized bytecode self-modifying, 
+         is now <code class="language-c">false</code> instead of <code class="language-c">hard</code>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ EncodeData
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      See <a href="https://tigress.wtf/encodeData.html" class="text-primary">EncodeData</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+        The Residue Number Coding codec (<code class="language-c">--EncodeDataCodecs=rnc</code>) is now correct 
+         at <em>every</em> integer type; before 4.1 it silently computed wrong values at 
+         <code class="language-c">unsigned short</code>, <code class="language-c">unsigned int</code>, <code class="language-c">long</code> and 
+         <code class="language-c">unsigned long</code>. Its one remaining limitation is now documented: the codec 
+         is exact only while the value being reconstructed stays below half the product of its 
+         moduli, which a single operation on in-range values always satisfies, but a value 
+         <em>accumulated</em> in a loop eventually will not. Prefer <code class="language-c">poly1</code> or 
+         <code class="language-c">xor</code> for such variables; both are exact for every value of every integer 
+         type.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Major Bug Fixes
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="step1 TIGRESS-OL" id="step1-dy">
+    <div class="container">
+        <div class="step-container">
+
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            1
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed a spurious <code class="language-c">Invalid combination of type specifiers</code> error when a typedef redefined an existing type name with an attribute in between, as in <code class="language-c">typedef int __attribute__((mode(__pointer__))) intptr_t;</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            2
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Tigress no longer reports <code class="language-c">Invalid combination of type specifiers</code> on the typedefs in system headers such as <code class="language-c">bits/floatn-common.h</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            3
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      The <code class="language-c">JitDynamic</code> transform now works on Darwin/ARM64, where the transformed program previously died with a bus error at the first block decode because Apple Silicon forbids a page that is writable and executable at the same time.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            4
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Generated code no longer uses the MSVC-only <code class="language-c">__inline</code> specifier, which GCC did not understand and which left merged functions such as <code class="language-c">base64_decode_ctx_init</code> as undefined references at link time.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            5
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed the type checking of MBA plugin functions for comparison operators, which wrongly rejected valid declarations such as <code class="language-c">long mba_Eq_2(long a, long y)</code> with a <code class="language-c">Wrong argument types</code> error.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            6
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed <code class="language-c">Merge</code> passing an untyped <code class="language-c">0</code> as the return-value argument of a merged <code class="language-c">void</code> function, which broke compilation when <code class="language-c">EncodeLiterals</code> was applied afterwards and turned that <code class="language-c">0</code> into an opaque integer.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            7
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed a failure when applying <code class="language-c">Jit</code> to a program that had already been processed by <code class="language-c">Merge</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            8
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      The <code class="language-c">Virtualize</code> transform now handles <code class="language-c">!p</code> for every pointer type, not just <code class="language-c">void *</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            9
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed the ordering of ordinary labels around <code class="language-c">case</code> and <code class="language-c">default</code> labels in a <code class="language-c">switch</code>, which came out reversed and could redirect a <code class="language-c">goto</code> to the wrong place.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            10
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed a crash caused by printing the wrong label for a <code class="language-c">goto</code> when the target statement carried several labels, for example a label following a <code class="language-c">default:</code> label in a <code class="language-c">switch</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            11
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Code generated by the <code class="language-c">Checksum</code> transform now compiles under GCC 15 without the pointer type errors that previously required <code class="language-c">-fpermissive</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            12
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed the ordering of generated declarations for functions carrying the two-argument <code class="language-c">__attribute__((__malloc__(deallocator, 1)))</code>, whose deallocator could be declared after its allocator and make GCC reject the output with <code class="language-c">'free_buffer' undeclared here (not in a function)</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            13
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed <code class="language-c">Virtualize</code> with <code class="language-c">--VirtualizeDynamicBytecode=true</code> emitting the bytecode array twice, the second copy all zeros, which made the obfuscated program loop forever.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            14
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed crashes, illegal instructions and wrong results in programs transformed with <code class="language-c">SelfModify</code> on Darwin/ARM.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            15
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      The <code class="language-c">Virtualize</code> transform no longer generates casts from an integer to a pointer of a different size, which produced <code class="language-c">-Wint-to-pointer-cast</code> warnings.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            16
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed incompatible-pointer-type errors when compiling code from <code class="language-c">Virtualize</code> that assigns to and reads from the virtual program counter.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            17
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      On Darwin, preprocessing now passes <code class="language-c">-U__BLOCKS__</code>, so system headers that declare Clang block-pointer parameters with <code class="language-c">^</code>, such as <code class="language-c">scandir_b</code> in <code class="language-c">&lt;dirent.h&gt;</code>, no longer cause a syntax error regardless of whether <code class="language-c">tigress.h</code> was included first.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            18
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      The <code class="language-c">#define _Noreturn</code> workaround has been removed from <code class="language-c">tigress.h</code>, so the C11 <code class="language-c">_Noreturn</code> specifier is now parsed properly and its noreturn semantics survive into the obfuscated output.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            19
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Including <code class="language-c">&lt;stdatomic.h&gt;</code> and using the C11 <code class="language-c">_Atomic</code> type specifier no longer causes a parse error.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            20
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed <code class="language-c">Merge</code> failing with <code class="language-c">Cannot find the new copy of local variable</code> on a function containing a variable-length array such as <code class="language-c">int arr[V]</code>, both on its own and combined with <code class="language-c">Flatten</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            21
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed <code class="language-c">InitFunctions</code> discarding the bounds of initialized arrays, so an array declared with a constant bound is no longer shrunk to a single element.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            22
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed a syntax error on the C23 / clang fixed-underlying-type enum <code class="language-c">enum : &lt;type&gt; { ... }</code>, which blocked any source that transitively included a modern macOS SDK header such as <code class="language-c">&lt;mach/vm_types.h&gt;</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            23
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      The wrapper no longer prints an empty <code class="language-c">Using compiler:</code> when <code class="language-c">--Compiler</code> is omitted, and reports the compiler version consistently when <code class="language-c">--Compiler</code> and <code class="language-c">--Environment</code> are resolved from each other.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            24
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      <code class="language-c">AddOpaque</code> with a math opaque kind no longer inserts a predicate that reads uninitialized local variables, which was undefined behaviour and could change what the obfuscated program computed.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            25
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed <code class="language-c">Optimize</code> deleting a <code class="language-c">goto</code> whose target is the next statement without moving that statement's labels or re-pointing the branches that named it, which left a branch pointing at a label that no longer existed.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            26
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed <code class="language-c">Optimize</code> rebuilding <code class="language-c">sizeof(expr)</code> as <code class="language-c">_Alignof(expr)</code>, which gives the wrong value for anything whose size differs from its alignment.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            27
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      <code class="language-c">--OptimizeDumpInterferenceGraph=true</code> now writes the graph it promises, instead of doing nothing while <code class="language-c">--Verbosity=3</code> wrote the file whether or not it was asked for.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            28
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      <code class="language-c">--EncodeDataCodecs=rnc</code> no longer computes silently wrong values, and is now correct at every integer type; it was wrong at <code class="language-c">unsigned short</code>, <code class="language-c">unsigned int</code>, <code class="language-c">long</code> and <code class="language-c">unsigned long</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            29
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed a generated bit mask being built from a 32-bit <code class="language-c">int</code> and then shifted by up to 63 places, undefined behaviour that put garbage values into the obfuscated program.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            30
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      <code class="language-c">--CleanUpKinds=noExterns</code> now also drops the system-header type definitions and static-inline helpers that came with the declarations it removes, so re-adding the <code class="language-c">#include</code> files no longer causes redefinition errors.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            31
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Unary <code class="language-c">+</code> now performs the C11 integer promotion, so <code class="language-c">sizeof(+c)</code> on a <code class="language-c">char</code> is <code class="language-c">sizeof(int)</code>; without it an obfuscated program could print different values from the original.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            32
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      The <code class="language-c">__builtin_bswap&lt;N&gt;</code> family is now declared unsigned, as GCC and clang declare it, instead of signed.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            33
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Long double floating constants no longer print a <code class="language-c">treating long double constant ... as double constant</code> warning to the terminal, even at <code class="language-c">--Verbosity=0</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            34
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed a segmentation fault in the prologue of a jitted function containing an indirect call under <code class="language-c">--JitObfuscateArguments</code>, caused by a garbage frame size.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            35
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Added the C23 <code class="language-c">nullptr</code> keyword, without which no program compiled against a C23 standard library could be obfuscated at all.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            36
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed <code class="language-c">Virtualize</code> aborting with <code class="language-c">findField: '_unsigned___int128' not found</code> on a function whose body contains a 128-bit value.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            37
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed an embedded library's <code class="language-c">unsigned char</code> coming out signed, which made every <code class="language-c">EncodeExternal</code>-embedded crypto hash produce the wrong digest.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            38
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed struct-typed library globals being emitted in the wrong order, which crashed Tigress on every embedded library with global tables, such as <code class="language-c">libMath</code> and <code class="language-c">libCrypto</code>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            39
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed <code class="language-c">--VirtualizeAddOpaqueToBogusFuns=true</code> corrupting the generated interpreter's dispatch table for the pointer-based dispatch methods, which made the obfuscated program die on a wild computed goto.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            40
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      <code class="language-c">Jit</code> now reports that it cannot represent a 128-bit integer constant, instead of silently truncating it to 64 bits and changing what the function computes.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            41
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed <code class="language-c">--EncodeExternalKind=embed</code> truncating to 32 bits the result of an embedded function called without a visible prototype, which crashed at run time with no diagnostic.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card separline pb-4">
+                <div class="step-element d-flex">
+                    <div class="step-wrapper pr-3">
+                        <h3 class="step d-flex align-items-center justify-content-center">
+                            42
+                        </h3>
+                    </div>          
+                    <div class="step-text-content">
+                        <p class="mbr-step-text mbr-fonts-style display-7">
+      Fixed 128-bit integer constants being printed as bare decimal literals, which a C compiler silently truncates modulo 2^64; this made the <code class="language-c">rnc</code> codec decode to the wrong value and could leave the obfuscated program looping forever.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<br>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/prism/prism.js"></script>
+  
+</body>
+</html>
