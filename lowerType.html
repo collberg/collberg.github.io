@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Maker Description">
+  
+   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
+  
+ <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #000000
+}
+h3 {
+   color: #000000
+}
+code {
+  font-family:     "Courier New"
+                    Courier
+                    monospace;
+  color: black;
+}
+
+</style>
+  
+</head>
+<body>
+  
+  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+
+        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="" title="" style="height: 4.1rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Usage</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-quickstart.html">Quickstart<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-mergeFiles.html">File merge<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-crossCompile.html">Cross compile</a>
+      <a class="text-white dropdown-item text-primary display-4" href="recipes.html">Recipes</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-libraries.html">Libraries</a>
+      <a class="text-white dropdown-item text-primary display-4" href="top-level.html">Top-Level Options</a>
+      <a class="text-white dropdown-item text-primary display-4" href="plugins.html">Plugins</a>
+      <a class="text-white dropdown-item text-primary display-4" href="issues.html">Issues</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-test.html">Testing</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Platforms</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-linux.html">Linux<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-macos.html">MacOS<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-windows.html">Windows<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-android.html">Android<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-wasm.html">WASM<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="cpp.html">C++<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Users</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-academics.html">For academics<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-students.html">For students<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-practitioners.html">For practitioners<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-developers.html">For developers<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="false" data-toggle="dropdown-submenu">News</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Transformations</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="control-transforms.html">Control</a>
+      <a class="text-white dropdown-item text-primary display-4" href="data-transforms.html">Data</a>
+      <a class="text-white dropdown-item text-primary display-4" href="functions-transforms.html">Functions</a>
+      <a class="text-white dropdown-item text-primary display-4" href="integrity-transforms.html">Integrity</a>
+      <a class="text-white dropdown-item text-primary display-4" href="antiAnalysis-transforms.html">Anti analysis</a>
+      <a class="text-white dropdown-item text-primary display-4" href="other-transforms.html">Other</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">About</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-history.html">History<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-faq.html">FAQ<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-consulting.html">Training<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-publications.html">Pubs</a></div>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="contact.html" aria-expanded="false"><span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="tigress-download.html" aria-expanded="false"><span class="mbrib-download mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+</ul>
+            
+        </div>
+    </nav>
+
+</section>
+
+<br><br><br><br>
+
+<section class="mbr-section content4 TIGRESS-TITLE" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+<center><h1 style="font-size: 60px; font-weight:400"> Lower Type</h1></center>
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<center><img width="500px" src="tigress3-images//lowerType-front-page.png"></center>
+
+<a class="anchor" id="lowerType">&nbsp;</a>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The integer obfuscators &mdash; <code class="language-c">EncodeArithmetic</code>, <code class="language-c">EncodeData</code>
+&mdash; cannot see floating-point code. <code class="language-c">LowerType</code> makes it visible to
+them: its <code class="language-c">float2fixed</code> converter rewrites a function's <code class="language-c">float</code> and
+<code class="language-c">double</code> computation as <b>fixed-point integer</b> arithmetic in a chosen
+<b>Q-format</b>. The function's parameters and return value stay floating point,
+converted at entry and at the return, so its callers are unchanged.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>LowerType</tt></td>
+<td> Type-directed lowering of a value's representation. The <tt>float2fixed</tt> converter replaces the floating-point locals and parameters of a function with fixed-point integers (a Q-format), rewriting the floating-point arithmetic as integer operations and routing transcendental calls (<tt>sqrt</tt>, <tt>log10</tt>, <tt>exp</tt>, <tt>pow</tt>, <tt>hypot</tt>, <tt>fabs</tt>, <tt>fmin</tt>, <tt>fmax</tt>, <tt>floor</tt>, <tt>ceil</tt>, <tt>round</tt>, ...); a lowered value cast to an integer (e.g. <tt>(int)floor(x)</tt> for an index) becomes its integer part to the embedded <tt>libFixed</tt> library. The result is integer code that the integer obfuscators (<tt>EncodeArithmetic</tt>, <tt>EncodeData</tt>) can then protect. A function's parameters and return value stay floating-point (they are converted at entry and return -- the ABI boundary), and lowered variables are declared with a distinctive typedef <tt>PREFIX_FIXED_Q&lt;m&gt;p&lt;n&gt;</tt> so a reviewer can see which values were converted. Fixed point is a bounded-range, approximate representation; the transform refuses rather than mis-lower on constructs it does not yet handle (written floating-point globals, escaping local float buffers). A call to an un-routed callee crosses the value boundary (its float arguments are decoded and any lowered result re-encoded), so lowered code composes with printf, helpers, and libm. Local float arrays are lowered in place when their address does not escape. Floating-point pointer parameters (double *buf) are lowered at the value boundary -- loads encode / stores decode -- so the interior algorithm is protected while the pointee stays IEEE. </td>
+</tr>
+<tr>
+<td><tt>--LowerTypeConvert</tt></td>
+<td><tt>float2fixed</tt></td>
+<td> Which conversion to apply. Default=float2fixed.
+<ul>
+   <li> <tt>float2fixed</tt> = Lower floating-point values to fixed-point integers.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--LowerTypeType</tt></td>
+<td><tt>float, double, all</tt></td>
+<td> Which source floating-point type(s) to lower. Under the same-width rule a <tt>float</tt> lowers to a 32-bit container and a <tt>double</tt> to a 64-bit container. Default=all.
+<ul>
+   <li> <tt>float</tt> = Lower only <tt>float</tt> variables.
+   <li> <tt>double</tt> = Lower only <tt>double</tt> variables.
+   <li> <tt>all</tt> = Lower every floating-point variable.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--LowerTypeFixedFraction</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> The number of fraction bits <em>n</em> for the <tt>float2fixed</tt> converter; the Q-format is <tt>Q(width-n)p(n)</tt> (e.g. <tt>24</tt> gives <tt>Q40p24</tt> in a 64-bit container: range about +/-2^15, resolution 2^-24). Larger <em>n</em> is more precise but narrows the representable range. The default (<tt>24</tt>, <tt>Q40p24</tt>) keeps multiply/divide within <tt>int64</tt> so no 128-bit widening is needed (see below). Default=24.</td>
+</tr>
+<tr>
+<td><tt>--LowerTypeFixedBits</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> The container width in bits for the <tt>float2fixed</tt> converter: <tt>64</tt> (an <tt>int64</tt> container, the default) or <tt>32</tt> (an <tt>int32</tt> container). A 32-bit container is the same size as a C <tt>float</tt>, so lowering <tt>float</tt> storage (locals, buffers, struct fields) keeps its layout size-safe -- a <tt>float[N]</tt> becomes an <tt>int32[N]</tt> of the same footprint. It halves the memory of lowered data and is friendlier to 32-bit targets, at a narrower range/precision: with <tt>Q16.16</tt> (<tt>--LowerTypeFixedFraction=16</tt>) the range is about +/-2^15 with resolution 2^-16. A 32-bit container always widens multiply/divide through <tt>int64</tt> (so <tt>--Allow128BitInts</tt> does not apply), and it cannot host the <tt>Q32.32</tt> libFixed transcendental tier, so any routed <tt>sqrt</tt>/<tt>exp</tt>/... falls back to the value boundary (a cleartext <tt>libm</tt> call on the decoded double) instead. The fraction must satisfy <tt>1 &lt;= n &lt; bits</tt>. Default=64.</td>
+</tr>
+<tr>
+<td><tt>--LowerTypeBoundary</tt></td>
+<td><tt>refuse, convert</tt></td>
+<td> What to do at a frontier that cannot be lowered in place -- a written shared global, or a local whose address escapes. It does not affect truly un-representable constructs (infinity/NaN, a <tt>:region</tt> qualifier, an unsupported expression), which are refused under either policy. Default=convert.
+<ul>
+   <li> <tt>refuse</tt> = Fail with a diagnostic naming the site (strict).
+   <li> <tt>convert</tt> = Leave the object IEEE and route its accesses through the value boundary (best-effort: the program still lowers and runs, the arithmetic is still fixed-point, only that object's storage stays a true double).
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--LowerTypeSpecials</tt></td>
+<td><tt>refuse, exclude, sentinel, saturate</tt></td>
+<td> How a lowered function that constructs or classifies a special value (infinity / NaN via <tt>INFINITY</tt>, <tt>NAN</tt>, <tt>isnan</tt>, <tt>isinf</tt>, ...) is handled. Fixed-point has no infinity or NaN, so this is the dedicated policy axis for them (independent of <tt>--LowerTypeBoundary</tt>, which governs the memory/ABI frontiers). A system inf/NaN helper the function set sweeps in is never lowered regardless of this setting. Default=exclude.
+<ul>
+   <li> <tt>refuse</tt> = Fail with a diagnostic (LT-SPECIAL) naming the site.
+   <li> <tt>exclude</tt> = Leave the function in IEEE floating point (excluded from the lowered set); its callees still lower, reaching it through the value boundary. Behaviour-preserving.
+   <li> <tt>sentinel</tt> = Rewrite the common idioms so the function lowers at zero runtime cost -- an INFINITY min/max sentinel becomes the largest finite Q value, a NaN constructor becomes 0, and a defensive isnan/isinf/isfinite classifier folds to a constant (a Q value is always finite); anything unmatched falls back to exclude. Exact for ordinary inputs, but a genuine infinity/NaN INPUT is treated as finite.
+   <li> <tt>saturate</tt> = Represent infinity/NaN with reserved Q sentinel values and propagate them through every operation (branch-free), so the function lowers faithfully; costs a few integer ops per operation and a few values at the range extremes.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--LowerTypeInline</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Inline the embedded <tt>libFixed</tt> transcendental helpers (and their integer dependencies) into the caller, transitively, so the fixed-point approximation's integer arithmetic (shifts, multiplies, the polynomial evaluation) is exposed rather than hidden behind a call. This lets a following <tt>EncodeArithmetic</tt> obfuscate it and the C compiler optimise it; the now-unused library definitions can be dropped with <tt>--Transform=CleanUp --CleanUpKinds=removeUnusedFunctions</tt>. Turn it off to keep the transcendentals as calls. Default=true.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Example
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Before:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">double diagonal(double w, double h) {
+   double area;
+
+   area = w * h;
+   return sqrt(area) / 2.0;
+}
+</code></pre></div><br>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+After <code class="language-c">--LowerTypeConvert=float2fixed --LowerTypeFixedFraction=24</code>. The
+arguments are converted to Q40.24 on entry, the multiply and divide carry the
+Q-format scaling, <code class="language-c">sqrt</code> becomes a call into the embedded
+<code class="language-c">libFixed</code>, and the result is converted back:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">typedef long long PREFIX_FIXED_Q40p24;
+
+double diagonal(double w, double h) {
+   PREFIX_FIXED_Q40p24 area, t, w_fx, h_fx;
+
+   w_fx = (long long)(w * 16777216.);
+   h_fx = (long long)(h * 16777216.);
+   area = w_fx * h_fx >> 24;
+   t    = fixed__sqrt__q32p32__relerr_0p000001(area << 8) >> 8;
+   return (double)((t << 24) / 33554432LL) / 16777216.;
+}
+</code></pre></div><br>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Lowered variables get the distinctive typedef
+<code class="language-c">PREFIX_FIXED_Q&lt;m&gt;p&lt;n&gt;</code>, so a reviewer can see which values
+were converted and in what format.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ What it covers
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+<b>Locals</b>, parameter shadows, and local float <b>arrays</b>, whose element
+type becomes the container.
+
+</li>
+
+<li>
+<b>Arithmetic</b>: <code class="language-c">+</code> and <code class="language-c">-</code> are plain integer ops, <code class="language-c">*</code>
+and <code class="language-c">/</code> apply the Q-format scaling, and comparisons are direct integer
+compares (a Q-format is linear and monotone).
+
+</li>
+
+<li>
+<b>Transcendentals</b> &mdash; <code class="language-c">sqrt</code>, <code class="language-c">hypot</code>, <code class="language-c">log</code>,
+<code class="language-c">exp</code>, <code class="language-c">pow</code>, <code class="language-c">sin</code>, <code class="language-c">cos</code>, <code class="language-c">floor</code>,
+<code class="language-c">round</code>, and friends &mdash; are routed to the embedded
+<code class="language-c">libFixed</code>. <code class="language-c">(int)floor(x)</code> becomes the integer part.
+
+</li>
+
+<li>
+<b>Other calls</b> cross the value boundary: float arguments are decoded, a
+result assigned to a lowered variable is re-encoded. So lowered code composes
+with <code class="language-c">printf</code>, un-lowered helpers, and non-routed <code class="language-c">libm</code>.
+
+</li>
+
+<li>
+<b>Pointer parameters</b> are lowered at the value boundary too: a load
+encodes, a store decodes. The algorithm is protected in Q-space while the ABI
+and the buffer stay IEEE &mdash; sound whatever the aliasing.
+
+</li>
+
+<li>
+<b>Globals and struct fields</b> are retyped in memory when the lowered set is
+self-contained with respect to them, and otherwise handled at the value
+boundary.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Q-format and targets
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The Q-format is <code class="language-c">Q(width-n)p(n)</code>, chosen with
+<code class="language-c">--LowerTypeFixedFraction=n</code>: more fraction bits buy resolution
+(<code class="language-c">2^-n</code>) and cost range. Multiply and divide need a widening
+intermediate, and whether that may be a 128-bit integer is a property of the
+target, not of this transform &mdash; so it comes from the global
+<code class="language-c">--Allow128BitInts</code>, which defaults to what the machine model says the
+target has. Where a 128-bit integer is available the widening is exact for any
+in-range value; where it is not, the arithmetic stays in 64 bits and the
+fraction must be chosen so the products fit in <code class="language-c">int64</code>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Two cases are worth setting the flag off by hand even though the target does
+have the type: <b>WebAssembly</b>, where clang does provide <code class="language-c">__int128</code>
+but lowers a multiply or divide to a <code class="language-c">__multi3</code> / <code class="language-c">__udivti3</code>
+library call, and any function you intend to <code class="language-c">--Transform=Jit</code> or
+<code class="language-c">Virtualize</code> afterwards.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Composing
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Run <code class="language-c">LowerType</code> before an integer obfuscator, which can then protect the
+now-integer computation:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Transform=LowerType --LowerTypeConvert=float2fixed \
+          --LowerTypeFixedFraction=24 --Functions=diagonal \
+        --Transform=EncodeArithmetic --Functions=diagonal \
+        in.c --out=out.c
+</code></pre></div><br>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Limitations
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Fixed point is a <b>bounded-range, approximate</b> representation, so
+<code class="language-c">LowerType</code> suits tolerant code &mdash; measurement, thresholds,
+geometry, simulation &mdash; not bit-exact IEEE work. Rather than mis-lower it
+<b>refuses</b> what it cannot yet handle: a written float global still reachable
+from un-lowered code, escaping float struct fields, a local float buffer whose
+address escapes (external code would read the container integers as doubles),
+and unsupported callees. Pointer-referenced memory is a boundary, not an escape
+&mdash; but the pointee values themselves are not obfuscated; that needs the
+whole-program mode.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<code class="language-c">LowerType</code> preserves the atomic-region and barrier annotations other
+transforms leave behind, and inserts its own entry conversions through the same
+mechanism, so it composes safely in a pipeline. Because lowering is
+type-directed and function-granular &mdash; a variable's type spans the whole
+function &mdash; a <code class="language-c">--Functions=f:region</code> qualifier cannot be honoured
+and is <b>refused</b> rather than silently widened.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<br>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/prism/prism.js"></script>
+  
+</body>
+</html>
