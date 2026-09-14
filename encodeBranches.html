@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -290,16 +291,48 @@ It's therefore a good idea to merge it with other functions in the program.
 </tr>
 <tr>
 <td><tt>--InitBranchFunsOpaqueStructs</tt></td>
-<td><tt>list, array, input, env, *</tt></td>
-<td> Comma-separated list of the kinds of opaque constructs to use when obfuscating the branch function. Default=list,array.
+<td><tt></tt></td>
+<td> <em>Deprecated spelling of <tt>--InitBranchFunsOpaqueInvariantKinds</tt></em> Kept for compatibility. Replace <tt>--InitBranchFunsOpaqueStructs=list,array</tt> with <tt>--InitBranchFunsOpaqueInvariantKinds=structure_state</tt>. Replace <tt>--InitBranchFunsOpaqueStructs=env</tt> with <tt>--InitBranchFunsOpaqueInvariantKinds=environment</tt>. The <tt>input</tt> kind was removed in 4.1. Default=list,array.</td>
+</tr>
+<tr>
+<td><tt>--InitBranchFunsOpaqueInvariantKinds</tt></td>
+<td><tt>identity, modular, mba, structure_state, scalar_state, environment, plugin, *</tt></td>
+<td> Comma-separated list of the kinds of opaque invariant branch functions may draw from, named by the hardness family they rest on. Constrained to the kinds set up by <tt>--InitOpaqueInvariantKinds</tt>. <bf>From version 4.1</bf> Default=The kinds specified at InitOpaque..
 <ul>
-   <li> <tt>list</tt> = Generate opaque expressions using linked lists
-   <li> <tt>array</tt> = Generate opaque expressions using arrays
-   <li> <tt>input</tt> = Generate opaque expressions that depend on input. Requires <tt>--Inputs</tt> to set invariants over input.
-   <li> <tt>env</tt> = Generate opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
-   <li> <tt>*</tt> = Same as list,array,input,env
+   <li> <tt>identity</tt> = Universally-true arithmetic identities.
+   <li> <tt>modular</tt> = Residue and modular-arithmetic facts.
+   <li> <tt>mba</tt> = Mixed boolean-arithmetic.
+   <li> <tt>structure_state</tt> = A data structure that maintains an invariant as the program runs and is then queried structurally. Replaces pre-4.1 <tt>list</tt> and <tt>array</tt>.
+   <li> <tt>scalar_state</tt> = Evolving scalar state.
+   <li> <tt>environment</tt> = Opaque expressions from entropy. Requires <tt>--InitEntropy</tt>. Replaces <tt>env</tt>.
+   <li> <tt>plugin</tt> = Invariants supplied by a user plugin.
+   <li> <tt>*</tt> = Same as identity,modular,mba,structure_state,scalar_state,environment,plugin
 </ul>
 </td>
+</tr>
+<tr>
+<td><tt>--InitBranchFunsOpaqueInvariantResilience</tt></td>
+<td><tt>trivial, local, global, interprocedural, inter_process, *</tt></td>
+<td> Comma-separated list of the resilience levels branch functions may draw from -- the scope of analysis an attacker must run to decide the invariant. Constrained to the levels set up by <tt>--InitOpaqueInvariantResilience</tt>. <bf>From version 4.1</bf> Default=The levels specified at InitOpaque..
+<ul>
+   <li> <tt>trivial</tt> = One expression decides it, AND a stock compiler at <tt>-O2</tt> folds it to a constant.
+   <li> <tt>local</tt> = One expression decides it, but <tt>-O2</tt> does not fold it.
+   <li> <tt>global</tt> = Deciding it needs analysis of the whole procedure.
+   <li> <tt>interprocedural</tt> = Deciding it needs whole-program analysis.
+   <li> <tt>inter_process</tt> = Deciding it needs reasoning about concurrent interleavings. Reserved -- no invariant is at this level yet.
+   <li> <tt>*</tt> = Every level, <tt>trivial</tt> included.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--InitBranchFunsOpaqueMaxSize</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> The largest number of sub-opaques one opaque may be composed of. See <tt>--AddOpaqueMaxSize</tt>. <bf>From version 4.1</bf> Default=The value set by <tt>--InitOpaqueMaxSize</tt>..</td>
+</tr>
+<tr>
+<td><tt>--InitBranchFunsOpaqueSelect</tt></td>
+<td><tt></tt></td>
+<td> <em>(Deity mode only.)</em> Comma-separated list of exact invariant names to draw from, bypassing the kind and resilience selection entirely. Names come from <tt>--InitOpaqueList</tt>. Silently inert unless the deity key is supplied with <tt>--DeityMode</tt>. The named invariants must have been set up by InitOpaque, so pair this with a permissive <tt>--InitOpaqueInvariantKinds</tt>/<tt>--InitOpaqueInvariantResilience</tt>. <bf>From version 4.1</bf> Default=none.</td>
 </tr>
 <tr>
 <td><tt>--InitBranchFunsCount</tt></td>
@@ -490,12 +523,13 @@ x86 bytes that have no effect:
 </tr>
 <tr>
 <td><tt>--AntiBranchAnalysisKinds</tt></td>
-<td><tt>branchFuns, goto2call, goto2push, goto2nopSled, *</tt></td>
+<td><tt>branchFuns, goto2call, goto2push, goto2push2, goto2nopSled, *</tt></td>
 <td> Comma-separated list of the kinds of constructs branches can be replaced with. Default=branchFuns.
 <ul>
    <li> <tt>branchFuns</tt> = Generate calls to branch functions. <tt>--Transform=InitBranchFuns</tt> must be given prior to this transform
    <li> <tt>goto2call</tt> = Replace <tt>goto L</tt> with <tt>push L; call lab; ret; lab: ret</tt>
    <li> <tt>goto2push</tt> = Replace <tt>goto L</tt> with <tt>push L; ret</tt>
+   <li> <tt>goto2push2</tt> = Replace <tt>goto L</tt> with <tt>push L; leal; jmp</tt>
    <li> <tt>goto2nopSled</tt> = Replace <tt>goto L</tt> with <tt> goto *p</tt> where p is the address of a sequence of nop:s that eventually lead to L
    <li> <tt>*</tt> = Same as branchFuns,goto2call,goto2push
 </ul>
@@ -503,16 +537,8 @@ x86 bytes that have no effect:
 </tr>
 <tr>
 <td><tt>--AntiBranchAnalysisOpaqueStructs</tt></td>
-<td><tt>list, array, input, env, *</tt></td>
-<td> Comma-separated list of the kinds of opaque constructs to use. Default=list,array.
-<ul>
-   <li> <tt>list</tt> = Generate opaque expressions using linked lists
-   <li> <tt>array</tt> = Generate opaque expressions using arrays
-   <li> <tt>input</tt> = Generate opaque expressions that depend on input. Requires <tt>--Inputs</tt> to set invariants over input.
-   <li> <tt>env</tt> = Generate opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
-   <li> <tt>*</tt> = Same as list,array,input,env
-</ul>
-</td>
+<td><tt></tt></td>
+<td> <em>Deprecated spelling of <tt>--AntiBranchAnalysisOpaqueInvariantKinds</tt></em> Kept for compatibility. Replace <tt>--AntiBranchAnalysisOpaqueStructs=list,array</tt> with <tt>--AntiBranchAnalysisOpaqueInvariantKinds=structure_state</tt>. Replace <tt>--AntiBranchAnalysisOpaqueStructs=env</tt> with <tt>--AntiBranchAnalysisOpaqueInvariantKinds=environment</tt>. The <tt>input</tt> kind was removed in 4.1. Default=list,array.</td>
 </tr>
 <tr>
 <td><tt>--AntiBranchAnalysisObfuscateBranchFunCall</tt></td>
@@ -538,6 +564,46 @@ x86 bytes that have no effect:
 <td><tt>--AntiBranchAnalysisFraction</tt></td>
 <td><tt><em><a href="top-level.html#FRACSPEC">FRACSPEC</a></em></tt></td>
 <td> How many unconditional branches should be encoded. Default=%100.</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisOpaqueInvariantKinds</tt></td>
+<td><tt>identity, modular, mba, structure_state, scalar_state, environment, plugin, *</tt></td>
+<td> Comma-separated list of the kinds of opaque invariant the NOP sled may draw from, named by the hardness family they rest on. Constrained to the kinds set up by <tt>--InitOpaqueInvariantKinds</tt>. <bf>From version 4.1</bf> Default=The kinds specified at InitOpaque..
+<ul>
+   <li> <tt>identity</tt> = Universally-true arithmetic identities.
+   <li> <tt>modular</tt> = Residue and modular-arithmetic facts.
+   <li> <tt>mba</tt> = Mixed boolean-arithmetic.
+   <li> <tt>structure_state</tt> = A data structure that maintains an invariant as the program runs and is then queried structurally. Replaces pre-4.1 <tt>list</tt> and <tt>array</tt>.
+   <li> <tt>scalar_state</tt> = Evolving scalar state.
+   <li> <tt>environment</tt> = Opaque expressions from entropy. Requires <tt>--InitEntropy</tt>. Replaces <tt>env</tt>.
+   <li> <tt>plugin</tt> = Invariants supplied by a user plugin.
+   <li> <tt>*</tt> = Same as identity,modular,mba,structure_state,scalar_state,environment,plugin
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisOpaqueInvariantResilience</tt></td>
+<td><tt>trivial, local, global, interprocedural, inter_process, *</tt></td>
+<td> Comma-separated list of the resilience levels the NOP sled may draw from -- the scope of analysis an attacker must run to decide the invariant. Constrained to the levels set up by <tt>--InitOpaqueInvariantResilience</tt>. <bf>From version 4.1</bf> Default=The levels specified at InitOpaque..
+<ul>
+   <li> <tt>trivial</tt> = One expression decides it, AND a stock compiler at <tt>-O2</tt> folds it to a constant.
+   <li> <tt>local</tt> = One expression decides it, but <tt>-O2</tt> does not fold it.
+   <li> <tt>global</tt> = Deciding it needs analysis of the whole procedure.
+   <li> <tt>interprocedural</tt> = Deciding it needs whole-program analysis.
+   <li> <tt>inter_process</tt> = Deciding it needs reasoning about concurrent interleavings. Reserved -- no invariant is at this level yet.
+   <li> <tt>*</tt> = Every level, <tt>trivial</tt> included.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisOpaqueMaxSize</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> The largest number of sub-opaques one opaque may be composed of. See <tt>--AddOpaqueMaxSize</tt>. <bf>From version 4.1</bf> Default=The value set by <tt>--InitOpaqueMaxSize</tt>..</td>
+</tr>
+<tr>
+<td><tt>--AntiBranchAnalysisOpaqueSelect</tt></td>
+<td><tt></tt></td>
+<td> <em>(Deity mode only.)</em> Comma-separated list of exact invariant names to draw from, bypassing the kind and resilience selection entirely. Names come from <tt>--InitOpaqueList</tt>. Silently inert unless the deity key is supplied with <tt>--DeityMode</tt>. The named invariants must have been set up by InitOpaque, so pair this with a permissive <tt>--InitOpaqueInvariantKinds</tt>/<tt>--InitOpaqueInvariantResilience</tt>. <bf>From version 4.1</bf> Default=none.</td>
 </tr>
 
 
@@ -579,12 +645,6 @@ This transformation has many issues, and should only be used with great care:
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ul>
-
-<li>
-        Currently, only x86 assembly code is generated. If someone is interested
-            in helping to port this to other platforms, let me know. 
-
-</li>
 
 <li>
         It appears as <code class="language-c">goto2push</code> and <code class="language-c">goto2call</code> will often cause
@@ -647,6 +707,53 @@ This transformation has many issues, and should only be used with great care:
         do not modify registers. Eventually, we'll get around to implementing 
         a nop-generator (similar to <a href="https://www.metasploit.com">MetaSploit's</a>) 
             that also allows more complex instructions. 
+
+</li>
+
+<li>
+        In versions prior to <b>4.0.12</b> if there were not goto:s in a function,
+        the Branch Functions transformation would just silently fail. Now an error
+        is generated instead. 
+
+</li>
+
+<li>
+        Branch Functions on code like this that jumps around to labels within in switch 
+        statement seems to inexplicably fail, at least on Arm:
+<div class="container">
+<pre><code class="language-c">void switch_() {
+   puts("switch: ");
+   goto lab7;
+   switch (1) {
+   lab1:
+   lab2:
+   lab3:
+     printf(", SUCCESS-2");
+     goto lab5;
+   lab4:
+   case 1: 
+   case 2: 
+   case 3: 
+      lab5:
+      lab6:
+     printf(", SUCCESS-3");
+     goto lab10;
+   lab7:
+   default:
+      lab8:
+      printf("SUCCESS-1");
+      goto lab2;
+   };
+   lab9:
+   lab10:
+   lab11:
+      puts(", SUCCESS-4");
+      goto lab13;
+   lab12:
+      printf("FAILURE");
+   lab13:;
+}
+</code></pre></div><br>
 
 </li>
 

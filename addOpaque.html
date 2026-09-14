@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -223,6 +224,11 @@ this transformation:
 <td> How many opaques to add to each function. Default=1.</td>
 </tr>
 <tr>
+<td><tt>--AddOpaqueMaxSize</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> The largest number of sub-opaques one opaque predicate may be composed of. With the default of 1 a predicate is a single opaque. With a larger value Tigress composes several independent opaques into one predicate -- <tt>true<sub>1</sub> &amp;&amp; ... &amp;&amp; true<sub>n</sub></tt>, <tt>false<sub>1</sub> || ... || false<sub>n</sub></tt>, or a mix in which one term forces the value and the others are input-dependent <tt>maybe<sub>i</sub></tt>s. A composite rests on several hardness assumptions at once (breaking one sub-opaque does not remove it) and reads more like ordinary program logic, at the cost of larger and slower code. The actual size is drawn at random from 1 to the given value, and the sub-opaques may be of different kinds, so the shape of the composition is not itself a fingerprint. Default=1.</td>
+</tr>
+<tr>
 <td><tt>--AddOpaqueKinds</tt></td>
 <td><tt>call, bug, true, junk, fake, question, *</tt></td>
 <td> Comma-separated list of the types of insertions of bogus computation allowed. Default=<tt>call,bug,true,junk,question</tt>.
@@ -273,16 +279,43 @@ this transformation:
 </tr>
 <tr>
 <td><tt>--AddOpaqueStructs</tt></td>
-<td><tt>list, array, input, env, *</tt></td>
-<td> Default=list,array.
+<td><tt></tt></td>
+<td> <em>Deprecated spelling of <tt>--AddOpaqueInvariantKinds</tt></em> Kept for compatibility. Replace <tt>--AddOpaqueStructs=list,array</tt> with <tt>--AddOpaqueInvariantKinds=structure_state</tt>. Replace <tt>--AddOpaqueStructs=env</tt> with <tt>--AddOpaqueInvariantKinds=environment</tt>. The <tt>input</tt> kind was removed in 4.1. Default=The kinds specified in <tt>--InitOpaqueInvariantKinds</tt>..</td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueInvariantKinds</tt></td>
+<td><tt>identity, modular, mba, structure_state, scalar_state, environment, plugin, *</tt></td>
+<td> Comma-separated list of the kinds of opaque invariant AddOpaque may draw from, named by the hardness family they rest on. Constrained to the kinds set up by <tt>--InitOpaqueInvariantKinds</tt>. <bf>From version 4.1</bf> Default=The kinds specified at InitOpaque..
 <ul>
-   <li> <tt>list</tt> = Generate opaque expressions using linked lists
-   <li> <tt>array</tt> = Generate opaque expressions using arrays
-   <li> <tt>input</tt> = Generate opaque expressions that depend on input. Requires <tt>--Inputs</tt> to set invariants over input.
-   <li> <tt>env</tt> = Generate opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
-   <li> <tt>*</tt> = Same as list,array,input,env
+   <li> <tt>identity</tt> = Universally-true arithmetic identities.
+   <li> <tt>modular</tt> = Residue and modular-arithmetic facts.
+   <li> <tt>mba</tt> = Mixed boolean-arithmetic.
+   <li> <tt>structure_state</tt> = A data structure that maintains an invariant as the program runs and is then queried structurally. Replaces pre-4.1 <tt>list</tt> and <tt>array</tt>.
+   <li> <tt>scalar_state</tt> = Evolving scalar state.
+   <li> <tt>environment</tt> = Opaque expressions from entropy. Requires <tt>--InitEntropy</tt>. Replaces <tt>env</tt>.
+   <li> <tt>plugin</tt> = Invariants supplied by a user plugin.
+   <li> <tt>*</tt> = Same as identity,modular,mba,structure_state,scalar_state,environment,plugin
 </ul>
 </td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueInvariantResilience</tt></td>
+<td><tt>trivial, local, global, interprocedural, inter_process, *</tt></td>
+<td> Comma-separated list of the resilience levels AddOpaque may draw from -- the scope of analysis an attacker must run to decide the invariant. Constrained to the levels set up by <tt>--InitOpaqueInvariantResilience</tt>. <bf>From version 4.1</bf> Default=The levels specified at InitOpaque..
+<ul>
+   <li> <tt>trivial</tt> = One expression decides it, AND a stock compiler at <tt>-O2</tt> folds it to a constant.
+   <li> <tt>local</tt> = One expression decides it, but <tt>-O2</tt> does not fold it.
+   <li> <tt>global</tt> = Deciding it needs analysis of the whole procedure.
+   <li> <tt>interprocedural</tt> = Deciding it needs whole-program analysis.
+   <li> <tt>inter_process</tt> = Deciding it needs reasoning about concurrent interleavings. Reserved -- no invariant is at this level yet.
+   <li> <tt>*</tt> = Every level, <tt>trivial</tt> included.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--AddOpaqueSelect</tt></td>
+<td><tt></tt></td>
+<td> <em>(Deity mode only.)</em> Comma-separated list of exact invariant names to draw from, bypassing the kind and resilience selection entirely. Names come from <tt>--InitOpaqueList</tt>. Silently inert unless the deity key is supplied with <tt>--DeityMode</tt>. The named invariants must have been set up by InitOpaque, so pair this with a permissive <tt>--InitOpaqueInvariantKinds</tt>/<tt>--InitOpaqueInvariantResilience</tt>. <bf>From version 4.1</bf> Default=none.</td>
 </tr>
 
 

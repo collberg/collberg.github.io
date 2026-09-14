@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -824,14 +825,8 @@ variable.
 </tr>
 <tr>
 <td><tt>--FlattenOpaqueStructs</tt></td>
-<td><tt>list, array, *</tt></td>
-<td> Type of opaque predicate to use. Traditionally, for this transformation, <tt>array</tt> is used. Default=array.
-<ul>
-   <li> <tt>list</tt> = Generate opaque expressions using linked lists
-   <li> <tt>array</tt> = Generate opaque expressions using arrays
-   <li> <tt>*</tt> = Same as list,array
-</ul>
-</td>
+<td><tt></tt></td>
+<td> <em>Deprecated spelling of <tt>--FlattenOpaqueInvariantKinds</tt></em> Kept for compatibility. Replace <tt>--FlattenOpaqueStructs=list,array</tt> with <tt>--FlattenOpaqueInvariantKinds=structure_state</tt>. Replace <tt>--FlattenOpaqueStructs=env</tt> with <tt>--FlattenOpaqueInvariantKinds=environment</tt>. The <tt>input</tt> kind was removed in 4.1. Default=array.</td>
 </tr>
 <tr>
 <td><tt>--FlattenImplicitFlowNext</tt></td>
@@ -842,6 +837,46 @@ variable.
 <td><tt>--FlattenImplicitFlow</tt></td>
 <td><tt>S-Expression</tt></td>
 <td> The type of implicit flow to insert. See <tt>--AntiTaintAnalysisImplicitFlow</tt> for a description. Default=none.</td>
+</tr>
+<tr>
+<td><tt>--FlattenOpaqueInvariantKinds</tt></td>
+<td><tt>identity, modular, mba, structure_state, scalar_state, environment, plugin, *</tt></td>
+<td> Comma-separated list of the kinds of opaque invariant flattened code may draw from, named by the hardness family they rest on. Constrained to the kinds set up by <tt>--InitOpaqueInvariantKinds</tt>. <bf>From version 4.1</bf> Default=The kinds specified at InitOpaque..
+<ul>
+   <li> <tt>identity</tt> = Universally-true arithmetic identities.
+   <li> <tt>modular</tt> = Residue and modular-arithmetic facts.
+   <li> <tt>mba</tt> = Mixed boolean-arithmetic.
+   <li> <tt>structure_state</tt> = A data structure that maintains an invariant as the program runs and is then queried structurally. Replaces pre-4.1 <tt>list</tt> and <tt>array</tt>.
+   <li> <tt>scalar_state</tt> = Evolving scalar state.
+   <li> <tt>environment</tt> = Opaque expressions from entropy. Requires <tt>--InitEntropy</tt>. Replaces <tt>env</tt>.
+   <li> <tt>plugin</tt> = Invariants supplied by a user plugin.
+   <li> <tt>*</tt> = Same as identity,modular,mba,structure_state,scalar_state,environment,plugin
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--FlattenOpaqueInvariantResilience</tt></td>
+<td><tt>trivial, local, global, interprocedural, inter_process, *</tt></td>
+<td> Comma-separated list of the resilience levels flattened code may draw from -- the scope of analysis an attacker must run to decide the invariant. Constrained to the levels set up by <tt>--InitOpaqueInvariantResilience</tt>. <bf>From version 4.1</bf> Default=The levels specified at InitOpaque..
+<ul>
+   <li> <tt>trivial</tt> = One expression decides it, AND a stock compiler at <tt>-O2</tt> folds it to a constant.
+   <li> <tt>local</tt> = One expression decides it, but <tt>-O2</tt> does not fold it.
+   <li> <tt>global</tt> = Deciding it needs analysis of the whole procedure.
+   <li> <tt>interprocedural</tt> = Deciding it needs whole-program analysis.
+   <li> <tt>inter_process</tt> = Deciding it needs reasoning about concurrent interleavings. Reserved -- no invariant is at this level yet.
+   <li> <tt>*</tt> = Every level, <tt>trivial</tt> included.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--FlattenOpaqueMaxSize</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> The largest number of sub-opaques one opaque may be composed of. See <tt>--AddOpaqueMaxSize</tt>. <bf>From version 4.1</bf> Default=The value set by <tt>--InitOpaqueMaxSize</tt>..</td>
+</tr>
+<tr>
+<td><tt>--FlattenOpaqueSelect</tt></td>
+<td><tt></tt></td>
+<td> <em>(Deity mode only.)</em> Comma-separated list of exact invariant names to draw from, bypassing the kind and resilience selection entirely. Names come from <tt>--InitOpaqueList</tt>. Silently inert unless the deity key is supplied with <tt>--DeityMode</tt>. The named invariants must have been set up by InitOpaque, so pair this with a permissive <tt>--InitOpaqueInvariantKinds</tt>/<tt>--InitOpaqueInvariantResilience</tt>. <bf>From version 4.1</bf> Default=none.</td>
 </tr>
 
 

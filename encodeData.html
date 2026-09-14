@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -309,7 +310,7 @@ If you want the return value of a function <code class="language-c">fun1</code> 
    <li> <tt>xor</tt> = Exclusive-or with a constant.
    <li> <tt>xorfloat</tt> = Exclusive-or with a constant on floating point values.
    <li> <tt>add</tt> = Add a constant and promote to next largest integer type. Will fail for the largest integer type.
-   <li> <tt>rnc</tt> = Residue Number Coding
+   <li> <tt>rnc</tt> = Residue Number Coding: the value is held as its residues modulo several pairwise-coprime moduli n_i, plus a fresh random multiple of each, so equal values do not encode equally. <b>Correct at every integer type from version 4.1.0</b> (before that it silently computed wrong values at unsigned short, unsigned int, long and unsigned long). <p><b>Range limitation.</b> The codec is exact only while the value being reconstructed stays below half the product of its moduli. A single operation on in-range values always satisfies this, so ordinary arithmetic is correct. It is <em>not</em> guaranteed for a value that keeps growing, because the limit applies to the running value and not to the type: a variable ACCUMULATED in a loop (a counter, a running total, a repeated product) eventually passes it, after which the obfuscated program silently computes a different answer from the original. Large multiplications reach the limit fastest, since a product of two w-bit values is 2w bits wide. Prefer <tt>poly1</tt> or <tt>xor</tt> for such variables -- both are exact for every value of every integer type, because they are bijections modulo 2^w and so wrap exactly as C does. Tracked as tigress_issues#183.
    <li> <tt>poly_xor</tt> = First encode with poly1, then with xor
    <li> <tt>xor_poly</tt> = First encode with xor, then with poly1
    <li> <tt>poly_rnc</tt> = First encode with poly1, then with rnc
@@ -346,7 +347,7 @@ If you want the return value of a function <code class="language-c">fun1</code> 
 <tr>
 <td><tt>--EncodeDataNumberOfPieces</tt></td>
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> Number of pieces in which to break up a value. Only applies to codecs that split values, such as <tt>rnc</tt>. Default=2.</td>
+<td> Number of pieces in which to break up a value. Only applies to codecs that split values, such as <tt>rnc</tt>. <p> The count also decides whether <tt>rnc</tt> can encode a 64-bit value on a target without 128-bit integers (<tt>--Allow128BitInts=false</tt>). Its usual decode reconstructs through the product of all the moduli, which must exceed the type's range and so exceeds 64 bits; the narrow alternative (Garner's mixed-radix reconstruction) needs an <em>unsigned</em> type and <b>at least 3</b> pieces, because a digit step costs twice the width of one modulus. With 2 pieces on a 64-bit value and no 128-bit integers available, <tt>rnc</tt> reports that it cannot encode the value. <b>From version 4.1.0</b> Default=2.</td>
 </tr>
 <tr>
 <td><tt>--EncodeDataStorage</tt></td>

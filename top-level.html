@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -226,7 +227,7 @@ own set of options, all prefixed by the name of the transformation.
 <tr>
 <td><tt>--Input</tt></td>
 <td><tt><a href="top-level.html#INPUTSPEC">INPUTSPEC</a></tt></td>
-<td> Specify invariants over the command line arguments, such the range of integer values a particular argument may take, the range of lengths of an argument, or the string value of an argument. These are used by the <em>input</em> opaque predicate, which is created by <code>--InitOpaqueStructs=input</code>. Default=0.</td>
+<td> Specify invariants over the command line arguments, such the range of integer values a particular argument may take, the range of lengths of an argument, or the string value of an argument. (<em>The <code>input</code> opaque kind was removed in version 4.1.</em>) Default=0.</td>
 </tr>
 
 
@@ -514,7 +515,7 @@ a function.
 <tr>
 <td><tt><em>INPUTSPEC</em></tt></td>
 <td><tt>int, ?int, int?, int?int, +int, -int, "int", "string", "length"</tt></td>
-<td> <a class="anchor" id="INPUTSPEC">&nbsp;</a> The <code>--Input=...</code> switch allows you to specify invariants over the command line arguments. These are used when you set <code>--AddOpaqueStructs=input</code> and <code>--VirtualizeOpaqueStructs=input</code> to create opaque constructs that appear to depend on input. An input specification is a coomma-separated list of 3-tuples: <em>position:kind:value</em>. I.e., <code>--Input=<em>position:kind:value</em>,<em>position:kind:value</em>,...</code> For example, consider the input specification <code>--InputSpec=+1:int:34?56,-1:length:1?</code> The first tuple specifies that the first command line argument must evaluate to an integer in the range 34-56, and the last argument has a length of exactly 1 character. Specifically, <em>position=/+n|-n/</em>, i.e. the <code>n</code>:th command line argument from the beginning or end of the line. The second part of the 3-tuple, <em>kind</em> is <em>/int|string|length/</em>, specifying that an invariant over a command line argument is a range of integer values, a particular string value, or the length (in characters) of an argument. The last part of the 3-tuple, <em>value</em>, allows you to specify four types of ranges: <code>/[0-9]+/</code>, <code>/?[0-9]+/</code>, <code>/[0-9]+?/</code>, and <code>/[0-9]+?[0-9]+/</code>,<code>/[0-9]*?/</code>, for a specfic value n, a range [n,..], a range [..,n], and a range [n..m]. <code>n</code> (a single integer) specifies a specific value, <code>n?</code> specifies a range starting at <code>n</code> 
+<td> <a class="anchor" id="INPUTSPEC">&nbsp;</a> The <code>--Input=...</code> switch allows you to specify invariants over the command line arguments. (<em>The <code>input</code> opaque kind these once fed was removed in version 4.1; the <code>--Input</code> switch is retained for any other consumers.</em>) An input specification is a coomma-separated list of 3-tuples: <em>position:kind:value</em>. I.e., <code>--Input=<em>position:kind:value</em>,<em>position:kind:value</em>,...</code> For example, consider the input specification <code>--InputSpec=+1:int:34?56,-1:length:1?</code> The first tuple specifies that the first command line argument must evaluate to an integer in the range 34-56, and the last argument has a length of exactly 1 character. Specifically, <em>position=/+n|-n/</em>, i.e. the <code>n</code>:th command line argument from the beginning or end of the line. The second part of the 3-tuple, <em>kind</em> is <em>/int|string|length/</em>, specifying that an invariant over a command line argument is a range of integer values, a particular string value, or the length (in characters) of an argument. The last part of the 3-tuple, <em>value</em>, allows you to specify four types of ranges: <code>/[0-9]+/</code>, <code>/?[0-9]+/</code>, <code>/[0-9]+?/</code>, and <code>/[0-9]+?[0-9]+/</code>,<code>/[0-9]*?/</code>, for a specfic value n, a range [n,..], a range [..,n], and a range [n..m]. <code>n</code> (a single integer) specifies a specific value, <code>n?</code> specifies a range starting at <code>n</code> 
 <ul>
    <li> <tt>int</tt> = <em>range specification:</em> matches a particular integer
    <li> <tt>?int</tt> = <em>range specification:</em> matches any value from <code>int</code> and up
@@ -684,7 +685,13 @@ Caveats:
                 <ul>
 
 <li>
-          Not all transforms currently support this feature..
+          You need to include <code class="language-c">tigress.h</code> at the top of your file.
+          This file can be found in your Tigress distribution directory.
+
+</li>
+
+<li>
+          Not all transforms currently support this feature.
 
 </li>
 

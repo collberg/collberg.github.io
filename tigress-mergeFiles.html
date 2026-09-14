@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -441,7 +442,7 @@ extern struct foo another;
 int main() {
 }
 
-> tigress file1.c file2.c --out=full.c
+> tigress --Merge file1.c file2.c --out=full.c
 
 > gcc full.c
 </code></pre></div><br>
@@ -517,7 +518,7 @@ Let's merge the files together into <code class="language-c">full.c</code>:
 </section>
 
 <div class="container">
-<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress f1.c f2.c m.c --out=full.c
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress --Merge f1.c f2.c m.c --out=full.c
 > gcc full.c
 </code></pre></div><br>
 
@@ -679,7 +680,7 @@ int main( ) {
 </section>
 
 <div class="container">
-<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress --out=miniweb-merge.c \
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress --Merge --out=miniweb-merge.c \
     httppil.c \
     http.c \
     httpxml.c \
@@ -745,7 +746,7 @@ int main( ) {
 </section>
 
 <div class="container">
-<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Merge \
    -D__USE_XOPEN2K -D__USE_GNU -D_GNU_SOURCE \
    -DSQLITE_ENABLE_MATH_FUNCTIONS \
    -DSQLITE_THREADSAFE=1   \
@@ -802,7 +803,7 @@ versions of the Doom game. Here is how we merge the sources:
 </section>
 
 <div class="container">
-<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress  \
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress  --Merge \
       dummy.c am_map.c doomdef.c doomstat.c dstrings.c d_event.c d_items.c \
       d_iwad.c d_loop.c d_main.c d_mode.c d_net.c f_finale.c f_wipe.c g_game.c \
       hu_lib.c hu_stuff.c info.c i_cdmus.c i_endoom.c i_joystick.c i_scale.c \

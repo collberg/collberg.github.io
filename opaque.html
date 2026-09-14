@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -205,16 +206,8 @@ At a minimum, you must create one or more opaque invariant data structures:
 </tr>
 <tr>
 <td><tt>--InitOpaqueStructs</tt></td>
-<td><tt>list, array, input, env, *</tt></td>
-<td> Comma-separated list of the kinds of opaque constructs to add. Default=list,array.
-<ul>
-   <li> <tt>list</tt> = Generate opaque expressions using linked lists
-   <li> <tt>array</tt> = Generate opaque expressions using arrays
-   <li> <tt>input</tt> = Generate opaque expressions that depend on input. Requires <tt>--Inputs</tt> to set invariants over input.
-   <li> <tt>env</tt> = Generate opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
-   <li> <tt>*</tt> = Same as list,array,input,env
-</ul>
-</td>
+<td><tt></tt></td>
+<td> <em>Deprecated spelling of <tt>--InitOpaqueInvariantKinds</tt></em> Kept for compatibility. Replace <tt>--InitOpaqueStructs=list,array</tt> with <tt>--InitOpaqueInvariantKinds=structure_state</tt>. Replace <tt>--InitOpaqueStructs=env</tt> with <tt>--InitOpaqueInvariantKinds=environment</tt>. The <tt>input</tt> kind was removed in 4.1. Default=none.</td>
 </tr>
 <tr>
 <td><tt>--InitOpaqueCount</tt></td>
@@ -236,6 +229,11 @@ At a minimum, you must create one or more opaque invariant data structures:
 <td><tt>--InitOpaqueDebug</tt></td>
 <td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
 <td> If true, then we store all opaque values in a temporary variable. This can help with debugging when looking at the generated code. For example, if you see a variable named <tt>_OPAQUE_Array_42_expected_128</tt>, it means: 1)this is opaque expression number 42; 2) it is computed based on an <tt>Array</tt> opaque kind; and 3) it should always have the value 128. Default=FALSE.</td>
+</tr>
+<tr>
+<td><tt>--InitOpaqueObfuscate</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Apply some light obfucation to the initialization of opaque state variables. Default=TRUE.</td>
 </tr>
 <tr>
 <td><tt>--InitOpaqueSize</tt></td>

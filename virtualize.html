@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -1755,7 +1756,7 @@ This does not work for <code class="language-c">--VirtualizeDispatch=direct</cod
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 Additionally, setting <code class="language-c">--VirtualizeObfuscateDecodeByteArray=true</code> and
-<code class="language-c">--VirtualizeOpaqueStructs=input,env</code> ensures that the decoded 
+<code class="language-c">--VirtualizeOpaqueInvariantKinds=environment</code> ensures that the decoded 
 bytecode array depends on input. The decoding procedure looks like this:
 <div class="container">
 <pre><code class="language-c">  strcmp_result17 = (int)strlen(*(argv + (argc - 1)));
@@ -1788,14 +1789,14 @@ Here's an example script:
 <pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Environment=... --Seed=0 \
    --Transform=InitImplicitFlow \
    --Transform=InitEntropy \
-   --Transform=InitOpaque --Functions=main --InitOpaqueStructs=input \
+   --Transform=InitOpaque --Functions=main --InitOpaqueInvariantKinds=environment \
    --Transform=UpdateEntropy --Functions=main --UpdateEntropyVar=argv,argc \
    --Inputs="+1:int:42,-1:length:1?10" \
-   --Transform=Virtualize --InitOpaqueStructs=input,env \
+   --Transform=Virtualize --InitOpaqueInvariantKinds=environment,env \
    --VirtualizeDispatch=interpolation --Functions=obf3 \
    --VirtualizeEncodeByteArray=allAtOnce \
    --VirtualizeObfuscateDecodeByteArray=true \
-   --VirtualizeOpaqueStructs=input,env \
+   --VirtualizeOpaqueInvariantKinds=environment \
       arith.c --out=arith_out.c
 </code></pre></div><br>
 
@@ -1837,7 +1838,7 @@ the command line. It specifies:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<code class="language-c">--VirtualizeOpaqueStructs=input,env</code> ensures that the 
+<code class="language-c">--VirtualizeOpaqueInvariantKinds=environment</code> ensures that the 
 program array will be encoded based on these command line invariants.
 If the program is invoked with a set of command line arguments that
 violate the invariants it is likely to crash.
@@ -1882,16 +1883,8 @@ code now looks like this, where 3472328296227680304UL is the xor encoding consta
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
 <tr>
 <td><tt>--VirtualizeOpaqueStructs</tt></td>
-<td><tt>list, array, input, env, *</tt></td>
-<td> Default=list,array.
-<ul>
-   <li> <tt>list</tt> = Generate opaque expressions using linked lists
-   <li> <tt>array</tt> = Generate opaque expressions using arrays
-   <li> <tt>input</tt> = Generate opaque expressions that depend on input. Requires <tt>--Inputs</tt> to set invariants over input.
-   <li> <tt>env</tt> = Generate opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
-   <li> <tt>*</tt> = Same as list,array,input,env
-</ul>
-</td>
+<td><tt></tt></td>
+<td> Default=The kinds specified at InitOpaque..</td>
 </tr>
 <tr>
 <td><tt>--VirtualizeEncodeByteArray</tt></td>
@@ -1906,7 +1899,23 @@ code now looks like this, where 3472328296227680304UL is the xor encoding consta
 <tr>
 <td><tt>--VirtualizeObfuscateDecodeByteArray</tt></td>
 <td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
-<td> Obfuscates the program array decoded with opaque expressions. <tt>--VirtualizeOpaqueStructs=input,env</tt> are the preferable opaque kinds, since it means that the bytecode array depends on input. Default=false.</td>
+<td> Obfuscates the program array decoded with opaque expressions. <tt>--VirtualizeOpaqueInvariantKinds=environment</tt> is the preferable kind, since it means the bytecode array depends on the runtime environment. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--VirtualizeOpaqueInvariantKinds</tt></td>
+<td><tt>identity, modular, mba, structure_state, scalar_state, environment, plugin, *</tt></td>
+<td> Comma-separated list of the kinds of opaque invariant virtualized code may draw from, named by the hardness family they rest on. Constrained to the kinds set up by <tt>--InitOpaqueInvariantKinds</tt>. <bf>From version 4.1</bf> Default=The kinds specified at InitOpaque..
+<ul>
+   <li> <tt>identity</tt> = Universally-true arithmetic identities.
+   <li> <tt>modular</tt> = Residue and modular-arithmetic facts.
+   <li> <tt>mba</tt> = Mixed boolean-arithmetic.
+   <li> <tt>structure_state</tt> = A data structure that maintains an invariant as the program runs and is then queried structurally. Replaces pre-4.1 <tt>list</tt> and <tt>array</tt>.
+   <li> <tt>scalar_state</tt> = Evolving scalar state.
+   <li> <tt>environment</tt> = Opaque expressions from entropy. Requires <tt>--InitEntropy</tt>. Replaces <tt>env</tt>.
+   <li> <tt>plugin</tt> = Invariants supplied by a user plugin.
+   <li> <tt>*</tt> = Same as identity,modular,mba,structure_state,scalar_state,environment,plugin
+</ul>
+</td>
 </tr>
 
 

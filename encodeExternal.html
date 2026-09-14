@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -476,7 +477,7 @@ attempts to identify common library functions by creating a signature from the f
 third party libraries called <a href="https://plugins.hex-rays.com/idenlib">idenlib</a>.
 To thwart such attacks you can embed libraries into your program and then obfuscate them.
 You can of course do this manually, but Tigress provides functionality to make this simple.
-Currently we only support the <code class="language-c">string</code> library.
+Currently we support the C <code class="language-c">string</code>, <code class="language-c">math</code>, <code class="language-c">crypto</code> <code class="language-c">random</code> (PRNG), <code class="language-c">checksum</code>, <code class="language-c">parse</code>, <code class="language-c">bignum</code> and <code class="language-c">elementary</code> (crude bit-trick approximations of math functions) libraries.
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -505,10 +506,14 @@ We obfuscate using the following script:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Note that, after embedding the <code class="language-c">string</code> library functions they get prefixed by
-<code class="language-c">string__</code>. This is, after embedding, the <code class="language-c">strcmp</code> function is now called 
-<code class="language-c">string__strcmp</code>. By further obfuscating the embedded functions (here we're
-inlining <code class="language-c">strcmp</code>), you can bypass the F.L.I.R.T. identification.
+Note that, after embedding, the library functions get prefixed by the name of their
+library: the <code class="language-c">string</code> functions by <code class="language-c">string__</code>, the <code class="language-c">math</code>
+functions by <code class="language-c">math__</code>, and the <code class="language-c">crypto</code> functions by
+<code class="language-c">crypto__</code>. That is, after embedding, the <code class="language-c">strcmp</code> function is
+now called <code class="language-c">string__strcmp</code>, <code class="language-c">sin</code> is now called <code class="language-c">math__sin</code>,
+and <code class="language-c">sha256_update</code> is now called <code class="language-c">crypto__sha256_update</code>. The <code class="language-c">elementary</code> functions are prefixed by <code class="language-c">elem__</code>.
+By further obfuscating the embedded functions (here we're inlining <code class="language-c">strcmp</code>), you can
+bypass the F.L.I.R.T. identification.
 
             </p>
         </div>
@@ -520,47 +525,421 @@ inlining <code class="language-c">strcmp</code>), you can bypass the F.L.I.R.T. 
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-We currently support embedding the following functions:
+We currently support embedding the following <code class="language-c">string</code> functions:
 
             </p>
         </div>
     </div>
 </section>
 <div class="container">
-<pre><code class="language-c">memccpy &rarr; string___memccpy
-memchr &rarr; string___memchr
-memcmp &rarr; string___memcmp
-memcpy &rarr; string___memcpy
-memmem &rarr; string___memmem
-memmove &rarr; string___memmove
-memrchr &rarr; string___memrchr
-stpcpy &rarr; string___stpcpy
-stpncpy &rarr; string___stpncpy
-strcasecmp &rarr; string___strcasecmp
-strncasecmp &rarr; string___strncasecmp
-strcasestr &rarr; string___strcasestr
-strcat &rarr; string___strcat
-strchr &rarr; string___strchr
-strcmp &rarr; string___strcmp
-strcoll &rarr; string___strcoll
-strcspn &rarr; string___strcspn
-strdup &rarr; string___strdup
-strlcat &rarr; string___strlcat
-strlcpy &rarr; string___strlcpy
-strlen &rarr; string___strlen
-strncat &rarr; string___strncat
-strncmp &rarr; string___strncmp
-strncpy &rarr; string___strncpy
-strndup &rarr; string___strndup
-strnlen &rarr; string___strnlen
-strpbrk &rarr; string___strpbrk
-strsep &rarr; string___strsep
-strspn &rarr; string___strspn
-strstr &rarr; string___strstr
-strtok &rarr; string___strtok
-strtok_r &rarr; string___strtok_r
-strxfrm &rarr; string___strxfrm
-wcslcpy &rarr; string___wcslcpy
+<pre><code class="language-c">memccpy &rarr; string__memccpy
+memchr &rarr; string__memchr
+memcmp &rarr; string__memcmp
+memcpy &rarr; string__memcpy
+memmem &rarr; string__memmem
+memmove &rarr; string__memmove
+memrchr &rarr; string__memrchr
+stpcpy &rarr; string__stpcpy
+stpncpy &rarr; string__stpncpy
+strcasecmp &rarr; string__strcasecmp
+strncasecmp &rarr; string__strncasecmp
+strcasestr &rarr; string__strcasestr
+strcat &rarr; string__strcat
+strchr &rarr; string__strchr
+strcmp &rarr; string__strcmp
+strcoll &rarr; string__strcoll
+strcspn &rarr; string__strcspn
+strdup &rarr; string__strdup
+strlcat &rarr; string__strlcat
+strlcpy &rarr; string__strlcpy
+strlen &rarr; string__strlen
+strncat &rarr; string__strncat
+strncmp &rarr; string__strncmp
+strncpy &rarr; string__strncpy
+strndup &rarr; string__strndup
+strnlen &rarr; string__strnlen
+strpbrk &rarr; string__strpbrk
+strsep &rarr; string__strsep
+strspn &rarr; string__strspn
+strstr &rarr; string__strstr
+strtok &rarr; string__strtok
+strtok_r &rarr; string__strtok_r
+strxfrm &rarr; string__strxfrm
+wcslcpy &rarr; string__wcslcpy
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+and the following <code class="language-c">math</code> functions:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">acos &rarr; math__acos
+asin &rarr; math__asin
+atan &rarr; math__atan
+atan2 &rarr; math__atan2
+cbrt &rarr; math__cbrt
+ceil &rarr; math__ceil
+cos &rarr; math__cos
+cosh &rarr; math__cosh
+exp &rarr; math__exp
+exp2 &rarr; math__exp2
+expm1 &rarr; math__expm1
+fabs &rarr; math__fabs
+floor &rarr; math__floor
+fmod &rarr; math__fmod
+hypot &rarr; math__hypot
+ldexp &rarr; math__ldexp
+log &rarr; math__log
+log10 &rarr; math__log10
+log1p &rarr; math__log1p
+log2 &rarr; math__log2
+pow &rarr; math__pow
+round &rarr; math__round
+scalbn &rarr; math__scalbn
+sin &rarr; math__sin
+sinh &rarr; math__sinh
+sqrt &rarr; math__sqrt
+tan &rarr; math__tan
+tanh &rarr; math__tanh
+trunc &rarr; math__trunc
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+and the following <code class="language-c">crypto</code> functions (AES, DES/3DES, Blowfish, RC4,
+SHA-1, SHA-256, MD2, MD5, Base64 and the tiny TEA/XTEA/XXTEA block ciphers -- primitives that F.L.I.R.T. and findcrypt
+identify by signature and by their constant tables):
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">aes_key_setup &rarr; crypto__aes_key_setup
+aes_encrypt &rarr; crypto__aes_encrypt
+aes_decrypt &rarr; crypto__aes_decrypt
+aes_encrypt_cbc &rarr; crypto__aes_encrypt_cbc
+aes_encrypt_cbc_mac &rarr; crypto__aes_encrypt_cbc_mac
+aes_encrypt_ctr &rarr; crypto__aes_encrypt_ctr
+aes_decrypt_ctr &rarr; crypto__aes_decrypt_ctr
+aes_encrypt_ccm &rarr; crypto__aes_encrypt_ccm
+aes_decrypt_ccm &rarr; crypto__aes_decrypt_ccm
+des_key_setup &rarr; crypto__des_key_setup
+des_crypt &rarr; crypto__des_crypt
+three_des_key_setup &rarr; crypto__three_des_key_setup
+three_des_crypt &rarr; crypto__three_des_crypt
+blowfish_key_setup &rarr; crypto__blowfish_key_setup
+blowfish_encrypt &rarr; crypto__blowfish_encrypt
+blowfish_decrypt &rarr; crypto__blowfish_decrypt
+arcfour_key_setup &rarr; crypto__arcfour_key_setup
+arcfour_generate_stream &rarr; crypto__arcfour_generate_stream
+sha1_init &rarr; crypto__sha1_init
+sha1_update &rarr; crypto__sha1_update
+sha1_final &rarr; crypto__sha1_final
+sha256_init &rarr; crypto__sha256_init
+sha256_update &rarr; crypto__sha256_update
+sha256_final &rarr; crypto__sha256_final
+md2_init &rarr; crypto__md2_init
+md2_update &rarr; crypto__md2_update
+md2_final &rarr; crypto__md2_final
+md5_init &rarr; crypto__md5_init
+md5_update &rarr; crypto__md5_update
+md5_final &rarr; crypto__md5_final
+base64_encode &rarr; crypto__base64_encode
+base64_decode &rarr; crypto__base64_decode
+tea_encrypt &rarr; crypto__tea_encrypt
+tea_decrypt &rarr; crypto__tea_decrypt
+xtea_encrypt &rarr; crypto__xtea_encrypt
+xtea_decrypt &rarr; crypto__xtea_decrypt
+xxtea_encrypt &rarr; crypto__xxtea_encrypt
+xxtea_decrypt &rarr; crypto__xxtea_decrypt
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Because embedding hides the function <em>bodies</em> but not the constant tables
+(AES S-boxes, SHA/MD round constants) that <code class="language-c">findcrypt</code>-style tools also
+scan for, it is worth following an embedded crypto primitive with a data-encoding
+transform such as <code class="language-c">EncodeData</code> or <code class="language-c">EncodeArithmetic</code> to hide
+those tables as well.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+and the following <code class="language-c">random</code> (PRNG) functions:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">rand &rarr; random__rand
+srand &rarr; random__srand
+rand_r &rarr; random__rand_r
+drand48 &rarr; random__drand48
+erand48 &rarr; random__erand48
+lrand48 &rarr; random__lrand48
+nrand48 &rarr; random__nrand48
+mrand48 &rarr; random__mrand48
+jrand48 &rarr; random__jrand48
+srand48 &rarr; random__srand48
+seed48 &rarr; random__seed48
+lcong48 &rarr; random__lcong48
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+and the following <code class="language-c">checksum</code> functions (whose constant tables are prime findcrypt targets):
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">crc32 &rarr; checksum__crc32
+crc16 &rarr; checksum__crc16
+adler32 &rarr; checksum__adler32
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+and the following <code class="language-c">parse</code> functions:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">atoi &rarr; parse__atoi
+atol &rarr; parse__atol
+atoll &rarr; parse__atoll
+abs &rarr; parse__abs
+labs &rarr; parse__labs
+llabs &rarr; parse__llabs
+bsearch &rarr; parse__bsearch
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+and the following <code class="language-c">bignum</code> (big-integer) functions (a LibTomMath subset):
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">mp_init &rarr; bignum__mp_init
+mp_clear &rarr; bignum__mp_clear
+mp_add &rarr; bignum__mp_add
+mp_sub &rarr; bignum__mp_sub
+mp_mul &rarr; bignum__mp_mul
+mp_exptmod &rarr; bignum__mp_exptmod
+mp_cmp &rarr; bignum__mp_cmp
+mp_set_u32 &rarr; bignum__mp_set_u32
+mp_read_radix &rarr; bignum__mp_read_radix
+mp_to_radix &rarr; bignum__mp_to_radix
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+and the following <code class="language-c">elementary</code> functions &mdash; crude, cheap approximations
+of math functions computed directly from the IEEE-754 bit pattern (the
+fast-inverse-square-root family of tricks). They pull in no <code class="language-c">libm</code>, are each
+only a handful of integer operations, and are deliberately <em>approximate</em>: you trade
+accuracy for size and self-containment. Because only the caller knows the input range and
+the tolerable error, the choice is expressed in the function <em>name</em>, which encodes
+the valid input domain and a <strong>libm-verified</strong> error bound. Read a name as:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">dom_&lt;lo&gt;_&lt;hi&gt;</code> &mdash; the valid input range, with
+      <code class="language-c">p</code>=decimal point, <code class="language-c">m</code>=minus sign, and
+      <code class="language-c">inf</code>/<code class="language-c">minf</code>=&plusmn;&infin;. So <code class="language-c">dom_0_inf</code> means
+      every positive value (x &gt; 0, roughly 1e-308 to 1e308) and <code class="language-c">dom_minf_inf</code>
+      means every value. Outside the stated domain the result is undefined.
+
+</li>
+
+<li>
+      <code class="language-c">abserr_&lt;v&gt;</code> &mdash; an <em>absolute</em> error bound:
+      |approx &minus; true| &le; v <em>everywhere</em> on the domain.
+
+</li>
+
+<li>
+      <code class="language-c">relerr_&lt;v&gt;</code> &mdash; a <em>relative</em> error bound:
+      |approx &minus; true| / |true| &le; v everywhere on the domain.
+
+</li>
+
+<li>
+      <code class="language-c">exact</code> &mdash; no error at all.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The <strong>logarithm</strong> functions are the clearest case, so they are worth
+describing in full. Every one is valid over the <em>entire</em> positive range
+<code class="language-c">dom_0_inf</code> (x &gt; 0, i.e. every positive double, from about 1e-308 up to
+about 1e300), and their error is <em>absolute</em> and <em>uniform</em>: the bit trick
+makes the approximation differ from the true logarithm by a bounded additive amount that
+does <em>not</em> grow with x. For instance <code class="language-c">log2__dom_0_inf__abserr_0p05(x)</code>
+returns a value within &plusmn;0.05 of log<sub>2</sub>(x) for <em>every</em> x &gt; 0
+&mdash; near 1, near 1e-300 and near 1e300 alike (that 0.05 is an error in the value of
+the logarithm, not a percentage of it). <code class="language-c">floorlog2</code> is the exception: it
+returns the integer &lfloor;log<sub>2</sub> x&rfloor; <em>exactly</em>, using only integer
+operations. The variants trade a little more code for a tighter bound:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">floorlog2__dom_0_inf__exact     int &lfloor;log2 x&rfloor;, EXACT for all x &gt; 0        (reads the exponent field; integer-only)
+log2__dom_0_inf__abserr_0p09    log2 x,  |error| &le; 0.09  for all x &gt; 0            (raw "reinterpret the bits as a line")
+log2__dom_0_inf__abserr_0p05    log2 x,  |error| &le; 0.05  for all x &gt; 0            (same line, constant recentred)
+ln__dom_0_inf__abserr_0p04      ln x,    |error| &le; 0.04  for all x &gt; 0            (= log2 &times; ln2)
+log10__dom_0_inf__abserr_0p02   log10 x, |error| &le; 0.02  for all x &gt; 0            (= log2 &times; log10(2))
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The remaining functions follow the same convention. <code class="language-c">exp</code>/<code class="language-c">exp2</code>
+run the log trick backwards; <code class="language-c">sqrt</code>/<code class="language-c">rsqrt</code>/<code class="language-c">cbrt</code> halve,
+negate or third the exponent in the bits, and the <code class="language-c">sqrt</code> family offers a
+ladder from the raw bit trick to one or two Newton refinement steps. Their error is
+<em>relative</em> (a percentage of the true value), so a <code class="language-c">relerr</code> of
+<code class="language-c">0p07</code> means &le; 7&percnt;, <code class="language-c">0p002</code> means &le; 0.2&percnt;, and
+<code class="language-c">0p000002</code> means &le; 0.0002&percnt; (essentially full double precision):
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">exp2__dom_m1000_1000__relerr_0p07   2^x,       relative error &le; 7&percnt;      for -1000 &le; x &le; 1000
+exp__dom_m700_700__relerr_0p07      e^x,       relative error &le; 7&percnt;      for -700 &le; x &le; 700
+sqrt__dom_0_inf__relerr_0p07        sqrt x,    relative error &le; 7&percnt;      for x &gt; 0   (bit trick only)
+sqrt__dom_0_inf__relerr_0p002       sqrt x,    relative error &le; 0.2&percnt;    for x &gt; 0   (+1 Newton step)
+sqrt__dom_0_inf__relerr_0p000002    sqrt x,    relative error &le; 0.0002&percnt; for x &gt; 0   (+2 Newton steps; ~full precision)
+rsqrt__dom_0_inf__relerr_0p002      1/sqrt x,  relative error &le; 0.2&percnt;    for x &gt; 0   (fast inverse square root)
+cbrt__dom_0_inf__relerr_0p04        cbrt x,    relative error &le; 4&percnt;      for x &gt; 0
+fabs__dom_minf_inf__exact           |x|,       EXACT for all x                                 (clears the sign bit)
+neg__dom_minf_inf__exact            -x,        EXACT for all x                                 (flips the sign bit)
+isqrt__dom_0_inf__exact             &lfloor;sqrt n&rfloor;, EXACT for all n                     (unsigned integer sqrt; integer-only)
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<strong>Audio-DSP additions.</strong> The following cover the operations that recur in
+signal processing &mdash; RMS/energy, dB conversion, Euclidean distance, rounding/indexing,
+clamping, and a cheap trig for cosmetic animation. As above they are integer or branchless
+where possible, and each name carries a libm-verified bound. For <strong>decibel</strong>
+work note that the plain bit-line logs above have a uniform 0.02 absolute error (about
+0.4&nbsp;dB); the polynomial-refined <code class="language-c">log10</code> here is accurate to 0.0001 (about
+<strong>0.002&nbsp;dB</strong>), and its inverse <code class="language-c">exp10</code> (10<sup>x</sup> &mdash;
+the only form dB&harr;linear needs) to 0.01&percnt;:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">log2__dom_0_inf__abserr_0p0003        log2 x,  |error| &le; 0.0003 for all x &gt; 0     (mantissa polynomial; accurate)
+log10__dom_0_inf__abserr_0p0001       log10 x, |error| &le; 0.0001 for all x &gt; 0     (accurate dB; ~0.002 dB level error)
+exp2__dom_m1000_1000__relerr_0p0001   2^x,     relative error &le; 0.01&percnt; for -1000 &le; x &le; 1000  (accurate)
+exp10__dom_m300_300__relerr_0p0001    10^x,    relative error &le; 0.01&percnt; for -300 &le; x &le; 300    (accurate dB&rarr;linear)
+exp10__dom_m300_300__relerr_0p07      10^x,    relative error &le; 7&percnt;    for -300 &le; x &le; 300    (cheap; single bit trick)
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Euclidean distance (a cheap approximation and an accurate one), cosmetic trig that is
+self-reducing so it is valid for <em>any</em> input, plus exact rounding, clamping and
+sign/wraparound &mdash; the last group is pure integer or branchless:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">hypot__dom_finite__relerr_0p04        sqrt(a^2+b^2), relative error &le; 4&percnt;      (cheap "alpha max + beta min"; no sqrt)
+hypot__dom_finite__relerr_0p000002    sqrt(a^2+b^2), relative error &le; 0.0002&percnt; (sqrt bit trick + 2 Newton steps)
+sin__dom_all__abserr_0p002            sin x, |error| &le; 0.002 for ALL x               (parabola + correction; self-reducing)
+cos__dom_all__abserr_0p002            cos x, |error| &le; 0.002 for ALL x
+floor__dom_m9e18_9e18__exact          floor x, EXACT for |x| &lt; 2^63                  (integer cast)
+ceil__dom_m9e18_9e18__exact           ceil x,  EXACT for |x| &lt; 2^63
+round__dom_m9e18_9e18__exact          round x, EXACT for |x| &lt; 2^63                  (half away from zero)
+fmin__dom_all__exact                  min(a,b), double, EXACT
+fmax__dom_all__exact                  max(a,b), double, EXACT
+fclamp__dom_all__exact                clamp(x,lo,hi), double, EXACT
+imin__dom_all__exact                  min(a,b), int, EXACT
+imax__dom_all__exact                  max(a,b), int, EXACT
+iclamp__dom_all__exact                clamp(x,lo,hi), int, EXACT
+signum__dom_all__exact                sign(x) -&gt; -1/0/1, double, EXACT
+isignum__dom_all__exact               sign(x) -&gt; -1/0/1, int, EXACT
+iwrap__dom_all__exact                 wrap i into [0,n) for n &gt; 0, int, EXACT        (modular index)
 </code></pre></div><br>
 
 <a class="anchor" id="references">&nbsp;</a>
@@ -642,7 +1021,8 @@ wcslcpy &rarr; string___wcslcpy
 </li>
 
 <li>
-          We currently only support embedding of the <code class="language-c">LibC</code> <code class="language-c">string</code> library. We have, however,
+          We currently support embedding the <code class="language-c">LibC</code> <code class="language-c">string</code> and <code class="language-c">math</code>
+          libraries and a public-domain <code class="language-c">crypto</code> library. We have, however,
           developed a tool that makes embedding new libraries into Tigress more-or-less trivial. If you
           have a library you would like to add to Tigress, let us know: we just require the
           source to be published under a permissive license.

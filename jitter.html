@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
    <li class="nav-item dropdown">
@@ -626,6 +627,23 @@ main(){int n=2;double x[n];f();exit(0);}
         non-jitted functions cannot themselves be jitted. The reason is 
         that the MyJit library does not support this functionality. Smaller
         structs (those no larger than 2 longs) may work. Sometimes. Maybe.
+
+</li>
+
+<li>
+        Functions containing a 128-bit integer constant cannot be jitted:
+        MyJit has no 128-bit register, so the constant cannot be materialised,
+        and truncating it would silently change what the function computes.
+        Tigress reports this rather than generating wrong code.
+        <p>
+        The constant may be one of your own, or it may come from a value codec
+        that widens its arithmetic &mdash; the <code class="language-c">rnc</code> codec does so
+        for a 64-bit value, and the <code class="language-c">scalar_state</code> opaque kinds and
+        <code class="language-c">--Transform=EncodeData --EncodeDataCodecs=rnc</code> use it. When
+        it is the codec's, add <code class="language-c">--Allow128BitInts=false</code> to the
+        command line: the codec then picks a formulation that stays in 64-bit
+        arithmetic (which for <code class="language-c">rnc</code> also needs an unsigned type and
+        at least 3 pieces).
 
 </li>
 
