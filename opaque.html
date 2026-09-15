@@ -210,6 +210,46 @@ At a minimum, you must create one or more opaque invariant data structures:
 <td> <em>Deprecated spelling of <tt>--InitOpaqueInvariantKinds</tt></em> Kept for compatibility. Replace <tt>--InitOpaqueStructs=list,array</tt> with <tt>--InitOpaqueInvariantKinds=structure_state</tt>. Replace <tt>--InitOpaqueStructs=env</tt> with <tt>--InitOpaqueInvariantKinds=environment</tt>. The <tt>input</tt> kind was removed in 4.1. Default=none.</td>
 </tr>
 <tr>
+<td><tt>--InitOpaqueInvariantKinds</tt></td>
+<td><tt>identity, modular, mba, structure_state, scalar_state, environment, plugin, *</tt></td>
+<td> Comma-separated list of the kinds of opaque invariant to set up, named by the <em>hardness family</em> they rest on. These become the default set for any transformation that asks for an opaque without naming kinds of its own. <bf>From version 4.1</bf> Default=none.
+<ul>
+   <li> <tt>identity</tt> = Universally-true arithmetic identities.
+   <li> <tt>modular</tt> = Residue and modular-arithmetic facts.
+   <li> <tt>mba</tt> = Mixed boolean-arithmetic.
+   <li> <tt>structure_state</tt> = A data structure that maintains an invariant as the program runs and is then queried structurally. Replaces pre-4.1 <tt>list</tt> and <tt>array</tt>.
+   <li> <tt>scalar_state</tt> = Evolving scalar state.
+   <li> <tt>environment</tt> = Opaque expressions from entropy. Requires <tt>--InitEntropy</tt>. Replaces <tt>env</tt>.
+   <li> <tt>plugin</tt> = Invariants supplied by a user plugin.
+   <li> <tt>*</tt> = Same as identity,modular,mba,structure_state,scalar_state,environment,plugin
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--InitOpaqueInvariantResilience</tt></td>
+<td><tt>trivial, local, global, interprocedural, inter_process, *</tt></td>
+<td> Comma-separated list of the resilience levels to set up: <em>the scope of analysis an attacker must run</em> to decide the invariant. This is orthogonal to the kind -- a modular fact may be trivial or not, and either way it is still modular. <p> The default is every level <em>except</em> <tt>trivial</tt>. Trivial invariants are the ones a C compiler folds to a constant at <tt>-O2</tt> Use for educational purposes only. <bf>From version 4.1</bf> Default=local,global,interprocedural,inter_process.
+<ul>
+   <li> <tt>trivial</tt> = One expression decides it, AND a stock compiler at <tt>-O2</tt> folds it to a constant.
+   <li> <tt>local</tt> = One expression decides it, but <tt>-O2</tt> does not fold it.
+   <li> <tt>global</tt> = Deciding it needs analysis of the whole procedure.
+   <li> <tt>interprocedural</tt> = Deciding it needs whole-program analysis.
+   <li> <tt>inter_process</tt> = Deciding it needs reasoning about concurrent interleavings. Reserved -- no invariant is at this level yet.
+   <li> <tt>*</tt> = Every level, <tt>trivial</tt> included.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--InitOpaqueMaxSize</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> The largest number of sub-opaques a single opaque may be composed of, for any transformation that does not set a <tt>--&lt;Transform&gt;MaxSize</tt> of its own. See <tt>--AddOpaqueMaxSize</tt> for what composition buys. <bf>From version 4.1</bf> Default=1.</td>
+</tr>
+<tr>
+<td><tt>--InitOpaqueList</tt></td>
+<td><tt><em>BOOL</em></tt></td>
+<td> Print the whole opaque-invariant database -- every invariant's name, kind and resilience -- and continue. Useful for finding the exact names to pass to <tt>--&lt;Transform&gt;Select</tt>. Refused unless the deity key is supplied with <tt>--DeityMode</tt>. <bf>From version 4.1</bf> Default=false.</td>
+</tr>
+<tr>
 <td><tt>--InitOpaqueCount</tt></td>
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> How many opaque data structures (lists or arrays) to add to the program. They will be split roughly evenly between the different declared opaque structures. Default=1.</td>
@@ -293,6 +333,11 @@ To frustrate analysis, updates that maintain the invariants should
 <td><tt>--UpdateOpaqueDebug</tt></td>
 <td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
 <td> If true, then we store all opaque values in a temporary variable that reveals its expected value. Default=FALSE.</td>
+</tr>
+<tr>
+<td><tt>--UpdateOpaqueObfuscate</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Apply some light obfucation to opaque updates. Default=TRUE.</td>
 </tr>
 <tr>
 <td><tt>--UpdateOpaqueAllowAddNodes</tt></td>

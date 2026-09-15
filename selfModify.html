@@ -510,6 +510,28 @@ you want to experiment.
 <td> Recurse into sub-expressions with transforming an expression. Can cause bugs. Default=false.</td>
 </tr>
 <tr>
+<td><tt>--SelfModifyOperators</tt></td>
+<td><tt>PlusA, MinusA, Mult, Div, Mod, Shiftlt, Shiftrt, Lt, Gt, Le, Ge, Eq, Ne, *</tt></td>
+<td> Which binary operators to modify. Default=*.
+<ul>
+   <li> <tt>PlusA</tt> = +
+   <li> <tt>MinusA</tt> = -
+   <li> <tt>Mult</tt> = *
+   <li> <tt>Div</tt> = /
+   <li> <tt>Mod</tt> = %
+   <li> <tt>Shiftlt</tt> = <<
+   <li> <tt>Shiftrt</tt> = >>
+   <li> <tt>Lt</tt> = <
+   <li> <tt>Gt</tt> = >
+   <li> <tt>Le</tt> = =<
+   <li> <tt>Ge</tt> = >=
+   <li> <tt>Eq</tt> = ==
+   <li> <tt>Ne</tt> = !=
+   <li> <tt>*</tt> = all operators
+</ul>
+</td>
+</tr>
+<tr>
 <td><tt>--SelfModifyBogusInstructions</tt></td>
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> How many bogus instructions to insert inside the self-modify template to avoid pattern-matching attacks. Right now, the inserted instructions are simple 1-byte x86 instructions that are equivalent to NOPs. Default=0.</td>

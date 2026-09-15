@@ -205,6 +205,11 @@ own set of options, all prefixed by the name of the transformation.
 <td> The randomization seed. <code>--Seed=0</code> makes Tigress generate its own seed. </td>
 </tr>
 <tr>
+<td><tt>--DeityMode</tt></td>
+<td><tt><em>string</em></tt></td>
+<td> Enter deity mode by supplying the privileged key. Deity mode unlocks author/debug-only facilities that are otherwise refused or inert -- for example <code>--InitOpaqueList</code> (print the opaque-invariant database) and <code>--&lt;Transform&gt;Select</code> (pick opaque invariants by name). Without the correct key the option is rejected. <em>(Renamed from <code>--GodMode</code> in version 4.1.)</em> </td>
+</tr>
+<tr>
 <td><tt>--Verbosity</tt></td>
 <td><tt>int</tt></td>
 <td> Tigress' chattiness level. <code>--Verbosity=0</code> makes Tigress quiet. <code>--Verbosity=1</code> prints each transformation as it is being applied. Higher levels also print out all the versions of functions and variables being constructed. If <code>--LogDir=dirName</code> is set, generated log files will go in <code>dirName</code>. Default=0.</td>

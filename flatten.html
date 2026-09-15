@@ -698,6 +698,11 @@ these functions with some lower-level primitives.
 </td>
 </tr>
 <tr>
+<td><tt>--FlattenNumberOfBlocksPerFunction</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> The number of blocks per generated function for call dispatch. By default, this is 1, meaning each block is in its own function. This option can be useful if you want to split a large function into many smaller ones. Default=1.</td>
+</tr>
+<tr>
 <td><tt>--FlattenNumberOfThreads</tt></td>
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> The number of threads created for concurrent dispatch. Default=1.</td>
@@ -826,7 +831,7 @@ variable.
 <tr>
 <td><tt>--FlattenOpaqueStructs</tt></td>
 <td><tt></tt></td>
-<td> <em>Deprecated spelling of <tt>--FlattenOpaqueInvariantKinds</tt></em> Kept for compatibility. Replace <tt>--FlattenOpaqueStructs=list,array</tt> with <tt>--FlattenOpaqueInvariantKinds=structure_state</tt>. Replace <tt>--FlattenOpaqueStructs=env</tt> with <tt>--FlattenOpaqueInvariantKinds=environment</tt>. The <tt>input</tt> kind was removed in 4.1. Default=array.</td>
+<td> <em>Deprecated spelling of <tt>--FlattenOpaqueInvariantKinds</tt></em> Kept for compatibility. Replace <tt>--FlattenOpaqueStructs=list,array</tt> with <tt>--FlattenOpaqueInvariantKinds=structure_state</tt>. Replace <tt>--FlattenOpaqueStructs=env</tt> with <tt>--FlattenOpaqueInvariantKinds=environment</tt>. The <tt>input</tt> kind was removed in 4.1. Default=The kinds specified at InitOpaque..</td>
 </tr>
 <tr>
 <td><tt>--FlattenImplicitFlowNext</tt></td>
@@ -885,7 +890,6 @@ variable.
 </div>
 </div>
 </section>
-
 
 <!-- -------------------------------------------------------------------------------- -->
 

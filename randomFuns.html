@@ -810,6 +810,11 @@ Here is an example:
 <td><tt>BOOL</tt></td>
 <td> Add <tt>if (output[0] == 4242424242U) printf("You win!\n");</tt> after the call to the generated function. The idea is to replace (by hand) 4242424242U with one actual output of the function. This can be used as another reverse engineering challenge: "<em>Find an input for which the program prints <tt>"You win!</tt>.</em> Default=false.</td>
 </tr>
+<tr>
+<td><tt>--RandomFunsPluginADTCount</tt></td>
+<td><tt><a href="top-level.html#INTSPEC">INTSPEC</a></tt></td>
+<td> Number of random ADTs to insert. Requires that one of <tt>--InitPluginsCollectionPrefix=...</tt> or <tt>--InitPluginsDictionaryPrefix=...</tt> to be set, in <tt>--Transform=InitPlugins</tt>. Default=0.</td>
+</tr>
 
 
 </table>

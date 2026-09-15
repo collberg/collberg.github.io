@@ -350,6 +350,11 @@ If you want the return value of a function <code class="language-c">fun1</code> 
 <td> Number of pieces in which to break up a value. Only applies to codecs that split values, such as <tt>rnc</tt>. <p> The count also decides whether <tt>rnc</tt> can encode a 64-bit value on a target without 128-bit integers (<tt>--Allow128BitInts=false</tt>). Its usual decode reconstructs through the product of all the moduli, which must exceed the type's range and so exceeds 64 bits; the narrow alternative (Garner's mixed-radix reconstruction) needs an <em>unsigned</em> type and <b>at least 3</b> pieces, because a digit step costs twice the width of one modulus. With 2 pieces on a 64-bit value and no 128-bit integers available, <tt>rnc</tt> reports that it cannot encode the value. <b>From version 4.1.0</b> Default=2.</td>
 </tr>
 <tr>
+<td><tt>--EncodeDataIndividualVariables</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Whether to split a variable into individual pieces or keep the pieces in a struct. Default=false.</td>
+</tr>
+<tr>
 <td><tt>--EncodeDataStorage</tt></td>
 <td><tt>struct, split</tt></td>
 <td> How variabls split into multiple pieces should be stored. Default=struct.

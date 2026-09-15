@@ -254,6 +254,11 @@ can, making sure you collect entropy from variables that are truly input depende
 </td>
 </tr>
 <tr>
+<td><tt>--InitEntropyDebug</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Keep the expected value of each entropy variable in a temporary alongside it, so a wrong value can be recognised at runtime. The option existed but was undocumented before version 4.1. <p> It is implied by <tt>--InitEntropyTrace=use</tt> and <tt>--InitEntropyTrace=check</tt>, which cannot report a wrong value without the expected one to compare against. Note that the expected value is a cleartext copy of what the entropy is supposed to be, so this is a debugging aid rather than something to ship. Default=FALSE.</td>
+</tr>
+<tr>
 <td><tt>--InitEntropyObfuscate</tt></td>
 <td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
 <td> Apply some light obfuscation on top of the entropy-generating expression. Default=FALSE.</td>

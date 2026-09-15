@@ -420,6 +420,11 @@ transformations are particularly appropriate.
 <td> Optimize the jitted binary code. 1=omit frame pointer, 2=omit unused assignments, 4=merge ADDs and MULs. Default=1|4=5.</td>
 </tr>
 <tr>
+<td><tt>--JitImplicitFlowHandle</tt></td>
+<td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
+<td> Insert implicit flow to the generated function handle. Default=false.</td>
+</tr>
+<tr>
 <td><tt>--JitImplicitFlow</tt></td>
 <td><tt>S-Expression</tt></td>
 <td> The type of implicit flow to insert. See <tt>--AntiTaintAnalysisImplicitFlow</tt> for a description. Default=none.</td>
@@ -492,6 +497,11 @@ transformations are particularly appropriate.
 <td><tt>--JitDumpIntermediate</tt></td>
 <td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
 <td> Print the generated intermediate code at translation time." Default=false.</td>
+</tr>
+<tr>
+<td><tt>--JitDumpBinary</tt></td>
+<td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
+<td> Print the generated machine code. Requires 'objdump' to be installed. Default=false.</td>
 </tr>
 <tr>
 <td><tt>--JitRandomizeBlocks</tt></td>
