@@ -1116,6 +1116,75 @@ See <a href="https://tigress.wtf/opaque.html" class="text-primary">InitOpaque</a
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ EncodeLiterals
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      See <a href="https://tigress.wtf/encodeLiterals.html" class="text-primary">EncodeLiterals</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      The new <code class="language-c">--EncodeLiteralsStringKinds</code> option chooses how string literals are
+      encoded (one is picked at random per run when several are given):
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+               <code class="language-c">fsm</code> (the default) rebuilds each string at runtime with a generated
+               decoder function.
+
+</li>
+
+<li>
+               <code class="language-c">chunk</code> encodes each string in small pieces, so no readable text remains
+               in the generated source or the compiled binary.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
  Major Bug Fixes
 
                </h2>
