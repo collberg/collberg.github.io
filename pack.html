@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Maker Description">
+  
+   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
+  
+ <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #000000
+}
+h3 {
+   color: #000000
+}
+code {
+  font-family:     "Courier New"
+                    Courier
+                    monospace;
+  color: black;
+}
+
+</style>
+  
+</head>
+<body>
+  
+  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+
+        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="" title="" style="height: 4.1rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Usage</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-quickstart.html">Quickstart<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-mergeFiles.html">File merge<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-crossCompile.html">Cross compile</a>
+      <a class="text-white dropdown-item text-primary display-4" href="recipes.html">Recipes</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-libraries.html">Libraries</a>
+      <a class="text-white dropdown-item text-primary display-4" href="top-level.html">Top-Level Options</a>
+      <a class="text-white dropdown-item text-primary display-4" href="plugins.html">Plugins</a>
+      <a class="text-white dropdown-item text-primary display-4" href="issues.html">Issues</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-test.html">Testing</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Platforms</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-linux.html">Linux<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-macos.html">MacOS<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-windows.html">Windows<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-android.html">Android<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-wasm.html">WASM<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="cpp.html">C++<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Users</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-academics.html">For academics<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-students.html">For students<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-practitioners.html">For practitioners<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-developers.html">For developers<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="false" data-toggle="dropdown-submenu">News</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Transformations</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="control-transforms.html">Control</a>
+      <a class="text-white dropdown-item text-primary display-4" href="data-transforms.html">Data</a>
+      <a class="text-white dropdown-item text-primary display-4" href="functions-transforms.html">Functions</a>
+      <a class="text-white dropdown-item text-primary display-4" href="integrity-transforms.html">Integrity</a>
+      <a class="text-white dropdown-item text-primary display-4" href="antiAnalysis-transforms.html">Anti analysis</a>
+      <a class="text-white dropdown-item text-primary display-4" href="other-transforms.html">Other</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">About</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-history.html">History<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-faq.html">FAQ<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-consulting.html">Training<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-publications.html">Pubs</a></div>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="contact.html" aria-expanded="false"><span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="tigress-download.html" aria-expanded="false"><span class="mbrib-download mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+</ul>
+            
+        </div>
+    </nav>
+
+</section>
+
+<br><br><br><br>
+
+<section class="mbr-section content4 TIGRESS-TITLE" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+<center><h1 style="font-size: 60px; font-weight:400"> Pack</h1></center>
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<center><img width="500px" src="tigress3-images//pack-front-page.png"></center>
+
+<!-- ================================================================================================= -->
+<!-- Introduction                                                                                      -->
+<!-- ================================================================================================= -->
+
+<a class="anchor" id="pack">&nbsp;</a>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+   This transformation <em>packs</em> the selected functions: their code bytes are
+   encrypted in the compiled binary and decrypted, in place, only when the program
+   runs. An attacker who inspects the executable at rest sees ciphertext where the
+   packed functions used to be, so static analysis and disassembly are frustrated
+   until the program is actually executed. The decryptor Tigress emits can itself 
+   be obfuscated with Tigress' other transformations.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+   Packing has two halves. The <code class="language-c">Pack</code> transformation runs at the source
+   level: it emits the decryptor, a startup bootstrap that decrypts each function
+   before it is first used, and a specification file (<code class="language-c">pack.json</code>). The
+   actual encryption of the compiled code bytes is done afterwards, on the compiled
+   executable, by <code class="language-c">tigress_post</code>:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Environment=x86_64:Linux:Gcc:12 \
+        --Transform=Pack \
+           --PackCiphers=xtea \
+           --Functions=secret \
+        program.c --out=obf.c
+
+gcc -o program.exe -no-pie obf.c                    # on Linux
+gcc -o program.exe obf.c                            # on Darwin
+
+tigress_post \
+   --Action=pack\
+   --PackSpecFile=pack.json \
+   program.exe
+
+tigress_post --Action=writable program.exe   
+codesign -f -s - program.exe                        # on Darwin
+</code></pre></div><br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+   Because the packed code is decrypted back into its original location, in-place
+   packing is currently supported on <b>ELF/Linux</b> only. On Mach-O, the text segments
+   are first copied before they are decrypted.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--Transform</tt></td>
+<td><tt>Pack</tt></td>
+<td> Encrypt the code bytes of the selected functions. Tigress emits a decryptor and a startup bootstrap that decrypts each function in place before it runs; the actual encryption of the compiled bytes is done afterwards by <tt>tigress_post --Action=pack</tt>, which reads the emitted <tt>pack.json</tt>. In-place packing is currently supported on ELF/Linux. </td>
+</tr>
+<tr>
+<td><tt>--PackSpecFile</tt></td>
+<td><tt><em>filename</em></tt></td>
+<td> The name of the pack specification file Tigress emits, listing each packed region's cipher, key and parameters. <tt>tigress_post --Action=pack</tt> reads this file to encrypt the compiled binary. Several <tt>--Transform=Pack</tt> passes that name the same file accumulate their regions into it, so one file describes every packed region. Default=pack.json.</td>
+</tr>
+<tr>
+<td><tt>--PackTrace</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Insert run-time announcements around each region's decryption (and, with <tt>--PackWhen=call --PackRepack=true</tt>, re-encryption). Useful for debugging or demonstrating a packed binary. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--PackDecryptorName</tt></td>
+<td><tt><em><a href="top-level.html#IDENTSPEC">IDENTSPEC</a></em></tt></td>
+<td> Give the emitted decryptor a predictable name so that a following transformation can obfuscate it. The decryptor for encryption level <em>i</em> is named <tt>&lt;name&gt;_i</tt> --- e.g. <tt>--PackDecryptorName=decrypt</tt> names the level-1 decryptor <tt>decrypt_1</tt>, which you can then harden with, say, <tt>--Transform=Virtualize --Functions=decrypt_1</tt>. Default=NONE.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+<!-- ================================================================================================= -->
+<!-- When, Where, What                                                                                 -->
+<!-- ================================================================================================= -->
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ When, Where, What
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+An encrypted function can be decrypted at startup or right before it is called. It can remain decrypted, or it can be re-encrypted after the call has completed.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<code class="language-c">--PackSections=true</code> will encrypt the selected functions as one blob rather than one 
+function: Tigress places all of them into a single dedicated section and emits a bootstrap that decrypts
+the whole section in place at startup. This removes the per-function length globals and
+the intra-section function boundaries so an attacker sees one opaque encrypted section
+instead of individually decrypted functions. This is done  as an outer layer on top of the
+per-function packing.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--PackRepack</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Whether to re-encrypt a region after it has been used. Only meaningful with <tt>--PackWhen=call</tt>, where it shrinks the window during which the code is in the clear. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--PackWhen</tt></td>
+<td><tt>once, call</tt></td>
+<td> When a packed region is decrypted. Default=once.
+<ul>
+   <li> <tt>once</tt> = Decrypt each region once, at program startup.
+   <li> <tt>call</tt> = Decrypt a region on entry to it and (optionally) re-encrypt it on return.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--PackSections</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Encrypt the selected functions as one blob rather than one region per function. Currently ELF/Linux only (on Darwin the option is ignored and each function is packed on its own). Default=false.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+<!-- ================================================================================================= -->
+<!-- Ciphers                                                                                           -->
+<!-- ================================================================================================= -->
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Ciphers
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Tigress supports several ciphers and you can specify which ones to use with the <code class="language-c">--PackCiphers=...</code>
+option. The <code class="language-c">--PackLevels</code> option specifies how many times the binary should be encrypted.
+For example, you can say <code class="language-c">--PackCiphers=xtea,xor,rc4 --PackLevels=3</code> to specify that the
+code should be encrypted 3 times, with 3 specific ciphers.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--PackCiphers</tt></td>
+<td><tt>xtea, xor, rc4, feistel, des</tt></td>
+<td> The pool of ciphers each encryption level may use. With <tt>--PackLevels</tt> &gt; 1 the levels draw from this pool in turn. Default=xtea.
+<ul>
+   <li> <tt>xtea</tt> = The XTEA block cipher (64-bit block, 128-bit key).
+   <li> <tt>xor</tt> = A fast 32-bit-word XOR.
+   <li> <tt>rc4</tt> = The RC4 stream cipher (128-bit key, byte-granular).
+   <li> <tt>feistel</tt> = A random Feistel network (64-bit block): its round function (round count, rotations and constants) is randomized per build, so the emitted code differs every time. The key is folded into the code, so no key array appears in the binary.
+   <li> <tt>des</tt> = The DES block cipher (64-bit block, 64-bit key). With <tt>--PackKeySource=folded</tt> the 16 round subkeys are folded into the emitted decoder, so it carries no key schedule and no key array.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--PackLevels</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> Number of nested encryption layers to apply to each region. Each layer uses its own cipher (drawn from <tt>--PackCiphers</tt>) and its own key. Default=1.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+<!-- ================================================================================================= -->
+<!-- Keys                                                                                              -->
+<!-- ================================================================================================= -->
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Keys
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Ciphers need keys and those keys need to be stored somewhere, and they need to be hidden. In this
+transform, <code class="language-c">--PackKeySource=...</code> lets you store the key in cleartext in the binary,
+or baked into the decryptor's code, or computed at runtime by a user-supplied plugin.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The <code class="language-c">--PackKeyCodecs=...</code> option lets you encode the key using one of Tigress' value codecs,
+making sure they key is not in cleartext at runtime. Each key word is encoded at obfuscation time 
+and decoded into a local buffer, just beforethe cipher reads it. This resists
+entropy-based key scanning. An encoded key is not kept as one contiguous array: each stored
+slot becomes its own global, emitted in a shuffled order, so no run of bytes in the data reads
+as the key. The <code class="language-c">split</code> codecs take this furthest, spreading each 32-bit key word across
+many one-bit / nibble / byte slots. Applies only to a stored
+<code class="language-c">literal</code> key: a <code class="language-c">folded</code> key lives in the decoder's code and a
+ <code class="language-c">plugin</code> key is produced at run time, so neither leaves cleartext in the data to hide.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--PackKeySource</tt></td>
+<td><tt>literal, folded, plugin</tt></td>
+<td> Where each region's key lives, given as a <em>preference-ordered list</em>: for each key slot, the first source that can supply a key for that slot's cipher is used. For example <tt>--PackKeySource=plugin,literal</tt> uses a plugin key where one is available and falls back to a literal otherwise. Default=literal.
+<ul>
+   <li> <tt>literal</tt> = The key is stored as an array in the binary (essentially cleartext, though the reading decoder may itself be obfuscated). Works with any cipher.
+   <li> <tt>folded</tt> = The key is baked into the decryptor's code, so no key array appears in the binary. Only the foldable ciphers support this: <tt>xtea</tt> and <tt>des</tt> fold on request, and <tt>feistel</tt> is always folded.
+   <li> <tt>plugin</tt> = The key is computed at run time by a user-supplied function, letting you bind decryption to the run-time environment.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--PackKeyCodecs</tt></td>
+<td><tt>null, add, xor, poly1, polyn, lineargf2, bitperm, feistel, split_bits, split_nibbles, split_bytes</tt></td>
+<td> The pool of value codecs used to hide a stored key, one drawn per key slot for diversity. Default=null.
+<ul>
+   <li> <tt>null</tt> = <em>cleartext</em> --- store the key verbatim (the default; no encoding).
+   <li> <tt>add</tt> = <em>additive</em> --- store the key offset by a per-slot constant.
+   <li> <tt>xor</tt> = <em>xor</em> --- store the key xored with a per-slot constant.
+   <li> <tt>poly1</tt> = <em>affine</em> --- store <tt>a*key + b</tt> (an invertible degree-1 map).
+   <li> <tt>polyn</tt> = <em>permutation polynomial</em> --- store a degree-<em>d</em> Rivest permutation polynomial of the key (a higher-degree bijection than <tt>poly1</tt>).
+   <li> <tt>lineargf2</tt> = <em>linear over GF(2)</em> --- an invertible bit-linear map.
+   <li> <tt>bitperm</tt> = <em>bit permutation</em> --- a fixed permutation of the key's bits.
+   <li> <tt>feistel</tt> = <em>Feistel network</em> --- a keyed, randomized invertible mixing.
+   <li> <tt>split_bits</tt> = <em>bit split</em> --- scatter each key word across one global per bit.
+   <li> <tt>split_nibbles</tt> = <em>nibble split</em> --- scatter each key word across one global per nibble.
+   <li> <tt>split_bytes</tt> = <em>byte split</em> --- scatter each key word across one global per byte.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--PackKeyComposeCodecs</tt></td>
+<td><tt></tt></td>
+<td> Composition chains for a stored literal key, pooled with <tt>--PackKeyCodecs</tt> (one is drawn per key slot). Each chain is a comma-separated list of two or more codecs, chains separated by semicolons; a chain is applied outermost-to-innermost, so <tt>split_bits,poly1</tt> means <tt>split(poly1(key))</tt> --- <tt>poly1</tt>-encode the key word, then scatter its bits. The outermost codec may be a <tt>split</tt> (multi-piece); every inner codec must be single-piece. Only the constEncodable key codecs are allowed (<tt>add</tt>, <tt>xor</tt>, <tt>poly1</tt>, <tt>lineargf2</tt>, <tt>bitperm</tt>, <tt>feistel</tt>, <tt>split_*</tt>). Default=none.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+
+
+<br>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/prism/prism.js"></script>
+  
+</body>
+</html>

@@ -160,22 +160,25 @@ code {
 
 <center><img width="500px" src="tigress3-images//plugins-front-page.png"></center>
 
-<a class="anchor" id="plugins">&nbsp;</a>
+<!-- ================================================================================================= -->
+<!-- Introduction                                                                                      -->
+<!-- ================================================================================================= -->
+
+<a class="anchor" id="plugins">&nbsp;</a> 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Tigress has a simple way of letting you add code (we call
-them <em>plugins</em>) that we can then incorporate into the
-obfuscated program. For now, there are just two applications of
-plugins: you can provide your own <em>responders</em>
-  and <em>invariants</em> which are proprietary to you and unique
-to your application.  Responders are code snippets that will be invoked
-when there has been some sort of integrity violation, such as a 
-checksum failure, and invariants are true facts about your code
-that can be used to create opaque predicates. These are the 
-available options:
+Tigress has a simple
+way of letting you add code (we call them <em>plugins</em>) that we
+can then incorporate into the obfuscated program. For example, you can
+use plugins to provide your own <em>responders</em> and
+<em>invariants</em> which are proprietary to you and unique to your
+application.  Responders are code snippets that will be invoked when
+there has been some sort of integrity violation, such as a checksum
+failure, and invariants are true facts about your code that can be
+used to create opaque predicates. 
 
             </p>
         </div>
@@ -199,21 +202,6 @@ available options:
 <td><tt>InitPlugins</tt></td>
 <td> Initialize the plugin system. </td>
 </tr>
-<tr>
-<td><tt>--InitPluginsMBAPrefix</tt></td>
-<td><tt><em>String</em></tt></td>
-<td> The prefix for the name of MBA plugin functions. Default=NONE.</td>
-</tr>
-<tr>
-<td><tt>--InitPluginsInvariantPrefix</tt></td>
-<td><tt><em>String</em></tt></td>
-<td> The prefix for the name of invariant plugin functions. Default=NONE.</td>
-</tr>
-<tr>
-<td><tt>--InitPluginsResponderPrefix</tt></td>
-<td><tt><em>String</em></tt></td>
-<td> The prefix for the name of responder plugin functions. Default=NONE.</td>
-</tr>
 
 
 </table>
@@ -221,6 +209,7 @@ available options:
 </div>
 </div>
 </section>
+<br>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -252,6 +241,10 @@ program.
     </div>
 </section>
 
+<!-- ================================================================================================= -->
+<!-- MBA                                                                                      -->
+<!-- ================================================================================================= -->
+
 <a class="anchor" id="mba-expressions">&nbsp;</a>
 
 <br>
@@ -279,6 +272,33 @@ MBA expressions with your own.
         </div>
     </div>
 </section>
+<br>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--InitPluginsMBAPrefix</tt></td>
+<td><tt><em>String</em></tt></td>
+<td> The prefix for the name of MBA plugin functions. Default=NONE.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+<br>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -315,6 +335,10 @@ int mba_BXor (int x, int y) {
 }
 </code></pre></div><br>
 
+<!-- ================================================================================================= -->
+<!-- Invariants                                                                                      -->
+<!-- ================================================================================================= -->
+
 <a class="anchor" id="invariants">&nbsp;</a>
 
 <br>
@@ -346,6 +370,32 @@ invariants no longer hold.
         </div>
     </div>
 </section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--InitPluginsInvariantPrefix</tt></td>
+<td><tt><em>String</em></tt></td>
+<td> The prefix for the name of invariant plugin functions. Default=NONE.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+<br>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -521,6 +571,9 @@ int acme_RANGE_1_3 (int argc) {
 }
 </code></pre></div><br>
 
+<!-- ================================================================================================= -->
+<!-- Responders                                                                                        -->
+<!-- ================================================================================================= -->
 
 <a class="anchor" id="responders">&nbsp;</a>
 
@@ -551,6 +604,32 @@ functions should always return <code class="language-c">void</code>.
         </div>
     </div>
 </section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--InitPluginsResponderPrefix</tt></td>
+<td><tt><em>String</em></tt></td>
+<td> The prefix for the name of responder plugin functions. Default=NONE.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+<br>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -605,6 +684,10 @@ void acme_responder_5 () {
 }
 </code></pre></div><br>
 
+<!-- ================================================================================================= -->
+<!-- Opaque                                                                                            -->
+<!-- ================================================================================================= -->
+
 <a class="anchor" id="opaque">&nbsp;</a>
 
 <br>
@@ -658,12 +741,12 @@ facilitate this, <em>initialize</em> and <em>update</em>:
 <tr>
 <td><tt>--InitPluginsInitializePrefix</tt></td>
 <td><tt><em>String</em></tt></td>
-<td> The prefix for the name of initializer plugin functions. Default=NONE.</td>
+<td> The prefix for the name of initializer plugin functions. Used for opaque library plugins. Default=NONE.</td>
 </tr>
 <tr>
 <td><tt>--InitPluginsUpdatePrefix</tt></td>
 <td><tt><em>String</em></tt></td>
-<td> The prefix for the name of update plugin functions. Default=NONE.</td>
+<td> The prefix for the name of update plugin functions. Used for opaque library plugins. Default=NONE.</td>
 </tr>
 
 
@@ -672,6 +755,7 @@ facilitate this, <em>initialize</em> and <em>update</em>:
 </div>
 </div>
 </section>
+<br>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -708,7 +792,7 @@ int acme_invariant_even_VALUE_0 (void) {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-This library adds a global variable <code class="language-c">alwaysEven</code> which, as the name implies, is alwyas even.
+This library adds a global variable <code class="language-c">alwaysEven</code> which, as the name implies, is always even.
 The body of the <code class="language-c">initialize_even</code> function will be inserted in the function where you want 
 initializations to take place, and the two update functions will be inserted by the <code class="language-c">UpdateOpaque</code>
 transformation. Here, there is no particular significance to the <code class="language-c">_number</code> in the function names -- each
@@ -811,6 +895,10 @@ int acme_invariant_odd_VALUE_0 (int v) {
 </code></pre></div><br>
 
 
+<!-- ================================================================================================= -->
+<!-- ADT                                                                                               -->
+<!-- ================================================================================================= -->
+
 <a class="anchor" id="opaque">&nbsp;</a>
 
 <br>
@@ -852,14 +940,14 @@ these to Tigress. The only use at the moment is with the <code class="language-c
     </colgroup>
 <tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
 <tr>
-<td><tt>--InitPluginsCollectionPrefix</tt></td>
+<td><tt>--InitPluginsContainerPrefix</tt></td>
 <td><tt><em>String, String, ...</em></tt></td>
-<td> Comma-separated list of names of abstract datatypes that have been included in the program. If you specify <tt>Set</tt> as the prefix, for example, you are expected to provide types <tt>Set_TYPE<tt> (the type of the ADT itself), <tt>Set_ELEMENT</tt> (the type of the elements of the set) and <tt>Set_ITER</tt> (the type of an iterator over the set). You should also provide implementations for the following functions: <tt>Set_CREATE</tt> (create a set), <tt>Set_JOIN</tt> (merge two sets), <tt>Set_INSERT</tt> (insert an element in the set), <tt>Set_DELETE</tt> (delete an element from the set), <tt>Set_MEMBER</tt> (check if an element is in the set), <tt>Set_DESTROY</tt> (delete the set), <tt>Set_SIZE</tt> (return the number of elements in the set), <tt>Set_FIRST</tt> (return the reference to the first element of the set), <tt>Set_NEXT</tt> (return the reference to the next element of the set), <tt>Set_DONE</tt> (indicate if we are done with the interation), <tt>Set_GET (get the current element of the iteration). Default=NONE.</td>
+<td> Comma-separated list of names of container abstract datatypes that have been included in the program. If you specify <tt>Set</tt> as the prefix, for example, you are expected to provide types <tt>Set_TYPE<tt> (the type of the ADT itself), <tt>Set_ELEMENT</tt> (the type of the elements of the set) and <tt>Set_ITER</tt> (the type of an iterator over the set). You should also provide implementations for the following functions: <tt>Set_CREATE</tt> (create a set), <tt>Set_JOIN</tt> (merge two sets), <tt>Set_INSERT</tt> (insert an element in the set), <tt>Set_DELETE</tt> (delete an element from the set), <tt>Set_MEMBER</tt> (check if an element is in the set), <tt>Set_DESTROY</tt> (delete the set), <tt>Set_SIZE</tt> (return the number of elements in the set), <tt>Set_FIRST</tt> (return the reference to the first element of the set), <tt>Set_NEXT</tt> (return the reference to the next element of the set), <tt>Set_DONE</tt> (indicate if we are done with the interation), <tt>Set_GET (get the current element of the iteration). Default=NONE.</td>
 </tr>
 <tr>
 <td><tt>--InitPluginsDictionaryPrefix</tt></td>
 <td><tt><em>String, String, ...</em></tt></td>
-<td> Comma-separated list of names of dictionary abstract datatypes that have been included in the program. Otherwise similar to <tt>--InitPluginsCollectionPrefix</tt>. Default=NONE.</td>
+<td> Comma-separated list of names of dictionary abstract datatypes that have been included in the program. Otherwise similar to <tt>--InitPluginsContainerPrefix</tt>. Default=NONE.</td>
 </tr>
 
 
@@ -868,6 +956,7 @@ these to Tigress. The only use at the moment is with the <code class="language-c
 </div>
 </div>
 </section>
+<br>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
@@ -883,7 +972,7 @@ and the corresponding Tigress command line options (you can give multiple ADTs i
 </section>
 <div class="container">
 <pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">   --Transform=InitPlugins \
-       --InitPluginsCollectionPrefix=Set \
+       --InitPluginsContainerPrefix=Set \
        --InitPluginsDictionaryPrefix=HashMap
 </code></pre></div><br>
 
@@ -940,6 +1029,159 @@ HashMap_ITER HashMap_FIRST(HashMap_TYPE a){ ... }
 HashMap_ITER HashMap_NEXT(HashMap_TYPE a, HashMap_ITER n){ ... }
 int HashMap_DONE(HashMap_TYPE a, HashMap_ITER n){ ... }
 HashMap_ELEMENT HashMap_GET(HashMap_TYPE a, HashMap_ITER n){ ... }
+</code></pre></div><br>
+
+<!-- ================================================================================================= -->
+<!-- Encryption Keys                                                                                   -->
+<!-- ================================================================================================= -->
+
+<a class="anchor" id="keys">&nbsp;</a>
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Encryption Keys
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The <code class="language-c">Pack</code> transformation encrypts the selected functions' code and decrypts it,
+in place, at run time. Normally Tigress mints a random encryption key; with
+<code class="language-c">--PackKeySource=plugin</code> you supply the key yourself, as a <em>key plugin</em>.
+This lets the key be produced at run time by your own code (from a license check, a server
+handshake, a hardware token, ...) while Tigress still knows the key's value at obfuscation
+time so it can encrypt the packed code at rest.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--InitPluginsKeyPrefix</tt></td>
+<td><tt><em><a href="top-level.html#IDENTSPEC">IDENTSPEC</a></em></tt></td>
+<td> The prefix for user-supplied <em>crypto-key</em> plugin functions, used by Pack's <tt>--PackKeySource=plugin</tt>. Each is named <tt>&lt;prefix&gt;_&lt;cipher&gt;_&lt;number&gt;_&lt;0xword&gt;_&lt;0xword&gt;...</tt>: the name encodes the cipher it supplies a key for and the key's 32-bit words, and the function returns those words at run time. Tigress reads the key from the name (to encrypt at rest) and inlines the function body to reproduce it at run time, so the key-bearing symbol never ships in the binary. Default=NONE.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+<br>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+A key plugin is a <code class="language-c">void</code> function whose <em>name</em> encodes both the cipher it
+supplies a key for and the key's 32-bit words. The name has the form
+<code class="language-c"><em>prefix</em>_<em>cipher</em>_<em>number</em>_0x<em>W0</em>_0x<em>W1</em>_..._0x<em>Wn</em></code>:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+         <code class="language-c"><em>prefix</em></code> is set by <code class="language-c">--InitPluginsKeyPrefix</code>.
+
+</li>
+
+<li>
+         <code class="language-c"><em>cipher</em></code> is the cipher the key is for (for example <code class="language-c">xtea</code> or <code class="language-c">des</code>); it selects which packed regions the key is eligible for.
+
+</li>
+
+<li>
+         <code class="language-c"><em>number</em></code> disambiguates several keys offered for the same cipher.
+
+</li>
+
+<li>
+         <code class="language-c">0x<em>W0</em> .. 0x<em>Wn</em></code> are the key's 32-bit words, in hexadecimal &mdash; the value Tigress encrypts the code with at obfuscation time.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The function takes <code class="language-c">(unsigned int *key, unsigned int nWords)</code> and must fill
+<code class="language-c">key[0..nWords-1]</code> with those same words at run time. Tigress reads the key value
+from the name (to encrypt the code at rest) and <em>inlines</em> the function body wherever
+the key is needed, so the key-bearing function is removed and its name never appears in the
+shipped binary. If several plugins match a region's cipher, Tigress picks one.
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">/* A 128-bit XTEA key = four 32-bit words. In practice you would DERIVE these at run
+   time (they must equal the words encoded in the function's name); hard-coded here
+   only to keep the example short. */
+void KEY_xtea_0_0x1a2b3c4d_0x5e6f7080_0x90a0b0c0_0xd0e0f000
+     (unsigned int *key, unsigned int nWords) {
+   key[0] = 0x1a2b3c4d;
+   key[1] = 0x5e6f7080;
+   key[2] = 0x90a0b0c0;
+   key[3] = 0xd0e0f000;
+}
+</code></pre></div><br>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+And the Tigress invocation:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress \
+     --Transform=InitPlugins --InitPluginsKeyPrefix=KEY \
+     --Transform=Pack --Functions=secret \
+        --PackKeySource=plugin \
+     ... program.c --out=obf.c
 </code></pre></div><br>
 
 <br>
