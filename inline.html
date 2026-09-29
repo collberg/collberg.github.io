@@ -240,13 +240,15 @@ Recursive functions and functions with variable number of arguments cannot be in
 </tr>
 <tr>
 <td><tt>--InlineOptimizeKinds</tt></td>
-<td><tt>constProp, copyProp, mergeLocals, gotos</tt></td>
+<td><tt>constProp, copyProp, mergeLocals, gotos, deadCodeElim, loopUnroll</tt></td>
 <td> List of optimizing transformations to apply Default=NONE.
 <ul>
    <li> <tt>constProp</tt> = <em>Constant Propagation</em>, i.e. replace a variable with its value, if it is constant.
    <li> <tt>copyProp</tt> = <em>Copy Propagation</em>, i.e. after the assignment <tt>x=y</tt> replaces uses of variable <tt>x</tt> with <tt>y</tt>.
    <li> <tt>mergeLocals</tt> = Reduce the number of local variables by merging locals that are not live at the same time. Particularly useful after inlining.
    <li> <tt>gotos</tt> = Remove extra labels, gotos, and jump chains. Inlining always does this to the caller anyway, so this value is now redundant; it is kept because it does no harm to ask for it.
+   <li> <tt>deadCodeElim</tt> = <em>Dead Code Elimination</em>, i.e. remove assignments whose results are never used.
+   <li> <tt>loopUnroll</tt> = <em>Loop Unrolling</em>, i.e. replicate each loop body a number of times.
 </ul>
 </td>
 </tr>

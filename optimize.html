@@ -178,6 +178,32 @@ code {
 </section>
 
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+   The <code class="language-c">loopUnroll</code> optimization replicates each loop body a number of
+   times, set by <code class="language-c">--OptimizeLoopUnrollCount</code>. It works on <code class="language-c">for</code>,
+   <code class="language-c">while</code> and <code class="language-c">do</code>-<code class="language-c">while</code> loops, and preserves the
+   program's behavior for any number of iterations, including loops that use
+   <code class="language-c">break</code> and <code class="language-c">continue</code>. For example, to unroll the loops in
+   function <code class="language-c">f</code> three times:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Environment=x86_64:Linux:Gcc:11 \
+        --Transform=Optimize \
+           --Functions=f \
+           --OptimizeKinds=loopUnroll \
+           --OptimizeLoopUnrollCount=3 \
+        program.c --out=result.c
+</code></pre></div><br>
+
+
 <br>
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
     <div class="container">
@@ -210,12 +236,15 @@ code {
 </tr>
 <tr>
 <td><tt>--OptimizeKinds</tt></td>
-<td><tt>constProp, copyProp, mergeLocals</tt></td>
+<td><tt>constProp, copyProp, mergeLocals, deadCodeElim, gotos, loopUnroll</tt></td>
 <td> List of optimizing transformations to apply Default=NONE.
 <ul>
    <li> <tt>constProp</tt> = <em>Constant Propagation</em>, i.e. replace a variable with its value, if it is constant.
    <li> <tt>copyProp</tt> = <em>Copy Propagation</em>, i.e. after the assignment <tt>x=y</tt> replaces uses of variable <tt>x</tt> with <tt>y</tt>.
    <li> <tt>mergeLocals</tt> = Reduce the number of local variables by merging locals that are not live at the same time. Particularly useful after inlining,
+   <li> <tt>deadCodeElim</tt> = <em>Dead Code Elimination</em>, i.e. remove assignments whose results are never used.
+   <li> <tt>gotos</tt> = Branch simplification, i.e. shorten jump chains, delete redundant gotos and empty statements, and strip labels nobody branches to.
+   <li> <tt>loopUnroll</tt> = <em>Loop Unrolling</em>, i.e. replicate each loop body a number of times (see <tt>--OptimizeLoopUnrollCount</tt>).
 </ul>
 </td>
 </tr>
@@ -228,6 +257,11 @@ code {
 <td><tt>--OptimizeShortMergedNames</tt></td>
 <td><tt></tt></td>
 <td> For, <tt>mergeLocals</tt>, generate short names for merged local variables, instead of the default <tt>var1_var2_...</tt>. Default=False.</td>
+</tr>
+<tr>
+<td><tt>--OptimizeLoopUnrollCount</tt></td>
+<td><tt></tt></td>
+<td> For <tt>loopUnroll</tt>, the number of copies of each loop body to emit per loop iteration (the unroll factor). A value of <tt>1</tt> leaves loops unchanged. Default=2.</td>
 </tr>
 
 

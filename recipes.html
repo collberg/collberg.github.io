@@ -615,7 +615,134 @@ Here is the <a href="output4.c.txt">resulting code.</a> Here are a few things to
 
 <li>
       Another possibility is add extra bogus arguments, using <code class="language-c">--Transform=RndArgs --Functions=MERGED --RndArgsBogusNo=10</code>,
-          which results in this <a href="output4a.c.txt">code.</a> 
+          which results in this <a href="output4a.c.txt">code.</a>
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =============================================================================================== -->
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Recipe #5: Packing (Encrypting Functions at Rest)
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+In this recipe we <em>pack</em> a function: its compiled machine code is stored encrypted in the
+   binary and decrypted, at run time, only when it is needed. We use a small input,
+   <a href="test-pack.c.txt">test-pack.c</a>, whose <code class="language-c">work</code> function is the one we protect.
+   Unlike the other recipes, packing is a <b>two-stage</b> process. First Tigress rewrites the
+   source, inserting a run-time decryptor and writing a spec file (here <code class="language-c">pack.json</code>) that
+   describes each region to encrypt:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --Seed=42 --Statistics=0 --Verbosity=0 \
+     --Transform=Pack \
+        --Functions=work \
+        --PackCiphers=xtea,des \
+        --PackLevels=2 \
+        --PackKeySource=folded \
+        --PackSpecFile=pack.json \
+    test-pack.c --out=output5.c
+</code></pre></div><br>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Then you compile the result and run the <code class="language-c">tigress_post</code> post-processor, which encrypts the
+   compiled bytes of each packed function in place and patches the binary. On Linux the code is
+   decrypted in place, so the code segment must be made writable; on Darwin the body is copied into
+   JIT memory and decrypted there, so the binary only needs re-signing:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">gcc -no-pie -o output5.exe output5.c
+tigress_post --Action=pack --PackSpecFile=pack.json output5.exe
+tigress_post --Action=writable output5.exe
+./output5.exe
+
+gcc -o output5.exe output5.c
+tigress_post --Action=pack --PackSpecFile=pack.json output5.exe
+codesign -s - output5.exe
+./output5.exe
+</code></pre></div><br>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+Both print <code class="language-c">work(10)=135</code> &mdash; the same as the unobfuscated program &mdash; but in the
+   packed binary the bytes of <code class="language-c">work</code> are ciphertext until it first runs. Here are a few things
+   to note:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      Packing hides a function's code until the moment it runs, which defeats a purely static
+       reading of the binary. It composes with the other transformations &mdash; you can virtualize
+          or flatten a function <em>and</em> pack it.
+
+</li>
+
+<li>
+      <code class="language-c">--PackCiphers</code> chooses the cipher(s) and <code class="language-c">--PackLevels</code> the number of nested
+       encryption layers; with more than one cipher the layers cycle through them (here layer&nbsp;1 is
+          <code class="language-c">xtea</code> and layer&nbsp;2 is <code class="language-c">des</code>), so the region is <code class="language-c">des(xtea(code))</code> at rest.
+
+</li>
+
+<li>
+      <code class="language-c">--PackKeySource=folded</code> whiteboxes the decryptor: the key is folded into the cipher's code, so
+       no key array is left in the binary. It applies to <code class="language-c">xtea</code> and <code class="language-c">des</code>; the
+          <code class="language-c">feistel</code> cipher is always baked.
+
+</li>
+
+<li>
+      Add <code class="language-c">--PackWhen=call --PackRepack=true</code> (Linux) to decrypt a function on entry and
+       re-encrypt it on return, so it is plaintext only while it is actually running.
+
+</li>
+
+<li>
+      On Darwin the packed body is copied before it runs, so it must be relocatable; a function that
+       makes a variadic call such as <code class="language-c">printf</code> is not yet move-safe there. That is why the
+          protected <code class="language-c">work</code> here is a computation-only leaf and the I/O stays in <code class="language-c">main</code>.
 
 </li>
 

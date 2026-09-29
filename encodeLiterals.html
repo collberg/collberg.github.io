@@ -165,12 +165,10 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Obfuscate integer and/or string literals (such as <code class="language-c">42</code> or <code class="language-c">"42"</code>).
+Obfuscate integer and/or string literals (such as <code class="language-c">42</code> or <code class="language-c">"42"</code>). 
 Literal integers can be replaced with opaque expressions, which
 requires that the InitOpaque transformation has been previously issued. Literal strings can be
-replaced with code that rebuilds them at runtime, so the readable text no longer appears in the
-generated source or the compiled binary. Use <code class="language-c">--EncodeLiteralsStringKinds</code> to choose how;
-see <a href="#string-schemes">Encoding strings</a> below.
+replaced with a function that generates them at runtime.
 
             </p>
         </div>
@@ -309,71 +307,6 @@ in your tigress command:
    ...
 </code></pre></div><br>
 
-<a class="anchor" id="string-schemes">&nbsp;</a>
-
-<br>
-<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">
- Encoding strings
-
-               </h2>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="table2 TIGRESS-TABLE2" id="table2-dy">
-<div class="container">
-<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
-<center>
-<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
-    <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 60%;">
-    </colgroup>
-<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
-<tr>
-<td><tt>--EncodeLiteralsStringKinds</tt></td>
-<td><tt>fsm, chunk, *</tt></td>
-<td> How to encode string literals. When you list several, one is chosen at random each run. Default=fsm.
-<ul>
-   <li> <tt>fsm</tt> = Rebuild each string at runtime with a generated decoder function.
-   <li> <tt>chunk</tt> = Encode each string in small pieces, so no readable text remains in the generated source or the compiled binary.
-   <li> <tt>*</tt> = Same as fsm,chunk
-</ul>
-</td>
-</tr>
-
-
-</table>
-</center>
-</div>
-</div>
-</section>
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-For example, to encode strings so no readable text remains in the output:
-
-            </p>
-        </div>
-    </div>
-</section>
-<div class="container">
-<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress ... \
-   --Transform=EncodeLiterals \
-      --Functions=main \
-      --EncodeLiteralsKinds=string \
-      --EncodeLiteralsStringKinds=chunk \
-   ...
-</code></pre></div><br>
-
 <a class="anchor" id="issues">&nbsp;</a>
 
 <br>
@@ -394,12 +327,12 @@ For example, to encode strings so no readable text remains in the output:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-The generated string decoder is deliberately simple. To make it less conspicuous, transform it
-further &mdash; for example with
-<a href="virtualize.html">Virtualize</a> (to hide the string contents) and
-<a href="randomizeArguments.html">RndArgs</a> (to hide the interface).
-This matters especially with <code class="language-c">chunk</code>: without a following transform, a compiler's optimizer
-may fold the decoding back to the original string.
+Note that the generated string encoding function is trivial, by design.
+To be made less conspicuous, it should itself be transformed, for example using the
+<a href="virtualize.html">Virtualize</a>
+transformation (to hide the string contents) and the 
+<a href="randomizeArguments.html">RndArgs</a>
+transformation (to hide the interface).
 
             </p>
         </div>

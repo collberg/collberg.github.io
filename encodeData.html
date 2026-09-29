@@ -303,12 +303,30 @@ If you want the return value of a function <code class="language-c">fun1</code> 
 </tr>
 <tr>
 <td><tt>--EncodeDataCodecs</tt></td>
-<td><tt>poly1, xor, xorfloat, add, rnc, poly_xor, xor_poly, poly_rnc, xor_rnc, *</tt></td>
-<td> Comma-separated list of the kinds of codecs that may be used. Only <tt>poly1</tt> currently makes sense; avoid the others. Default=poly1.
+<td><tt>automatic, poly1, polyn, addshare, xorshare, addxorshare, lineargf2, bitperm, feistel, split_bits, split_nibbles, split_bytes, bignum, bcd, rational, montgomery, xor, xorfloat, fixed, softfloat, null, add, rnc, poly_xor, xor_poly, poly_rnc, xor_rnc, *</tt></td>
+<td> Comma-separated list of the kinds of codecs that may be used. The bijective integer codecs <tt>poly1</tt> and <tt>polyn</tt> (and <tt>xor</tt>) are the ones that make sense in general; the others have caveats noted below. Default=poly1.
 <ul>
+   <li> <tt>automatic</tt> = Choose a codec per variable by <em>fit</em> rather than at random: for each variable, pick (at random among the best) a codec whose set of operators performed in encoded space best covers the operators the program actually applies to that variable, so the operations that matter stay encoded. The candidate pool is the other codecs in this list, or -- when <tt>automatic</tt> is the only entry -- all of the exact (bijective, no range restriction) codecs. Range-limited codecs (<tt>rnc</tt>, <tt>rational</tt>) are not chosen automatically, since without a value-range analysis a variable cannot be shown to stay in range. Codecs are grouped by type, so all variables of one type share a codec. <b>From version 4.1.1</b>
    <li> <tt>poly1</tt> = Linear transformation of the form <tt>a*x+b</tt>.
+   <li> <tt>polyn</tt> = Degree-<em>d</em> permutation polynomial <tt>a_d*x^d + ... + a_1*x + a_0</tt>, a bijection modulo 2^w (Rivest's characterisation; the compositional inverse used for decoding is computed by the method of Barthelemy et al., SPRO 2016). Generalises <tt>poly1</tt> (which is the degree-1 case); the degree is set with <tt>--EncodeDataPolyDegree</tt>. Exact for every value of every integer type, since it wraps modulo 2^w exactly as C does. Its benefit over <tt>poly1</tt> is diversity -- a far larger key space with no recognisable affine shape. Note that at degree &gt;= 2 there is no closed form for arithmetic in encoded space, so only equality tests stay encoded; other operations decode, compute, and re-encode.
+   <li> <tt>addshare</tt> = Additive secret-sharing: the value is split into pieces that sum to it modulo 2^w, with pieces drawn fresh at runtime (so it is <em>dynamic</em> -- equal values encode differently). Homomorphic and <b>exact</b> for <tt>+</tt>, <tt>-</tt> and <tt>*</tt> in encoded space with no range restriction (the multiply uses a masked-multiplication gadget); bitwise ops and comparisons decode. Needs a prior <tt>--Transform=InitEntropy</tt>. Piece count is <tt>--EncodeDataNumberOfPieces</tt>. <b>From version 4.1.1</b>
+   <li> <tt>xorshare</tt> = Boolean secret-sharing: pieces that XOR to the value, drawn fresh at runtime (<em>dynamic</em>). Homomorphic for <tt>^</tt>, <tt>~</tt>, <tt>&amp;</tt> and <tt>|</tt> in encoded space (bitwise ops use a masked-AND gadget); arithmetic and comparisons decode. Needs a prior <tt>--Transform=InitEntropy</tt>. The boolean dual of <tt>addshare</tt>. <b>From version 4.1.1</b>
+   <li> <tt>addxorshare</tt> = Combined additive+boolean secret-sharing: keeps two additive shares and does <b>both</b> arithmetic (<tt>+ - *</tt>) and bitwise (<tt>^ & | ~</tt>) ops in encoded space, converting between arithmetic and boolean sharing internally (Goubin A2B/B2A) so the value is never reconstructed. Dynamic; needs <tt>--Transform=InitEntropy</tt>. Bitwise ops are costly (each pays an A2B/B2A round-trip). <b>From version 4.1.1</b>
+   <li> <tt>lineargf2</tt> = GF(2)-linear mixing bijection <tt>E(x) = L(x) ^ c</tt>, with <tt>L</tt> an invertible chain of xorshift shears -- strong bit diffusion, a different algebra from <tt>poly1</tt>. Deterministic; homomorphic for <tt>^</tt> and <tt>~</tt> (and <tt>==</tt>/<tt>!=</tt>); arithmetic and <tt>&amp; |</tt> decode. <b>From version 4.1.1</b>
+   <li> <tt>bitperm</tt> = Bit-permutation bijection: <tt>E(x)</tt> permutes the value's bits by a fresh random permutation (emitted as a handful of masked shifts OR-ed together). Because moving bit positions commutes with every bitwise operator, it is homomorphic for <b>all</b> of <tt>&amp;</tt>, <tt>|</tt>, <tt>^</tt> and <tt>~</tt> (and <tt>==</tt>/<tt>!=</tt>) -- strictly more than <tt>lineargf2</tt> -- while arithmetic decodes. Deterministic and exact; the deterministic counterpart of <tt>xorshare</tt>. <b>From version 4.1.1</b>
+   <li> <tt>feistel</tt> = A small keyed Feistel cipher on the word: the value is split into halves and put through 4-8 rounds of <tt>(L,R) -&gt; (R, L ^ F(R,k))</tt> with a keyed nonlinear round function; decode runs the rounds in reverse. A deterministic exact bijection, but a <em>pseudorandom</em> one with no algebraic shape to model -- the "encrypt the variable" codec, trading homomorphism for strength. Only <tt>==</tt>/<tt>!=</tt> stay encoded (a bijection preserves equality); everything else decodes. <b>From version 4.1.1</b>
+   <li> <tt>split_bits</tt> = Bit-slice split: a <tt>w</tt>-bit value is cut into <tt>w</tt> one-bit pieces (piece <tt>j</tt> = bit <tt>j</tt>), reassembled by <tt>OR_j (piece_j &lt;&lt; j)</tt>. A deterministic exact multi-piece bijection whose point is representational diversity, not encoded arithmetic -- it composes as the <em>outermost</em> codec of a chain (e.g. <tt>poly1</tt> then split). Every operator decodes. <b>From version 4.1.1</b>
+   <li> <tt>split_nibbles</tt> = Bit-slice split into 4-bit nibbles (<tt>w/4</tt> pieces); otherwise as <tt>split_bits</tt>. <b>From version 4.1.1</b>
+   <li> <tt>split_bytes</tt> = Bit-slice split into 8-bit bytes (<tt>w/8</tt> pieces); otherwise as <tt>split_bits</tt>. <b>From version 4.1.1</b>
+   <li> <tt>bignum</tt> = Multi-limb (bignum) positional split into <tt>--EncodeDataNumberOfPieces</tt> limbs of base 2^b; arithmetic becomes limb-wise carry/borrow code, like an arbitrary-precision integer. Deterministic and exact; homomorphic for <tt>+ - & | ^ ~</tt> and <tt>== !=</tt> in encoded space; <tt>*</tt>, shifts and ordering comparisons decode. <b>From version 4.1.1</b>
+   <li> <tt>bcd</tt> = Binary-coded decimal: the value stored as its decimal digits (one 0-9 digit per piece); a decimal representation that reads very differently from binary. Deterministic; homomorphic only in <tt>== !=</tt> (decimal carry cannot match binary wrap-around, so arithmetic and bitwise ops decode). <b>From version 4.1.1</b>
+   <li> <tt>rational</tt> = Rational a/b over a prime field (p &gt; 2^2w): the only codec homomorphic in both <tt>+</tt> and <tt>*</tt> in encoded space (<tt>==</tt>/<tt>!=</tt> too; <tt>-</tt>, unary <tt>-</tt> and bitwise ops decode). Field products need p^2, so only narrow types are supported -- <tt>char</tt>, and <tt>short</tt> when 128-bit integers are allowed; wider types are rejected. Exact while the running value stays below p (an rnc-style range limit); decode does a modular inverse, so it is the most expensive codec. <b>From version 4.1.1</b>
+   <li> <tt>montgomery</tt> = Montgomery form <tt>E(x) = x*R mod M</tt> with a random odd modulus <tt>M &gt; 2^2w</tt>. Homomorphic in <tt>+</tt> and <tt>*</tt> (and <tt>==</tt>/<tt>!=</tt>); the multiply is Montgomery's division-free <tt>REDC</tt> reduction, which also does encode and decode. Like <tt>rational</tt> but <em>single-piece</em> and division-free (no <tt>a/b</tt>, no runtime modular inverse), so it supports the same narrow types (<tt>char</tt>, and <tt>short</tt> with 128-bit integers) and rejects wider ones. Deterministic; exact while the running value stays below <tt>M</tt> (an rnc-style range limit); <tt>-</tt>, unary <tt>-</tt> and bitwise ops decode. <b>From version 4.1.1</b>
    <li> <tt>xor</tt> = Exclusive-or with a constant.
    <li> <tt>xorfloat</tt> = Exclusive-or with a constant on floating point values.
+   <li> <tt>fixed</tt> = Fixed-point (Q-format) encoding of a real value; fraction bits set by <tt>--EncodeDataFixedFraction</tt>.
+   <li> <tt>softfloat</tt> = Software floating-point representation.
+   <li> <tt>null</tt> = No encoding (the identity codec); the no-op baseline.
    <li> <tt>add</tt> = Add a constant and promote to next largest integer type. Will fail for the largest integer type.
    <li> <tt>rnc</tt> = Residue Number Coding: the value is held as its residues modulo several pairwise-coprime moduli n_i, plus a fresh random multiple of each, so equal values do not encode equally. <b>Correct at every integer type from version 4.1.0</b> (before that it silently computed wrong values at unsigned short, unsigned int, long and unsigned long). <p><b>Range limitation.</b> The codec is exact only while the value being reconstructed stays below half the product of its moduli. A single operation on in-range values always satisfies this, so ordinary arithmetic is correct. It is <em>not</em> guaranteed for a value that keeps growing, because the limit applies to the running value and not to the type: a variable ACCUMULATED in a loop (a counter, a running total, a repeated product) eventually passes it, after which the obfuscated program silently computes a different answer from the original. Large multiplications reach the limit fastest, since a product of two w-bit values is 2w bits wide. Prefer <tt>poly1</tt> or <tt>xor</tt> for such variables -- both are exact for every value of every integer type, because they are bijections modulo 2^w and so wrap exactly as C does. Tracked as tigress_issues#183.
    <li> <tt>poly_xor</tt> = First encode with poly1, then with xor
@@ -318,6 +336,11 @@ If you want the return value of a function <code class="language-c">fun1</code> 
    <li> <tt>*</tt> = All options
 </ul>
 </td>
+</tr>
+<tr>
+<td><tt>--EncodeDataComposeCodecs</tt></td>
+<td><tt></tt></td>
+<td> Compose codecs into nested encodings, as an alternative to the built-in shortcuts (<tt>poly_xor</tt>, <tt>xor_rnc</tt>, ...). The value is a semicolon-separated list of chains, each a comma-separated list of at least two codecs; one chain is chosen at random per variable and applied outermost-to-innermost, so <tt>a,b,c</tt> encodes as <tt>a(b(c(x)))</tt>. For example <tt>--EncodeDataComposeCodecs='poly1,xor;rnc,poly1'</tt> encodes each variable as either <tt>poly1(xor(x))</tt> or <tt>rnc(poly1(x))</tt>. Every codec except the outermost (first) must be single-piece. This combines with <tt>--EncodeDataCodecs</tt>: the plain codecs and the composition chains form one pool to choose from per variable. <b>From version 4.1.1</b> Default=NONE.</td>
 </tr>
 <tr>
 <td><tt>--EncodeDataDebug</tt></td>
@@ -345,14 +368,14 @@ If you want the return value of a function <code class="language-c">fun1</code> 
 <td> Trace execution of encoded data. Default=false.</td>
 </tr>
 <tr>
+<td><tt>--EncodeDataPolyDegree</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> Degree of the permutation polynomial used by the <tt>polyn</tt> codec (must be &gt;= 1; degree 1 is equivalent to <tt>poly1</tt>). A higher degree gives more diversity. The inverse polynomial used for decoding has a bounded but larger degree (roughly the word size), so decoding cost grows modestly with the degree. <b>From version 4.1.1</b> Default=3.</td>
+</tr>
+<tr>
 <td><tt>--EncodeDataNumberOfPieces</tt></td>
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
 <td> Number of pieces in which to break up a value. Only applies to codecs that split values, such as <tt>rnc</tt>. <p> The count also decides whether <tt>rnc</tt> can encode a 64-bit value on a target without 128-bit integers (<tt>--Allow128BitInts=false</tt>). Its usual decode reconstructs through the product of all the moduli, which must exceed the type's range and so exceeds 64 bits; the narrow alternative (Garner's mixed-radix reconstruction) needs an <em>unsigned</em> type and <b>at least 3</b> pieces, because a digit step costs twice the width of one modulus. With 2 pieces on a 64-bit value and no 128-bit integers available, <tt>rnc</tt> reports that it cannot encode the value. <b>From version 4.1.0</b> Default=2.</td>
-</tr>
-<tr>
-<td><tt>--EncodeDataIndividualVariables</tt></td>
-<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
-<td> Whether to split a variable into individual pieces or keep the pieces in a struct. Default=false.</td>
 </tr>
 <tr>
 <td><tt>--EncodeDataStorage</tt></td>
@@ -371,6 +394,109 @@ If you want the return value of a function <code class="language-c">fun1</code> 
 </div>
 </div>
 </section>
+
+<a class="anchor" id="codecs">&nbsp;</a>
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Codec summary
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+The codecs differ in the algebra they preserve. A codec is <em>homomorphic</em>
+in an operation when that operation is performed directly on the encoded value,
+so the cleartext never appears in a register; other operations fall back to
+decode / operate / re-encode. This table summarizes each codec.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<center>
+<table align=center  border="1" cellpadding="5" cellspacing="0">
+<tr>
+  <th>Codec</th>
+  <th>Representation</th>
+  <th>Homomorphic in (done in encoded space)</th>
+  <th>Dynamic</th>
+  <th>Pieces</th>
+  <th>Types &amp; restrictions</th>
+</tr>
+<tr><td><code class="language-c">poly1</code></td><td>affine <code class="language-c">a*x+b</code> mod 2<sup>w</sup></td>
+  <td><code class="language-c">+ - * &amp; | ^</code>, <code class="language-c">== !=</code></td><td>no</td><td>1</td>
+  <td>integer/pointer; exact bijection, no range limit</td></tr>
+<tr><td><code class="language-c">polyn</code></td><td>degree-<em>d</em> permutation polynomial mod 2<sup>w</sup></td>
+  <td><code class="language-c">== !=</code></td><td>no</td><td>1</td>
+  <td>integer/pointer; exact bijection; degree = <code class="language-c">--EncodeDataPolyDegree</code></td></tr>
+<tr><td><code class="language-c">addshare</code></td><td>additive split, pieces sum to <code class="language-c">x</code> mod 2<sup>w</sup></td>
+  <td><code class="language-c">+ -</code>, unary <code class="language-c">-</code>, <code class="language-c">*</code></td><td>yes</td><td>&ge;2 (default 2; <code class="language-c">*</code> needs 2)</td>
+  <td>integer/pointer; exact, no range limit; needs <code class="language-c">InitEntropy</code></td></tr>
+<tr><td><code class="language-c">xorshare</code></td><td>boolean split, pieces XOR to <code class="language-c">x</code></td>
+  <td><code class="language-c">^ ~ &amp; |</code> (<code class="language-c">&amp; |</code> need 2 pieces)</td><td>yes</td><td>&ge;2</td>
+  <td>integer/pointer; needs <code class="language-c">InitEntropy</code></td></tr>
+<tr><td><code class="language-c">addxorshare</code></td><td>two additive shares; converts to boolean shares on demand (Goubin A2B/B2A)</td>
+  <td><code class="language-c">+ - *</code>, unary <code class="language-c">-</code>, <code class="language-c">^ &amp; | ~</code></td><td>yes</td><td>2</td>
+  <td>integer/pointer; exact, no range limit; needs <code class="language-c">InitEntropy</code>; combines <code class="language-c">addshare</code> and <code class="language-c">xorshare</code> so both arithmetic and bitwise ops stay encoded (bitwise ops pay an A2B/B2A round-trip)</td></tr>
+<tr><td><code class="language-c">lineargf2</code></td><td><code class="language-c">L(x) ^ c</code>, GF(2)-linear (xorshift shears)</td>
+  <td><code class="language-c">^ ~</code>, <code class="language-c">== !=</code></td><td>no</td><td>1</td>
+  <td>integer/pointer; exact bijection; strong bit diffusion</td></tr>
+<tr><td><code class="language-c">bitperm</code></td><td>bits of <code class="language-c">x</code> rearranged by a random permutation</td>
+  <td><code class="language-c">&amp; | ^ ~</code>, <code class="language-c">== !=</code></td><td>no</td><td>1</td>
+  <td>integer/pointer; exact bijection; homomorphic in <em>all</em> bitwise ops (deterministic dual of <code class="language-c">xorshare</code>)</td></tr>
+<tr><td><code class="language-c">feistel</code></td><td>a small keyed Feistel cipher on the word (halves, 4-8 rounds)</td>
+  <td><code class="language-c">== !=</code></td><td>no</td><td>1</td>
+  <td>integer/pointer; exact bijection; pseudorandom, no algebraic structure to model &mdash; the &ldquo;encrypt the variable&rdquo; codec (trades homomorphism for strength)</td></tr>
+<tr><td><code class="language-c">bignum</code></td><td>multi-limb positional split, base 2<sup>b</sup></td>
+  <td><code class="language-c">+ - &amp; | ^ ~</code>, <code class="language-c">== !=</code></td><td>no</td><td>&ge;2 limbs</td>
+  <td>integer/pointer; exact, no range limit; arithmetic is limb-wise carry/borrow code (hard to fold back)</td></tr>
+<tr><td><code class="language-c">bcd</code></td><td>decimal digits, one 0-9 per piece</td>
+  <td><code class="language-c">== !=</code></td><td>no</td><td>digits of 2<sup>w</sup></td>
+  <td>integer/pointer; representational (decimal); arithmetic/bitwise decode, since decimal carry &ne; binary wrap</td></tr>
+<tr><td><code class="language-c">rational</code></td><td>fraction <code class="language-c">a/b</code> over a prime field, <code class="language-c">x = a&middot;b<sup>-1</sup> mod p</code></td>
+  <td><code class="language-c">+ *</code>, <code class="language-c">== !=</code></td><td>no</td><td>2</td>
+  <td>narrow types only (<code class="language-c">char</code>; <code class="language-c">short</code> with 128-bit ints); range-limited like <code class="language-c">rnc</code>; costly decode (modular inverse); the only codec homomorphic in both <code class="language-c">+</code> and <code class="language-c">*</code></td></tr>
+<tr><td><code class="language-c">montgomery</code></td><td>Montgomery form <code class="language-c">x&middot;R mod M</code>, <code class="language-c">M &gt; 2<sup>2w</sup></code></td>
+  <td><code class="language-c">+ *</code>, <code class="language-c">== !=</code></td><td>no</td><td>1</td>
+  <td>narrow types only (<code class="language-c">char</code>; <code class="language-c">short</code> with 128-bit ints); range-limited like <code class="language-c">rnc</code>; single-piece and division-free (REDC), unlike <code class="language-c">rational</code> (no <code class="language-c">a/b</code>, no runtime modular inverse)</td></tr>
+<tr><td><code class="language-c">rnc</code></td><td>residues mod coprime moduli + random multiples</td>
+  <td><code class="language-c">+ -</code>, and <code class="language-c">*</code> for narrow types</td><td>yes</td><td>&ge;2</td>
+  <td>integer; range-limited (exact only while the running value stays below half the modulus product &mdash; a loop or accumulation eventually overflows, issue #183); needs <code class="language-c">InitEntropy</code>; a 64-bit value needs 128-bit ints or &ge;3 pieces</td></tr>
+<tr><td><code class="language-c">add</code></td><td><code class="language-c">x + k</code>, promoted one size</td>
+  <td><code class="language-c">+ - *</code>, all comparisons</td><td>no</td><td>1</td>
+  <td>integer; promotes to the next larger type, so it fails at the largest type</td></tr>
+<tr><td><code class="language-c">xor</code></td><td><code class="language-c">x ^ k</code></td>
+  <td><code class="language-c">== !=</code> (pointer arithmetic passes through)</td><td>no</td><td>1</td>
+  <td>integer/pointer; storage hiding (arithmetic and bitwise ops decode)</td></tr>
+<tr><td><code class="language-c">fixed</code></td><td>fixed-point Q-format of a real value</td>
+  <td><code class="language-c">+ - * /</code>, shifts, <code class="language-c">== !=</code></td><td>no</td><td>1</td>
+  <td>real values; fraction bits = <code class="language-c">--EncodeDataFixedFraction</code>; fixed-point precision/overflow limits</td></tr>
+<tr><td><code class="language-c">xorfloat</code></td><td><code class="language-c">x ^ k</code> on the floating bit-pattern</td>
+  <td><code class="language-c">== !=</code></td><td>no</td><td>1</td>
+  <td>floating types</td></tr>
+<tr><td><code class="language-c">softfloat</code></td><td>software floating-point representation</td>
+  <td>none (all ops decode)</td><td>no</td><td>1</td>
+  <td>floating types</td></tr>
+<tr><td><code class="language-c">null</code></td><td>cleartext (identity)</td>
+  <td>all (it is the identity)</td><td>no</td><td>1</td>
+  <td>any; the no-op baseline</td></tr>
+<tr><td><code class="language-c">poly_xor</code>, <code class="language-c">xor_poly</code>,<br/><code class="language-c">poly_rnc</code>, <code class="language-c">xor_rnc</code></td>
+  <td>stacked pair (one codec applied over another)</td>
+  <td>the operations both layers keep</td><td>inherited</td><td>inherited</td>
+  <td>the intersection of the two layers' constraints</td></tr>
+</center>
 
 <a class="anchor" id="issues">&nbsp;</a>
 
