@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_1to4_2.html" aria-expanded="false">Updates v4.1 &#10142; v4.2</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
@@ -1100,6 +1101,75 @@ See <a href="https://tigress.wtf/opaque.html" class="text-primary">InitOpaque</a
          <em>accumulated</em> in a loop eventually will not. Prefer <code class="language-c">poly1</code> or 
          <code class="language-c">xor</code> for such variables; both are exact for every value of every integer 
          type.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ EncodeLiterals
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+      See <a href="https://tigress.wtf/encodeLiterals.html" class="text-primary">EncodeLiterals</a>.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      The new <code class="language-c">--EncodeLiteralsStringKinds</code> option chooses how string literals are
+      encoded (one is picked at random per run when several are given):
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+               <code class="language-c">fsm</code> (the default) rebuilds each string at runtime with a generated
+               decoder function.
+
+</li>
+
+<li>
+               <code class="language-c">chunk</code> encodes each string in small pieces, so no readable text remains
+               in the generated source or the compiled binary.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
 </li>
 

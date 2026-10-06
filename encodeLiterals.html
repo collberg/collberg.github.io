@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_1to4_2.html" aria-expanded="false">Updates v4.1 &#10142; v4.2</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
@@ -165,10 +166,11 @@ code {
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Obfuscate integer and/or string literals (such as <code class="language-c">42</code> or <code class="language-c">"42"</code>). 
-Literal integers can be replaced with opaque expressions, which
-requires that the InitOpaque transformation has been previously issued. Literal strings can be
-replaced with a function that generates them at runtime.
+Obfuscate integer and/or string literals (such as <code class="language-c">42</code> or <code class="language-c">"42"</code>). Use
+<code class="language-c">--EncodeLiteralsKinds</code> to choose what to encode &mdash; <code class="language-c">integer</code>, <code class="language-c">string</code>,
+or both &mdash; then pick how with
+<a href="#encoding-integers">Encoding integers</a> and
+<a href="#encoding-strings">Encoding strings</a> below.
 
             </p>
         </div>
@@ -203,28 +205,63 @@ replaced with a function that generates them at runtime.
 </ul>
 </td>
 </tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+<a class="anchor" id="encoding-integers">&nbsp;</a>
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Encoding integers
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
 <tr>
-<td><tt>--EncodeLiteralsEncoderName</tt></td>
-<td><tt>string</tt></td>
-<td> The name of the generated encoder function (only for encoded strings). Default=None.</td>
+<td><tt>--Transform</tt></td>
+<td><tt>EncodeLiterals</tt></td>
+<td> Replace literal integers and strings with less obvious expressions. </td>
 </tr>
 <tr>
 <td><tt>--EncodeLiteralsMaxLevel</tt></td>
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How deep to recurse into split integer expressions. Default=100.</td>
+<td> <em>Deprecated (no effect).</em> Formerly the recursion depth of the retired <tt>split</tt> integer kind. Accepted for compatibility but ignored. Default=100.</td>
 </tr>
 <tr>
 <td><tt>--EncodeLiteralsMaxTransforms</tt></td>
 <td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
-<td> How many transformations to perform on each split integer expression. Default=100.</td>
+<td> <em>Deprecated (no effect).</em> Formerly the number of EncodeArithmetic transformations applied by the retired <tt>split</tt> integer kind. Accepted for compatibility but ignored. Default=100.</td>
 </tr>
 <tr>
 <td><tt>--EncodeLiteralsIntegerKinds</tt></td>
 <td><tt>opaque, split</tt></td>
 <td> Specify how to encode integer literals. Default=opaque.
 <ul>
-   <li> <tt>opaque</tt> = Replace literal integers with opaque expressions
-   <li> <tt>split</tt> = Replace literal integers by splitting into subparts, and then doing EncodeArithmetic on them.
+   <li> <tt>opaque</tt> = Replace each literal with an opaque expression that decomposes it so the literal never appears (the value-tree strategy).
+   <li> <tt>split</tt> = <em>Deprecated</em> -- a leaky byte-split + EncodeArithmetic that exposed the literal's bytes. Now a compatibility alias for <tt>opaque</tt>.
 </ul>
 </td>
 </tr>
@@ -236,6 +273,46 @@ replaced with a function that generates them at runtime.
 </div>
 </section>
 
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+For example, this function:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">int foo(void) {
+   int x = 42;
+   return x;
+}
+</code></pre></div><br>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+becomes, with <code class="language-c">--EncodeLiteralsIntegerKinds=opaque</code> (the default), an expression that still
+evaluates to 42 but is built from opaque program state, so the value is no longer visible. The
+literal is <em>decomposed</em> into random sub-values that are recombined and each encoded from
+opaque state, so <code class="language-c">42</code> itself never appears anywhere in the output. This kind requires a
+<code class="language-c">--Transform=InitOpaque</code> step before <code class="language-c">EncodeLiterals</code> to set that state up:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">int foo(void) {
+   int x;
+   /* 42 = a + b for random a, b; each of a, b is built from opaque state,
+      so neither 42 nor a recognisable part of it is written literally */
+   x = <opaque expression for a> + <opaque expression for b>;
+   return x;
+}
+</code></pre></div><br>
 
 <br>
 <section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
@@ -303,8 +380,247 @@ in your tigress command:
    --Transform=EncodeLiterals \
       --Functions=foo \
       --Regions=obfuscateThis,obfuscateThat \
-      --EncodeLiteralsIntegerKinds=split \
    ...
+</code></pre></div><br>
+
+<a class="anchor" id="opaque-value-selection">&nbsp;</a>
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Choosing the opaque value encoder
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+When <code class="language-c">--EncodeLiteralsIntegerKinds=opaque</code>, each literal is replaced by an
+opaque expression built from the opaque invariants set up at
+<code class="language-c">--Transform=InitOpaque</code>. The same selection options the other opaque
+consumers carry (<code class="language-c">AddOpaque</code>, <code class="language-c">Flatten</code>, <code class="language-c">Merge</code>) apply here
+too, letting you steer which invariants are drawn, at what resilience, and how
+many are composed. By default the literal is built by the <em>value-tree</em>
+strategy &mdash; a recursive decomposition whose leaves encode only random
+sub-values, so the literal never appears in the output. In deity mode,
+<code class="language-c">--EncodeLiteralsSelect</code> pins the strategy or invariant by name (see
+<code class="language-c">--InitOpaqueList</code>): <code class="language-c">--EncodeLiteralsSelect=value_tree</code> names the
+default explicitly, whereas selecting a single bare encoder (e.g.
+<code class="language-c">mba_nonlinear</code>) emits the literal as an additive term, so choose one only
+deliberately.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--EncodeLiteralsInvariantKinds</tt></td>
+<td><tt>identity, modular, mba, structure_state, scalar_state, environment, plugin, *</tt></td>
+<td> Comma-separated list of the kinds of opaque invariant the integer <tt>opaque</tt> kind may draw from when building an opaque expression for a literal, named by the hardness family they rest on. Constrained to the kinds set up by <tt>--InitOpaqueInvariantKinds</tt>. Only meaningful with <tt>--EncodeLiteralsIntegerKinds=opaque</tt>. <bf>From version 4.1</bf> Default=The kinds specified at InitOpaque..
+<ul>
+   <li> <tt>identity</tt> = Universally-true arithmetic identities.
+   <li> <tt>modular</tt> = Residue and modular-arithmetic facts.
+   <li> <tt>mba</tt> = Mixed boolean-arithmetic.
+   <li> <tt>structure_state</tt> = A data structure that maintains an invariant as the program runs and is then queried structurally.
+   <li> <tt>scalar_state</tt> = Evolving scalar state.
+   <li> <tt>environment</tt> = Opaque expressions from entropy. Requires <tt>--InitEntropy</tt>.
+   <li> <tt>plugin</tt> = Invariants supplied by a user plugin.
+   <li> <tt>*</tt> = Same as identity,modular,mba,structure_state,scalar_state,environment,plugin
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--EncodeLiteralsInvariantResilience</tt></td>
+<td><tt>trivial, local, global, interprocedural, inter_process, *</tt></td>
+<td> Comma-separated list of the resilience levels the integer <tt>opaque</tt> kind may draw from -- the scope of analysis an attacker must run to decide the invariant. Constrained to the levels set up by <tt>--InitOpaqueInvariantResilience</tt>. Only meaningful with <tt>--EncodeLiteralsIntegerKinds=opaque</tt>. <bf>From version 4.1</bf> Default=The levels specified at InitOpaque..
+<ul>
+   <li> <tt>trivial</tt> = One expression decides it, AND a stock compiler at <tt>-O2</tt> folds it to a constant.
+   <li> <tt>local</tt> = One expression decides it, but <tt>-O2</tt> does not fold it.
+   <li> <tt>global</tt> = Deciding it needs analysis of the whole procedure.
+   <li> <tt>interprocedural</tt> = Deciding it needs whole-program analysis.
+   <li> <tt>inter_process</tt> = Deciding it needs reasoning about concurrent interleavings. Reserved -- no invariant is at this level yet.
+   <li> <tt>*</tt> = Every level, <tt>trivial</tt> included.
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--EncodeLiteralsMaxSize</tt></td>
+<td><tt><em><a href="top-level.html#INTSPEC">INTSPEC</a></em></tt></td>
+<td> The largest number of sub-opaques one opaque value may be composed of when the integer <tt>opaque</tt> kind builds an expression for a literal. With the default of 1 the value is a single opaque; a larger value composes several independent opaques. The actual size is drawn at random from 1 to the given value. Only meaningful with <tt>--EncodeLiteralsIntegerKinds=opaque</tt>. Default=1.</td>
+</tr>
+<tr>
+<td><tt>--EncodeLiteralsSelect</tt></td>
+<td><tt></tt></td>
+<td> <em>(Deity mode only.)</em> Comma-separated list of exact invariant names the integer <tt>opaque</tt> kind must draw from, bypassing the kind and resilience selection entirely. Names come from <tt>--InitOpaqueList</tt>. Silently inert unless the deity key is supplied with <tt>--DeityMode</tt>. The named invariants must have been set up by InitOpaque, so pair this with a permissive <tt>--InitOpaqueInvariantKinds</tt>/<tt>--InitOpaqueInvariantResilience</tt>. The special name <tt>value_tree</tt> selects the default recursive value-tree strategy (which never emits the literal); a single bare invariant name (e.g. <tt>mba_nonlinear</tt>) instead emits the literal as an additive term, so use one only deliberately. <bf>From version 4.1</bf> Default=value_tree.</td>
+</tr>
+<tr>
+<td><tt>--EncodeLiteralsStructs</tt></td>
+<td><tt></tt></td>
+<td> <em>Deprecated spelling of <tt>--EncodeLiteralsInvariantKinds</tt>.</em> Kept for compatibility. Replace <tt>--EncodeLiteralsStructs=list,array</tt> with <tt>--EncodeLiteralsInvariantKinds=structure_state</tt>. Replace <tt>--EncodeLiteralsStructs=env</tt> with <tt>--EncodeLiteralsInvariantKinds=environment</tt>. Default=The kinds specified in <tt>--InitOpaqueInvariantKinds</tt>..</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+<a class="anchor" id="encoding-strings">&nbsp;</a>
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Encoding strings
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--EncodeLiteralsEncoderName</tt></td>
+<td><tt>string</tt></td>
+<td> The name of the generated encoder function (only for encoded strings). Default=None.</td>
+</tr>
+<tr>
+<td><tt>--EncodeLiteralsStringKinds</tt></td>
+<td><tt>fsm, chunk, *</tt></td>
+<td> How to encode string literals. When you list several, one is chosen at random each run. Default=fsm.
+<ul>
+   <li> <tt>fsm</tt> = Rebuild each string at runtime with a generated decoder function.
+   <li> <tt>chunk</tt> = Encode each string in small pieces, so no readable text remains in the generated source or the compiled binary.
+   <li> <tt>*</tt> = Same as fsm,chunk
+</ul>
+</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+For example, this function:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">char *foo(void) {
+   return "hi";
+}
+</code></pre></div><br>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+becomes, with <code class="language-c">--EncodeLiteralsStringKinds=fsm</code> (the default), a call to a generated function
+that writes the string one character at a time:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">char litStr[3];
+
+void stringEncoder(int n, char str[]) {
+   int i = 0;
+   switch (n) {
+   case 0:
+      str[i] = 'h';
+      i++;
+      str[i] = 'i';
+      i++;
+      str[i] = '\0';
+      i++;
+      break;
+   }
+}
+
+char *foo(void) {
+   stringEncoder(0, litStr);
+   return litStr;
+}
+</code></pre></div><br>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+With <code class="language-c">--EncodeLiteralsStringKinds=chunk</code> the characters are encoded too, so no readable text
+is left anywhere in the output &mdash; here the <code class="language-c">"hi"</code> bytes come out of an exclusive-or:
+
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container">
+<pre><code class="language-c">char litStr[3];
+
+void stringDecoder(int n, char str[]) {
+   int i = 0;
+   unsigned int c;
+   switch (n) {
+   case 0:
+      c = 1544710088U ^ 1544687264U;   /* the "hi" bytes */
+      str[i] = (char)((c >> 0) & 255);
+      i++;
+      str[i] = (char)((c >> 8) & 255);
+      i++;
+      str[i] = '\0';
+      i++;
+      break;
+   }
+}
+
+char *foo(void) {
+   stringDecoder(0, litStr);
+   return litStr;
+}
 </code></pre></div><br>
 
 <a class="anchor" id="issues">&nbsp;</a>
@@ -327,12 +643,12 @@ in your tigress command:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-Note that the generated string encoding function is trivial, by design.
-To be made less conspicuous, it should itself be transformed, for example using the
-<a href="virtualize.html">Virtualize</a>
-transformation (to hide the string contents) and the 
-<a href="randomizeArguments.html">RndArgs</a>
-transformation (to hide the interface).
+The generated string decoder is deliberately simple. To make it less conspicuous, transform it
+further &mdash; for example with
+<a href="virtualize.html">Virtualize</a> (to hide the string contents) and
+<a href="randomizeArguments.html">RndArgs</a> (to hide the interface).
+This matters especially with <code class="language-c">chunk</code>: without a following transform, a compiler's optimizer
+may fold the decoding back to the original string.
 
             </p>
         </div>

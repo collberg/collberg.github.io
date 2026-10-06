@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_1to4_2.html" aria-expanded="false">Updates v4.1 &#10142; v4.2</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
@@ -236,8 +237,7 @@ You can run a simple installation check by typing this in a terminal:
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 <strong>Version 0-3 installation:</strong> Download the relevant <code class="language-c">.zip</code>-file. 
-Unzip and store the directory in the location of your choice. Set the environment-variable 
-<code class="language-c">$TIGRESS_HOME</code> to point to the distribution, by adding these lines to your shell 
+Unzip and store the directory in the location of your choice. Add the distribution's version directory to your <code class="language-c">PATH</code>, by adding these lines to your shell 
 startup file (.bashrc, .zshrc, .profile, etc, depending on your shell):
 
             </p>
@@ -246,9 +246,8 @@ startup file (.bashrc, .zshrc, .profile, etc, depending on your shell):
 </section>
 
 <div class="container">
-<pre><code class="language-c">export TIGRESS_VERSION=3.3
-export TIGRESS_HOME=/Users/alice/tigress-install/bin/tigress/$TIGRESS_VERSION
-export PATH=$PATH:$TIGRESS_HOME
+<pre><code class="language-c">export TIGRESS_VERSION=4.2
+export PATH=$PATH:/Users/alice/tigress-install/bin/tigress/$TIGRESS_VERSION
 </code></pre></div><br>
 
 

@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_1to4_2.html" aria-expanded="false">Updates v4.1 &#10142; v4.2</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
@@ -293,7 +294,7 @@ Tigress is normally installed in the location
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-To use Tigress from the command line, you must first set the <code class="language-c">TIGRESS_HOME</code> environment variable, with a command like:
+To use Tigress from the command line, add its install directory to your <code class="language-c">PATH</code>, with a command like:
 
             </p>
         </div>
@@ -302,7 +303,7 @@ To use Tigress from the command line, you must first set the <code class="langua
 
 <div class="container">
 <pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">
-set TIGRESS_HOME="C:&bsol;Program Files&bsol;University of Arizona&bsol;Tigress C Source Code Obfuscator&bsol;Tigress"
+set PATH=%PATH%;"C:&bsol;Program Files&bsol;University of Arizona&bsol;Tigress C Source Code Obfuscator&bsol;Tigress"
 
 </code></pre></div><br>
 
@@ -311,7 +312,7 @@ set TIGRESS_HOME="C:&bsol;Program Files&bsol;University of Arizona&bsol;Tigress 
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-If you used a location different from the default install location you need to set the <code class="language-c">TIGRESS_HOME</code> variable accordingly.
+If you used a location different from the default install location you need to adjust your <code class="language-c">PATH</code> accordingly.
 
             </p>
         </div>

@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_1to4_2.html" aria-expanded="false">Updates v4.1 &#10142; v4.2</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
@@ -215,6 +216,21 @@ own set of options, all prefixed by the name of the transformation.
 <td> Tigress' chattiness level. <code>--Verbosity=0</code> makes Tigress quiet. <code>--Verbosity=1</code> prints each transformation as it is being applied. Higher levels also print out all the versions of functions and variables being constructed. If <code>--LogDir=dirName</code> is set, generated log files will go in <code>dirName</code>. Default=0.</td>
 </tr>
 <tr>
+<td><tt>--DriverTrace</tt></td>
+<td><tt><em><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></em></tt></td>
+<td> Trace each step the driver takes &mdash; environment resolution, argument classification, the <code>cc -E</code> preprocessing command, and the backend argument list &mdash; for debugging. <code>--DriverTrace=true</code> turns it on; the default is off. The flag is consumed by the driver and is not passed on to the obfuscation backend. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--MakeTigressDotH</tt></td>
+<td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
+<td> Write <code>tigress.h</code> to the current directory and exit. This is the header you include when you use <code>TIGRESS_REGION</code> to mark a region of a function for transformation, so you need not hunt for it in the installation directory. Default=false.</td>
+</tr>
+<tr>
+<td><tt>--MakeTestFiles</tt></td>
+<td><tt>string</tt></td>
+<td> Write the installation test files (<code>check-installation.sh</code> and its C programs) into the directory <code>--MakeTestFiles=<em>dir</em></code> and exit. Run <code>check-installation.sh</code> from that directory to sanity-check your Tigress installation. </td>
+</tr>
+<tr>
 <td><tt>--Version</tt></td>
 <td><tt></tt></td>
 <td> Print the current Tigress version and exit. </td>
@@ -233,6 +249,78 @@ own set of options, all prefixed by the name of the transformation.
 <td><tt>--Input</tt></td>
 <td><tt><a href="top-level.html#INPUTSPEC">INPUTSPEC</a></tt></td>
 <td> Specify invariants over the command line arguments, such the range of integer values a particular argument may take, the range of lengths of an argument, or the string value of an argument. (<em>The <code>input</code> opaque kind was removed in version 4.1.</em>) Default=0.</td>
+</tr>
+
+
+</table>
+</center>
+</div>
+</div>
+</section>
+
+<!-- =============================================================================================== -->
+
+<a class="anchor" id="machine-models">&nbsp;</a>
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Machine models
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+A <em>machine model</em> describes the target's C type sizes and alignments. Tigress has a
+built-in model for every target it supports and selects one automatically from
+<code class="language-c">--Environment</code>, so you normally need none of these options. They let you inspect
+the built-in models, supply a model for a target Tigress does not know, or regenerate one.
+
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="table2 TIGRESS-TABLE2" id="table2-dy">
+<div class="container">
+<div style="mbr-text align-left pb-3 mbr-fonts-style display-7">
+<center>
+<table border style="background-color:#ffffff;overflow-x:auto;color:black;width:90%;">
+    <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 60%;">
+    </colgroup>
+<tr><th>Option</th><th>Arguments</th><th>Description</th></tr>
+<tr>
+<td><tt>--LoadMachineModel</tt></td>
+<td><tt>string</tt></td>
+<td> Load the target machine model (the sizes and alignments of the C types) from a JSON file, overriding the model Tigress selects automatically from <code>--Environment</code>. You rarely need this &mdash; Tigress has a built-in model for every target it supports. Use it for a target Tigress does not know, having first produced the JSON with <code>--MakeMachineModelGenerator</code>. </td>
+</tr>
+<tr>
+<td><tt>--DumpMachineModel</tt></td>
+<td><tt>current, all</tt></td>
+<td> Print a built-in target machine model as JSON and exit. The output can be edited and fed back with <code>--LoadMachineModel</code>. 
+<ul>
+   <li> <tt>current</tt> = the model selected by the current <code>--Environment</code>
+   <li> <tt>all</tt> = every built-in model
+</ul>
+</td>
+</tr>
+<tr>
+<td><tt>--MakeMachineModelGenerator</tt></td>
+<td><tt><a href="top-level.html#BOOLSPEC">BOOLSPEC</a></tt></td>
+<td> Write a small, self-contained C program <code>machdep-ml.c</code> to the current directory and exit. Compile it with your target's C compiler and run it to print that target's machine model as JSON, then feed the JSON to <code>--LoadMachineModel</code>. Use this to teach Tigress about a target it does not already know. Default=false.</td>
 </tr>
 
 

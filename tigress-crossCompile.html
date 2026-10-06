@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_1to4_2.html" aria-expanded="false">Updates v4.1 &#10142; v4.2</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
@@ -215,32 +216,21 @@ scenario. You can set the target using the <code class="language-c">--Compiler</
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
 The reason for these machinations is that, even though Tigress is a source-2-source translator, 
 it relies on knowing the sizes and alignments of all types. This information is encoded in 
-"machdep" files in the TIgress distribution directory:
+<em>Machine Models</em>.
 
             </p>
         </div>
     </div>
 </section>
- 
-<center>
 
-<section class="TIGRESS-IMAGE" id="image2-f9">
-    <figure class="mbr-figure container">
-        <div class="image-block" style="width: 45%;">
-            <img src="assets/images/machdeps-filetree-571x241.png" alt="" title="">
-        </div>
-    </figure>
-</section>
-</center>
-  
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-If your target is not one of the ones provided, you can easily create your own machdep 
-file and add it to the machdeps_json directory. Simply compile and run the <code class="language-c">machdep-ml.c</code>
-file (also found in the Tigress distribution directory) on your target machine:
+If you don't provide <code class="language-c">--Compiler</code> and <code class="language-c">--Environment</code> options, Tigress
+will assume that you're compiling for the machine you're currently on. You can ask Tigress
+which target machine it is currently assuming, or which models it knows about:
 
             </p>
         </div>
@@ -248,9 +238,7 @@ file (also found in the Tigress distribution directory) on your target machine:
 </section>
 
 <div class="container">
-<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> gcc-11 -D_GNUCC -o machdep-ml.exe machdep-ml.c
-> machdep-ml.exe --json > `uname -s`_`uname -m`_Gcc_0.json
-> head Darwin_x86_64_Gcc_0.json
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress --DumpMachineModel=current
 {
 	 "version_major"    : 11,
 	 "version_minor"    : 3,
@@ -261,6 +249,30 @@ file (also found in the Tigress distribution directory) on your target machine:
 	 "sizeof_long"                : 8,
 	 "sizeof_longlong"            : 8,
 	 "sizeof_ptr"                 : 8,
+> tigress --DumpMachineModel=all
+   ...
+</code></pre></div><br>
+
+  
+
+<section class="header9 TIGRESS-P" id="header9-dw">
+    <div class="container">
+        <div class="media-container-column mbr-white">
+            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
+If your target is not one of the ones provided, you can easily create your own machdep 
+file and give it to Tigress. Simply compile and run the <code class="language-c">machdep-ml.c</code>
+file (also found in the Tigress distribution directory) on your target machine:
+
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress --MakeMachineModelGenerator        # Generates machdep-ml.c
+> gcc -D_GNUCC -o machdep-ml.exe machdep-ml.c
+> machdep-ml.exe --json > mymodel.json
+> tigress --LoadMachineModel=mymodel.json ...
 </code></pre></div><br>
 
 <br>

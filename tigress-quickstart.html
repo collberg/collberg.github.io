@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_1to4_2.html" aria-expanded="false">Updates v4.1 &#10142; v4.2</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
@@ -164,7 +165,7 @@ code {
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
    Tigress is a diversifying obfuscator for the C language that supports many defenses against both 
-static and dynamic reverse engineering attacks. To get started, download a version for your platform, 
+static and dynamic reverse engineering attacks. To get started, download a version for your platform 
 and check that the installation was successful:
 
             </p>
@@ -172,18 +173,31 @@ and check that the installation was successful:
     </div>
 </section>
 
-<center>
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">> tigress --Version
+This is Tigress, version 4.2.0
+...
 
-<section class="TIGRESS-IMAGE" id="image2-f9">
-    <figure class="mbr-figure container">
-        <div class="image-block" style="width: 65%;">
-            <img src="assets/images/quickstart-version-2-1443x812.png" alt="" title="">
-        </div>
-    </figure>
-</section>
-</center>
-<br>
-           
+> tigress --Help
+...
+
+> tigress --License
+...
+
+> tigress --MakeTestFiles=test_files
+> cd test_files
+> tigress --MakeTigressDotH    
+> ls
+check-installation.sh	merge2.c		test2.c
+merge1.c		test1.c			tigress.h
+
+> tigress --Transform=Virtualize --Functions=fib test1.c --out=obf.c
+> gcc obf.c -o obf.exe
+> ./obf.exe
+
+> ./check-installation.sh `which tigress` `which tigress_post`
+</code></pre></div><br>
+
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
@@ -220,12 +234,17 @@ Now you can try out Tigress on a simple example:
    at the top of every one of your input files. Most of the time, this is no longer necessary.
    Exceptions are <em>user annotations</em> which are macros you insert in your code to pass
    information to Tigress about regions
-   You can find this file in the Tigress distribution directory (the location depends on your platform):
+   You can find this file in the Tigress distribution directory (the location depends on your platform),
+   or you can generate it like this:
 
             </p>
         </div>
     </div>
 </section>
+
+<div class="container">
+<pre style="box-shadow: -5px 0 0 0 red, 0 0 0 1px #dfdfdf"><code class="language-bash">tigress --MakeTigressDotH
+</code></pre></div><br>
 
 <center>
 
@@ -349,8 +368,11 @@ Now you can try out Tigress on a simple example:
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-   For some transformations, most notably <a href="jitter.html" class="text-primary">Jitting</a>, 
-   <a href="jitDynamic.html" class="text-primary">JitDynamic</a>, and <a href="selfModify.html" class="text-primary">Self Modify</a>, 
+   For some transformations, most notably 
+      <a href="jitter.html" class="text-primary">Jitting</a>, 
+      <a href="jitDynamic.html" class="text-primary">JitDynamic</a>, 
+      <a href="pack.html" class="text-primary">Pack</a>, and 
+      <a href="selfModify.html" class="text-primary">Self Modify</a>, 
    a source-2-source transformation is not enough. You will have to do some post-processing of the binary file, 
    using the program <strong>tigress_post</strong>:
 

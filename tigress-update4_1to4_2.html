@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/tigress-white-128x101.png" type="image/x-icon">
+  <meta name="description" content="Web Maker Description">
+  
+   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/tigress.css"> <link rel="stylesheet" href="assets/mobirise/css/tigress.css" type="text/css">
+  <link href="assets/prism/prism.css" rel="stylesheet" />
+
+  
+ <style>
+body {
+  background-color: #ffffff;
+  color: #000000
+}
+section {
+  background-color: #ffffff;
+  color: #000000
+}
+p {
+   color: #000000
+}
+h3 {
+   color: #000000
+}
+code {
+  font-family:     "Courier New"
+                    Courier
+                    monospace;
+  color: black;
+}
+
+</style>
+  
+</head>
+<body>
+  
+  <section class="menu cid-um5eFJALJY" once="menu" id="menu1-16">
+
+        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/screenshot-2024-08-20-at-14.25.07-copy-126x121.png" alt="" title="" style="height: 4.1rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Tigress</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Usage</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-quickstart.html">Quickstart<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-mergeFiles.html">File merge<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-crossCompile.html">Cross compile</a>
+      <a class="text-white dropdown-item text-primary display-4" href="recipes.html">Recipes</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-libraries.html">Libraries</a>
+      <a class="text-white dropdown-item text-primary display-4" href="top-level.html">Top-Level Options</a>
+      <a class="text-white dropdown-item text-primary display-4" href="plugins.html">Plugins</a>
+      <a class="text-white dropdown-item text-primary display-4" href="issues.html">Issues</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-test.html">Testing</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Platforms</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-linux.html">Linux<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-macos.html">MacOS<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-windows.html">Windows<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-android.html">Android<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-wasm.html">WASM<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="cpp.html">C++<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Users</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-academics.html">For academics<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-students.html">For students<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-practitioners.html">For practitioners<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-developers.html">For developers<br></a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" aria-expanded="false" data-toggle="dropdown-submenu">News</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_1to4_2.html" aria-expanded="false">Updates v4.1 &#10142; v4.2</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Transformations</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="control-transforms.html">Control</a>
+      <a class="text-white dropdown-item text-primary display-4" href="data-transforms.html">Data</a>
+      <a class="text-white dropdown-item text-primary display-4" href="functions-transforms.html">Functions</a>
+      <a class="text-white dropdown-item text-primary display-4" href="integrity-transforms.html">Integrity</a>
+      <a class="text-white dropdown-item text-primary display-4" href="antiAnalysis-transforms.html">Anti analysis</a>
+      <a class="text-white dropdown-item text-primary display-4" href="other-transforms.html">Other</a></div>
+   </li>
+   <li class="nav-item dropdown">
+      <a class="nav-link link text-white dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">About</a><div class="dropdown-menu">
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-history.html">History<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-faq.html">FAQ<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-consulting.html">Training<br></a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-publications.html">Pubs</a></div>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="contact.html" aria-expanded="false"><span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link link text-white text-primary display-4" href="tigress-download.html" aria-expanded="false"><span class="mbrib-download mbr-iconfont mbr-iconfont-btn" style="color: rgb(255, 127, 159);"></span></a>
+   </li>
+</ul>
+            
+        </div>
+    </nav>
+
+</section>
+
+<br><br><br><br>
+
+<section class="mbr-section content4 TIGRESS-TITLE" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+<center><h1 style="font-size: 60px; font-weight:400"> Updates <br>v4.1 &#10142; v4.2</h1></center>
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Pack
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">Pack</code> is a new transform that encrypts the compiled code of the chosen functions and decrypts it in place at run time; <code class="language-c">tigress_post</code> performs the at-rest encryption.
+
+</li>
+
+<li>
+      <code class="language-c">--PackCiphers</code> chooses the cipher(s): <code class="language-c">xtea</code>, <code class="language-c">xor</code>, <code class="language-c">rc4</code>, <code class="language-c">feistel</code>, or <code class="language-c">des</code>.
+
+</li>
+
+<li>
+      <code class="language-c">--PackLevels</code> sets how many nested encryption layers each region gets.
+
+</li>
+
+<li>
+      <code class="language-c">--PackWhen</code> chooses when a region is decrypted: <code class="language-c">once</code> at startup or on each <code class="language-c">call</code>.
+
+</li>
+
+<li>
+      <code class="language-c">--PackRepack</code> re-encrypts a region when it returns (with <code class="language-c">--PackWhen=call</code>).
+
+</li>
+
+<li>
+      <code class="language-c">--PackKeySource</code> chooses where the key comes from: <code class="language-c">literal</code>, <code class="language-c">folded</code>, or <code class="language-c">plugin</code>.
+
+</li>
+
+<li>
+      <code class="language-c">--PackKeyCodecs</code> encodes the stored key (<code class="language-c">add</code>, <code class="language-c">xor</code>, <code class="language-c">poly1</code>, <code class="language-c">polyn</code>, <code class="language-c">lineargf2</code>, <code class="language-c">bitperm</code>, <code class="language-c">feistel</code>, or the bit/nibble/byte splits).
+
+</li>
+
+<li>
+      <code class="language-c">--PackKeyComposeCodecs</code> composes several key codecs into a chain.
+
+</li>
+
+<li>
+      <code class="language-c">--PackDecryptorName</code> names the generated decryptor function.
+
+</li>
+
+<li>
+      <code class="language-c">--PackSpecFile</code> names the JSON region spec that <code class="language-c">tigress_post</code> reads.
+
+</li>
+
+<li>
+      <code class="language-c">--PackSections</code> packs whole linker sections instead of individual functions.
+
+</li>
+
+<li>
+      <code class="language-c">--PackTrace</code> traces each decrypt and re-encrypt.
+
+</li>
+
+<li>
+      See <a href="pack.html" class="text-primary">Pack</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Machine models
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--DumpMachineModel</code> prints a built-in target machine model as JSON (<code class="language-c">current</code> or <code class="language-c">all</code>) and exits.
+
+</li>
+
+<li>
+      <code class="language-c">--LoadMachineModel</code> loads the target machine model from a JSON file, overriding the one chosen from <code class="language-c">--Environment</code>.
+
+</li>
+
+<li>
+      <code class="language-c">--MakeMachineModelGenerator</code> writes a small C program that prints a target's machine model as JSON for <code class="language-c">--LoadMachineModel</code>.
+
+</li>
+
+<li>
+      See <a href="top-level.html" class="text-primary">top-level</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Driver and installation
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--DriverTrace</code> traces the driver's steps: environment resolution, argument classification, preprocessing, and the backend command.
+
+</li>
+
+<li>
+      <code class="language-c">--MakeTestFiles</code> writes the installation test files into a directory you name.
+
+</li>
+
+<li>
+      <code class="language-c">--MakeTigressDotH</code> writes <code class="language-c">tigress.h</code> to the current directory.
+
+</li>
+
+<li>
+      See <a href="https://tigress.wtf/top-level.html" class="text-primary">top-level</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ EncodeData
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--EncodeDataComposeCodecs</code> composes codecs into nested encodings, one chain chosen per variable.
+
+</li>
+
+<li>
+      <code class="language-c">--EncodeDataPolyDegree</code> sets the degree of the <code class="language-c">polyn</code> codec's permutation polynomial.
+
+</li>
+
+<li>
+      <code class="language-c">--EncodeDataCodecs</code> gains many codecs: <code class="language-c">automatic</code>, <code class="language-c">polyn</code>, <code class="language-c">addshare</code>/<code class="language-c">xorshare</code>/<code class="language-c">addxorshare</code>, <code class="language-c">lineargf2</code>, <code class="language-c">bitperm</code>, <code class="language-c">feistel</code>, <code class="language-c">split_bits</code>/<code class="language-c">split_nibbles</code>/<code class="language-c">split_bytes</code>, <code class="language-c">bignum</code>, <code class="language-c">bcd</code>, <code class="language-c">rational</code>, and <code class="language-c">montgomery</code>.
+
+</li>
+
+<li>
+      See <a href="https://tigress.wtf/encodeData.html" class="text-primary">EncodeData</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ EncodeArithmetic
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--EncodeArithmeticList</code> prints the rewrite-pattern catalog (deity mode).
+
+</li>
+
+<li>
+      <code class="language-c">--EncodeArithmeticKinds</code> gains <code class="language-c">generated</code>: MBA encodings computed on the fly.
+
+</li>
+
+<li>
+      See <a href="https://tigress.wtf/encodeArithmetic.html" class="text-primary">EncodeArithmetic</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Optimize
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--OptimizeLoopUnrollCount</code> sets the unroll factor for <code class="language-c">loopUnroll</code>.
+
+</li>
+
+<li>
+      <code class="language-c">--OptimizeKinds</code> gains <code class="language-c">deadCodeElim</code>, <code class="language-c">gotos</code>, and <code class="language-c">loopUnroll</code>.
+
+</li>
+
+<li>
+      See <a href="https://tigress.wtf/optimize.html" class="text-primary">Optimize</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Inline
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--InlineOptimizeKinds</code> gains <code class="language-c">deadCodeElim</code> and <code class="language-c">loopUnroll</code>.
+
+</li>
+
+<li>
+      See <a href="https://tigress.wtf/inline.html" class="text-primary">Inline</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Checksum
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--ChecksumHashFunctionsFile</code> now generates a JSON file of hash functions instead of a C file compiled into a <code class="language-c">.so</code>.
+
+</li>
+
+<li>
+      See <a href="https://tigress.wtf/checksum.html" class="text-primary">Checksum</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Plugins
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <code class="language-c">--InitPluginsContainerPrefix</code> names container ADTs you supply (e.g. a <code class="language-c">Set</code> prefix for the <code class="language-c">Set_*</code> types and functions).
+
+</li>
+
+<li>
+      <code class="language-c">--InitPluginsKeyPrefix</code> sets the prefix for user-supplied crypto-key plugin functions used by <code class="language-c">Pack</code>'s <code class="language-c">--PackKeySource=plugin</code>.
+
+</li>
+
+<li>
+      See <a href="https://tigress.wtf/plugins.html" class="text-primary">Plugins</a>.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Fixed Bugs
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      <strong>#179.</strong> Fixed a bug where functions embedded with <code class="language-c">EncodeExternal</code> that used <code class="language-c">unsigned char</code> were given a signed <code class="language-c">char</code> instead, so embedded cryptographic hashes such as SHA-256 and MD5 computed the wrong digest.
+
+</li>
+
+<li>
+      <strong>#186.</strong> Fixed a bug where a 128-bit integer constant was written as a plain decimal literal that the C compiler silently truncated to 64 bits, which could make an <code class="language-c">EncodeData</code> program using the <code class="language-c">rnc</code> codec compute a wrong value and loop forever.
+
+</li>
+
+<li>
+      <strong>#195.</strong> Fixed a crash where applying <code class="language-c">EncodeArithmetic</code> a second time to already-encoded code aborted obfuscation with an uncaught error.
+
+</li>
+
+<li>
+      <strong>#198.</strong> Fixed a bug where the <code class="language-c">Checksum</code> transform ignored <code class="language-c">TIGRESS_CHECKSUM_INSERT</code> markers when checkers were requested with <code class="language-c">where = annotations</code>, so no checkers were inserted and the hash-functions file was never written, making a later <code class="language-c">tigress_post</code> run fail.
+
+</li>
+
+<li>
+      <strong>#199.</strong> Fixed a crash where a <code class="language-c">Checksum</code> segment checker on a statically-linked Linux ELF binary hashed memory past the program text, across an unmapped region, and dereferenced an unmapped page.
+
+</li>
+
+<li>
+      <strong>#202.</strong> Fixed a bug where <code class="language-c">Virtualize</code> output failed to compile on 32-bit targets with an "assignment to expression with array type" error.
+
+</li>
+
+<li>
+      <strong>#203.</strong> Fixed a crash where the <code class="language-c">Jit</code> transform aborted with an internal error on 32-bit x86 Linux targets, which are now supported.
+
+</li>
+
+<li>
+      <strong>#204.</strong> Fixed a bug where <code class="language-c">Virtualize</code> with computed-goto dispatch produced output that failed to compile on 32-bit targets with an "assignment to expression with array type" error.
+
+</li>
+
+<li>
+      <strong>#205.</strong> Fixed a bug where <code class="language-c">CleanUp</code> with <code class="language-c">--CleanUpKinds=compress</code> on a 32-bit target produced source that would not compile because a generated struct was run together with a following preprocessor directive.
+
+</li>
+
+<li>
+      <strong>#206.</strong> Fixed a bug where <code class="language-c">AntiBranchAnalysis</code> branch functions (<code class="language-c">--AntiBranchAnalysisKinds=branchFuns</code>) crashed at run time on 32-bit ARM and produced code that did not assemble on 32-bit x86.
+
+</li>
+
+<li>
+      <strong>#209.</strong> Fixed a bug where <code class="language-c">SelfModify</code> with the arithmetic or comparison kinds produced binaries that crashed on 32-bit x86 (i386).
+
+</li>
+
+<li>
+      <strong>#211.</strong> Fixed a crash where <code class="language-c">JitDynamic</code> aborted with an internal error on 32-bit targets.
+
+</li>
+
+<li>
+      <strong>#212.</strong> Fixed a bug where the <code class="language-c">Measure</code> transform with <code class="language-c">--MeasureKind=time</code> produced a binary that crashed on 32-bit x86 (i386).
+
+</li>
+
+<li>
+      <strong>#226.</strong> Fixed a bug where the <code class="language-c">Jit</code> transform computed wrong results for floating-point arithmetic on 32-bit targets.
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/prism/prism.js"></script>
+  
+</body>
+</html>

@@ -111,6 +111,7 @@ code {
       <a class="text-white dropdown-item text-primary display-4" href="tigress-news.html" aria-expanded="false">News</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-blog.html" aria-expanded="false">Blog</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-vendors.html" aria-expanded="false">Tools &amp; Vendors</a>
+      <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_1to4_2.html" aria-expanded="false">Updates v4.1 &#10142; v4.2</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update4_0_11to4_1.html" aria-expanded="false">Updates v4.0.11 &#10142; v4.1</a>
       <a class="text-white dropdown-item text-primary display-4" href="tigress-update3to4.html" aria-expanded="false">Updates v3 ➞ v4</a></div>
    </li>
@@ -145,25 +146,16 @@ code {
 
 <br><br><br><br>
 
-<section class="mbr-section content4 TIGRESS-TITLE" id="content4-dz">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">
-<center><h1 style="font-size: 60px; font-weight:400"> Download</h1></center>
-
-               </h2>
-            </div>
-        </div>
-    </div>
-</section>
+<div style="max-width:980px; margin:0 auto 24px auto; aspect-ratio:1983/793;">
+<iframe src="download-banner.html" title="Tigress 4.2 autumn banner" scrolling="no" style="width:100%; height:100%; border:0; display:block;"></iframe>
+</div>
 
 
 <section class="header9 TIGRESS-P" id="header9-dw">
     <div class="container">
         <div class="media-container-column mbr-white">
             <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-For installation instructions, please see the relevant platform page.
+For installation instructions please see the relevant platform page.
 
             </p>
         </div>
@@ -180,43 +172,6 @@ Tigress. Note that it is possible to cross-translate; for example, you can run T
 generate output that runs on Arm7.
 
             </p>
-        </div>
-    </div>
-</section>
-
-
-<section class="header9 TIGRESS-P" id="header9-dw">
-    <div class="container">
-        <div class="media-container-column mbr-white">
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-7">
-   Version 4.1.0 has some major changes:
-
-            </p>
-        </div>
-    </div>
-</section>
-
-
-<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ul>
-
-<li>
-      Tigress now only <em>runs</em> on 64-bit architectures. Cross-translation is still possible, of course. 
-      If you desperately need Tigress to run on legacy architectures, let us know.
-
-</li>
-
-<li>
-      See <a href="tigress-update4_0_11to4_1.html">here</a> for a list of the most important language and
-      transformation updates. 
-
-</li>
-
-                </ul>
-            </div>
         </div>
     </div>
 </section>
@@ -266,6 +221,67 @@ generate output that runs on Arm7.
 <!-- =============================================================================================== -->
   
 
+<br>
+<section class="mbr-section content4 TIGRESS-SECTION" id="content4-dz">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+ Version 4 changes
+
+               </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mbr-section article content12 TIGRESS-UL" id="content12-dv">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ul>
+
+<li>
+      Tigress now only <em>runs</em> on 64-bit architectures. Cross-translation is still possible, of course. 
+      If you desperately need Tigress to run on legacy architectures, let us know.
+
+</li>
+
+<li>
+      Starting with 4.2, Tigress is much easier to install: it consists of exactly two binary files, <code class="language-c">tigress</code>
+      and <code class="language-c">tigress_post</code>. 
+
+</li>
+
+<li>
+      <b>Read about the 4.2 changes <a href="tigress-update4_1to4_2.html">here.</a> </b>
+      The main update is a  <em>binary packing</em> transform <a href=https://tigress.wtf/pack.html>Pack</a>, 
+      many new <a href=https://tigress.wtf/encodeData.html>EncodeData</a> codecs, 
+      generating <a href=https://tigress.wtf/encodeArithmetic.html>EncodeArithmetic</a> MBAs, and a
+      loop unrolling transformation in <a href=https://tigress.wtf/optimize.html>Optimize</a>. 
+
+</li>
+
+<li>
+      <b>Read about the 4.1 changes <a href="tigress-update4_0_11to4_1.html">here.</a> </b>
+      The main update is a <a href="https://tigress.wtf/lowerType.html">LowerType</a> transform that converts floating point to integer operations
+      to allow for integer transformations to apply to floating point operations.
+      Also, there is better support for C23, 
+      a rewritten <a href=https://tigress.wtf/opaque.html> opaque predicate</a> library, and
+      more interesting identifier <a href="https://tigress.wtf/cleanUp.html">renaming transformations.</a>
+
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================================================================== -->
+
+
 
 <section class="section-table TIGRESS-DOWNLOAD" id="table1-bu">
 
@@ -290,6 +306,62 @@ generate output that runs on Arm7.
               </tr>
             </thead>
             <tbody>
+
+
+             <tr>
+                <td class="body-item mbr-fonts-style display-7">4.2.0</td>
+                <td class="body-item mbr-fonts-style display-7">Linux</td>
+                <td class="body-item mbr-fonts-style display-7">X86_64/Arm64</td>
+                <td class="body-item mbr-fonts-style display-7">.deb.zip</td>
+                <td class="body-item mbr-fonts-style display-7">2026-10-06</td>
+                <td class="body-item mbr-fonts-style display-7">
+                   <a href="http://tigress.cs.arizona.edu/cgi-bin/projects/tigress/download.cgi?file=tigress_4.2.0-1_all.deb.zip" class="text-primary">Download</a>
+                </td>                
+             </tr>
+
+             <tr>
+                <td class="body-item mbr-fonts-style display-7">4.2.0</td>
+                <td class="body-item mbr-fonts-style display-7">Linux</td>
+                <td class="body-item mbr-fonts-style display-7">X86_64/Arm64</td>
+                <td class="body-item mbr-fonts-style display-7">.rpm.zip</td>
+                <td class="body-item mbr-fonts-style display-7">2026-10-06</td>
+                <td class="body-item mbr-fonts-style display-7">
+                   <a href="http://tigress.cs.arizona.edu/cgi-bin/projects/tigress/download.cgi?file=tigress-4.2.0-1.noarch.rpm.zip" class="text-primary">Download</a>
+                </td>                
+             </tr>
+
+             <tr>
+                <td class="body-item mbr-fonts-style display-7">4.2.0</td>
+                <td class="body-item mbr-fonts-style display-7">Linux</td>
+                <td class="body-item mbr-fonts-style display-7">X86_64/Arm64</td>
+                <td class="body-item mbr-fonts-style display-7">.pkg.tar.zst.zip</td>
+                <td class="body-item mbr-fonts-style display-7">2026-10-06</td>
+                <td class="body-item mbr-fonts-style display-7">
+                   <a href="http://tigress.cs.arizona.edu/cgi-bin/projects/tigress/download.cgi?file=tigress-4.2.0-1-any.pkg.tar.zst.zip" class="text-primary">Download</a>
+                </td>                
+             </tr>
+
+             <tr>
+                <td class="body-item mbr-fonts-style display-7">4.2.0</td>
+                <td class="body-item mbr-fonts-style display-7">MacOS</td>
+                <td class="body-item mbr-fonts-style display-7">Armv8</td>
+                <td class="body-item mbr-fonts-style display-7">.pkg.zip</td>
+                <td class="body-item mbr-fonts-style display-7">2026-10-06</td>
+                <td class="body-item mbr-fonts-style display-7">
+                   <a href="http://tigress.cs.arizona.edu/cgi-bin/projects/tigress/download.cgi?file=Tigress-Darwin-4.2.0.pkg.zip" class="text-primary">Download</a>
+                </td>                
+             </tr>
+
+             <tr>
+                <td class="body-item mbr-fonts-style display-7">4.2.0</td>
+                <td class="body-item mbr-fonts-style display-7">All</td>
+                <td class="body-item mbr-fonts-style display-7">All</td>
+                <td class="body-item mbr-fonts-style display-7">.zip</td>
+                <td class="body-item mbr-fonts-style display-7">2026-10-06</td>
+                <td class="body-item mbr-fonts-style display-7">
+                   <a href="http://tigress.cs.arizona.edu/cgi-bin/projects/tigress/download.cgi?file=tigress-4.2.0-full.zip" class="text-primary">Download</a>
+                </td>                
+             </tr>
 
 
              <tr>
